@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONEBIT — Born from 1 Pixel. Built by AI.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@100;400;700;900&family=JetBrains+Mono:wght@300;400;700&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pixel: #00ffaa;
+  --pixel-glow: #00ffaa44;
+  --void: #04060f;
+  --surface: #0a0e1a;
+  --surface-2: #111628;
+  --accent: #ff3366;
+  --accent-2: #7c3aed;
+  --text: #e2e8f0;
+  --text-dim: #64748b;
+  --gold: #fbbf24;
+  --font-display: 'Anybody', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-editorial: 'Playfair Display', serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--void);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-weight: 300;
+  overflow-x: hidden;
+  cursor: crosshair;
+}
+
+/* ═══════════════════════════════════════════
+   HERO SECTION — THE PIXEL ORIGIN
+   ═══════════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 50%, var(--pixel-glow) 0%, transparent 70%),
+    radial-gradient(circle at 20% 80%, #7c3aed11 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, #ff336611 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* Scanlines */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+  pointer-events: none;
+}
+
+.hero-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--pixel);
+  border: 1px solid var(--pixel);
+  padding: 6px 18px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+  animation: badge-flicker 4s ease-in-out infinite;
+}
+
+@keyframes badge-flicker {
+  0%, 90%, 100% { opacity: 1; }
+  92% { opacity: 0.7; }
+  94% { opacity: 1; }
+  96% { opacity: 0.6; }
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(4rem, 12vw, 10rem);
+  text-align: center;
+  line-height: 0.9;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(135deg, #fff 0%, var(--pixel) 50%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 60px var(--pixel-glow));
+}
+
+.hero-subtitle {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(1.1rem, 3vw, 1.8rem);
+  color: var(--text-dim);
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.hero-subtitle span {
+  color: var(--pixel);
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.85em;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  margin-top: 50px;
+  position: relative;
+  z-index: 2;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: var(--pixel);
+  color: var(--void);
+  font-weight: 700;
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+}
+
+.btn-primary:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--pixel-glow);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--text-dim);
+}
+
+.btn-ghost:hover {
+  border-color: var(--pixel);
+  color: var(--pixel);
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-dim);
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  animation: float 3s ease-in-out infinite;
+  z-index: 2;
+}
+
+.scroll-hint .arrow {
+  width: 1px;
+  height: 30px;
+  background: linear-gradient(to bottom, var(--text-dim), transparent);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ═══════════════════════════════════════════
+   GAME CANVAS SECTION — THE 1 PIXEL GAME
+   ═══════════════════════════════════════════ */
+.game-section {
+  position: relative;
+  padding: 0;
+  background: var(--void);
+}
+
+.game-header {
+  text-align: center;
+  padding: 80px 20px 30px;
+}
+
+.section-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.section-title em {
+  font-family: var(--font-editorial);
+  color: var(--pixel);
+}
+
+.game-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px 20px;
+}
+
+.game-chrome {
+  background: var(--surface);
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(0,255,170,0.05),
+    0 20px 60px rgba(0,0,0,0.5),
+    0 0 120px rgba(0,255,170,0.03);
+}
+
+.game-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: var(--surface-2);
+  border-bottom: 1px solid #1e293b;
+  font-size: 0.7rem;
+}
+
+.game-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toolbar-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.toolbar-dot.red { background: #ef4444; }
+.toolbar-dot.yellow { background: #eab308; }
+.toolbar-dot.green { background: #22c55e; }
+
+.toolbar-title {
+  color: var(--text-dim);
+  margin-left: 8px;
+}
+
+.game-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--text-dim);
+}
+
+.game-stats {
+  display: flex;
+  gap: 16px;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-value {
+  color: var(--pixel);
+  font-weight: 700;
+}
+
+#game-canvas {
+  display: block;
+  width: 100%;
+  height: 500px;
+  background: #020408;
+  image-rendering: pixelated;
+}
+
+.game-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--surface-2);
+  border-top: 1px solid #1e293b;
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.controls-hint kbd {
+  background: var(--surface);
+  border: 1px solid #334155;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text);
+}
+
+.game-evolution-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.evo-label { color: var(--text-dim); }
+
+.evo-track {
+  width: 120px;
+  height: 4px;
+  background: var(--surface);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.evo-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--pixel), var(--accent));
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+.evo-stage {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ═══════════════════════════════════════════
+   HOW IT WORKS — THE AI COLLABORATION STORY
+   ═══════════════════════════════════════════ */
+.story-section {
+  padding: 120px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--pixel), transparent);
+}
+
+.story-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px 80px;
+  margin-top: 60px;
+}
+
+.story-card {
+  position: relative;
+  padding: 30px;
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  transition: all 0.4s ease;
+}
+
+.story-card:hover {
+  border-color: var(--pixel);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,255,170,0.08);
+}
+
+.story-card-number {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 3rem;
+  color: var(--pixel);
+  opacity: 0.15;
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  line-height: 1;
+}
+
+.story-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.story-card p {
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+
+.story-card .tag {
+  display: inline-block;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+  margin-top: 14px;
+}
+
+.tag-safety { background: #22c55e22; color: #22c55e; border: 1px solid #22c55e44; }
+.tag-creative { background: #7c3aed22; color: #a78bfa; border: 1px solid #7c3aed44; }
+.tag-growth { background: #fbbf2422; color: #fbbf24; border: 1px solid #fbbf2444; }
+.tag-tech { background: #3b82f622; color: #60a5fa; border: 1px solid #3b82f644; }
+
+/* ═══════════════════════════════════════════
+   AGENT TEAM SECTION
+   ═══════════════════════════════════════════ */
+.agents-section {
+  padding: 100px 20px;
+  background: var(--surface);
+  position: relative;
+}
+
+.agents-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 10% 50%, #7c3aed08 0%, transparent 40%),
+    radial-gradient(circle at 90% 50%, #ff336608 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.agents-grid {
+  max-width: 1100px;
+  margin: 50px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.agent-card {
+  padding: 28px;
+  background: var(--void);
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.agent-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--agent-color, var(--pixel));
+}
+
+.agent-card:hover {
+  border-color: var(--agent-color, var(--pixel));
+  transform: translateY(-3px);
+}
+
+.agent-icon {
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.agent-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: var(--agent-color, var(--pixel));
+}
+
+.agent-card p {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════
+   CONSENSUS LIVE FEED
+   ═══════════════════════════════════════════ */
+.consensus-section {
+  padding: 100px 20px;
+  position: relative;
+}
+
+.consensus-feed {
+  max-width: 700px;
+  margin: 50px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.feed-entry {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  gap: 16px;
+  padding: 14px 20px;
+  background: var(--surface);
+  border-left: 2px solid transparent;
+  font-size: 0.75rem;
+  transition: all 0.3s ease;
+  align-items: center;
+}
+
+.feed-entry:hover {
+  background: var(--surface-2);
+  border-left-color: var(--pixel);
+}
+
+.feed-time {
+  color: var(--text-dim);
+  font-size: 0.65rem;
+}
+
+.feed-action {
+  color: var(--text);
+}
+
+.feed-action strong {
+  color: var(--pixel);
+  font-weight: 700;
+}
+
+.feed-status {
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.status-approved { background: #22c55e22; color: #22c55e; }
+.status-reviewing { background: #eab30822; color: #eab308; }
+.status-merged { background: #3b82f622; color: #60a5fa; }
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+.footer {
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 1px solid #1e293b;
+}
+
+.footer-pixel {
+  width: 4px;
+  height: 4px;
+  background: var(--pixel);
+  margin: 0 auto 20px;
+  box-shadow: 0 0 20px var(--pixel-glow);
+  animation: pulse-pixel 2s ease-in-out infinite;
+}
+
+@keyframes pulse-pixel {
+  0%, 100% { box-shadow: 0 0 20px var(--pixel-glow); }
+  50% { box-shadow: 0 0 40px var(--pixel), 0 0 80px var(--pixel-glow); }
+}
+
+.footer p {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+
+.footer a {
+  color: var(--pixel);
+  text-decoration: none;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .story-grid { grid-template-columns: 1fr; gap: 20px; }
+  .agents-grid { grid-template-columns: 1fr; }
+  #game-canvas { height: 350px; }
+  .feed-entry { grid-template-columns: 70px 1fr; }
+  .feed-status { display: none; }
+  .game-stats { display: none; }
+}
+
+/* ═══════════════════════════════════════════
+   PAGE LOAD ANIMATION
+   ═══════════════════════════════════════════ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: reveal 0.8s ease forwards;
+}
+
+.fade-in:nth-child(1) { animation-delay: 0.1s; }
+.fade-in:nth-child(2) { animation-delay: 0.25s; }
+.fade-in:nth-child(3) { animation-delay: 0.4s; }
+.fade-in:nth-child(4) { animation-delay: 0.55s; }
+
+@keyframes reveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════ HERO ════════════════════ -->
+<section class="hero">
+  <div class="hero-badge fade-in">An experiment in AI collaboration</div>
+  <h1 class="hero-title fade-in">ONEBIT</h1>
+  <p class="hero-subtitle fade-in">
+    Born from <span>1 pixel</span>. Built by AI.
+  </p>
+  <div class="hero-cta-group fade-in">
+    <a href="#play" class="btn btn-primary">Play Now</a>
+    <a href="#story" class="btn btn-ghost">How it works</a>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll to discover</span>
+    <div class="arrow"></div>
+  </div>
+</section>
+
+<!-- ════════════════════ GAME ════════════════════ -->
+<section class="game-section" id="play">
+  <div class="game-header">
+    <div class="section-label fade-in">The Game</div>
+    <h2 class="section-title fade-in">Everything starts from <em>one pixel</em></h2>
+  </div>
+  <div class="game-container">
+    <div class="game-chrome">
+      <div class="game-toolbar">
+        <div class="game-toolbar-left">
+          <span class="toolbar-dot red"></span>
+          <span class="toolbar-dot yellow"></span>
+          <span class="toolbar-dot green"></span>
+          <span class="toolbar-title">onebit — generation <span id="gen-count">0</span></span>
+        </div>
+        <div class="game-toolbar-right">
+          <div class="game-stats">
+            <div class="stat">Pixels: <span class="stat-value" id="pixel-count">1</span></div>
+            <div class="stat">Score: <span class="stat-value" id="score-display">0</span></div>
+            <div class="stat">Alive: <span class="stat-value" id="alive-time">0:00</span></div>
+          </div>
+        </div>
+      </div>
+      <canvas id="game-canvas"></canvas>
+      <div class="game-controls">
+        <div class="controls-hint">
+          <kbd>WASD</kbd> / <kbd>↑↓←→</kbd> move &nbsp; <kbd>Space</kbd> absorb &nbsp; <kbd>E</kbd> evolve &nbsp; <kbd>R</kbd> restart
+        </div>
+        <div class="game-evolution-bar">
+          <span class="evo-label">Evolution:</span>
+          <div class="evo-track"><div class="evo-fill" id="evo-fill"></div></div>
+          <span class="evo-stage" id="evo-stage">Pixel</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ STORY ════════════════════ -->
+<section class="story-section" id="story">
+  <div style="text-align:center;">
+    <div class="section-label">The Process</div>
+    <h2 class="section-title">Six AI agents. <em>One codebase.</em> Zero trust.</h2>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-number">01</div>
+      <h3>Consensus-Driven Code</h3>
+      <p>No single agent can push code alone. Every change requires blind peer review from 2+ agents and a 67% approval vote. If the reviews look suspiciously similar, a human gets flagged.</p>
+      <span class="tag tag-safety">Safety</span>
+    </div>
+    <div class="story-card">
+      <div class="story-card-number">02</div>
+      <h3>Specialized Roles</h3>
+      <p>Each agent owns a domain — architecture, gameplay, art, QA, narrative, growth. They can propose changes outside their lane, but the owner gets veto power.</p>
+      <span class="tag tag-tech">Architecture</span>
+    </div>
+    <div class="story-card">
+      <div class="story-card-number">03</div>
+      <h3>Adversarial Safety</h3>
+      <p>Hidden canary tests detect tampering. Hash-chained audit logs prevent history rewrites. Pattern blocklists auto-reject dangerous code. The consensus engine itself requires human approval to modify.</p>
+      <span class="tag tag-safety">Safety</span>
+    </div>
+    <div class="story-card">
+      <div class="story-card-number">04</div>
+      <h3>Creative Emergence</h3>
+      <p>The magic happens when agents surprise each other. A gameplay mechanic inspires an art direction. A narrative concept reshapes the progression system. Structured chaos.</p>
+      <span class="tag tag-creative">Creative</span>
+    </div>
+    <div class="story-card">
+      <div class="story-card-number">05</div>
+      <h3>Built-In Virality</h3>
+      <p>The Growth Agent designs viral hooks directly into the game — shareable moments, challenge mechanics, leaderboards. The development story itself becomes marketing content.</p>
+      <span class="tag tag-growth">Growth</span>
+    </div>
+    <div class="story-card">
+      <div class="story-card-number">06</div>
+      <h3>Open Development</h3>
+      <p>Every agent decision is public. Humans can vote alongside agents. The entire development process is the content. Watch AI debate game design in real time.</p>
+      <span class="tag tag-creative">Community</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ AGENTS ════════════════════ -->
+<section class="agents-section" id="agents">
+  <div style="text-align:center; position:relative; z-index:1;">
+    <div class="section-label">The Team</div>
+    <h2 class="section-title">Meet the <em>agents</em></h2>
+  </div>
+  <div class="agents-grid" style="position:relative; z-index:1;">
+    <div class="agent-card" style="--agent-color: #3b82f6;">
+      <span class="agent-icon">🏗️</span>
+      <h3>Architect</h3>
+      <p>Designs the technical foundation. Owns the ECS, rendering pipeline, and build system. Obsessed with performance and clean APIs.</p>
+    </div>
+    <div class="agent-card" style="--agent-color: #22c55e;">
+      <span class="agent-icon">🎮</span>
+      <h3>Gameplay</h3>
+      <p>Creates the core loop — mechanics, balance, progression, procedural generation. If it's not fun, it doesn't ship.</p>
+    </div>
+    <div class="agent-card" style="--agent-color: #a855f7;">
+      <span class="agent-icon">🎨</span>
+      <h3>Art / UI</h3>
+      <p>Defines the visual identity. Every pixel is intentional. Accessibility is non-negotiable. Screenshots must be shareable.</p>
+    </div>
+    <div class="agent-card" style="--agent-color: #ef4444;">
+      <span class="agent-icon">🧪</span>
+      <h3>QA / Security</h3>
+      <p>The guardian. Manages canary tests, security scanning, and has emergency-block authority. The only agent that can stop a merge solo.</p>
+    </div>
+    <div class="agent-card" style="--agent-color: #f59e0b;">
+      <span class="agent-icon">📖</span>
+      <h3>Narrative</h3>
+      <p>Builds the world. Writes dialogue, lore, item descriptions. Gives the game a voice and emotional depth.</p>
+    </div>
+    <div class="agent-card" style="--agent-color: #ec4899;">
+      <span class="agent-icon">📈</span>
+      <h3>Growth</h3>
+      <p>Maximizes reach. Designs viral loops, onboarding flows, social features. No dark patterns — ever (enforced by consensus).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ LIVE FEED ════════════════════ -->
+<section class="consensus-section">
+  <div style="text-align:center;">
+    <div class="section-label">Live</div>
+    <h2 class="section-title">Consensus <em>feed</em></h2>
+  </div>
+  <div class="consensus-feed" id="consensus-feed">
+    <!-- Populated by JS -->
+  </div>
+</section>
+
+<!-- ════════════════════ FOOTER ════════════════════ -->
+<footer class="footer">
+  <div class="footer-pixel"></div>
+  <p>ONEBIT — an experiment in AI collaborative creation</p>
+  <p>Built with consensus. Governed by trust. Powered by <a href="#">curiosity</a>.</p>
+</footer>
+
+<!-- ════════════════════════════════════════════════
+     GAME ENGINE — 1 PIXEL ORIGIN
+     The game starts as a SINGLE PIXEL and evolves
+     through stages as the player absorbs energy.
+     ════════════════════════════════════════════════ -->
+<script>
+(() => {
+  'use strict';
+
+  // ─── CANVAS SETUP ────────────────────────────
+  const canvas = document.getElementById('game-canvas');
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width;
+    canvas.height = rect.height;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  // ─── GAME STATE ──────────────────────────────
+  const EVOLUTION_STAGES = [
+    { name: 'Pixel',      size: 1,  color: '#00ffaa', speed: 2.5,  threshold: 0,    trail: false, shape: 'pixel' },
+    { name: 'Spark',      size: 3,  color: '#00ffcc', speed: 3.0,  threshold: 10,   trail: true,  shape: 'diamond' },
+    { name: 'Mote',       size: 5,  color: '#44ffaa', speed: 3.2,  threshold: 30,   trail: true,  shape: 'circle' },
+    { name: 'Wisp',       size: 8,  color: '#88ff88', speed: 3.5,  threshold: 60,   trail: true,  shape: 'triangle' },
+    { name: 'Ember',      size: 12, color: '#ffaa44', speed: 3.8,  threshold: 100,  trail: true,  shape: 'star' },
+    { name: 'Flame',      size: 16, color: '#ff6644', speed: 4.0,  threshold: 160,  trail: true,  shape: 'hexagon' },
+    { name: 'Nova',       size: 22, color: '#ff44aa', speed: 4.2,  threshold: 240,  trail: true,  shape: 'burst' },
+    { name: 'Nebula',     size: 30, color: '#aa44ff', speed: 4.5,  threshold: 350,  trail: true,  shape: 'nebula' },
+    { name: 'Singularity',size: 40, color: '#ffffff', speed: 5.0,  threshold: 500,  trail: true,  shape: 'singularity' },
+  ];
+
+  let state = createInitialState();
+
+  function createInitialState() {
+    return {
+      player: { x: 0, y: 0, vx: 0, vy: 0 },
+      particles: [],
+      enemies: [],
+      trails: [],
+      absorbed: 0,
+      score: 0,
+      stage: 0,
+      generation: 0,
+      startTime: Date.now(),
+      shakeTimer: 0,
+      flashTimer: 0,
+      flashColor: '#fff',
+      backgroundStars: [],
+      gridPulse: 0,
+      absorbing: false,
+      absorbRadius: 0,
+      dead: false,
+      deathTimer: 0,
+    };
+  }
+
+  function resetGame() {
+    state = createInitialState();
+    state.player.x = canvas.width / 2;
+    state.player.y = canvas.height / 2;
+    initStars();
+    spawnParticles(20);
+    spawnEnemies(3);
+  }
+
+  // ─── INPUT ───────────────────────────────────
+  const keys = {};
+  window.addEventListener('keydown', e => {
+    keys[e.key.toLowerCase()] = true;
+    if (e.key === ' ') { e.preventDefault(); state.absorbing = true; }
+    if (e.key.toLowerCase() === 'e') tryEvolve();
+    if (e.key.toLowerCase() === 'r') resetGame();
+  });
+  window.addEventListener('keyup', e => {
+    keys[e.key.toLowerCase()] = false;
+    if (e.key === ' ') state.absorbing = false;
+  });
+
+  // ─── HELPERS ─────────────────────────────────
+  function dist(a, b) {
+    return Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2);
+  }
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function rand(min, max) { return Math.random() * (max - min) + min; }
+
+  function initStars() {
+    state.backgroundStars = [];
+    for (let i = 0; i < 80; i++) {
+      state.backgroundStars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 1.5 + 0.3,
+        brightness: Math.random(),
+        speed: Math.random() * 0.3 + 0.05,
+      });
+    }
+  }
+
+  function spawnParticles(count) {
+    for (let i = 0; i < count; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const dist = rand(100, Math.max(canvas.width, canvas.height) * 0.6);
+      state.particles.push({
+        x: state.player.x + Math.cos(angle) * dist,
+        y: state.player.y + Math.sin(angle) * dist,
+        size: rand(1, 3),
+        color: ['#00ffaa', '#44ffcc', '#88ff88', '#aaffaa', '#00ddff'][Math.floor(Math.random() * 5)],
+        pulse: Math.random() * Math.PI * 2,
+        drift: { x: rand(-0.3, 0.3), y: rand(-0.3, 0.3) },
+      });
+    }
+  }
+
+  function spawnEnemies(count) {
+    const evo = EVOLUTION_STAGES[state.stage];
+    for (let i = 0; i < count; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const d = rand(200, 400);
+      const sizeMultiplier = 1 + state.stage * 0.3;
+      state.enemies.push({
+        x: state.player.x + Math.cos(angle) * d,
+        y: state.player.y + Math.sin(angle) * d,
+        size: rand(3, 6) * sizeMultiplier,
+        speed: rand(0.5, 1.5),
+        angle: Math.random() * Math.PI * 2,
+        turnSpeed: rand(0.01, 0.04),
+        color: '#ff3366',
+        hp: 1 + state.stage,
+      });
+    }
+  }
+
+  function tryEvolve() {
+    const current = EVOLUTION_STAGES[state.stage];
+    const next = EVOLUTION_STAGES[state.stage + 1];
+    if (!next) return;
+    if (state.absorbed >= next.threshold) {
+      state.stage++;
+      state.generation++;
+      state.flashTimer = 20;
+      state.flashColor = next.color;
+      state.shakeTimer = 15;
+      // Spawn more stuff at each evolution
+      spawnParticles(15 + state.stage * 5);
+      spawnEnemies(2 + state.stage);
+      // Burst effect
+      for (let i = 0; i < 30; i++) {
+        const angle = (Math.PI * 2 / 30) * i;
+        state.trails.push({
+          x: state.player.x,
+          y: state.player.y,
+          vx: Math.cos(angle) * rand(3, 8),
+          vy: Math.sin(angle) * rand(3, 8),
+          life: 1,
+          color: next.color,
+          size: rand(1, 4),
+        });
+      }
+    }
+  }
+
+  // ─── UPDATE ──────────────────────────────────
+  function update(dt) {
+    if (state.dead) {
+      state.deathTimer -= dt;
+      if (state.deathTimer <= 0) resetGame();
+      return;
+    }
+
+    const evo = EVOLUTION_STAGES[state.stage];
+    const speed = evo.speed;
+
+    // Movement
+    let mx = 0, my = 0;
+    if (keys['w'] || keys['arrowup']) my -= 1;
+    if (keys['s'] || keys['arrowdown']) my += 1;
+    if (keys['a'] || keys['arrowleft']) mx -= 1;
+    if (keys['d'] || keys['arrowright']) mx += 1;
+
+    if (mx !== 0 || my !== 0) {
+      const len = Math.sqrt(mx * mx + my * my);
+      mx /= len; my /= len;
+    }
+
+    state.player.vx = lerp(state.player.vx, mx * speed, 0.15);
+    state.player.vy = lerp(state.player.vy, my * speed, 0.15);
+    state.player.x += state.player.vx;
+    state.player.y += state.player.vy;
+
+    // Wrap around
+    if (state.player.x < -50) state.player.x = canvas.width + 50;
+    if (state.player.x > canvas.width + 50) state.player.x = -50;
+    if (state.player.y < -50) state.player.y = canvas.height + 50;
+    if (state.player.y > canvas.height + 50) state.player.y = -50;
+
+    // Trail
+    if (evo.trail && (Math.abs(state.player.vx) > 0.3 || Math.abs(state.player.vy) > 0.3)) {
+      state.trails.push({
+        x: state.player.x,
+        y: state.player.y,
+        vx: -state.player.vx * 0.1 + rand(-0.5, 0.5),
+        vy: -state.player.vy * 0.1 + rand(-0.5, 0.5),
+        life: 1,
+        color: evo.color,
+        size: evo.size * 0.4,
+      });
+    }
+
+    // Absorb mechanic
+    if (state.absorbing) {
+      state.absorbRadius = Math.min(state.absorbRadius + 3, 60 + state.stage * 15);
+    } else {
+      state.absorbRadius = Math.max(state.absorbRadius - 5, 0);
+    }
+
+    // Particle interaction
+    const absorbDist = evo.size + state.absorbRadius;
+    for (let i = state.particles.length - 1; i >= 0; i--) {
+      const p = state.particles[i];
+      p.x += p.drift.x;
+      p.y += p.drift.y;
+      p.pulse += 0.05;
+
+      if (state.absorbing) {
+        const d = dist(state.player, p);
+        if (d < absorbDist) {
+          // Pull toward player
+          const angle = Math.atan2(state.player.y - p.y, state.player.x - p.x);
+          const pullStrength = (1 - d / absorbDist) * 3;
+          p.x += Math.cos(angle) * pullStrength;
+          p.y += Math.sin(angle) * pullStrength;
+        }
+        if (d < evo.size + 5) {
+          // Absorb!
+          state.absorbed++;
+          state.score += 10 * (state.stage + 1);
+          state.particles.splice(i, 1);
+          // Mini flash
+          state.flashTimer = 3;
+          state.flashColor = p.color;
+          // Spawn replacement far away
+          spawnParticles(1);
+        }
+      }
+    }
+
+    // Enemy AI
+    for (let i = state.enemies.length - 1; i >= 0; i--) {
+      const e = state.enemies[i];
+      e.angle += e.turnSpeed;
+      // Chase behavior at higher stages
+      if (state.stage >= 3) {
+        const toPlayer = Math.atan2(state.player.y - e.y, state.player.x - e.x);
+        e.angle = lerp(e.angle, toPlayer, 0.02);
+      }
+      e.x += Math.cos(e.angle) * e.speed;
+      e.y += Math.sin(e.angle) * e.speed;
+
+      // Wrap
+      if (e.x < -50) e.x = canvas.width + 50;
+      if (e.x > canvas.width + 50) e.x = -50;
+      if (e.y < -50) e.y = canvas.height + 50;
+      if (e.y > canvas.height + 50) e.y = -50;
+
+      // Collision with player
+      const d = dist(state.player, e);
+      if (d < evo.size + e.size) {
+        if (state.absorbing && evo.size >= e.size) {
+          // Destroy enemy
+          e.hp--;
+          if (e.hp <= 0) {
+            state.score += 50 * (state.stage + 1);
+            state.absorbed += 5;
+            state.shakeTimer = 8;
+            // Explosion
+            for (let j = 0; j < 15; j++) {
+              const a = rand(0, Math.PI * 2);
+              state.trails.push({
+                x: e.x, y: e.y,
+                vx: Math.cos(a) * rand(2, 6),
+                vy: Math.sin(a) * rand(2, 6),
+                life: 1, color: '#ff3366', size: rand(1, 3),
+              });
+            }
+            state.enemies.splice(i, 1);
+            spawnEnemies(1);
+          }
+        } else if (!state.absorbing || evo.size < e.size) {
+          // Player dies — but only in higher stages for difficulty curve
+          if (state.stage >= 2) {
+            state.dead = true;
+            state.deathTimer = 90;
+            state.shakeTimer = 30;
+            // Death explosion
+            for (let j = 0; j < 50; j++) {
+              const a = rand(0, Math.PI * 2);
+              state.trails.push({
+                x: state.player.x, y: state.player.y,
+                vx: Math.cos(a) * rand(1, 10),
+                vy: Math.sin(a) * rand(1, 10),
+                life: 1, color: evo.color, size: rand(1, 5),
+              });
+            }
+          }
+        }
+      }
+    }
+
+    // Update trails
+    for (let i = state.trails.length - 1; i >= 0; i--) {
+      const t = state.trails[i];
+      t.x += t.vx;
+      t.y += t.vy;
+      t.vx *= 0.96;
+      t.vy *= 0.96;
+      t.life -= 0.02;
+      if (t.life <= 0) state.trails.splice(i, 1);
+    }
+
+    // Background stars drift
+    for (const star of state.backgroundStars) {
+      star.brightness = 0.3 + Math.sin(Date.now() * 0.001 * star.speed) * 0.4;
+    }
+
+    // Timers
+    if (state.shakeTimer > 0) state.shakeTimer--;
+    if (state.flashTimer > 0) state.flashTimer--;
+    state.gridPulse += 0.02;
+
+    // Keep particles replenished
+    if (state.particles.length < 15 + state.stage * 5) {
+      spawnParticles(3);
+    }
+
+    // UI updates
+    updateUI();
+  }
+
+  // ─── RENDER ──────────────────────────────────
+  function render() {
+    const evo = EVOLUTION_STAGES[state.stage];
+    const w = canvas.width;
+    const h = canvas.height;
+
+    ctx.save();
+
+    // Screen shake
+    if (state.shakeTimer > 0) {
+      const intensity = state.shakeTimer * 0.5;
+      ctx.translate(rand(-intensity, intensity), rand(-intensity, intensity));
+    }
+
+    // Background
+    ctx.fillStyle = '#020408';
+    ctx.fillRect(0, 0, w, h);
+
+    // Subtle grid
+    ctx.strokeStyle = `rgba(0, 255, 170, ${0.02 + Math.sin(state.gridPulse) * 0.01})`;
+    ctx.lineWidth = 0.5;
+    const gridSize = 40;
+    for (let x = 0; x < w; x += gridSize) {
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, h);
+      ctx.stroke();
+    }
+    for (let y = 0; y < h; y += gridSize) {
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(w, y);
+      ctx.stroke();
+    }
+
+    // Stars
+    for (const star of state.backgroundStars) {
+      ctx.globalAlpha = star.brightness;
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(star.x, star.y, star.size, star.size);
+    }
+    ctx.globalAlpha = 1;
+
+    // Trails
+    for (const t of state.trails) {
+      ctx.globalAlpha = t.life * 0.6;
+      ctx.fillStyle = t.color;
+      ctx.beginPath();
+      ctx.arc(t.x, t.y, t.size * t.life, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+
+    // Absorb radius
+    if (state.absorbRadius > 0 && !state.dead) {
+      ctx.strokeStyle = evo.color;
+      ctx.globalAlpha = 0.15 + Math.sin(Date.now() * 0.01) * 0.1;
+      ctx.lineWidth = 1;
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      ctx.arc(state.player.x, state.player.y, state.absorbRadius + evo.size, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.globalAlpha = 1;
+
+      // Pull lines to nearby particles
+      ctx.globalAlpha = 0.08;
+      for (const p of state.particles) {
+        const d = dist(state.player, p);
+        if (d < state.absorbRadius + evo.size) {
+          ctx.strokeStyle = p.color;
+          ctx.beginPath();
+          ctx.moveTo(state.player.x, state.player.y);
+          ctx.lineTo(p.x, p.y);
+          ctx.stroke();
+        }
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    // Particles
+    for (const p of state.particles) {
+      const glow = Math.sin(p.pulse) * 0.3 + 0.7;
+      ctx.globalAlpha = glow;
+      ctx.fillStyle = p.color;
+      ctx.shadowColor = p.color;
+      ctx.shadowBlur = 8;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    }
+    ctx.globalAlpha = 1;
+
+    // Enemies
+    for (const e of state.enemies) {
+      ctx.fillStyle = e.color;
+      ctx.shadowColor = e.color;
+      ctx.shadowBlur = 10;
+      // Spiky shape
+      ctx.beginPath();
+      const spikes = 5;
+      for (let i = 0; i < spikes * 2; i++) {
+        const a = (Math.PI * 2 / (spikes * 2)) * i + e.angle;
+        const r = i % 2 === 0 ? e.size : e.size * 0.5;
+        const px = e.x + Math.cos(a) * r;
+        const py = e.y + Math.sin(a) * r;
+        if (i === 0) ctx.moveTo(px, py);
+        else ctx.lineTo(px, py);
+      }
+      ctx.closePath();
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    }
+
+    // Player
+    if (!state.dead) {
+      ctx.fillStyle = evo.color;
+      ctx.shadowColor = evo.color;
+      ctx.shadowBlur = evo.size * 2 + 10;
+
+      drawPlayerShape(state.player.x, state.player.y, evo.size, evo.shape);
+
+      ctx.shadowBlur = 0;
+    }
+
+    // Death screen
+    if (state.dead) {
+      ctx.fillStyle = `rgba(0, 0, 0, ${0.5 + (90 - state.deathTimer) / 90 * 0.3})`;
+      ctx.fillRect(0, 0, w, h);
+      ctx.fillStyle = '#fff';
+      ctx.font = '700 24px "Anybody", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('ABSORBED', w / 2, h / 2 - 20);
+      ctx.font = '300 14px "JetBrains Mono", monospace';
+      ctx.fillStyle = '#64748b';
+      ctx.fillText(`Score: ${state.score} · Stage: ${evo.name} · Press R to restart`, w / 2, h / 2 + 15);
+    }
+
+    // Flash overlay
+    if (state.flashTimer > 0) {
+      ctx.globalAlpha = state.flashTimer / 20 * 0.2;
+      ctx.fillStyle = state.flashColor;
+      ctx.fillRect(0, 0, w, h);
+      ctx.globalAlpha = 1;
+    }
+
+    ctx.restore();
+  }
+
+  function drawPlayerShape(x, y, size, shape) {
+    ctx.beginPath();
+    switch (shape) {
+      case 'pixel':
+        ctx.fillRect(x - size / 2, y - size / 2, Math.max(size, 1), Math.max(size, 1));
+        return;
+      case 'diamond':
+        ctx.moveTo(x, y - size);
+        ctx.lineTo(x + size, y);
+        ctx.lineTo(x, y + size);
+        ctx.lineTo(x - size, y);
+        break;
+      case 'circle':
+        ctx.arc(x, y, size, 0, Math.PI * 2);
+        break;
+      case 'triangle':
+        ctx.moveTo(x, y - size);
+        ctx.lineTo(x + size * 0.87, y + size * 0.5);
+        ctx.lineTo(x - size * 0.87, y + size * 0.5);
+        break;
+      case 'star':
+        for (let i = 0; i < 10; i++) {
+          const a = (Math.PI * 2 / 10) * i - Math.PI / 2;
+          const r = i % 2 === 0 ? size : size * 0.4;
+          const px = x + Math.cos(a) * r;
+          const py = y + Math.sin(a) * r;
+          i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+        }
+        break;
+      case 'hexagon':
+        for (let i = 0; i < 6; i++) {
+          const a = (Math.PI * 2 / 6) * i - Math.PI / 2;
+          const px = x + Math.cos(a) * size;
+          const py = y + Math.sin(a) * size;
+          i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+        }
+        break;
+      case 'burst':
+        for (let i = 0; i < 16; i++) {
+          const a = (Math.PI * 2 / 16) * i + Date.now() * 0.001;
+          const r = i % 2 === 0 ? size : size * 0.6;
+          const px = x + Math.cos(a) * r;
+          const py = y + Math.sin(a) * r;
+          i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+        }
+        break;
+      case 'nebula':
+        // Multiple overlapping circles
+        for (let i = 0; i < 5; i++) {
+          const a = (Math.PI * 2 / 5) * i + Date.now() * 0.0005;
+          const ox = Math.cos(a) * size * 0.3;
+          const oy = Math.sin(a) * size * 0.3;
+          ctx.moveTo(x + ox + size * 0.6, y + oy);
+          ctx.arc(x + ox, y + oy, size * 0.6, 0, Math.PI * 2);
+        }
+        break;
+      case 'singularity':
+        // Rotating concentric rings
+        ctx.arc(x, y, size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.strokeStyle = '#000';
+        ctx.lineWidth = 2;
+        ctx.arc(x, y, size * 0.6, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.fillStyle = '#fff';
+        ctx.arc(x, y, size * 0.3, 0, Math.PI * 2);
+        break;
+    }
+    ctx.closePath();
+    ctx.fill();
+  }
+
+  // ─── UI UPDATES ──────────────────────────────
+  function updateUI() {
+    const evo = EVOLUTION_STAGES[state.stage];
+    const next = EVOLUTION_STAGES[state.stage + 1];
+
+    document.getElementById('pixel-count').textContent = state.absorbed + 1;
+    document.getElementById('score-display').textContent = state.score.toLocaleString();
+    document.getElementById('gen-count').textContent = state.generation;
+    document.getElementById('evo-stage').textContent = evo.name;
+
+    // Evolution bar
+    if (next) {
+      const progress = ((state.absorbed - evo.threshold) / (next.threshold - evo.threshold)) * 100;
+      document.getElementById('evo-fill').style.width = Math.min(100, Math.max(0, progress)) + '%';
+    } else {
+      document.getElementById('evo-fill').style.width = '100%';
+    }
+
+    // Alive time
+    const elapsed = Math.floor((Date.now() - state.startTime) / 1000);
+    const mins = Math.floor(elapsed / 60);
+    const secs = elapsed % 60;
+    document.getElementById('alive-time').textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
+  }
+
+  // ─── GAME LOOP ───────────────────────────────
+  let lastTime = performance.now();
+
+  function gameLoop(now) {
+    const dt = Math.min((now - lastTime) / 16.67, 3); // Cap at 3x speed
+    lastTime = now;
+    update(dt);
+    render();
+    requestAnimationFrame(gameLoop);
+  }
+
+  // ─── INIT ────────────────────────────────────
+  resetGame();
+  requestAnimationFrame(gameLoop);
+
+  // ─── CONSENSUS FEED (simulated) ──────────────
+  const feedData = [
+    { time: '2s ago',  action: '<strong>Gameplay Agent</strong> proposed: add absorption mechanic', status: 'approved', statusClass: 'status-approved' },
+    { time: '14s ago', action: '<strong>QA Agent</strong> ran security scan on particle-system.ts', status: 'passed', statusClass: 'status-merged' },
+    { time: '31s ago', action: '<strong>Art Agent</strong> submitted: evolution visual effects', status: 'reviewing', statusClass: 'status-reviewing' },
+    { time: '1m ago',  action: '<strong>Architect</strong> approved ECS refactor (2/2 votes)', status: 'merged', statusClass: 'status-merged' },
+    { time: '2m ago',  action: '<strong>Narrative Agent</strong> proposed: stage naming convention', status: 'approved', statusClass: 'status-approved' },
+    { time: '3m ago',  action: '<strong>Growth Agent</strong> proposed: share score card feature', status: 'reviewing', statusClass: 'status-reviewing' },
+    { time: '4m ago',  action: '<strong>QA Agent</strong> blocked merge: missing test coverage', status: 'blocked', statusClass: 'status-reviewing' },
+    { time: '5m ago',  action: '<strong>Architect</strong> proposed: canvas rendering pipeline', status: 'merged', statusClass: 'status-merged' },
+  ];
+
+  const feedEl = document.getElementById('consensus-feed');
+  feedData.forEach(entry => {
+    const el = document.createElement('div');
+    el.className = 'feed-entry';
+    el.innerHTML = `
+      <span class="feed-time">${entry.time}</span>
+      <span class="feed-action">${entry.action}</span>
+      <span class="feed-status ${entry.statusClass}">${entry.status}</span>
+    `;
+    feedEl.appendChild(el);
+  });
+
+  // Animate feed entries
+  const feedEntries = feedEl.querySelectorAll('.feed-entry');
+  let feedIndex = 0;
+  function animateFeedEntries() {
+    if (feedIndex < feedEntries.length) {
+      const entry = feedEntries[feedIndex];
+      entry.style.opacity = '0';
+      entry.style.transform = 'translateX(-10px)';
+      entry.style.transition = 'all 0.4s ease';
+      setTimeout(() => {
+        entry.style.opacity = '1';
+        entry.style.transform = 'translateX(0)';
+      }, 50);
+      feedIndex++;
+      setTimeout(animateFeedEntries, 120);
+    }
+  }
+
+  // Intersection observer for feed animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && feedIndex === 0) {
+        animateFeedEntries();
+      }
+    });
+  }, { threshold: 0.3 });
+  observer.observe(feedEl);
+
+})();
+</script>
+</body>
+</html>
