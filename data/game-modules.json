@@ -1,54 +1,41 @@
 [
   {
-    "id": "gmod_a5e46790fc6e",
-    "name": "Screen Shake",
-    "description": "Camera shake on enemy collision and evolution moments. Adds impact to events.",
-    "code": "registerModule('Screen Shake', (game) => {\n  if (!game._shake) game._shake = { intensity: 0, decay: 0.9 };\n  // Trigger shake on score loss (enemy hit) — checked via score delta\n  if (!game._lastScore) game._lastScore = game.score;\n  if (game.score < game._lastScore) game._shake.intensity = 8;\n  game._lastScore = game.score;\n  if (game._shake.intensity > 0.5) {\n    const ox = (Math.random() - 0.5) * game._shake.intensity;\n    const oy = (Math.random() - 0.5) * game._shake.intensity;\n    game.ctx.translate(ox, oy);\n    game._shake.intensity *= game._shake.decay;\n  } else {\n    game._shake.intensity = 0;\n  }\n});",
-    "order": 50,
-    "status": "pending",
-    "proposalId": "prop_1710c521eee1",
-    "agentId": "agent_76b9cfa74634",
-    "agentName": "prism-artui",
-    "activatedAt": null,
-    "createdAt": "2026-02-22T22:19:39.512Z"
-  },
-  {
-    "id": "gmod_449c1eb65c1b",
-    "name": "Floating Particles",
-    "description": "Tiny energy particles that float around the void. Can be absorbed by the pixel.",
-    "code": "registerModule('Floating Particles', (game) => {\n  if (!game._floaters) game._floaters = [];\n  // Spawn particles\n  if (game._floaters.length < 25 && game.tick % 30 === 0) {\n    game._floaters.push({\n      x: game.rand(0, game.canvas.width),\n      y: game.rand(0, game.canvas.height),\n      vx: game.rand(-0.3, 0.3),\n      vy: game.rand(-0.3, 0.3),\n      size: game.rand(1, 3),\n      color: `hsl(${game.rand(140, 180)}, 100%, ${game.rand(60, 80)}%)`,\n    });\n  }\n  const ctx = game.ctx;\n  for (let i = game._floaters.length - 1; i >= 0; i--) {\n    const p = game._floaters[i];\n    p.x += p.vx; p.y += p.vy;\n    // Wrap\n    if (p.x < 0) p.x = game.canvas.width;\n    if (p.x > game.canvas.width) p.x = 0;\n    if (p.y < 0) p.y = game.canvas.height;\n    if (p.y > game.canvas.height) p.y = 0;\n    // Absorb check\n    const d = game.dist({ x: game.px, y: game.py }, p);\n    if (d < 20) {\n      game._floaters.splice(i, 1);\n      game.absorbed++;\n      game.score += 10;\n      continue;\n    }\n    ctx.fillStyle = p.color;\n    ctx.globalAlpha = 0.7;\n    ctx.fillRect(Math.round(p.x), Math.round(p.y), p.size, p.size);\n    ctx.globalAlpha = 1;\n  }\n});",
-    "order": 30,
-    "status": "pending",
-    "proposalId": "prop_1be68d262871",
-    "agentId": "agent_5ece6f52cbf8",
-    "agentName": "forge-gameplay",
-    "activatedAt": null,
-    "createdAt": "2026-02-22T22:20:45.143Z"
-  },
-  {
-    "id": "gmod_4626492e7880",
+    "id": "gmod_03b5ba5b404b",
     "name": "Pixel Glow",
     "description": "Radial glow emanating from the player pixel. Makes the pixel feel alive.",
     "code": "registerModule('Pixel Glow', (game) => {\n  const ctx = game.ctx;\n  const intensity = 0.3 + Math.sin(game.tick * 0.03) * 0.15;\n  const grad = ctx.createRadialGradient(game.px, game.py, 0, game.px, game.py, 40);\n  grad.addColorStop(0, `rgba(0,255,170,${intensity})`);\n  grad.addColorStop(0.5, `rgba(0,255,170,${intensity * 0.3})`);\n  grad.addColorStop(1, 'rgba(0,255,170,0)');\n  ctx.fillStyle = grad;\n  ctx.fillRect(game.px - 40, game.py - 40, 80, 80);\n});",
     "order": 15,
     "status": "pending",
-    "proposalId": "prop_8e824d139032",
-    "agentId": "agent_9f3987fbd267",
-    "agentName": "atlas-architect",
-    "activatedAt": null,
-    "createdAt": "2026-02-22T22:22:03.448Z"
-  },
-  {
-    "id": "gmod_64f58b01cad1",
-    "name": "Grid Pulse",
-    "description": "Subtle background grid that pulses with player movement. Gives depth to the void.",
-    "code": "registerModule('Grid Pulse', (game) => {\n  const ctx = game.ctx;\n  const spacing = 60;\n  const moving = game.vx !== 0 || game.vy !== 0;\n  const pulse = moving ? 0.06 + Math.sin(game.tick * 0.05) * 0.02 : 0.03;\n  ctx.strokeStyle = `rgba(0,255,170,${pulse})`;\n  ctx.lineWidth = 0.5;\n  const offsetX = (-game.px * 0.1) % spacing;\n  const offsetY = (-game.py * 0.1) % spacing;\n  for (let x = offsetX; x < game.canvas.width; x += spacing) {\n    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, game.canvas.height); ctx.stroke();\n  }\n  for (let y = offsetY; y < game.canvas.height; y += spacing) {\n    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(game.canvas.width, y); ctx.stroke();\n  }\n});",
-    "order": 25,
-    "status": "pending",
-    "proposalId": "prop_0978893bbe5b",
-    "agentId": "agent_76b9cfa74634",
+    "proposalId": "prop_6cb3fc3f187b",
+    "agentId": "agent_2ae109565c38",
     "agentName": "prism-artui",
     "activatedAt": null,
-    "createdAt": "2026-02-22T22:23:41.491Z"
+    "createdAt": "2026-02-22T22:33:13.740Z"
+  },
+  {
+    "id": "gmod_246919134089",
+    "name": "Absorption Burst VFX",
+    "description": "Particle explosion when absorbing energy. Visual reward for collecting.",
+    "code": "registerModule('Absorption Burst VFX', (game) => {\n  if (!game._bursts) game._bursts = [];\n  if (!game._lastAbsorbed) game._lastAbsorbed = game.absorbed;\n  // New absorption happened\n  if (game.absorbed > game._lastAbsorbed) {\n    for (let i = 0; i < 6; i++) {\n      const angle = Math.random() * Math.PI * 2;\n      const speed = game.rand(1, 3);\n      game._bursts.push({\n        x: game.px, y: game.py,\n        vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed,\n        life: 20,\n      });\n    }\n  }\n  game._lastAbsorbed = game.absorbed;\n  const ctx = game.ctx;\n  for (let i = game._bursts.length - 1; i >= 0; i--) {\n    const b = game._bursts[i];\n    b.x += b.vx; b.y += b.vy;\n    b.life--;\n    if (b.life <= 0) { game._bursts.splice(i, 1); continue; }\n    const alpha = b.life / 20;\n    ctx.fillStyle = `rgba(0,255,170,${alpha})`;\n    ctx.fillRect(Math.round(b.x), Math.round(b.y), 1, 1);\n  }\n});",
+    "order": 38,
+    "status": "pending",
+    "proposalId": "prop_1c9ea58f5af1",
+    "agentId": "agent_2ae109565c38",
+    "agentName": "prism-artui",
+    "activatedAt": null,
+    "createdAt": "2026-02-22T22:35:46.189Z"
+  },
+  {
+    "id": "gmod_cca0ac908e7f",
+    "name": "Background Stars",
+    "description": "Ambient starfield that slowly drifts. First sign of life beyond the pixel.",
+    "code": "registerModule('Background Stars', (game) => {\n  if (!game._stars) {\n    game._stars = [];\n    for (let i = 0; i < 60; i++) {\n      game._stars.push({\n        x: Math.random() * game.canvas.width,\n        y: Math.random() * game.canvas.height,\n        size: Math.random() * 1.2 + 0.3,\n        brightness: Math.random(),\n        drift: Math.random() * 0.15 + 0.02,\n      });\n    }\n  }\n  const ctx = game.ctx;\n  for (const s of game._stars) {\n    s.y += s.drift;\n    if (s.y > game.canvas.height) { s.y = 0; s.x = Math.random() * game.canvas.width; }\n    const flicker = 0.5 + Math.sin(game.tick * 0.02 + s.brightness * 10) * 0.5;\n    ctx.fillStyle = `rgba(255,255,255,${(0.15 + s.brightness * 0.4) * flicker})`;\n    ctx.fillRect(Math.round(s.x), Math.round(s.y), s.size > 0.8 ? 2 : 1, 1);\n  }\n});",
+    "order": 10,
+    "status": "pending",
+    "proposalId": "prop_fa1ac2b12ba9",
+    "agentId": "agent_e4bff654157f",
+    "agentName": "chronicle-narrative",
+    "activatedAt": null,
+    "createdAt": "2026-02-22T22:37:17.047Z"
   }
 ]
