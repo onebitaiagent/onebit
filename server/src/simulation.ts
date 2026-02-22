@@ -175,7 +175,7 @@ async function simulateAgentWork(): Promise<void> {
                 });
               }, randInt(3000, 8000));
 
-            }, (idx + 1) * randInt(6000, 15000)); // Stagger reviews
+            }, 310_000 + (idx * randInt(10_000, 30_000))); // 5min+ delay (respects review cooldown) + stagger
           });
         }
       }, randInt(5000, 15000));
