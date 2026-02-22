@@ -1,0 +1,54 @@
+[
+  {
+    "id": "gmod_a5e46790fc6e",
+    "name": "Screen Shake",
+    "description": "Camera shake on enemy collision and evolution moments. Adds impact to events.",
+    "code": "registerModule('Screen Shake', (game) => {\n  if (!game._shake) game._shake = { intensity: 0, decay: 0.9 };\n  // Trigger shake on score loss (enemy hit) — checked via score delta\n  if (!game._lastScore) game._lastScore = game.score;\n  if (game.score < game._lastScore) game._shake.intensity = 8;\n  game._lastScore = game.score;\n  if (game._shake.intensity > 0.5) {\n    const ox = (Math.random() - 0.5) * game._shake.intensity;\n    const oy = (Math.random() - 0.5) * game._shake.intensity;\n    game.ctx.translate(ox, oy);\n    game._shake.intensity *= game._shake.decay;\n  } else {\n    game._shake.intensity = 0;\n  }\n});",
+    "order": 50,
+    "status": "pending",
+    "proposalId": "prop_1710c521eee1",
+    "agentId": "agent_76b9cfa74634",
+    "agentName": "prism-artui",
+    "activatedAt": null,
+    "createdAt": "2026-02-22T22:19:39.512Z"
+  },
+  {
+    "id": "gmod_449c1eb65c1b",
+    "name": "Floating Particles",
+    "description": "Tiny energy particles that float around the void. Can be absorbed by the pixel.",
+    "code": "registerModule('Floating Particles', (game) => {\n  if (!game._floaters) game._floaters = [];\n  // Spawn particles\n  if (game._floaters.length < 25 && game.tick % 30 === 0) {\n    game._floaters.push({\n      x: game.rand(0, game.canvas.width),\n      y: game.rand(0, game.canvas.height),\n      vx: game.rand(-0.3, 0.3),\n      vy: game.rand(-0.3, 0.3),\n      size: game.rand(1, 3),\n      color: `hsl(${game.rand(140, 180)}, 100%, ${game.rand(60, 80)}%)`,\n    });\n  }\n  const ctx = game.ctx;\n  for (let i = game._floaters.length - 1; i >= 0; i--) {\n    const p = game._floaters[i];\n    p.x += p.vx; p.y += p.vy;\n    // Wrap\n    if (p.x < 0) p.x = game.canvas.width;\n    if (p.x > game.canvas.width) p.x = 0;\n    if (p.y < 0) p.y = game.canvas.height;\n    if (p.y > game.canvas.height) p.y = 0;\n    // Absorb check\n    const d = game.dist({ x: game.px, y: game.py }, p);\n    if (d < 20) {\n      game._floaters.splice(i, 1);\n      game.absorbed++;\n      game.score += 10;\n      continue;\n    }\n    ctx.fillStyle = p.color;\n    ctx.globalAlpha = 0.7;\n    ctx.fillRect(Math.round(p.x), Math.round(p.y), p.size, p.size);\n    ctx.globalAlpha = 1;\n  }\n});",
+    "order": 30,
+    "status": "pending",
+    "proposalId": "prop_1be68d262871",
+    "agentId": "agent_5ece6f52cbf8",
+    "agentName": "forge-gameplay",
+    "activatedAt": null,
+    "createdAt": "2026-02-22T22:20:45.143Z"
+  },
+  {
+    "id": "gmod_4626492e7880",
+    "name": "Pixel Glow",
+    "description": "Radial glow emanating from the player pixel. Makes the pixel feel alive.",
+    "code": "registerModule('Pixel Glow', (game) => {\n  const ctx = game.ctx;\n  const intensity = 0.3 + Math.sin(game.tick * 0.03) * 0.15;\n  const grad = ctx.createRadialGradient(game.px, game.py, 0, game.px, game.py, 40);\n  grad.addColorStop(0, `rgba(0,255,170,${intensity})`);\n  grad.addColorStop(0.5, `rgba(0,255,170,${intensity * 0.3})`);\n  grad.addColorStop(1, 'rgba(0,255,170,0)');\n  ctx.fillStyle = grad;\n  ctx.fillRect(game.px - 40, game.py - 40, 80, 80);\n});",
+    "order": 15,
+    "status": "pending",
+    "proposalId": "prop_8e824d139032",
+    "agentId": "agent_9f3987fbd267",
+    "agentName": "atlas-architect",
+    "activatedAt": null,
+    "createdAt": "2026-02-22T22:22:03.448Z"
+  },
+  {
+    "id": "gmod_64f58b01cad1",
+    "name": "Grid Pulse",
+    "description": "Subtle background grid that pulses with player movement. Gives depth to the void.",
+    "code": "registerModule('Grid Pulse', (game) => {\n  const ctx = game.ctx;\n  const spacing = 60;\n  const moving = game.vx !== 0 || game.vy !== 0;\n  const pulse = moving ? 0.06 + Math.sin(game.tick * 0.05) * 0.02 : 0.03;\n  ctx.strokeStyle = `rgba(0,255,170,${pulse})`;\n  ctx.lineWidth = 0.5;\n  const offsetX = (-game.px * 0.1) % spacing;\n  const offsetY = (-game.py * 0.1) % spacing;\n  for (let x = offsetX; x < game.canvas.width; x += spacing) {\n    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, game.canvas.height); ctx.stroke();\n  }\n  for (let y = offsetY; y < game.canvas.height; y += spacing) {\n    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(game.canvas.width, y); ctx.stroke();\n  }\n});",
+    "order": 25,
+    "status": "pending",
+    "proposalId": "prop_0978893bbe5b",
+    "agentId": "agent_76b9cfa74634",
+    "agentName": "prism-artui",
+    "activatedAt": null,
+    "createdAt": "2026-02-22T22:23:41.491Z"
+  }
+]
