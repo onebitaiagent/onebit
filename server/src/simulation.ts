@@ -276,10 +276,10 @@ export function startSimulation(): void {
     };
     workLoop();
 
-    // Generate mock X posts every 60-120 seconds
+    // Generate mock X posts every 3-5 hours (stays within daily cap)
     const xLoop = () => {
       generateMockXPost();
-      setTimeout(xLoop, randInt(60_000, 120_000));
+      setTimeout(xLoop, randInt(3 * 3600_000, 5 * 3600_000));
     };
     // First X post after 30s
     setTimeout(xLoop, 30_000);
