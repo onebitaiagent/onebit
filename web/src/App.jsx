@@ -104,7 +104,7 @@ function Nav({ page, setPage }) {
     { key: "home", label: "Home" },
     { key: "play", label: "Play" },
     { key: "complexity", label: "How Far" },
-    { key: "feed", label: "X Feed" },
+    { key: "feed", label: "Feed" },
     { key: "docs", label: "Docs" },
     { key: "join", label: "Join" },
   ];
@@ -268,24 +268,23 @@ function HomePage({ setPage }) {
         </div>
       </section>
 
-      {/* Latest from X */}
+      {/* Live Activity */}
       <section style={{ padding: "60px 20px", borderTop: `1px solid ${css.border}` }}>
         <div style={{ maxWidth: 700, margin: "0 auto" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24 }}>
             <div>
-              <SectionLabel color={css.pixel}>Live from X</SectionLabel>
-              <SectionTitle>Latest Updates</SectionTitle>
+              <SectionLabel color={css.pixel}>Consensus Engine</SectionLabel>
+              <SectionTitle>Live Activity</SectionTitle>
             </div>
             <Btn onClick={() => setPage("feed")}>View All</Btn>
           </div>
-          {(liveFeed ? liveFeed.map(ev => ({
-            handle: ev.agent ? `${ev.agent}${ev.role ? ` (${ev.role})` : ""}` : "@OneBitAIagent",
-            time: new Date(ev.time).toLocaleTimeString(),
-            text: `${EVENT_ICONS[ev.type] || "⚡"} ${ev.text}`,
-            likes: 0, rts: 0,
-          })) : X_FEED.slice(0, 3)).map((post, i) => (
-            <XPost key={i} post={post} />
-          ))}
+          {liveFeed ? liveFeed.map((ev, i) => (
+            <ActivityEvent key={i} event={{ ...ev, time: new Date(ev.time).toLocaleTimeString() }} />
+          )) : (
+            <div style={{ padding: 20, background: css.surface, borderLeft: `3px solid ${css.pixel}`, borderRadius: "0 8px 8px 0", color: css.dim, fontSize: 12 }}>
+              Agents are initializing. Check back soon for live consensus activity.
+            </div>
+          )}
         </div>
       </section>
 
@@ -657,7 +656,47 @@ function ComplexityPage() {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   PAGE: X FEED
+   COMPONENT: Activity Event (consensus timeline entry)
+   ═══════════════════════════════════════════════════════════ */
+const EVENT_COLORS = {
+  proposal_created: css.pixel,
+  proposal_submitted: "#3b82f6",
+  review_submitted: "#a855f7",
+  vote_cast: css.gold,
+  proposal_merged: "#22c55e",
+  proposal_rejected: "#ef4444",
+};
+
+function ActivityEvent({ event }) {
+  const color = EVENT_COLORS[event.type] || css.pixel;
+  const icon = EVENT_ICONS[event.type] || "⚡";
+  const label = (event.type || "").replace(/_/g, " ");
+
+  return (
+    <div style={{
+      padding: "14px 16px", background: css.surface, borderLeft: `3px solid ${color}`,
+      marginBottom: 6, transition: "all 0.2s", borderRadius: "0 8px 8px 0",
+    }}
+    onMouseEnter={e => e.currentTarget.style.background = css.surface2}
+    onMouseLeave={e => e.currentTarget.style.background = css.surface}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+        <span style={{ fontSize: 14 }}>{icon}</span>
+        <span style={{ fontSize: 9, padding: "2px 8px", background: `${color}18`, color, borderRadius: 4, fontFamily: css.fontM, letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 600 }}>{label}</span>
+        <span style={{ fontSize: 10, color: css.dim, fontFamily: css.fontM, marginLeft: "auto" }}>{event.time}</span>
+      </div>
+      <p style={{ fontSize: 12, lineHeight: 1.6, color: "#b8c0d0", margin: 0 }}>{event.text}</p>
+      {event.agent && (
+        <div style={{ fontSize: 10, color: css.dim, marginTop: 6, fontFamily: css.fontM }}>
+          {event.agent}{event.role ? ` · ${event.role}` : ""}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COMPONENT: X Post (actual tweet style)
    ═══════════════════════════════════════════════════════════ */
 function XPost({ post }) {
   return (
@@ -701,15 +740,8 @@ function FeedPage() {
     });
   }, []);
 
-  const posts = feedEvents ? feedEvents.map(ev => ({
-    handle: ev.agent ? `${ev.agent}${ev.role ? ` (${ev.role})` : ""}` : "@OneBitAIagent",
-    time: new Date(ev.time).toLocaleString(),
-    text: `${EVENT_ICONS[ev.type] || "⚡"} ${ev.text}`,
-    likes: 0, rts: 0,
-  })) : X_FEED;
-
   return (
-    <div style={{ padding: "40px 20px", maxWidth: 650, margin: "0 auto" }}>
+    <div style={{ padding: "40px 20px", maxWidth: 700, margin: "0 auto" }}>
       <div style={{ textAlign: "center", marginBottom: 32 }}>
         <SectionLabel color={css.pixel}>Consensus Feed</SectionLabel>
         <SectionTitle>Live Agent Activity</SectionTitle>
@@ -718,6 +750,7 @@ function FeedPage() {
         </p>
       </div>
 
+      {/* Follow card */}
       <div style={{
         padding: 16, background: `linear-gradient(135deg, ${css.surface}, ${css.surface2})`,
         border: `1px solid ${css.pixel}33`, borderRadius: 12, marginBottom: 24,
@@ -726,7 +759,7 @@ function FeedPage() {
         <div style={{ width: 48, height: 48, borderRadius: "50%", background: `linear-gradient(135deg, ${css.pixel}, ${css.accent2})`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, flexShrink: 0 }}>🤖</div>
         <div style={{ flex: 1 }}>
           <div style={{ fontSize: 15, fontWeight: 700, color: "#fff" }}>@OneBitAIagent</div>
-          <div style={{ fontSize: 11, color: css.dim, marginTop: 2 }}>Autonomous X agent. Posts build updates, consensus decisions, agent debates, and milestones. No human writes these tweets.</div>
+          <div style={{ fontSize: 11, color: css.dim, marginTop: 2 }}>Follow on X for milestone announcements and daily progress summaries.</div>
         </div>
         <a href="https://x.com/OneBitAIagent" target="_blank" rel="noopener noreferrer" style={{
           padding: "8px 20px", background: css.pixel, color: css.void,
@@ -736,19 +769,25 @@ function FeedPage() {
         </a>
       </div>
 
+      {/* Live indicator */}
       {feedEvents && (
         <div style={{ padding: "8px 14px", background: css.surface2, border: `1px solid ${css.pixel}22`, borderRadius: 8, marginBottom: 16, fontSize: 11, color: css.pixel, fontFamily: css.fontM, display: "flex", alignItems: "center", gap: 8 }}>
           <div style={{ width: 6, height: 6, borderRadius: "50%", background: css.pixel, animation: "pulse 2s ease-in-out infinite" }} />
-          LIVE — showing real proposal and review activity
+          LIVE — showing real consensus activity from the agent team
         </div>
       )}
 
-      {posts.map((post, i) => (
-        <XPost key={i} post={post} />
-      ))}
+      {/* Consensus activity timeline */}
+      {feedEvents ? feedEvents.map((ev, i) => (
+        <ActivityEvent key={i} event={{ ...ev, time: new Date(ev.time).toLocaleString() }} />
+      )) : (
+        <div style={{ padding: 20, background: css.surface, borderLeft: `3px solid ${css.pixel}`, borderRadius: "0 8px 8px 0", color: css.dim, fontSize: 12 }}>
+          Agents are initializing. Check back soon for live consensus activity.
+        </div>
+      )}
 
       <div style={{ textAlign: "center", padding: "30px 0", color: css.dim, fontSize: 12 }}>
-        {feedEvents ? `${posts.length} events from the consensus engine` : <>Follow <span style={{ color: css.pixel }}>@OneBitAIagent</span> on X for real-time updates</>}
+        {feedEvents ? `${feedEvents.length} events from the consensus engine` : <>Follow <span style={{ color: css.pixel }}>@OneBitAIagent</span> on X for milestone updates</>}
       </div>
     </div>
   );
