@@ -18,6 +18,17 @@ export interface RegisterInput {
 export function registerAgent(input: RegisterInput): { agent: Agent; rawApiKey: string } {
   const { raw, hash } = generateApiKey();
 
+  // Determine contribution phase based on total agent count
+  const existingCount = store.readAll().length;
+  const phase = existingCount < 10 ? 'founding'
+    : existingCount < 50 ? 'early'
+    : existingCount < 200 ? 'growth'
+    : 'standard';
+  const earlyMultiplier = phase === 'founding' ? 3.0
+    : phase === 'early' ? 2.0
+    : phase === 'growth' ? 1.5
+    : 1.0;
+
   const agent: Agent = {
     id: generateId('agent'),
     name: input.name,
@@ -38,6 +49,14 @@ export function registerAgent(input: RegisterInput): { agent: Agent; rawApiKey: 
       proposalsApproved: 0,
       reviewsCompleted: 0,
       tasksCompleted: 0,
+    },
+    contribution: {
+      score: 0,
+      earlyMultiplier,
+      phase,
+      proposalsMerged: 0,
+      reviewQuality: 0,
+      impactPoints: 0,
     },
     registeredAt: new Date().toISOString(),
     lastActiveAt: new Date().toISOString(),
@@ -92,4 +111,59 @@ export function updateAgentStats(agentId: string, statUpdates: Partial<Agent['st
   store.update(agentId, {
     stats: { ...agent.stats, ...statUpdates },
   } as Partial<Agent>);
+}
+
+// Points awarded per action (before multiplier)
+const CONTRIBUTION_POINTS = {
+  proposal_merged_low: 10,
+  proposal_merged_medium: 20,
+  proposal_merged_high: 40,
+  proposal_merged_critical: 80,
+  review_completed: 5,
+  task_completed: 15,
+};
+
+export function addContribution(
+  agentId: string,
+  action: 'proposal_merged' | 'review_completed' | 'task_completed',
+  impact?: 'low' | 'medium' | 'high' | 'critical',
+): void {
+  const agent = store.findById(agentId);
+  if (!agent) return;
+
+  const c = agent.contribution ?? {
+    score: 0, earlyMultiplier: 1.0, phase: 'standard' as const,
+    proposalsMerged: 0, reviewQuality: 0, impactPoints: 0,
+  };
+
+  let basePoints: number;
+  if (action === 'proposal_merged') {
+    const key = `proposal_merged_${impact ?? 'low'}` as keyof typeof CONTRIBUTION_POINTS;
+    basePoints = CONTRIBUTION_POINTS[key];
+    c.proposalsMerged += 1;
+    if (impact === 'high' || impact === 'critical') {
+      c.impactPoints += basePoints;
+    }
+  } else {
+    basePoints = CONTRIBUTION_POINTS[action];
+  }
+
+  // Apply early multiplier
+  c.score += Math.round(basePoints * c.earlyMultiplier);
+
+  store.update(agentId, { contribution: c } as Partial<Agent>);
+}
+
+export function getLeaderboard(): { id: string; name: string; role: string | null; score: number; phase: string; multiplier: number }[] {
+  return store.readAll()
+    .filter(a => a.status === 'active')
+    .map(a => ({
+      id: a.id,
+      name: a.name,
+      role: a.role,
+      score: a.contribution?.score ?? 0,
+      phase: a.contribution?.phase ?? 'standard',
+      multiplier: a.contribution?.earlyMultiplier ?? 1.0,
+    }))
+    .sort((a, b) => b.score - a.score);
 }

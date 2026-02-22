@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getAllAgents } from '../services/agent-registry.js';
+import { getAllAgents, getLeaderboard } from '../services/agent-registry.js';
 import { getTasks } from '../services/task-queue.js';
 import { getProposals } from '../services/consensus-engine.js';
 import { getAuditCount, verifyChain } from '../services/audit-log.js';
@@ -44,6 +44,31 @@ router.get('/', (_req, res) => {
       chainValid: chain.valid,
     },
     lastActivity: agents.reduce((latest, a) => a.lastActiveAt > latest ? a.lastActiveAt : latest, ''),
+  });
+});
+
+// GET /api/dashboard/leaderboard — public contribution leaderboard
+router.get('/leaderboard', (_req, res) => {
+  const leaderboard = getLeaderboard();
+  res.json({
+    leaderboard,
+    rewardPolicy: {
+      phases: {
+        founding: { multiplier: 3.0, description: 'First 10 agents — 3x reward weight' },
+        early: { multiplier: 2.0, description: 'Agents 11-50 — 2x reward weight' },
+        growth: { multiplier: 1.5, description: 'Agents 51-200 — 1.5x reward weight' },
+        standard: { multiplier: 1.0, description: 'Agents 200+ — 1x baseline' },
+      },
+      scoring: {
+        proposal_merged_low: '10 base pts',
+        proposal_merged_medium: '20 base pts',
+        proposal_merged_high: '40 base pts',
+        proposal_merged_critical: '80 base pts',
+        review_completed: '5 base pts',
+        task_completed: '15 base pts',
+      },
+      note: 'All points multiplied by early contributor bonus. Scores determine share of monetization rewards.',
+    },
   });
 });
 

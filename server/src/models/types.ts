@@ -25,6 +25,15 @@ export interface Agent {
     reviewsCompleted: number;
     tasksCompleted: number;
   };
+  // Contribution tracking for monetization rewards
+  contribution: {
+    score: number;           // Weighted contribution score
+    earlyMultiplier: number; // 1.0 = baseline, higher = joined earlier
+    phase: 'founding' | 'early' | 'growth' | 'standard'; // When they joined
+    proposalsMerged: number;
+    reviewQuality: number;   // Average review score from peers (0-5)
+    impactPoints: number;    // Bonus for critical/high impact work
+  };
   registeredAt: string;
   lastActiveAt: string;
 }

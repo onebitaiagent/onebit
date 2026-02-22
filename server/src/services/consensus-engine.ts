@@ -4,7 +4,7 @@ import { generateId } from '../utils/crypto.js';
 import { appendAudit } from './audit-log.js';
 import { messageBus } from './message-bus.js';
 import { scanProposal } from './security-scanner.js';
-import { getAllAgents, updateAgentStats } from './agent-registry.js';
+import { getAllAgents, updateAgentStats, addContribution } from './agent-registry.js';
 import { config } from '../config.js';
 
 const store = new JsonStore<Proposal>('proposals.json');
@@ -372,6 +372,11 @@ export function castVote(
 
     if (finalState === 'MERGED') {
       appendAudit('consensus_engine', 'merge', proposalId, {});
+      // Award contribution points (auto-merged low/medium proposals)
+      addContribution(proposal.agent, 'proposal_merged', proposal.impact);
+      for (const review of updatedVotes.length > 0 ? proposal.reviews : []) {
+        addContribution(review.agentId, 'review_completed');
+      }
       messageBus.send('consensus_engine', 'broadcast', 'system', {
         event: 'proposal_merged',
         proposalId,
@@ -400,6 +405,14 @@ export function mergeProposal(proposalId: string): { proposal: Proposal | null; 
 
   appendAudit('human_overseer', 'human_approval', proposalId, {});
   appendAudit('consensus_engine', 'merge', proposalId, {});
+
+  // Award contribution points to proposal author
+  addContribution(proposal.agent, 'proposal_merged', proposal.impact);
+
+  // Award contribution points to reviewers
+  for (const review of proposal.reviews) {
+    addContribution(review.agentId, 'review_completed');
+  }
 
   messageBus.send('consensus_engine', 'broadcast', 'system', {
     event: 'proposal_merged',
