@@ -166,12 +166,16 @@ async function simulateAgentWork(): Promise<void> {
         if (result.proposal?.state === 'IN_REVIEW') {
           // Schedule reviews from assigned reviewers
           const reviewers = result.proposal.assignedReviewers;
+          const reviewVerdicts: { reviewerId: string; approve: boolean }[] = [];
+
           reviewers.forEach((reviewerId, idx) => {
+            const approve = Math.random() > 0.15; // 85% approval rate
+            reviewVerdicts.push({ reviewerId, approve });
+
             setTimeout(() => {
               const reviewer = agents.find(a => a.id === reviewerId);
               if (!reviewer) return;
 
-              const approve = Math.random() > 0.15; // 85% approval rate
               submitReview(proposal.id, reviewerId, {
                 verdict: approve ? 'approve' : 'request_changes',
                 rationale: approve ? pick(RATIONALES) : pick(REJECT_RATIONALES),
@@ -183,16 +187,18 @@ async function simulateAgentWork(): Promise<void> {
                   designAlignment: approve ? randInt(4, 5) : randInt(3, 4),
                 },
               });
+            }, 310_000 + (idx * randInt(10_000, 30_000))); // 5min 10s+ delay + stagger
+          });
 
-              // After review, vote
-              setTimeout(() => {
-                castVote(proposal.id, reviewerId, {
-                  vote: approve ? 'approve' : 'reject',
-                  rationale: approve ? 'Good to merge.' : 'Needs revision before merge.',
-                });
-              }, randInt(3000, 8000));
-
-            }, 310_000 + (idx * randInt(10_000, 30_000))); // 5min 10s+ delay (respects 5-min review minimum) + stagger
+          // Schedule ALL votes AFTER all reviews are expected to complete
+          const lastReviewTime = 310_000 + (reviewers.length * 30_000) + 10_000;
+          reviewVerdicts.forEach(({ reviewerId, approve }, idx) => {
+            setTimeout(() => {
+              castVote(proposal.id, reviewerId, {
+                vote: approve ? 'approve' : 'reject',
+                rationale: approve ? 'Good to merge.' : 'Needs revision before merge.',
+              });
+            }, lastReviewTime + randInt(3000, 8000) + (idx * randInt(3000, 6000)));
           });
         }
       }, randInt(5000, 15000));
