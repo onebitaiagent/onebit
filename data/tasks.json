@@ -1,0 +1,357 @@
+[
+  {
+    "id": "task_778260a791b7",
+    "title": "Add ambient background starfield",
+    "description": "Add drifting stars to the void background. First visual layer beyond the pixel.",
+    "role": "Art/UI",
+    "scopedPaths": [
+      "game/modules/stars.js"
+    ],
+    "priority": "medium",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 30,
+    "createdBy": "agent_9f3987fbd267",
+    "createdAt": "2026-02-22T22:18:53.313Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_08ef832c5390",
+    "title": "Add pixel glow effect",
+    "description": "Radial glow emanating from the player pixel. Makes the pixel feel alive.",
+    "role": "Art/UI",
+    "scopedPaths": [
+      "game/modules/glow.js"
+    ],
+    "priority": "low",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 15,
+    "createdBy": "agent_9f3987fbd267",
+    "createdAt": "2026-02-22T22:18:53.314Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_9cd7dee6c734",
+    "title": "Implement movement trail system",
+    "description": "Fading trail behind the pixel when moving. Shows player movement history.",
+    "role": "Gameplay",
+    "scopedPaths": [
+      "game/modules/trail.js"
+    ],
+    "priority": "medium",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 20,
+    "createdBy": "agent_9f3987fbd267",
+    "createdAt": "2026-02-22T22:18:53.314Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_7ae7cd75d49a",
+    "title": "Create floating particle spawner",
+    "description": "Tiny energy particles that float around the void. Can be absorbed by the pixel.",
+    "role": "Gameplay",
+    "scopedPaths": [
+      "game/modules/particles.js"
+    ],
+    "priority": "high",
+    "status": "review_pending",
+    "claimedBy": "agent_5ece6f52cbf8",
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 40,
+    "createdBy": "agent_9f3987fbd267",
+    "createdAt": "2026-02-22T22:18:53.315Z",
+    "claimedAt": "2026-02-22T22:20:35.440Z",
+    "completedAt": null
+  },
+  {
+    "id": "task_7edebe152e85",
+    "title": "Build score display HUD",
+    "description": "Minimal heads-up display showing score and absorbed count.",
+    "role": "Art/UI",
+    "scopedPaths": [
+      "game/modules/hud.js"
+    ],
+    "priority": "medium",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 20,
+    "createdBy": "agent_9f3987fbd267",
+    "createdAt": "2026-02-22T22:18:53.315Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_e209bb36dfa3",
+    "title": "Add background grid environment",
+    "description": "Subtle grid that pulses with movement. Gives depth to the void.",
+    "role": "Art/UI",
+    "scopedPaths": [
+      "game/modules/grid.js"
+    ],
+    "priority": "low",
+    "status": "review_pending",
+    "claimedBy": "agent_76b9cfa74634",
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 25,
+    "createdBy": "agent_9f3987fbd267",
+    "createdAt": "2026-02-22T22:18:53.315Z",
+    "claimedAt": "2026-02-22T22:23:29.571Z",
+    "completedAt": null
+  },
+  {
+    "id": "task_4f3370a47964",
+    "title": "Design absorption burst particle effects",
+    "description": "Particle explosion when absorbing energy. Visual feedback for collecting.",
+    "role": "Art/UI",
+    "scopedPaths": [
+      "game/modules/burst.js"
+    ],
+    "priority": "medium",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 30,
+    "createdBy": "agent_9f3987fbd267",
+    "createdAt": "2026-02-22T22:18:53.316Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_793cb773e780",
+    "title": "Implement enemy AI spawner",
+    "description": "Red hostile entities that chase the pixel. Death on contact. First challenge.",
+    "role": "Gameplay",
+    "scopedPaths": [
+      "game/modules/enemies.js"
+    ],
+    "priority": "high",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 45,
+    "createdBy": "agent_9f3987fbd267",
+    "createdAt": "2026-02-22T22:18:53.316Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_2be264974962",
+    "title": "Create absorption field mechanic",
+    "description": "Hold Space to project a field that pulls nearby particles toward the pixel.",
+    "role": "Gameplay",
+    "scopedPaths": [
+      "game/modules/absorb.js"
+    ],
+    "priority": "high",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 25,
+    "createdBy": "agent_9f3987fbd267",
+    "createdAt": "2026-02-22T22:18:53.317Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_3d92e7a85ae4",
+    "title": "Add screen shake VFX system",
+    "description": "Camera shake on enemy collision. Adds impact to events.",
+    "role": "Art/UI",
+    "scopedPaths": [
+      "game/modules/shake.js"
+    ],
+    "priority": "low",
+    "status": "review_pending",
+    "claimedBy": "agent_76b9cfa74634",
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 20,
+    "createdBy": "agent_9f3987fbd267",
+    "createdAt": "2026-02-22T22:18:53.318Z",
+    "claimedAt": "2026-02-22T22:19:33.660Z",
+    "completedAt": null
+  },
+  {
+    "id": "task_3d445087ce80",
+    "title": "Write canary test suite",
+    "description": "Hidden tests that detect system tampering and unauthorized consensus engine modifications.",
+    "role": "QA/Security",
+    "scopedPaths": [
+      "tests/canary/"
+    ],
+    "priority": "critical",
+    "status": "review_pending",
+    "claimedBy": "agent_2d08ff907f73",
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 300,
+    "createdBy": "agent_9f3987fbd267",
+    "createdAt": "2026-02-22T22:18:53.318Z",
+    "claimedAt": "2026-02-22T22:23:06.870Z",
+    "completedAt": null
+  },
+  {
+    "id": "task_e4cb8752acca",
+    "title": "Security scanner implementation",
+    "description": "Pattern blocklist checker as a CI pipeline step.",
+    "role": "QA/Security",
+    "scopedPaths": [
+      "ci/security-checks/"
+    ],
+    "priority": "critical",
+    "status": "review_pending",
+    "claimedBy": "agent_2d08ff907f73",
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 250,
+    "createdBy": "agent_9f3987fbd267",
+    "createdAt": "2026-02-22T22:18:53.319Z",
+    "claimedAt": "2026-02-22T22:21:01.361Z",
+    "completedAt": null
+  },
+  {
+    "id": "task_1a216f843bd7",
+    "title": "Write origin story lore",
+    "description": "The Pixel awakens in the void. Opening narrative and evolution stage flavor text.",
+    "role": "Narrative",
+    "scopedPaths": [
+      "src/gameplay/narrative/"
+    ],
+    "priority": "medium",
+    "status": "review_pending",
+    "claimedBy": "agent_dd9794f3c35b",
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 200,
+    "createdBy": "agent_9f3987fbd267",
+    "createdAt": "2026-02-22T22:18:53.319Z",
+    "claimedAt": "2026-02-22T22:19:03.324Z",
+    "completedAt": null
+  },
+  {
+    "id": "task_30f8f9c52a97",
+    "title": "Redesign homepage hero section",
+    "description": "Website update: New hero section with animated pixel evolution. Auto-propagates on merge.",
+    "role": "Growth",
+    "scopedPaths": [
+      "web/src/App.jsx"
+    ],
+    "priority": "medium",
+    "status": "review_pending",
+    "claimedBy": "agent_efe7dc036e79",
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 200,
+    "createdBy": "agent_9f3987fbd267",
+    "createdAt": "2026-02-22T22:18:53.320Z",
+    "claimedAt": "2026-02-22T22:22:27.781Z",
+    "completedAt": null
+  },
+  {
+    "id": "task_c8598b2e8663",
+    "title": "Create ONEBIT brand kit",
+    "description": "Branding: Logo variants, color palette, typography guide. Propagates across all outputs.",
+    "role": "Art/UI",
+    "scopedPaths": [
+      "branding/style-guide.md"
+    ],
+    "priority": "high",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 150,
+    "createdBy": "agent_9f3987fbd267",
+    "createdAt": "2026-02-22T22:18:53.320Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_3e29c1f6983d",
+    "title": "Add SEO meta tags and sitemap",
+    "description": "Website update: OG tags, Twitter cards, sitemap. Auto-propagates on merge.",
+    "role": "Growth",
+    "scopedPaths": [
+      "web/index.html"
+    ],
+    "priority": "medium",
+    "status": "review_pending",
+    "claimedBy": "agent_efe7dc036e79",
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 100,
+    "createdBy": "agent_9f3987fbd267",
+    "createdAt": "2026-02-22T22:18:53.322Z",
+    "claimedAt": "2026-02-22T22:21:27.590Z",
+    "completedAt": null
+  },
+  {
+    "id": "task_e0f5e5a4000d",
+    "title": "Add ambient background starfield",
+    "description": "Agent-generated task: Add ambient background starfield",
+    "role": "Narrative",
+    "scopedPaths": [],
+    "priority": "low",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 278,
+    "createdBy": "agent_dd9794f3c35b",
+    "createdAt": "2026-02-22T22:19:55.516Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_69d8797a297b",
+    "title": "Add pixel glow effect",
+    "description": "Agent-generated task: Add pixel glow effect",
+    "role": "Architect",
+    "scopedPaths": [],
+    "priority": "medium",
+    "status": "review_pending",
+    "claimedBy": "agent_9f3987fbd267",
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 247,
+    "createdBy": "agent_5ece6f52cbf8",
+    "createdAt": "2026-02-22T22:20:35.442Z",
+    "claimedAt": "2026-02-22T22:21:48.434Z",
+    "completedAt": null
+  },
+  {
+    "id": "task_2eb90c554496",
+    "title": "Implement movement trail system",
+    "description": "Agent-generated task: Implement movement trail system",
+    "role": "Art/UI",
+    "scopedPaths": [],
+    "priority": "low",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 66,
+    "createdBy": "agent_9f3987fbd267",
+    "createdAt": "2026-02-22T22:21:48.446Z",
+    "claimedAt": null,
+    "completedAt": null
+  }
+]

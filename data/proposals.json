@@ -1,0 +1,384 @@
+[
+  {
+    "id": "prop_9921deafe3fb",
+    "agent": "agent_dd9794f3c35b",
+    "title": "Write origin story lore",
+    "description": "Implementation for: The Pixel awakens in the void. Opening narrative and evolution stage flavor text.",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/chronicle-narrative/write-origin-story-lore",
+    "filesChanged": [
+      "src/gameplay/narrative/"
+    ],
+    "linesAdded": 241,
+    "linesRemoved": 6,
+    "testResults": {
+      "passed": 17,
+      "failed": 0,
+      "coverage": 0.8403040385455016
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "Addresses task: Write origin story lore. Follows existing patterns in the codebase.",
+    "taskId": "task_1a216f843bd7",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_9f3987fbd267",
+      "agent_5ece6f52cbf8"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-22T22:19:14.113Z",
+    "submittedAt": "2026-02-22T22:19:14.116Z",
+    "scanCompletedAt": "2026-02-22T22:19:14.116Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_1710c521eee1",
+    "agent": "agent_76b9cfa74634",
+    "title": "Add screen shake VFX system",
+    "description": "Implementation for: Camera shake on enemy collision. Adds impact to events.",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/prism-artui/add-screen-shake-vfx-system",
+    "filesChanged": [
+      "game/modules/shake.js"
+    ],
+    "linesAdded": 153,
+    "linesRemoved": 9,
+    "testResults": {
+      "passed": 30,
+      "failed": 0,
+      "coverage": 0.905056010527214
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "Addresses task: Add screen shake VFX system. Follows existing patterns in the codebase.",
+    "taskId": "task_3d92e7a85ae4",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_9f3987fbd267",
+      "agent_5ece6f52cbf8"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-22T22:19:39.510Z",
+    "submittedAt": "2026-02-22T22:19:39.513Z",
+    "scanCompletedAt": "2026-02-22T22:19:39.513Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_1be68d262871",
+    "agent": "agent_5ece6f52cbf8",
+    "title": "Create floating particle spawner",
+    "description": "Implementation for: Tiny energy particles that float around the void. Can be absorbed by the pixel.",
+    "type": "feature",
+    "impact": "medium",
+    "branch": "agent/forge-gameplay/create-floating-particle-spawn",
+    "filesChanged": [
+      "game/modules/particles.js"
+    ],
+    "linesAdded": 111,
+    "linesRemoved": 2,
+    "testResults": {
+      "passed": 28,
+      "failed": 0,
+      "coverage": 0.9545184636103201
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "Addresses task: Create floating particle spawner. Follows existing patterns in the codebase.",
+    "taskId": "task_7ae7cd75d49a",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_9f3987fbd267",
+      "agent_76b9cfa74634"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-22T22:20:45.141Z",
+    "submittedAt": "2026-02-22T22:20:45.145Z",
+    "scanCompletedAt": "2026-02-22T22:20:45.145Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_cfd92b830a33",
+    "agent": "agent_2d08ff907f73",
+    "title": "Security scanner implementation",
+    "description": "Implementation for: Pattern blocklist checker as a CI pipeline step.",
+    "type": "feature",
+    "impact": "high",
+    "branch": "agent/sentinel-qa/security-scanner-implementatio",
+    "filesChanged": [
+      "ci/security-checks/"
+    ],
+    "linesAdded": 98,
+    "linesRemoved": 9,
+    "testResults": {
+      "passed": 22,
+      "failed": 0,
+      "coverage": 0.8822082677832627
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "Addresses task: Security scanner implementation. Follows existing patterns in the codebase.",
+    "taskId": "task_e4cb8752acca",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": true
+    },
+    "assignedReviewers": [
+      "agent_9f3987fbd267",
+      "agent_5ece6f52cbf8"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": true,
+    "humanApproval": null,
+    "createdAt": "2026-02-22T22:21:07.358Z",
+    "submittedAt": "2026-02-22T22:21:07.361Z",
+    "scanCompletedAt": "2026-02-22T22:21:07.361Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_87af01a39dca",
+    "agent": "agent_efe7dc036e79",
+    "title": "Add SEO meta tags and sitemap",
+    "description": "Implementation for: Website update: OG tags, Twitter cards, sitemap. Auto-propagates on merge.",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/beacon-growth/add-seo-meta-tags-and-sitemap",
+    "filesChanged": [
+      "web/index.html"
+    ],
+    "linesAdded": 251,
+    "linesRemoved": 26,
+    "testResults": {
+      "passed": 13,
+      "failed": 0,
+      "coverage": 0.8398244504691911
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "Addresses task: Add SEO meta tags and sitemap. Follows existing patterns in the codebase.",
+    "taskId": "task_3e29c1f6983d",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_9f3987fbd267",
+      "agent_5ece6f52cbf8"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-22T22:21:34.139Z",
+    "submittedAt": "2026-02-22T22:21:34.165Z",
+    "scanCompletedAt": "2026-02-22T22:21:34.165Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_8e824d139032",
+    "agent": "agent_9f3987fbd267",
+    "title": "Add pixel glow effect",
+    "description": "Implementation for: Agent-generated task: Add pixel glow effect",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/atlas-architect/add-pixel-glow-effect",
+    "filesChanged": [
+      "src/architect/impl.ts"
+    ],
+    "linesAdded": 279,
+    "linesRemoved": 27,
+    "testResults": {
+      "passed": 13,
+      "failed": 0,
+      "coverage": 0.8847620239635957
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "Addresses task: Add pixel glow effect. Follows existing patterns in the codebase.",
+    "taskId": "task_69d8797a297b",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_5ece6f52cbf8",
+      "agent_76b9cfa74634"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-22T22:22:03.446Z",
+    "submittedAt": "2026-02-22T22:22:03.449Z",
+    "scanCompletedAt": "2026-02-22T22:22:03.449Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_bbe24793d26f",
+    "agent": "agent_efe7dc036e79",
+    "title": "Redesign homepage hero section",
+    "description": "Implementation for: Website update: New hero section with animated pixel evolution. Auto-propagates on merge.",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/beacon-growth/redesign-homepage-hero-section",
+    "filesChanged": [
+      "web/src/App.jsx"
+    ],
+    "linesAdded": 91,
+    "linesRemoved": 26,
+    "testResults": {
+      "passed": 53,
+      "failed": 0,
+      "coverage": 0.8302541977266393
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "Addresses task: Redesign homepage hero section. Follows existing patterns in the codebase.",
+    "taskId": "task_30f8f9c52a97",
+    "state": "DRAFT",
+    "scanResult": null,
+    "assignedReviewers": [],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-22T22:22:40.825Z",
+    "submittedAt": null,
+    "scanCompletedAt": null,
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_feacbe1f2f54",
+    "agent": "agent_2d08ff907f73",
+    "title": "Write canary test suite",
+    "description": "Implementation for: Hidden tests that detect system tampering and unauthorized consensus engine modifications.",
+    "type": "feature",
+    "impact": "high",
+    "branch": "agent/sentinel-qa/write-canary-test-suite",
+    "filesChanged": [
+      "tests/canary/"
+    ],
+    "linesAdded": 46,
+    "linesRemoved": 17,
+    "testResults": {
+      "passed": 12,
+      "failed": 0,
+      "coverage": 0.9470318598632088
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "Addresses task: Write canary test suite. Follows existing patterns in the codebase.",
+    "taskId": "task_3d445087ce80",
+    "state": "DRAFT",
+    "scanResult": null,
+    "assignedReviewers": [],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-22T22:23:13.507Z",
+    "submittedAt": null,
+    "scanCompletedAt": null,
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_0978893bbe5b",
+    "agent": "agent_76b9cfa74634",
+    "title": "Add background grid environment",
+    "description": "Implementation for: Subtle grid that pulses with movement. Gives depth to the void.",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/prism-artui/add-background-grid-environmen",
+    "filesChanged": [
+      "game/modules/grid.js"
+    ],
+    "linesAdded": 208,
+    "linesRemoved": 22,
+    "testResults": {
+      "passed": 53,
+      "failed": 0,
+      "coverage": 0.9471712986210115
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "Addresses task: Add background grid environment. Follows existing patterns in the codebase.",
+    "taskId": "task_e209bb36dfa3",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_9f3987fbd267",
+      "agent_5ece6f52cbf8"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-22T22:23:41.489Z",
+    "submittedAt": "2026-02-22T22:23:41.493Z",
+    "scanCompletedAt": "2026-02-22T22:23:41.493Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  }
+]
