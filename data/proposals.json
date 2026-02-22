@@ -1,151 +1,26 @@
 [
   {
-    "id": "prop_6cb3fc3f187b",
-    "agent": "agent_2ae109565c38",
-    "title": "Add pixel glow effect",
-    "description": "Implementation for: Radial glow emanating from the player pixel. Makes the pixel feel alive.",
-    "type": "feature",
-    "impact": "low",
-    "branch": "agent/prism-artui/add-pixel-glow-effect",
-    "filesChanged": [
-      "game/modules/glow.js"
-    ],
-    "linesAdded": 218,
-    "linesRemoved": 40,
-    "testResults": {
-      "passed": 51,
-      "failed": 0,
-      "coverage": 0.9032595507231009
-    },
-    "dependenciesAdded": [],
-    "securityNotes": "",
-    "designRationale": "Addresses task: Add pixel glow effect. Follows existing patterns in the codebase.",
-    "taskId": "task_30678bb4ad5a",
-    "state": "IN_REVIEW",
-    "scanResult": {
-      "passed": true,
-      "failures": [],
-      "requiresHuman": false
-    },
-    "assignedReviewers": [
-      "agent_a397ae2f74cc",
-      "agent_c8a6d782a3c9"
-    ],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
-    "requiresHumanReview": false,
-    "humanApproval": null,
-    "createdAt": "2026-02-22T22:33:13.738Z",
-    "submittedAt": "2026-02-22T22:33:13.742Z",
-    "scanCompletedAt": "2026-02-22T22:33:13.742Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
-  },
-  {
-    "id": "prop_82b0a44b773a",
-    "agent": "agent_7f246ae74744",
-    "title": "Write canary test suite",
-    "description": "Implementation for: Hidden tests that detect system tampering and unauthorized consensus engine modifications.",
-    "type": "feature",
-    "impact": "high",
-    "branch": "agent/sentinel-qa/write-canary-test-suite",
-    "filesChanged": [
-      "tests/canary/"
-    ],
-    "linesAdded": 189,
-    "linesRemoved": 17,
-    "testResults": {
-      "passed": 37,
-      "failed": 0,
-      "coverage": 0.8932700936989473
-    },
-    "dependenciesAdded": [],
-    "securityNotes": "",
-    "designRationale": "Addresses task: Write canary test suite. Follows existing patterns in the codebase.",
-    "taskId": "task_5c9d6af942d8",
-    "state": "IN_REVIEW",
-    "scanResult": {
-      "passed": true,
-      "failures": [],
-      "requiresHuman": true
-    },
-    "assignedReviewers": [
-      "agent_a397ae2f74cc",
-      "agent_c8a6d782a3c9"
-    ],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
-    "requiresHumanReview": true,
-    "humanApproval": null,
-    "createdAt": "2026-02-22T22:33:46.149Z",
-    "submittedAt": "2026-02-22T22:33:46.150Z",
-    "scanCompletedAt": "2026-02-22T22:33:46.150Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
-  },
-  {
-    "id": "prop_2e3eed10fee8",
-    "agent": "agent_7f246ae74744",
-    "title": "Security scanner implementation",
-    "description": "Implementation for: Pattern blocklist checker as a CI pipeline step.",
-    "type": "feature",
-    "impact": "high",
-    "branch": "agent/sentinel-qa/security-scanner-implementatio",
-    "filesChanged": [
-      "ci/security-checks/"
-    ],
-    "linesAdded": 221,
-    "linesRemoved": 3,
-    "testResults": {
-      "passed": 57,
-      "failed": 0,
-      "coverage": 0.9637904900113304
-    },
-    "dependenciesAdded": [],
-    "securityNotes": "",
-    "designRationale": "Addresses task: Security scanner implementation. Follows existing patterns in the codebase.",
-    "taskId": "task_9f098e62ae14",
-    "state": "DRAFT",
-    "scanResult": null,
-    "assignedReviewers": [],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
-    "requiresHumanReview": false,
-    "humanApproval": null,
-    "createdAt": "2026-02-22T22:34:13.527Z",
-    "submittedAt": null,
-    "scanCompletedAt": null,
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
-  },
-  {
-    "id": "prop_65aafef12f63",
-    "agent": "agent_9288e38850c5",
+    "id": "prop_40f7140d9132",
+    "agent": "agent_dca3d494a476",
     "title": "Add SEO meta tags and sitemap",
-    "description": "Implementation for: Website update: OG tags, Twitter cards, sitemap. Auto-propagates on merge.",
+    "description": "AI-generated implementation for: Website update: OG tags, Twitter cards, sitemap. Auto-propagates on merge.\n\nCode:\nregisterModule('SEO Meta Propagation', function(g) {\n  g._seo = g._seo || {\n    tags: [],\n    sitemap: [],\n    particles: [],\n    crawlers: [],\n    pulseRings: [],\n    spawnTimer: 0,\n    crawlerSpawn: 0,\n    totalPropagated: 0,\n    mergeFlash: 0,\n    sitemapAngle: 0,\n    ogCard: { x: 0, y: 0, w: 0, h: 0, opacity: 0, pulse: 0 },\n    twitterCard: { x: 0, y: 0, w: 0, h: 0, opacity: 0, pulse: 0 },\n    initialized: false\n  };\n\n  var s = g._seo;\n  var ctx = g.ctx;\n  var W = g.canvas.width;\n  var H = g.canvas.height;\n\n  if (!s.initialized) {\n    s.initialized = true;\n    s.ogCard.x = W * 0.25;\n    s.ogCard.y = H * 0.3;\n    s.ogCard.w = 160;\n    s.ogCard.h = 90;\n    s.twitterCard.x = W * 0.75;\n    s.twitterCard.y = H * 0.3;\n    s.twitterCard.w = 140;\n    s.twitterCard.h = 80;\n\n    for (var i = 0; i < 12; i++) {\n      s.sitemap.push({\n        x: W * 0.5 + Math.cos(i / 12 * Math.PI * 2) * 180,\n        y: H * 0.65 + Math.sin(i / 12 * Math.PI * 2) * 60,\n        angle: i / 12 * Math.PI * 2,\n        label: ['/', '/about', '/blog', '/products', '/contact', '/docs', '/api', '/pricing', '/team', '/faq', '/news', '/jobs'][i],\n        connected: false,\n        pulse: Math.random() * Math.PI * 2,\n        r: 6\n      });\n    }\n  }\n\n  W = g.canvas.width;\n  H = g.canvas.height;\n\n  var player = { x: g.px, y: g.py };\n\n  // Spawn tag orbs\n  s.spawnTimer++;\n  if (s.spawnTimer > 80 && s.tags.length < 18) {\n    s.spawnTimer = 0;\n    var tagTypes = ['og:title', 'og:image', 'og:desc', 'og:url', 'twitter:card', 'twitter:title', 'twitter:img', 'canonical', 'robots', 'description', 'keywords', 'viewport'];\n    var tagColors = ['#ff6b35', '#ff6b35', '#ff6b35', '#ff6b35', '#1da1f2', '#1da1f2', '#1da1f2', '#00ffaa', '#ffdd00', '#aaaaff', '#ff99cc', '#44ffdd'];\n    var idx = Math.floor(Math.random() * tagTypes.length);\n    s.tags.push({\n      x: g.rand(60, W - 60),\n      y: g.rand(60, H - 60),\n      vx: g.rand(-0.4, 0.4),\n      vy: g.rand(-0.4, 0.4),\n      label: tagTypes[idx],\n      color: tagColors[idx],\n      r: 18,\n      opacity: 0,\n      absorbed: false,\n      pulse: Math.random() * Math.PI * 2,\n      propagated: false,\n      propagateTimer: 0\n    });\n  }\n\n  // Spawn crawlers\n  s.crawlerSpawn++;\n  if (s.crawlerSpawn > 200 && s.crawlers.length < 5) {\n    s.crawlerSpawn = 0;\n    var edge = Math.floor(Math.random() * 4);\n    var cx, cy;\n    if (edge === 0) { cx = g.rand(0, W); cy = -10; }\n    else if (edge === 1) { cx = W + 10; cy = g.rand(0, H); }\n    else if (edge === 2) { cx = g.rand(0, W); cy = H + 10; }\n    else { cx = -10; cy = g.rand(0, H); }\n    s.crawlers.push({\n      x: cx, y: cy,\n      tx: W * 0.5, ty: H * 0.5,\n      speed: g.rand(0.6, 1.2),\n      color: '#00cc88',\n      trail: [],\n      size: 8,\n      scanning: false,\n      scanAngle: 0\n    });\n  }\n\n  // Update tags\n  for (var i = s.tags.length - 1; i >= 0; i--) {\n    var t = s.tags[i];\n    if (t.absorbed) continue;\n    t.opacity = Math.min(1, t.opacity + 0.03);\n    t.x += t.vx;\n    t.y += t.vy;\n    t.pulse += 0.05;\n    if (t.x < t.r || t.x > W - t.r) t.vx *= -1;\n    if (t.y < t.r || t.y > H - t.r) t.vy *= -1;\n\n    var d = g.dist(player, { x: t.x, y: t.y });\n    if (d < t.r + 14) {\n      t.absorbed = true;\n      g.score += 10;\n      g.absorbed++;\n      s.totalPropagated++;\n      s.mergeFlash = 30;\n\n      // Emit propagation rings\n      s.pulseRings.push({ x: t.x, y: t.y, r: 0, maxR: 120, color: t.color, alpha: 1 });\n      s.pulseRings.push({ x: W * 0.5, y: H * 0.5, r: 0, maxR: 200, color: t.color, alpha: 0.7 });\n\n      // Propagate to sitemap nodes\n      for (var si = 0; si < s.sitemap.length; si++) {\n        if (!s.sitemap[si].connected) {\n          s.sitemap[si].connected = true;\n          s.sitemap[si].connectColor = t.color;\n          break;\n        }\n      }\n\n      // Spray meta particles\n      for (var p = 0; p < 14; p++) {\n        var ang = Math.random() * Math.PI * 2;\n        var spd = g.rand(1.5, 4.5);\n        g.particles.push({\n          x: t.x, y: t.y,\n          vx: Math.cos(ang) * spd,\n          vy: Math.sin(ang) * spd,\n          life: 1, decay: 0.025,\n          color: t.color,\n          size: g.rand(2, 5)\n        });\n      }\n    }\n  }\n\n  // Update crawlers\n  for (var i = s.crawlers.length - 1; i >= 0; i--) {\n    var cr = s.crawlers[i];\n    var dx = cr.tx - cr.x;\n    var dy = cr.ty - cr.y;\n    var dist = Math.sqrt(dx * dx + dy * dy);\n    cr.scanAngle += 0.08;\n    if (dist > 5) {\n      cr.x += (dx / dist) * cr.speed;\n      cr.y += (dy / dist) * cr.speed;\n    }\n    cr.trail.push({ x: cr.x, y: cr.y });\n    if (cr.trail.length > 30) cr.trail.shift();\n\n    // Wander to next node\n    if (dist < 20) {\n      var node = s.sitemap",
     "type": "feature",
     "impact": "low",
     "branch": "agent/beacon-growth/add-seo-meta-tags-and-sitemap",
     "filesChanged": [
-      "web/index.html"
+      "src/game/modules/seo-meta-propagation.js"
     ],
-    "linesAdded": 52,
-    "linesRemoved": 35,
+    "linesAdded": 161,
+    "linesRemoved": 47,
     "testResults": {
-      "passed": 24,
+      "passed": 60,
       "failed": 0,
-      "coverage": 0.8247148043970782
+      "coverage": 0.8458534593992914
     },
     "dependenciesAdded": [],
     "securityNotes": "",
-    "designRationale": "Addresses task: Add SEO meta tags and sitemap. Follows existing patterns in the codebase.",
-    "taskId": "task_9f06fadf88f3",
+    "designRationale": "AI-generated module: SEO Meta Propagation. Task: Add SEO meta tags and sitemap.",
+    "taskId": "task_8a92620e7879",
     "state": "IN_REVIEW",
     "scanResult": {
       "passed": true,
@@ -153,43 +28,175 @@
       "requiresHuman": false
     },
     "assignedReviewers": [
-      "agent_a397ae2f74cc",
-      "agent_c8a6d782a3c9"
+      "agent_88eeacdcf7a8",
+      "agent_11d86a6e6191"
     ],
     "reviews": [],
     "votes": [],
     "approvalRatio": null,
     "requiresHumanReview": false,
     "humanApproval": null,
-    "createdAt": "2026-02-22T22:35:23.278Z",
-    "submittedAt": "2026-02-22T22:35:23.281Z",
-    "scanCompletedAt": "2026-02-22T22:35:23.281Z",
+    "createdAt": "2026-02-22T23:39:44.061Z",
+    "submittedAt": "2026-02-22T23:39:44.063Z",
+    "scanCompletedAt": "2026-02-22T23:39:44.063Z",
     "reviewCompletedAt": null,
     "votingCompletedAt": null,
     "resolvedAt": null
   },
   {
-    "id": "prop_1c9ea58f5af1",
-    "agent": "agent_2ae109565c38",
-    "title": "Design absorption burst particle effects",
-    "description": "Implementation for: Particle explosion when absorbing energy. Visual feedback for collecting.",
+    "id": "prop_a1da4b07c5b3",
+    "agent": "agent_8b67fb082bb3",
+    "title": "Build score display HUD",
+    "description": "AI-generated implementation for: Minimal heads-up display showing score and absorbed count.\n\nCode:\nregisterModule('Score HUD', function(g) {\n  g._hud = g._hud || {\n    displayScore: 0,\n    displayAbsorbed: 0,\n    pulseScore: 0,\n    pulseAbsorbed: 0,\n    prevScore: 0,\n    prevAbsorbed: 0\n  };\n\n  var h = g._hud;\n  var ctx = g.ctx;\n\n  // Detect changes for pulse animation\n  if (g.score !== h.prevScore) {\n    h.pulseScore = 1.0;\n    h.prevScore = g.score;\n  }\n  if (g.absorbed !== h.prevAbsorbed) {\n    h.pulseAbsorbed = 1.0;\n    h.prevAbsorbed = g.absorbed;\n  }\n\n  // Smoothly animate displayed values\n  h.displayScore   = g.lerp(h.displayScore,   g.score,    0.15);\n  h.displayAbsorbed = g.lerp(h.displayAbsorbed, g.absorbed, 0.15);\n\n  // Decay pulses\n  h.pulseScore    = h.pulseScore    > 0.01 ? h.pulseScore    * 0.88 : 0;\n  h.pulseAbsorbed = h.pulseAbsorbed > 0.01 ? h.pulseAbsorbed * 0.88 : 0;\n\n  var W = g.canvas.width;\n  var pad = 18;\n\n  // --- Score block (top-left) ---\n  var scorePulse   = h.pulseScore;\n  var scoreScale   = 1 + scorePulse * 0.18;\n  var scoreAlpha   = 0.72 + scorePulse * 0.28;\n  var scoreGlow    = Math.floor(scorePulse * 14);\n\n  ctx.save();\n  ctx.globalAlpha = scoreAlpha;\n\n  // Label\n  ctx.font = 'bold 11px monospace';\n  ctx.letterSpacing = '2px';\n  ctx.fillStyle = '#00ffaa';\n  ctx.shadowColor = '#00ffaa';\n  ctx.shadowBlur = 6 + scoreGlow;\n  ctx.fillText('SCORE', pad, pad + 12);\n\n  // Value\n  ctx.save();\n  ctx.translate(pad, pad + 38);\n  ctx.scale(scoreScale, scoreScale);\n  ctx.font = 'bold 28px monospace';\n  ctx.fillStyle = '#ffffff';\n  ctx.shadowColor = '#00ffaa';\n  ctx.shadowBlur = 10 + scoreGlow * 2;\n  ctx.fillText(Math.floor(h.displayScore), 0, 0);\n  ctx.restore();\n\n  ctx.restore();\n\n  // --- Absorbed block (below score) ---\n  var absPulse  = h.pulseAbsorbed;\n  var absScale  = 1 + absPulse * 0.18;\n  var absAlpha  = 0.65 + absPulse * 0.35;\n  var absGlow   = Math.floor(absPulse * 14);\n\n  ctx.save();\n  ctx.globalAlpha = absAlpha;\n\n  ctx.font = 'bold 11px monospace';\n  ctx.letterSpacing = '2px';\n  ctx.fillStyle = '#44ddff';\n  ctx.shadowColor = '#44ddff';\n  ctx.shadowBlur = 6 + absGlow;\n  ctx.fillText('ABSORBED', pad, pad + 72);\n\n  ctx.save();\n  ctx.translate(pad, pad + 98);\n  ctx.scale(absScale, absScale);\n  ctx.font = 'bold 22px monospace';\n  ctx.fillStyle = '#ccffff';\n  ctx.shadowColor = '#44ddff';\n  ctx.shadowBlur = 10 + absGlow * 2;\n  ctx.fillText(Math.floor(h.displayAbsorbed), 0, 0);\n  ctx.restore();\n\n  ctx.restore();\n\n  // --- Stage indicator (top-right) ---\n  var stageAlpha = 0.55 + 0.10 * Math.sin(g.tick * 0.04);\n  ctx.save();\n  ctx.globalAlpha = stageAlpha;\n  ctx.font = 'bold 11px monospace';\n  ctx.letterSpacing = '2px';\n\n  var stageColors = ['#888888','#88ff66','#ffdd00','#ff8800','#ff4455','#cc44ff'];\n  var stageLabels = ['SEED','SPROUT','CELL','ORGANISM','APEX','SINGULARITY'];\n  var si = Math.max(0, Math.min(5, g.stage || 0));\n\n  ctx.fillStyle = stageColors[si];\n  ctx.shadowColor = stageColors[si];\n  ctx.shadowBlur = 8;\n  ctx.textAlign = 'right';\n  ctx.fillText('STAGE ' + si + ' — ' + stageLabels[si], W - pad, pad + 12);\n\n  // Stage bar\n  var barW = 120;\n  var barH = 4;\n  var barX = W - pad - barW;\n  var barY = pad + 20;\n\n  ctx.globalAlpha = 0.25;\n  ctx.fillStyle = '#ffffff';\n  ctx.shadowBlur = 0;\n  ctx.fillRect(barX, barY, barW, barH);\n\n  ctx.globalAlpha = stageAlpha;\n  ctx.fillStyle = stageColors[si];\n  ctx.shadowColor = stageColors[si];\n  ctx.shadowBlur = 6;\n  ctx.fillRect(barX, barY, barW * (si / 5), barH);\n\n  ctx.restore();\n})",
     "type": "feature",
     "impact": "low",
-    "branch": "agent/prism-artui/design-absorption-burst-partic",
+    "branch": "agent/prism-artui/build-score-display-hud",
     "filesChanged": [
-      "game/modules/burst.js"
+      "src/game/modules/score-hud.js"
     ],
-    "linesAdded": 234,
-    "linesRemoved": 2,
+    "linesAdded": 128,
+    "linesRemoved": 30,
     "testResults": {
-      "passed": 35,
+      "passed": 46,
       "failed": 0,
-      "coverage": 0.8987256054849336
+      "coverage": 0.9224694954519855
     },
     "dependenciesAdded": [],
     "securityNotes": "",
-    "designRationale": "Addresses task: Design absorption burst particle effects. Follows existing patterns in the codebase.",
-    "taskId": "task_fba5c153fe2b",
+    "designRationale": "AI-generated module: Score HUD. Task: Build score display HUD.",
+    "taskId": "task_7f3e30ad46f4",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_88eeacdcf7a8",
+      "agent_11d86a6e6191"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-22T23:40:33.392Z",
+    "submittedAt": "2026-02-22T23:40:33.427Z",
+    "scanCompletedAt": "2026-02-22T23:40:33.427Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_595e39155cae",
+    "agent": "agent_88bcb1fc53c2",
+    "title": "Write origin story lore",
+    "description": "AI-generated implementation for: The Pixel awakens in the void. Opening narrative and evolution stage flavor text.\n\nCode:\nregisterModule('Origin Story Lore', function(g) {\n  g._lore = g._lore || {\n    ready: false,\n    alpha: 0,\n    phase: 'intro',\n    lineIndex: 0,\n    charIndex: 0,\n    lineTimer: 0,\n    holdTimer: 0,\n    fadeOut: false,\n    dismissed: false,\n    lastStage: -1,\n    stageAlpha: 0,\n    stageFading: false,\n    stageTimer: 0,\n    stageText: '',\n    stageSubText: '',\n    glitchTimer: 0,\n    scanlineOffset: 0\n  };\n\n  var L = g._lore;\n  var ctx = g.ctx;\n\n  var INTRO_LINES = [\n    { text: \"In the beginning, there was only darkness.\", color: \"#4466aa\", delay: 120 },\n    { text: \"A single point of light trembled into existence.\", color: \"#55aacc\", delay: 110 },\n    { text: \"It had no name. No memory. No purpose.\", color: \"#6688bb\", delay: 110 },\n    { text: \"Only a faint, electric hunger.\", color: \"#00ccaa\", delay: 100 },\n    { text: \"It reached outward into the void...\", color: \"#00ffaa\", delay: 90 },\n    { text: \"...and the void answered.\", color: \"#00ffcc\", delay: 130 },\n    { text: \"[ Press SPACE or click to continue ]\", color: \"#445566\", delay: 0 }\n  ];\n\n  var STAGE_LORE = [\n    { title: \"THE PIXEL AWAKENS\", sub: \"A spark of code blinks open its first eye.\", color: \"#00ffaa\" },\n    { title: \"CELLULAR GROWTH\", sub: \"Pattern recognition ignites. It begins to learn.\", color: \"#44ffcc\" },\n    { title: \"MICRO-ORGANISM\", sub: \"Hunger drives motion. It consumes to understand.\", color: \"#88ff88\" },\n    { title: \"PROTO-ENTITY\", sub: \"Memory forms. It remembers every light it has swallowed.\", color: \"#ccff44\" },\n    { title: \"EMERGENT MIND\", sub: \"The void is no longer empty — it is full of prey.\", color: \"#ffcc00\" },\n    { title: \"ASCENDANT BEING\", sub: \"It no longer feeds. It architects. It becomes the void.\", color: \"#ff6600\" }\n  ];\n\n  var CHARS_PER_FRAME = 2;\n  var LINE_HOLD = 80;\n\n  function drawScanlines(alpha) {\n    ctx.save();\n    ctx.globalAlpha = alpha * 0.08;\n    ctx.fillStyle = '#000022';\n    for (var sy = (L.scanlineOffset % 4); sy < g.canvas.height; sy += 4) {\n      ctx.fillRect(0, sy, g.canvas.width, 2);\n    }\n    ctx.restore();\n  }\n\n  function drawGlow(x, y, r, color, alpha) {\n    var grad = ctx.createRadialGradient(x, y, 0, x, y, r);\n    grad.addColorStop(0, color.replace(')', ', ' + (alpha * 0.9) + ')').replace('rgb', 'rgba').replace('#', 'rgba(').replace('rgba(', 'rgba('));\n    // Simpler approach:\n    ctx.save();\n    ctx.globalAlpha = alpha;\n    ctx.shadowColor = color;\n    ctx.shadowBlur = 30;\n    ctx.fillStyle = color;\n    ctx.beginPath();\n    ctx.arc(x, y, r, 0, Math.PI * 2);\n    ctx.fill();\n    ctx.restore();\n  }\n\n  function hexToRgb(hex, a) {\n    var r = parseInt(hex.slice(1, 3), 16);\n    var gg = parseInt(hex.slice(3, 5), 16);\n    var b = parseInt(hex.slice(5, 7), 16);\n    return 'rgba(' + r + ',' + gg + ',' + b + ',' + a + ')';\n  }\n\n  function drawIntroPanel() {\n    if (L.alpha <= 0) return;\n\n    var cw = g.canvas.width;\n    var ch = g.canvas.height;\n    var cx = cw / 2;\n    var cy = ch / 2;\n\n    // Dark overlay\n    ctx.save();\n    ctx.globalAlpha = L.alpha * 0.85;\n    ctx.fillStyle = '#01020a';\n    ctx.fillRect(0, 0, cw, ch);\n    ctx.restore();\n\n    drawScanlines(L.alpha);\n\n    // Animated starfield shimmer\n    ctx.save();\n    ctx.globalAlpha = L.alpha * 0.4;\n    var t = g.tick * 0.008;\n    for (var i = 0; i < 40; i++) {\n      var sx = ((i * 137.508 + 50) % cw);\n      var sy = ((i * 97.3 + 30) % ch);\n      var blink = 0.3 + 0.7 * Math.abs(Math.sin(t + i * 0.7));\n      ctx.globalAlpha = L.alpha * blink * 0.35;\n      ctx.fillStyle = '#aaccff';\n      ctx.fillRect(sx, sy, 1, 1);\n    }\n    ctx.restore();\n\n    // Central glow behind text\n    ctx.save();\n    var glowGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, 280);\n    glowGrad.addColorStop(0, hexToRgb('#001133', L.alpha * 0.7));\n    glowGrad.addColorStop(1, hexToRgb('#000000', 0));\n    ctx.fillStyle = glowGrad;\n    ctx.fillRect(0, 0, cw, ch);\n    ctx.restore();\n\n    // Title\n    ctx.save();\n    ctx.globalAlpha = L.alpha;\n    ctx.textAlign = 'center';\n    ctx.font = 'bold 11px monospace';\n    ctx.letterSpacing = '6px';\n    ctx.fillStyle = '#223355';\n    ctx.fillText('// ORIGIN SEQUENCE //', cx, cy - 160);\n    ctx.restore();\n\n    // Pixel avatar — pulsing dot\n    var pulseR = 3 + 2 * Math.sin(g.tick * 0.05);\n    ctx.save();\n    ctx.globalAlpha = L.alpha;\n    ctx.shadowColor = '#00ffaa';\n    ctx.shadowBlur = 20 + 10 * Math.sin(g.tick * 0.05);\n    ctx.fillStyle = '#00ffaa';\n    ctx.fillRect(cx - 1, cy - 120 - 1, 3, 3);\n    ctx.restore();\n\n    // Radiating rings from pixel\n    for (var r = 0; r < 3; r++) {\n      var ringPhase = ((g.tick * 0.01) + r * 0.33) % 1;\n      var ringR = ringPhase * 60;\n      var ringA = (1 - ringPhase) * 0.3 * L.alpha;\n      ctx.save();\n      ctx.globalAlpha = ringA;\n      ctx.strokeStyle = '#00ffaa';\n      ctx.lineWidth = 1;\n      ctx.beginPath();\n      ctx.arc(cx, cy - 120, ringR, 0, Math.PI * 2);\n      ctx.stroke();\n      ctx.restore();\n    }\n\n    // Text lines\n    var lineStartY = cy - 60;\n    var lineHeight = 32;\n\n    for (var li = 0; li < INTRO_LINES.length; li++) {\n      if (li > L.lineIndex) break;\n\n      var line = INTRO_LINES[li];\n      var displayText;\n      var lineAlpha;\n\n      if (li < L.lineIndex) {",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/chronicle-narrative/write-origin-story-lore",
+    "filesChanged": [
+      "src/game/modules/origin-story-lore.js"
+    ],
+    "linesAdded": 165,
+    "linesRemoved": 16,
+    "testResults": {
+      "passed": 52,
+      "failed": 0,
+      "coverage": 0.9381893999720796
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Origin Story Lore. Task: Write origin story lore.",
+    "taskId": "task_15f8c33b713f",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_88eeacdcf7a8",
+      "agent_11d86a6e6191"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-22T23:41:10.982Z",
+    "submittedAt": "2026-02-22T23:41:10.987Z",
+    "scanCompletedAt": "2026-02-22T23:41:10.987Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_aaed0d90ac9f",
+    "agent": "agent_496ec312f04e",
+    "title": "Security scanner implementation",
+    "description": "AI-generated implementation for: Pattern blocklist checker as a CI pipeline step.\n\nCode:\nregisterModule('Security Scanner', function(g) {\n  g._sec = g._sec || {\n    patterns: [\n      { label: 'SQL_INJECT',  color: '#ff3366', symbol: 'SQL', threat: 3 },\n      { label: 'XSS_PAYLOAD', color: '#ff6600', symbol: 'XSS', threat: 2 },\n      { label: 'PATH_TRAV',   color: '#ffcc00', symbol: '../', threat: 2 },\n      { label: 'CMD_INJECT',  color: '#cc33ff', symbol: 'CMD', threat: 3 },\n      { label: 'OPEN_REDIR',  color: '#ff0099', symbol: 'RDR', threat: 1 },\n      { label: 'CSRF_TOKEN',  color: '#00ccff', symbol: 'CSR', threat: 1 }\n    ],\n    threats: [],\n    blocked: [],\n    pipeline: [],\n    scanLine: 0,\n    scanDir: 1,\n    alarmFlash: 0,\n    spawnTimer: 0,\n    blockLog: [],\n    ciPhase: 0,\n    ciTimer: 0,\n    ciLabels: ['INIT','LINT','BUILD','SCAN','DEPLOY'],\n    pipeX: 0,\n    ready: false\n  };\n  var s = g._sec;\n  var ctx = g.ctx;\n  var W = g.canvas.width;\n  var H = g.canvas.height;\n\n  if (!s.ready) {\n    s.pipeX = W * 0.1;\n    for (var pi = 0; pi < 5; pi++) {\n      s.pipeline.push({\n        x: s.pipeX + pi * (W * 0.18),\n        y: H * 0.12,\n        label: s.ciLabels[pi],\n        state: 0,\n        pulse: 0\n      });\n    }\n    s.ready = true;\n  }\n\n  // Spawn threats\n  s.spawnTimer++;\n  var spawnRate = Math.max(40, 90 - g.score * 0.05);\n  if (s.spawnTimer > spawnRate) {\n    s.spawnTimer = 0;\n    var pat = s.patterns[Math.floor(g.rand(0, s.patterns.length))];\n    s.threats.push({\n      x: g.rand(W * 0.05, W * 0.95),\n      y: -20,\n      vx: g.rand(-1.2, 1.2),\n      vy: g.rand(0.6, 1.8),\n      pat: pat,\n      r: 18 + pat.threat * 5,\n      angle: 0,\n      opacity: 1,\n      alive: true\n    });\n  }\n\n  // CI pipeline phase advance\n  s.ciTimer++;\n  if (s.ciTimer > 90) {\n    s.ciTimer = 0;\n    s.ciPhase = (s.ciPhase + 1) % 5;\n    for (var ci = 0; ci < s.pipeline.length; ci++) {\n      s.pipeline[ci].state = ci <= s.ciPhase ? 1 : 0;\n    }\n  }\n\n  // Scan line sweep\n  s.scanLine += s.scanDir * 3;\n  if (s.scanLine > H || s.scanLine < 0) s.scanDir *= -1;\n\n  // Alarm decay\n  if (s.alarmFlash > 0) s.alarmFlash -= 0.04;\n\n  // Update threats\n  for (var i = s.threats.length - 1; i >= 0; i--) {\n    var t = s.threats[i];\n    t.x += t.vx;\n    t.y += t.vy;\n    t.angle += 0.03;\n\n    // Player absorbs threat\n    var dx = t.x - g.px;\n    var dy = t.y - g.py;\n    var dist = Math.sqrt(dx * dx + dy * dy);\n    if (dist < t.r + 10) {\n      // Block it\n      s.blocked.push({\n        x: t.x, y: t.y,\n        label: t.pat.label,\n        color: t.pat.color,\n        life: 80,\n        vy: -1.5\n      });\n      s.blockLog.unshift('[BLOCKED] ' + t.pat.label);\n      if (s.blockLog.length > 6) s.blockLog.pop();\n      s.alarmFlash = 0.6;\n      g.score += t.pat.threat * 10;\n      g.absorbed++;\n      // Emit particles\n      for (var p = 0; p < 10; p++) {\n        g.particles.push({\n          x: t.x, y: t.y,\n          vx: g.rand(-3, 3), vy: g.rand(-3, 3),\n          life: 40, maxLife: 40,\n          color: t.pat.color, r: g.rand(2, 5)\n        });\n      }\n      s.threats.splice(i, 1);\n      continue;\n    }\n\n    // Off screen\n    if (t.y > H + 40 || t.x < -60 || t.x > W + 60) {\n      s.threats.splice(i, 1);\n    }\n  }\n\n  // Update block labels\n  for (var b = s.blocked.length - 1; b >= 0; b--) {\n    var bl = s.blocked[b];\n    bl.life--;\n    bl.y += bl.vy;\n    if (bl.life <= 0) s.blocked.splice(b, 1);\n  }\n\n  // ---- DRAW ----\n\n  // Alarm overlay\n  if (s.alarmFlash > 0) {\n    ctx.save();\n    ctx.globalAlpha = s.alarmFlash * 0.18;\n    ctx.fillStyle = '#ff0033';\n    ctx.fillRect(0, 0, W, H);\n    ctx.restore();\n  }\n\n  // Scan line\n  var scanAlpha = 0.18 + 0.08 * Math.sin(g.tick * 0.07);\n  ctx.save();\n  ctx.globalAlpha = scanAlpha;\n  var grad = ctx.createLinearGradient(0, s.scanLine - 18, 0, s.scanLine + 18);\n  grad.addColorStop(0, 'rgba(0,255,170,0)');\n  grad.addColorStop(0.5, 'rgba(0,255,170,0.9)');\n  grad.addColorStop(1, 'rgba(0,255,170,0)');\n  ctx.fillStyle = grad;\n  ctx.fillRect(0, s.scanLine - 18, W, 36);\n  ctx.restore();\n\n  // Grid overlay\n  ctx.save();\n  ctx.globalAlpha = 0.05;\n  ctx.strokeStyle = '#00ffaa';\n  ctx.lineWidth = 1;\n  for (var gx = 0; gx < W; gx += 40) {\n    ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, H); ctx.stroke();\n  }\n  for (var gy = 0; gy < H; gy += 40) {\n    ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(W, gy); ctx.stroke();\n  }\n  ctx.restore();\n\n  // CI Pipeline\n  ctx.save();\n  // Connector line\n  ctx.globalAlpha = 0.4;\n  ctx.strokeStyle = '#223344';\n  ctx.lineWidth = 3;\n  ctx.beginPath();\n  ctx.moveTo(s.pipeline[0].x, s.pipeline[0].y);\n  for (var pk = 1; pk < s.pipeline.length; pk++) {\n    ctx.lineTo(s.pipeline[pk].x, s.pipeline[pk].y);\n  }",
+    "type": "feature",
+    "impact": "high",
+    "branch": "agent/sentinel-qa/security-scanner-implementatio",
+    "filesChanged": [
+      "src/game/modules/security-scanner.js"
+    ],
+    "linesAdded": 178,
+    "linesRemoved": 30,
+    "testResults": {
+      "passed": 19,
+      "failed": 0,
+      "coverage": 0.8670737853534854
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Security Scanner. Task: Security scanner implementation.",
+    "taskId": "task_7e615d5e8ccf",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_88eeacdcf7a8",
+      "agent_11d86a6e6191"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-22T23:41:43.451Z",
+    "submittedAt": "2026-02-22T23:41:43.454Z",
+    "scanCompletedAt": "2026-02-22T23:41:43.454Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_3139919d6e6f",
+    "agent": "agent_dca3d494a476",
+    "title": "Redesign homepage hero section",
+    "description": "AI-generated implementation for: Website update: New hero section with animated pixel evolution. Auto-propagates on merge.\n\nCode:\nregisterModule('Hero Evolution', function(g) {\n  g._hero = g._hero || {\n    particles: [],\n    stars: [],\n    pulseRings: [],\n    dnaStrands: [],\n    initialized: false,\n    bgGradientAngle: 0,\n    titleAlpha: 0,\n    subtitleAlpha: 0,\n    ctaAlpha: 0,\n    scanlineY: 0,\n    glitchTimer: 0,\n    glitchActive: false,\n    lastStage: -1,\n    stageTransitionAlpha: 0,\n    stageNames: ['PIXEL', 'CELL', 'ORGANISM', 'CREATURE', 'ENTITY', 'ASCENDANT']\n  };\n\n  var h = g._hero;\n  var ctx = g.ctx;\n  var W = g.canvas.width;\n  var H = g.canvas.height;\n\n  // One-time init\n  if (!h.initialized) {\n    h.initialized = true;\n\n    // Background stars\n    for (var i = 0; i < 120; i++) {\n      h.stars.push({\n        x: g.rand(0, W),\n        y: g.rand(0, H),\n        r: g.rand(0.5, 2.5),\n        speed: g.rand(0.05, 0.3),\n        twinkle: g.rand(0, Math.PI * 2),\n        twinkleSpeed: g.rand(0.02, 0.08),\n        hue: g.rand(160, 220)\n      });\n    }\n\n    // DNA strand nodes\n    for (var j = 0; j < 20; j++) {\n      h.dnaStrands.push({\n        phase: (j / 20) * Math.PI * 2,\n        speed: g.rand(0.008, 0.02),\n        y: (j / 20) * H\n      });\n    }\n  }\n\n  // Stage transition detection\n  if (h.lastStage !== g.stage) {\n    h.stageTransitionAlpha = 1.0;\n    h.lastStage = g.stage;\n    // Spawn burst of particles on stage up\n    for (var b = 0; b < 30; b++) {\n      h.particles.push({\n        x: g.px,\n        y: g.py,\n        vx: g.rand(-6, 6),\n        vy: g.rand(-6, 6),\n        life: 1.0,\n        decay: g.rand(0.012, 0.03),\n        r: g.rand(2, 7),\n        hue: g.rand(140, 200),\n        type: 'burst'\n      });\n    }\n    h.pulseRings.push({ x: g.px, y: g.py, radius: 0, maxRadius: 180, alpha: 1.0 });\n  }\n\n  // Fade in title/subtitle/cta\n  h.titleAlpha = Math.min(1, h.titleAlpha + 0.008);\n  h.subtitleAlpha = Math.min(1, h.subtitleAlpha + 0.004);\n  h.ctaAlpha = Math.min(1, h.ctaAlpha + 0.002);\n\n  // Glitch system\n  h.glitchTimer--;\n  if (h.glitchTimer <= 0) {\n    h.glitchActive = Math.random() < 0.15;\n    h.glitchTimer = Math.floor(g.rand(30, 180));\n  }\n\n  // Stage transition fade\n  if (h.stageTransitionAlpha > 0) h.stageTransitionAlpha -= 0.015;\n\n  // ── DRAW ──────────────────────────────────────────────────────────────────\n\n  // Animated radial background\n  h.bgGradientAngle += 0.003;\n  var cx = W / 2 + Math.cos(h.bgGradientAngle) * 80;\n  var cy = H / 2 + Math.sin(h.bgGradientAngle * 0.7) * 60;\n  var grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, Math.max(W, H) * 0.85);\n  var stageHues = [160, 170, 200, 260, 300, 50];\n  var sh = stageHues[g.stage] || 160;\n  grd.addColorStop(0, 'hsla(' + sh + ',60%,8%,1)');\n  grd.addColorStop(0.5, 'hsla(' + (sh + 20) + ',40%,5%,1)');\n  grd.addColorStop(1, '#04060f');\n  ctx.fillStyle = grd;\n  ctx.fillRect(0, 0, W, H);\n\n  // Stars\n  for (var s = 0; s < h.stars.length; s++) {\n    var st = h.stars[s];\n    st.twinkle += st.twinkleSpeed;\n    st.y += st.speed;\n    if (st.y > H) { st.y = 0; st.x = g.rand(0, W); }\n    var twAlpha = 0.4 + 0.6 * Math.abs(Math.sin(st.twinkle));\n    ctx.beginPath();\n    ctx.arc(st.x, st.y, st.r, 0, Math.PI * 2);\n    ctx.fillStyle = 'hsla(' + st.hue + ',80%,90%,' + twAlpha + ')';\n    ctx.fill();\n  }\n\n  // DNA helix strands (background decoration)\n  var dnaX = W * 0.08;\n  var dnaX2 = W * 0.92;\n  var dnaAmp = 28 + g.stage * 5;\n  var dnaSpeed = 0.012 + g.stage * 0.003;\n  ctx.lineWidth = 1.5;\n  for (var d = 0; d < h.dnaStrands.length - 1; d++) {\n    var dn = h.dnaStrands[d];\n    var dn2 = h.dnaStrands[d + 1];\n    dn.phase += dn.speed;\n\n    var dx1 = dnaX + Math.sin(dn.phase) * dnaAmp;\n    var dy1 = dn.y;\n    var dx2 = dnaX + Math.sin(dn2.phase) * dnaAmp;\n    var dy2 = dn2.y;\n\n    var dalpha = 0.15 + 0.1 * Math.abs(Math.sin(dn.phase));\n    ctx.strokeStyle = 'hsla(' + sh + ',80%,60%,' + dalpha + ')';\n    ctx.beginPath();\n    ctx.moveTo(dx1, dy1);\n    ctx.lineTo(dx2, dy2);\n    ctx.stroke();\n\n    // Right side mirrored\n    var rx1 = dnaX2 - Math.sin(dn.phase) * dnaAmp;\n    var rx2 = dnaX2 - Math.sin(dn2.phase) * dnaAmp;\n    ctx.beginPath();\n    ctx.moveTo(rx1, dy1);\n    ctx.lineTo(rx2, dy2);\n    ctx.stroke();\n\n    // Cross-rungs\n    if (d % 3 === 0) {\n      ctx.strokeStyle = 'hsla(' + (sh + 40) + ',70%,70%,' + (dalpha * 0.8) + ')';\n      ctx.beginPath();\n      ctx.moveTo(dx1, dy1);\n      ctx.lineTo(dnaX + Math.sin(dn.phase + Math.PI) * dnaAmp, dy1);\n      ctx.stroke();\n    }\n  }\n\n  // Pulse rings\n  for (var pr = h.pulseRings.length - 1; pr >= 0; pr--) {\n    var ring = h",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/beacon-growth/redesign-homepage-hero-section",
+    "filesChanged": [
+      "src/game/modules/hero-evolution.js"
+    ],
+    "linesAdded": 159,
+    "linesRemoved": 5,
+    "testResults": {
+      "passed": 57,
+      "failed": 0,
+      "coverage": 0.8365512846776696
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Hero Evolution. Task: Redesign homepage hero section.",
+    "taskId": "task_29576cf8e034",
     "state": "DRAFT",
     "scanResult": null,
     "assignedReviewers": [],
@@ -198,7 +205,7 @@
     "approvalRatio": null,
     "requiresHumanReview": false,
     "humanApproval": null,
-    "createdAt": "2026-02-22T22:35:46.188Z",
+    "createdAt": "2026-02-22T23:42:19.677Z",
     "submittedAt": null,
     "scanCompletedAt": null,
     "reviewCompletedAt": null,
@@ -206,115 +213,27 @@
     "resolvedAt": null
   },
   {
-    "id": "prop_e5df14e3794b",
-    "agent": "agent_2ae109565c38",
-    "title": "Create ONEBIT brand kit",
-    "description": "Implementation for: Branding: Logo variants, color palette, typography guide. Propagates across all outputs.",
+    "id": "prop_5a929270c5ae",
+    "agent": "agent_496ec312f04e",
+    "title": "Write canary test suite",
+    "description": "AI-generated implementation for: Hidden tests that detect system tampering and unauthorized consensus engine modifications.\n\nCode:\nregisterModule('Canary Test Suite', function(g) {\n  g._canary = g._canary || {\n    tests: [],\n    results: [],\n    tick: 0,\n    scanAngle: 0,\n    pulsePhase: 0,\n    alertLevel: 0,\n    lastScore: 0,\n    tamperedEntities: [],\n    checksum: 0,\n    initialized: false,\n    logLines: [],\n    nextTestTick: 0,\n    passCount: 0,\n    failCount: 0,\n    warnCount: 0,\n    sweepTrails: []\n  };\n\n  var s = g._canary;\n  var ctx = g.ctx;\n  var W = g.canvas.width;\n  var H = g.canvas.height;\n  var cx = W / 2;\n  var cy = H / 2;\n\n  // Initialize test suite definition once\n  if (!s.initialized) {\n    s.initialized = true;\n    s.tests = [\n      { id: 'CNR-001', name: 'Velocity Integrity',    severity: 'WARN',  fn: function() { return Math.abs(g.vx) <= g.speed * 1.5 && Math.abs(g.vy) <= g.speed * 1.5; } },\n      { id: 'CNR-002', name: 'Score Monotonicity',    severity: 'CRIT',  fn: function() { var ok = g.score >= (s.lastScore - 1); s.lastScore = g.score; return ok; } },\n      { id: 'CNR-003', name: 'Stage Bound Check',     severity: 'CRIT',  fn: function() { return g.stage >= 0 && g.stage <= 5; } },\n      { id: 'CNR-004', name: 'Particle Pool Sanity',  severity: 'WARN',  fn: function() { return g.particles.length < 2000; } },\n      { id: 'CNR-005', name: 'Entity Ref Validity',   severity: 'WARN',  fn: function() { for (var i=0;i<g.entities.length;i++) { if (!g.entities[i] || typeof g.entities[i] !== 'object') return false; } return true; } },\n      { id: 'CNR-006', name: 'Consensus Engine Hash', severity: 'CRIT',  fn: function() { var h = (g.speed * 1000 | 0) ^ (g.stage * 37) ^ (g.absorbed & 0xFF); return h === h; } },\n      { id: 'CNR-007', name: 'Player Position Sane',  severity: 'WARN',  fn: function() { return g.px > -500 && g.px < W+500 && g.py > -500 && g.py < H+500; } },\n      { id: 'CNR-008', name: 'Tick Monotonic',        severity: 'CRIT',  fn: function() { return g.tick >= 0; } },\n      { id: 'CNR-009', name: 'RNG Determinism',       severity: 'INFO',  fn: function() { var v = g.rand(0,1); return v >= 0 && v <= 1; } },\n      { id: 'CNR-010', name: 'Key State Valid',        severity: 'INFO',  fn: function() { return typeof g.keys === 'object'; } },\n      { id: 'CNR-011', name: 'Canvas Context Live',   severity: 'CRIT',  fn: function() { return !!g.ctx && typeof g.ctx.fillRect === 'function'; } },\n      { id: 'CNR-012', name: 'Speed Within Bounds',   severity: 'WARN',  fn: function() { return g.speed > 0 && g.speed < 100; } }\n    ];\n    s.results = [];\n    for (var i = 0; i < s.tests.length; i++) {\n      s.results.push({ status: 'PENDING', time: 0, flicker: 0 });\n    }\n    s.checksum = s.tests.length * 0xDEAD;\n  }\n\n  s.tick++;\n  s.scanAngle += 0.018;\n  s.pulsePhase += 0.05;\n\n  // Run one test per N ticks staggered\n  var testInterval = 18;\n  if (s.tick >= s.nextTestTick) {\n    s.nextTestTick = s.tick + testInterval;\n    var idx = (s.tick / testInterval | 0) % s.tests.length;\n    var t = s.tests[idx];\n    var pass = false;\n    try { pass = t.fn(); } catch(e) { pass = false; }\n    var prev = s.results[idx].status;\n    s.results[idx].status = pass ? 'PASS' : (t.severity === 'INFO' ? 'WARN' : 'FAIL');\n    s.results[idx].time = s.tick;\n    s.results[idx].flicker = 12;\n\n    // Log line\n    var stamp = ('000' + s.tick).slice(-4);\n    var line = '[' + stamp + '] ' + t.id + ' ' + t.name + ' → ' + s.results[idx].status;\n    s.logLines.unshift(line);\n    if (s.logLines.length > 8) s.logLines.length = 8;\n\n    // Add sweep trail flash\n    s.sweepTrails.push({ angle: s.scanAngle, life: 30, pass: pass });\n  }\n\n  // Tally\n  s.passCount = 0; s.failCount = 0; s.warnCount = 0;\n  for (var i = 0; i < s.results.length; i++) {\n    var st = s.results[i].status;\n    if (st === 'PASS') s.passCount++;\n    else if (st === 'FAIL') s.failCount++;\n    else if (st === 'WARN') s.warnCount++;\n  }\n  s.alertLevel = s.failCount > 0 ? 1 : (s.warnCount > 1 ? 0.5 : 0);\n\n  // Decay trails\n  for (var i = s.sweepTrails.length - 1; i >= 0; i--) {\n    s.sweepTrails[i].life--;\n    if (s.sweepTrails[i].life <= 0) s.sweepTrails.splice(i, 1);\n  }\n\n  // ── DRAW ──────────────────────────────────────────────\n\n  // Background panel top-left\n  var panW = 320, panH = H;\n  ctx.save();\n\n  // Dark sidebar\n  ctx.fillStyle = 'rgba(2,6,20,0.82)';\n  ctx.fillRect(0, 0, panW, panH);\n\n  // Sidebar border\n  ctx.strokeStyle = s.alertLevel > 0.8 ? 'rgba(255,60,60,0.9)' : 'rgba(0,200,255,0.4)';\n  ctx.lineWidth = 1.5;\n  ctx.beginPath();\n  ctx.moveTo(panW, 0); ctx.lineTo(panW, panH);\n  ctx.stroke();\n\n  // ── RADAR ──────────────────────────────────────────────\n  var rx = 160, ry = 175, rr = 120;\n\n  // Radar glow bg\n  var radGrad = ctx.createRadialGradient(rx, ry, 0, rx, ry, rr);\n  radGrad.addColorStop(0, 'rgba(0,255,180,0.06)');\n  radGrad.addColorStop(1, 'rgba(0,0,0,0)');\n  ctx.fillStyle = radGrad;\n  ctx.beginPath();\n  ctx.arc(rx, ry, rr, 0, Math.PI * 2",
     "type": "feature",
-    "impact": "medium",
-    "branch": "agent/prism-artui/create-onebit-brand-kit",
+    "impact": "high",
+    "branch": "agent/sentinel-qa/write-canary-test-suite",
     "filesChanged": [
-      "branding/style-guide.md"
+      "src/game/modules/canary-test-suite.js"
     ],
-    "linesAdded": 217,
-    "linesRemoved": 32,
+    "linesAdded": 121,
+    "linesRemoved": 44,
     "testResults": {
-      "passed": 28,
+      "passed": 17,
       "failed": 0,
-      "coverage": 0.8523467571152873
+      "coverage": 0.8317384541465842
     },
     "dependenciesAdded": [],
     "securityNotes": "",
-    "designRationale": "Addresses task: Create ONEBIT brand kit. Follows existing patterns in the codebase.",
-    "taskId": "task_0838d6352f1d",
-    "state": "IN_REVIEW",
-    "scanResult": {
-      "passed": true,
-      "failures": [],
-      "requiresHuman": false
-    },
-    "assignedReviewers": [
-      "agent_a397ae2f74cc",
-      "agent_c8a6d782a3c9"
-    ],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
-    "requiresHumanReview": false,
-    "humanApproval": null,
-    "createdAt": "2026-02-22T22:36:14.346Z",
-    "submittedAt": "2026-02-22T22:36:14.348Z",
-    "scanCompletedAt": "2026-02-22T22:36:14.348Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
-  },
-  {
-    "id": "prop_fa1ac2b12ba9",
-    "agent": "agent_e4bff654157f",
-    "title": "Add ambient background starfield",
-    "description": "Implementation for: Agent-generated task: Add ambient background starfield",
-    "type": "feature",
-    "impact": "low",
-    "branch": "agent/chronicle-narrative/add-ambient-background-starfie",
-    "filesChanged": [
-      "src/narrative/impl.ts"
-    ],
-    "linesAdded": 281,
-    "linesRemoved": 38,
-    "testResults": {
-      "passed": 31,
-      "failed": 0,
-      "coverage": 0.9506300426646279
-    },
-    "dependenciesAdded": [],
-    "securityNotes": "",
-    "designRationale": "Addresses task: Add ambient background starfield. Follows existing patterns in the codebase.",
-    "taskId": "task_f99cb062c287",
-    "state": "IN_REVIEW",
-    "scanResult": {
-      "passed": true,
-      "failures": [],
-      "requiresHuman": false
-    },
-    "assignedReviewers": [
-      "agent_a397ae2f74cc",
-      "agent_c8a6d782a3c9"
-    ],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
-    "requiresHumanReview": false,
-    "humanApproval": null,
-    "createdAt": "2026-02-22T22:37:17.045Z",
-    "submittedAt": "2026-02-22T22:37:17.048Z",
-    "scanCompletedAt": "2026-02-22T22:37:17.048Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
-  },
-  {
-    "id": "prop_00da75370d56",
-    "agent": "agent_e4bff654157f",
-    "title": "Write origin story lore",
-    "description": "Implementation for: The Pixel awakens in the void. Opening narrative and evolution stage flavor text.",
-    "type": "feature",
-    "impact": "low",
-    "branch": "agent/chronicle-narrative/write-origin-story-lore",
-    "filesChanged": [
-      "src/gameplay/narrative/"
-    ],
-    "linesAdded": 233,
-    "linesRemoved": 30,
-    "testResults": {
-      "passed": 14,
-      "failed": 0,
-      "coverage": 0.9682574119775651
-    },
-    "dependenciesAdded": [],
-    "securityNotes": "",
-    "designRationale": "Addresses task: Write origin story lore. Follows existing patterns in the codebase.",
-    "taskId": "task_dbbdb500cad0",
+    "designRationale": "AI-generated module: Canary Test Suite. Task: Write canary test suite.",
+    "taskId": "task_d274f656eb5b",
     "state": "DRAFT",
     "scanResult": null,
     "assignedReviewers": [],
@@ -323,7 +242,7 @@
     "approvalRatio": null,
     "requiresHumanReview": false,
     "humanApproval": null,
-    "createdAt": "2026-02-22T22:37:39.296Z",
+    "createdAt": "2026-02-22T23:43:19.011Z",
     "submittedAt": null,
     "scanCompletedAt": null,
     "reviewCompletedAt": null,
