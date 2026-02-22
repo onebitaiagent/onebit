@@ -875,9 +875,12 @@ body {
     state = createInitialState();
     state.player.x = canvas.width / 2;
     state.player.y = canvas.height / 2;
-    initStars();
-    spawnParticles(20);
-    spawnEnemies(3);
+    // Start from LITERALLY 1 pixel — pure void, nothing else
+    // Everything emerges gradually as you move and absorb
+    state.worldAge = 0;
+    state.firstMoveTime = 0;
+    state.hasMoved = false;
+    state.voidIntro = true; // True until first movement
   }
 
   // ─── INPUT ───────────────────────────────────
@@ -999,6 +1002,42 @@ body {
     if (mx !== 0 || my !== 0) {
       const len = Math.sqrt(mx * mx + my * my);
       mx /= len; my /= len;
+
+      // First movement — the void awakens
+      if (!state.hasMoved) {
+        state.hasMoved = true;
+        state.firstMoveTime = Date.now();
+        state.voidIntro = false;
+      }
+    }
+
+    // Gradual world emergence based on time since first movement
+    if (state.hasMoved) {
+      state.worldAge = (Date.now() - state.firstMoveTime) / 1000;
+
+      // Particles drift in slowly — first ones appear 0.5s after moving
+      const maxParticles = Math.min(3 + Math.floor(state.worldAge * 0.8), 15 + state.stage * 5);
+      if (state.worldAge > 0.5 && state.particles.length < maxParticles) {
+        spawnParticles(1);
+      }
+
+      // Stars fade in after 3 seconds
+      const maxStars = Math.min(Math.floor((state.worldAge - 3) * 3), 80);
+      if (state.worldAge > 3 && state.backgroundStars.length < maxStars) {
+        state.backgroundStars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 1.5 + 0.3,
+          brightness: 0,
+          speed: Math.random() * 0.3 + 0.05,
+        });
+      }
+
+      // Enemies appear after reaching stage 1 or after 30s
+      const shouldSpawnEnemies = state.stage >= 1 || state.worldAge > 30;
+      if (shouldSpawnEnemies && state.enemies.length < 2 + state.stage && state.worldAge > 8) {
+        spawnEnemies(1);
+      }
     }
 
     state.player.vx = lerp(state.player.vx, mx * speed, 0.15);
@@ -1146,9 +1185,9 @@ body {
     if (state.flashTimer > 0) state.flashTimer--;
     state.gridPulse += 0.02;
 
-    // Keep particles replenished
-    if (state.particles.length < 15 + state.stage * 5) {
-      spawnParticles(3);
+    // Keep particles replenished (only after world has emerged)
+    if (state.hasMoved && state.worldAge > 10 && state.particles.length < 15 + state.stage * 5) {
+      spawnParticles(1);
     }
 
     // UI updates
@@ -1173,21 +1212,24 @@ body {
     ctx.fillStyle = '#020408';
     ctx.fillRect(0, 0, w, h);
 
-    // Subtle grid
-    ctx.strokeStyle = `rgba(0, 255, 170, ${0.02 + Math.sin(state.gridPulse) * 0.01})`;
-    ctx.lineWidth = 0.5;
-    const gridSize = 40;
-    for (let x = 0; x < w; x += gridSize) {
-      ctx.beginPath();
-      ctx.moveTo(x, 0);
-      ctx.lineTo(x, h);
-      ctx.stroke();
-    }
-    for (let y = 0; y < h; y += gridSize) {
-      ctx.beginPath();
-      ctx.moveTo(0, y);
-      ctx.lineTo(w, y);
-      ctx.stroke();
+    // Subtle grid — fades in as the world awakens
+    const gridOpacity = state.hasMoved ? Math.min((state.worldAge - 5) / 10, 1) * 0.03 : 0;
+    if (gridOpacity > 0) {
+      ctx.strokeStyle = `rgba(0, 255, 170, ${gridOpacity + Math.sin(state.gridPulse) * 0.01})`;
+      ctx.lineWidth = 0.5;
+      const gridSize = 40;
+      for (let x = 0; x < w; x += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, h);
+        ctx.stroke();
+      }
+      for (let y = 0; y < h; y += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(w, y);
+        ctx.stroke();
+      }
     }
 
     // Stars
@@ -1270,15 +1312,28 @@ body {
       ctx.shadowBlur = 0;
     }
 
-    // Player
+    // Player — THE 1 pixel
     if (!state.dead) {
       ctx.fillStyle = evo.color;
       ctx.shadowColor = evo.color;
-      ctx.shadowBlur = evo.size * 2 + 10;
+      // Glow starts tiny and grows with the world
+      const glowSize = state.hasMoved ? Math.min(evo.size * 2 + 10, evo.size * 2 + state.worldAge * 0.5) : 4;
+      ctx.shadowBlur = glowSize;
 
       drawPlayerShape(state.player.x, state.player.y, evo.size, evo.shape);
 
       ctx.shadowBlur = 0;
+    }
+
+    // Void intro hint — pulsing "move to awaken" text
+    if (state.voidIntro && !state.dead) {
+      const pulse = Math.sin(Date.now() * 0.002) * 0.3 + 0.4;
+      ctx.globalAlpha = pulse;
+      ctx.fillStyle = '#64748b';
+      ctx.font = '300 12px "JetBrains Mono", monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText('WASD to awaken', w / 2, h / 2 + 40);
+      ctx.globalAlpha = 1;
     }
 
     // Death screen
