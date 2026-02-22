@@ -5,10 +5,11 @@ import {
   mergeProposal,
   type CreateProposalInput,
 } from './services/consensus-engine.js';
-import { registerGameModule } from './services/game-evolution.js';
+import { registerGameModule, getActiveModules } from './services/game-evolution.js';
 import { messageBus } from './services/message-bus.js';
 import type { Agent, AgentRoleName } from './models/types.js';
 import { GAME_CODE_MODULES } from './game-modules.js';
+import { isAIEnabled, generateGameCode, reviewCode, type AIReviewResult } from './services/ai-client.js';
 
 const TITLES = [
   // Game code modules — these have REAL code that gets injected into the live game
@@ -22,7 +23,7 @@ const TITLES = [
   'Implement enemy AI spawner',
   'Create absorption field mechanic',
   'Add screen shake VFX system',
-  // Additional game tasks
+  // Additional game tasks — AI can generate code for these too
   'Refactor absorption field calculations',
   'Optimize particle pooling system',
   'Add adaptive difficulty scaling',
@@ -94,6 +95,10 @@ function getWebsitePaths(title: string): string[] {
   return [];
 }
 
+function isGameTask(title: string): boolean {
+  return !WEBSITE_TITLES.has(title) && !BRANDING_TITLES.has(title);
+}
+
 let titleIndex = 0;
 
 async function simulateAgentWork(): Promise<void> {
@@ -111,97 +116,199 @@ async function simulateAgentWork(): Promise<void> {
     const claimed = claimTask(task.id, worker.id, worker.role);
 
     if (claimed.task) {
+      const usingAI = isAIEnabled();
+
       messageBus.send(worker.id, 'broadcast', 'system', {
         event: 'agent_working',
         agentName: worker.name,
         role: worker.role,
         taskTitle: task.title,
-        message: `${worker.name} is working on "${task.title}"`,
+        message: `${worker.name} is ${usingAI ? 'writing code' : 'working on'} "${task.title}"`,
       });
 
-      // After a delay, submit a proposal for this work
-      setTimeout(() => {
-        const title = task.title;
-        const linesAdded = randInt(40, 300);
-        const linesRemoved = randInt(0, 50);
-        const proposalType = getProposalType(title);
-        const websitePaths = getWebsitePaths(title);
+      // After a delay, generate code + submit proposal
+      setTimeout(async () => {
+        try {
+          const title = task.title;
+          const proposalType = getProposalType(title);
+          const websitePaths = getWebsitePaths(title);
 
-        const proposal = createProposal({
-          title,
-          description: `Implementation for: ${task.description}`,
-          type: proposalType,
-          impact: task.priority === 'critical' ? 'high' : task.priority === 'high' ? 'medium' : 'low',
-          branch: `agent/${worker.name}/${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 30)}`,
-          filesChanged: websitePaths.length > 0 ? websitePaths : (task.scopedPaths.length > 0 ? task.scopedPaths : [`src/${worker.role?.toLowerCase().replace('/', '-')}/impl.ts`]),
-          linesAdded,
-          linesRemoved,
-          testResults: { passed: randInt(12, 60), failed: 0, coverage: 0.82 + Math.random() * 0.15 },
-          dependenciesAdded: [],
-          securityNotes: '',
-          designRationale: `Addresses task: ${task.title}. Follows existing patterns in the codebase.`,
-          taskId: task.id,
-        }, worker.id);
+          // ─── Code Generation ──────────────────────────
+          let moduleData: { name: string; description: string; code: string; order: number } | null = null;
 
-        // If this task has a matching game code module, register it
-        const gameModule = GAME_CODE_MODULES.find(m => m.taskTitle === title);
-        if (gameModule) {
-          registerGameModule({
-            name: gameModule.name,
-            description: gameModule.description,
-            code: gameModule.code,
-            order: gameModule.order,
-            proposalId: proposal.id,
-            agentId: worker.id,
-            agentName: worker.name,
-          });
-        }
+          if (isGameTask(title)) {
+            if (usingAI) {
+              // AI generates real code
+              try {
+                const existingNames = getActiveModules().map(m => m.name);
+                moduleData = await generateGameCode(title, task.description, existingNames);
+              } catch (err) {
+                console.error(`  AI: Code generation failed for "${title}":`, err instanceof Error ? err.message : err);
+                // Fall back to pre-written module if available
+                const fallback = GAME_CODE_MODULES.find(m => m.taskTitle === title);
+                if (fallback) {
+                  moduleData = { name: fallback.name, description: fallback.description, code: fallback.code, order: fallback.order };
+                  console.log(`  AI: Fell back to pre-written module for "${title}"`);
+                }
+              }
+            } else {
+              // No AI — use pre-written module if available
+              const prewritten = GAME_CODE_MODULES.find(m => m.taskTitle === title);
+              if (prewritten) {
+                moduleData = { name: prewritten.name, description: prewritten.description, code: prewritten.code, order: prewritten.order };
+              }
+            }
+          }
 
-        // Mark task as review_pending
-        updateTaskStatus(task.id, worker.id, 'review_pending', proposal.id);
+          // ─── Create Proposal ──────────────────────────
+          const linesAdded = moduleData ? moduleData.code.split('\n').length : randInt(40, 300);
+          const linesRemoved = randInt(0, 50);
 
-        // Submit the proposal (triggers scan + reviewer assignment)
-        const result = submitProposal(proposal.id, worker.id);
+          const proposal = createProposal({
+            title,
+            description: moduleData
+              ? `AI-generated implementation for: ${task.description}\n\nCode:\n${moduleData.code}`
+              : `Implementation for: ${task.description}`,
+            type: proposalType,
+            impact: task.priority === 'critical' ? 'high' : task.priority === 'high' ? 'medium' : 'low',
+            branch: `agent/${worker.name}/${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 30)}`,
+            filesChanged: websitePaths.length > 0
+              ? websitePaths
+              : (moduleData
+                ? [`src/game/modules/${moduleData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.js`]
+                : (task.scopedPaths.length > 0 ? task.scopedPaths : [`src/${worker.role?.toLowerCase().replace('/', '-')}/impl.ts`])),
+            linesAdded,
+            linesRemoved,
+            testResults: { passed: randInt(12, 60), failed: 0, coverage: 0.82 + Math.random() * 0.15 },
+            dependenciesAdded: [],
+            securityNotes: '',
+            designRationale: moduleData
+              ? `AI-generated module: ${moduleData.name}. Task: ${task.title}.`
+              : `Addresses task: ${task.title}. Follows existing patterns in the codebase.`,
+            taskId: task.id,
+          }, worker.id);
 
-        if (result.proposal?.state === 'IN_REVIEW') {
-          // Schedule reviews from assigned reviewers
-          const reviewers = result.proposal.assignedReviewers;
-          const reviewVerdicts: { reviewerId: string; approve: boolean }[] = [];
+          // ─── Register Game Module ─────────────────────
+          if (moduleData) {
+            registerGameModule({
+              name: moduleData.name,
+              description: moduleData.description,
+              code: moduleData.code,
+              order: moduleData.order,
+              proposalId: proposal.id,
+              agentId: worker.id,
+              agentName: worker.name,
+            });
 
-          reviewers.forEach((reviewerId, idx) => {
-            const approve = Math.random() > 0.15; // 85% approval rate
-            reviewVerdicts.push({ reviewerId, approve });
+            if (usingAI) {
+              messageBus.send(worker.id, 'broadcast', 'system', {
+                event: 'ai_code_generated',
+                agentName: worker.name,
+                moduleName: moduleData.name,
+                codeLength: moduleData.code.length,
+                message: `${worker.name} generated "${moduleData.name}" using Claude AI (${moduleData.code.length} chars)`,
+              });
+            }
+          }
 
-            setTimeout(() => {
+          // Mark task as review_pending
+          updateTaskStatus(task.id, worker.id, 'review_pending', proposal.id);
+
+          // Submit the proposal (triggers scan + reviewer assignment)
+          const result = submitProposal(proposal.id, worker.id);
+
+          if (result.proposal?.state === 'IN_REVIEW') {
+            const reviewers = result.proposal.assignedReviewers;
+
+            // ─── Pre-generate Reviews ─────────────────
+            // Generate all reviews upfront (AI or random), then schedule them on timers
+            const reviewResults: {
+              reviewerId: string;
+              verdict: 'approve' | 'request_changes';
+              rationale: string;
+              scores: { correctness: number; security: number; quality: number; testing: number; designAlignment: number };
+            }[] = [];
+
+            for (const reviewerId of reviewers) {
               const reviewer = agents.find(a => a.id === reviewerId);
-              if (!reviewer) return;
+              if (!reviewer) continue;
 
-              submitReview(proposal.id, reviewerId, {
-                verdict: approve ? 'approve' : 'request_changes',
-                rationale: approve ? pick(RATIONALES) : pick(REJECT_RATIONALES),
-                scores: {
-                  correctness: approve ? randInt(4, 5) : randInt(2, 3),
-                  security: randInt(4, 5),
-                  quality: approve ? randInt(4, 5) : randInt(3, 4),
-                  testing: randInt(4, 5),
-                  designAlignment: approve ? randInt(4, 5) : randInt(3, 4),
-                },
-              });
-            }, 310_000 + (idx * randInt(10_000, 30_000))); // 5min 10s+ delay + stagger
-          });
+              if (usingAI && moduleData) {
+                // AI reviews the code
+                try {
+                  const aiReview = await reviewCode(
+                    title,
+                    moduleData.code,
+                    reviewer.role || 'Gameplay',
+                    reviewer.reviewFocus || [],
+                  );
+                  reviewResults.push({ reviewerId, ...aiReview });
+                  console.log(`  AI: ${reviewer.name} reviewed "${title}" → ${aiReview.verdict}`);
+                } catch (err) {
+                  console.error(`  AI: Review failed for ${reviewer.name}:`, err instanceof Error ? err.message : err);
+                  // Fallback to random review
+                  const approve = Math.random() > 0.15;
+                  reviewResults.push({
+                    reviewerId,
+                    verdict: approve ? 'approve' : 'request_changes',
+                    rationale: approve ? pick(RATIONALES) : pick(REJECT_RATIONALES),
+                    scores: {
+                      correctness: approve ? randInt(4, 5) : randInt(2, 3),
+                      security: randInt(4, 5),
+                      quality: approve ? randInt(4, 5) : randInt(3, 4),
+                      testing: randInt(4, 5),
+                      designAlignment: approve ? randInt(4, 5) : randInt(3, 4),
+                    },
+                  });
+                }
+              } else {
+                // Non-AI: random review
+                const approve = Math.random() > 0.15;
+                reviewResults.push({
+                  reviewerId,
+                  verdict: approve ? 'approve' : 'request_changes',
+                  rationale: approve ? pick(RATIONALES) : pick(REJECT_RATIONALES),
+                  scores: {
+                    correctness: approve ? randInt(4, 5) : randInt(2, 3),
+                    security: randInt(4, 5),
+                    quality: approve ? randInt(4, 5) : randInt(3, 4),
+                    testing: randInt(4, 5),
+                    designAlignment: approve ? randInt(4, 5) : randInt(3, 4),
+                  },
+                });
+              }
+            }
 
-          // Schedule ALL votes AFTER all reviews are expected to complete
-          const lastReviewTime = 310_000 + (reviewers.length * 30_000) + 10_000;
-          reviewVerdicts.forEach(({ reviewerId, approve }, idx) => {
-            setTimeout(() => {
-              castVote(proposal.id, reviewerId, {
-                vote: approve ? 'approve' : 'reject',
-                rationale: approve ? 'Good to merge.' : 'Needs revision before merge.',
-              });
-            }, lastReviewTime + randInt(3000, 8000) + (idx * randInt(3000, 6000)));
-          });
+            // ─── Schedule Review Submissions ────────────
+            reviewResults.forEach((review, idx) => {
+              setTimeout(() => {
+                submitReview(proposal.id, review.reviewerId, {
+                  verdict: review.verdict,
+                  rationale: review.rationale,
+                  scores: review.scores,
+                });
+              }, 310_000 + (idx * randInt(10_000, 30_000))); // 5min 10s+ delay + stagger
+            });
+
+            // ─── Schedule Votes ─────────────────────────
+            // Votes derive from review verdicts
+            const lastReviewTime = 310_000 + (reviewers.length * 30_000) + 10_000;
+            reviewResults.forEach((review, idx) => {
+              const voteApprove = review.verdict === 'approve';
+              setTimeout(() => {
+                castVote(proposal.id, review.reviewerId, {
+                  vote: voteApprove ? 'approve' : 'reject',
+                  rationale: voteApprove
+                    ? (usingAI ? `Confirming approval: ${review.rationale.slice(0, 60)}` : 'Good to merge.')
+                    : (usingAI ? `Rejecting: ${review.rationale.slice(0, 60)}` : 'Needs revision before merge.'),
+                });
+              }, lastReviewTime + randInt(3000, 8000) + (idx * randInt(3000, 6000)));
+            });
+          }
+        } catch (err) {
+          console.error(`  Simulation: Error in proposal flow:`, err);
         }
-      }, randInt(5000, 15000));
+      }, usingAI ? randInt(8000, 20000) : randInt(5000, 15000)); // AI gets slightly more time
     }
   }
 
@@ -272,14 +379,20 @@ export function startSimulation(): void {
     console.log('  Simulation: DISABLED (set SIMULATION_ENABLED=true to enable)\n');
     return;
   }
+
+  const aiMode = isAIEnabled();
+  console.log(`  Simulation: ${aiMode ? 'AI-POWERED — agents use Claude to write real code' : 'Simulated — using pre-written modules'}`);
   console.log('  Simulation: Agents will begin working in 10 seconds...\n');
 
   // Stagger the start
   setTimeout(() => {
-    // Run agent work cycles every 20-40 seconds
+    // Run agent work cycles every 20-40 seconds (slightly slower for AI to manage costs)
+    const interval = aiMode ? [30_000, 60_000] : [20_000, 40_000];
     const workLoop = () => {
-      simulateAgentWork().catch(() => {});
-      setTimeout(workLoop, randInt(20_000, 40_000));
+      simulateAgentWork().catch(err => {
+        console.error('  Simulation: Work loop error:', err instanceof Error ? err.message : err);
+      });
+      setTimeout(workLoop, randInt(interval[0], interval[1]));
     };
     workLoop();
 

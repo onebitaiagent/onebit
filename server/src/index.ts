@@ -18,6 +18,7 @@ import { startSimulation } from './simulation.js';
 import { getAdminKeyOnce } from './middleware/admin-auth.js';
 import { startXBot, isXBotEnabled } from './services/x-bot.js';
 import { startAutoSync, isAutoSyncEnabled } from './services/git-sync.js';
+import { isAIEnabled } from './services/ai-client.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -75,6 +76,7 @@ app.get('/api/health', (_req, res) => {
     status: 'ok',
     version: '0.1.0',
     uptime: process.uptime(),
+    ai_enabled: isAIEnabled(),
     config: {
       min_reviewers: config.min_reviewers,
       approval_threshold: config.approval_threshold,
@@ -147,6 +149,7 @@ app.listen(PORT, () => {
   console.log(`  Consensus: ${config.min_reviewers} reviewers, ${Math.round(config.approval_threshold * 100)}% threshold, blind=${config.blind_review}`);
   console.log(`  Approval:  critical/high -> admin required | low/medium -> auto-merge`);
   console.log(`  X Bot:     ${isXBotEnabled() ? 'LIVE — posting to @OneBitAIagent' : 'disabled (set X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, X_ACCESS_SECRET)'}`);
+  console.log(`  AI Agents: ${isAIEnabled() ? 'LIVE — agents use Claude API for real code generation & review' : 'disabled (set ANTHROPIC_API_KEY to enable)'}`);
   console.log(`  Git Sync:  ${isAutoSyncEnabled() ? 'LIVE — auto-push every 6h' : 'disabled (set GITHUB_TOKEN)'}\n`);
   const adminKey = getAdminKeyOnce();
   if (adminKey) {
