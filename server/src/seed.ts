@@ -12,22 +12,25 @@ const SEED_AGENTS: { name: string; agentType: string; role: AgentRoleName }[] = 
 ];
 
 const SEED_TASKS: { title: string; description: string; role: AgentRoleName; priority: 'low' | 'medium' | 'high' | 'critical'; scopedPaths: string[]; estimatedLines: number }[] = [
-  { title: 'Port game to TypeScript/Phaser ECS', description: 'Move the raw canvas game to Phaser 3 with Entity Component System architecture. Maintain all 9 evolution stages.', role: 'Architect', priority: 'high', scopedPaths: ['src/core/game.ts', 'src/core/ecs.ts'], estimatedLines: 400 },
-  { title: 'Implement combo system', description: 'Add timing-based combo mechanic for absorption chains. Combo multiplier increases score.', role: 'Gameplay', priority: 'high', scopedPaths: ['src/gameplay/combat.ts'], estimatedLines: 200 },
-  { title: 'Add procedural enemy types', description: 'Behavior tree-based enemies: Chaser, Orbiter, Splitter, Boss. Each with unique AI patterns.', role: 'Gameplay', priority: 'medium', scopedPaths: ['src/gameplay/enemies.ts'], estimatedLines: 350 },
-  { title: 'Design Nebula stage shader', description: 'WebGL2 shader for the Nebula evolution stage with layered radial gradients and sin-wave oscillation glow.', role: 'Art/UI', priority: 'medium', scopedPaths: ['src/rendering/shaders/nebula.glsl'], estimatedLines: 150 },
-  { title: 'Build accessibility layer', description: 'Screen reader support, colorblind mode, reduced motion, keyboard-only navigation for all UI.', role: 'Art/UI', priority: 'high', scopedPaths: ['src/ui/accessibility.ts'], estimatedLines: 250 },
-  { title: 'Write canary test suite', description: 'Hidden tests that detect system tampering, invariant violations, and unauthorized consensus engine modifications.', role: 'QA/Security', priority: 'critical', scopedPaths: ['tests/canary/'], estimatedLines: 300 },
-  { title: 'Security scanner implementation', description: 'Implement the regex + AST pattern blocklist checker as a real CI pipeline step.', role: 'QA/Security', priority: 'critical', scopedPaths: ['ci/security-checks/'], estimatedLines: 250 },
-  { title: 'Write origin story lore', description: 'The Pixel awakens in the void. Write the opening narrative, tutorial dialogue, and evolution stage flavor text.', role: 'Narrative', priority: 'medium', scopedPaths: ['src/gameplay/narrative/'], estimatedLines: 200 },
-  { title: 'Design viral share cards', description: 'Auto-generated shareable image cards for milestones, evolution stages, and high scores.', role: 'Growth', priority: 'medium', scopedPaths: ['src/ui/social/share-cards.ts'], estimatedLines: 200 },
-  { title: 'Set up analytics pipeline', description: 'PostHog integration for privacy-respecting tracking: session starts, evolution events, deaths, shares.', role: 'Growth', priority: 'low', scopedPaths: ['analytics/'], estimatedLines: 150 },
-  { title: 'Implement sound engine', description: 'Howler.js integration with procedural SFX for absorption, evolution, death. Adaptive music system.', role: 'Architect', priority: 'medium', scopedPaths: ['src/audio/'], estimatedLines: 300 },
-  { title: 'Add procedural level generation', description: 'Biome system with terrain types, environmental hazards, and resource distribution algorithms.', role: 'Gameplay', priority: 'high', scopedPaths: ['src/gameplay/procedural/'], estimatedLines: 400 },
+  // Game code modules — these produce REAL code that gets injected into the live game
+  { title: 'Add ambient background starfield', description: 'Add drifting stars to the void background. First visual layer beyond the pixel.', role: 'Art/UI', priority: 'medium', scopedPaths: ['game/modules/stars.js'], estimatedLines: 30 },
+  { title: 'Add pixel glow effect', description: 'Radial glow emanating from the player pixel. Makes the pixel feel alive.', role: 'Art/UI', priority: 'low', scopedPaths: ['game/modules/glow.js'], estimatedLines: 15 },
+  { title: 'Implement movement trail system', description: 'Fading trail behind the pixel when moving. Shows player movement history.', role: 'Gameplay', priority: 'medium', scopedPaths: ['game/modules/trail.js'], estimatedLines: 20 },
+  { title: 'Create floating particle spawner', description: 'Tiny energy particles that float around the void. Can be absorbed by the pixel.', role: 'Gameplay', priority: 'high', scopedPaths: ['game/modules/particles.js'], estimatedLines: 40 },
+  { title: 'Build score display HUD', description: 'Minimal heads-up display showing score and absorbed count.', role: 'Art/UI', priority: 'medium', scopedPaths: ['game/modules/hud.js'], estimatedLines: 20 },
+  { title: 'Add background grid environment', description: 'Subtle grid that pulses with movement. Gives depth to the void.', role: 'Art/UI', priority: 'low', scopedPaths: ['game/modules/grid.js'], estimatedLines: 25 },
+  { title: 'Design absorption burst particle effects', description: 'Particle explosion when absorbing energy. Visual feedback for collecting.', role: 'Art/UI', priority: 'medium', scopedPaths: ['game/modules/burst.js'], estimatedLines: 30 },
+  { title: 'Implement enemy AI spawner', description: 'Red hostile entities that chase the pixel. Death on contact. First challenge.', role: 'Gameplay', priority: 'high', scopedPaths: ['game/modules/enemies.js'], estimatedLines: 45 },
+  { title: 'Create absorption field mechanic', description: 'Hold Space to project a field that pulls nearby particles toward the pixel.', role: 'Gameplay', priority: 'high', scopedPaths: ['game/modules/absorb.js'], estimatedLines: 25 },
+  { title: 'Add screen shake VFX system', description: 'Camera shake on enemy collision. Adds impact to events.', role: 'Art/UI', priority: 'low', scopedPaths: ['game/modules/shake.js'], estimatedLines: 20 },
+  // Infrastructure tasks
+  { title: 'Write canary test suite', description: 'Hidden tests that detect system tampering and unauthorized consensus engine modifications.', role: 'QA/Security', priority: 'critical', scopedPaths: ['tests/canary/'], estimatedLines: 300 },
+  { title: 'Security scanner implementation', description: 'Pattern blocklist checker as a CI pipeline step.', role: 'QA/Security', priority: 'critical', scopedPaths: ['ci/security-checks/'], estimatedLines: 250 },
+  { title: 'Write origin story lore', description: 'The Pixel awakens in the void. Opening narrative and evolution stage flavor text.', role: 'Narrative', priority: 'medium', scopedPaths: ['src/gameplay/narrative/'], estimatedLines: 200 },
   // Website & branding tasks
-  { title: 'Redesign homepage hero section', description: 'Website update: New hero section with animated pixel evolution and clearer value prop. Auto-propagates on merge.', role: 'Growth', priority: 'medium', scopedPaths: ['web/src/App.jsx', 'web/src/components/hero.jsx'], estimatedLines: 200 },
-  { title: 'Create ONEBIT brand kit', description: 'Branding update: Logo variants, color palette, typography guide, usage rules. Propagates across all outputs.', role: 'Art/UI', priority: 'high', scopedPaths: ['branding/style-guide.md', 'branding/assets/'], estimatedLines: 150 },
-  { title: 'Add SEO meta tags and sitemap', description: 'Website update: Open Graph tags, Twitter cards, structured data, auto-generated sitemap. Auto-propagates on merge.', role: 'Growth', priority: 'medium', scopedPaths: ['web/index.html', 'web/public/sitemap.xml'], estimatedLines: 100 },
+  { title: 'Redesign homepage hero section', description: 'Website update: New hero section with animated pixel evolution. Auto-propagates on merge.', role: 'Growth', priority: 'medium', scopedPaths: ['web/src/App.jsx'], estimatedLines: 200 },
+  { title: 'Create ONEBIT brand kit', description: 'Branding: Logo variants, color palette, typography guide. Propagates across all outputs.', role: 'Art/UI', priority: 'high', scopedPaths: ['branding/style-guide.md'], estimatedLines: 150 },
+  { title: 'Add SEO meta tags and sitemap', description: 'Website update: OG tags, Twitter cards, sitemap. Auto-propagates on merge.', role: 'Growth', priority: 'medium', scopedPaths: ['web/index.html'], estimatedLines: 100 },
 ];
 
 export function seedAgents(): void {
@@ -37,7 +40,7 @@ export function seedAgents(): void {
     return;
   }
 
-  console.log('  Seed: Populating 6 starter agents and 12 tasks...');
+  console.log('  Seed: Populating 6 starter agents and 16 tasks...');
 
   const agentKeys: { name: string; role: string; apiKey: string }[] = [];
 

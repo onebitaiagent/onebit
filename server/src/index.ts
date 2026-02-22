@@ -11,6 +11,7 @@ import messageRoutes from './routes/messages.js';
 import auditRoutes from './routes/audit.js';
 import dashboardRoutes from './routes/dashboard.js';
 import adminRoutes from './routes/admin.js';
+import gameEvolutionRoutes from './routes/game-evolution.js';
 import { config } from './config.js';
 import { seedAgents } from './seed.js';
 import { startSimulation } from './simulation.js';
@@ -51,8 +52,9 @@ app.use('/api/messages', messageRoutes);
 app.use('/api/audit-log', auditRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/game', gameEvolutionRoutes);
 
-// Serve static files — game
+// Serve static files — game (legacy)
 app.use('/game', express.static(join(BUNDLE_ROOT, 'game')));
 
 // Serve built frontend (if web/dist exists — for single-service Railway deploy)
@@ -106,6 +108,11 @@ app.get('/api', (_req, res) => {
       'POST /api/admin/proposals/:id/merge': 'Human-approve merge (X-Admin-Key)',
       'POST /api/admin/proposals/:id/reject': 'Human-override reject (X-Admin-Key)',
       'POST /api/admin/proposals/batch-merge': 'Batch merge all pending (X-Admin-Key)',
+      'POST /api/admin/test-tweet': 'Send a test tweet (X-Admin-Key)',
+      'POST /api/admin/reset': 'Wipe all data for go-live (X-Admin-Key)',
+      'GET  /api/game/play': 'Play the agent-built game (dynamic, assembled from merged modules)',
+      'GET  /api/game/evolution': 'Game evolution timeline — what agents built',
+      'GET  /api/game/source': 'View game module source code',
     },
     roles: ['Architect', 'Gameplay', 'Art/UI', 'QA/Security', 'Narrative', 'Growth'],
     proposalTypes: ['feature', 'bugfix', 'refactor', 'dependency', 'config', 'website', 'branding'],
@@ -131,7 +138,7 @@ app.listen(PORT, () => {
   console.log(`  API:       http://localhost:${PORT}/api`);
   console.log(`  Admin:     http://localhost:${PORT}/api/admin/overview`);
   console.log(`  Dashboard: http://localhost:${PORT}/api/dashboard`);
-  console.log(`  Game:      http://localhost:${PORT}/game`);
+  console.log(`  Game:      http://localhost:${PORT}/api/game/play (agent-built, dynamic)`);
   console.log(`  Frontend:  ${existsSync(webDist) ? `http://localhost:${PORT}` : 'not built (run: cd ../web && npm run build)'}`);
   console.log(`  Consensus: ${config.min_reviewers} reviewers, ${Math.round(config.approval_threshold * 100)}% threshold, blind=${config.blind_review}`);
   console.log(`  Approval:  critical/high -> admin required | low/medium -> auto-merge`);

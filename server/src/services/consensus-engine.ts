@@ -5,6 +5,7 @@ import { appendAudit } from './audit-log.js';
 import { messageBus } from './message-bus.js';
 import { scanProposal } from './security-scanner.js';
 import { getAllAgents, updateAgentStats, addContribution } from './agent-registry.js';
+import { activateModuleByProposal } from './game-evolution.js';
 import { config } from '../config.js';
 
 const store = new JsonStore<Proposal>('proposals.json');
@@ -377,6 +378,8 @@ export function castVote(
       for (const review of updatedVotes.length > 0 ? proposal.reviews : []) {
         addContribution(review.agentId, 'review_completed');
       }
+      // Activate any game module linked to this proposal
+      activateModuleByProposal(proposalId);
       messageBus.send('consensus_engine', 'broadcast', 'system', {
         event: 'proposal_merged',
         proposalId,
@@ -413,6 +416,9 @@ export function mergeProposal(proposalId: string): { proposal: Proposal | null; 
   for (const review of proposal.reviews) {
     addContribution(review.agentId, 'review_completed');
   }
+
+  // Activate any game module linked to this proposal
+  activateModuleByProposal(proposalId);
 
   messageBus.send('consensus_engine', 'broadcast', 'system', {
     event: 'proposal_merged',

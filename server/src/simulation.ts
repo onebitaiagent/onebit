@@ -4,29 +4,31 @@ import {
   createProposal, submitProposal, submitReview, castVote, getProposals,
   type CreateProposalInput,
 } from './services/consensus-engine.js';
+import { registerGameModule } from './services/game-evolution.js';
 import { messageBus } from './services/message-bus.js';
 import type { Agent, AgentRoleName } from './models/types.js';
+import { GAME_CODE_MODULES } from './game-modules.js';
 
 const TITLES = [
+  // Game code modules — these have REAL code that gets injected into the live game
+  'Add ambient background starfield',
+  'Add pixel glow effect',
+  'Implement movement trail system',
+  'Create floating particle spawner',
+  'Build score display HUD',
+  'Add background grid environment',
+  'Design absorption burst particle effects',
+  'Implement enemy AI spawner',
+  'Create absorption field mechanic',
+  'Add screen shake VFX system',
+  // Additional game tasks
   'Refactor absorption field calculations',
-  'Add screen-shake intensity curve',
   'Optimize particle pooling system',
-  'Implement combo multiplier HUD',
-  'Fix edge-wrap jitter at high speed',
   'Add adaptive difficulty scaling',
-  'Create evolution burst VFX system',
   'Implement enemy behavior tree framework',
   'Add colorblind-safe palette toggle',
-  'Design achievement notification system',
-  'Build replay snapshot encoder',
-  'Add procedural biome transitions',
   'Implement score streak mechanic',
-  'Create tutorial tooltip system',
   'Add ambient audio layer manager',
-  'Build leaderboard data model',
-  'Implement dead-zone reduction for mobile',
-  'Add cosmetic unlock progression',
-  'Create share-card image renderer',
   'Optimize WebGL draw call batching',
   // Website & branding tasks
   'Update homepage hero copy and CTA',
@@ -140,6 +142,20 @@ async function simulateAgentWork(): Promise<void> {
           taskId: task.id,
         }, worker.id);
 
+        // If this task has a matching game code module, register it
+        const gameModule = GAME_CODE_MODULES.find(m => m.taskTitle === title);
+        if (gameModule) {
+          registerGameModule({
+            name: gameModule.name,
+            description: gameModule.description,
+            code: gameModule.code,
+            order: gameModule.order,
+            proposalId: proposal.id,
+            agentId: worker.id,
+            agentName: worker.name,
+          });
+        }
+
         // Mark task as review_pending
         updateTaskStatus(task.id, worker.id, 'review_pending', proposal.id);
 
@@ -245,6 +261,10 @@ function generateMockXPost(): void {
 }
 
 export function startSimulation(): void {
+  if (process.env.SIMULATION_ENABLED === 'false') {
+    console.log('  Simulation: DISABLED (set SIMULATION_ENABLED=true to enable)\n');
+    return;
+  }
   console.log('  Simulation: Agents will begin working in 10 seconds...\n');
 
   // Stagger the start

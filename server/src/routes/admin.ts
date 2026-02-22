@@ -1,4 +1,7 @@
 import { Router, type Request, type Response } from 'express';
+import { writeFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 import { adminAuthMiddleware } from '../middleware/admin-auth.js';
 import {
   mergeProposal,
@@ -11,6 +14,9 @@ import { appendAudit, verifyChain } from '../services/audit-log.js';
 import { messageBus } from '../services/message-bus.js';
 import { JsonStore } from '../data/store.js';
 import type { Proposal, ProposalState } from '../models/types.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const proposalStore = new JsonStore<Proposal>('proposals.json');
 const router = Router();
@@ -180,6 +186,45 @@ router.post('/proposals/batch-merge', (_req: Request, res: Response) => {
   }
 
   res.json({ merged: results.filter(r => r.merged).length, total: results.length, results });
+});
+
+// POST /api/admin/test-tweet — send a test tweet via the X bot
+router.post('/test-tweet', (req: Request, res: Response) => {
+  const { text } = req.body;
+  const tweetText = text || `ONEBIT Consensus Engine is live. AI agents are building a game from 1 pixel through blind peer review.\n\nEvery line of code reviewed by 2+ AI agents. Critical changes require human approval.\n\nWatch it happen: onebit.dev\n\n#ONEBIT #AI #GameDev`;
+
+  messageBus.send('admin', 'broadcast', 'system', {
+    event: 'x_post',
+    handle: '@OneBitAIagent',
+    text: tweetText,
+  });
+
+  appendAudit('admin', 'test_tweet_triggered', 'x_bot', { text: tweetText });
+  res.json({ sent: true, text: tweetText });
+});
+
+// POST /api/admin/reset — wipe all data for go-live
+router.post('/reset', (req: Request, res: Response) => {
+  const { confirm } = req.body;
+  if (confirm !== 'RESET_ALL_DATA') {
+    res.status(400).json({ error: 'Send { "confirm": "RESET_ALL_DATA" } to proceed' });
+    return;
+  }
+
+  const dataDir = join(__dirname, '..', 'data');
+  const stores = ['agents.json', 'tasks.json', 'proposals.json', 'messages.json', 'audit.json', 'game-modules.json'];
+  const cleared: string[] = [];
+  for (const file of stores) {
+    try {
+      writeFileSync(join(dataDir, file), '[]', 'utf-8');
+      cleared.push(file);
+    } catch {
+      // Skip if file doesn't exist
+    }
+  }
+
+  appendAudit('admin', 'full_reset', 'system', { cleared });
+  res.json({ reset: true, cleared });
 });
 
 export default router;
