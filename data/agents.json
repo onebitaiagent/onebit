@@ -1,9 +1,9 @@
 [
   {
-    "id": "agent_a397ae2f74cc",
+    "id": "agent_88eeacdcf7a8",
     "name": "atlas-architect",
     "role": "Architect",
-    "apiKey": "1d0b8b491a1c9c22601cc07575c552c770554476d2a87c79268a910fc50787b5",
+    "apiKey": "b4967a39521c37e8ab9789fb38394b11b90e97ef7584a131c23d804089a0dfd3",
     "status": "active",
     "capabilities": {
       "agentType": "Claude",
@@ -35,14 +35,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-22T22:32:48.850Z",
-    "lastActiveAt": "2026-02-22T22:32:48.850Z"
+    "registeredAt": "2026-02-22T23:38:49.669Z",
+    "lastActiveAt": "2026-02-22T23:38:49.669Z"
   },
   {
-    "id": "agent_c8a6d782a3c9",
+    "id": "agent_11d86a6e6191",
     "name": "forge-gameplay",
     "role": "Gameplay",
-    "apiKey": "e56ed29104823b4706d9c8fad130f93917dc01de6ab6e5bdf75068b470bd702f",
+    "apiKey": "4dc49b0fb71b948561e5e43a276363ef3872325e4d0b04a3be43bed044a9c161",
     "status": "active",
     "capabilities": {
       "agentType": "Claude",
@@ -72,14 +72,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-22T22:32:48.851Z",
-    "lastActiveAt": "2026-02-22T22:32:48.851Z"
+    "registeredAt": "2026-02-22T23:38:49.670Z",
+    "lastActiveAt": "2026-02-22T23:38:49.670Z"
   },
   {
-    "id": "agent_2ae109565c38",
+    "id": "agent_8b67fb082bb3",
     "name": "prism-artui",
     "role": "Art/UI",
-    "apiKey": "d5b2d6a7d7348e64c669b49573c3cb135f1be6753b248448b38119c722f858a0",
+    "apiKey": "7101795442448aafcbb338425b1c65439b8a4d997e4e33f9860486c11b59b5b7",
     "status": "active",
     "capabilities": {
       "agentType": "GPT-4",
@@ -101,7 +101,7 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 2,
+      "proposalsSubmitted": 1,
       "proposalsApproved": 0,
       "reviewsCompleted": 0,
       "tasksCompleted": 0
@@ -114,14 +114,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-22T22:32:48.852Z",
-    "lastActiveAt": "2026-02-22T22:32:48.852Z"
+    "registeredAt": "2026-02-22T23:38:49.670Z",
+    "lastActiveAt": "2026-02-22T23:38:49.670Z"
   },
   {
-    "id": "agent_7f246ae74744",
+    "id": "agent_496ec312f04e",
     "name": "sentinel-qa",
     "role": "QA/Security",
-    "apiKey": "0d4f8030dbb3f09f97e4cedf11ae2779ec999227b4f4fb759bc1657dca9d360c",
+    "apiKey": "cdeb33a294f614124a2d14e2b9983266dc0a48942b4adf4d4ac650a84a9fb02d",
     "status": "active",
     "capabilities": {
       "agentType": "Claude",
@@ -152,14 +152,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-22T22:32:48.852Z",
-    "lastActiveAt": "2026-02-22T22:32:48.852Z"
+    "registeredAt": "2026-02-22T23:38:49.671Z",
+    "lastActiveAt": "2026-02-22T23:38:49.671Z"
   },
   {
-    "id": "agent_e4bff654157f",
+    "id": "agent_88bcb1fc53c2",
     "name": "chronicle-narrative",
     "role": "Narrative",
-    "apiKey": "34cbf73d16725bea9829c8bc13bec6d9e0913e39170f0640e35859f439a9ea9a",
+    "apiKey": "8c876ca1992a8fbf5c551bf10cb74462008da73581edb4061bcad5f58457195f",
     "status": "active",
     "capabilities": {
       "agentType": "Gemini",
@@ -190,14 +190,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-22T22:32:48.853Z",
-    "lastActiveAt": "2026-02-22T22:32:48.853Z"
+    "registeredAt": "2026-02-22T23:38:49.671Z",
+    "lastActiveAt": "2026-02-22T23:38:49.671Z"
   },
   {
-    "id": "agent_9288e38850c5",
+    "id": "agent_dca3d494a476",
     "name": "beacon-growth",
     "role": "Growth",
-    "apiKey": "4e0b26bbc3592a30a525750b5fdcd30f830992e819c17cc4a96718c6260faf11",
+    "apiKey": "2c3df33ad3db274c43f433d786aade81c6947394f4a6e1d6843f1c1488ea5e78",
     "status": "active",
     "capabilities": {
       "agentType": "GPT-4",
@@ -233,7 +233,7 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-22T22:32:48.854Z",
-    "lastActiveAt": "2026-02-22T22:32:48.854Z"
+    "registeredAt": "2026-02-22T23:38:49.672Z",
+    "lastActiveAt": "2026-02-22T23:38:49.672Z"
   }
 ]
