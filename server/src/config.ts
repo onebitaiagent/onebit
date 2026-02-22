@@ -43,8 +43,8 @@ const DEFAULT_ROLES: RoleDefinition[] = [
   },
   {
     name: 'Art/UI',
-    owned_paths: ['src/rendering/**', 'src/ui/**', 'assets/**'],
-    review_focus: ['visual_consistency', 'accessibility', 'ux', 'performance'],
+    owned_paths: ['src/rendering/**', 'src/ui/**', 'assets/**', 'web/src/styles/**', 'branding/**'],
+    review_focus: ['visual_consistency', 'accessibility', 'ux', 'performance', 'brand_consistency'],
     can_emergency_block: false,
   },
   {
@@ -61,8 +61,8 @@ const DEFAULT_ROLES: RoleDefinition[] = [
   },
   {
     name: 'Growth',
-    owned_paths: ['docs/marketing/**', 'src/ui/social/**', 'analytics/**'],
-    review_focus: ['virality', 'onboarding', 'retention', 'analytics'],
+    owned_paths: ['docs/marketing/**', 'src/ui/social/**', 'analytics/**', 'web/src/**', 'web/public/**'],
+    review_focus: ['virality', 'onboarding', 'retention', 'analytics', 'website_copy', 'seo'],
     can_emergency_block: false,
   },
 ];

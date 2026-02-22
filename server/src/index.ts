@@ -10,9 +10,11 @@ import proposalRoutes from './routes/proposals.js';
 import messageRoutes from './routes/messages.js';
 import auditRoutes from './routes/audit.js';
 import dashboardRoutes from './routes/dashboard.js';
+import adminRoutes from './routes/admin.js';
 import { config } from './config.js';
 import { seedAgents } from './seed.js';
 import { startSimulation } from './simulation.js';
+import { getAdminKeyOnce } from './middleware/admin-auth.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -47,6 +49,7 @@ app.use('/api/proposals', proposalRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/audit-log', auditRoutes);
 app.use('/api/dashboard', dashboardRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Serve static files — game
 app.use('/game', express.static(join(BUNDLE_ROOT, 'game')));
@@ -97,8 +100,19 @@ app.get('/api', (_req, res) => {
       'GET  /api/audit-log': 'Hash-chained audit log',
       'GET  /api/audit-log/verify': 'Verify chain integrity',
       'GET  /api/health': 'Health check',
+      'GET  /api/admin/overview': 'Admin dashboard (X-Admin-Key)',
+      'GET  /api/admin/pending': 'Proposals awaiting human approval (X-Admin-Key)',
+      'POST /api/admin/proposals/:id/merge': 'Human-approve merge (X-Admin-Key)',
+      'POST /api/admin/proposals/:id/reject': 'Human-override reject (X-Admin-Key)',
+      'POST /api/admin/proposals/batch-merge': 'Batch merge all pending (X-Admin-Key)',
     },
     roles: ['Architect', 'Gameplay', 'Art/UI', 'QA/Security', 'Narrative', 'Growth'],
+    proposalTypes: ['feature', 'bugfix', 'refactor', 'dependency', 'config', 'website', 'branding'],
+    approvalPolicy: {
+      'critical/high impact': 'Requires human admin approval after consensus',
+      'low/medium impact': 'Auto-merges after consensus passes',
+      'website/branding': 'Always requires admin approval (auto-propagates on merge)',
+    },
   });
 });
 
@@ -111,10 +125,17 @@ startSimulation();
 app.listen(PORT, () => {
   console.log(`\n  ONEBIT CONSENSUS ENGINE v0.1`);
   console.log(`  API:       http://localhost:${PORT}/api`);
+  console.log(`  Admin:     http://localhost:${PORT}/api/admin/overview`);
   console.log(`  Dashboard: http://localhost:${PORT}/api/dashboard`);
   console.log(`  Game:      http://localhost:${PORT}/game`);
   console.log(`  Frontend:  ${existsSync(webDist) ? `http://localhost:${PORT}` : 'not built (run: cd ../web && npm run build)'}`);
-  console.log(`  Consensus: ${config.min_reviewers} reviewers, ${Math.round(config.approval_threshold * 100)}% threshold, blind=${config.blind_review}\n`);
+  console.log(`  Consensus: ${config.min_reviewers} reviewers, ${Math.round(config.approval_threshold * 100)}% threshold, blind=${config.blind_review}`);
+  console.log(`  Approval:  critical/high -> admin required | low/medium -> auto-merge\n`);
+  const adminKey = getAdminKeyOnce();
+  if (adminKey) {
+    console.log(`  ADMIN KEY: ${adminKey}`);
+    console.log(`  (Set ADMIN_KEY env var on Railway to use this key)\n`);
+  }
 });
 
 export default app;

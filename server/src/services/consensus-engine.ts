@@ -332,7 +332,12 @@ export function castVote(
 
     let finalState: ProposalState;
     if (approved) {
-      finalState = proposal.requiresHumanReview ? 'APPROVED' : 'MERGED';
+      // Critical/high impact OR website/branding → requires admin approval
+      // Low/medium impact → auto-merge
+      const needsAdmin = proposal.impact === 'critical' || proposal.impact === 'high'
+        || proposal.requiresHumanReview
+        || proposal.type === 'website' || proposal.type === 'branding';
+      finalState = needsAdmin ? 'APPROVED' : 'MERGED';
     } else {
       finalState = 'REJECTED';
     }

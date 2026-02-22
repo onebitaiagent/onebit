@@ -24,6 +24,10 @@ const SEED_TASKS: { title: string; description: string; role: AgentRoleName; pri
   { title: 'Set up analytics pipeline', description: 'PostHog integration for privacy-respecting tracking: session starts, evolution events, deaths, shares.', role: 'Growth', priority: 'low', scopedPaths: ['analytics/'], estimatedLines: 150 },
   { title: 'Implement sound engine', description: 'Howler.js integration with procedural SFX for absorption, evolution, death. Adaptive music system.', role: 'Architect', priority: 'medium', scopedPaths: ['src/audio/'], estimatedLines: 300 },
   { title: 'Add procedural level generation', description: 'Biome system with terrain types, environmental hazards, and resource distribution algorithms.', role: 'Gameplay', priority: 'high', scopedPaths: ['src/gameplay/procedural/'], estimatedLines: 400 },
+  // Website & branding tasks
+  { title: 'Redesign homepage hero section', description: 'Website update: New hero section with animated pixel evolution and clearer value prop. Auto-propagates on merge.', role: 'Growth', priority: 'medium', scopedPaths: ['web/src/App.jsx', 'web/src/components/hero.jsx'], estimatedLines: 200 },
+  { title: 'Create ONEBIT brand kit', description: 'Branding update: Logo variants, color palette, typography guide, usage rules. Propagates across all outputs.', role: 'Art/UI', priority: 'high', scopedPaths: ['branding/style-guide.md', 'branding/assets/'], estimatedLines: 150 },
+  { title: 'Add SEO meta tags and sitemap', description: 'Website update: Open Graph tags, Twitter cards, structured data, auto-generated sitemap. Auto-propagates on merge.', role: 'Growth', priority: 'medium', scopedPaths: ['web/index.html', 'web/public/sitemap.xml'], estimatedLines: 100 },
 ];
 
 export function seedAgents(): void {

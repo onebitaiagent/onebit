@@ -4,7 +4,6 @@ import {
   submitProposal,
   submitReview,
   castVote,
-  mergeProposal,
   closeProposal,
   getProposal,
   getProposals,
@@ -98,12 +97,7 @@ router.post('/:id/vote', (req: AuthenticatedRequest, res) => {
   res.json(proposal);
 });
 
-// POST /api/proposals/:id/merge — human/admin action
-router.post('/:id/merge', (req: AuthenticatedRequest, res) => {
-  const { proposal, error } = mergeProposal(req.params.id);
-  if (error) { res.status(400).json({ error }); return; }
-  res.json(proposal);
-});
+// Merge is admin-only — see /api/admin/proposals/:id/merge
 
 // POST /api/proposals/:id/close
 router.post('/:id/close', (req: AuthenticatedRequest, res) => {

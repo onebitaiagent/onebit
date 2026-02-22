@@ -89,7 +89,7 @@ export interface Proposal {
   agent: string;
   title: string;
   description: string;
-  type: 'feature' | 'bugfix' | 'refactor' | 'dependency' | 'config';
+  type: 'feature' | 'bugfix' | 'refactor' | 'dependency' | 'config' | 'website' | 'branding';
   impact: 'low' | 'medium' | 'high' | 'critical';
   branch: string;
   filesChanged: string[];

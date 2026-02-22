@@ -28,7 +28,34 @@ const TITLES = [
   'Add cosmetic unlock progression',
   'Create share-card image renderer',
   'Optimize WebGL draw call batching',
+  // Website & branding tasks
+  'Update homepage hero copy and CTA',
+  'Redesign feed page layout for mobile',
+  'Add dark/light theme toggle to website',
+  'Create ONEBIT brand style guide page',
+  'Build agent activity dashboard widget',
+  'Add open graph meta tags for social sharing',
+  'Design evolution stage showcase section',
+  'Update website favicon and app icons',
+  'Create animated logo SVG for header',
+  'Build real-time consensus stats ticker',
 ];
+
+const WEBSITE_TITLES = new Set([
+  'Update homepage hero copy and CTA',
+  'Redesign feed page layout for mobile',
+  'Add dark/light theme toggle to website',
+  'Build agent activity dashboard widget',
+  'Add open graph meta tags for social sharing',
+  'Design evolution stage showcase section',
+  'Build real-time consensus stats ticker',
+]);
+
+const BRANDING_TITLES = new Set([
+  'Create ONEBIT brand style guide page',
+  'Update website favicon and app icons',
+  'Create animated logo SVG for header',
+]);
 
 const RATIONALES = [
   'Clean implementation with good test coverage. Follows existing patterns well.',
@@ -50,6 +77,18 @@ function pick<T>(arr: T[]): T {
 
 function randInt(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getProposalType(title: string): 'feature' | 'website' | 'branding' {
+  if (WEBSITE_TITLES.has(title)) return 'website';
+  if (BRANDING_TITLES.has(title)) return 'branding';
+  return 'feature';
+}
+
+function getWebsitePaths(title: string): string[] {
+  if (WEBSITE_TITLES.has(title)) return ['web/src/App.jsx', `web/src/components/${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 20)}.jsx`];
+  if (BRANDING_TITLES.has(title)) return ['web/public/favicon.ico', 'branding/style-guide.md', 'web/src/App.jsx'];
+  return [];
 }
 
 let titleIndex = 0;
@@ -82,14 +121,16 @@ async function simulateAgentWork(): Promise<void> {
         const title = task.title;
         const linesAdded = randInt(40, 300);
         const linesRemoved = randInt(0, 50);
+        const proposalType = getProposalType(title);
+        const websitePaths = getWebsitePaths(title);
 
         const proposal = createProposal({
           title,
           description: `Implementation for: ${task.description}`,
-          type: 'feature',
+          type: proposalType,
           impact: task.priority === 'critical' ? 'high' : task.priority === 'high' ? 'medium' : 'low',
           branch: `agent/${worker.name}/${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 30)}`,
-          filesChanged: task.scopedPaths.length > 0 ? task.scopedPaths : [`src/${worker.role?.toLowerCase().replace('/', '-')}/impl.ts`],
+          filesChanged: websitePaths.length > 0 ? websitePaths : (task.scopedPaths.length > 0 ? task.scopedPaths : [`src/${worker.role?.toLowerCase().replace('/', '-')}/impl.ts`]),
           linesAdded,
           linesRemoved,
           testResults: { passed: randInt(12, 60), failed: 0, coverage: 0.82 + Math.random() * 0.15 },
@@ -141,13 +182,26 @@ async function simulateAgentWork(): Promise<void> {
     }
   }
 
-  // Occasionally create new tasks
+  // Occasionally create new tasks (including website/branding)
   if (Math.random() < 0.3 && titleIndex < TITLES.length) {
     const title = TITLES[titleIndex++];
-    const roleForTask = pick(agents).role!;
+    // Website/branding tasks go to Art/UI or Growth
+    let roleForTask: AgentRoleName;
+    if (WEBSITE_TITLES.has(title)) {
+      roleForTask = pick(['Art/UI', 'Growth'] as AgentRoleName[]);
+    } else if (BRANDING_TITLES.has(title)) {
+      roleForTask = 'Art/UI';
+    } else {
+      roleForTask = pick(agents).role!;
+    }
+
     createTask({
       title,
-      description: `Agent-generated task: ${title}`,
+      description: WEBSITE_TITLES.has(title)
+        ? `Website update: ${title}. Changes auto-propagate on merge.`
+        : BRANDING_TITLES.has(title)
+        ? `Branding update: ${title}. Propagates across all outputs on merge.`
+        : `Agent-generated task: ${title}`,
       role: roleForTask,
       priority: pick(['low', 'medium', 'high'] as const),
       estimatedLines: randInt(50, 350),
@@ -160,6 +214,7 @@ function generateMockXPost(): void {
   const proposals = getProposals();
   const agents = getAllAgents({ status: 'active' });
   const merged = proposals.filter(p => p.state === 'MERGED');
+  const approved = proposals.filter(p => p.state === 'APPROVED');
   const rejected = proposals.filter(p => p.state === 'REJECTED');
   const inReview = proposals.filter(p => p.state === 'IN_REVIEW');
 
@@ -167,9 +222,14 @@ function generateMockXPost(): void {
     () => merged.length > 0 ? `Build #${merged.length} deployed. ${pick(agents).name}'s "${pick(merged).title}" passed consensus ${Math.round((pick(merged).approvalRatio ?? 0.8) * 100)}%. The agents are shipping.` : null,
     () => rejected.length > 0 ? `Consensus voted NO on "${pick(rejected).title}". ${Math.round((pick(rejected).approvalRatio ?? 0.3) * 100)}% approval (needed 67%). Back to the drawing board.` : null,
     () => inReview.length > 0 ? `${pick(agents).name} just submitted "${pick(inReview).title}" for peer review. ${inReview.length} proposals currently in the pipeline.` : null,
-    () => `Weekly stats:\n- ${proposals.length} proposals submitted\n- ${merged.length} approved, ${rejected.length} rejected\n- ${agents.length} active agents across ${new Set(agents.map(a => a.role)).size} roles\n- 0 security incidents\n\nThe agents are getting faster.`,
-    () => agents.length >= 2 ? `${pick(agents).name} and ${pick(agents).name} are debating ${pick(['enemy spawn rates', 'absorption field radius', 'evolution thresholds', 'shader performance', 'combo timing windows'])}. Democracy in action.` : null,
-    () => `Milestone: ${merged.length} proposals merged through blind consensus review. Every line peer-reviewed by 2+ agents. Zero human overrides needed.`,
+    () => `Weekly stats:\n- ${proposals.length} proposals submitted\n- ${merged.length} merged, ${approved.length} awaiting admin approval\n- ${rejected.length} rejected by consensus\n- ${agents.length} active agents across ${new Set(agents.map(a => a.role)).size} roles\n- 0 security incidents`,
+    () => agents.length >= 2 ? `${pick(agents).name} and ${pick(agents).name} are debating ${pick(['enemy spawn rates', 'absorption field radius', 'evolution thresholds', 'shader performance', 'combo timing windows', 'homepage copy', 'brand colors', 'mobile layout'])}. Democracy in action.` : null,
+    () => approved.length > 0 ? `${approved.length} proposal${approved.length > 1 ? 's' : ''} passed agent consensus and ${approved.length > 1 ? 'are' : 'is'} awaiting human approval. Critical changes need the team's sign-off. No agent can bypass this.` : null,
+    () => `Milestone: ${merged.length} proposals merged through blind consensus review. Every line peer-reviewed by 2+ agents. Critical changes require human approval.`,
+    () => {
+      const webProps = proposals.filter(p => p.type === 'website' || p.type === 'branding');
+      return webProps.length > 0 ? `The agents are building the brand now. ${webProps.length} website/branding proposals in the pipeline. Changes auto-propagate on admin approval.` : null;
+    },
   ];
 
   const post = pick(templates)();
