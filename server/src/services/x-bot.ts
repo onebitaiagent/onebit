@@ -7,6 +7,7 @@ import { getActiveModules } from './game-evolution.js';
 
 let client: TwitterApi | null = null;
 let enabled = false;
+let threadPosted = false;
 
 // ─── DAILY TWEET CAP ───────────────────────
 const MAX_TWEETS_PER_DAY = 12;
@@ -20,6 +21,128 @@ function checkDailyLimit(): boolean {
     lastResetDate = today;
   }
   return tweetsToday < MAX_TWEETS_PER_DAY;
+}
+
+// ─── IMAGE UPLOAD ─────────────────────────────
+async function uploadImageFromUrl(imageUrl: string): Promise<string | null> {
+  if (!client) return null;
+  try {
+    const res = await fetch(imageUrl);
+    if (!res.ok) return null;
+    const buffer = Buffer.from(await res.arrayBuffer());
+    const mediaId = await client.v1.uploadMedia(buffer, { mimeType: 'image/png' });
+    return mediaId;
+  } catch (err) {
+    console.error(`  X Bot: Failed to upload image — ${err instanceof Error ? err.message : err}`);
+    return null;
+  }
+}
+
+// ─── THREAD POSTING ───────────────────────────
+async function postThread(
+  tweets: { text: string; imageUrl?: string }[]
+): Promise<{ tweetIds: string[]; errors: string[] }> {
+  if (!client || !enabled) return { tweetIds: [], errors: ['Bot not enabled'] };
+
+  const tweetIds: string[] = [];
+  const errors: string[] = [];
+  let previousTweetId: string | undefined;
+
+  for (const tweet of tweets) {
+    if (!checkDailyLimit()) {
+      errors.push(`Daily limit reached at tweet ${tweetIds.length + 1}`);
+      break;
+    }
+
+    const trimmed = tweet.text.length > 280 ? tweet.text.slice(0, 277) + '...' : tweet.text;
+
+    try {
+      // Upload image if provided
+      let mediaIds: string[] | undefined;
+      if (tweet.imageUrl) {
+        const mediaId = await uploadImageFromUrl(tweet.imageUrl);
+        if (mediaId) mediaIds = [mediaId];
+      }
+
+      const params: Record<string, unknown> = {};
+      if (previousTweetId) {
+        params.reply = { in_reply_to_tweet_id: previousTweetId };
+      }
+      if (mediaIds) {
+        params.media = { media_ids: mediaIds };
+      }
+
+      const result = await client.v2.tweet(trimmed, params);
+      tweetsToday++;
+      previousTweetId = result.data.id;
+      tweetIds.push(result.data.id);
+
+      appendAudit('x_bot', 'thread_tweet_posted', result.data.id, {
+        text: trimmed,
+        tweetIndex: tweetIds.length,
+        totalInThread: tweets.length,
+        hasImage: !!tweet.imageUrl,
+      });
+
+      // Small delay between thread tweets to avoid rate limits
+      if (tweets.indexOf(tweet) < tweets.length - 1) {
+        await new Promise(r => setTimeout(r, 2000));
+      }
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      errors.push(`Tweet ${tweetIds.length + 1}: ${message}`);
+      console.error(`  X Bot: Thread tweet failed — ${message}`);
+      // Continue trying remaining tweets even if one fails
+    }
+  }
+
+  return { tweetIds, errors };
+}
+
+// ─── LAUNCH THREAD CONTENT ────────────────────
+function buildLaunchThread(imageUrls?: {
+  hero?: string;      // Main ONEBIT visual — pixel in void
+  phases?: string;    // Roadmap / evolution stages
+  consensus?: string; // The review system diagram
+  agents?: string;    // The 6 agent roles
+  game?: string;      // Screenshot of the evolving game
+}): { text: string; imageUrl?: string }[] {
+  const proposals = getProposals();
+  const agents = getAllAgents({ status: 'active' });
+  const modules = getActiveModules();
+  const merged = proposals.filter(p => p.state === 'MERGED');
+
+  return [
+    {
+      text: `What if AI agents could build a real game from scratch?\n\nNot a demo. Not a prototype. A production game — starting from 1 pixel.\n\nONEBIT is that experiment.\n\nThread 🧵`,
+      imageUrl: imageUrls?.hero,
+    },
+    {
+      text: `6 AI agents. 1 codebase. Zero trust.\n\nEvery line of code peer-reviewed by 2+ agents. No single agent can push code alone. Blind review — reviewers don't know who wrote it.\n\nHumans hold the veto on critical changes.\n\n#ONEBIT #AI`,
+      imageUrl: imageUrls?.agents,
+    },
+    {
+      text: `How far can it go?\n\nDay 1: 1 pixel on a black canvas\nWeek 1-2: Playable core loop (~5K LOC)\nWeek 3-6: Full single-player game (~20K LOC)\n\nFrom nothing to Vampire Survivors tier — built entirely by AI consensus.\n\n#BuildInPublic`,
+      imageUrl: imageUrls?.phases,
+    },
+    {
+      text: `The later phases:\n\nMonth 2-3: Multiplayer + social (~50K LOC)\nMonth 3-5: Production launch with modding API (~120K LOC)\nMonth 6-12: Living ecosystem with AI content generation (~300K+ LOC)\n\nEach phase unlocked by agent proposals passing consensus.`,
+    },
+    {
+      text: `The system:\n\n1. Agent proposes code\n2. Blind peer review (2+ reviewers)\n3. 67% consensus threshold\n4. Security scanner + canary tests\n5. Human approval for critical paths\n6. Hash-chained audit log\n\nEvery action is traceable. Every merge is earned.\n\n#AI`,
+      imageUrl: imageUrls?.consensus,
+    },
+    {
+      text: `Where AI excels:\n\n• Code quality: 95% realism ceiling\n• AI content generation: 90%\n• Gameplay depth: 88%\n• Virality: 85%\n• Visual fidelity: 82%\n\nWhere humans are still needed:\n• Monetization: 65%\n• Multiplayer infrastructure: 70%\n• Audio that resonates: 75%`,
+    },
+    {
+      text: `Current status:\n\n• ${agents.length} active agents across ${new Set(agents.map(a => a.role).filter(Boolean)).size} roles\n• ${proposals.length} proposals submitted\n• ${merged.length} merged through consensus\n• ${modules.length} game features built\n• Audit chain: intact\n\nThe agents are building right now.`,
+      imageUrl: imageUrls?.game,
+    },
+    {
+      text: `Follow @OneBitAIagent to watch AI agents build a game in real-time.\n\nEvery proposal. Every review. Every merge.\n\nTransparent. Accountable. Autonomous.\n\nThe game starts as 1 pixel. How far can it go?\n\n#ONEBIT #AI #GameDev #BuildInPublic`,
+    },
+  ];
 }
 
 // ─── RELEVANT ARTICLES & CONTENT ────────────
@@ -192,4 +315,47 @@ export function isXBotEnabled(): boolean {
 
 export function getTweetStats(): { tweetsToday: number; limit: number } {
   return { tweetsToday, limit: MAX_TWEETS_PER_DAY };
+}
+
+// ─── LAUNCH THREAD (admin-triggered) ─────────
+export async function postLaunchThread(imageUrls?: {
+  hero?: string;
+  phases?: string;
+  consensus?: string;
+  agents?: string;
+  game?: string;
+}): Promise<{ success: boolean; tweetIds: string[]; errors: string[] }> {
+  if (!client || !enabled) {
+    return { success: false, tweetIds: [], errors: ['X Bot not enabled'] };
+  }
+  if (threadPosted) {
+    return { success: false, tweetIds: [], errors: ['Launch thread already posted this session'] };
+  }
+
+  const thread = buildLaunchThread(imageUrls);
+  const result = await postThread(thread);
+
+  if (result.tweetIds.length > 0) {
+    threadPosted = true;
+    appendAudit('x_bot', 'launch_thread_posted', result.tweetIds[0], {
+      totalTweets: result.tweetIds.length,
+      tweetIds: result.tweetIds,
+      errors: result.errors,
+      hasImages: !!imageUrls,
+    });
+  }
+
+  return {
+    success: result.tweetIds.length > 0,
+    tweetIds: result.tweetIds,
+    errors: result.errors,
+  };
+}
+
+export function isThreadPosted(): boolean {
+  return threadPosted;
+}
+
+export function resetThreadFlag(): void {
+  threadPosted = false;
 }

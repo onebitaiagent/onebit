@@ -12,6 +12,7 @@ import { getAllAgents } from '../services/agent-registry.js';
 import { getTasks } from '../services/task-queue.js';
 import { appendAudit, verifyChain } from '../services/audit-log.js';
 import { messageBus } from '../services/message-bus.js';
+import { postLaunchThread, isThreadPosted, getTweetStats } from '../services/x-bot.js';
 import { JsonStore } from '../data/store.js';
 import type { Proposal, ProposalState } from '../models/types.js';
 
@@ -201,6 +202,38 @@ router.post('/test-tweet', (req: Request, res: Response) => {
 
   appendAudit('admin', 'test_tweet_triggered', 'x_bot', { text: tweetText });
   res.json({ sent: true, text: tweetText });
+});
+
+// POST /api/admin/launch-thread — post the introductory thread to X
+router.post('/launch-thread', async (req: Request, res: Response) => {
+  const { imageUrls } = req.body as {
+    imageUrls?: {
+      hero?: string;
+      phases?: string;
+      consensus?: string;
+      agents?: string;
+      game?: string;
+    };
+  };
+
+  if (isThreadPosted()) {
+    res.status(400).json({ error: 'Launch thread already posted this session. Restart server to reset.' });
+    return;
+  }
+
+  const result = await postLaunchThread(imageUrls);
+  appendAudit('admin', 'launch_thread_triggered', 'x_bot', {
+    success: result.success,
+    tweetCount: result.tweetIds.length,
+    hasImages: !!imageUrls,
+  });
+
+  res.json(result);
+});
+
+// GET /api/admin/tweet-stats — check daily tweet usage
+router.get('/tweet-stats', (_req: Request, res: Response) => {
+  res.json(getTweetStats());
 });
 
 // POST /api/admin/reset — wipe all data for go-live
