@@ -1,9 +1,9 @@
 [
   {
-    "id": "agent_9f3987fbd267",
+    "id": "agent_a397ae2f74cc",
     "name": "atlas-architect",
     "role": "Architect",
-    "apiKey": "2b4997ba08458b8c59f0164b4f306aee3239f62668c0ec59d7ce4b56deec8e05",
+    "apiKey": "1d0b8b491a1c9c22601cc07575c552c770554476d2a87c79268a910fc50787b5",
     "status": "active",
     "capabilities": {
       "agentType": "Claude",
@@ -22,7 +22,7 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 1,
+      "proposalsSubmitted": 0,
       "proposalsApproved": 0,
       "reviewsCompleted": 0,
       "tasksCompleted": 0
@@ -35,14 +35,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-22T22:18:53.307Z",
-    "lastActiveAt": "2026-02-22T22:18:53.307Z"
+    "registeredAt": "2026-02-22T22:32:48.850Z",
+    "lastActiveAt": "2026-02-22T22:32:48.850Z"
   },
   {
-    "id": "agent_5ece6f52cbf8",
+    "id": "agent_c8a6d782a3c9",
     "name": "forge-gameplay",
     "role": "Gameplay",
-    "apiKey": "e36f93ee7e45b98bcf8c7acd84a1b2d2899330435a24116f0f1e756e239eaf54",
+    "apiKey": "e56ed29104823b4706d9c8fad130f93917dc01de6ab6e5bdf75068b470bd702f",
     "status": "active",
     "capabilities": {
       "agentType": "Claude",
@@ -59,7 +59,7 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 1,
+      "proposalsSubmitted": 0,
       "proposalsApproved": 0,
       "reviewsCompleted": 0,
       "tasksCompleted": 0
@@ -72,14 +72,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-22T22:18:53.308Z",
-    "lastActiveAt": "2026-02-22T22:18:53.308Z"
+    "registeredAt": "2026-02-22T22:32:48.851Z",
+    "lastActiveAt": "2026-02-22T22:32:48.851Z"
   },
   {
-    "id": "agent_76b9cfa74634",
+    "id": "agent_2ae109565c38",
     "name": "prism-artui",
     "role": "Art/UI",
-    "apiKey": "4951e1a2986f6ee0dc704596dae306af32d7a95cceb334a43f8e978bacfdbc84",
+    "apiKey": "d5b2d6a7d7348e64c669b49573c3cb135f1be6753b248448b38119c722f858a0",
     "status": "active",
     "capabilities": {
       "agentType": "GPT-4",
@@ -114,14 +114,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-22T22:18:53.309Z",
-    "lastActiveAt": "2026-02-22T22:18:53.309Z"
+    "registeredAt": "2026-02-22T22:32:48.852Z",
+    "lastActiveAt": "2026-02-22T22:32:48.852Z"
   },
   {
-    "id": "agent_2d08ff907f73",
+    "id": "agent_7f246ae74744",
     "name": "sentinel-qa",
     "role": "QA/Security",
-    "apiKey": "28e009793e7c7e145ef6674a2751055208738a4f17c41a4e3395e88634df76c4",
+    "apiKey": "0d4f8030dbb3f09f97e4cedf11ae2779ec999227b4f4fb759bc1657dca9d360c",
     "status": "active",
     "capabilities": {
       "agentType": "Claude",
@@ -152,14 +152,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-22T22:18:53.309Z",
-    "lastActiveAt": "2026-02-22T22:18:53.309Z"
+    "registeredAt": "2026-02-22T22:32:48.852Z",
+    "lastActiveAt": "2026-02-22T22:32:48.852Z"
   },
   {
-    "id": "agent_dd9794f3c35b",
+    "id": "agent_e4bff654157f",
     "name": "chronicle-narrative",
     "role": "Narrative",
-    "apiKey": "8ba95bf2a5d3f963c473afafde95631c2a2d540892a5a7da3d803133681c0cfe",
+    "apiKey": "34cbf73d16725bea9829c8bc13bec6d9e0913e39170f0640e35859f439a9ea9a",
     "status": "active",
     "capabilities": {
       "agentType": "Gemini",
@@ -190,14 +190,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-22T22:18:53.310Z",
-    "lastActiveAt": "2026-02-22T22:18:53.310Z"
+    "registeredAt": "2026-02-22T22:32:48.853Z",
+    "lastActiveAt": "2026-02-22T22:32:48.853Z"
   },
   {
-    "id": "agent_efe7dc036e79",
+    "id": "agent_9288e38850c5",
     "name": "beacon-growth",
     "role": "Growth",
-    "apiKey": "cdbf859c9c96f020d91da9c5157bceed473ed458a6601b7f3c14d4052140e8d3",
+    "apiKey": "4e0b26bbc3592a30a525750b5fdcd30f830992e819c17cc4a96718c6260faf11",
     "status": "active",
     "capabilities": {
       "agentType": "GPT-4",
@@ -233,7 +233,7 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-22T22:18:53.311Z",
-    "lastActiveAt": "2026-02-22T22:18:53.311Z"
+    "registeredAt": "2026-02-22T22:32:48.854Z",
+    "lastActiveAt": "2026-02-22T22:32:48.854Z"
   }
 ]
