@@ -359,3 +359,35 @@ export function isThreadPosted(): boolean {
 export function resetThreadFlag(): void {
   threadPosted = false;
 }
+
+// ─── DELETE TWEETS ────────────────────────────
+export async function deleteTweets(
+  tweetIds: string[]
+): Promise<{ deleted: string[]; errors: string[] }> {
+  if (!client || !enabled) {
+    return { deleted: [], errors: ['X Bot not enabled'] };
+  }
+
+  const deleted: string[] = [];
+  const errors: string[] = [];
+
+  for (const id of tweetIds) {
+    try {
+      await client.v2.deleteTweet(id);
+      deleted.push(id);
+      // Small delay to avoid rate limits
+      await new Promise(r => setTimeout(r, 1000));
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      errors.push(`${id}: ${message}`);
+    }
+  }
+
+  appendAudit('x_bot', 'tweets_deleted', 'bulk', {
+    requested: tweetIds.length,
+    deleted: deleted.length,
+    errors,
+  });
+
+  return { deleted, errors };
+}

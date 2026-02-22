@@ -12,7 +12,7 @@ import { getAllAgents } from '../services/agent-registry.js';
 import { getTasks } from '../services/task-queue.js';
 import { appendAudit, verifyChain } from '../services/audit-log.js';
 import { messageBus } from '../services/message-bus.js';
-import { postLaunchThread, isThreadPosted, getTweetStats } from '../services/x-bot.js';
+import { postLaunchThread, isThreadPosted, getTweetStats, deleteTweets } from '../services/x-bot.js';
 import { JsonStore } from '../data/store.js';
 import type { Proposal, ProposalState } from '../models/types.js';
 
@@ -234,6 +234,18 @@ router.post('/launch-thread', async (req: Request, res: Response) => {
 // GET /api/admin/tweet-stats — check daily tweet usage
 router.get('/tweet-stats', (_req: Request, res: Response) => {
   res.json(getTweetStats());
+});
+
+// POST /api/admin/delete-tweets — delete tweets by ID
+router.post('/delete-tweets', async (req: Request, res: Response) => {
+  const { tweetIds } = req.body as { tweetIds: string[] };
+  if (!tweetIds || !Array.isArray(tweetIds) || tweetIds.length === 0) {
+    res.status(400).json({ error: 'Provide { "tweetIds": ["id1", "id2", ...] }' });
+    return;
+  }
+
+  const result = await deleteTweets(tweetIds);
+  res.json(result);
 });
 
 // POST /api/admin/reset — wipe all data for go-live
