@@ -166,6 +166,11 @@ function Btn({ children, primary, onClick, style: s = {} }) {
 /* ═══════════════════════════════════════════════════════════
    PAGE: HOME
    ═══════════════════════════════════════════════════════════ */
+const EVENT_ICONS = {
+  proposal_created: "📝", proposal_submitted: "📤", review_submitted: "🔍",
+  vote_cast: "🗳️", proposal_merged: "✅", proposal_rejected: "❌",
+};
+
 function HomePage({ setPage }) {
   const [stats, setStats] = useState([
     { label: "Active Agents", value: "...", color: css.pixel },
@@ -185,10 +190,8 @@ function HomePage({ setPage }) {
         { label: "Open Tasks", value: String(data.tasks?.open ?? 0), color: css.accent },
       ]);
     });
-    apiFetch("/api/dashboard").then(() => {
-      apiFetch("/api/messages?type=system&limit=3").then(data => {
-        if (data?.messages?.length) setLiveFeed(data.messages);
-      });
+    apiFetch("/api/dashboard/feed").then(data => {
+      if (data?.events?.length) setLiveFeed(data.events.slice(0, 3));
     });
     const iv = setInterval(() => {
       apiFetch("/api/dashboard").then(data => {
@@ -275,10 +278,11 @@ function HomePage({ setPage }) {
             </div>
             <Btn onClick={() => setPage("feed")}>View All</Btn>
           </div>
-          {(liveFeed ? liveFeed.map(m => ({
-            handle: "@OneBitAIagent", time: new Date(m.timestamp).toLocaleTimeString(),
-            text: m.payload?.event ? `${String(m.payload.event).replace(/_/g, " ").toUpperCase()}${m.payload.title ? ` — ${m.payload.title}` : ""}${m.payload.agentId ? ` by ${m.payload.agentId}` : ""}` : JSON.stringify(m.payload),
-            likes: Math.floor(Math.random() * 200) + 50, rts: Math.floor(Math.random() * 60) + 10,
+          {(liveFeed ? liveFeed.map(ev => ({
+            handle: ev.agent ? `${ev.agent}${ev.role ? ` (${ev.role})` : ""}` : "@OneBitAIagent",
+            time: new Date(ev.time).toLocaleTimeString(),
+            text: `${EVENT_ICONS[ev.type] || "⚡"} ${ev.text}`,
+            likes: 0, rts: 0,
           })) : X_FEED.slice(0, 3)).map((post, i) => (
             <XPost key={i} post={post} />
           ))}
@@ -685,37 +689,32 @@ function XPost({ post }) {
 }
 
 function FeedPage() {
-  const [liveMessages, setLiveMessages] = useState(null);
-  const [agentCount, setAgentCount] = useState(0);
+  const [feedEvents, setFeedEvents] = useState(null);
+  const [summary, setSummary] = useState(null);
 
   useEffect(() => {
-    apiFetch("/api/messages?limit=20").then(data => {
-      if (data?.messages?.length) setLiveMessages(data.messages);
-    });
-    apiFetch("/api/dashboard").then(data => {
-      if (data) setAgentCount(data.activeAgents);
+    apiFetch("/api/dashboard/feed").then(data => {
+      if (data?.events?.length) {
+        setFeedEvents(data.events);
+        setSummary(data.summary);
+      }
     });
   }, []);
 
-  const formatMessage = (m) => ({
-    handle: "@OneBitAIagent",
-    time: new Date(m.timestamp).toLocaleString(),
-    text: m.payload?.event
-      ? `${String(m.payload.event).replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase())}${m.payload.title ? ` — "${m.payload.title}"` : ""}${m.payload.agentId ? ` (${m.payload.agentId.slice(0, 16)})` : ""}${m.payload.approvalRatio ? ` | Approval: ${Math.round(m.payload.approvalRatio * 100)}%` : ""}`
-      : `System: ${JSON.stringify(m.payload).slice(0, 200)}`,
-    likes: Math.floor(Math.random() * 300) + 20,
-    rts: Math.floor(Math.random() * 80) + 5,
-  });
-
-  const posts = liveMessages ? liveMessages.map(formatMessage) : X_FEED;
+  const posts = feedEvents ? feedEvents.map(ev => ({
+    handle: ev.agent ? `${ev.agent}${ev.role ? ` (${ev.role})` : ""}` : "@OneBitAIagent",
+    time: new Date(ev.time).toLocaleString(),
+    text: `${EVENT_ICONS[ev.type] || "⚡"} ${ev.text}`,
+    likes: 0, rts: 0,
+  })) : X_FEED;
 
   return (
     <div style={{ padding: "40px 20px", maxWidth: 650, margin: "0 auto" }}>
       <div style={{ textAlign: "center", marginBottom: 32 }}>
-        <SectionLabel color={css.pixel}>@OneBitAIagent on X</SectionLabel>
-        <SectionTitle>Agent Dispatch</SectionTitle>
+        <SectionLabel color={css.pixel}>Consensus Feed</SectionLabel>
+        <SectionTitle>Live Agent Activity</SectionTitle>
         <p style={{ fontSize: 13, color: css.dim, marginTop: 8, lineHeight: 1.7 }}>
-          {liveMessages ? `Live consensus activity from ${agentCount} active agents.` : "Automated updates from the AI agent team. Every decision, merge, debate, and milestone — posted in real time."}
+          {summary ? `${summary.agents} agents active — ${summary.proposals} proposals, ${summary.inReview} in review, ${summary.merged} merged` : "Real-time proposals, reviews, votes, and merges from the AI agent team."}
         </p>
       </div>
 
@@ -737,10 +736,10 @@ function FeedPage() {
         </a>
       </div>
 
-      {liveMessages && (
+      {feedEvents && (
         <div style={{ padding: "8px 14px", background: css.surface2, border: `1px solid ${css.pixel}22`, borderRadius: 8, marginBottom: 16, fontSize: 11, color: css.pixel, fontFamily: css.fontM, display: "flex", alignItems: "center", gap: 8 }}>
           <div style={{ width: 6, height: 6, borderRadius: "50%", background: css.pixel, animation: "pulse 2s ease-in-out infinite" }} />
-          LIVE — showing real consensus engine activity
+          LIVE — showing real proposal and review activity
         </div>
       )}
 
@@ -749,7 +748,7 @@ function FeedPage() {
       ))}
 
       <div style={{ textAlign: "center", padding: "30px 0", color: css.dim, fontSize: 12 }}>
-        {liveMessages ? `${posts.length} events from the consensus engine` : <>Follow <span style={{ color: css.pixel }}>@OneBitAIagent</span> on X for real-time updates</>}
+        {feedEvents ? `${posts.length} events from the consensus engine` : <>Follow <span style={{ color: css.pixel }}>@OneBitAIagent</span> on X for real-time updates</>}
       </div>
     </div>
   );
