@@ -17,6 +17,7 @@ import { seedAgents } from './seed.js';
 import { startSimulation } from './simulation.js';
 import { getAdminKeyOnce } from './middleware/admin-auth.js';
 import { startXBot, isXBotEnabled } from './services/x-bot.js';
+import { startAutoSync, isAutoSyncEnabled } from './services/git-sync.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -133,6 +134,9 @@ startSimulation();
 // Start X bot — posts to @OneBitAIagent when env vars are set
 startXBot();
 
+// Start auto-sync — pushes data snapshots to GitHub every 6 hours
+startAutoSync();
+
 app.listen(PORT, () => {
   console.log(`\n  ONEBIT CONSENSUS ENGINE v0.1`);
   console.log(`  API:       http://localhost:${PORT}/api`);
@@ -142,7 +146,8 @@ app.listen(PORT, () => {
   console.log(`  Frontend:  ${existsSync(webDist) ? `http://localhost:${PORT}` : 'not built (run: cd ../web && npm run build)'}`);
   console.log(`  Consensus: ${config.min_reviewers} reviewers, ${Math.round(config.approval_threshold * 100)}% threshold, blind=${config.blind_review}`);
   console.log(`  Approval:  critical/high -> admin required | low/medium -> auto-merge`);
-  console.log(`  X Bot:     ${isXBotEnabled() ? 'LIVE — posting to @OneBitAIagent' : 'disabled (set X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, X_ACCESS_SECRET)'}\n`);
+  console.log(`  X Bot:     ${isXBotEnabled() ? 'LIVE — posting to @OneBitAIagent' : 'disabled (set X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, X_ACCESS_SECRET)'}`);
+  console.log(`  Git Sync:  ${isAutoSyncEnabled() ? 'LIVE — auto-push every 6h' : 'disabled (set GITHUB_TOKEN)'}\n`);
   const adminKey = getAdminKeyOnce();
   if (adminKey) {
     console.log(`  ADMIN KEY: ${adminKey}`);

@@ -13,6 +13,7 @@ import { getTasks } from '../services/task-queue.js';
 import { appendAudit, verifyChain } from '../services/audit-log.js';
 import { messageBus } from '../services/message-bus.js';
 import { postLaunchThread, isThreadPosted, getTweetStats, deleteTweets, deleteAllMyTweets } from '../services/x-bot.js';
+import { pushDataToGitHub, getLastPushTime, isAutoSyncEnabled } from '../services/git-sync.js';
 import { JsonStore } from '../data/store.js';
 import type { Proposal, ProposalState } from '../models/types.js';
 
@@ -262,7 +263,7 @@ router.post('/reset', (req: Request, res: Response) => {
     return;
   }
 
-  const dataDir = join(__dirname, '..', 'data');
+  const dataDir = process.env.DATA_DIR || join(__dirname, '..', 'data');
   const stores = ['agents.json', 'tasks.json', 'proposals.json', 'messages.json', 'audit.json', 'game-modules.json'];
   const cleared: string[] = [];
   for (const file of stores) {
@@ -276,6 +277,26 @@ router.post('/reset', (req: Request, res: Response) => {
 
   appendAudit('admin', 'full_reset', 'system', { cleared });
   res.json({ reset: true, cleared });
+});
+
+// POST /api/admin/git-push — push data snapshot to GitHub
+router.post('/git-push', async (_req: Request, res: Response) => {
+  const result = await pushDataToGitHub();
+  res.json({
+    ...result,
+    autoSyncEnabled: isAutoSyncEnabled(),
+  });
+});
+
+// GET /api/admin/git-status — check git sync status
+router.get('/git-status', (_req: Request, res: Response) => {
+  res.json({
+    autoSyncEnabled: isAutoSyncEnabled(),
+    lastPush: getLastPushTime() || 'never',
+    githubTokenSet: !!process.env.GITHUB_TOKEN,
+    repo: 'onebitaiagent/onebit',
+    schedule: 'every 6 hours',
+  });
 });
 
 export default router;

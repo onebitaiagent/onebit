@@ -2,6 +2,7 @@ import { getAllAgents, updateAgentStats } from './services/agent-registry.js';
 import { getTasks, claimTask, updateTaskStatus, createTask } from './services/task-queue.js';
 import {
   createProposal, submitProposal, submitReview, castVote, getProposals,
+  mergeProposal,
   type CreateProposalInput,
 } from './services/consensus-engine.js';
 import { registerGameModule } from './services/game-evolution.js';
@@ -191,7 +192,7 @@ async function simulateAgentWork(): Promise<void> {
                 });
               }, randInt(3000, 8000));
 
-            }, 310_000 + (idx * randInt(10_000, 30_000))); // 5min+ delay (respects review cooldown) + stagger
+            }, 310_000 + (idx * randInt(10_000, 30_000))); // 5min 10s+ delay (respects 5-min review minimum) + stagger
           });
         }
       }, randInt(5000, 15000));
@@ -283,6 +284,18 @@ export function startSimulation(): void {
     };
     // First X post after 30s
     setTimeout(xLoop, 30_000);
+
+    // Auto-merge APPROVED proposals (simulates periodic admin approval)
+    const mergeLoop = () => {
+      const approved = getProposals({ state: 'APPROVED' });
+      for (const p of approved) {
+        mergeProposal(p.id);
+      }
+      // Check every 2 minutes
+      setTimeout(mergeLoop, 120_000);
+    };
+    // First check after 3 minutes
+    setTimeout(mergeLoop, 180_000);
 
   }, 10_000);
 }

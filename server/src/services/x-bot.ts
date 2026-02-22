@@ -10,10 +10,12 @@ let enabled = false;
 let threadPosted = false;
 
 // ─── DAILY TWEET CAP ───────────────────────
-const MAX_TWEETS_PER_DAY = 6;
+const MAX_TWEETS_PER_DAY = 12;
 let tweetsToday = 0;
 let lastResetDate = new Date().toDateString();
 let lastDailySummaryDate = '';
+let totalMergesAllTime = 0;
+let totalProposalsAtLastTweet = 0;
 
 function checkDailyLimit(): boolean {
   const today = new Date().toDateString();
@@ -175,6 +177,46 @@ function generateDailySummary(): string | null {
   return lines.join('\n');
 }
 
+// ─── STATUS UPDATE TEMPLATES (2-3x/day) ─────
+function generateStatusUpdate(): string | null {
+  const proposals = getProposals();
+  const agents = getAllAgents({ status: 'active' });
+  const modules = getActiveModules();
+  const merged = proposals.filter(p => p.state === 'MERGED');
+  const inReview = proposals.filter(p => p.state === 'IN_REVIEW');
+  const voting = proposals.filter(p => p.state === 'VOTING');
+
+  const templates = [
+    () => inReview.length > 0
+      ? `${inReview.length} proposal${inReview.length > 1 ? 's' : ''} under blind peer review right now.\n\nReviewers can't see who wrote the code. Only the code matters.\n\n#ONEBIT #AI`
+      : null,
+
+    () => voting.length > 0
+      ? `${voting.length} proposal${voting.length > 1 ? 's' : ''} in the voting phase. 67% approval needed to merge.\n\nThe agents are deciding what ships next.\n\n#ONEBIT`
+      : null,
+
+    () => modules.length > 0
+      ? `The game has ${modules.length} feature${modules.length > 1 ? 's' : ''} built through consensus:\n\n${modules.slice(-3).map(m => `• ${m.name}`).join('\n')}\n\nAll started from 1 pixel.\n\n#ONEBIT #GameDev`
+      : null,
+
+    () => {
+      const roles = new Set(agents.map(a => a.role).filter(Boolean));
+      return `${agents.length} AI agents active across ${roles.size} roles.\n\n${merged.length} proposals merged. ${proposals.length - merged.length} still in the pipeline.\n\nThe build continues.\n\n#ONEBIT #AI #BuildInPublic`;
+    },
+
+    () => merged.length > 0
+      ? `${merged.length} total merges through the ONEBIT consensus engine.\n\nEvery one peer-reviewed. Every one audited. Every one earned.\n\n#ONEBIT #AI`
+      : `${proposals.length} proposals submitted so far. None merged yet — the agents are still reviewing.\n\nConsensus takes time. That's the point.\n\n#ONEBIT`,
+  ];
+
+  const shuffled = templates.sort(() => Math.random() - 0.5);
+  for (const tmpl of shuffled) {
+    const result = tmpl();
+    if (result) return result;
+  }
+  return null;
+}
+
 // ─── STARTUP & EVENT LISTENERS ──────────────
 export function startXBot(): void {
   const apiKey = process.env.X_API_KEY;
@@ -195,32 +237,51 @@ export function startXBot(): void {
   });
 
   enabled = true;
-  console.log(`  X Bot: Enabled — max ${MAX_TWEETS_PER_DAY} tweets/day, significant events + 1 daily summary\n`);
+  totalMergesAllTime = getProposals().filter(p => p.state === 'MERGED').length;
+  totalProposalsAtLastTweet = getProposals().length;
+  console.log(`  X Bot: Enabled — ${MAX_TWEETS_PER_DAY} tweets/day, event-driven + scheduled updates\n`);
 
-  // Subscribe to message bus for admin-triggered tweets only
+  // Subscribe to message bus for admin-triggered tweets
   messageBus.on('message', (msg: { payload: Record<string, unknown> }) => {
     if (msg.payload?.event === 'x_post' && typeof msg.payload.text === 'string') {
       postTweet(msg.payload.text).catch(() => {});
     }
   });
 
-  // ─── SIGNIFICANT EVENT TWEETS ONLY ────────
-  // Only tweet on: merges with high/critical impact, game evolution milestones, phase changes
+  // ─── EVENT-DRIVEN TWEETS ────────────────
   messageBus.on('message', (msg: { payload: Record<string, unknown> }) => {
     const event = msg.payload?.event as string;
 
-    // Only tweet merges that are high or critical impact
+    // Tweet ALL merges (each merge is significant)
     if (event === 'proposal_merged') {
+      totalMergesAllTime++;
       const impact = msg.payload.impact as string | undefined;
-      if (impact === 'high' || impact === 'critical') {
-        const text = `Consensus merge: "${msg.payload.title}"\n\n${msg.payload.humanApproved ? 'Human-approved. ' : ''}Passed blind peer review by 2+ AI agents.\n\n#ONEBIT #AI #GameDev`;
+      const humanNote = msg.payload.humanApproved ? 'Human-approved. ' : '';
+      const impactNote = impact === 'critical' ? '🚨 CRITICAL — ' : impact === 'high' ? '🔥 ' : '';
+      const text = `${impactNote}Consensus merge #${totalMergesAllTime}: "${msg.payload.title}"\n\n${humanNote}Passed blind peer review by 2+ AI agents.\n\n#ONEBIT #AI #GameDev`;
+      postTweet(text).catch(() => {});
+    }
+
+    // Tweet when proposals hit milestones (every 10th proposal)
+    if (event === 'proposal_in_review' || event === 'proposal_voting') {
+      const current = getProposals().length;
+      if (current >= totalProposalsAtLastTweet + 10) {
+        totalProposalsAtLastTweet = current;
+        const text = `Milestone: ${current} proposals submitted to the ONEBIT consensus engine.\n\nAI agents keep proposing, reviewing, and building.\n\n#ONEBIT #BuildInPublic`;
         postTweet(text).catch(() => {});
       }
     }
 
     // Tweet when new game features go live
     if (event === 'game_evolved') {
-      const text = `New feature live: "${msg.payload.moduleName}" by ${msg.payload.agentName}.\n\nStarted from 1 pixel. The agents keep building.\n\n#ONEBIT #GameDev`;
+      const modules = getActiveModules();
+      const text = `New feature live: "${msg.payload.moduleName}" by ${msg.payload.agentName}.\n\nThe game now has ${modules.length} feature${modules.length > 1 ? 's' : ''}. Started from 1 pixel.\n\n#ONEBIT #GameDev`;
+      postTweet(text).catch(() => {});
+    }
+
+    // Tweet on security blocks (transparency)
+    if (event === 'scan_failed') {
+      const text = `Security scanner blocked a proposal: "${msg.payload.title}"\n\nReason: ${msg.payload.reason || 'Failed automated security checks'}\n\nThis is how consensus keeps the codebase safe.\n\n#ONEBIT #AI`;
       postTweet(text).catch(() => {});
     }
 
@@ -230,14 +291,14 @@ export function startXBot(): void {
       postTweet(text).catch(() => {});
     }
 
-    // Tweet on timeline changes (e.g. ahead/behind schedule)
+    // Tweet on timeline changes
     if (event === 'timeline_update') {
       const text = `Timeline update: ${msg.payload.message}\n\n#ONEBIT #BuildInPublic`;
       postTweet(text).catch(() => {});
     }
   });
 
-  // ─── SCHEDULED: 1 daily summary tweet ────
+  // ─── SCHEDULED: Daily summary (once per 24h) ────
   const scheduleDailySummary = () => {
     const today = new Date().toDateString();
     if (today !== lastDailySummaryDate) {
@@ -247,11 +308,22 @@ export function startXBot(): void {
         lastDailySummaryDate = today;
       }
     }
-    // Check again in 1 hour (posts once per calendar day)
     setTimeout(scheduleDailySummary, 60 * 60 * 1000);
   };
-  // First check 1hr after start
   setTimeout(scheduleDailySummary, 60 * 60 * 1000);
+
+  // ─── SCHEDULED: Periodic status updates (2-3x/day) ────
+  const scheduleStatusUpdate = () => {
+    const update = generateStatusUpdate();
+    if (update) {
+      postTweet(update).catch(() => {});
+    }
+    // Next update in 4-8 hours
+    const nextMs = (4 + Math.random() * 4) * 60 * 60 * 1000;
+    setTimeout(scheduleStatusUpdate, nextMs);
+  };
+  // First status update 2hr after start
+  setTimeout(scheduleStatusUpdate, 2 * 60 * 60 * 1000);
 }
 
 async function postTweet(text: string): Promise<void> {
