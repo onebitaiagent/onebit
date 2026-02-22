@@ -391,3 +391,28 @@ export async function deleteTweets(
 
   return { deleted, errors };
 }
+
+export async function deleteAllMyTweets(): Promise<{ deleted: string[]; errors: string[] }> {
+  if (!client || !enabled) {
+    return { deleted: [], errors: ['X Bot not enabled'] };
+  }
+
+  try {
+    // Get the authenticated user's ID
+    const me = await client.v2.me();
+    const userId = me.data.id;
+
+    // Fetch recent tweets (up to 100)
+    const timeline = await client.v2.userTimeline(userId, { max_results: 100 });
+    const tweetIds = timeline.data?.data?.map(t => t.id) ?? [];
+
+    if (tweetIds.length === 0) {
+      return { deleted: [], errors: [] };
+    }
+
+    return deleteTweets(tweetIds);
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : String(err);
+    return { deleted: [], errors: [`Failed to fetch timeline: ${message}`] };
+  }
+}

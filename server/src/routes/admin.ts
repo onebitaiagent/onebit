@@ -12,7 +12,7 @@ import { getAllAgents } from '../services/agent-registry.js';
 import { getTasks } from '../services/task-queue.js';
 import { appendAudit, verifyChain } from '../services/audit-log.js';
 import { messageBus } from '../services/message-bus.js';
-import { postLaunchThread, isThreadPosted, getTweetStats, deleteTweets } from '../services/x-bot.js';
+import { postLaunchThread, isThreadPosted, getTweetStats, deleteTweets, deleteAllMyTweets } from '../services/x-bot.js';
 import { JsonStore } from '../data/store.js';
 import type { Proposal, ProposalState } from '../models/types.js';
 
@@ -245,6 +245,12 @@ router.post('/delete-tweets', async (req: Request, res: Response) => {
   }
 
   const result = await deleteTweets(tweetIds);
+  res.json(result);
+});
+
+// POST /api/admin/nuke-tweets — delete ALL tweets from the account
+router.post('/nuke-tweets', async (_req: Request, res: Response) => {
+  const result = await deleteAllMyTweets();
   res.json(result);
 });
 
