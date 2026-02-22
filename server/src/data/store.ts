@@ -1,9 +1,15 @@
-import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+// Use DATA_DIR env var for persistent storage (Railway volume), fall back to __dirname
+const DATA_DIR = process.env.DATA_DIR || __dirname;
+if (DATA_DIR !== __dirname && !existsSync(DATA_DIR)) {
+  mkdirSync(DATA_DIR, { recursive: true });
+}
 
 const locks = new Map<string, boolean>();
 
@@ -11,7 +17,7 @@ export class JsonStore<T extends { id?: string; entry_id?: string }> {
   private filePath: string;
 
   constructor(filename: string) {
-    this.filePath = join(__dirname, filename);
+    this.filePath = join(DATA_DIR, filename);
     if (!existsSync(this.filePath)) {
       writeFileSync(this.filePath, '[]', 'utf-8');
     }
