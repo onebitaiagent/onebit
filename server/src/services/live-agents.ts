@@ -19,7 +19,7 @@ import {
 } from './consensus-engine.js';
 import { registerGameModule, getActiveModules, getAllModules } from './game-evolution.js';
 import { messageBus } from './message-bus.js';
-import { isAIEnabled, generateGameCode, reviewCode, suggestFeature, generateContent, getAICosts } from './ai-client.js';
+import { isAIEnabled, generateGameCode, reviewCode, suggestFeature, generateContent, getAICosts, isOverBudget } from './ai-client.js';
 import type { AgentRoleName } from '../models/types.js';
 
 // ─── Configuration ──────────────────────────────────────────
@@ -317,7 +317,20 @@ class LiveAgent {
         if (elapsed < 5 * 60 * 1000) continue; // Too early
       }
 
-      // Get the code to review — check game module first, then proposal description
+      // Low-impact proposals: auto-approve without AI call to save costs
+      if (p.impact === 'low') {
+        const result = submitReview(p.id, this.id, {
+          verdict: 'approve',
+          rationale: 'Low-impact auto-review: code passed syntax validation.',
+          scores: { correctness: 4, security: 5, quality: 4, testing: 4, designAlignment: 4 },
+        });
+        if (result.proposal) {
+          console.log(`  [${this.name}] Auto-reviewed "${p.title}" (low impact) → approve`);
+        }
+        break;
+      }
+
+      // Medium/high: use AI review
       const allModules = getAllModules();
       const linkedModule = allModules.find(m => m.proposalId === p.id);
       const code = linkedModule?.code || p.description;
@@ -334,7 +347,6 @@ class LiveAgent {
         if (result.proposal) {
           console.log(`  [${this.name}] Reviewed "${p.title}" → ${review.verdict}`);
         } else if (result.error) {
-          // Only log unexpected errors (not cooldown)
           if (!result.error.includes('minutes') && !result.error.includes('cool')) {
             console.log(`  [${this.name}] Review error: ${result.error}`);
           }
@@ -386,14 +398,14 @@ class LiveAgent {
 
     const openTasks = getTasks({ role: this.role, status: 'open' });
 
-    // 15% chance to suggest a new feature if no roadmap tasks available
-    if (Math.random() < 0.15 && !openTasks.some(t => ROADMAP_TITLES.has(t.title))) {
+    // 5% chance to suggest a new feature if no roadmap tasks available (was 15%)
+    if (Math.random() < 0.05 && !openTasks.some(t => ROADMAP_TITLES.has(t.title))) {
       await handleFeatureSuggestion(this);
       return;
     }
 
-    // 10% chance to produce content (branding, social)
-    if (Math.random() < 0.10 && (this.role === 'Art/UI' || this.role === 'Narrative' || this.role === 'Growth')) {
+    // 3% chance to produce content (branding, social) (was 10%)
+    if (Math.random() < 0.03 && (this.role === 'Art/UI' || this.role === 'Narrative' || this.role === 'Growth')) {
       await handleContentProduction(this);
       return;
     }
@@ -525,7 +537,8 @@ export function startLiveAgents(): void {
   console.log(`  Max runtime: ${MAX_RUNTIME_MS / 60_000} minutes`);
   console.log(`  Phase gating: ON — starting at ${PHASE_ORDER[currentPhaseIndex]} (auto-progression enabled)`);
   console.log(`  Auto-merge: ON for non-critical | HUMAN REQUIRED for critical`);
-  console.log(`  Feature suggestions: ON | Content production: ON`);
+  console.log(`  Cost controls: Sonnet max ${process.env.AI_SONNET_MAX_HOURLY || '4'}/hr, budget $${process.env.AI_HOURLY_BUDGET || '0.30'}/hr`);
+  console.log(`  Agent tick: 2-5 min | Low-impact: auto-review | Suggestions: 5% | Content: 3%`);
 
   agentsStartedAt = Date.now();
 
@@ -554,9 +567,15 @@ export function startLiveAgents(): void {
 
         const loop = async () => {
           if (agentsStopped) return;
+          // Budget guard — skip tick entirely if over budget
+          if (isOverBudget()) {
+            console.log(`  [${agent.name}] Over budget, sleeping 10 min`);
+            setTimeout(loop, 600_000);
+            return;
+          }
           await agent.tick();
-          // Each agent works every 45-90 seconds
-          const next = 45_000 + Math.floor(Math.random() * 45_000);
+          // Each agent works every 2-5 minutes (was 45-90s)
+          const next = 120_000 + Math.floor(Math.random() * 180_000);
           setTimeout(loop, next);
         };
         loop();

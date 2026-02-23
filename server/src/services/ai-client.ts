@@ -28,6 +28,36 @@ const usage: Record<string, ModelUsage> = {
 };
 const startTime = Date.now();
 
+// ─── Rate Limiting & Budget ──────────────────────────────────
+
+const HOURLY_BUDGET = parseFloat(process.env.AI_HOURLY_BUDGET || '0.30'); // $0.30/hr default
+const SONNET_MAX_PER_HOUR = parseInt(process.env.AI_SONNET_MAX_HOURLY || '4', 10);
+
+const sonnetCallTimes: number[] = []; // timestamps of recent Sonnet calls
+
+function isSonnetRateLimited(): boolean {
+  const oneHourAgo = Date.now() - 3_600_000;
+  // Prune old entries
+  while (sonnetCallTimes.length > 0 && sonnetCallTimes[0] < oneHourAgo) {
+    sonnetCallTimes.shift();
+  }
+  return sonnetCallTimes.length >= SONNET_MAX_PER_HOUR;
+}
+
+function recordSonnetCall(): void {
+  sonnetCallTimes.push(Date.now());
+}
+
+export function isOverBudget(): boolean {
+  const runtimeHours = (Date.now() - startTime) / 3_600_000;
+  if (runtimeHours < 0.05) return false; // skip check in first 3 min
+  let totalCost = 0;
+  for (const u of Object.values(usage)) {
+    totalCost += (u.inputTokens / 1_000_000) * u.inputCostPerMTok + (u.outputTokens / 1_000_000) * u.outputCostPerMTok;
+  }
+  return (totalCost / runtimeHours) > HOURLY_BUDGET;
+}
+
 export function getAICosts(): {
   totalCalls: number;
   totalInputTokens: number;
@@ -212,6 +242,15 @@ export async function generateGameCode(
   taskDescription: string,
   existingModules: string[],
 ): Promise<GeneratedModule> {
+  // Rate limit: max N Sonnet calls per hour
+  if (isSonnetRateLimited()) {
+    throw new Error(`Sonnet rate limited (max ${SONNET_MAX_PER_HOUR}/hr). Waiting.`);
+  }
+  // Budget check
+  if (isOverBudget()) {
+    throw new Error(`Over hourly budget ($${HOURLY_BUDGET}/hr). Pausing code gen.`);
+  }
+
   const existing = existingModules.length > 0
     ? `\nAlready active modules (do NOT duplicate): ${existingModules.join(', ')}`
     : '\nNo modules active yet — this will be one of the first features.';
@@ -221,7 +260,8 @@ Title: ${taskTitle}
 Description: ${taskDescription}${existing}`;
 
   console.log(`  AI: Generating code for "${taskTitle}"...`);
-  const response = await callClaude(CODE_GEN_SYSTEM, prompt);
+  recordSonnetCall();
+  const response = await callClaude(CODE_GEN_SYSTEM, prompt, 'claude-sonnet-4-6', 1500);
   const code = extractCode(response);
 
   const nameMatch = code.match(/registerModule\s*\(\s*['"]([^'"]+)['"]/);
