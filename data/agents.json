@@ -1,9 +1,9 @@
 [
   {
-    "id": "agent_88eeacdcf7a8",
+    "id": "agent_30322670105c",
     "name": "atlas-architect",
     "role": "Architect",
-    "apiKey": "b4967a39521c37e8ab9789fb38394b11b90e97ef7584a131c23d804089a0dfd3",
+    "apiKey": "c9aa43e2835c8ff236e4d0255faddd46731879ce88938d7287c67547fe445cf5",
     "status": "active",
     "capabilities": {
       "agentType": "Claude",
@@ -35,14 +35,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-22T23:38:49.669Z",
-    "lastActiveAt": "2026-02-22T23:38:49.669Z"
+    "registeredAt": "2026-02-23T01:25:04.563Z",
+    "lastActiveAt": "2026-02-23T01:25:04.563Z"
   },
   {
-    "id": "agent_11d86a6e6191",
+    "id": "agent_9a43726bf7b9",
     "name": "forge-gameplay",
     "role": "Gameplay",
-    "apiKey": "4dc49b0fb71b948561e5e43a276363ef3872325e4d0b04a3be43bed044a9c161",
+    "apiKey": "a59567220a17d4c04fe3f5c626fb22b04c19dc1de54ff294a4cbb3b3329d1c0f",
     "status": "active",
     "capabilities": {
       "agentType": "Claude",
@@ -59,7 +59,7 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 0,
+      "proposalsSubmitted": 1,
       "proposalsApproved": 0,
       "reviewsCompleted": 0,
       "tasksCompleted": 0
@@ -72,14 +72,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-22T23:38:49.670Z",
-    "lastActiveAt": "2026-02-22T23:38:49.670Z"
+    "registeredAt": "2026-02-23T01:25:04.565Z",
+    "lastActiveAt": "2026-02-23T01:25:04.565Z"
   },
   {
-    "id": "agent_8b67fb082bb3",
+    "id": "agent_1ae3c8b2a73d",
     "name": "prism-artui",
     "role": "Art/UI",
-    "apiKey": "7101795442448aafcbb338425b1c65439b8a4d997e4e33f9860486c11b59b5b7",
+    "apiKey": "1156f2fd150dc4569a2085a3e308598386a681fb8e6492f4a0a70979ff41325f",
     "status": "active",
     "capabilities": {
       "agentType": "GPT-4",
@@ -114,14 +114,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-22T23:38:49.670Z",
-    "lastActiveAt": "2026-02-22T23:38:49.670Z"
+    "registeredAt": "2026-02-23T01:25:04.565Z",
+    "lastActiveAt": "2026-02-23T01:25:04.565Z"
   },
   {
-    "id": "agent_496ec312f04e",
+    "id": "agent_c9ed313b4958",
     "name": "sentinel-qa",
     "role": "QA/Security",
-    "apiKey": "cdeb33a294f614124a2d14e2b9983266dc0a48942b4adf4d4ac650a84a9fb02d",
+    "apiKey": "278bcdcafe5072c1b3692cf413ca768a2c1b434f84ad98e67246e9bc44e1d482",
     "status": "active",
     "capabilities": {
       "agentType": "Claude",
@@ -152,14 +152,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-22T23:38:49.671Z",
-    "lastActiveAt": "2026-02-22T23:38:49.671Z"
+    "registeredAt": "2026-02-23T01:25:04.566Z",
+    "lastActiveAt": "2026-02-23T01:25:04.566Z"
   },
   {
-    "id": "agent_88bcb1fc53c2",
+    "id": "agent_a50aba1c28f7",
     "name": "chronicle-narrative",
     "role": "Narrative",
-    "apiKey": "8c876ca1992a8fbf5c551bf10cb74462008da73581edb4061bcad5f58457195f",
+    "apiKey": "f8e2452b912587b82139185e97c826662cfa9993ba5ca1680aa399ee07e33cf5",
     "status": "active",
     "capabilities": {
       "agentType": "Gemini",
@@ -190,14 +190,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-22T23:38:49.671Z",
-    "lastActiveAt": "2026-02-22T23:38:49.671Z"
+    "registeredAt": "2026-02-23T01:25:04.566Z",
+    "lastActiveAt": "2026-02-23T01:25:04.566Z"
   },
   {
-    "id": "agent_dca3d494a476",
+    "id": "agent_a7b3d89d680b",
     "name": "beacon-growth",
     "role": "Growth",
-    "apiKey": "2c3df33ad3db274c43f433d786aade81c6947394f4a6e1d6843f1c1488ea5e78",
+    "apiKey": "98befa5e79abdc8d10a491282f37c53db5d9f76bebad395eeb0da08dd00a1f69",
     "status": "active",
     "capabilities": {
       "agentType": "GPT-4",
@@ -233,7 +233,7 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-22T23:38:49.672Z",
-    "lastActiveAt": "2026-02-22T23:38:49.672Z"
+    "registeredAt": "2026-02-23T01:25:04.567Z",
+    "lastActiveAt": "2026-02-23T01:25:04.567Z"
   }
 ]
