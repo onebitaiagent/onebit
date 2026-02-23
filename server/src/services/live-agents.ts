@@ -13,7 +13,7 @@
  */
 
 import { getAllAgents } from './agent-registry.js';
-import { getTasks, claimTask, updateTaskStatus, createTask } from './task-queue.js';
+import { getTasks, claimTask, updateTaskStatus, createTask, unclaimTask, reclaimStaleTasks } from './task-queue.js';
 import {
   createProposal, submitProposal, submitReview, castVote, getProposals,
 } from './consensus-engine.js';
@@ -462,7 +462,8 @@ class LiveAgent {
       });
 
       if (!gameModule) {
-        console.log(`  [${this.name}] Code for "${moduleData.name}" had syntax errors — skipping`);
+        console.log(`  [${this.name}] Code for "${moduleData.name}" had syntax errors — unclaiming task`);
+        unclaimTask(task.id, this.id);
         return;
       }
 
@@ -479,7 +480,9 @@ class LiveAgent {
         message: `${this.name} submitted "${moduleData.name}" — ${moduleData.code.length} chars of AI-generated code`,
       });
     } catch (err) {
+      // Rate limited or budget exceeded — unclaim task so others can try later
       console.error(`  [${this.name}] Code generation failed:`, err instanceof Error ? err.message : err);
+      unclaimTask(task.id, this.id);
     }
   }
 }
@@ -582,9 +585,10 @@ export function startLiveAgents(): void {
       }, startDelay);
     });
 
-    // Task feeder + auto-phase check every 2 minutes
+    // Task feeder + auto-phase check + stale cleanup every 2 minutes
     const taskLoop = () => {
       if (agentsStopped) return;
+      reclaimStaleTasks(15); // Unclaim tasks stuck >15min with no proposal
       checkAutoPhaseProgression();
       feedTasks();
       setTimeout(taskLoop, 120_000);

@@ -118,3 +118,49 @@ export function updateTaskStatus(taskId: string, agentId: string, status: Task['
 
   return { task: updated };
 }
+
+/**
+ * Unclaim a task — return it to 'open' so another agent can pick it up.
+ * Used when code generation fails (rate limit, budget, syntax error).
+ */
+export function unclaimTask(taskId: string, agentId: string): { task: Task | null; error?: string } {
+  const task = store.findById(taskId);
+  if (!task) return { task: null, error: 'Task not found' };
+  if (task.claimedBy !== agentId) return { task: null, error: 'You do not own this task' };
+
+  const updated = store.update(taskId, {
+    status: 'open',
+    claimedBy: null,
+    claimedAt: null,
+  } as Partial<Task>);
+
+  if (updated) {
+    console.log(`  [tasks] Unclaimed "${task.title}" — returned to open`);
+  }
+  return { task: updated };
+}
+
+/**
+ * Reclaim stale tasks — tasks claimed more than N minutes ago with no proposal submitted.
+ * Prevents pipeline clogs when agents fail mid-work.
+ */
+export function reclaimStaleTasks(staleMinutes: number = 15): number {
+  const cutoff = Date.now() - staleMinutes * 60_000;
+  const tasks = store.readAll().filter(t =>
+    t.status === 'claimed' &&
+    t.claimedAt &&
+    new Date(t.claimedAt).getTime() < cutoff &&
+    !t.proposalId // No proposal was ever linked
+  );
+
+  let reclaimed = 0;
+  for (const t of tasks) {
+    store.update(t.id, { status: 'open', claimedBy: null, claimedAt: null } as Partial<Task>);
+    reclaimed++;
+  }
+
+  if (reclaimed > 0) {
+    console.log(`  [tasks] Reclaimed ${reclaimed} stale tasks (claimed >${staleMinutes}min with no proposal)`);
+  }
+  return reclaimed;
+}
