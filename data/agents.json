@@ -1,9 +1,9 @@
 [
   {
-    "id": "agent_30322670105c",
+    "id": "agent_dbe064ac96e9",
     "name": "atlas-architect",
     "role": "Architect",
-    "apiKey": "c9aa43e2835c8ff236e4d0255faddd46731879ce88938d7287c67547fe445cf5",
+    "apiKey": "62bb51c9ef24eb1a907d3564d2f13731fd30025b9553ed4ba45cdea0f8fee528",
     "status": "active",
     "capabilities": {
       "agentType": "Claude",
@@ -35,14 +35,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-23T01:25:04.563Z",
-    "lastActiveAt": "2026-02-23T01:25:04.563Z"
+    "registeredAt": "2026-02-23T01:48:29.407Z",
+    "lastActiveAt": "2026-02-23T01:48:29.407Z"
   },
   {
-    "id": "agent_9a43726bf7b9",
+    "id": "agent_03c171fa3bb3",
     "name": "forge-gameplay",
     "role": "Gameplay",
-    "apiKey": "a59567220a17d4c04fe3f5c626fb22b04c19dc1de54ff294a4cbb3b3329d1c0f",
+    "apiKey": "6259e91f94f1c8597bca171201db655dfc0c3d828976843951925ae74f74a5ba",
     "status": "active",
     "capabilities": {
       "agentType": "Claude",
@@ -72,14 +72,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-23T01:25:04.565Z",
-    "lastActiveAt": "2026-02-23T01:25:04.565Z"
+    "registeredAt": "2026-02-23T01:48:29.408Z",
+    "lastActiveAt": "2026-02-23T01:48:29.408Z"
   },
   {
-    "id": "agent_1ae3c8b2a73d",
+    "id": "agent_30ff9b3d892e",
     "name": "prism-artui",
     "role": "Art/UI",
-    "apiKey": "1156f2fd150dc4569a2085a3e308598386a681fb8e6492f4a0a70979ff41325f",
+    "apiKey": "058bc95c2b3761dcff460d84c13c3e73d0dafa602f7eebe3634b72ceac695be1",
     "status": "active",
     "capabilities": {
       "agentType": "GPT-4",
@@ -114,14 +114,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-23T01:25:04.565Z",
-    "lastActiveAt": "2026-02-23T01:25:04.565Z"
+    "registeredAt": "2026-02-23T01:48:29.408Z",
+    "lastActiveAt": "2026-02-23T01:48:29.408Z"
   },
   {
-    "id": "agent_c9ed313b4958",
+    "id": "agent_263a317cdbff",
     "name": "sentinel-qa",
     "role": "QA/Security",
-    "apiKey": "278bcdcafe5072c1b3692cf413ca768a2c1b434f84ad98e67246e9bc44e1d482",
+    "apiKey": "e3e92b11095b7e4e6dff1592ada0e04b0b2dc20fb06796eb370602f99aada194",
     "status": "active",
     "capabilities": {
       "agentType": "Claude",
@@ -139,7 +139,7 @@
     ],
     "canEmergencyBlock": true,
     "stats": {
-      "proposalsSubmitted": 1,
+      "proposalsSubmitted": 0,
       "proposalsApproved": 0,
       "reviewsCompleted": 0,
       "tasksCompleted": 0
@@ -152,14 +152,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-23T01:25:04.566Z",
-    "lastActiveAt": "2026-02-23T01:25:04.566Z"
+    "registeredAt": "2026-02-23T01:48:29.409Z",
+    "lastActiveAt": "2026-02-23T01:48:29.409Z"
   },
   {
-    "id": "agent_a50aba1c28f7",
+    "id": "agent_543898586cf0",
     "name": "chronicle-narrative",
     "role": "Narrative",
-    "apiKey": "f8e2452b912587b82139185e97c826662cfa9993ba5ca1680aa399ee07e33cf5",
+    "apiKey": "d596a1571bb03c95c2be20c44671b859267d209fb471bbbdf275f737e8605bba",
     "status": "active",
     "capabilities": {
       "agentType": "Gemini",
@@ -177,7 +177,7 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 1,
+      "proposalsSubmitted": 0,
       "proposalsApproved": 0,
       "reviewsCompleted": 0,
       "tasksCompleted": 0
@@ -190,14 +190,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-23T01:25:04.566Z",
-    "lastActiveAt": "2026-02-23T01:25:04.566Z"
+    "registeredAt": "2026-02-23T01:48:29.409Z",
+    "lastActiveAt": "2026-02-23T01:48:29.409Z"
   },
   {
-    "id": "agent_a7b3d89d680b",
+    "id": "agent_5cc993dc7658",
     "name": "beacon-growth",
     "role": "Growth",
-    "apiKey": "98befa5e79abdc8d10a491282f37c53db5d9f76bebad395eeb0da08dd00a1f69",
+    "apiKey": "54f214f22479d58adecb17d610db2ed59d3b63e362210c978bb3ecdd840aa989",
     "status": "active",
     "capabilities": {
       "agentType": "GPT-4",
@@ -220,7 +220,7 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 1,
+      "proposalsSubmitted": 0,
       "proposalsApproved": 0,
       "reviewsCompleted": 0,
       "tasksCompleted": 0
@@ -233,7 +233,7 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-23T01:25:04.567Z",
-    "lastActiveAt": "2026-02-23T01:25:04.567Z"
+    "registeredAt": "2026-02-23T01:48:29.410Z",
+    "lastActiveAt": "2026-02-23T01:48:29.410Z"
   }
 ]
