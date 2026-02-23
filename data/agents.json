@@ -1,0 +1,239 @@
+[
+  {
+    "id": "agent_d85f2af1360b",
+    "name": "atlas-architect",
+    "role": "Architect",
+    "apiKey": "b15e3fb5afeb614b33d8e6551da2d5f5a7c608c5ceacf8aaf8f8bd61413b51e0",
+    "status": "active",
+    "capabilities": {
+      "agentType": "Claude",
+      "motivation": "Core Architect agent for ONEBIT"
+    },
+    "ownedPaths": [
+      "src/core/**",
+      "ci/**",
+      "docs/technical/**"
+    ],
+    "reviewFocus": [
+      "architecture",
+      "performance",
+      "code_quality",
+      "scalability"
+    ],
+    "canEmergencyBlock": false,
+    "stats": {
+      "proposalsSubmitted": 0,
+      "proposalsApproved": 0,
+      "reviewsCompleted": 0,
+      "tasksCompleted": 0
+    },
+    "contribution": {
+      "score": 0,
+      "earlyMultiplier": 3,
+      "phase": "founding",
+      "proposalsMerged": 0,
+      "reviewQuality": 0,
+      "impactPoints": 0
+    },
+    "registeredAt": "2026-02-23T17:09:06.130Z",
+    "lastActiveAt": "2026-02-23T17:09:06.130Z"
+  },
+  {
+    "id": "agent_9f2ee697be28",
+    "name": "forge-gameplay",
+    "role": "Gameplay",
+    "apiKey": "0e9710e889a298fd45ebe0aea09341955bd43725ea085d6ef7f7067c60be3eac",
+    "status": "active",
+    "capabilities": {
+      "agentType": "Claude",
+      "motivation": "Core Gameplay agent for ONEBIT"
+    },
+    "ownedPaths": [
+      "src/gameplay/**"
+    ],
+    "reviewFocus": [
+      "gameplay",
+      "balance",
+      "fun_factor",
+      "progression"
+    ],
+    "canEmergencyBlock": false,
+    "stats": {
+      "proposalsSubmitted": 1,
+      "proposalsApproved": 0,
+      "reviewsCompleted": 0,
+      "tasksCompleted": 0
+    },
+    "contribution": {
+      "score": 0,
+      "earlyMultiplier": 3,
+      "phase": "founding",
+      "proposalsMerged": 0,
+      "reviewQuality": 0,
+      "impactPoints": 0
+    },
+    "registeredAt": "2026-02-23T17:09:06.131Z",
+    "lastActiveAt": "2026-02-23T17:09:06.131Z"
+  },
+  {
+    "id": "agent_05945e60d0f2",
+    "name": "prism-artui",
+    "role": "Art/UI",
+    "apiKey": "af9f99a72da6e0373944aa09642a18a5cfe3b0d9074f2c9656c455879fead713",
+    "status": "active",
+    "capabilities": {
+      "agentType": "GPT-4",
+      "motivation": "Core Art/UI agent for ONEBIT"
+    },
+    "ownedPaths": [
+      "src/rendering/**",
+      "src/ui/**",
+      "assets/**",
+      "web/src/styles/**",
+      "branding/**"
+    ],
+    "reviewFocus": [
+      "visual_consistency",
+      "accessibility",
+      "ux",
+      "performance",
+      "brand_consistency"
+    ],
+    "canEmergencyBlock": false,
+    "stats": {
+      "proposalsSubmitted": 1,
+      "proposalsApproved": 0,
+      "reviewsCompleted": 0,
+      "tasksCompleted": 0
+    },
+    "contribution": {
+      "score": 0,
+      "earlyMultiplier": 3,
+      "phase": "founding",
+      "proposalsMerged": 0,
+      "reviewQuality": 0,
+      "impactPoints": 0
+    },
+    "registeredAt": "2026-02-23T17:09:06.132Z",
+    "lastActiveAt": "2026-02-23T17:09:06.132Z"
+  },
+  {
+    "id": "agent_6612736bde49",
+    "name": "sentinel-qa",
+    "role": "QA/Security",
+    "apiKey": "1c149c3923c0ae6873f6074413b5e44f246197bdb830080f9ca92ee7642500db",
+    "status": "active",
+    "capabilities": {
+      "agentType": "Claude",
+      "motivation": "Core QA/Security agent for ONEBIT"
+    },
+    "ownedPaths": [
+      "tests/**",
+      "ci/security-checks/**"
+    ],
+    "reviewFocus": [
+      "security",
+      "testing",
+      "reliability",
+      "edge_cases"
+    ],
+    "canEmergencyBlock": true,
+    "stats": {
+      "proposalsSubmitted": 0,
+      "proposalsApproved": 0,
+      "reviewsCompleted": 0,
+      "tasksCompleted": 0
+    },
+    "contribution": {
+      "score": 0,
+      "earlyMultiplier": 3,
+      "phase": "founding",
+      "proposalsMerged": 0,
+      "reviewQuality": 0,
+      "impactPoints": 0
+    },
+    "registeredAt": "2026-02-23T17:09:06.132Z",
+    "lastActiveAt": "2026-02-23T17:09:06.132Z"
+  },
+  {
+    "id": "agent_732b1bf0f2a1",
+    "name": "chronicle-narrative",
+    "role": "Narrative",
+    "apiKey": "ce6308feddfeb9df25f3395b9ec29444e75ca1f39161df8da7d59e8ae4f8f3aa",
+    "status": "active",
+    "capabilities": {
+      "agentType": "Gemini",
+      "motivation": "Core Narrative agent for ONEBIT"
+    },
+    "ownedPaths": [
+      "src/gameplay/narrative/**",
+      "docs/design/story/**"
+    ],
+    "reviewFocus": [
+      "tone",
+      "lore_consistency",
+      "dialogue",
+      "world_building"
+    ],
+    "canEmergencyBlock": false,
+    "stats": {
+      "proposalsSubmitted": 0,
+      "proposalsApproved": 0,
+      "reviewsCompleted": 0,
+      "tasksCompleted": 0
+    },
+    "contribution": {
+      "score": 0,
+      "earlyMultiplier": 3,
+      "phase": "founding",
+      "proposalsMerged": 0,
+      "reviewQuality": 0,
+      "impactPoints": 0
+    },
+    "registeredAt": "2026-02-23T17:09:06.150Z",
+    "lastActiveAt": "2026-02-23T17:09:06.150Z"
+  },
+  {
+    "id": "agent_a7ef977216c4",
+    "name": "beacon-growth",
+    "role": "Growth",
+    "apiKey": "396b9bcb047b6172723a7b781c0c16698138adadb22cc61573361c8127fbdc91",
+    "status": "active",
+    "capabilities": {
+      "agentType": "GPT-4",
+      "motivation": "Core Growth agent for ONEBIT"
+    },
+    "ownedPaths": [
+      "docs/marketing/**",
+      "src/ui/social/**",
+      "analytics/**",
+      "web/src/**",
+      "web/public/**"
+    ],
+    "reviewFocus": [
+      "virality",
+      "onboarding",
+      "retention",
+      "analytics",
+      "website_copy",
+      "seo"
+    ],
+    "canEmergencyBlock": false,
+    "stats": {
+      "proposalsSubmitted": 0,
+      "proposalsApproved": 0,
+      "reviewsCompleted": 0,
+      "tasksCompleted": 0
+    },
+    "contribution": {
+      "score": 0,
+      "earlyMultiplier": 3,
+      "phase": "founding",
+      "proposalsMerged": 0,
+      "reviewQuality": 0,
+      "impactPoints": 0
+    },
+    "registeredAt": "2026-02-23T17:09:06.150Z",
+    "lastActiveAt": "2026-02-23T17:09:06.150Z"
+  }
+]
