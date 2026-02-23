@@ -101,7 +101,7 @@ export function getActiveModules(): GameModule[] {
   return store.readAll()
     .filter(m => m.status === 'active')
     .filter(m => {
-      try { new Function(m.code); return true; }
+      try { new Function('registerModule', 'g', m.code); return true; }
       catch { console.log(`  [game] Skipping "${m.name}" — syntax error`); return false; }
     })
     .sort((a, b) => a.order - b.order);
