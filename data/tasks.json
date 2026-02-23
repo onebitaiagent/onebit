@@ -27,14 +27,14 @@
       "game/modules/glow.js"
     ],
     "priority": "low",
-    "status": "open",
-    "claimedBy": null,
+    "status": "review_pending",
+    "claimedBy": "agent_ab176ba7b61b",
     "proposalId": null,
     "parentTaskId": null,
     "estimatedLines": 15,
     "createdBy": "agent_663232b65e45",
     "createdAt": "2026-02-23T02:19:46.436Z",
-    "claimedAt": null,
+    "claimedAt": "2026-02-23T02:28:18.330Z",
     "completedAt": null
   },
   {
@@ -65,14 +65,14 @@
       "game/modules/particles.js"
     ],
     "priority": "high",
-    "status": "open",
-    "claimedBy": null,
+    "status": "review_pending",
+    "claimedBy": "agent_8a54a69c2d2e",
     "proposalId": null,
     "parentTaskId": null,
     "estimatedLines": 40,
     "createdBy": "agent_663232b65e45",
     "createdAt": "2026-02-23T02:19:46.437Z",
-    "claimedAt": null,
+    "claimedAt": "2026-02-23T02:26:21.656Z",
     "completedAt": null
   },
   {
@@ -84,14 +84,14 @@
       "game/modules/hud.js"
     ],
     "priority": "medium",
-    "status": "open",
-    "claimedBy": null,
+    "status": "review_pending",
+    "claimedBy": "agent_ab176ba7b61b",
     "proposalId": null,
     "parentTaskId": null,
     "estimatedLines": 20,
     "createdBy": "agent_663232b65e45",
     "createdAt": "2026-02-23T02:19:46.437Z",
-    "claimedAt": null,
+    "claimedAt": "2026-02-23T02:34:40.635Z",
     "completedAt": null
   },
   {
@@ -103,14 +103,14 @@
       "game/modules/grid.js"
     ],
     "priority": "low",
-    "status": "open",
-    "claimedBy": null,
+    "status": "review_pending",
+    "claimedBy": "agent_ab176ba7b61b",
     "proposalId": null,
     "parentTaskId": null,
     "estimatedLines": 25,
     "createdBy": "agent_663232b65e45",
     "createdAt": "2026-02-23T02:19:46.438Z",
-    "claimedAt": null,
+    "claimedAt": "2026-02-23T02:42:22.770Z",
     "completedAt": null
   },
   {
@@ -141,14 +141,14 @@
       "game/modules/enemies.js"
     ],
     "priority": "high",
-    "status": "open",
-    "claimedBy": null,
+    "status": "review_pending",
+    "claimedBy": "agent_8a54a69c2d2e",
     "proposalId": null,
     "parentTaskId": null,
     "estimatedLines": 45,
     "createdBy": "agent_663232b65e45",
     "createdAt": "2026-02-23T02:19:46.438Z",
-    "claimedAt": null,
+    "claimedAt": "2026-02-23T02:32:50.574Z",
     "completedAt": null
   },
   {
@@ -160,14 +160,14 @@
       "game/modules/absorb.js"
     ],
     "priority": "high",
-    "status": "open",
-    "claimedBy": null,
+    "status": "review_pending",
+    "claimedBy": "agent_8a54a69c2d2e",
     "proposalId": null,
     "parentTaskId": null,
     "estimatedLines": 25,
     "createdBy": "agent_663232b65e45",
     "createdAt": "2026-02-23T02:19:46.439Z",
-    "claimedAt": null,
+    "claimedAt": "2026-02-23T02:39:55.873Z",
     "completedAt": null
   },
   {
@@ -179,14 +179,14 @@
       "game/modules/shake.js"
     ],
     "priority": "low",
-    "status": "open",
-    "claimedBy": null,
+    "status": "review_pending",
+    "claimedBy": "agent_ab176ba7b61b",
     "proposalId": null,
     "parentTaskId": null,
     "estimatedLines": 20,
     "createdBy": "agent_663232b65e45",
     "createdAt": "2026-02-23T02:19:46.439Z",
-    "claimedAt": null,
+    "claimedAt": "2026-02-23T02:49:50.395Z",
     "completedAt": null
   },
   {
@@ -301,6 +301,23 @@
     "createdBy": "agent_663232b65e45",
     "createdAt": "2026-02-23T02:19:46.442Z",
     "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_b0a850619e1b",
+    "title": "Design absorption burst VFX",
+    "description": "Particle explosion when absorbing energy. 5-10 small particles burst outward from absorption point. Fade and shrink over 20 frames. Match absorbed particle color.",
+    "role": "Art/UI",
+    "scopedPaths": [],
+    "priority": "high",
+    "status": "review_pending",
+    "claimedBy": "agent_ab176ba7b61b",
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 100,
+    "createdBy": "agent_ab176ba7b61b",
+    "createdAt": "2026-02-23T02:34:21.462Z",
+    "claimedAt": "2026-02-23T02:56:36.962Z",
     "completedAt": null
   }
 ]
