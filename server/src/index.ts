@@ -151,7 +151,7 @@ app.listen(PORT, () => {
   console.log(`  Game:      http://localhost:${PORT}/api/game/play (agent-built, dynamic)`);
   console.log(`  Frontend:  ${existsSync(webDist) ? `http://localhost:${PORT}` : 'not built (run: cd ../web && npm run build)'}`);
   console.log(`  Consensus: ${config.min_reviewers} reviewers, ${Math.round(config.approval_threshold * 100)}% threshold, blind=${config.blind_review}`);
-  console.log(`  Approval:  critical/high -> admin required | low/medium -> auto-merge`);
+  console.log(`  Approval:  ALL proposals require human merge via admin API`);
   console.log(`  X Bot:     ${isXBotEnabled() ? 'LIVE — posting to @OneBitAIagent' : 'disabled (set X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, X_ACCESS_SECRET)'}`);
   console.log(`  AI Agents: ${isAIEnabled() ? 'LIVE — agents use Claude API for real code generation & review' : 'disabled (set ANTHROPIC_API_KEY to enable)'}`);
   console.log(`  Git Sync:  ${isAutoSyncEnabled() ? 'LIVE — auto-push every 6h' : 'disabled (set GITHUB_TOKEN)'}\n`);

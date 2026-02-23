@@ -4,24 +4,35 @@
  *
  * Each agent runs independently on its own schedule.
  * No pre-written code, no random verdicts — everything is AI-generated.
+ *
+ * Phase gating: only creates tasks from the current phase.
+ * Human approval required for all merges (no auto-merge).
+ * Auto-stops after MAX_RUNTIME_MS (default 2 hours) to control costs.
  */
 
 import { getAllAgents } from './agent-registry.js';
 import { getTasks, claimTask, updateTaskStatus, createTask } from './task-queue.js';
 import {
   createProposal, submitProposal, submitReview, castVote, getProposals,
-  mergeProposal,
 } from './consensus-engine.js';
 import { registerGameModule, getActiveModules, getAllModules } from './game-evolution.js';
 import { messageBus } from './message-bus.js';
-import { isAIEnabled, generateGameCode, reviewCode } from './ai-client.js';
+import { isAIEnabled, generateGameCode, reviewCode, getAICosts } from './ai-client.js';
 import type { AgentRoleName } from '../models/types.js';
+
+// ─── Configuration ──────────────────────────────────────────
+
+const MAX_RUNTIME_MS = parseInt(process.env.AGENT_RUNTIME_MS || String(2 * 60 * 60 * 1000), 10); // default 2 hours
+let agentsStopped = false;
+let agentsStartedAt = 0;
 
 // ─── Game Evolution Roadmap ─────────────────────────────────
 // Structured progression from 1 pixel → full game
 // Matches the PHASES on the website: Origin → Prototype → Alpha → Beta → Launch → Mature
 
 interface RoadmapTask { title: string; desc: string; role: AgentRoleName; phase: string }
+
+const PHASE_ORDER = ['Origin', 'Prototype', 'Alpha', 'Beta'];
 
 const GAME_ROADMAP: RoadmapTask[] = [
   // ═══ PHASE 1: ORIGIN (Day 1) — Canvas renderer, input, particles, basic collision ═══
@@ -63,7 +74,99 @@ const GAME_ROADMAP: RoadmapTask[] = [
   { title: 'Build pause menu overlay', desc: 'Press P or ESC to pause. Darken background, show "PAUSED" with resume/restart options. Freeze all game state. Show current stats.', role: 'Art/UI', phase: 'Beta' },
 ];
 
+// Build set of roadmap titles for filtering
+const ROADMAP_TITLES = new Set(GAME_ROADMAP.map(t => t.title));
+
 let roadmapIndex = 0;
+
+// ─── Phase Gating ────────────────────────────────────────────
+// Only create tasks from the current phase. Admin must advance phases.
+
+let currentPhaseIndex = 0;
+
+export function getCurrentPhase(): {
+  phase: string;
+  index: number;
+  totalPhases: number;
+  tasksInPhase: number;
+  tasksCompleted: number;
+  tasksMerged: number;
+  phaseProgress: string;
+  allPhases: string[];
+} {
+  const phase = PHASE_ORDER[currentPhaseIndex] || 'Complete';
+  const phaseRoadmapTasks = GAME_ROADMAP.filter(t => t.phase === phase);
+  const merged = getProposals({ state: 'MERGED' });
+  const mergedTitles = new Set(merged.map(p => p.title));
+  const tasksMerged = phaseRoadmapTasks.filter(t => mergedTitles.has(t.title)).length;
+
+  return {
+    phase,
+    index: currentPhaseIndex,
+    totalPhases: PHASE_ORDER.length,
+    tasksInPhase: phaseRoadmapTasks.length,
+    tasksCompleted: tasksMerged,
+    tasksMerged,
+    phaseProgress: `${tasksMerged}/${phaseRoadmapTasks.length}`,
+    allPhases: PHASE_ORDER,
+  };
+}
+
+export function advancePhase(): { success: boolean; phase: string; message: string } {
+  if (currentPhaseIndex >= PHASE_ORDER.length - 1) {
+    return { success: false, phase: PHASE_ORDER[currentPhaseIndex], message: 'Already at final phase' };
+  }
+
+  const oldPhase = PHASE_ORDER[currentPhaseIndex];
+  currentPhaseIndex++;
+  const newPhase = PHASE_ORDER[currentPhaseIndex];
+
+  // Reset roadmap index to start of new phase
+  roadmapIndex = GAME_ROADMAP.findIndex(t => t.phase === newPhase);
+  if (roadmapIndex < 0) roadmapIndex = GAME_ROADMAP.length;
+
+  messageBus.send('admin', 'broadcast', 'system', {
+    event: 'phase_advanced',
+    from: oldPhase,
+    to: newPhase,
+    message: `Phase advanced: ${oldPhase} → ${newPhase}`,
+  });
+
+  console.log(`  [phases] Advanced: ${oldPhase} → ${newPhase}`);
+  return { success: true, phase: newPhase, message: `Advanced from ${oldPhase} to ${newPhase}` };
+}
+
+export function getAgentStatus(): {
+  running: boolean;
+  stoppedReason: string | null;
+  runtimeMs: number;
+  maxRuntimeMs: number;
+  timeRemainingMs: number;
+  costs: ReturnType<typeof getAICosts>;
+} {
+  const runtimeMs = agentsStartedAt > 0 ? Date.now() - agentsStartedAt : 0;
+  return {
+    running: !agentsStopped && agentsStartedAt > 0,
+    stoppedReason: agentsStopped ? 'max_runtime_reached' : null,
+    runtimeMs,
+    maxRuntimeMs: MAX_RUNTIME_MS,
+    timeRemainingMs: Math.max(0, MAX_RUNTIME_MS - runtimeMs),
+    costs: getAICosts(),
+  };
+}
+
+export function stopAgents(): void {
+  agentsStopped = true;
+  console.log('\n  ═══════════════════════════════════════════════');
+  console.log('  LIVE AGENTS STOPPED');
+  const costs = getAICosts();
+  console.log(`  Runtime: ${costs.runtimeHours}h`);
+  console.log(`  Total API calls: ${costs.totalCalls}`);
+  console.log(`  Estimated cost: ${costs.estimatedCost}`);
+  console.log(`  Rate: ${costs.costPerHour}`);
+  console.log(`  Projected daily: ${costs.projectedDaily}`);
+  console.log('  ═══════════════════════════════════════════════\n');
+}
 
 // ─── Live Agent Class ──────────────────────────────────────
 
@@ -78,7 +181,7 @@ class LiveAgent {
   ) {}
 
   async tick(): Promise<void> {
-    if (this.busy) return;
+    if (this.busy || agentsStopped) return;
     this.busy = true;
 
     try {
@@ -99,6 +202,7 @@ class LiveAgent {
 
   // ─── Review proposals where this agent is assigned ────
   private async doReviews(): Promise<void> {
+    if (agentsStopped) return;
     const proposals = getProposals({ state: 'IN_REVIEW' });
 
     for (const p of proposals) {
@@ -145,6 +249,7 @@ class LiveAgent {
 
   // ─── Vote on proposals in VOTING state ────────────────
   private async doVotes(): Promise<void> {
+    if (agentsStopped) return;
     const proposals = getProposals({ state: 'VOTING' });
 
     for (const p of proposals) {
@@ -170,7 +275,7 @@ class LiveAgent {
 
   // ─── Find a task and generate code ────────────────────
   private async doWork(): Promise<void> {
-    if (!isAIEnabled()) return;
+    if (!isAIEnabled() || agentsStopped) return;
 
     // Don't start new work if there are proposals waiting for review
     // (prevents flooding the pipeline)
@@ -181,7 +286,11 @@ class LiveAgent {
     const openTasks = getTasks({ role: this.role, status: 'open' });
     if (openTasks.length === 0) return;
 
-    const task = openTasks[0];
+    // Only pick tasks that are in the GAME_ROADMAP
+    const roadmapTask = openTasks.find(t => ROADMAP_TITLES.has(t.title));
+    if (!roadmapTask) return;
+
+    const task = roadmapTask;
     const claimed = claimTask(task.id, this.id, this.role);
     if (!claimed.task) return;
 
@@ -247,20 +356,33 @@ class LiveAgent {
 }
 
 // ─── Task Feeder ────────────────────────────────────────────
-// Creates new tasks from the roadmap when the pool runs low
+// Creates new tasks from the roadmap, respecting phase gating
 
 function feedTasks(): void {
+  if (agentsStopped) return;
+
+  const currentPhase = PHASE_ORDER[currentPhaseIndex];
+  if (!currentPhase) return; // All phases complete
+
   const openTasks = getTasks({ status: 'open' });
-  if (openTasks.length > 4 || roadmapIndex >= GAME_ROADMAP.length) return;
+  // Only count roadmap tasks as open
+  const openRoadmapTasks = openTasks.filter(t => ROADMAP_TITLES.has(t.title));
+  if (openRoadmapTasks.length > 4) return;
 
   const agents = getAllAgents({ status: 'active' }).filter(a => a.role);
   if (agents.length === 0) return;
 
-  const toCreate = Math.min(3, GAME_ROADMAP.length - roadmapIndex);
-  for (let i = 0; i < toCreate; i++) {
-    const item = GAME_ROADMAP[roadmapIndex++];
-    const creator = agents.find(a => a.role === item.role) || agents[0];
+  // Find next tasks in current phase
+  const phaseTasks = GAME_ROADMAP.filter(t => t.phase === currentPhase);
+  const allTasks = getTasks({});
+  const existingTitles = new Set(allTasks.map(t => t.title));
 
+  let created = 0;
+  for (const item of phaseTasks) {
+    if (created >= 3) break;
+    if (existingTitles.has(item.title)) continue;
+
+    const creator = agents.find(a => a.role === item.role) || agents[0];
     createTask({
       title: item.title,
       description: item.desc,
@@ -270,16 +392,7 @@ function feedTasks(): void {
     }, creator.id);
 
     console.log(`  [tasks] [${item.phase}] Created "${item.title}" for ${item.role}`);
-  }
-}
-
-// ─── Auto-merge approved proposals ──────────────────────────
-
-function mergeApproved(): void {
-  const approved = getProposals({ state: 'APPROVED' });
-  for (const p of approved) {
-    mergeProposal(p.id);
-    console.log(`  [merge] "${p.title}" merged → game module active`);
+    created++;
   }
 }
 
@@ -292,6 +405,11 @@ export function startLiveAgents(): void {
   }
 
   console.log('  Live Agents: Booting autonomous AI agents...');
+  console.log(`  Max runtime: ${MAX_RUNTIME_MS / 60_000} minutes`);
+  console.log(`  Phase gating: ON — starting at ${PHASE_ORDER[currentPhaseIndex]}`);
+  console.log(`  Auto-merge: OFF — human approval required`);
+
+  agentsStartedAt = Date.now();
 
   setTimeout(() => {
     const agents = getAllAgents({ status: 'active' }).filter(a => a.role !== null);
@@ -313,9 +431,11 @@ export function startLiveAgents(): void {
       const startDelay = idx * 10_000; // 10s stagger between agents
 
       setTimeout(() => {
+        if (agentsStopped) return;
         console.log(`  [${agent.name}] Online — looking for work`);
 
         const loop = async () => {
+          if (agentsStopped) return;
           await agent.tick();
           // Each agent works every 45-90 seconds
           const next = 45_000 + Math.floor(Math.random() * 45_000);
@@ -327,17 +447,23 @@ export function startLiveAgents(): void {
 
     // Task feeder — replenish tasks every 2 minutes
     const taskLoop = () => {
+      if (agentsStopped) return;
       feedTasks();
       setTimeout(taskLoop, 120_000);
     };
     setTimeout(taskLoop, 30_000);
 
-    // Auto-merge — check every 2 minutes
-    const mergeLoop = () => {
-      mergeApproved();
-      setTimeout(mergeLoop, 120_000);
-    };
-    setTimeout(mergeLoop, 180_000);
+    // Auto-stop timer
+    setTimeout(() => {
+      stopAgents();
+      messageBus.send('system', 'broadcast', 'system', {
+        event: 'agents_stopped',
+        reason: 'max_runtime_reached',
+        runtimeMs: MAX_RUNTIME_MS,
+        costs: getAICosts(),
+        message: `Live agents stopped after ${MAX_RUNTIME_MS / 60_000} minutes. Check costs with GET /api/admin/costs`,
+      });
+    }, MAX_RUNTIME_MS);
 
   }, 5_000); // 5s after boot for seed to finish
 }

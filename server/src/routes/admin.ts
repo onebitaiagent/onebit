@@ -14,6 +14,8 @@ import { appendAudit, verifyChain } from '../services/audit-log.js';
 import { messageBus } from '../services/message-bus.js';
 import { postLaunchThread, isThreadPosted, getTweetStats, deleteTweets, deleteAllMyTweets } from '../services/x-bot.js';
 import { pushDataToGitHub, getLastPushTime, isAutoSyncEnabled } from '../services/git-sync.js';
+import { getCurrentPhase, advancePhase, getAgentStatus, stopAgents } from '../services/live-agents.js';
+import { getAICosts } from '../services/ai-client.js';
 import { JsonStore } from '../data/store.js';
 import type { Proposal, ProposalState } from '../models/types.js';
 
@@ -297,6 +299,35 @@ router.get('/git-status', (_req: Request, res: Response) => {
     repo: 'onebitaiagent/onebit',
     schedule: 'every 6 hours',
   });
+});
+
+// GET /api/admin/phase — current phase + progress
+router.get('/phase', (_req: Request, res: Response) => {
+  res.json(getCurrentPhase());
+});
+
+// POST /api/admin/advance-phase — manually advance to next phase
+router.post('/advance-phase', (_req: Request, res: Response) => {
+  const result = advancePhase();
+  appendAudit('admin', 'phase_advanced', 'system', result);
+  res.json(result);
+});
+
+// GET /api/admin/costs — AI API cost tracking
+router.get('/costs', (_req: Request, res: Response) => {
+  res.json(getAICosts());
+});
+
+// GET /api/admin/agents-status — live agent runtime status
+router.get('/agents-status', (_req: Request, res: Response) => {
+  res.json(getAgentStatus());
+});
+
+// POST /api/admin/stop-agents — manually stop all agents
+router.post('/stop-agents', (_req: Request, res: Response) => {
+  stopAgents();
+  appendAudit('admin', 'agents_stopped', 'system', { reason: 'manual_stop' });
+  res.json({ stopped: true, costs: getAICosts() });
 });
 
 export default router;

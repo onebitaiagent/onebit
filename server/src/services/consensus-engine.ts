@@ -333,12 +333,8 @@ export function castVote(
 
     let finalState: ProposalState;
     if (approved) {
-      // Critical/high impact OR website/branding → requires admin approval
-      // Low/medium impact → auto-merge
-      const needsAdmin = proposal.impact === 'critical' || proposal.impact === 'high'
-        || proposal.requiresHumanReview
-        || proposal.type === 'website' || proposal.type === 'branding';
-      finalState = needsAdmin ? 'APPROVED' : 'MERGED';
+      // ALL approved proposals require human admin merge — no auto-merge
+      finalState = 'APPROVED';
     } else {
       finalState = 'REJECTED';
     }
@@ -371,21 +367,6 @@ export function castVote(
       requiresHumanReview: proposal.requiresHumanReview,
     });
 
-    if (finalState === 'MERGED') {
-      appendAudit('consensus_engine', 'merge', proposalId, {});
-      // Award contribution points (auto-merged low/medium proposals)
-      addContribution(proposal.agent, 'proposal_merged', proposal.impact);
-      for (const review of updatedVotes.length > 0 ? proposal.reviews : []) {
-        addContribution(review.agentId, 'review_completed');
-      }
-      // Activate any game module linked to this proposal
-      activateModuleByProposal(proposalId);
-      messageBus.send('consensus_engine', 'broadcast', 'system', {
-        event: 'proposal_merged',
-        proposalId,
-        title: proposal.title,
-      });
-    }
   } else {
     store.update(proposalId, { votes: updatedVotes } as Partial<Proposal>);
     appendAudit(agentId, 'vote_cast', proposalId, { vote: vote.vote });
