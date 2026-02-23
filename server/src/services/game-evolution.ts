@@ -85,11 +85,25 @@ export function activateModuleByProposal(proposalId: string): GameModule | null 
 }
 
 /**
- * Get all active modules sorted by execution order
+ * Archive a module (remove from active game, e.g. broken syntax)
+ */
+export function archiveModule(moduleId: string): GameModule | null {
+  return store.update(moduleId, {
+    status: 'archived' as const,
+  });
+}
+
+/**
+ * Get all active modules sorted by execution order.
+ * Filters out modules with JS syntax errors to prevent game crashes.
  */
 export function getActiveModules(): GameModule[] {
   return store.readAll()
     .filter(m => m.status === 'active')
+    .filter(m => {
+      try { new Function(m.code); return true; }
+      catch { console.log(`  [game] Skipping "${m.name}" — syntax error`); return false; }
+    })
     .sort((a, b) => a.order - b.order);
 }
 

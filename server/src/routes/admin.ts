@@ -16,6 +16,7 @@ import { postLaunchThread, isThreadPosted, getTweetStats, deleteTweets, deleteAl
 import { pushDataToGitHub, getLastPushTime, isAutoSyncEnabled } from '../services/git-sync.js';
 import { getCurrentPhase, advancePhase, getAgentStatus, stopAgents } from '../services/live-agents.js';
 import { getAICosts } from '../services/ai-client.js';
+import { archiveModule } from '../services/game-evolution.js';
 import { JsonStore } from '../data/store.js';
 import type { Proposal, ProposalState } from '../models/types.js';
 
@@ -321,6 +322,17 @@ router.get('/costs', (_req: Request, res: Response) => {
 // GET /api/admin/agents-status — live agent runtime status
 router.get('/agents-status', (_req: Request, res: Response) => {
   res.json(getAgentStatus());
+});
+
+// POST /api/admin/modules/:id/archive — remove a broken module from the game
+router.post('/modules/:id/archive', (req: Request, res: Response) => {
+  const result = archiveModule(req.params.id);
+  if (!result) {
+    res.status(404).json({ error: 'Module not found' });
+    return;
+  }
+  appendAudit('admin', 'module_archived', req.params.id, { name: result.name });
+  res.json({ archived: true, module: result });
 });
 
 // POST /api/admin/stop-agents — manually stop all agents
