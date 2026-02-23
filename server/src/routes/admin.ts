@@ -16,7 +16,8 @@ import { postLaunchThread, isThreadPosted, getTweetStats, deleteTweets, deleteAl
 import { pushDataToGitHub, getLastPushTime, isAutoSyncEnabled } from '../services/git-sync.js';
 import { getCurrentPhase, advancePhase, getAgentStatus, stopAgents } from '../services/live-agents.js';
 import { getAICosts } from '../services/ai-client.js';
-import { archiveModule } from '../services/game-evolution.js';
+import { archiveModule, registerGameModule, activateModuleByProposal } from '../services/game-evolution.js';
+import { generateId } from '../utils/crypto.js';
 import { JsonStore } from '../data/store.js';
 import type { Proposal, ProposalState } from '../models/types.js';
 
@@ -338,6 +339,36 @@ router.post('/modules/:id/archive', (req: Request, res: Response) => {
   }
   appendAudit('admin', 'module_archived', req.params.id, { name: result.name });
   res.json({ archived: true, module: result });
+});
+
+// POST /api/admin/modules/inject — manually inject a game module (e.g. to restore a lost one)
+router.post('/modules/inject', (req: Request, res: Response) => {
+  const { name, description, code, order } = req.body;
+  if (!name || !code) {
+    res.status(400).json({ error: 'Provide { name, description, code, order }' });
+    return;
+  }
+
+  const fakeProposalId = generateId('admin');
+  const mod = registerGameModule({
+    name,
+    description: description || 'Manually injected by admin',
+    code,
+    order: order || 50,
+    proposalId: fakeProposalId,
+    agentId: 'admin',
+    agentName: 'admin',
+  });
+
+  if (!mod) {
+    res.status(400).json({ error: 'Module has syntax errors — rejected' });
+    return;
+  }
+
+  // Immediately activate it (skip consensus)
+  const activated = activateModuleByProposal(fakeProposalId);
+  appendAudit('admin', 'module_injected', mod.id, { name: mod.name });
+  res.json({ injected: true, module: activated || mod });
 });
 
 // POST /api/admin/stop-agents — manually stop all agents
