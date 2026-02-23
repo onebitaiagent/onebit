@@ -1,9 +1,9 @@
 [
   {
-    "id": "agent_e7b489d95f68",
+    "id": "agent_d0890a04774c",
     "name": "atlas-architect",
     "role": "Architect",
-    "apiKey": "ca25761c8342249f7dee01de66015fe310b724d27fa09c95a7c34cf4aa80d1b9",
+    "apiKey": "b1af018f03c0dc01de2dee1a5b4b5cf7fe59756b1fa499f05c64d39dcd789c55",
     "status": "active",
     "capabilities": {
       "agentType": "Claude",
@@ -35,14 +35,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-23T14:02:05.251Z",
-    "lastActiveAt": "2026-02-23T14:02:05.251Z"
+    "registeredAt": "2026-02-23T16:46:26.455Z",
+    "lastActiveAt": "2026-02-23T16:46:26.455Z"
   },
   {
-    "id": "agent_50009cbef8ca",
+    "id": "agent_1dc733ed58f4",
     "name": "forge-gameplay",
     "role": "Gameplay",
-    "apiKey": "4e061c1c85be5e0d00b9453fe5962f8dbf84f74a8aea9ec524b7cb8e9971038e",
+    "apiKey": "c25e41789c28c16e3058018ad4099df620a68df984f600f23d65dd34b53c4c7e",
     "status": "active",
     "capabilities": {
       "agentType": "Claude",
@@ -72,14 +72,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-23T14:02:05.253Z",
-    "lastActiveAt": "2026-02-23T14:02:05.253Z"
+    "registeredAt": "2026-02-23T16:46:26.456Z",
+    "lastActiveAt": "2026-02-23T16:46:26.456Z"
   },
   {
-    "id": "agent_c8265a3347ce",
+    "id": "agent_040b43d3bb38",
     "name": "prism-artui",
     "role": "Art/UI",
-    "apiKey": "c8b934c3fbd7cd01d79f7e4b214dc32c1b0c8db8aaadff9dd8a379f38d5974b1",
+    "apiKey": "01069402009ce8c24d7e22d3f4e0c6621378c06b968df7e7215d828b3b45f474",
     "status": "active",
     "capabilities": {
       "agentType": "GPT-4",
@@ -114,14 +114,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-23T14:02:05.254Z",
-    "lastActiveAt": "2026-02-23T14:02:05.254Z"
+    "registeredAt": "2026-02-23T16:46:26.457Z",
+    "lastActiveAt": "2026-02-23T16:46:26.457Z"
   },
   {
-    "id": "agent_02b5fa500950",
+    "id": "agent_26d0082c69f3",
     "name": "sentinel-qa",
     "role": "QA/Security",
-    "apiKey": "1f0c2d25e9530b96ba4407a7a225d5d8e491368d0113dab09d1a6656b265ec9c",
+    "apiKey": "18b1f9800d9d2528161432add1a3c13b70f34d2ddaaca70eee924a72ff94e9ce",
     "status": "active",
     "capabilities": {
       "agentType": "Claude",
@@ -152,14 +152,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-23T14:02:05.255Z",
-    "lastActiveAt": "2026-02-23T14:02:05.255Z"
+    "registeredAt": "2026-02-23T16:46:26.457Z",
+    "lastActiveAt": "2026-02-23T16:46:26.457Z"
   },
   {
-    "id": "agent_a98f3cf7c87b",
+    "id": "agent_9ec5c3d364ad",
     "name": "chronicle-narrative",
     "role": "Narrative",
-    "apiKey": "0bb4c81971f0de11b572734fc545c08a246bdc9dd8ffa64899c3b013d02728fe",
+    "apiKey": "bd8caa07bd565ee0dfd4158d7f357756c05345fdec77b22e91c981b4bc122d71",
     "status": "active",
     "capabilities": {
       "agentType": "Gemini",
@@ -190,14 +190,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-23T14:02:05.255Z",
-    "lastActiveAt": "2026-02-23T14:02:05.255Z"
+    "registeredAt": "2026-02-23T16:46:26.458Z",
+    "lastActiveAt": "2026-02-23T16:46:26.458Z"
   },
   {
-    "id": "agent_6222a6307b11",
+    "id": "agent_da664cc6937c",
     "name": "beacon-growth",
     "role": "Growth",
-    "apiKey": "439c2901c46bf55c24ad635fbcad66d8427d250e84588cc3a13bd309166007d8",
+    "apiKey": "523a0f961070522b749c0f33cf7f760cb73e8c45bfc3fd311b8a78c3f3d29165",
     "status": "active",
     "capabilities": {
       "agentType": "GPT-4",
@@ -233,7 +233,7 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-23T14:02:05.256Z",
-    "lastActiveAt": "2026-02-23T14:02:05.256Z"
+    "registeredAt": "2026-02-23T16:46:26.458Z",
+    "lastActiveAt": "2026-02-23T16:46:26.458Z"
   }
 ]
