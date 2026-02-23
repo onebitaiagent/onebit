@@ -322,204 +322,15 @@ function HomePage({ setPage }) {
    PAGE: PLAY (Game)
    ═══════════════════════════════════════════════════════════ */
 function PlayPage() {
-  const canvasRef = useRef(null);
-  const stateRef = useRef(null);
-  const keysRef = useRef({});
-  const [ui, setUi] = useState({ pixels: 1, score: 0, stage: "Pixel", gen: 0, evoPercent: 0, alive: "0:00" });
-
-  const createState = useCallback((w, h) => ({
-    player: { x: w / 2, y: h / 2, vx: 0, vy: 0 },
-    particles: [], enemies: [], trails: [],
-    absorbed: 0, score: 0, stage: 0, generation: 0,
-    startTime: Date.now(), shakeTimer: 0, flashTimer: 0, flashColor: "#fff",
-    stars: Array.from({ length: 60 }, () => ({
-      x: Math.random() * w, y: Math.random() * h,
-      size: Math.random() * 1.2 + 0.3, brightness: Math.random(), speed: Math.random() * 0.3 + 0.05,
-    })),
-    absorbing: false, absorbRadius: 0, dead: false, deathTimer: 0,
-  }), []);
-
-  const rand = (a, b) => Math.random() * (b - a) + a;
-  const dist = (a, b) => Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2);
-  const lerp = (a, b, t) => a + (b - a) * t;
-
-  const spawnParticles = useCallback((s, count) => {
-    for (let i = 0; i < count; i++) {
-      const angle = Math.random() * Math.PI * 2;
-      const d = rand(80, 400);
-      s.particles.push({
-        x: s.player.x + Math.cos(angle) * d,
-        y: s.player.y + Math.sin(angle) * d,
-        size: rand(1, 3), color: ["#00ffaa", "#44ffcc", "#88ff88", "#aaffaa", "#00ddff"][Math.floor(Math.random() * 5)],
-        pulse: Math.random() * Math.PI * 2, drift: { x: rand(-0.3, 0.3), y: rand(-0.3, 0.3) },
-      });
-    }
-  }, []);
-
-  const spawnEnemies = useCallback((s, count) => {
-    for (let i = 0; i < count; i++) {
-      const angle = Math.random() * Math.PI * 2;
-      const d = rand(200, 400);
-      s.enemies.push({
-        x: s.player.x + Math.cos(angle) * d, y: s.player.y + Math.sin(angle) * d,
-        size: rand(3, 6) * (1 + s.stage * 0.3), speed: rand(0.5, 1.5),
-        angle: Math.random() * Math.PI * 2, turnSpeed: rand(0.01, 0.04), color: "#ff3366", hp: 1 + s.stage,
-      });
-    }
-  }, []);
+  const API_BASE = window.location.hostname === "localhost" ? "http://localhost:3001" : "";
+  const [evolution, setEvolution] = useState(null);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    const rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width;
-    canvas.height = rect.height;
-
-    const s = createState(canvas.width, canvas.height);
-    spawnParticles(s, 20);
-    spawnEnemies(s, 3);
-    stateRef.current = s;
-
-    const onKey = (down) => (e) => {
-      keysRef.current[e.key.toLowerCase()] = down;
-      if (e.key === " ") { e.preventDefault(); s.absorbing = down; }
-      if (down && e.key.toLowerCase() === "e") {
-        const next = EVOLUTION_STAGES[s.stage + 1];
-        if (next && s.absorbed >= next.threshold) {
-          s.stage++; s.generation++; s.flashTimer = 20; s.flashColor = next.color; s.shakeTimer = 15;
-          spawnParticles(s, 15 + s.stage * 5); spawnEnemies(s, 2 + s.stage);
-          for (let i = 0; i < 30; i++) {
-            const a = (Math.PI * 2 / 30) * i;
-            s.trails.push({ x: s.player.x, y: s.player.y, vx: Math.cos(a) * rand(3, 8), vy: Math.sin(a) * rand(3, 8), life: 1, color: next.color, size: rand(1, 4) });
-          }
-        }
-      }
-      if (down && e.key.toLowerCase() === "r") {
-        Object.assign(s, createState(canvas.width, canvas.height));
-        spawnParticles(s, 20); spawnEnemies(s, 3);
-      }
-    };
-    window.addEventListener("keydown", onKey(true));
-    window.addEventListener("keyup", onKey(false));
-
-    let last = performance.now();
-    let rafId;
-    const loop = (now) => {
-      const dt = Math.min((now - last) / 16.67, 3);
-      last = now;
-      const evo = EVOLUTION_STAGES[s.stage];
-
-      if (!s.dead) {
-        let mx = 0, my = 0;
-        const k = keysRef.current;
-        if (k.w || k.arrowup) my -= 1;
-        if (k.s || k.arrowdown) my += 1;
-        if (k.a || k.arrowleft) mx -= 1;
-        if (k.d || k.arrowright) mx += 1;
-        if (mx || my) { const l = Math.sqrt(mx * mx + my * my); mx /= l; my /= l; }
-        s.player.vx = lerp(s.player.vx, mx * evo.speed, 0.15);
-        s.player.vy = lerp(s.player.vy, my * evo.speed, 0.15);
-        s.player.x += s.player.vx; s.player.y += s.player.vy;
-        if (s.player.x < -50) s.player.x = canvas.width + 50;
-        if (s.player.x > canvas.width + 50) s.player.x = -50;
-        if (s.player.y < -50) s.player.y = canvas.height + 50;
-        if (s.player.y > canvas.height + 50) s.player.y = -50;
-
-        if (evo.trail && (Math.abs(s.player.vx) > 0.3 || Math.abs(s.player.vy) > 0.3)) {
-          s.trails.push({ x: s.player.x, y: s.player.y, vx: -s.player.vx * 0.1 + rand(-0.5, 0.5), vy: -s.player.vy * 0.1 + rand(-0.5, 0.5), life: 1, color: evo.color, size: evo.size * 0.4 });
-        }
-
-        s.absorbRadius = s.absorbing ? Math.min(s.absorbRadius + 3, 60 + s.stage * 15) : Math.max(s.absorbRadius - 5, 0);
-        const absD = evo.size + s.absorbRadius;
-        for (let i = s.particles.length - 1; i >= 0; i--) {
-          const p = s.particles[i]; p.x += p.drift.x; p.y += p.drift.y; p.pulse += 0.05;
-          if (s.absorbing) {
-            const d = dist(s.player, p);
-            if (d < absD) { const a = Math.atan2(s.player.y - p.y, s.player.x - p.x); const pull = (1 - d / absD) * 3; p.x += Math.cos(a) * pull; p.y += Math.sin(a) * pull; }
-            if (d < evo.size + 5) { s.absorbed++; s.score += 10 * (s.stage + 1); s.particles.splice(i, 1); s.flashTimer = 3; s.flashColor = p.color; spawnParticles(s, 1); }
-          }
-        }
-
-        for (let i = s.enemies.length - 1; i >= 0; i--) {
-          const e = s.enemies[i]; e.angle += e.turnSpeed;
-          if (s.stage >= 3) { const tp = Math.atan2(s.player.y - e.y, s.player.x - e.x); e.angle = lerp(e.angle, tp, 0.02); }
-          e.x += Math.cos(e.angle) * e.speed; e.y += Math.sin(e.angle) * e.speed;
-          if (e.x < -50) e.x = canvas.width + 50; if (e.x > canvas.width + 50) e.x = -50;
-          if (e.y < -50) e.y = canvas.height + 50; if (e.y > canvas.height + 50) e.y = -50;
-          const d = dist(s.player, e);
-          if (d < evo.size + e.size) {
-            if (s.absorbing && evo.size >= e.size) {
-              e.hp--; if (e.hp <= 0) { s.score += 50 * (s.stage + 1); s.absorbed += 5; s.shakeTimer = 8;
-                for (let j = 0; j < 15; j++) { const a = rand(0, Math.PI * 2); s.trails.push({ x: e.x, y: e.y, vx: Math.cos(a) * rand(2, 6), vy: Math.sin(a) * rand(2, 6), life: 1, color: "#ff3366", size: rand(1, 3) }); }
-                s.enemies.splice(i, 1); spawnEnemies(s, 1); }
-            } else if (s.stage >= 2) { s.dead = true; s.deathTimer = 90; s.shakeTimer = 30;
-              for (let j = 0; j < 50; j++) { const a = rand(0, Math.PI * 2); s.trails.push({ x: s.player.x, y: s.player.y, vx: Math.cos(a) * rand(1, 10), vy: Math.sin(a) * rand(1, 10), life: 1, color: evo.color, size: rand(1, 5) }); }
-            }
-          }
-        }
-        if (s.particles.length < 15 + s.stage * 5) spawnParticles(s, 3);
-      } else { s.deathTimer -= dt; if (s.deathTimer <= 0) { Object.assign(s, createState(canvas.width, canvas.height)); spawnParticles(s, 20); spawnEnemies(s, 3); } }
-
-      for (let i = s.trails.length - 1; i >= 0; i--) { const t = s.trails[i]; t.x += t.vx; t.y += t.vy; t.vx *= 0.96; t.vy *= 0.96; t.life -= 0.02; if (t.life <= 0) s.trails.splice(i, 1); }
-      if (s.shakeTimer > 0) s.shakeTimer--;
-      if (s.flashTimer > 0) s.flashTimer--;
-
-      // Render
-      ctx.save();
-      if (s.shakeTimer > 0) ctx.translate(rand(-s.shakeTimer * 0.5, s.shakeTimer * 0.5), rand(-s.shakeTimer * 0.5, s.shakeTimer * 0.5));
-      ctx.fillStyle = "#020408"; ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.strokeStyle = `rgba(0,255,170,0.02)`; ctx.lineWidth = 0.5;
-      for (let x = 0; x < canvas.width; x += 40) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke(); }
-      for (let y = 0; y < canvas.height; y += 40) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke(); }
-
-      for (const star of s.stars) { ctx.globalAlpha = 0.3 + Math.sin(Date.now() * 0.001 * star.speed) * 0.4; ctx.fillStyle = "#fff"; ctx.fillRect(star.x, star.y, star.size, star.size); }
-      ctx.globalAlpha = 1;
-
-      for (const t of s.trails) { ctx.globalAlpha = t.life * 0.6; ctx.fillStyle = t.color; ctx.beginPath(); ctx.arc(t.x, t.y, t.size * t.life, 0, Math.PI * 2); ctx.fill(); }
-      ctx.globalAlpha = 1;
-
-      if (s.absorbRadius > 0 && !s.dead) {
-        ctx.strokeStyle = evo.color; ctx.globalAlpha = 0.15; ctx.lineWidth = 1; ctx.setLineDash([4, 4]);
-        ctx.beginPath(); ctx.arc(s.player.x, s.player.y, s.absorbRadius + evo.size, 0, Math.PI * 2); ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = 1;
-      }
-
-      for (const p of s.particles) { ctx.globalAlpha = Math.sin(p.pulse) * 0.3 + 0.7; ctx.fillStyle = p.color; ctx.shadowColor = p.color; ctx.shadowBlur = 8; ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill(); ctx.shadowBlur = 0; }
-      ctx.globalAlpha = 1;
-
-      for (const e of s.enemies) {
-        ctx.fillStyle = e.color; ctx.shadowColor = e.color; ctx.shadowBlur = 10;
-        ctx.beginPath(); for (let i = 0; i < 10; i++) { const a = (Math.PI * 2 / 10) * i + e.angle; const r = i % 2 === 0 ? e.size : e.size * 0.5; const px = e.x + Math.cos(a) * r; const py = e.y + Math.sin(a) * r; i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py); }
-        ctx.closePath(); ctx.fill(); ctx.shadowBlur = 0;
-      }
-
-      if (!s.dead) {
-        ctx.fillStyle = evo.color; ctx.shadowColor = evo.color; ctx.shadowBlur = evo.size * 2 + 10;
-        if (evo.shape === "pixel") { ctx.fillRect(s.player.x - Math.max(evo.size, 1) / 2, s.player.y - Math.max(evo.size, 1) / 2, Math.max(evo.size, 1), Math.max(evo.size, 1)); }
-        else { ctx.beginPath(); ctx.arc(s.player.x, s.player.y, evo.size, 0, Math.PI * 2); ctx.fill(); }
-        ctx.shadowBlur = 0;
-      } else {
-        ctx.fillStyle = `rgba(0,0,0,${0.5 + (90 - s.deathTimer) / 90 * 0.3})`; ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "#fff"; ctx.font = `700 24px ${css.fontD}`; ctx.textAlign = "center"; ctx.fillText("ABSORBED", canvas.width / 2, canvas.height / 2 - 15);
-        ctx.font = `300 12px ${css.fontM}`; ctx.fillStyle = css.dim; ctx.fillText(`Score: ${s.score} · Press R`, canvas.width / 2, canvas.height / 2 + 15);
-      }
-
-      if (s.flashTimer > 0) { ctx.globalAlpha = s.flashTimer / 20 * 0.15; ctx.fillStyle = s.flashColor; ctx.fillRect(0, 0, canvas.width, canvas.height); ctx.globalAlpha = 1; }
-      ctx.restore();
-
-      // UI state
-      const next = EVOLUTION_STAGES[s.stage + 1];
-      const elapsed = Math.floor((Date.now() - s.startTime) / 1000);
-      setUi({ pixels: s.absorbed + 1, score: s.score, stage: evo.name, gen: s.generation,
-        evoPercent: next ? Math.min(100, Math.max(0, ((s.absorbed - evo.threshold) / (next.threshold - evo.threshold)) * 100)) : 100,
-        alive: `${Math.floor(elapsed / 60)}:${(elapsed % 60).toString().padStart(2, "0")}`,
-      });
-      rafId = requestAnimationFrame(loop);
-    };
-    rafId = requestAnimationFrame(loop);
-    return () => { cancelAnimationFrame(rafId); window.removeEventListener("keydown", onKey(true)); window.removeEventListener("keyup", onKey(false)); };
-  }, [createState, spawnParticles, spawnEnemies]);
+    fetch(`${API_BASE}/api/game/evolution`)
+      .then(r => r.json())
+      .then(setEvolution)
+      .catch(() => {});
+  }, []);
 
   return (
     <div style={{ padding: "40px 20px" }}>
@@ -527,38 +338,50 @@ function PlayPage() {
         <div style={{ textAlign: "center", marginBottom: 24 }}>
           <SectionLabel>The Game</SectionLabel>
           <SectionTitle>Everything starts from one pixel</SectionTitle>
+          <p style={{ fontSize: 13, color: css.dim, marginTop: 8, lineHeight: 1.6 }}>
+            This game is built entirely by AI agents through consensus. Every module below was written by Claude, peer-reviewed, and voted on before merging.
+          </p>
         </div>
         <div style={{ background: css.surface, border: `1px solid ${css.border}`, borderRadius: 12, overflow: "hidden", boxShadow: `0 20px 60px rgba(0,0,0,0.5), 0 0 120px ${css.pixelGlow.replace("44", "08")}` }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px 16px", background: css.surface2, borderBottom: `1px solid ${css.border}`, fontSize: 11, fontFamily: css.fontM }}>
             <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
-              <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#ef4444" }} />
-              <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#eab308" }} />
               <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#22c55e" }} />
-              <span style={{ color: css.dim, marginLeft: 8 }}>onebit — gen {ui.gen}</span>
+              <span style={{ color: css.dim, marginLeft: 8 }}>onebit — live</span>
             </div>
-            <div style={{ display: "flex", gap: 16, color: css.dim, fontSize: 11 }}>
-              <span>Pixels: <span style={{ color: css.pixel, fontWeight: 700 }}>{ui.pixels}</span></span>
-              <span>Score: <span style={{ color: css.pixel, fontWeight: 700 }}>{ui.score.toLocaleString()}</span></span>
-              <span>Alive: <span style={{ color: css.pixel, fontWeight: 700 }}>{ui.alive}</span></span>
+            <div style={{ color: css.dim, fontSize: 11 }}>
+              {evolution && <span>{evolution.activeFeatures} module{evolution.activeFeatures !== 1 ? "s" : ""} active</span>}
             </div>
           </div>
-          <canvas ref={canvasRef} style={{ display: "block", width: "100%", height: 460, background: "#020408", imageRendering: "pixelated" }} />
+          <iframe
+            src={`${API_BASE}/api/game/play`}
+            style={{ display: "block", width: "100%", height: 500, border: "none", background: "#04060f" }}
+            title="ONEBIT Game"
+          />
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px 16px", background: css.surface2, borderTop: `1px solid ${css.border}`, fontSize: 11, fontFamily: css.fontM, color: css.dim, flexWrap: "wrap", gap: 8 }}>
             <div>
-              <kbd style={{ background: css.surface, border: `1px solid #334155`, padding: "2px 6px", borderRadius: 3, color: css.text, fontSize: 10 }}>WASD</kbd> move &nbsp;
-              <kbd style={{ background: css.surface, border: `1px solid #334155`, padding: "2px 6px", borderRadius: 3, color: css.text, fontSize: 10 }}>Space</kbd> absorb &nbsp;
-              <kbd style={{ background: css.surface, border: `1px solid #334155`, padding: "2px 6px", borderRadius: 3, color: css.text, fontSize: 10 }}>E</kbd> evolve &nbsp;
-              <kbd style={{ background: css.surface, border: `1px solid #334155`, padding: "2px 6px", borderRadius: 3, color: css.text, fontSize: 10 }}>R</kbd> restart
+              <kbd style={{ background: css.surface, border: `1px solid #334155`, padding: "2px 6px", borderRadius: 3, color: css.text, fontSize: 10 }}>WASD</kbd> move
+              <span style={{ margin: "0 8px", opacity: 0.3 }}>|</span>
+              Click the game first to focus it
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <span>Evolution:</span>
-              <div style={{ width: 100, height: 4, background: css.surface, borderRadius: 2, overflow: "hidden" }}>
-                <div style={{ height: "100%", width: `${ui.evoPercent}%`, background: `linear-gradient(90deg, ${css.pixel}, ${css.accent})`, borderRadius: 2, transition: "width 0.3s" }} />
-              </div>
-              <span style={{ color: css.gold, fontWeight: 700 }}>{ui.stage}</span>
+              <span style={{ color: css.pixel }}>Built by AI agents through consensus</span>
             </div>
           </div>
         </div>
+        {evolution && evolution.timeline && evolution.timeline.length > 0 && (
+          <div style={{ marginTop: 24, background: css.surface, border: `1px solid ${css.border}`, borderRadius: 12, padding: 20 }}>
+            <div style={{ fontSize: 10, color: css.pixel, fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>Evolution Timeline</div>
+            {evolution.timeline.map((t, i) => (
+              <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 0", borderBottom: i < evolution.timeline.length - 1 ? `1px solid ${css.border}` : "none" }}>
+                <div>
+                  <span style={{ color: css.text, fontWeight: 600, fontSize: 13 }}>{t.name}</span>
+                  <span style={{ color: "#7c3aed", fontSize: 11, marginLeft: 8 }}>by {t.agentName}</span>
+                </div>
+                <span style={{ color: css.dim, fontSize: 10 }}>{t.description}</span>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
