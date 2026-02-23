@@ -164,4 +164,62 @@ router.get('/feed', (_req, res) => {
   });
 });
 
+// GET /api/dashboard/tweets — recent tweet-like content for the landing page
+router.get('/tweets', (_req, res) => {
+  const messages = messageBus.getMessages({ limit: 200 });
+
+  // Collect tweet content: x_post events, content_produced, proposal_merged, game_evolved
+  const tweets: { time: string; text: string; type: string; agent?: string }[] = [];
+
+  for (const msg of messages) {
+    const payload = msg.payload as Record<string, unknown>;
+    const event = payload?.event as string;
+
+    if (event === 'x_post' && typeof payload.text === 'string') {
+      tweets.push({ time: msg.timestamp, text: payload.text, type: 'tweet', agent: payload.handle as string });
+    } else if (event === 'content_produced' && typeof payload.text === 'string') {
+      tweets.push({ time: msg.timestamp, text: payload.text, type: payload.contentType as string || 'content', agent: payload.agentName as string });
+    } else if (event === 'proposal_merged') {
+      tweets.push({ time: msg.timestamp, text: `Consensus merge: "${payload.title}"${payload.autoMerged ? ' — auto-merged' : ' — human approved'}`, type: 'merge', agent: 'consensus' });
+    } else if (event === 'game_evolved') {
+      tweets.push({ time: msg.timestamp, text: `New feature live: "${payload.moduleName}" by ${payload.agentName}`, type: 'evolution', agent: payload.agentName as string });
+    } else if (event === 'phase_change') {
+      tweets.push({ time: msg.timestamp, text: `Phase update: entered ${payload.phase} phase. ${payload.description || ''}`, type: 'milestone', agent: 'system' });
+    }
+  }
+
+  // Newest first
+  tweets.sort((a, b) => b.time.localeCompare(a.time));
+  res.json({ tweets: tweets.slice(0, 20), total: tweets.length });
+});
+
+// GET /api/dashboard/agents-activity — real-time agent actions for the landing page
+router.get('/agents-activity', (_req, res) => {
+  const messages = messageBus.getMessages({ limit: 200 });
+
+  const activity: { time: string; text: string; type: string; agent: string; role?: string }[] = [];
+
+  for (const msg of messages) {
+    const payload = msg.payload as Record<string, unknown>;
+    const event = payload?.event as string;
+
+    if (event === 'agent_working') {
+      activity.push({ time: msg.timestamp, text: `Writing code for "${payload.taskTitle}"`, type: 'working', agent: payload.agentName as string, role: payload.role as string });
+    } else if (event === 'ai_code_generated') {
+      activity.push({ time: msg.timestamp, text: `Submitted "${payload.moduleName}" — ${payload.codeLength} chars of AI-generated code`, type: 'code', agent: payload.agentName as string });
+    } else if (event === 'feature_suggested') {
+      activity.push({ time: msg.timestamp, text: `Suggested new feature: "${payload.title}"`, type: 'suggestion', agent: payload.agentName as string });
+    } else if (event === 'content_produced') {
+      activity.push({ time: msg.timestamp, text: `Produced ${payload.contentType}: "${payload.title}"`, type: 'content', agent: payload.agentName as string });
+    } else if (event === 'proposal_in_review') {
+      activity.push({ time: msg.timestamp, text: `"${payload.title}" in review by ${payload.reviewerCount} agents`, type: 'review', agent: 'consensus' });
+    } else if (event === 'proposal_merged' || event === 'proposal_approved') {
+      activity.push({ time: msg.timestamp, text: `"${payload.title}" ${event === 'proposal_merged' ? 'merged' : 'approved'} — ${Math.round((payload.approvalRatio as number || 0) * 100)}% approval`, type: event === 'proposal_merged' ? 'merge' : 'approved', agent: 'consensus' });
+    }
+  }
+
+  activity.sort((a, b) => b.time.localeCompare(a.time));
+  res.json({ activity: activity.slice(0, 30), total: activity.length });
+});
+
 export default router;

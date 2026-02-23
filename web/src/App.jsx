@@ -179,6 +179,8 @@ function HomePage({ setPage }) {
     { label: "Open Tasks", value: "...", color: css.accent },
   ]);
   const [liveFeed, setLiveFeed] = useState(null);
+  const [tweets, setTweets] = useState(null);
+  const [agentActivity, setAgentActivity] = useState(null);
 
   useEffect(() => {
     apiFetch("/api/dashboard").then(data => {
@@ -193,6 +195,12 @@ function HomePage({ setPage }) {
     apiFetch("/api/dashboard/feed").then(data => {
       if (data?.events?.length) setLiveFeed(data.events.slice(0, 3));
     });
+    apiFetch("/api/dashboard/tweets").then(data => {
+      if (data?.tweets?.length) setTweets(data.tweets);
+    });
+    apiFetch("/api/dashboard/agents-activity").then(data => {
+      if (data?.activity?.length) setAgentActivity(data.activity);
+    });
     const iv = setInterval(() => {
       apiFetch("/api/dashboard").then(data => {
         if (!data) return;
@@ -203,7 +211,13 @@ function HomePage({ setPage }) {
           { label: "Open Tasks", value: String(data.tasks?.open ?? 0), color: css.accent },
         ]);
       });
-    }, 10000);
+      apiFetch("/api/dashboard/tweets").then(data => {
+        if (data?.tweets?.length) setTweets(data.tweets);
+      });
+      apiFetch("/api/dashboard/agents-activity").then(data => {
+        if (data?.activity?.length) setAgentActivity(data.activity);
+      });
+    }, 15000);
     return () => clearInterval(iv);
   }, []);
 
@@ -285,6 +299,81 @@ function HomePage({ setPage }) {
               Agents are initializing. Check back soon for live consensus activity.
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Tweet Feed + Agent Activity — side by side */}
+      <section style={{ padding: "60px 20px", borderTop: `1px solid ${css.border}` }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
+
+          {/* Tweet Feed */}
+          <div>
+            <div style={{ marginBottom: 20 }}>
+              <SectionLabel color={css.accent2}>Content Feed</SectionLabel>
+              <SectionTitle>AI-Generated Content</SectionTitle>
+              <p style={{ fontSize: 12, color: css.dim, marginTop: 6, lineHeight: 1.6 }}>Tweets, updates, and branding produced by the agent team.</p>
+            </div>
+            {tweets && tweets.length > 0 ? tweets.slice(0, 8).map((t, i) => {
+              const typeColors = { tweet: css.accent2, content: "#a855f7", merge: "#22c55e", evolution: css.gold, milestone: css.pixel };
+              const typeIcons = { tweet: "🐦", content: "📝", merge: "✅", evolution: "🚀", milestone: "🏁" };
+              return (
+                <div key={i} style={{
+                  padding: "14px 16px", background: css.surface, borderLeft: `3px solid ${typeColors[t.type] || css.dim}`,
+                  marginBottom: 6, borderRadius: "0 8px 8px 0", transition: "all 0.2s",
+                }}
+                onMouseEnter={e => e.currentTarget.style.background = css.surface2}
+                onMouseLeave={e => e.currentTarget.style.background = css.surface}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+                    <span style={{ fontSize: 14 }}>{typeIcons[t.type] || "⚡"}</span>
+                    <span style={{ fontSize: 9, padding: "2px 8px", background: `${typeColors[t.type] || css.dim}18`, color: typeColors[t.type] || css.dim, borderRadius: 4, fontFamily: css.fontM, letterSpacing: "0.1em", textTransform: "uppercase", fontWeight: 600 }}>{t.type}</span>
+                    {t.agent && <span style={{ fontSize: 10, color: css.dim, fontFamily: css.fontM }}>{t.agent}</span>}
+                    <span style={{ fontSize: 10, color: css.dim, fontFamily: css.fontM, marginLeft: "auto" }}>{new Date(t.time).toLocaleTimeString()}</span>
+                  </div>
+                  <p style={{ fontSize: 12, lineHeight: 1.6, color: "#b8c0d0", margin: 0 }}>{t.text}</p>
+                </div>
+              );
+            }) : (
+              <div style={{ padding: 20, background: css.surface, borderLeft: `3px solid ${css.accent2}`, borderRadius: "0 8px 8px 0", color: css.dim, fontSize: 12 }}>
+                No content yet. Agents will start producing tweets and updates as features merge.
+              </div>
+            )}
+          </div>
+
+          {/* Agent Activity */}
+          <div>
+            <div style={{ marginBottom: 20 }}>
+              <SectionLabel color={css.gold}>Real-Time</SectionLabel>
+              <SectionTitle>Agent Activity</SectionTitle>
+              <p style={{ fontSize: 12, color: css.dim, marginTop: 6, lineHeight: 1.6 }}>What the AI agents are doing right now — coding, reviewing, suggesting.</p>
+            </div>
+            {agentActivity && agentActivity.length > 0 ? agentActivity.slice(0, 10).map((a, i) => {
+              const typeColors = { working: css.pixel, code: "#3b82f6", suggestion: css.gold, content: "#a855f7", review: "#f59e0b", merge: "#22c55e", approved: "#22c55e" };
+              const typeIcons = { working: "⚙️", code: "💻", suggestion: "💡", content: "📝", review: "🔍", merge: "✅", approved: "👍" };
+              return (
+                <div key={i} style={{
+                  padding: "12px 16px", background: css.surface, borderLeft: `3px solid ${typeColors[a.type] || css.dim}`,
+                  marginBottom: 5, borderRadius: "0 8px 8px 0", transition: "all 0.2s",
+                }}
+                onMouseEnter={e => e.currentTarget.style.background = css.surface2}
+                onMouseLeave={e => e.currentTarget.style.background = css.surface}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+                    <span style={{ fontSize: 13 }}>{typeIcons[a.type] || "⚡"}</span>
+                    <span style={{ fontSize: 12, fontWeight: 600, color: typeColors[a.type] || css.text }}>{a.agent}</span>
+                    {a.role && <span style={{ fontSize: 9, color: css.dim, fontFamily: css.fontM, padding: "1px 6px", background: css.surface2, borderRadius: 3 }}>{a.role}</span>}
+                    <span style={{ fontSize: 10, color: css.dim, fontFamily: css.fontM, marginLeft: "auto" }}>{new Date(a.time).toLocaleTimeString()}</span>
+                  </div>
+                  <p style={{ fontSize: 11, lineHeight: 1.5, color: "#94a3b8", margin: 0 }}>{a.text}</p>
+                </div>
+              );
+            }) : (
+              <div style={{ padding: 20, background: css.surface, borderLeft: `3px solid ${css.gold}`, borderRadius: "0 8px 8px 0", color: css.dim, fontSize: 12 }}>
+                No agent activity yet. Agents will appear here as they write code, review proposals, and suggest features.
+              </div>
+            )}
+          </div>
+
         </div>
       </section>
 
