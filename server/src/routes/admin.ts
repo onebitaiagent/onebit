@@ -26,7 +26,12 @@ const __dirname = dirname(__filename);
 const proposalStore = new JsonStore<Proposal>('proposals.json');
 const router = Router();
 
-// All admin routes require the admin key
+// Admin dashboard HTML — no auth (key entered in the UI)
+router.get('/dashboard', (_req: Request, res: Response) => {
+  res.type('html').send(adminDashboardHTML());
+});
+
+// All other admin routes require the admin key
 router.use(adminAuthMiddleware);
 
 // GET /api/admin/overview — admin dashboard
@@ -341,5 +346,202 @@ router.post('/stop-agents', (_req: Request, res: Response) => {
   appendAudit('admin', 'agents_stopped', 'system', { reason: 'manual_stop' });
   res.json({ stopped: true, costs: getAICosts() });
 });
+
+function adminDashboardHTML(): string {
+  return `<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ONEBIT Admin</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#04060f;color:#e2e8f0;font-family:'Courier New',monospace;padding:20px}
+h1{color:#00ffaa;font-size:18px;margin-bottom:4px}
+.sub{color:#64748b;font-size:11px;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:20px}
+.card{background:#0a0f1a;border:1px solid #1e293b;border-radius:8px;padding:14px}
+.card h3{color:#00ffaa;font-size:11px;text-transform:uppercase;letter-spacing:.15em;margin-bottom:10px}
+.stat{display:flex;justify-content:space-between;padding:4px 0;font-size:12px;border-bottom:1px solid #0f172a}
+.stat .v{color:#00ffaa;font-weight:700}
+.stat .warn{color:#ff4444}
+.btn{background:#00ffaa;color:#04060f;border:none;padding:8px 16px;border-radius:4px;font-family:inherit;font-size:11px;font-weight:700;cursor:pointer;margin:4px}
+.btn:hover{background:#44ffcc}
+.btn.danger{background:#ff4444;color:#fff}
+.btn.danger:hover{background:#ff6666}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.proposals{margin-top:10px}
+.prop{background:#0f172a;border:1px solid #1e293b;border-radius:6px;padding:10px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+.prop .title{font-size:12px;font-weight:700}
+.prop .meta{font-size:10px;color:#64748b}
+.prop .actions{display:flex;gap:4px}
+.log{background:#0a0f1a;border:1px solid #1e293b;border-radius:8px;padding:14px;margin-top:14px;max-height:200px;overflow-y:auto;font-size:10px;color:#64748b}
+.log .entry{padding:2px 0;border-bottom:1px solid #0f172a}
+.key-input{background:#0f172a;border:1px solid #1e293b;color:#e2e8f0;padding:8px 12px;border-radius:4px;font-family:inherit;font-size:11px;width:100%;margin-bottom:12px}
+#status{font-size:10px;color:#64748b;margin-top:8px}
+.pulse{animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+</style>
+</head><body>
+<h1>ONEBIT ADMIN</h1>
+<div class="sub">Consensus Engine Control Panel</div>
+
+<div style="margin-bottom:16px">
+  <input type="password" id="key" class="key-input" placeholder="Enter admin key..." />
+</div>
+
+<div class="grid" id="cards"></div>
+
+<div style="margin-bottom:12px">
+  <button class="btn" onclick="batchMerge()">Merge All Pending</button>
+  <button class="btn" onclick="advancePhase()">Advance Phase</button>
+  <button class="btn" onclick="refresh()">Refresh</button>
+  <button class="btn danger" onclick="stopAgents()">Stop Agents</button>
+</div>
+
+<h3 style="color:#00ffaa;font-size:11px;letter-spacing:.15em;margin-bottom:8px">PENDING PROPOSALS</h3>
+<div id="proposals" class="proposals"></div>
+
+<div id="log" class="log"><div class="entry">Waiting for admin key...</div></div>
+<div id="status"></div>
+
+<script>
+var KEY = '';
+var BASE = '';
+
+document.getElementById('key').addEventListener('input', function(e) {
+  KEY = e.target.value;
+  if (KEY.length > 10) refresh();
+});
+
+function hdr() { return { 'X-Admin-Key': KEY, 'Content-Type': 'application/json' }; }
+
+function log(msg) {
+  var el = document.getElementById('log');
+  var d = document.createElement('div');
+  d.className = 'entry';
+  d.textContent = new Date().toLocaleTimeString() + ' ' + msg;
+  el.prepend(d);
+  if (el.children.length > 50) el.removeChild(el.lastChild);
+}
+
+async function api(path, opts) {
+  try {
+    var r = await fetch(BASE + '/api/admin/' + path, Object.assign({ headers: hdr() }, opts || {}));
+    if (!r.ok) { log('ERROR: ' + r.status + ' on ' + path); return null; }
+    return await r.json();
+  } catch(e) { log('FETCH ERROR: ' + e.message); return null; }
+}
+
+async function refresh() {
+  var [overview, phase, costs, agents, pending] = await Promise.all([
+    api('overview'), api('phase'), api('costs'), api('agents-status'), api('pending')
+  ]);
+  if (!overview) return;
+
+  var cards = '';
+
+  // Phase card
+  if (phase) {
+    cards += '<div class="card"><h3>Phase</h3>' +
+      '<div class="stat"><span>Current</span><span class="v">' + phase.phase + '</span></div>' +
+      '<div class="stat"><span>Progress</span><span class="v">' + phase.phaseProgress + '</span></div>' +
+      '<div class="stat"><span>Phases</span><span class="v">' + phase.allPhases.join(' → ') + '</span></div>' +
+      '</div>';
+  }
+
+  // Agents card
+  if (agents) {
+    var running = agents.running;
+    var timeLeft = Math.round(agents.timeRemainingMs / 60000);
+    cards += '<div class="card"><h3>Agents</h3>' +
+      '<div class="stat"><span>Status</span><span class="v' + (running ? ' pulse' : '') + '">' + (running ? 'RUNNING' : 'STOPPED') + '</span></div>' +
+      '<div class="stat"><span>Time Left</span><span class="v">' + (running ? timeLeft + 'm' : '—') + '</span></div>' +
+      '<div class="stat"><span>Runtime</span><span class="v">' + (agents.runtimeMs / 60000).toFixed(1) + 'm</span></div>' +
+      '</div>';
+  }
+
+  // Costs card
+  if (costs) {
+    cards += '<div class="card"><h3>Costs</h3>' +
+      '<div class="stat"><span>Total</span><span class="v">' + costs.estimatedCost + '</span></div>' +
+      '<div class="stat"><span>Rate</span><span class="v">' + costs.costPerHour + '</span></div>' +
+      '<div class="stat"><span>Projected</span><span class="v">' + costs.projectedDaily + '</span></div>' +
+      '<div class="stat"><span>API Calls</span><span class="v">' + costs.totalCalls + '</span></div>' +
+      '</div>';
+  }
+
+  // Pipeline card
+  if (overview) {
+    cards += '<div class="card"><h3>Pipeline</h3>' +
+      '<div class="stat"><span>Agents</span><span class="v">' + overview.agents.active + '/' + overview.agents.total + '</span></div>' +
+      '<div class="stat"><span>Pending Merge</span><span class="v">' + overview.proposals.pendingApproval + '</span></div>' +
+      '<div class="stat"><span>In Review</span><span class="v">' + overview.proposals.inReview + '</span></div>' +
+      '<div class="stat"><span>Merged</span><span class="v">' + overview.proposals.merged + '</span></div>' +
+      '<div class="stat"><span>Rejected</span><span class="v' + (overview.proposals.rejected > 0 ? ' warn' : '') + '">' + overview.proposals.rejected + '</span></div>' +
+      '<div class="stat"><span>Tasks Open</span><span class="v">' + overview.tasks.open + '/' + overview.tasks.total + '</span></div>' +
+      '</div>';
+  }
+
+  document.getElementById('cards').innerHTML = cards;
+
+  // Proposals
+  if (pending && pending.proposals) {
+    var html = '';
+    if (pending.proposals.length === 0) {
+      html = '<div style="color:#64748b;font-size:11px;padding:8px">No proposals waiting for approval</div>';
+    }
+    pending.proposals.forEach(function(p) {
+      html += '<div class="prop">' +
+        '<div><div class="title">' + p.title + '</div>' +
+        '<div class="meta">' + p.type + ' | ' + p.impact + ' impact | ' + p.reviewCount + ' reviews | ' + Math.round(p.approvalRatio * 100) + '% approval | +' + p.linesAdded + ' lines</div></div>' +
+        '<div class="actions">' +
+        '<button class="btn" onclick="mergeOne(\\'' + p.id + '\\')">Merge</button>' +
+        '<button class="btn danger" onclick="rejectOne(\\'' + p.id + '\\')">Reject</button>' +
+        '</div></div>';
+    });
+    document.getElementById('proposals').innerHTML = html;
+  }
+
+  document.getElementById('status').textContent = 'Last refresh: ' + new Date().toLocaleTimeString();
+  log('Refreshed — ' + (pending ? pending.total : 0) + ' pending, ' + (overview ? overview.proposals.merged : 0) + ' merged');
+}
+
+async function batchMerge() {
+  log('Batch merging all pending...');
+  var r = await api('proposals/batch-merge', { method: 'POST' });
+  if (r) { log('Merged ' + r.merged + '/' + r.total); refresh(); }
+}
+
+async function mergeOne(id) {
+  log('Merging ' + id + '...');
+  var r = await api('proposals/' + id + '/merge', { method: 'POST' });
+  if (r) { log('Merged: ' + (r.proposal ? r.proposal.title : id)); refresh(); }
+}
+
+async function rejectOne(id) {
+  if (!confirm('Reject this proposal?')) return;
+  log('Rejecting ' + id + '...');
+  var r = await api('proposals/' + id + '/reject', { method: 'POST', body: JSON.stringify({ reason: 'Admin rejected' }) });
+  if (r) { log('Rejected: ' + id); refresh(); }
+}
+
+async function advancePhase() {
+  if (!confirm('Advance to next phase?')) return;
+  log('Advancing phase...');
+  var r = await api('advance-phase', { method: 'POST' });
+  if (r) { log(r.message); refresh(); }
+}
+
+async function stopAgents() {
+  if (!confirm('Stop all agents?')) return;
+  log('Stopping agents...');
+  var r = await api('stop-agents', { method: 'POST' });
+  if (r) { log('Agents stopped. Cost: ' + r.costs.estimatedCost); refresh(); }
+}
+
+// Auto-refresh every 30s
+setInterval(function() { if (KEY.length > 10) refresh(); }, 30000);
+</script>
+</body></html>`;
+}
 
 export default router;

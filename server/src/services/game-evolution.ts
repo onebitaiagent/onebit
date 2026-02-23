@@ -312,23 +312,27 @@ ${moduleCode}
     ctx.fillStyle = '#04060f';
     ctx.fillRect(0, 0, w, h);
 
-    // Run all agent-written modules (error-isolated per module)
-    for (const mod of modules) {
+    // Run all agent-written modules (error-isolated, auto-revert on crash)
+    for (var mi = modules.length - 1; mi >= 0; mi--) {
+      var mod = modules[mi];
       try {
+        ctx.save();
         mod.update(game);
+        ctx.restore();
       } catch(e) {
-        if (!mod._errCount) mod._errCount = 0;
-        mod._errCount++;
-        if (mod._errCount <= 3) {
-          console.error('[ONEBIT] Module "' + mod.name + '" error:', e.message || e);
+        ctx.restore();
+        console.error('[ONEBIT] Reverted "' + mod.name + '":', e.message || e);
+        modules.splice(mi, 1);
+        // Show revert notification
+        var countEl = document.getElementById('module-count');
+        if (countEl) {
+          countEl.textContent = modules.length + ' modules active | Reverted "' + mod.name + '" — runtime error';
+          countEl.style.color = '#ff4444';
+          setTimeout(function() {
+            countEl.textContent = modules.length + ' module' + (modules.length !== 1 ? 's' : '') + ' active — built by AI agents through consensus';
+            countEl.style.color = '#334155';
+          }, 5000);
         }
-        if (mod._errCount === 1) {
-          var errEl = document.getElementById('module-count');
-          if (errEl) errEl.textContent = 'Module error: ' + mod.name + ' — ' + (e.message || 'runtime error');
-          errEl.style.color = '#ff4444';
-        }
-        // Disable module after 60 consecutive errors
-        if (mod._errCount > 60) { mod.update = function(){}; }
       }
     }
 
