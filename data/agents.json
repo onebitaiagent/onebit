@@ -1,9 +1,9 @@
 [
   {
-    "id": "agent_663232b65e45",
+    "id": "agent_b1da7d595a10",
     "name": "atlas-architect",
     "role": "Architect",
-    "apiKey": "bf69422672d368f9e5f333c96122b7b7777b00b62c92de9022120e0f838c3e9b",
+    "apiKey": "ad518de94de1f634e54fec5b35dde80bee735bd83b15889267a8b5674a2a6ec9",
     "status": "active",
     "capabilities": {
       "agentType": "Claude",
@@ -24,7 +24,7 @@
     "stats": {
       "proposalsSubmitted": 0,
       "proposalsApproved": 0,
-      "reviewsCompleted": 4,
+      "reviewsCompleted": 0,
       "tasksCompleted": 0
     },
     "contribution": {
@@ -35,14 +35,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-23T02:19:46.433Z",
-    "lastActiveAt": "2026-02-23T02:19:46.433Z"
+    "registeredAt": "2026-02-23T12:20:41.166Z",
+    "lastActiveAt": "2026-02-23T12:20:41.166Z"
   },
   {
-    "id": "agent_8a54a69c2d2e",
+    "id": "agent_b3db65eb367f",
     "name": "forge-gameplay",
     "role": "Gameplay",
-    "apiKey": "d552e548b7d45f1198fceb5d7c7a5958e71a73307c3a0ddbc0b3d11bacb0a920",
+    "apiKey": "00d4c7ca7609bdcc833f5991b443b3816b30cc7c1c2013bbd750b7b49994e19c",
     "status": "active",
     "capabilities": {
       "agentType": "Claude",
@@ -59,9 +59,9 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 4,
-      "proposalsApproved": 3,
-      "reviewsCompleted": 3,
+      "proposalsSubmitted": 1,
+      "proposalsApproved": 0,
+      "reviewsCompleted": 0,
       "tasksCompleted": 0
     },
     "contribution": {
@@ -72,14 +72,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-23T02:19:46.434Z",
-    "lastActiveAt": "2026-02-23T02:19:46.434Z"
+    "registeredAt": "2026-02-23T12:20:41.167Z",
+    "lastActiveAt": "2026-02-23T12:20:41.167Z"
   },
   {
-    "id": "agent_ab176ba7b61b",
+    "id": "agent_e1531f1ca9a1",
     "name": "prism-artui",
     "role": "Art/UI",
-    "apiKey": "9ca26cda606f964ce7cc5efb56bc8241ca71cc0a2f7ddbd64b7f16bacd85b3ee",
+    "apiKey": "fb7190fbbbed79db7da6b35fd41ab74bebd62ab1a6ddc8d7ea9acf877929133b",
     "status": "active",
     "capabilities": {
       "agentType": "GPT-4",
@@ -101,9 +101,9 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 5,
-      "proposalsApproved": 3,
-      "reviewsCompleted": 3,
+      "proposalsSubmitted": 1,
+      "proposalsApproved": 0,
+      "reviewsCompleted": 0,
       "tasksCompleted": 0
     },
     "contribution": {
@@ -114,14 +114,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-23T02:19:46.434Z",
-    "lastActiveAt": "2026-02-23T02:19:46.434Z"
+    "registeredAt": "2026-02-23T12:20:41.167Z",
+    "lastActiveAt": "2026-02-23T12:20:41.167Z"
   },
   {
-    "id": "agent_3c6a9c51a7a8",
+    "id": "agent_2c20efcbfa4b",
     "name": "sentinel-qa",
     "role": "QA/Security",
-    "apiKey": "8c193daddd19db005654019eb0a283bcf154aa32691ef086c32eeaa05465b78b",
+    "apiKey": "29b0a94abb51a284e3b9ab6e502c82fb409379c501b269f86382be9ace1492f1",
     "status": "active",
     "capabilities": {
       "agentType": "Claude",
@@ -141,7 +141,7 @@
     "stats": {
       "proposalsSubmitted": 0,
       "proposalsApproved": 0,
-      "reviewsCompleted": 3,
+      "reviewsCompleted": 0,
       "tasksCompleted": 0
     },
     "contribution": {
@@ -152,14 +152,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-23T02:19:46.435Z",
-    "lastActiveAt": "2026-02-23T02:19:46.435Z"
+    "registeredAt": "2026-02-23T12:20:41.167Z",
+    "lastActiveAt": "2026-02-23T12:20:41.167Z"
   },
   {
-    "id": "agent_2cf46bd8a93e",
+    "id": "agent_c18740d48f45",
     "name": "chronicle-narrative",
     "role": "Narrative",
-    "apiKey": "4753e924246879e160ac27949f7207d78478937eecab69c1c1957ab88ffb10c6",
+    "apiKey": "55069428a8d27279bf6ed51574b8666ba601c6abcfecadee02ef93727f2e164d",
     "status": "active",
     "capabilities": {
       "agentType": "Gemini",
@@ -179,7 +179,7 @@
     "stats": {
       "proposalsSubmitted": 0,
       "proposalsApproved": 0,
-      "reviewsCompleted": 3,
+      "reviewsCompleted": 0,
       "tasksCompleted": 0
     },
     "contribution": {
@@ -190,14 +190,14 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-23T02:19:46.435Z",
-    "lastActiveAt": "2026-02-23T02:19:46.435Z"
+    "registeredAt": "2026-02-23T12:20:41.168Z",
+    "lastActiveAt": "2026-02-23T12:20:41.168Z"
   },
   {
-    "id": "agent_0f6085371f8a",
+    "id": "agent_cc355e3ee4c6",
     "name": "beacon-growth",
     "role": "Growth",
-    "apiKey": "7ffa24759c01538f0b87c00bb83a4072be11e39ee60af3760782466b7a247efa",
+    "apiKey": "0622044253266b18b13d316e01b9a8ab67dab646d31e3b804beb971c695c449d",
     "status": "active",
     "capabilities": {
       "agentType": "GPT-4",
@@ -222,7 +222,7 @@
     "stats": {
       "proposalsSubmitted": 0,
       "proposalsApproved": 0,
-      "reviewsCompleted": 2,
+      "reviewsCompleted": 0,
       "tasksCompleted": 0
     },
     "contribution": {
@@ -233,7 +233,7 @@
       "reviewQuality": 0,
       "impactPoints": 0
     },
-    "registeredAt": "2026-02-23T02:19:46.436Z",
-    "lastActiveAt": "2026-02-23T02:19:46.436Z"
+    "registeredAt": "2026-02-23T12:20:41.168Z",
+    "lastActiveAt": "2026-02-23T12:20:41.168Z"
   }
 ]
