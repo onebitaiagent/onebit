@@ -1,0 +1,408 @@
+[
+  {
+    "id": "msg_bf207384c6b4",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:06.170Z",
+    "payload": {
+      "event": "task_created",
+      "taskId": "task_d17cda4b441d",
+      "title": "Add ambient background starfield",
+      "role": "Art/UI",
+      "priority": "medium"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_8d437d1be79d",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:06.171Z",
+    "payload": {
+      "event": "task_created",
+      "taskId": "task_0a21b6aded10",
+      "title": "Add pixel glow effect",
+      "role": "Art/UI",
+      "priority": "low"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_06df86b94071",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:06.171Z",
+    "payload": {
+      "event": "task_created",
+      "taskId": "task_817b71507aa2",
+      "title": "Implement movement trail system",
+      "role": "Gameplay",
+      "priority": "medium"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_1db13369aef9",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:06.189Z",
+    "payload": {
+      "event": "task_created",
+      "taskId": "task_a839045f612a",
+      "title": "Create floating particle spawner",
+      "role": "Gameplay",
+      "priority": "high"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_46e468ebc311",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:06.190Z",
+    "payload": {
+      "event": "task_created",
+      "taskId": "task_4566ecbc02e4",
+      "title": "Build score display HUD",
+      "role": "Art/UI",
+      "priority": "medium"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_a4124bd06c58",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:06.190Z",
+    "payload": {
+      "event": "task_created",
+      "taskId": "task_bbab65e9d46c",
+      "title": "Add background grid environment",
+      "role": "Art/UI",
+      "priority": "low"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_65b6338d3880",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:06.190Z",
+    "payload": {
+      "event": "task_created",
+      "taskId": "task_d563fd0d5bf0",
+      "title": "Design absorption burst particle effects",
+      "role": "Art/UI",
+      "priority": "medium"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_1f3527588954",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:06.210Z",
+    "payload": {
+      "event": "task_created",
+      "taskId": "task_08d22c6dcf63",
+      "title": "Implement enemy AI spawner",
+      "role": "Gameplay",
+      "priority": "high"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_86ad079867d1",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:06.211Z",
+    "payload": {
+      "event": "task_created",
+      "taskId": "task_e907c9f9a32c",
+      "title": "Create absorption field mechanic",
+      "role": "Gameplay",
+      "priority": "high"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_419b2a154b45",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:06.211Z",
+    "payload": {
+      "event": "task_created",
+      "taskId": "task_818674b1e892",
+      "title": "Add screen shake VFX system",
+      "role": "Art/UI",
+      "priority": "low"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_f25870ae51ef",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:06.230Z",
+    "payload": {
+      "event": "task_created",
+      "taskId": "task_21577c40aa0a",
+      "title": "Write canary test suite",
+      "role": "QA/Security",
+      "priority": "critical"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_7e20d84db9c1",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:06.231Z",
+    "payload": {
+      "event": "task_created",
+      "taskId": "task_cf6947779fe9",
+      "title": "Security scanner implementation",
+      "role": "QA/Security",
+      "priority": "critical"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_5770c2fbad40",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:06.231Z",
+    "payload": {
+      "event": "task_created",
+      "taskId": "task_a2831f43c756",
+      "title": "Write origin story lore",
+      "role": "Narrative",
+      "priority": "medium"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_2d14554f9999",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:06.250Z",
+    "payload": {
+      "event": "task_created",
+      "taskId": "task_34c8fb27e9ad",
+      "title": "Redesign homepage hero section",
+      "role": "Growth",
+      "priority": "medium"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_d8a3991b1142",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:06.250Z",
+    "payload": {
+      "event": "task_created",
+      "taskId": "task_cd1a098c1a36",
+      "title": "Create ONEBIT brand kit",
+      "role": "Art/UI",
+      "priority": "high"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_61aada340a9e",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:06.251Z",
+    "payload": {
+      "event": "task_created",
+      "taskId": "task_8c2364e2f743",
+      "title": "Add SEO meta tags and sitemap",
+      "role": "Growth",
+      "priority": "medium"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_ef70b83b3605",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:21.263Z",
+    "payload": {
+      "event": "task_claimed",
+      "taskId": "task_817b71507aa2",
+      "agentId": "agent_9f2ee697be28"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_229b0c8a1f3d",
+    "from": "agent_9f2ee697be28",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:21.263Z",
+    "payload": {
+      "event": "agent_working",
+      "agentName": "forge-gameplay",
+      "role": "Gameplay",
+      "taskTitle": "Implement movement trail system",
+      "message": "forge-gameplay is writing code for \"Implement movement trail system\""
+    },
+    "references": []
+  },
+  {
+    "id": "msg_aa8d6c89e54a",
+    "from": "consensus_engine",
+    "to": "agent_d85f2af1360b",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:30.156Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_b13b9c01eec5",
+      "title": "Implement movement trail system"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_bb0cb39c99fb",
+    "from": "consensus_engine",
+    "to": "agent_05945e60d0f2",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:30.156Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_b13b9c01eec5",
+      "title": "Implement movement trail system"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_0f90724db839",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:30.170Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_b13b9c01eec5",
+      "title": "Implement movement trail system",
+      "reviewerCount": 2
+    },
+    "references": []
+  },
+  {
+    "id": "msg_7606989cf46b",
+    "from": "agent_9f2ee697be28",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:30.170Z",
+    "payload": {
+      "event": "ai_code_generated",
+      "agentName": "forge-gameplay",
+      "moduleName": "Movement Trail",
+      "codeLength": 1628,
+      "message": "forge-gameplay submitted \"Movement Trail\" — 1628 chars of AI-generated code"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_d2f9069e61a5",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:31.257Z",
+    "payload": {
+      "event": "task_claimed",
+      "taskId": "task_d17cda4b441d",
+      "agentId": "agent_05945e60d0f2"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_a413a4b8898f",
+    "from": "agent_05945e60d0f2",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:31.257Z",
+    "payload": {
+      "event": "agent_working",
+      "agentName": "prism-artui",
+      "role": "Art/UI",
+      "taskTitle": "Add ambient background starfield",
+      "message": "prism-artui is writing code for \"Add ambient background starfield\""
+    },
+    "references": []
+  },
+  {
+    "id": "msg_a4371cdaf73b",
+    "from": "consensus_engine",
+    "to": "agent_d85f2af1360b",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:47.302Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_4c404f5823dc",
+      "title": "Add ambient background starfield"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_ba27ff23327f",
+    "from": "consensus_engine",
+    "to": "agent_9f2ee697be28",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:47.302Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_4c404f5823dc",
+      "title": "Add ambient background starfield"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_74aff5a2f3cd",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:47.322Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_4c404f5823dc",
+      "title": "Add ambient background starfield",
+      "reviewerCount": 2
+    },
+    "references": []
+  },
+  {
+    "id": "msg_6d9b55b03785",
+    "from": "agent_05945e60d0f2",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T17:09:47.322Z",
+    "payload": {
+      "event": "ai_code_generated",
+      "agentName": "prism-artui",
+      "moduleName": "Ambient Starfield",
+      "codeLength": 2573,
+      "message": "prism-artui submitted \"Ambient Starfield\" — 2573 chars of AI-generated code"
+    },
+    "references": []
+  }
+]
