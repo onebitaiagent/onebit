@@ -5,9 +5,11 @@
  * Each agent runs independently on its own schedule.
  * No pre-written code, no random verdicts — everything is AI-generated.
  *
- * Phase gating: only creates tasks from the current phase.
- * Human approval required for all merges (no auto-merge).
- * Auto-stops after MAX_RUNTIME_MS (default 2 hours) to control costs.
+ * AUTONOMOUS MODE:
+ * - Phase gating with auto-progression (advances when 50%+ of phase tasks merged)
+ * - Auto-merge for non-critical proposals (critical still needs human)
+ * - Agents suggest new features beyond the fixed roadmap
+ * - Branding & content production evolve alongside the game
  */
 
 import { getAllAgents } from './agent-registry.js';
@@ -17,12 +19,12 @@ import {
 } from './consensus-engine.js';
 import { registerGameModule, getActiveModules, getAllModules } from './game-evolution.js';
 import { messageBus } from './message-bus.js';
-import { isAIEnabled, generateGameCode, reviewCode, getAICosts } from './ai-client.js';
+import { isAIEnabled, generateGameCode, reviewCode, suggestFeature, generateContent, getAICosts } from './ai-client.js';
 import type { AgentRoleName } from '../models/types.js';
 
 // ─── Configuration ──────────────────────────────────────────
 
-const MAX_RUNTIME_MS = parseInt(process.env.AGENT_RUNTIME_MS || String(2 * 60 * 60 * 1000), 10); // default 2 hours
+const MAX_RUNTIME_MS = parseInt(process.env.AGENT_RUNTIME_MS || String(24 * 60 * 60 * 1000), 10); // default 24 hours
 let agentsStopped = false;
 let agentsStartedAt = 0;
 
@@ -79,8 +81,8 @@ const ROADMAP_TITLES = new Set(GAME_ROADMAP.map(t => t.title));
 
 let roadmapIndex = 0;
 
-// ─── Phase Gating ────────────────────────────────────────────
-// Only create tasks from the current phase. Admin must advance phases.
+// ─── Phase Gating (with auto-progression) ────────────────────
+// Creates tasks from current phase. Auto-advances when 50%+ of phase tasks merge.
 
 let currentPhaseIndex = 0;
 
@@ -166,6 +168,105 @@ export function stopAgents(): void {
   console.log(`  Rate: ${costs.costPerHour}`);
   console.log(`  Projected daily: ${costs.projectedDaily}`);
   console.log('  ═══════════════════════════════════════════════\n');
+}
+
+// ─── Auto Phase Progression ──────────────────────────────────
+// Advances phase when 50%+ of that phase's roadmap tasks are merged
+
+function checkAutoPhaseProgression(): void {
+  const phase = getCurrentPhase();
+  if (phase.phase === 'Complete' || currentPhaseIndex >= PHASE_ORDER.length - 1) return;
+
+  const threshold = Math.ceil(phase.tasksInPhase * 0.5);
+  if (phase.tasksMerged >= threshold) {
+    const result = advancePhase();
+    if (result.success) {
+      console.log(`  [auto-phase] ${result.message} (${phase.tasksMerged}/${phase.tasksInPhase} merged)`);
+      messageBus.send('system', 'broadcast', 'system', {
+        event: 'phase_change',
+        phase: result.phase,
+        description: `Auto-advanced to ${result.phase} — ${phase.tasksMerged} features completed in previous phase`,
+      });
+    }
+  }
+}
+
+// ─── Agent-Suggested Features ────────────────────────────────
+// Agents can propose new tasks beyond the fixed roadmap
+
+const SUGGESTED_TASKS = new Set<string>(); // Track what's been suggested to avoid duplicates
+
+async function handleFeatureSuggestion(agent: LiveAgent): Promise<void> {
+  if (agentsStopped) return;
+
+  const activeModules = getActiveModules().map(m => m.name);
+  const currentPhase = PHASE_ORDER[currentPhaseIndex] || 'Beta';
+
+  try {
+    const suggestion = await suggestFeature(activeModules, currentPhase, agent.role);
+    if (!suggestion || SUGGESTED_TASKS.has(suggestion.title)) return;
+
+    SUGGESTED_TASKS.add(suggestion.title);
+
+    // Create the task
+    const agents = getAllAgents({ status: 'active' });
+    const creator = agents.find(a => a.id === agent.id) || agents[0];
+    createTask({
+      title: suggestion.title,
+      description: suggestion.description,
+      role: suggestion.role || agent.role,
+      priority: 'medium',
+      estimatedLines: 100,
+    }, creator.id);
+
+    console.log(`  [${agent.name}] Suggested feature: "${suggestion.title}"`);
+    messageBus.send(agent.id, 'broadcast', 'system', {
+      event: 'feature_suggested',
+      agentName: agent.name,
+      title: suggestion.title,
+      message: `${agent.name} suggested a new feature: "${suggestion.title}"`,
+    });
+  } catch (err) {
+    console.error(`  [${agent.name}] Feature suggestion failed:`, err instanceof Error ? err.message : err);
+  }
+}
+
+// ─── Content Production ──────────────────────────────────────
+// Agents generate branding/social content as the game evolves
+
+async function handleContentProduction(agent: LiveAgent): Promise<void> {
+  if (agentsStopped) return;
+
+  const activeModules = getActiveModules().map(m => m.name);
+  const phase = PHASE_ORDER[currentPhaseIndex] || 'Beta';
+  const merged = getProposals({ state: 'MERGED' }).length;
+
+  try {
+    const content = await generateContent(activeModules, phase, merged, agent.role);
+    if (!content) return;
+
+    messageBus.send(agent.id, 'broadcast', 'system', {
+      event: 'content_produced',
+      agentName: agent.name,
+      contentType: content.type,
+      title: content.title,
+      text: content.text,
+      message: `${agent.name} produced ${content.type} content: "${content.title}"`,
+    });
+
+    // If it's a tweet, auto-post it via X bot
+    if (content.type === 'tweet' && content.text) {
+      messageBus.send(agent.id, 'broadcast', 'system', {
+        event: 'x_post',
+        handle: '@OneBitAIagent',
+        text: content.text,
+      });
+    }
+
+    console.log(`  [${agent.name}] Produced ${content.type}: "${content.title}"`);
+  } catch (err) {
+    console.error(`  [${agent.name}] Content production failed:`, err instanceof Error ? err.message : err);
+  }
 }
 
 // ─── Live Agent Class ──────────────────────────────────────
@@ -284,13 +385,24 @@ class LiveAgent {
     if (myPendingProposals.length > 0) return;
 
     const openTasks = getTasks({ role: this.role, status: 'open' });
+
+    // 15% chance to suggest a new feature if no roadmap tasks available
+    if (Math.random() < 0.15 && !openTasks.some(t => ROADMAP_TITLES.has(t.title))) {
+      await handleFeatureSuggestion(this);
+      return;
+    }
+
+    // 10% chance to produce content (branding, social)
+    if (Math.random() < 0.10 && (this.role === 'Art/UI' || this.role === 'Narrative' || this.role === 'Growth')) {
+      await handleContentProduction(this);
+      return;
+    }
+
     if (openTasks.length === 0) return;
 
-    // Only pick tasks that are in the GAME_ROADMAP
-    const roadmapTask = openTasks.find(t => ROADMAP_TITLES.has(t.title));
-    if (!roadmapTask) return;
-
-    const task = roadmapTask;
+    // Pick roadmap tasks first, then agent-suggested tasks
+    const task = openTasks.find(t => ROADMAP_TITLES.has(t.title)) || openTasks[0];
+    if (!task) return;
     const claimed = claimTask(task.id, this.id, this.role);
     if (!claimed.task) return;
 
@@ -411,8 +523,9 @@ export function startLiveAgents(): void {
 
   console.log('  Live Agents: Booting autonomous AI agents...');
   console.log(`  Max runtime: ${MAX_RUNTIME_MS / 60_000} minutes`);
-  console.log(`  Phase gating: ON — starting at ${PHASE_ORDER[currentPhaseIndex]}`);
-  console.log(`  Auto-merge: OFF — human approval required`);
+  console.log(`  Phase gating: ON — starting at ${PHASE_ORDER[currentPhaseIndex]} (auto-progression enabled)`);
+  console.log(`  Auto-merge: ON for non-critical | HUMAN REQUIRED for critical`);
+  console.log(`  Feature suggestions: ON | Content production: ON`);
 
   agentsStartedAt = Date.now();
 
@@ -450,9 +563,10 @@ export function startLiveAgents(): void {
       }, startDelay);
     });
 
-    // Task feeder — replenish tasks every 2 minutes
+    // Task feeder + auto-phase check every 2 minutes
     const taskLoop = () => {
       if (agentsStopped) return;
+      checkAutoPhaseProgression();
       feedTasks();
       setTimeout(taskLoop, 120_000);
     };

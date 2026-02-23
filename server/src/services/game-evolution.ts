@@ -22,15 +22,44 @@ export interface GameModule {
 const store = new JsonStore<GameModule>('game-modules.json');
 
 /**
- * Validate that module code has valid JS syntax
+ * Validate that module code has valid JS syntax and passes safety checks
  */
 export function validateModuleCode(code: string): { valid: boolean; error?: string } {
   try {
     new Function('registerModule', 'g', code);
-    return { valid: true };
   } catch (e) {
     return { valid: false, error: e instanceof Error ? e.message : 'Unknown syntax error' };
   }
+
+  // Safety checks — forbidden patterns
+  const forbidden = [
+    { pattern: /\beval\s*\(/, msg: 'eval() is forbidden' },
+    { pattern: /\bnew\s+Function\s*\(/, msg: 'new Function() is forbidden' },
+    { pattern: /\bfetch\s*\(/, msg: 'fetch() is forbidden' },
+    { pattern: /\bXMLHttpRequest\b/, msg: 'XMLHttpRequest is forbidden' },
+    { pattern: /\bimport\s*\(/, msg: 'dynamic import is forbidden' },
+    { pattern: /\brequire\s*\(/, msg: 'require() is forbidden' },
+    { pattern: /\bdocument\.cookie\b/, msg: 'document.cookie access is forbidden' },
+    { pattern: /\blocalStorage\b/, msg: 'localStorage is forbidden in modules' },
+  ];
+
+  for (const f of forbidden) {
+    if (f.pattern.test(code)) {
+      return { valid: false, error: f.msg };
+    }
+  }
+
+  // Size check — modules over 5KB are suspicious
+  if (code.length > 5000) {
+    return { valid: false, error: `Module too large (${code.length} chars, max 5000)` };
+  }
+
+  // Must contain registerModule call
+  if (!/registerModule\s*\(/.test(code)) {
+    return { valid: false, error: 'Missing registerModule() call' };
+  }
+
+  return { valid: true };
 }
 
 /**

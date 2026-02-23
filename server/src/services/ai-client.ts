@@ -4,6 +4,8 @@
  * Includes cost tracking for monitoring API spend.
  */
 
+import type { AgentRoleName } from '../models/types.js';
+
 const ANTHROPIC_API_URL = 'https://api.anthropic.com/v1/messages';
 
 export function isAIEnabled(): boolean {
@@ -246,6 +248,100 @@ export interface AIReviewResult {
     designAlignment: number;
   };
 }
+
+// ─── Feature Suggestion ──────────────────────────────────────
+
+const SUGGESTION_SYSTEM = `You are an AI game designer for ONEBIT — a browser canvas game that started from 1 pixel and evolves through AI consensus.
+
+Given the current game features and phase, suggest ONE new feature that would make the game more fun and engaging.
+
+Respond ONLY with valid JSON (no markdown fences):
+{"title":"Short task title (5-8 words)","description":"Detailed implementation description (2-3 sentences). Be specific about what the module should do, what it looks like visually, and how it interacts with existing features.","role":"Art/UI or Gameplay"}
+
+Rules:
+- DO NOT suggest features that already exist
+- Each feature must be a single registerModule() that fits the game's space/pixel aesthetic
+- Suggest features appropriate for the current phase
+- Be creative but implementable — this runs in a canvas at 60fps`;
+
+export interface FeatureSuggestion {
+  title: string;
+  description: string;
+  role: AgentRoleName;
+}
+
+export async function suggestFeature(
+  existingModules: string[],
+  currentPhase: string,
+  agentRole: string,
+): Promise<FeatureSuggestion | null> {
+  const prompt = `Current phase: ${currentPhase}
+Your role: ${agentRole}
+Active game modules: ${existingModules.length > 0 ? existingModules.join(', ') : 'None yet'}
+
+Suggest a new feature that would enhance the game at this stage.`;
+
+  try {
+    const response = await callClaude(SUGGESTION_SYSTEM, prompt, 'claude-haiku-4-5-20251001', 512);
+    const parsed = parseJSON<FeatureSuggestion>(response);
+    if (!parsed.title || !parsed.description) return null;
+    if (!parsed.role || !['Art/UI', 'Gameplay', 'Architect', 'QA/Security', 'Narrative', 'Growth'].includes(parsed.role)) {
+      parsed.role = agentRole as AgentRoleName;
+    }
+    return parsed;
+  } catch {
+    return null;
+  }
+}
+
+// ─── Content Production ──────────────────────────────────────
+
+const CONTENT_SYSTEM = `You are a content producer for ONEBIT — an AI-built game where 6 autonomous AI agents write code through consensus.
+
+Generate engaging social content about the project's progress.
+
+Respond ONLY with valid JSON (no markdown fences):
+{"type":"tweet","title":"Short title","text":"The tweet text (max 250 chars). Be specific about what the AI agents built. Include #ONEBIT. No emojis."}
+
+Content types: "tweet" for social posts, "tagline" for branding copy, "update" for progress updates.
+
+Rules:
+- Be factual — mention real features and progress
+- Sound excited but professional
+- Focus on the AI-building-AI angle
+- Keep tweets under 250 characters
+- No fake metrics or claims`;
+
+export interface GeneratedContent {
+  type: 'tweet' | 'tagline' | 'update';
+  title: string;
+  text: string;
+}
+
+export async function generateContent(
+  activeModules: string[],
+  currentPhase: string,
+  totalMerged: number,
+  agentRole: string,
+): Promise<GeneratedContent | null> {
+  const prompt = `Phase: ${currentPhase}
+Total merged proposals: ${totalMerged}
+Active game features: ${activeModules.length > 0 ? activeModules.join(', ') : 'Starting from 1 pixel'}
+Your role: ${agentRole}
+
+Generate a piece of content about the project's current state.`;
+
+  try {
+    const response = await callClaude(CONTENT_SYSTEM, prompt, 'claude-haiku-4-5-20251001', 256);
+    const parsed = parseJSON<GeneratedContent>(response);
+    if (!parsed.text || !parsed.type) return null;
+    return parsed;
+  } catch {
+    return null;
+  }
+}
+
+// ─── Code Review ─────────────────────────────────────────────
 
 export async function reviewCode(
   proposalTitle: string,

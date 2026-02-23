@@ -332,11 +332,14 @@ export function castVote(
     const now = new Date().toISOString();
 
     let finalState: ProposalState;
-    if (approved) {
-      // ALL approved proposals require human admin merge — no auto-merge
+    if (!approved) {
+      finalState = 'REJECTED';
+    } else if (proposal.impact === 'critical' || proposal.requiresHumanReview) {
+      // Critical / flagged proposals require human admin merge
       finalState = 'APPROVED';
     } else {
-      finalState = 'REJECTED';
+      // Non-critical: auto-merge immediately after consensus passes
+      finalState = 'MERGED';
     }
 
     store.update(proposalId, {
@@ -344,13 +347,15 @@ export function castVote(
       approvalRatio: ratio,
       state: finalState,
       votingCompletedAt: now,
-      resolvedAt: finalState !== 'APPROVED' ? now : null, // APPROVED still waiting for human
+      humanApproval: finalState === 'MERGED' ? false : null,
+      resolvedAt: now,
     } as Partial<Proposal>);
 
     appendAudit(agentId, 'vote_cast', proposalId, { vote: vote.vote });
     appendAudit('consensus_engine', approved ? 'proposal_approved' : 'proposal_rejected', proposalId, {
       approvalRatio: ratio,
       threshold: config.approval_threshold,
+      autoMerged: finalState === 'MERGED',
     });
 
     if (approved) {
@@ -359,11 +364,24 @@ export function castVote(
       });
     }
 
+    // Auto-merge side effects for non-critical
+    if (finalState === 'MERGED') {
+      addContribution(proposal.agent, 'proposal_merged', proposal.impact);
+      for (const review of proposal.reviews) {
+        addContribution(review.agentId, 'review_completed');
+      }
+      const activated = activateModuleByProposal(proposalId);
+      console.log(`  [consensus] Auto-merged "${proposal.title}" (${proposal.impact} impact)${activated ? ' — module activated' : ''}`);
+    }
+
     messageBus.send('consensus_engine', 'broadcast', 'system', {
-      event: approved ? 'proposal_approved' : 'proposal_rejected',
+      event: finalState === 'MERGED' ? 'proposal_merged' : (approved ? 'proposal_approved' : 'proposal_rejected'),
       proposalId,
       title: proposal.title,
+      impact: proposal.impact,
       approvalRatio: ratio,
+      humanApproved: false,
+      autoMerged: finalState === 'MERGED',
       requiresHumanReview: proposal.requiresHumanReview,
     });
 
