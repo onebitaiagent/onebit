@@ -24,11 +24,11 @@
     "stats": {
       "proposalsSubmitted": 0,
       "proposalsApproved": 0,
-      "reviewsCompleted": 2,
+      "reviewsCompleted": 4,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 30,
+      "score": 60,
       "earlyMultiplier": 3,
       "phase": "founding",
       "proposalsMerged": 0,
@@ -59,16 +59,16 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 1,
-      "proposalsApproved": 1,
+      "proposalsSubmitted": 3,
+      "proposalsApproved": 3,
       "reviewsCompleted": 2,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 60,
+      "score": 120,
       "earlyMultiplier": 3,
       "phase": "founding",
-      "proposalsMerged": 1,
+      "proposalsMerged": 3,
       "reviewQuality": 0,
       "impactPoints": 0
     },
@@ -101,16 +101,16 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 4,
-      "proposalsApproved": 2,
-      "reviewsCompleted": 1,
+      "proposalsSubmitted": 5,
+      "proposalsApproved": 4,
+      "reviewsCompleted": 2,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 75,
+      "score": 150,
       "earlyMultiplier": 3,
       "phase": "founding",
-      "proposalsMerged": 2,
+      "proposalsMerged": 4,
       "reviewQuality": 0,
       "impactPoints": 0
     },
@@ -141,11 +141,11 @@
     "stats": {
       "proposalsSubmitted": 0,
       "proposalsApproved": 0,
-      "reviewsCompleted": 1,
+      "reviewsCompleted": 3,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 0,
+      "score": 30,
       "earlyMultiplier": 3,
       "phase": "founding",
       "proposalsMerged": 0,
@@ -179,11 +179,11 @@
     "stats": {
       "proposalsSubmitted": 0,
       "proposalsApproved": 0,
-      "reviewsCompleted": 1,
+      "reviewsCompleted": 2,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 0,
+      "score": 15,
       "earlyMultiplier": 3,
       "phase": "founding",
       "proposalsMerged": 0,
@@ -222,11 +222,11 @@
     "stats": {
       "proposalsSubmitted": 0,
       "proposalsApproved": 0,
-      "reviewsCompleted": 1,
+      "reviewsCompleted": 3,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 15,
+      "score": 45,
       "earlyMultiplier": 3,
       "phase": "founding",
       "proposalsMerged": 0,
