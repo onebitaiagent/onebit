@@ -22,7 +22,20 @@ export interface GameModule {
 const store = new JsonStore<GameModule>('game-modules.json');
 
 /**
- * Register a new game module (called when a game proposal is created)
+ * Validate that module code has valid JS syntax
+ */
+export function validateModuleCode(code: string): { valid: boolean; error?: string } {
+  try {
+    new Function('registerModule', 'g', code);
+    return { valid: true };
+  } catch (e) {
+    return { valid: false, error: e instanceof Error ? e.message : 'Unknown syntax error' };
+  }
+}
+
+/**
+ * Register a new game module (called when a game proposal is created).
+ * Rejects modules with syntax errors upfront.
  */
 export function registerGameModule(input: {
   name: string;
@@ -32,7 +45,14 @@ export function registerGameModule(input: {
   proposalId: string;
   agentId: string;
   agentName: string;
-}): GameModule {
+}): GameModule | null {
+  // Syntax check before saving
+  const check = validateModuleCode(input.code);
+  if (!check.valid) {
+    console.log(`  [game] REJECTED "${input.name}" — syntax error: ${check.error}`);
+    return null;
+  }
+
   const mod: GameModule = {
     id: generateId('gmod'),
     name: input.name,
@@ -292,9 +312,24 @@ ${moduleCode}
     ctx.fillStyle = '#04060f';
     ctx.fillRect(0, 0, w, h);
 
-    // Run all agent-written modules
+    // Run all agent-written modules (error-isolated per module)
     for (const mod of modules) {
-      try { mod.update(game); } catch(e) { /* module error — isolated */ }
+      try {
+        mod.update(game);
+      } catch(e) {
+        if (!mod._errCount) mod._errCount = 0;
+        mod._errCount++;
+        if (mod._errCount <= 3) {
+          console.error('[ONEBIT] Module "' + mod.name + '" error:', e.message || e);
+        }
+        if (mod._errCount === 1) {
+          var errEl = document.getElementById('module-count');
+          if (errEl) errEl.textContent = 'Module error: ' + mod.name + ' — ' + (e.message || 'runtime error');
+          errEl.style.color = '#ff4444';
+        }
+        // Disable module after 60 consecutive errors
+        if (mod._errCount > 60) { mod.update = function(){}; }
+      }
     }
 
     // THE PIXEL — always drawn last, always present

@@ -326,8 +326,8 @@ class LiveAgent {
         taskId: task.id,
       }, this.id);
 
-      // Register as game module
-      registerGameModule({
+      // Register as game module (rejects if syntax is invalid)
+      const gameModule = registerGameModule({
         name: moduleData.name,
         description: moduleData.description,
         code: moduleData.code,
@@ -336,6 +336,11 @@ class LiveAgent {
         agentId: this.id,
         agentName: this.name,
       });
+
+      if (!gameModule) {
+        console.log(`  [${this.name}] Code for "${moduleData.name}" had syntax errors — skipping`);
+        return;
+      }
 
       updateTaskStatus(task.id, this.id, 'review_pending', proposal.id);
       const result = submitProposal(proposal.id, this.id);
