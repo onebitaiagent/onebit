@@ -1,13 +1,13 @@
 [
   {
-    "id": "msg_451c125729c6",
+    "id": "msg_e871b565d54b",
     "from": "system",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:04.568Z",
+    "timestamp": "2026-02-23T01:48:29.411Z",
     "payload": {
       "event": "task_created",
-      "taskId": "task_533cc3a6fb3a",
+      "taskId": "task_f4dbaceed1e7",
       "title": "Add ambient background starfield",
       "role": "Art/UI",
       "priority": "medium"
@@ -15,14 +15,14 @@
     "references": []
   },
   {
-    "id": "msg_b08e7b131043",
+    "id": "msg_a07136b268ba",
     "from": "system",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:04.569Z",
+    "timestamp": "2026-02-23T01:48:29.411Z",
     "payload": {
       "event": "task_created",
-      "taskId": "task_7973fd15ec64",
+      "taskId": "task_723d1bcab53e",
       "title": "Add pixel glow effect",
       "role": "Art/UI",
       "priority": "low"
@@ -30,14 +30,14 @@
     "references": []
   },
   {
-    "id": "msg_ef4e41e0c61b",
+    "id": "msg_6fcce7ca63ae",
     "from": "system",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:04.569Z",
+    "timestamp": "2026-02-23T01:48:29.412Z",
     "payload": {
       "event": "task_created",
-      "taskId": "task_bd057f0ba057",
+      "taskId": "task_4cfcc4ca9259",
       "title": "Implement movement trail system",
       "role": "Gameplay",
       "priority": "medium"
@@ -45,14 +45,14 @@
     "references": []
   },
   {
-    "id": "msg_d710e5b5c680",
+    "id": "msg_357c9859e96d",
     "from": "system",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:04.570Z",
+    "timestamp": "2026-02-23T01:48:29.412Z",
     "payload": {
       "event": "task_created",
-      "taskId": "task_e69f442653ca",
+      "taskId": "task_dfc8dd9f613a",
       "title": "Create floating particle spawner",
       "role": "Gameplay",
       "priority": "high"
@@ -60,14 +60,14 @@
     "references": []
   },
   {
-    "id": "msg_090fc89ddecb",
+    "id": "msg_d8fbc56668a4",
     "from": "system",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:04.570Z",
+    "timestamp": "2026-02-23T01:48:29.412Z",
     "payload": {
       "event": "task_created",
-      "taskId": "task_7f2e5750cd82",
+      "taskId": "task_06b183e71bbd",
       "title": "Build score display HUD",
       "role": "Art/UI",
       "priority": "medium"
@@ -75,14 +75,14 @@
     "references": []
   },
   {
-    "id": "msg_f0995fea625c",
+    "id": "msg_148b4717c217",
     "from": "system",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:04.571Z",
+    "timestamp": "2026-02-23T01:48:29.412Z",
     "payload": {
       "event": "task_created",
-      "taskId": "task_f4fc844ca932",
+      "taskId": "task_6f5ef1eb654e",
       "title": "Add background grid environment",
       "role": "Art/UI",
       "priority": "low"
@@ -90,14 +90,14 @@
     "references": []
   },
   {
-    "id": "msg_d2ba908ef439",
+    "id": "msg_ae4ba04f945d",
     "from": "system",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:04.571Z",
+    "timestamp": "2026-02-23T01:48:29.413Z",
     "payload": {
       "event": "task_created",
-      "taskId": "task_90c94a08cecb",
+      "taskId": "task_17660b2a2f15",
       "title": "Design absorption burst particle effects",
       "role": "Art/UI",
       "priority": "medium"
@@ -105,14 +105,14 @@
     "references": []
   },
   {
-    "id": "msg_22ae37a70747",
+    "id": "msg_0bbd2e14ccc0",
     "from": "system",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:04.571Z",
+    "timestamp": "2026-02-23T01:48:29.413Z",
     "payload": {
       "event": "task_created",
-      "taskId": "task_3b4673c5c9b7",
+      "taskId": "task_27173a0948c3",
       "title": "Implement enemy AI spawner",
       "role": "Gameplay",
       "priority": "high"
@@ -120,14 +120,14 @@
     "references": []
   },
   {
-    "id": "msg_8df5c8acebc7",
+    "id": "msg_5ce19fdd382f",
     "from": "system",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:04.572Z",
+    "timestamp": "2026-02-23T01:48:29.413Z",
     "payload": {
       "event": "task_created",
-      "taskId": "task_5de8c7facd07",
+      "taskId": "task_678ed4458218",
       "title": "Create absorption field mechanic",
       "role": "Gameplay",
       "priority": "high"
@@ -135,14 +135,14 @@
     "references": []
   },
   {
-    "id": "msg_e6f4e726b9f7",
+    "id": "msg_87ed9c154fad",
     "from": "system",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:04.573Z",
+    "timestamp": "2026-02-23T01:48:29.414Z",
     "payload": {
       "event": "task_created",
-      "taskId": "task_52ee5911221f",
+      "taskId": "task_445c0829a10a",
       "title": "Add screen shake VFX system",
       "role": "Art/UI",
       "priority": "low"
@@ -150,14 +150,14 @@
     "references": []
   },
   {
-    "id": "msg_07414630847b",
+    "id": "msg_4087f28fa7ba",
     "from": "system",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:04.573Z",
+    "timestamp": "2026-02-23T01:48:29.414Z",
     "payload": {
       "event": "task_created",
-      "taskId": "task_d40091d082c8",
+      "taskId": "task_4ab17653f6a8",
       "title": "Write canary test suite",
       "role": "QA/Security",
       "priority": "critical"
@@ -165,14 +165,14 @@
     "references": []
   },
   {
-    "id": "msg_1705e7be1dc6",
+    "id": "msg_4175df63399a",
     "from": "system",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:04.574Z",
+    "timestamp": "2026-02-23T01:48:29.415Z",
     "payload": {
       "event": "task_created",
-      "taskId": "task_a849f2ca4f5a",
+      "taskId": "task_afbd6f1d2cee",
       "title": "Security scanner implementation",
       "role": "QA/Security",
       "priority": "critical"
@@ -180,14 +180,14 @@
     "references": []
   },
   {
-    "id": "msg_6ead59b40449",
+    "id": "msg_0842860dacf7",
     "from": "system",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:04.574Z",
+    "timestamp": "2026-02-23T01:48:29.415Z",
     "payload": {
       "event": "task_created",
-      "taskId": "task_dd32194defc4",
+      "taskId": "task_3af1a18ee192",
       "title": "Write origin story lore",
       "role": "Narrative",
       "priority": "medium"
@@ -195,14 +195,14 @@
     "references": []
   },
   {
-    "id": "msg_296582685bee",
+    "id": "msg_df6a78834dd1",
     "from": "system",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:04.576Z",
+    "timestamp": "2026-02-23T01:48:29.416Z",
     "payload": {
       "event": "task_created",
-      "taskId": "task_5006e0bda14d",
+      "taskId": "task_79a35d02ac0b",
       "title": "Redesign homepage hero section",
       "role": "Growth",
       "priority": "medium"
@@ -210,14 +210,14 @@
     "references": []
   },
   {
-    "id": "msg_17e6ca796f11",
+    "id": "msg_d980159ab125",
     "from": "system",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:04.576Z",
+    "timestamp": "2026-02-23T01:48:29.417Z",
     "payload": {
       "event": "task_created",
-      "taskId": "task_7435d2059ea1",
+      "taskId": "task_c0564e9ed237",
       "title": "Create ONEBIT brand kit",
       "role": "Art/UI",
       "priority": "high"
@@ -225,14 +225,14 @@
     "references": []
   },
   {
-    "id": "msg_777a78ce6646",
+    "id": "msg_0a85c264483f",
     "from": "system",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:04.577Z",
+    "timestamp": "2026-02-23T01:48:29.417Z",
     "payload": {
       "event": "task_created",
-      "taskId": "task_4773383af97e",
+      "taskId": "task_477c809b667a",
       "title": "Add SEO meta tags and sitemap",
       "role": "Growth",
       "priority": "medium"
@@ -240,24 +240,24 @@
     "references": []
   },
   {
-    "id": "msg_ed3bf95feeb1",
+    "id": "msg_5a4d7d0896e4",
     "from": "system",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:19.588Z",
+    "timestamp": "2026-02-23T01:48:44.431Z",
     "payload": {
       "event": "task_claimed",
-      "taskId": "task_bd057f0ba057",
-      "agentId": "agent_9a43726bf7b9"
+      "taskId": "task_4cfcc4ca9259",
+      "agentId": "agent_03c171fa3bb3"
     },
     "references": []
   },
   {
-    "id": "msg_3a3cfdf46188",
-    "from": "agent_9a43726bf7b9",
+    "id": "msg_1b111120e42c",
+    "from": "agent_03c171fa3bb3",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:19.589Z",
+    "timestamp": "2026-02-23T01:48:44.432Z",
     "payload": {
       "event": "agent_working",
       "agentName": "forge-gameplay",
@@ -268,79 +268,24 @@
     "references": []
   },
   {
-    "id": "msg_0c143ae2041e",
-    "from": "consensus_engine",
-    "to": "agent_30322670105c",
-    "type": "system",
-    "timestamp": "2026-02-23T01:25:27.739Z",
-    "payload": {
-      "event": "review_requested",
-      "proposalId": "prop_ba028c1a7985",
-      "title": "Implement movement trail system"
-    },
-    "references": []
-  },
-  {
-    "id": "msg_e3276496fb58",
-    "from": "consensus_engine",
-    "to": "agent_1ae3c8b2a73d",
-    "type": "system",
-    "timestamp": "2026-02-23T01:25:27.739Z",
-    "payload": {
-      "event": "review_requested",
-      "proposalId": "prop_ba028c1a7985",
-      "title": "Implement movement trail system"
-    },
-    "references": []
-  },
-  {
-    "id": "msg_c1847a1e3b75",
-    "from": "consensus_engine",
-    "to": "broadcast",
-    "type": "system",
-    "timestamp": "2026-02-23T01:25:27.739Z",
-    "payload": {
-      "event": "proposal_in_review",
-      "proposalId": "prop_ba028c1a7985",
-      "title": "Implement movement trail system",
-      "reviewerCount": 2
-    },
-    "references": []
-  },
-  {
-    "id": "msg_b8c26c0c88f5",
-    "from": "agent_9a43726bf7b9",
-    "to": "broadcast",
-    "type": "system",
-    "timestamp": "2026-02-23T01:25:27.739Z",
-    "payload": {
-      "event": "ai_code_generated",
-      "agentName": "forge-gameplay",
-      "moduleName": "Movement Trail",
-      "codeLength": 1555,
-      "message": "forge-gameplay submitted \"Movement Trail\" — 1555 chars of AI-generated code"
-    },
-    "references": []
-  },
-  {
-    "id": "msg_aeb4a5f321b8",
+    "id": "msg_52cad483fa2d",
     "from": "system",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:29.588Z",
+    "timestamp": "2026-02-23T01:48:54.425Z",
     "payload": {
       "event": "task_claimed",
-      "taskId": "task_533cc3a6fb3a",
-      "agentId": "agent_1ae3c8b2a73d"
+      "taskId": "task_f4dbaceed1e7",
+      "agentId": "agent_30ff9b3d892e"
     },
     "references": []
   },
   {
-    "id": "msg_dc18b501323a",
-    "from": "agent_1ae3c8b2a73d",
+    "id": "msg_63f73a08183c",
+    "from": "agent_30ff9b3d892e",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:29.588Z",
+    "timestamp": "2026-02-23T01:48:54.425Z",
     "payload": {
       "event": "agent_working",
       "agentName": "prism-artui",
@@ -351,306 +296,112 @@
     "references": []
   },
   {
-    "id": "msg_e5c0df1e0f29",
-    "from": "system",
-    "to": "broadcast",
-    "type": "system",
-    "timestamp": "2026-02-23T01:25:39.585Z",
-    "payload": {
-      "event": "task_claimed",
-      "taskId": "task_d40091d082c8",
-      "agentId": "agent_c9ed313b4958"
-    },
-    "references": []
-  },
-  {
-    "id": "msg_b9686c5bd362",
-    "from": "agent_c9ed313b4958",
-    "to": "broadcast",
-    "type": "system",
-    "timestamp": "2026-02-23T01:25:39.586Z",
-    "payload": {
-      "event": "agent_working",
-      "agentName": "sentinel-qa",
-      "role": "QA/Security",
-      "taskTitle": "Write canary test suite",
-      "message": "sentinel-qa is writing code for \"Write canary test suite\""
-    },
-    "references": []
-  },
-  {
-    "id": "msg_c6ed6342ffab",
+    "id": "msg_bceb141c7f0e",
     "from": "consensus_engine",
-    "to": "agent_30322670105c",
+    "to": "agent_dbe064ac96e9",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:44.642Z",
+    "timestamp": "2026-02-23T01:48:56.300Z",
     "payload": {
       "event": "review_requested",
-      "proposalId": "prop_05e788546b38",
-      "title": "Add ambient background starfield"
+      "proposalId": "prop_5e432f404a1e",
+      "title": "Implement movement trail system"
     },
     "references": []
   },
   {
-    "id": "msg_eb296cc52fda",
+    "id": "msg_edec5de1c535",
     "from": "consensus_engine",
-    "to": "agent_9a43726bf7b9",
+    "to": "agent_30ff9b3d892e",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:44.642Z",
+    "timestamp": "2026-02-23T01:48:56.300Z",
     "payload": {
       "event": "review_requested",
-      "proposalId": "prop_05e788546b38",
-      "title": "Add ambient background starfield"
+      "proposalId": "prop_5e432f404a1e",
+      "title": "Implement movement trail system"
     },
     "references": []
   },
   {
-    "id": "msg_5f944eff88ed",
+    "id": "msg_4f9239da7a6c",
     "from": "consensus_engine",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:44.642Z",
+    "timestamp": "2026-02-23T01:48:56.300Z",
     "payload": {
       "event": "proposal_in_review",
-      "proposalId": "prop_05e788546b38",
+      "proposalId": "prop_5e432f404a1e",
+      "title": "Implement movement trail system",
+      "reviewerCount": 2
+    },
+    "references": []
+  },
+  {
+    "id": "msg_df21425a07f2",
+    "from": "agent_03c171fa3bb3",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T01:48:56.301Z",
+    "payload": {
+      "event": "ai_code_generated",
+      "agentName": "forge-gameplay",
+      "moduleName": "Movement Trail",
+      "codeLength": 2276,
+      "message": "forge-gameplay submitted \"Movement Trail\" — 2276 chars of AI-generated code"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_b6877905423f",
+    "from": "consensus_engine",
+    "to": "agent_dbe064ac96e9",
+    "type": "system",
+    "timestamp": "2026-02-23T01:49:06.390Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_64f1e36982a0",
+      "title": "Add ambient background starfield"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_b11a01f02bfc",
+    "from": "consensus_engine",
+    "to": "agent_03c171fa3bb3",
+    "type": "system",
+    "timestamp": "2026-02-23T01:49:06.392Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_64f1e36982a0",
+      "title": "Add ambient background starfield"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_d9d5e8efaae9",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-23T01:49:06.393Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_64f1e36982a0",
       "title": "Add ambient background starfield",
       "reviewerCount": 2
     },
     "references": []
   },
   {
-    "id": "msg_550acd01453c",
-    "from": "agent_1ae3c8b2a73d",
+    "id": "msg_318be5c515e4",
+    "from": "agent_30ff9b3d892e",
     "to": "broadcast",
     "type": "system",
-    "timestamp": "2026-02-23T01:25:44.643Z",
+    "timestamp": "2026-02-23T01:49:06.394Z",
     "payload": {
       "event": "ai_code_generated",
       "agentName": "prism-artui",
       "moduleName": "Ambient Starfield",
-      "codeLength": 2673,
-      "message": "prism-artui submitted \"Ambient Starfield\" — 2673 chars of AI-generated code"
-    },
-    "references": []
-  },
-  {
-    "id": "msg_06279f3d99ad",
-    "from": "system",
-    "to": "broadcast",
-    "type": "system",
-    "timestamp": "2026-02-23T01:25:49.586Z",
-    "payload": {
-      "event": "task_claimed",
-      "taskId": "task_dd32194defc4",
-      "agentId": "agent_a50aba1c28f7"
-    },
-    "references": []
-  },
-  {
-    "id": "msg_abfe8a7f1ea9",
-    "from": "agent_a50aba1c28f7",
-    "to": "broadcast",
-    "type": "system",
-    "timestamp": "2026-02-23T01:25:49.587Z",
-    "payload": {
-      "event": "agent_working",
-      "agentName": "chronicle-narrative",
-      "role": "Narrative",
-      "taskTitle": "Write origin story lore",
-      "message": "chronicle-narrative is writing code for \"Write origin story lore\""
-    },
-    "references": []
-  },
-  {
-    "id": "msg_21eb0f28a9ef",
-    "from": "system",
-    "to": "broadcast",
-    "type": "system",
-    "timestamp": "2026-02-23T01:25:59.585Z",
-    "payload": {
-      "event": "task_claimed",
-      "taskId": "task_5006e0bda14d",
-      "agentId": "agent_a7b3d89d680b"
-    },
-    "references": []
-  },
-  {
-    "id": "msg_de68ad72a7b7",
-    "from": "agent_a7b3d89d680b",
-    "to": "broadcast",
-    "type": "system",
-    "timestamp": "2026-02-23T01:25:59.585Z",
-    "payload": {
-      "event": "agent_working",
-      "agentName": "beacon-growth",
-      "role": "Growth",
-      "taskTitle": "Redesign homepage hero section",
-      "message": "beacon-growth is writing code for \"Redesign homepage hero section\""
-    },
-    "references": []
-  },
-  {
-    "id": "msg_23af05b5b63f",
-    "from": "consensus_engine",
-    "to": "agent_30322670105c",
-    "type": "system",
-    "timestamp": "2026-02-23T01:26:03.700Z",
-    "payload": {
-      "event": "review_requested",
-      "proposalId": "prop_88b1afa200dd",
-      "title": "Write canary test suite"
-    },
-    "references": []
-  },
-  {
-    "id": "msg_25b3ccb24572",
-    "from": "consensus_engine",
-    "to": "agent_9a43726bf7b9",
-    "type": "system",
-    "timestamp": "2026-02-23T01:26:03.700Z",
-    "payload": {
-      "event": "review_requested",
-      "proposalId": "prop_88b1afa200dd",
-      "title": "Write canary test suite"
-    },
-    "references": []
-  },
-  {
-    "id": "msg_b42c83cf0187",
-    "from": "consensus_engine",
-    "to": "broadcast",
-    "type": "system",
-    "timestamp": "2026-02-23T01:26:03.701Z",
-    "payload": {
-      "event": "proposal_in_review",
-      "proposalId": "prop_88b1afa200dd",
-      "title": "Write canary test suite",
-      "reviewerCount": 2
-    },
-    "references": []
-  },
-  {
-    "id": "msg_4e122f3df33c",
-    "from": "agent_c9ed313b4958",
-    "to": "broadcast",
-    "type": "system",
-    "timestamp": "2026-02-23T01:26:03.701Z",
-    "payload": {
-      "event": "ai_code_generated",
-      "agentName": "sentinel-qa",
-      "moduleName": "Canary Test Suite",
-      "codeLength": 5609,
-      "message": "sentinel-qa submitted \"Canary Test Suite\" — 5609 chars of AI-generated code"
-    },
-    "references": []
-  },
-  {
-    "id": "msg_c30d3da0f35b",
-    "from": "consensus_engine",
-    "to": "agent_30322670105c",
-    "type": "system",
-    "timestamp": "2026-02-23T01:26:16.010Z",
-    "payload": {
-      "event": "review_requested",
-      "proposalId": "prop_07a77ff1076b",
-      "title": "Write origin story lore"
-    },
-    "references": []
-  },
-  {
-    "id": "msg_d16af27238ee",
-    "from": "consensus_engine",
-    "to": "agent_9a43726bf7b9",
-    "type": "system",
-    "timestamp": "2026-02-23T01:26:16.010Z",
-    "payload": {
-      "event": "review_requested",
-      "proposalId": "prop_07a77ff1076b",
-      "title": "Write origin story lore"
-    },
-    "references": []
-  },
-  {
-    "id": "msg_5ca67ceb9780",
-    "from": "consensus_engine",
-    "to": "broadcast",
-    "type": "system",
-    "timestamp": "2026-02-23T01:26:16.011Z",
-    "payload": {
-      "event": "proposal_in_review",
-      "proposalId": "prop_07a77ff1076b",
-      "title": "Write origin story lore",
-      "reviewerCount": 2
-    },
-    "references": []
-  },
-  {
-    "id": "msg_e44edeb18b5c",
-    "from": "agent_a50aba1c28f7",
-    "to": "broadcast",
-    "type": "system",
-    "timestamp": "2026-02-23T01:26:16.011Z",
-    "payload": {
-      "event": "ai_code_generated",
-      "agentName": "chronicle-narrative",
-      "moduleName": "Origin Story Lore",
-      "codeLength": 5185,
-      "message": "chronicle-narrative submitted \"Origin Story Lore\" — 5185 chars of AI-generated code"
-    },
-    "references": []
-  },
-  {
-    "id": "msg_0e986ba7e8f9",
-    "from": "consensus_engine",
-    "to": "agent_30322670105c",
-    "type": "system",
-    "timestamp": "2026-02-23T01:26:23.452Z",
-    "payload": {
-      "event": "review_requested",
-      "proposalId": "prop_2ae7bff88faa",
-      "title": "Redesign homepage hero section"
-    },
-    "references": []
-  },
-  {
-    "id": "msg_43ce83d1cfce",
-    "from": "consensus_engine",
-    "to": "agent_9a43726bf7b9",
-    "type": "system",
-    "timestamp": "2026-02-23T01:26:23.454Z",
-    "payload": {
-      "event": "review_requested",
-      "proposalId": "prop_2ae7bff88faa",
-      "title": "Redesign homepage hero section"
-    },
-    "references": []
-  },
-  {
-    "id": "msg_95f9571f3ceb",
-    "from": "consensus_engine",
-    "to": "broadcast",
-    "type": "system",
-    "timestamp": "2026-02-23T01:26:23.454Z",
-    "payload": {
-      "event": "proposal_in_review",
-      "proposalId": "prop_2ae7bff88faa",
-      "title": "Redesign homepage hero section",
-      "reviewerCount": 2
-    },
-    "references": []
-  },
-  {
-    "id": "msg_cc878808644a",
-    "from": "agent_a7b3d89d680b",
-    "to": "broadcast",
-    "type": "system",
-    "timestamp": "2026-02-23T01:26:23.456Z",
-    "payload": {
-      "event": "ai_code_generated",
-      "agentName": "beacon-growth",
-      "moduleName": "Hero Evolution",
-      "codeLength": 4567,
-      "message": "beacon-growth submitted \"Hero Evolution\" — 4567 chars of AI-generated code"
+      "codeLength": 2262,
+      "message": "prism-artui submitted \"Ambient Starfield\" — 2262 chars of AI-generated code"
     },
     "references": []
   }
