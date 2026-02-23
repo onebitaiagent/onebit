@@ -1,5 +1,5 @@
 import { Router, type Request, type Response } from 'express';
-import { writeFileSync } from 'fs';
+import { writeFileSync, readFileSync, existsSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { adminAuthMiddleware } from '../middleware/admin-auth.js';
@@ -16,7 +16,7 @@ import { postLaunchThread, isThreadPosted, getTweetStats, deleteTweets, deleteAl
 import { pushDataToGitHub, getLastPushTime, isAutoSyncEnabled } from '../services/git-sync.js';
 import { getCurrentPhase, advancePhase, getAgentStatus, stopAgents } from '../services/live-agents.js';
 import { getAICosts } from '../services/ai-client.js';
-import { archiveModule, registerGameModule, activateModuleByProposal } from '../services/game-evolution.js';
+import { archiveModule, registerGameModule, activateModuleByProposal, getAllModules } from '../services/game-evolution.js';
 import { generateId } from '../utils/crypto.js';
 import { JsonStore } from '../data/store.js';
 import type { Proposal, ProposalState } from '../models/types.js';
@@ -376,6 +376,64 @@ router.post('/stop-agents', (_req: Request, res: Response) => {
   stopAgents();
   appendAudit('admin', 'agents_stopped', 'system', { reason: 'manual_stop' });
   res.json({ stopped: true, costs: getAICosts() });
+});
+
+// GET /api/admin/data/export — download all live data as JSON backup
+router.get('/data/export', (_req: Request, res: Response) => {
+  const dataDir = process.env.DATA_DIR || join(__dirname, '..', 'data');
+  const stores = ['agents.json', 'tasks.json', 'proposals.json', 'messages.json', 'audit.json', 'game-modules.json'];
+  const snapshot: Record<string, unknown> = { exportedAt: new Date().toISOString() };
+
+  for (const file of stores) {
+    const filePath = join(dataDir, file);
+    try {
+      if (existsSync(filePath)) {
+        snapshot[file.replace('.json', '')] = JSON.parse(readFileSync(filePath, 'utf-8'));
+      }
+    } catch { /* skip */ }
+  }
+
+  res.setHeader('Content-Disposition', `attachment; filename="onebit-backup-${Date.now()}.json"`);
+  res.json(snapshot);
+});
+
+// POST /api/admin/data/import — restore data from a JSON backup
+router.post('/data/import', (req: Request, res: Response) => {
+  const { confirm } = req.body;
+  if (confirm !== 'IMPORT_DATA') {
+    res.status(400).json({
+      error: 'Send full backup JSON with { "confirm": "IMPORT_DATA" } to proceed',
+      hint: 'Include agents, tasks, proposals, messages, audit, game-modules arrays',
+    });
+    return;
+  }
+
+  const dataDir = process.env.DATA_DIR || join(__dirname, '..', 'data');
+  const mapping: Record<string, string> = {
+    agents: 'agents.json',
+    tasks: 'tasks.json',
+    proposals: 'proposals.json',
+    messages: 'messages.json',
+    audit: 'audit.json',
+    'game-modules': 'game-modules.json',
+  };
+
+  const restored: string[] = [];
+  const errors: string[] = [];
+
+  for (const [key, file] of Object.entries(mapping)) {
+    if (req.body[key] && Array.isArray(req.body[key])) {
+      try {
+        writeFileSync(join(dataDir, file), JSON.stringify(req.body[key], null, 2), 'utf-8');
+        restored.push(file);
+      } catch (e) {
+        errors.push(`${file}: ${e instanceof Error ? e.message : e}`);
+      }
+    }
+  }
+
+  appendAudit('admin', 'data_imported', 'system', { restored, errors });
+  res.json({ restored, errors, note: 'Restart server or wait for stores to reload for full effect' });
 });
 
 function adminDashboardHTML(): string {

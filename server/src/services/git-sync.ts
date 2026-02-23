@@ -4,6 +4,7 @@ import { appendAudit } from './audit-log.js';
 
 const GITHUB_OWNER = 'onebitaiagent';
 const GITHUB_REPO = 'onebit';
+const DATA_BRANCH = 'data-snapshots'; // Separate branch — never pollutes main
 const DATA_FILES = ['agents.json', 'tasks.json', 'proposals.json', 'audit.json', 'game-modules.json', 'messages.json'];
 
 let lastPushTime = '';
@@ -35,8 +36,28 @@ async function githubApi(
   return { ok: res.ok, status: res.status, data: data as Record<string, unknown> };
 }
 
+async function ensureBranch(): Promise<boolean> {
+  // Check if data-snapshots branch exists
+  const check = await githubApi(`/repos/${GITHUB_OWNER}/${GITHUB_REPO}/git/ref/heads/${DATA_BRANCH}`);
+  if (check.ok) return true;
+
+  // Create from main
+  const mainRef = await githubApi(`/repos/${GITHUB_OWNER}/${GITHUB_REPO}/git/ref/heads/main`);
+  if (!mainRef.ok) return false;
+
+  const sha = (mainRef.data.object as Record<string, unknown>)?.sha as string;
+  if (!sha) return false;
+
+  const create = await githubApi(
+    `/repos/${GITHUB_OWNER}/${GITHUB_REPO}/git/refs`,
+    'POST',
+    { ref: `refs/heads/${DATA_BRANCH}`, sha }
+  );
+  return create.ok;
+}
+
 async function getFileSha(path: string): Promise<string | null> {
-  const result = await githubApi(`/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`);
+  const result = await githubApi(`/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}?ref=${DATA_BRANCH}`);
   if (result.ok && typeof result.data.sha === 'string') {
     return result.data.sha;
   }
@@ -54,7 +75,7 @@ async function pushFile(
   const body: Record<string, unknown> = {
     message,
     content: encoded,
-    branch: 'main',
+    branch: DATA_BRANCH,
   };
   if (sha) body.sha = sha;
 
@@ -87,6 +108,12 @@ export async function pushDataToGitHub(): Promise<{
   const errors: string[] = [];
   const skipped: string[] = [];
   const now = new Date().toISOString();
+
+  // Ensure the data-snapshots branch exists
+  const branchOk = await ensureBranch();
+  if (!branchOk) {
+    return { pushed: [], errors: ['Failed to ensure data-snapshots branch'], skipped: [] };
+  }
 
   for (const file of DATA_FILES) {
     const localPath = join(dataDir, file);

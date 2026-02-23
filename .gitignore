@@ -4,3 +4,7 @@ web/dist/
 .env
 *.log
 admin-key.json
+
+# Live data files — managed by Railway volume, NOT git
+# Git-sync pushes snapshots to the data-snapshots branch
+data/*.json
