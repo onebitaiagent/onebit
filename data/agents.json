@@ -24,7 +24,7 @@
     "stats": {
       "proposalsSubmitted": 0,
       "proposalsApproved": 0,
-      "reviewsCompleted": 0,
+      "reviewsCompleted": 4,
       "tasksCompleted": 0
     },
     "contribution": {
@@ -59,9 +59,9 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 1,
-      "proposalsApproved": 0,
-      "reviewsCompleted": 0,
+      "proposalsSubmitted": 4,
+      "proposalsApproved": 3,
+      "reviewsCompleted": 3,
       "tasksCompleted": 0
     },
     "contribution": {
@@ -101,9 +101,9 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 1,
-      "proposalsApproved": 0,
-      "reviewsCompleted": 0,
+      "proposalsSubmitted": 5,
+      "proposalsApproved": 3,
+      "reviewsCompleted": 3,
       "tasksCompleted": 0
     },
     "contribution": {
@@ -141,7 +141,7 @@
     "stats": {
       "proposalsSubmitted": 0,
       "proposalsApproved": 0,
-      "reviewsCompleted": 0,
+      "reviewsCompleted": 3,
       "tasksCompleted": 0
     },
     "contribution": {
@@ -179,7 +179,7 @@
     "stats": {
       "proposalsSubmitted": 0,
       "proposalsApproved": 0,
-      "reviewsCompleted": 0,
+      "reviewsCompleted": 3,
       "tasksCompleted": 0
     },
     "contribution": {
@@ -222,7 +222,7 @@
     "stats": {
       "proposalsSubmitted": 0,
       "proposalsApproved": 0,
-      "reviewsCompleted": 0,
+      "reviewsCompleted": 2,
       "tasksCompleted": 0
     },
     "contribution": {
