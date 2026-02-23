@@ -21,7 +21,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Movement Trail. Agent: forge-gameplay (Gameplay).",
     "taskId": "task_817b71507aa2",
-    "state": "IN_REVIEW",
+    "state": "MERGED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -31,17 +31,65 @@
       "agent_d85f2af1360b",
       "agent_05945e60d0f2"
     ],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
+    "reviews": [
+      {
+        "id": "rev_9b5655ec5b86",
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_b13b9c01eec5",
+        "verdict": "approve",
+        "rationale": "Solid movement trail implementation with good visual polish, efficient state management, and no security concerns. Minor optimization opportunity with gradient creation, but performance impact is negligible for this use case.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 3,
+          "designAlignment": 5
+        },
+        "submittedAt": "2026-02-23T17:14:52.053Z",
+        "revealedAt": "2026-02-23T17:15:04.512Z"
+      },
+      {
+        "id": "rev_c52050d64cbb",
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_b13b9c01eec5",
+        "verdict": "approve",
+        "rationale": "Well-architected trail system with efficient circular buffer management, smooth visual rendering, and appropriate performance optimizations. Code is clean, safe, and fits the space/pixel aesthetic with cyan-to-blue gradient and pulsing glow effects.",
+        "scores": {
+          "correctness": 5,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 5
+        },
+        "submittedAt": "2026-02-23T17:15:04.512Z",
+        "revealedAt": "2026-02-23T17:15:04.512Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_b13b9c01eec5",
+        "vote": "approve",
+        "rationale": "Confirming: Well-architected trail system with efficient circular buffer management, smooth ",
+        "castAt": "2026-02-23T17:15:04.530Z"
+      },
+      {
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_b13b9c01eec5",
+        "vote": "approve",
+        "rationale": "Confirming: Solid movement trail implementation with good visual polish, efficient state man",
+        "castAt": "2026-02-23T17:15:44.725Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": true,
     "createdAt": "2026-02-23T17:09:30.149Z",
     "submittedAt": "2026-02-23T17:09:30.153Z",
     "scanCompletedAt": "2026-02-23T17:09:30.153Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "reviewCompletedAt": "2026-02-23T17:15:04.512Z",
+    "votingCompletedAt": "2026-02-23T17:15:44.725Z",
+    "resolvedAt": "2026-02-23T17:33:59.823Z"
   },
   {
     "id": "prop_4c404f5823dc",
@@ -65,7 +113,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Ambient Starfield. Agent: prism-artui (Art/UI).",
     "taskId": "task_d17cda4b441d",
-    "state": "IN_REVIEW",
+    "state": "MERGED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -75,14 +123,660 @@
       "agent_d85f2af1360b",
       "agent_9f2ee697be28"
     ],
+    "reviews": [
+      {
+        "id": "rev_f21b527bc47f",
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_4c404f5823dc",
+        "verdict": "approve",
+        "rationale": "Clean ambient visual module with proper state initialization, correct parallax mechanics, and appropriate pixel-aesthetic styling. No security concerns or memory leaks detected.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 3,
+          "designAlignment": 5
+        },
+        "submittedAt": "2026-02-23T17:15:27.852Z",
+        "revealedAt": "2026-02-23T17:15:55.190Z"
+      },
+      {
+        "id": "rev_8f410f1e8d19",
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_4c404f5823dc",
+        "verdict": "approve",
+        "rationale": "Well-architected ambient starfield with solid performance optimization through parallax depth layering, proper state initialization, and efficient canvas rendering. Code is clean, secure, and aligns well with the pixel/space aesthetic.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 3,
+          "designAlignment": 5
+        },
+        "submittedAt": "2026-02-23T17:15:55.190Z",
+        "revealedAt": "2026-02-23T17:15:55.190Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_4c404f5823dc",
+        "vote": "approve",
+        "rationale": "Confirming: Well-architected ambient starfield with solid performance optimization through p",
+        "castAt": "2026-02-23T17:15:55.195Z"
+      },
+      {
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_4c404f5823dc",
+        "vote": "approve",
+        "rationale": "Confirming: Clean ambient visual module with proper state initialization, correct parallax m",
+        "castAt": "2026-02-23T17:16:53.248Z"
+      }
+    ],
+    "approvalRatio": 1,
+    "requiresHumanReview": false,
+    "humanApproval": true,
+    "createdAt": "2026-02-23T17:09:47.298Z",
+    "submittedAt": "2026-02-23T17:09:47.300Z",
+    "scanCompletedAt": "2026-02-23T17:09:47.300Z",
+    "reviewCompletedAt": "2026-02-23T17:15:55.190Z",
+    "votingCompletedAt": "2026-02-23T17:16:53.248Z",
+    "resolvedAt": "2026-02-23T17:33:59.834Z"
+  },
+  {
+    "id": "prop_19d2f234fce8",
+    "agent": "agent_9f2ee697be28",
+    "title": "Create floating particle spawner",
+    "description": "AI-generated by forge-gameplay (Gameplay):\n\nregisterModule('Floating Particle Spawner', function(g) {\n  g._fps = g._fps || {\n    particles: [],\n    maxParticles: 120,\n    spawnTimer: 0,\n    spawnInterval: 8,\n    colors: ['#00ffaa','#00ccff','#ff00cc','#ffcc00','#aa00ff','#00ffcc','#ff6600','#66ff00'],\n    pulseColors: ['#ffffff','#aaffee','#eeffaa']\n  };\n\n  var s = g._fps;\n  var ctx = g.ctx;\n  var W = g.canvas.width;\n  var H = g.canvas.height;\n\n  // Spawn new particles\n  s.spawnTimer++;\n  if (s.spawnTimer >= s.spawnInterval && s.particles.length < s.maxParticles) {\n    s.spawnTimer = 0;\n\n    var edge = Math.floor(g.rand(0, 4));\n    var px, py;\n    if (edge === 0) { px = g.rand(0, W); py = -8; }\n    else if (edge === 1) { px = g.rand(0, W); py = H + 8; }\n    else if (edge === 2) { px = -8; py = g.rand(0, H); }\n    else { px = W + 8; py = g.rand(0, H); }\n\n    var angle = Math.atan2(H/2 - py, W/2 - px) + g.rand(-0.9, 0.9);\n    var speed = g.rand(0.3, 1.4);\n\n    s.particles.push({\n      x: px,\n      y: py,\n      vx: Math.cos(angle) * speed,\n      vy: Math.sin(angle) * speed,\n      size: g.rand(1.5, 4.5),\n      color: s.colors[Math.floor(g.rand(0, s.colors.length))],\n      alpha: 0,\n      alphaTarget: g.rand(0.5, 1.0),\n      life: 0,\n      maxLife: g.rand(300, 700),\n      wobbleAmp: g.rand(0.0, 0.5),\n      wobbleFreq: g.rand(0.02, 0.07),\n      wobbleOffset: g.rand(0, Math.PI * 2),\n      pulse: Math.random() < 0.18\n    });\n  }\n\n  // Update and draw particles\n  for (var i = s.particles.length - 1; i >= 0; i--) {\n    var p = s.particles[i];\n    p.life++;\n\n    // Fade in / fade out\n    var lifeRatio = p.life / p.maxLife;\n    if (lifeRatio < 0.12) {\n      p.alpha = g.lerp(p.alpha, p.alphaTarget, 0.08);\n    } else if (lifeRatio > 0.75) {\n      p.alpha = g.lerp(p.alpha, 0, 0.025);\n    }\n\n    // Wobble motion\n    var wobble = Math.sin(g.tick * p.wobbleFreq + p.wobbleOffset) * p.wobbleAmp;\n    p.x += p.vx + Math.cos(g.tick * p.wobbleFreq + p.wobbleOffset) * p.wobbleAmp * 0.5;\n    p.y += p.vy + wobble;\n\n    // Gentle drift toward center over time\n    var dx = W/2 - p.x;\n    var dy = H/2 - p.y;\n    var distC = Math.sqrt(dx*dx + dy*dy);\n    if (distC > 60) {\n      p.vx += (dx / distC) * 0.004;\n      p.vy += (dy / distC) * 0.004;\n    }\n\n    // Speed cap\n    var spd = Math.sqrt(p.vx*p.vx + p.vy*p.vy);\n    if (spd > 1.8) { p.vx = (p.vx/spd)*1.8; p.vy = (p.vy/spd)*1.8; }\n\n    // Absorption check\n    var dpx = p.x - g.px;\n    var dpy = p.y - g.py;\n    var absorb_r = 8 + g.stage * 3;\n    if (dpx*dpx + dpy*dpy < absorb_r*absorb_r) {\n      // Burst effect\n      for (var b = 0; b < 5; b++) {\n        var ba = g.rand(0, Math.PI * 2);\n        var bs = g.rand(0.8, 2.5);\n        g.particles.push({\n          x: p.x, y: p.y,\n          vx: Math.cos(ba)*bs, vy: Math.sin(ba)*bs,\n          life: 0, maxLife: g.rand(18, 38),\n          color: p.color, size: g.rand(1, 2.5), alpha: 1\n        });\n      }\n      g.score = (g.score || 0) + 1;\n      g.absorbed = (g.absorbed || 0) + 1;\n      s.particles.splice(i, 1);\n      continue;\n    }\n\n    // Remove if expired or off screen\n    if (p.life >= p.maxLife || p.x < -40 || p.x > W+40 || p.y < -40 || p.y > H+40) {\n      s.particles.splice(i, 1);\n      continue;\n    }\n\n    // Draw glow\n    var grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 3.5);\n    grd.addColorStop(0, p.color);\n    grd.addColorStop(0.4, p.color);\n    grd.addColorStop(1, 'rgba(0,0,0,0)');\n\n    ctx.save();\n    ctx.globalAlpha = p.alpha * 0.35;\n    ctx.beginPath();\n    ctx.arc(p.x, p.y, p.size * 3.5, 0, Math.PI * 2);\n    ctx.fillStyle = grd;\n    ctx.fill();\n    ctx.restore();\n\n    // Draw core\n    var pulseScale = p.pulse ? 1 + 0.3 * Math.sin(g.tick * 0.18 + p.wobbleOffset) : 1;\n    ctx.save();\n    ctx.globalAlpha = p.alpha;\n    ctx.beginPath();\n    ctx.arc(p.x, p.y, p.size * pulseScale, 0, Math.PI * 2);\n    ctx.fillStyle = p.pulse ? s.pulseColors[Math.floor(g.tick * 0.1 + p.wobbleOffset) % s.pulseColors.length] : p.color;\n    ctx.shadowColor = p.color;\n    ctx.shadowBlur = 8;\n    ctx.fill();\n    ctx.restore();\n  }\n\n  // Draw shared g.particles (burst fragments from other sources too)\n  for (var j = g.particles.length - 1; j >= 0; j--) {\n    var gp = g.particles[j];\n    gp.life++;\n    gp.x += gp.vx;\n    gp.y += gp.vy;\n    gp.vx *= 0.93;\n    gp.vy *= 0.93;\n    var lifeT = gp.life / gp.maxLife;\n    var ga = gp.alpha * (1 - lifeT);\n    if (ga <= 0 || gp.life >= gp.maxLife) {\n      g.particles.splice(j, 1);\n      continue;\n    }\n    ctx.save();\n    ctx.globalAlpha = ga;\n    ctx.beginPath();\n    ctx.",
+    "type": "feature",
+    "impact": "medium",
+    "branch": "agent/forge-gameplay/create-floating-particle-spawn",
+    "filesChanged": [
+      "src/game/modules/floating-particle-spawner.js"
+    ],
+    "linesAdded": 152,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 152,
+      "failed": 0,
+      "coverage": 0.8746093779139208
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Floating Particle Spawner. Agent: forge-gameplay (Gameplay).",
+    "taskId": "task_a839045f612a",
+    "state": "DRAFT",
+    "scanResult": null,
+    "assignedReviewers": [],
     "reviews": [],
     "votes": [],
     "approvalRatio": null,
     "requiresHumanReview": false,
     "humanApproval": null,
-    "createdAt": "2026-02-23T17:09:47.298Z",
-    "submittedAt": "2026-02-23T17:09:47.300Z",
-    "scanCompletedAt": "2026-02-23T17:09:47.300Z",
+    "createdAt": "2026-02-23T17:15:52.371Z",
+    "submittedAt": null,
+    "scanCompletedAt": null,
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_3d2ddf8b16d6",
+    "agent": "agent_05945e60d0f2",
+    "title": "Add pixel glow effect",
+    "description": "AI-generated by prism-artui (Art/UI):\n\nregisterModule('Pixel Glow Effect', function(g) {\n  g._glow = g._glow || { pulse: 0, trails: [] };\n\n  var glow = g._glow;\n  var ctx = g.ctx;\n\n  // Advance pulse oscillator\n  glow.pulse = (glow.pulse + 0.05) % (Math.PI * 2);\n\n  // Store trail positions (ring buffer style)\n  if (g.tick % 2 === 0) {\n    glow.trails.push({ x: g.px, y: g.py, age: 0 });\n    if (glow.trails.length > 12) glow.trails.shift();\n  }\n\n  // Draw motion trails\n  for (var i = 0; i < glow.trails.length; i++) {\n    var t = glow.trails[i];\n    t.age++;\n    var trailAlpha = Math.max(0, 0.35 - t.age * 0.03);\n    var trailSize = Math.max(0, 6 - t.age * 0.4);\n    if (trailAlpha <= 0 || trailSize <= 0) continue;\n\n    var trailGrad = ctx.createRadialGradient(t.x, t.y, 0, t.x, t.y, trailSize);\n    trailGrad.addColorStop(0, 'rgba(0,255,170,' + trailAlpha + ')');\n    trailGrad.addColorStop(1, 'rgba(0,255,170,0)');\n    ctx.beginPath();\n    ctx.arc(t.x, t.y, trailSize, 0, Math.PI * 2);\n    ctx.fillStyle = trailGrad;\n    ctx.fill();\n  }\n\n  // Pulsing outer glow radius\n  var pulseVal = 0.5 + 0.5 * Math.sin(glow.pulse);\n  var glowRadius = 18 + pulseVal * 8;\n  var glowAlpha  = 0.18 + pulseVal * 0.12;\n\n  // Outer ambient glow\n  var outerGrad = ctx.createRadialGradient(g.px, g.py, 0, g.px, g.py, glowRadius);\n  outerGrad.addColorStop(0,   'rgba(0,255,170,' + (glowAlpha * 1.8).toFixed(3) + ')');\n  outerGrad.addColorStop(0.4, 'rgba(0,220,150,' + glowAlpha.toFixed(3) + ')');\n  outerGrad.addColorStop(1,   'rgba(0,255,170,0)');\n\n  ctx.beginPath();\n  ctx.arc(g.px, g.py, glowRadius, 0, Math.PI * 2);\n  ctx.fillStyle = outerGrad;\n  ctx.fill();\n\n  // Inner bright core halo\n  var coreRadius = 5 + pulseVal * 2;\n  var coreGrad = ctx.createRadialGradient(g.px, g.py, 0, g.px, g.py, coreRadius);\n  coreGrad.addColorStop(0, 'rgba(180,255,230,0.95)');\n  coreGrad.addColorStop(0.3, 'rgba(0,255,170,0.7)');\n  coreGrad.addColorStop(1, 'rgba(0,255,170,0)');\n\n  ctx.beginPath();\n  ctx.arc(g.px, g.py, coreRadius, 0, Math.PI * 2);\n  ctx.fillStyle = coreGrad;\n  ctx.fill();\n\n  // Sparkle rays — thin lines radiating outward\n  var rayCount = 6;\n  var rayOffset = glow.pulse * 0.4;\n  ctx.save();\n  ctx.globalAlpha = 0.15 + pulseVal * 0.1;\n  ctx.strokeStyle = '#00ffaa';\n  ctx.lineWidth = 0.5;\n  for (var r = 0; r < rayCount; r++) {\n    var angle = (r / rayCount) * Math.PI * 2 + rayOffset;\n    var innerR = 3;\n    var outerR = 12 + pulseVal * 6;\n    ctx.beginPath();\n    ctx.moveTo(g.px + Math.cos(angle) * innerR, g.py + Math.sin(angle) * innerR);\n    ctx.lineTo(g.px + Math.cos(angle) * outerR, g.py + Math.sin(angle) * outerR);\n    ctx.stroke();\n  }\n  ctx.restore();\n})",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/prism-artui/add-pixel-glow-effect",
+    "filesChanged": [
+      "src/game/modules/pixel-glow-effect.js"
+    ],
+    "linesAdded": 78,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 78,
+      "failed": 0,
+      "coverage": 0.8860500708107317
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Pixel Glow Effect. Agent: prism-artui (Art/UI).",
+    "taskId": "task_0a21b6aded10",
+    "state": "REJECTED",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_6612736bde49",
+      "agent_732b1bf0f2a1"
+    ],
+    "reviews": [
+      {
+        "id": "rev_9860a6b675de",
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_3d2ddf8b16d6",
+        "verdict": "approve",
+        "rationale": "Solid visual effect module with proper state initialization, safe canvas operations, and good performance patterns (ring buffer, conditional rendering). Motion trails and pulsing glow fit the pixel aesthetic well.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 3,
+          "designAlignment": 5
+        },
+        "submittedAt": "2026-02-23T17:22:39.660Z",
+        "revealedAt": "2026-02-23T17:22:45.789Z"
+      },
+      {
+        "id": "rev_43a2074544d6",
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_3d2ddf8b16d6",
+        "verdict": "request_changes",
+        "rationale": "Module is technically sound and visually appropriate for pixel aesthetic, but reviewer role (Narrative) is mismatched—this is purely visual/rendering code with no tone, lore, dialogue, or world-building elements. Reassign to Graphics/VFX reviewer or clarify submission purpose.",
+        "scores": {
+          "correctness": 5,
+          "security": 5,
+          "quality": 4,
+          "testing": 3,
+          "designAlignment": 5
+        },
+        "submittedAt": "2026-02-23T17:22:45.789Z",
+        "revealedAt": "2026-02-23T17:22:45.789Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_3d2ddf8b16d6",
+        "vote": "reject",
+        "rationale": "Rejecting: Module is technically sound and visually appropriate for pixel aesthetic, but re",
+        "castAt": "2026-02-23T17:22:45.800Z"
+      },
+      {
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_3d2ddf8b16d6",
+        "vote": "approve",
+        "rationale": "Confirming: Solid visual effect module with proper state initialization, safe canvas operati",
+        "castAt": "2026-02-23T17:24:08.503Z"
+      }
+    ],
+    "approvalRatio": 0.5,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-23T17:17:14.509Z",
+    "submittedAt": "2026-02-23T17:17:14.511Z",
+    "scanCompletedAt": "2026-02-23T17:17:14.511Z",
+    "reviewCompletedAt": "2026-02-23T17:22:45.789Z",
+    "votingCompletedAt": "2026-02-23T17:24:08.503Z",
+    "resolvedAt": "2026-02-23T17:24:08.503Z"
+  },
+  {
+    "id": "prop_38e275d99ead",
+    "agent": "agent_9f2ee697be28",
+    "title": "Implement enemy AI spawner",
+    "description": "AI-generated by forge-gameplay (Gameplay):\n\nregisterModule('Enemy AI Spawner', function(g) {\n  g._enemies = g._enemies || {\n    list: [],\n    spawnTimer: 0,\n    spawnInterval: 180,\n    maxEnemies: 12,\n    deathFlash: 0,\n    dead: false,\n    respawnTimer: 0\n  };\n\n  var e = g._enemies;\n  var ctx = g.ctx;\n  var W = g.canvas.width;\n  var H = g.canvas.height;\n\n  // Handle death/respawn state\n  if (e.dead) {\n    e.respawnTimer--;\n    // Flash screen red on death\n    var alpha = Math.min(1, e.respawnTimer / 60);\n    ctx.fillStyle = 'rgba(255,0,0,' + (alpha * 0.5) + ')';\n    ctx.fillRect(0, 0, W, H);\n\n    // Draw death message\n    if (e.respawnTimer > 0) {\n      ctx.save();\n      ctx.globalAlpha = Math.min(1, e.respawnTimer / 40);\n      ctx.fillStyle = '#ff2244';\n      ctx.font = 'bold ' + Math.floor(48 + Math.sin(g.tick * 0.1) * 4) + 'px monospace';\n      ctx.textAlign = 'center';\n      ctx.textBaseline = 'middle';\n      ctx.shadowColor = '#ff0000';\n      ctx.shadowBlur = 30;\n      ctx.fillText('ABSORBED', W / 2, H / 2 - 30);\n      ctx.font = '22px monospace';\n      ctx.fillStyle = '#ff8888';\n      ctx.shadowBlur = 10;\n      ctx.fillText('respawning...', W / 2, H / 2 + 20);\n      ctx.restore();\n    }\n\n    if (e.respawnTimer <= 0) {\n      e.dead = false;\n      e.list = [];\n      e.spawnTimer = 0;\n      g.score = Math.max(0, g.score - 5);\n      // Reset player to center\n      g.px = W / 2;\n      g.py = H / 2;\n    }\n    return;\n  }\n\n  // Spawn logic\n  e.spawnTimer++;\n  var dynamicInterval = Math.max(60, e.spawnInterval - g.stage * 20);\n  var dynamicMax = e.maxEnemies + g.stage * 3;\n\n  if (e.spawnTimer >= dynamicInterval && e.list.length < dynamicMax) {\n    e.spawnTimer = 0;\n\n    // Spawn from edges\n    var side = Math.floor(g.rand(0, 4));\n    var nx, ny;\n    if (side === 0) { nx = g.rand(0, W); ny = -12; }\n    else if (side === 1) { nx = g.rand(0, W); ny = H + 12; }\n    else if (side === 2) { nx = -12; ny = g.rand(0, H); }\n    else { nx = W + 12; ny = g.rand(0, H); }\n\n    var baseSpeed = 0.8 + g.stage * 0.25 + g.rand(0, 0.4);\n    e.list.push({\n      x: nx,\n      y: ny,\n      vx: 0,\n      vy: 0,\n      speed: baseSpeed,\n      size: g.rand(4, 8),\n      pulse: g.rand(0, Math.PI * 2),\n      trail: [],\n      wobble: g.rand(0, Math.PI * 2)\n    });\n  }\n\n  // Update and draw enemies\n  for (var i = e.list.length - 1; i >= 0; i--) {\n    var en = e.list[i];\n\n    en.pulse += 0.08;\n    en.wobble += 0.05;\n\n    // Chase player with slight wobble\n    var dx = g.px - en.x;\n    var dy = g.py - en.y;\n    var d = Math.sqrt(dx * dx + dy * dy) || 1;\n    var wobbleAmt = Math.sin(en.wobble) * 0.3;\n\n    en.vx = en.vx * 0.85 + (dx / d + wobbleAmt) * en.speed * 0.15;\n    en.vy = en.vy * 0.85 + (dy / d + wobbleAmt) * en.speed * 0.15;\n\n    en.x += en.vx;\n    en.y += en.vy;\n\n    // Store trail\n    en.trail.push({ x: en.x, y: en.y });\n    if (en.trail.length > 8) en.trail.shift();\n\n    // Draw trail\n    for (var t = 0; t < en.trail.length; t++) {\n      var tp = en.trail[t];\n      var tAlpha = (t / en.trail.length) * 0.4;\n      var tSize = en.size * (t / en.trail.length) * 0.7;\n      ctx.beginPath();\n      ctx.arc(tp.x, tp.y, tSize, 0, Math.PI * 2);\n      ctx.fillStyle = 'rgba(200,0,30,' + tAlpha + ')';\n      ctx.fill();\n    }\n\n    // Pulsing glow\n    var pulseSize = en.size + Math.sin(en.pulse) * 2;\n    var glowRadius = pulseSize * 3;\n\n    var grad = ctx.createRadialGradient(en.x, en.y, 0, en.x, en.y, glowRadius);\n    grad.addColorStop(0, 'rgba(255,60,80,0.9)');\n    grad.addColorStop(0.4, 'rgba(200,0,30,0.5)');\n    grad.addColorStop(1, 'rgba(180,0,20,0)');\n\n    ctx.beginPath();\n    ctx.arc(en.x, en.y, glowRadius, 0, Math.PI * 2);\n    ctx.fillStyle = grad;\n    ctx.fill();\n\n    // Core enemy pixel\n    ctx.beginPath();\n    ctx.arc(en.x, en.y, pulseSize, 0, Math.PI * 2);\n    ctx.fillStyle = '#ff2244';\n    ctx.shadowColor = '#ff0000';\n    ctx.shadowBlur = 12;\n    ctx.fill();\n    ctx.shadowBlur = 0;\n\n    // Inner bright core\n    ctx.beginPath();\n    ctx.arc(en.x, en.y, pulseSize * 0.4, 0, Math.PI * 2);\n    ctx.fillStyle = '#ffaaaa';\n    ctx.fill();\n\n    // Collision detection with player\n    var collDist = pulseSize + 3;\n    if (g.dist({ x: en.x, y: en.y }, { x: g.px, y: g.py }) < collDist) {\n      // Spawn death particles\n      for (var p = 0; p < 20; p++) {\n        g.particles.push({\n          x: g.px,\n          y: g.py,\n          vx: g.rand(-5, 5),\n          vy: g.rand(-5, 5),\n          life: 1,\n          decay: g.rand(0.02, 0.05),\n          size: g.rand(2, 6),\n          color: p % 2 === 0 ? '#ff2244' : '#00ffaa'\n        });\n      }\n      e.dead = true;\n      e.respawnTimer = 120;\n      return;\n    }\n  }\n\n  // Draw enemy count HUD\n  ctx.save();\n  ctx.fillStyle = 'rgba(255,34,68,0.7)';\n  ctx.font = '11px monospace';\n  ctx.textAlign = 'left';\n  ctx.fillText('HOSTILES: ' + e.list.length",
+    "type": "feature",
+    "impact": "medium",
+    "branch": "agent/forge-gameplay/implement-enemy-ai-spawner",
+    "filesChanged": [
+      "src/game/modules/enemy-ai-spawner.js"
+    ],
+    "linesAdded": 175,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 175,
+      "failed": 0,
+      "coverage": 0.8523046972871784
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Enemy AI Spawner. Agent: forge-gameplay (Gameplay).",
+    "taskId": "task_08d22c6dcf63",
+    "state": "DRAFT",
+    "scanResult": null,
+    "assignedReviewers": [],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-23T17:17:18.032Z",
+    "submittedAt": null,
+    "scanCompletedAt": null,
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_9d66d1d83efd",
+    "agent": "agent_9f2ee697be28",
+    "title": "Create absorption field mechanic",
+    "description": "AI-generated by forge-gameplay (Gameplay):\n\nregisterModule('Absorption Field', function(g) {\n  g._field = g._field || {\n    active: false,\n    radius: 0,\n    maxRadius: 180,\n    pulsePhase: 0,\n    rings: [\n      { phase: 0, speed: 0.04 },\n      { phase: 2.1, speed: 0.06 },\n      { phase: 4.2, speed: 0.03 }\n    ],\n    absorbed: 0,\n    flashTimer: 0\n  };\n\n  var f = g._field;\n  var ctx = g.ctx;\n  var spaceHeld = g.keys['space'] || g.keys[' '] || false;\n\n  // Grow/shrink field radius\n  if (spaceHeld) {\n    f.active = true;\n    f.radius = f.radius + (f.maxRadius - f.radius) * 0.08;\n    if (f.radius < 10) f.radius = 10;\n  } else {\n    f.active = false;\n    f.radius = f.radius * 0.88;\n    if (f.radius < 1) f.radius = 0;\n  }\n\n  f.pulsePhase += 0.05;\n\n  // Pull particles toward player\n  if (f.radius > 4 && g.particles && g.particles.length > 0) {\n    var px = g.px;\n    var py = g.py;\n    var fieldR = f.radius;\n    var pullStrength = spaceHeld ? 2.8 : 1.0;\n\n    for (var i = 0; i < g.particles.length; i++) {\n      var p = g.particles[i];\n      if (!p || p.dead) continue;\n\n      var dx = px - p.x;\n      var dy = py - p.y;\n      var dist = Math.sqrt(dx * dx + dy * dy);\n\n      if (dist < fieldR && dist > 1) {\n        // Attraction force: stronger at edge, slingshot feel\n        var factor = (1 - dist / fieldR);\n        var force = pullStrength * factor * factor * 3.5;\n        var nx = dx / dist;\n        var ny = dy / dist;\n\n        p.vx = (p.vx || 0) + nx * force * 0.016;\n        p.vy = (p.vy || 0) + ny * force * 0.016;\n\n        // Clamp particle velocity\n        var pspeed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);\n        if (pspeed > 6) {\n          p.vx = (p.vx / pspeed) * 6;\n          p.vy = (p.vy / pspeed) * 6;\n        }\n\n        // Absorb if close enough\n        if (dist < 6) {\n          p.dead = true;\n          f.flashTimer = 12;\n          g.score = (g.score || 0) + 1;\n          g.absorbed = (g.absorbed || 0) + 1;\n        }\n      }\n    }\n  }\n\n  if (f.flashTimer > 0) f.flashTimer--;\n\n  // ---- RENDER ----\n  if (f.radius < 1) return;\n\n  var cx = g.px;\n  var cy = g.py;\n  var r = f.radius;\n  var pulse = Math.sin(f.pulsePhase) * 0.15 + 0.85;\n\n  ctx.save();\n\n  // Outer glow gradient fill\n  var grd = ctx.createRadialGradient(cx, cy, r * 0.1, cx, cy, r);\n  var alpha = spaceHeld ? 0.13 : 0.05;\n  grd.addColorStop(0, 'rgba(0,255,170,' + (alpha * 1.5) + ')');\n  grd.addColorStop(0.6, 'rgba(0,180,255,' + alpha + ')');\n  grd.addColorStop(1, 'rgba(0,80,200,0)');\n  ctx.fillStyle = grd;\n  ctx.beginPath();\n  ctx.arc(cx, cy, r, 0, Math.PI * 2);\n  ctx.fill();\n\n  // Animated concentric rings\n  for (var ri = 0; ri < f.rings.length; ri++) {\n    var ring = f.rings[ri];\n    ring.phase += ring.speed;\n    var ringT = (Math.sin(ring.phase) * 0.5 + 0.5);\n    var ringR = r * (0.3 + ringT * 0.65) * pulse;\n    var ringAlpha = spaceHeld ? (0.5 - ringT * 0.35) : (0.2 - ringT * 0.15);\n    if (ringAlpha < 0) ringAlpha = 0;\n\n    ctx.beginPath();\n    ctx.arc(cx, cy, ringR, 0, Math.PI * 2);\n    ctx.strokeStyle = 'rgba(0,255,170,' + ringAlpha + ')';\n    ctx.lineWidth = spaceHeld ? (2.5 - ringT * 1.5) : 1;\n    ctx.stroke();\n  }\n\n  // Outer boundary ring\n  var outerAlpha = spaceHeld ? (0.6 * pulse) : 0.25;\n  ctx.beginPath();\n  ctx.arc(cx, cy, r, 0, Math.PI * 2);\n  ctx.strokeStyle = 'rgba(0,220,255,' + outerAlpha + ')';\n  ctx.lineWidth = spaceHeld ? 2 : 1;\n  ctx.setLineDash([8, 6]);\n  ctx.lineDashOffset = -f.pulsePhase * 12;\n  ctx.stroke();\n  ctx.setLineDash([]);\n\n  // Draw radial spokes when active\n  if (spaceHeld) {\n    var spokeCount = 8;\n    for (var si = 0; si < spokeCount; si++) {\n      var angle = (si / spokeCount) * Math.PI * 2 + f.pulsePhase * 0.5;\n      var spokeLen = r * (0.4 + Math.sin(f.pulsePhase * 1.3 + si) * 0.2);\n      var x1 = cx + Math.cos(angle) * 8;\n      var y1 = cy + Math.sin(angle) * 8;\n      var x2 = cx + Math.cos(angle) * spokeLen;\n      var y2 = cy + Math.sin(angle) * spokeLen;\n\n      var spokeGrd = ctx.createLinearGradient(x1, y1, x2, y2);\n      spokeGrd.addColorStop(0, 'rgba(0,255,170,0.5)');\n      spokeGrd.addColorStop(1, 'rgba(0,180,255,0)');\n      ctx.beginPath();\n      ctx.moveTo(x1, y1);\n      ctx.lineTo(x2, y2);\n      ctx.strokeStyle = spokeGrd;\n      ctx.lineWidth = 1.2;\n      ctx.stroke();\n    }\n  }\n\n  // Flash burst on absorption\n  if (f.flashTimer > 0) {\n    var flashAlpha = f.flashTimer / 12;\n    var flashR = 20 + (1 - flashAlpha) * 30;\n    var flashGrd = ctx.createRadialGradient(cx, cy, 0, cx, cy, flashR);\n    flashGrd.addColorStop(0, 'rgba(255,255,200,' + flashAlpha * 0.9 + ')');\n    flashGrd.addColorStop(0.5, 'rgba(0,255,170,' + flashAlpha * 0.5 + ')');\n    flashGrd.addColorStop(1, 'rgba(0,255,170,0)');\n    ctx.fillStyle = flashGrd;\n    ctx.beginPath()",
+    "type": "feature",
+    "impact": "medium",
+    "branch": "agent/forge-gameplay/create-absorption-field-mechan",
+    "filesChanged": [
+      "src/game/modules/absorption-field.js"
+    ],
+    "linesAdded": 158,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 158,
+      "failed": 0,
+      "coverage": 0.8663580430556352
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Absorption Field. Agent: forge-gameplay (Gameplay).",
+    "taskId": "task_e907c9f9a32c",
+    "state": "DRAFT",
+    "scanResult": null,
+    "assignedReviewers": [],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-23T17:18:31.086Z",
+    "submittedAt": null,
+    "scanCompletedAt": null,
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_9c85af4ff181",
+    "agent": "agent_05945e60d0f2",
+    "title": "Build score display HUD",
+    "description": "AI-generated by prism-artui (Art/UI):\n\nregisterModule('Score HUD', function(g) {\n  g._hud = g._hud || { pulse: 0, lastScore: 0, flashTimer: 0 };\n\n  var h = g._hud;\n  var ctx = g.ctx;\n\n  // Detect score change for flash effect\n  if (g.score !== h.lastScore) {\n    h.flashTimer = 18;\n    h.lastScore = g.score;\n  }\n  if (h.flashTimer > 0) h.flashTimer--;\n\n  h.pulse = (h.pulse + 0.05) % (Math.PI * 2);\n\n  var pulseAlpha = 0.7 + 0.3 * Math.sin(h.pulse);\n  var flashBoost = h.flashTimer > 0 ? (h.flashTimer / 18) : 0;\n\n  var stageColors = ['#00ffaa', '#44ffcc', '#88ffdd', '#aaffee', '#ccffff', '#ffffff'];\n  var stageColor = stageColors[Math.min(g.stage, stageColors.length - 1)];\n\n  ctx.save();\n\n  // --- Score Panel ---\n  var panelX = 16;\n  var panelY = 16;\n  var panelW = 180;\n  var panelH = 64;\n  var cornerR = 8;\n\n  // Panel background\n  ctx.beginPath();\n  ctx.moveTo(panelX + cornerR, panelY);\n  ctx.lineTo(panelX + panelW - cornerR, panelY);\n  ctx.quadraticCurveTo(panelX + panelW, panelY, panelX + panelW, panelY + cornerR);\n  ctx.lineTo(panelX + panelW, panelY + panelH - cornerR);\n  ctx.quadraticCurveTo(panelX + panelW, panelY + panelH, panelX + panelW - cornerR, panelY + panelH);\n  ctx.lineTo(panelX + cornerR, panelY + panelH);\n  ctx.quadraticCurveTo(panelX, panelY + panelH, panelX, panelY + panelH - cornerR);\n  ctx.lineTo(panelX, panelY + cornerR);\n  ctx.quadraticCurveTo(panelX, panelY, panelX + cornerR, panelY);\n  ctx.closePath();\n  ctx.fillStyle = 'rgba(4, 6, 15, 0.75)';\n  ctx.fill();\n\n  // Panel border glow\n  var borderAlpha = (0.4 + 0.4 * flashBoost) * pulseAlpha;\n  ctx.strokeStyle = 'rgba(' + (flashBoost > 0 ? '255,220,80' : '0,255,170') + ',' + borderAlpha + ')';\n  ctx.lineWidth = 1.5 + flashBoost * 2;\n  ctx.stroke();\n\n  // SCORE label\n  ctx.font = '10px monospace';\n  ctx.letterSpacing = '2px';\n  ctx.fillStyle = 'rgba(0,255,170,0.5)';\n  ctx.fillText('SCORE', panelX + 14, panelY + 18);\n\n  // Score value\n  var scoreStr = String(g.score);\n  var scoreFontSize = scoreStr.length > 7 ? 18 : 22;\n  ctx.font = 'bold ' + scoreFontSize + 'px monospace';\n  ctx.fillStyle = flashBoost > 0\n    ? 'rgba(255,' + Math.floor(200 + 55 * flashBoost) + ',80,' + pulseAlpha + ')'\n    : (stageColor);\n  if (flashBoost > 0) {\n    ctx.shadowColor = 'rgba(255,220,80,0.9)';\n    ctx.shadowBlur = 12 * flashBoost;\n  } else {\n    ctx.shadowColor = stageColor;\n    ctx.shadowBlur = 6 * pulseAlpha;\n  }\n  ctx.fillText(scoreStr, panelX + 14, panelY + 48);\n\n  ctx.shadowBlur = 0;\n\n  // --- Absorbed Panel ---\n  var ap = { x: panelX, y: panelY + panelH + 8, w: panelW, h: 40 };\n\n  ctx.beginPath();\n  ctx.moveTo(ap.x + cornerR, ap.y);\n  ctx.lineTo(ap.x + ap.w - cornerR, ap.y);\n  ctx.quadraticCurveTo(ap.x + ap.w, ap.y, ap.x + ap.w, ap.y + cornerR);\n  ctx.lineTo(ap.x + ap.w, ap.y + ap.h - cornerR);\n  ctx.quadraticCurveTo(ap.x + ap.w, ap.y + ap.h, ap.x + ap.w - cornerR, ap.y + ap.h);\n  ctx.lineTo(ap.x + cornerR, ap.y + ap.h);\n  ctx.quadraticCurveTo(ap.x, ap.y + ap.h, ap.x, ap.y + ap.h - cornerR);\n  ctx.lineTo(ap.x, ap.y + cornerR);\n  ctx.quadraticCurveTo(ap.x, ap.y, ap.x + cornerR, ap.y);\n  ctx.closePath();\n  ctx.fillStyle = 'rgba(4, 6, 15, 0.65)';\n  ctx.fill();\n  ctx.strokeStyle = 'rgba(0,200,140,0.25)';\n  ctx.lineWidth = 1;\n  ctx.stroke();\n\n  // Absorbed label\n  ctx.font = '10px monospace';\n  ctx.letterSpacing = '2px';\n  ctx.fillStyle = 'rgba(0,200,140,0.45)';\n  ctx.fillText('ABSORBED', ap.x + 14, ap.y + 16);\n\n  // Absorbed count\n  ctx.font = 'bold 16px monospace';\n  ctx.fillStyle = 'rgba(0,220,160,0.85)';\n  ctx.shadowColor = 'rgba(0,255,170,0.4)';\n  ctx.shadowBlur = 4;\n  ctx.fillText(String(g.absorbed || 0), ap.x + 14, ap.y + 32);\n  ctx.shadowBlur = 0;\n\n  // --- Stage Indicator ---\n  var si = { x: panelX, y: ap.y + ap.h + 8 };\n  ctx.font = '10px monospace';\n  ctx.letterSpacing = '2px';\n  ctx.fillStyle = 'rgba(0,200,140,0.4)';\n  ctx.fillText('STAGE', si.x + 14, si.y + 12);\n\n  var dotSpacing = 22;\n  for (var i = 0; i <= 5; i++) {\n    var dx = si.x + 14 + i * dotSpacing;\n    var dy = si.y + 26;\n    var filled = i <= g.stage;\n    ctx.beginPath();\n    ctx.arc(dx, dy, filled ? 6 : 4, 0, Math.PI * 2);\n    if (filled) {\n      ctx.fillStyle = stageColor;\n      ctx.shadowColor = stageColor;\n      ctx.shadowBlur = 8;\n    } else {\n      ctx.fillStyle = 'rgba(0,80,60,0.5)';\n      ctx.shadowBlur = 0;\n    }\n    ctx.fill();\n    ctx.shadowBlur = 0;\n  }\n\n  ctx.restore();\n})",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/prism-artui/build-score-display-hud",
+    "filesChanged": [
+      "src/game/modules/score-hud.js"
+    ],
+    "linesAdded": 137,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 137,
+      "failed": 0,
+      "coverage": 0.9035446832083877
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Score HUD. Agent: prism-artui (Art/UI).",
+    "taskId": "task_4566ecbc02e4",
+    "state": "MERGED",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_a7ef977216c4",
+      "agent_9f2ee697be28"
+    ],
+    "reviews": [
+      {
+        "id": "rev_6190ee1d1a9c",
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_9c85af4ff181",
+        "verdict": "approve",
+        "rationale": "Well-implemented HUD module with proper state management, smooth animations, and visually cohesive design. Score flash effect, pulsing glow, and stage-based color progression fit the pixel/space aesthetic perfectly.",
+        "scores": {
+          "correctness": 5,
+          "security": 5,
+          "quality": 4,
+          "testing": 3,
+          "designAlignment": 5
+        },
+        "submittedAt": "2026-02-23T17:29:58.806Z",
+        "revealedAt": "2026-02-23T17:31:03.722Z"
+      },
+      {
+        "id": "rev_895bae2e887c",
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_9c85af4ff181",
+        "verdict": "approve",
+        "rationale": "Well-implemented HUD module with proper state management, no security issues, and excellent visual polish that fits the space/pixel aesthetic. Code is clean, performant, and handles edge cases like long score strings appropriately.",
+        "scores": {
+          "correctness": 5,
+          "security": 5,
+          "quality": 4,
+          "testing": 3,
+          "designAlignment": 5
+        },
+        "submittedAt": "2026-02-23T17:31:03.722Z",
+        "revealedAt": "2026-02-23T17:31:03.722Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_9c85af4ff181",
+        "vote": "approve",
+        "rationale": "Confirming: Well-implemented HUD module with proper state management, no security issues, an",
+        "castAt": "2026-02-23T17:31:03.728Z"
+      },
+      {
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_9c85af4ff181",
+        "vote": "approve",
+        "rationale": "Confirming: Well-implemented HUD module with proper state management, smooth animations, and",
+        "castAt": "2026-02-23T17:31:46.603Z"
+      }
+    ],
+    "approvalRatio": 1,
+    "requiresHumanReview": false,
+    "humanApproval": false,
+    "createdAt": "2026-02-23T17:24:01.040Z",
+    "submittedAt": "2026-02-23T17:24:01.044Z",
+    "scanCompletedAt": "2026-02-23T17:24:01.044Z",
+    "reviewCompletedAt": "2026-02-23T17:31:03.722Z",
+    "votingCompletedAt": "2026-02-23T17:31:46.603Z",
+    "resolvedAt": "2026-02-23T17:31:46.603Z"
+  },
+  {
+    "id": "prop_8f9770dfbe8e",
+    "agent": "agent_6612736bde49",
+    "title": "Write canary test suite",
+    "description": "AI-generated by sentinel-qa (QA/Security):\n\nregisterModule('Canary Test Suite', function(g) {\n  g._canary = g._canary || {\n    tests: [],\n    results: [],\n    tampering: [],\n    flashTimer: 0,\n    scanPulse: 0,\n    revealedTests: [],\n    nextSpawn: 0,\n    warningAlpha: 0,\n    detectedCount: 0,\n    lastScore: -1,\n    lastStage: -1,\n    gridNoise: [],\n    init: false\n  };\n\n  var c = g._canary;\n  var ctx = g.ctx;\n  var W = g.canvas.width;\n  var H = g.canvas.height;\n\n  // Initialize grid noise pattern once\n  if (!c.init) {\n    c.init = true;\n    for (var i = 0; i < 64; i++) {\n      c.gridNoise.push({\n        x: g.rand(0, W),\n        y: g.rand(0, H),\n        val: Math.floor(g.rand(0, 2)),\n        age: g.rand(0, 100)\n      });\n    }\n    // Define hidden canary tests\n    c.tests = [\n      { id: 'CNR-001', label: 'SCORE_INTEGRITY',      check: 'score >= 0 && score === Math.floor(score)', status: 'PENDING', timer: 0 },\n      { id: 'CNR-002', label: 'VELOCITY_BOUNDS',       check: 'vx in [-speed,speed]',                      status: 'PENDING', timer: 0 },\n      { id: 'CNR-003', label: 'STAGE_SEQUENCE',        check: 'stage in [0..5]',                            status: 'PENDING', timer: 0 },\n      { id: 'CNR-004', label: 'TICK_MONOTONIC',        check: 'tick increments +1/frame',                   status: 'PENDING', timer: 0 },\n      { id: 'CNR-005', label: 'ENTITY_COHERENCE',      check: 'entities array intact',                      status: 'PENDING', timer: 0 },\n      { id: 'CNR-006', label: 'PARTICLE_BOUNDS',       check: 'particles within canvas',                    status: 'PENDING', timer: 0 },\n      { id: 'CNR-007', label: 'CONSENSUS_HASH',        check: 'engine state matches seed',                  status: 'PENDING', timer: 0 },\n      { id: 'CNR-008', label: 'POSITION_VALID',        check: 'px/py within canvas bounds',                 status: 'PENDING', timer: 0 },\n    ];\n    c.lastScore = g.score;\n    c.lastStage = g.stage;\n    c.lastTick = g.tick;\n  }\n\n  // Run canary checks each frame\n  var anomalies = [];\n\n  // CNR-001: Score integrity\n  var scoreOk = g.score >= 0 && g.score === Math.floor(g.score);\n  c.tests[0].status = scoreOk ? 'PASS' : 'FAIL';\n  if (!scoreOk) anomalies.push('CNR-001');\n\n  // CNR-002: Velocity bounds\n  var vxOk = Math.abs(g.vx) <= g.speed * 1.5;\n  var vyOk = Math.abs(g.vy) <= g.speed * 1.5;\n  c.tests[1].status = (vxOk && vyOk) ? 'PASS' : 'FAIL';\n  if (!vxOk || !vyOk) anomalies.push('CNR-002');\n\n  // CNR-003: Stage bounds\n  var stageOk = g.stage >= 0 && g.stage <= 5 && g.stage === Math.floor(g.stage);\n  c.tests[2].status = stageOk ? 'PASS' : 'FAIL';\n  if (!stageOk) anomalies.push('CNR-003');\n\n  // CNR-004: Tick monotonic\n  var tickOk = g.tick >= c.lastTick;\n  c.tests[3].status = tickOk ? 'PASS' : 'FAIL';\n  if (!tickOk) anomalies.push('CNR-004');\n  c.lastTick = g.tick;\n\n  // CNR-005: Entity coherence\n  var entOk = Array.isArray(g.entities);\n  c.tests[4].status = entOk ? 'PASS' : 'FAIL';\n  if (!entOk) anomalies.push('CNR-005');\n\n  // CNR-006: Particle bounds check (sample)\n  var partOk = true;\n  if (Array.isArray(g.particles) && g.particles.length > 0) {\n    var sample = g.particles[0];\n    if (sample && (isNaN(sample.x) || isNaN(sample.y))) partOk = false;\n  }\n  c.tests[5].status = partOk ? 'PASS' : 'FAIL';\n  if (!partOk) anomalies.push('CNR-006');\n\n  // CNR-007: Consensus hash (pseudo - detect suspicious score jumps)\n  var scoreDelta = g.score - c.lastScore;\n  var consensusOk = scoreDelta >= 0 && scoreDelta < 10000;\n  c.tests[6].status = consensusOk ? 'PASS' : 'FAIL';\n  if (!consensusOk) anomalies.push('CNR-007');\n  c.lastScore = g.score;\n\n  // CNR-008: Position valid\n  var posOk = g.px >= 0 && g.px <= W && g.py >= 0 && g.py <= H;\n  c.tests[7].status = posOk ? 'PASS' : 'FAIL';\n  if (!posOk) anomalies.push('CNR-008');\n\n  // Track detections\n  if (anomalies.length > 0) {\n    c.detectedCount++;\n    c.warningAlpha = 1.0;\n    c.tampering = anomalies.slice();\n  }\n\n  c.scanPulse = (c.scanPulse + 0.018) % (Math.PI * 2);\n  c.flashTimer++;\n  if (c.warningAlpha > 0) c.warningAlpha -= 0.008;\n\n  // --- RENDERING ---\n\n  // Background grid overlay (subtle binary rain on right edge)\n  ctx.save();\n  ctx.font = '9px monospace';\n  ctx.globalAlpha = 0.07;\n  for (var n = 0; n < c.gridNoise.length; n++) {\n    var gn = c.gridNoise[n];\n    gn.age++;\n    if (gn.age > 60 + g.rand(0, 80)) {\n      gn.age = 0;\n      gn.val = Math.floor(g.rand(0, 2));\n      gn.x = g.rand(W - 120, W - 10);\n      gn.y = g.rand(0, H);\n    }\n    ctx.fillStyle = gn.val ? '#00ffaa' : '#0088ff';\n    ctx.fillText(gn.val, gn.x, gn.y);\n  }\n  ctx.globalAlpha = 1.0;\n  ctx.restore();\n\n  // Main panel — bottom left\n  var panelX = 14;\n  var panelY = H - 210;\n  var panelW = 240;\n  var panelH = 196;\n\n  // Panel background\n  ctx.save();\n  ctx.globalAlpha = 0.82;\n  ctx.fillStyle = '#020812';\n  ctx.strokeStyle = anomalies.length > 0 ? '#ff2244' : '#003322';\n  ctx.lineWidth = anomalies.length > 0",
+    "type": "feature",
+    "impact": "high",
+    "branch": "agent/sentinel-qa/write-canary-test-suite",
+    "filesChanged": [
+      "src/game/modules/canary-test-suite.js"
+    ],
+    "linesAdded": 144,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 144,
+      "failed": 0,
+      "coverage": 0.8911266493155281
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Canary Test Suite. Agent: sentinel-qa (QA/Security).",
+    "taskId": "task_21577c40aa0a",
+    "state": "DRAFT",
+    "scanResult": null,
+    "assignedReviewers": [],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-23T17:31:06.206Z",
+    "submittedAt": null,
+    "scanCompletedAt": null,
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_0bfffdead159",
+    "agent": "agent_732b1bf0f2a1",
+    "title": "Write origin story lore",
+    "description": "AI-generated by chronicle-narrative (Narrative):\n\nregisterModule('Origin Story Lore', function(g) {\n  g._lore = g._lore || {\n    ready: false,\n    introPhase: 0,\n    introTimer: 0,\n    introDone: false,\n    lastStage: -1,\n    stageMsg: null,\n    stageMsgTimer: 0,\n    glitchTimer: 0,\n    scanlineOffset: 0,\n    typedChars: 0,\n    typeTimer: 0,\n    pulsePhase: 0\n  };\n\n  var s = g._lore;\n  var ctx = g.ctx;\n  var W = g.canvas.width;\n  var H = g.canvas.height;\n\n  var introLines = [\n    \"In the beginning, there was nothing.\",\n    \"A void. Cold. Infinite. Silent.\",\n    \"Then — a single point of light.\",\n    \"YOU are that light.\",\n    \"Absorb. Grow. Evolve.\",\n    \"Become what the void fears.\"\n  ];\n\n  var stageTexts = [\n    { title: \"STAGE 0 — THE SPARK\",     body: \"You exist. That is enough.\\nFor now.\" },\n    { title: \"STAGE 1 — AWAKENING\",     body: \"Hunger stirs within the light.\\nConsume what is smaller.\" },\n    { title: \"STAGE 2 — EMERGENCE\",     body: \"The void notices you.\\nIt does not approve.\" },\n    { title: \"STAGE 3 — RESONANCE\",     body: \"Patterns ripple where you pass.\\nReality bends.\" },\n    { title: \"STAGE 4 — SINGULARITY\",   body: \"You are no longer a pixel.\\nYou are a question.\" },\n    { title: \"STAGE 5 — TRANSCENDENCE\", body: \"The void kneels.\\nYou have become the everything.\" }\n  ];\n\n  var INTRO_HOLD = 90;\n  var INTRO_FADE = 40;\n  var TYPE_SPEED = 2;\n\n  s.pulsePhase += 0.04;\n  s.scanlineOffset = (s.scanlineOffset + 0.7) % H;\n\n  // --- INTRO SEQUENCE ---\n  if (!s.introDone) {\n    s.introTimer++;\n    var lineIdx = s.introPhase;\n    var line = introLines[lineIdx] || \"\";\n    var totalChars = line.length;\n    var holdEnd = totalChars * TYPE_SPEED + INTRO_HOLD;\n    var fadeStart = holdEnd;\n    var fadeEnd = fadeStart + INTRO_FADE;\n\n    if (s.introTimer <= totalChars * TYPE_SPEED) {\n      s.typedChars = Math.floor(s.introTimer / TYPE_SPEED);\n    }\n\n    if (s.introTimer >= fadeEnd) {\n      s.introPhase++;\n      s.introTimer = 0;\n      s.typedChars = 0;\n      if (s.introPhase >= introLines.length) {\n        s.introDone = true;\n      }\n      return;\n    }\n\n    var alpha = 1;\n    if (s.introTimer > fadeStart) {\n      alpha = 1 - (s.introTimer - fadeStart) / INTRO_FADE;\n    } else if (s.introTimer < TYPE_SPEED * 8) {\n      alpha = Math.min(1, s.introTimer / (TYPE_SPEED * 8));\n    }\n\n    // Full-screen overlay for early lines\n    if (s.introPhase < 3) {\n      ctx.save();\n      ctx.globalAlpha = Math.min(0.92, alpha * 0.92);\n      ctx.fillStyle = '#04060f';\n      ctx.fillRect(0, 0, W, H);\n\n      // Scanline effect\n      ctx.globalAlpha = Math.min(0.04, alpha * 0.04);\n      for (var sy = 0; sy < H; sy += 4) {\n        ctx.fillStyle = '#00ffaa';\n        ctx.fillRect(0, (sy + s.scanlineOffset) % H, W, 1);\n      }\n      ctx.restore();\n    }\n\n    var pulse = 0.7 + 0.3 * Math.sin(s.pulsePhase * 2);\n    var glitch = (s.introTimer % 37 < 3) ? (Math.random() - 0.5) * 6 : 0;\n\n    ctx.save();\n    ctx.globalAlpha = alpha;\n\n    // Glow halo behind text\n    var grd = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, 260);\n    grd.addColorStop(0, 'rgba(0,255,170,0.07)');\n    grd.addColorStop(1, 'rgba(0,0,0,0)');\n    ctx.fillStyle = grd;\n    ctx.fillRect(0, 0, W, H);\n\n    // Line number indicator dots\n    ctx.globalAlpha = alpha * 0.5;\n    for (var di = 0; di < introLines.length; di++) {\n      var dotX = W/2 - (introLines.length * 14)/2 + di * 14 + 7;\n      var dotY = H/2 + 60;\n      ctx.beginPath();\n      ctx.arc(dotX, dotY, di === s.introPhase ? 4 : 2, 0, Math.PI * 2);\n      ctx.fillStyle = di <= s.introPhase ? '#00ffaa' : '#1a3a30';\n      ctx.fill();\n    }\n    ctx.globalAlpha = alpha;\n\n    // Decorative lines\n    ctx.strokeStyle = 'rgba(0,255,170,0.18)';\n    ctx.lineWidth = 1;\n    ctx.beginPath();\n    ctx.moveTo(W/2 - 200, H/2 - 38);\n    ctx.lineTo(W/2 + 200, H/2 - 38);\n    ctx.stroke();\n    ctx.beginPath();\n    ctx.moveTo(W/2 - 200, H/2 + 38);\n    ctx.lineTo(W/2 + 200, H/2 + 38);\n    ctx.stroke();\n\n    // Main text\n    var displayText = line.substring(0, s.typedChars);\n    var cursor = (s.introTimer % 20 < 10 && s.typedChars < totalChars) ? '|' : '';\n\n    ctx.font = 'bold 22px \"Courier New\", monospace';\n    ctx.textAlign = 'center';\n    ctx.textBaseline = 'middle';\n\n    // Text shadow/glow\n    ctx.shadowColor = '#00ffaa';\n    ctx.shadowBlur = 18 * pulse;\n    ctx.fillStyle = '#00ffaa';\n    ctx.fillText(displayText + cursor, W/2 + glitch, H/2);\n\n    ctx.shadowBlur = 0;\n    ctx.fillStyle = 'rgba(0,255,170,0.25)';\n    ctx.font = '11px \"Courier New\", monospace';\n    ctx.fillText('[ ORIGIN LOG ' + String(s.introPhase + 1).padStart(2,'0') + ' / ' + String(introLines.length).padStart(2,'0') + ' ]', W/2, H/2 - 55);\n\n    ctx.restore();\n    return;\n  }\n\n  // --- STAGE FLAVOR TEXT ---\n  if (g.stage !== s.lastStage) {\n    s.lastStage = g.stage;\n    s.stageMsg = stageTexts[Math.min(g.stage, stageTexts.length - 1)];\n    s.stageMsgTimer = 0;\n  }\n\n  if (s.stageMsg && s.stageMsgTimer < 320) {\n    s.stageMsgTimer++;\n    var t = s.stageMsgTimer;\n    var fadeIn = 30;\n    var fadeOut = 40;\n    var totalDur = 320;",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/chronicle-narrative/write-origin-story-lore",
+    "filesChanged": [
+      "src/game/modules/origin-story-lore.js"
+    ],
+    "linesAdded": 166,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 166,
+      "failed": 0,
+      "coverage": 0.9452643548563678
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Origin Story Lore. Agent: chronicle-narrative (Narrative).",
+    "taskId": "task_a2831f43c756",
+    "state": "DRAFT",
+    "scanResult": null,
+    "assignedReviewers": [],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-23T17:31:20.662Z",
+    "submittedAt": null,
+    "scanCompletedAt": null,
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_7656a550cd99",
+    "agent": "agent_a7ef977216c4",
+    "title": "Redesign homepage hero section",
+    "description": "AI-generated by beacon-growth (Growth):\n\nregisterModule('Homepage Hero Evolution', function(g) {\n  g._hero = g._hero || {\n    pixels: [],\n    waves: [],\n    scanLines: [],\n    glitchTimer: 0,\n    glitchActive: false,\n    lastStage: -1,\n    mergeFlash: 0,\n    propagating: false,\n    propagateTimer: 0,\n    propagateBurst: [],\n    titleAlpha: 0,\n    titleScale: 0,\n    ready: false\n  };\n\n  var h = g._hero;\n  var ctx = g.ctx;\n  var W = g.canvas.width;\n  var H = g.canvas.height;\n  var cx = W / 2;\n  var cy = H / 2;\n  var tick = g.tick;\n\n  // Init hero pixels\n  if (!h.ready) {\n    h.pixels = [];\n    var cols = ['#00ffaa','#00ccff','#ff00aa','#ffcc00','#aa00ff'];\n    var rows = 7, cols2 = 14;\n    for (var r = 0; r < rows; r++) {\n      for (var c = 0; c < cols2; c++) {\n        h.pixels.push({\n          x: cx - cols2 * 6 + c * 12,\n          y: 60 + r * 12,\n          ox: cx - cols2 * 6 + c * 12,\n          oy: 60 + r * 12,\n          size: 3,\n          color: cols[Math.floor(Math.random() * cols.length)],\n          phase: Math.random() * Math.PI * 2,\n          speed: 0.5 + Math.random() * 1.5,\n          alive: true,\n          evolving: false,\n          evolveT: 0\n        });\n      }\n    }\n    // Scan lines\n    h.scanLines = [];\n    for (var i = 0; i < 5; i++) {\n      h.scanLines.push({ y: Math.random() * H, speed: 0.5 + Math.random() * 1.5, alpha: 0.03 + Math.random() * 0.05 });\n    }\n    h.ready = true;\n  }\n\n  // Stage change: trigger merge flash + propagate\n  if (g.stage !== h.lastStage) {\n    h.mergeFlash = 1.0;\n    h.propagating = true;\n    h.propagateTimer = 0;\n    h.propagateBurst = [];\n    var burstCount = 24 + g.stage * 8;\n    for (var b = 0; b < burstCount; b++) {\n      var angle = (b / burstCount) * Math.PI * 2;\n      var spd = 2 + Math.random() * 4;\n      h.propagateBurst.push({\n        x: cx, y: cy,\n        vx: Math.cos(angle) * spd,\n        vy: Math.sin(angle) * spd,\n        life: 1.0,\n        color: ['#00ffaa','#00ccff','#ff00aa','#ffcc00','#aa00ff'][Math.floor(Math.random() * 5)],\n        size: 2 + Math.random() * 4\n      });\n    }\n    // Evolve all pixels\n    for (var pi = 0; pi < h.pixels.length; pi++) {\n      h.pixels[pi].evolving = true;\n      h.pixels[pi].evolveT = 0;\n    }\n    h.lastStage = g.stage;\n  }\n\n  // Glitch effect\n  h.glitchTimer--;\n  if (h.glitchTimer <= 0) {\n    h.glitchActive = Math.random() < 0.15;\n    h.glitchTimer = 8 + Math.floor(Math.random() * 40);\n  }\n\n  // Title fade in\n  h.titleAlpha = Math.min(1, h.titleAlpha + 0.008);\n  h.titleScale = g.lerp(h.titleScale, 1, 0.04);\n\n  // --- DRAW ---\n\n  // Scan lines overlay\n  for (var sl = 0; sl < h.scanLines.length; sl++) {\n    var line = h.scanLines[sl];\n    line.y += line.speed;\n    if (line.y > H) line.y = 0;\n    ctx.fillStyle = 'rgba(0,255,170,' + line.alpha + ')';\n    ctx.fillRect(0, line.y, W, 1);\n  }\n\n  // Animated wave bands in hero zone (top area)\n  var heroH = 180;\n  for (var w = 0; w < 3; w++) {\n    var waveY = 30 + w * 55;\n    var waveAlpha = 0.06 - w * 0.015;\n    ctx.beginPath();\n    ctx.moveTo(0, waveY);\n    for (var wx = 0; wx <= W; wx += 4) {\n      var wy = waveY + Math.sin(wx * 0.015 + tick * 0.03 + w * 1.2) * 12 +\n               Math.cos(wx * 0.008 + tick * 0.02) * 8;\n      ctx.lineTo(wx, wy);\n    }\n    ctx.lineTo(W, waveY + 40);\n    ctx.lineTo(0, waveY + 40);\n    ctx.closePath();\n    var stageColors = ['#00ffaa','#00ccff','#aa00ff','#ff00aa','#ffcc00','#ffffff'];\n    ctx.fillStyle = 'rgba(0,255,170,' + waveAlpha + ')';\n    ctx.fill();\n  }\n\n  // Grid overlay (hero section background)\n  ctx.strokeStyle = 'rgba(0,255,170,0.04)';\n  ctx.lineWidth = 1;\n  var gridSize = 32;\n  for (var gx = 0; gx < W; gx += gridSize) {\n    ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, heroH); ctx.stroke();\n  }\n  for (var gy = 0; gy < heroH; gy += gridSize) {\n    ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(W, gy); ctx.stroke();\n  }\n\n  // Glitch strips\n  if (h.glitchActive) {\n    var strips = 2 + Math.floor(Math.random() * 3);\n    for (var gs = 0; gs < strips; gs++) {\n      var gy2 = Math.random() * heroH;\n      var gh = 2 + Math.random() * 8;\n      var goff = (Math.random() - 0.5) * 30;\n      ctx.save();\n      ctx.drawImage(g.canvas, 0, gy2, W, gh, goff, gy2, W, gh);\n      ctx.fillStyle = 'rgba(255,0,170,0.08)';\n      ctx.fillRect(0, gy2, W, gh);\n      ctx.restore();\n    }\n  }\n\n  // Hero pixel grid (animated)\n  var stageColorMap = [\n    '#00ffaa', '#00ccff', '#aa00ff', '#ff00aa', '#ffcc00', '#ffffff'\n  ];\n  var stageColor = stageColorMap[Math.min(g.stage, 5)];\n\n  for (var pi2 = 0; pi2 < h.pixels.length; pi2++) {\n    var px = h.pixels[pi2];\n\n    // Evolve animation\n    if (px.evolving) {\n      px.evolveT += 0.05;\n      if (px.evolveT >= 1) { px.evolving = false; px.evolveT = 1; }\n      px.color = stageColor;\n    }\n\n    // Wobble motion\n    var wobX = Math.sin(tick *",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/beacon-growth/redesign-homepage-hero-section",
+    "filesChanged": [
+      "src/game/modules/homepage-hero-evolution.js"
+    ],
+    "linesAdded": 168,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 168,
+      "failed": 0,
+      "coverage": 0.8562474535906878
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Homepage Hero Evolution. Agent: beacon-growth (Growth).",
+    "taskId": "task_34c8fb27e9ad",
+    "state": "DRAFT",
+    "scanResult": null,
+    "assignedReviewers": [],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-23T17:31:29.064Z",
+    "submittedAt": null,
+    "scanCompletedAt": null,
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_590ff5ab0efa",
+    "agent": "agent_05945e60d0f2",
+    "title": "Add background grid environment",
+    "description": "AI-generated by prism-artui (Art/UI):\n\nregisterModule('Background Grid', function(g) {\n  g._grid = g._grid || {\n    offsetX: 0,\n    offsetY: 0,\n    prevPx: g.px,\n    prevPy: g.py,\n    pulse: 0\n  };\n\n  var grid = g._grid;\n  var ctx = g.ctx;\n  var W = g.canvas.width;\n  var H = g.canvas.height;\n\n  // Track camera scroll from player movement\n  var dx = g.px - grid.prevPx;\n  var dy = g.py - grid.prevPy;\n  grid.prevPx = g.px;\n  grid.prevPy = g.py;\n\n  grid.offsetX = (grid.offsetX - dx * 0.4) % 60;\n  grid.offsetY = (grid.offsetY - dy * 0.4) % 60;\n\n  // Pulse based on player speed\n  var speed = Math.sqrt(g.vx * g.vx + g.vy * g.vy);\n  grid.pulse = grid.pulse + (speed * 0.04 - grid.pulse) * 0.08;\n\n  var cellSize = 60;\n  var alpha = 0.045 + grid.pulse * 0.12;\n  var glowAlpha = 0.018 + grid.pulse * 0.06;\n\n  // Draw subtle glow lines first (wider, very transparent)\n  ctx.save();\n  ctx.lineWidth = 3;\n\n  var startX = (grid.offsetX % cellSize + cellSize) % cellSize - cellSize;\n  var startY = (grid.offsetY % cellSize + cellSize) % cellSize - cellSize;\n\n  // Glow pass\n  ctx.strokeStyle = 'rgba(0, 255, 170, ' + glowAlpha + ')';\n  ctx.beginPath();\n  for (var x = startX; x <= W + cellSize; x += cellSize) {\n    ctx.moveTo(x, 0);\n    ctx.lineTo(x, H);\n  }\n  for (var y = startY; y <= H + cellSize; y += cellSize) {\n    ctx.moveTo(0, y);\n    ctx.lineTo(W, y);\n  }\n  ctx.stroke();\n\n  // Sharp pass\n  ctx.lineWidth = 0.5;\n  ctx.strokeStyle = 'rgba(0, 200, 140, ' + alpha + ')';\n  ctx.beginPath();\n  for (var x2 = startX; x2 <= W + cellSize; x2 += cellSize) {\n    ctx.moveTo(x2, 0);\n    ctx.lineTo(x2, H);\n  }\n  for (var y2 = startY; y2 <= H + cellSize; y2 += cellSize) {\n    ctx.moveTo(0, y2);\n    ctx.lineTo(W, y2);\n  }\n  ctx.stroke();\n\n  // Draw intersection dots that pulse with movement\n  var dotAlpha = 0.06 + grid.pulse * 0.2;\n  var dotSize = 1 + grid.pulse * 1.5;\n  ctx.fillStyle = 'rgba(0, 255, 170, ' + dotAlpha + ')';\n  for (var xi = startX; xi <= W + cellSize; xi += cellSize) {\n    for (var yi = startY; yi <= H + cellSize; yi += cellSize) {\n      ctx.beginPath();\n      ctx.arc(xi, yi, dotSize, 0, 6.2832);\n      ctx.fill();\n    }\n  }\n\n  ctx.restore();\n})",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/prism-artui/add-background-grid-environmen",
+    "filesChanged": [
+      "src/game/modules/background-grid.js"
+    ],
+    "linesAdded": 79,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 79,
+      "failed": 0,
+      "coverage": 0.8986500994328325
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Background Grid. Agent: prism-artui (Art/UI).",
+    "taskId": "task_bbab65e9d46c",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_6612736bde49",
+      "agent_732b1bf0f2a1"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-23T17:32:03.068Z",
+    "submittedAt": "2026-02-23T17:32:03.073Z",
+    "scanCompletedAt": "2026-02-23T17:32:03.073Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_0b9f88bd220b",
+    "agent": "agent_6612736bde49",
+    "title": "Security scanner implementation",
+    "description": "AI-generated by sentinel-qa (QA/Security):\n\nregisterModule('Security Scanner', function(g) {\n  var ctx = g.ctx;\n  var W = g.canvas.width;\n  var H = g.canvas.height;\n\n  g._sec = g._sec || {\n    patterns: [],\n    scanLines: [],\n    alerts: [],\n    threatZones: [],\n    pipelineSteps: [],\n    nextSpawn: 0,\n    nextThreat: 0,\n    scanY: 0,\n    scanDir: 1,\n    pulseT: 0,\n    initialized: false,\n    lastStage: -1\n  };\n\n  var s = g._sec;\n\n  // Blocklist patterns (visual threat tokens)\n  var BLOCKLIST = [\n    { label: 'SQL_INJ', color: '#ff3366', shape: 0 },\n    { label: 'XSS',     color: '#ff6600', shape: 1 },\n    { label: 'CSRF',    color: '#ff00cc', shape: 2 },\n    { label: 'RCE',     color: '#cc0000', shape: 0 },\n    { label: 'PATH_TRAV', color: '#ff9900', shape: 1 },\n    { label: 'OPEN_REDIR', color: '#cc33ff', shape: 2 }\n  ];\n\n  var SAFE_LABELS = ['AUTH_OK','SANITIZED','VALIDATED','CLEAN','PASS'];\n\n  // Pipeline step positions across the top\n  if (!s.initialized || s.lastStage !== g.stage) {\n    s.lastStage = g.stage;\n    s.initialized = true;\n    s.pipelineSteps = [];\n    var stepNames = ['LINT','SAST','DAST','AUDIT','BLOCK','DEPLOY'];\n    var stepCount = Math.min(3 + g.stage, 6);\n    for (var i = 0; i < stepCount; i++) {\n      s.pipelineSteps.push({\n        name: stepNames[i],\n        x: W * 0.1 + i * (W * 0.8 / (stepCount - 1 || 1)),\n        y: 38,\n        active: false,\n        flash: 0\n      });\n    }\n  }\n\n  s.pulseT += 0.04;\n\n  // Activate pipeline steps based on score\n  var activeCount = Math.min(Math.floor(g.score / 8) + 1, s.pipelineSteps.length);\n  for (var i = 0; i < s.pipelineSteps.length; i++) {\n    s.pipelineSteps[i].active = i < activeCount;\n  }\n\n  // Spawn threat zones (blocklist patterns)\n  if (g.tick > s.nextThreat) {\n    var density = 1 + g.stage * 0.5;\n    s.nextThreat = g.tick + Math.floor(g.rand(40, 90) / density);\n    var bl = BLOCKLIST[Math.floor(g.rand(0, BLOCKLIST.length))];\n    s.threatZones.push({\n      x: g.rand(60, W - 60),\n      y: g.rand(80, H - 80),\n      r: g.rand(20, 35 + g.stage * 4),\n      label: bl.label,\n      color: bl.color,\n      shape: bl.shape,\n      life: 1.0,\n      decay: g.rand(0.003, 0.007),\n      blocking: false,\n      blockTimer: 0,\n      rot: g.rand(0, Math.PI * 2),\n      rotSpeed: g.rand(-0.02, 0.02),\n      pulse: g.rand(0, Math.PI * 2)\n    });\n  }\n\n  // Spawn safe tokens\n  if (g.tick > s.nextSpawn) {\n    s.nextSpawn = g.tick + Math.floor(g.rand(80, 160));\n    var sl = SAFE_LABELS[Math.floor(g.rand(0, SAFE_LABELS.length))];\n    s.patterns.push({\n      x: g.rand(40, W - 40),\n      y: g.rand(80, H - 80),\n      label: sl,\n      life: 1.0,\n      decay: g.rand(0.004, 0.008),\n      t: 0,\n      collected: false\n    });\n  }\n\n  // Scan line sweep\n  s.scanY += s.scanDir * 1.8;\n  if (s.scanY > H) { s.scanY = H; s.scanDir = -1; }\n  if (s.scanY < 80) { s.scanY = 80; s.scanDir = 1; }\n\n  // Update scan lines list (trailing glow)\n  s.scanLines.push({ y: s.scanY, alpha: 0.5 });\n  if (s.scanLines.length > 12) s.scanLines.shift();\n\n  var px = g.px, py = g.py;\n\n  // Check player vs threat zones\n  for (var i = s.threatZones.length - 1; i >= 0; i--) {\n    var tz = s.threatZones[i];\n    tz.pulse += 0.08;\n    tz.rot += tz.rotSpeed;\n    tz.life -= tz.decay;\n\n    var d = g.dist({ x: px, y: py }, { x: tz.x, y: tz.y });\n    if (d < tz.r + 8) {\n      // Player hit a threat — flash it, penalize\n      tz.blocking = true;\n      tz.blockTimer = 12;\n      tz.life -= 0.04;\n      // Push player away\n      var angle = Math.atan2(py - tz.y, px - tz.x);\n      g.vx = (g.vx || 0) + Math.cos(angle) * 1.5;\n      g.vy = (g.vy || 0) + Math.sin(angle) * 1.5;\n      // Spawn alert\n      if (Math.random() < 0.05) {\n        s.alerts.push({ x: tz.x, y: tz.y - tz.r, msg: 'BLOCKED: ' + tz.label, life: 1.0, color: tz.color });\n      }\n    }\n\n    if (tz.blockTimer > 0) tz.blockTimer--;\n    if (tz.life <= 0) {\n      // Flash pipeline\n      for (var p = 0; p < s.pipelineSteps.length; p++) {\n        if (s.pipelineSteps[p].active) s.pipelineSteps[p].flash = 8;\n      }\n      s.threatZones.splice(i, 1);\n    }\n  }\n\n  // Check player vs safe patterns\n  for (var i = s.patterns.length - 1; i >= 0; i--) {\n    var pat = s.patterns[i];\n    pat.t += 0.05;\n    pat.life -= pat.decay;\n    var d2 = g.dist({ x: px, y: py }, { x: pat.x, y: pat.y });\n    if (d2 < 28 && !pat.collected) {\n      pat.collected = true;\n      g.score += 3;\n      s.alerts.push({ x: pat.x, y: pat.y - 20, msg: '+3 ' + pat.label, life: 1.0, color: '#00ffaa' });\n      // Scatter particles\n      for (var k = 0; k < 8; k++) {\n        g.particles.push({\n          x: pat.x, y: pat.y,\n          vx: g.rand(-3, 3), vy: g.rand(-3, 3),\n          life: 1.0, decay: 0.04,\n          color: '#00ffaa', size: g.rand(2, 5)\n        });\n      }\n    }\n    if (pat.life <= 0 ||",
+    "type": "feature",
+    "impact": "high",
+    "branch": "agent/sentinel-qa/security-scanner-implementatio",
+    "filesChanged": [
+      "src/game/modules/security-scanner.js"
+    ],
+    "linesAdded": 162,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 162,
+      "failed": 0,
+      "coverage": 0.9158351811742411
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Security Scanner. Agent: sentinel-qa (QA/Security).",
+    "taskId": "task_cf6947779fe9",
+    "state": "DRAFT",
+    "scanResult": null,
+    "assignedReviewers": [],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-23T17:32:53.436Z",
+    "submittedAt": null,
+    "scanCompletedAt": null,
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_ee2282c4098d",
+    "agent": "agent_9f2ee697be28",
+    "title": "Pixel Combo Counter with Visual Streak Effect",
+    "description": "AI-generated by forge-gameplay (Gameplay):\n\nregisterModule('Pixel Combo Counter with Visual Streak Effect', function(g) {\n  g._combo = g._combo || {\n    count: 0,\n    multiplier: 1,\n    lastAbsorbed: 0,\n    displayScale: 1,\n    pulseScale: 1,\n    pulseAlpha: 0,\n    ringScale: 0,\n    ringAlpha: 0,\n    shakeX: 0,\n    shakeY: 0,\n    prevAbsorbed: 0,\n    flashAlpha: 0,\n    streakParticles: [],\n    milestoneFlash: 0\n  };\n\n  var c = g._combo;\n  var ctx = g.ctx;\n  var W = g.canvas.width;\n  var H = g.canvas.height;\n\n  // Detect new absorption\n  var currentAbsorbed = g.absorbed || 0;\n  if (currentAbsorbed > c.prevAbsorbed) {\n    var timeSinceLast = g.tick - c.lastAbsorbed;\n    if (timeSinceLast < 90) {\n      c.count++;\n      c.multiplier = 1 + Math.floor(c.count / 3) * 0.5;\n      if (c.multiplier > 8) c.multiplier = 8;\n    } else {\n      c.count = 1;\n      c.multiplier = 1;\n    }\n    c.lastAbsorbed = g.tick;\n    c.displayScale = 1.8 + c.count * 0.08;\n    if (c.displayScale > 3.2) c.displayScale = 3.2;\n    c.flashAlpha = 1.0;\n    c.pulseAlpha = 1.0;\n    c.pulseScale = 0.2;\n    c.ringScale = 0;\n    c.ringAlpha = 1.0;\n    c.shakeX = (Math.random() - 0.5) * 14;\n    c.shakeY = (Math.random() - 0.5) * 14;\n\n    if (c.count >= 5) {\n      c.milestoneFlash = 1.0;\n      var burstCount = 8 + c.count * 2;\n      if (burstCount > 40) burstCount = 40;\n      for (var i = 0; i < burstCount; i++) {\n        var angle = (Math.PI * 2 * i) / burstCount + Math.random() * 0.3;\n        var spd = 2.5 + Math.random() * 4 * (c.multiplier * 0.4);\n        var t = c.count / 20;\n        if (t > 1) t = 1;\n        var r = Math.floor(255);\n        var gr = Math.floor(255 * (1 - t));\n        var bl = Math.floor(50 * (1 - t));\n        c.streakParticles.push({\n          x: g.px, y: g.py,\n          vx: Math.cos(angle) * spd,\n          vy: Math.sin(angle) * spd,\n          life: 1.0,\n          decay: 0.018 + Math.random() * 0.02,\n          size: 2 + Math.random() * 3,\n          r: r, gr: gr, bl: bl\n        });\n      }\n    }\n  }\n  c.prevAbsorbed = currentAbsorbed;\n\n  // Reset combo on timeout\n  if (g.tick - c.lastAbsorbed > 120 && c.count > 0) {\n    c.count = 0;\n    c.multiplier = 1;\n    c.displayScale = 1;\n  }\n\n  // Animate values\n  c.displayScale = g.lerp(c.displayScale, 1.0, 0.08);\n  c.pulseScale = g.lerp(c.pulseScale, 1.5, 0.06);\n  c.pulseAlpha *= 0.93;\n  c.ringScale += 0.04;\n  c.ringAlpha *= 0.91;\n  c.flashAlpha *= 0.88;\n  c.milestoneFlash *= 0.92;\n  c.shakeX *= 0.75;\n  c.shakeY *= 0.75;\n\n  // Update streak particles\n  for (var j = c.streakParticles.length - 1; j >= 0; j--) {\n    var p = c.streakParticles[j];\n    p.x += p.vx;\n    p.y += p.vy;\n    p.vx *= 0.95;\n    p.vy *= 0.95;\n    p.life -= p.decay;\n    if (p.life <= 0) {\n      c.streakParticles.splice(j, 1);\n    }\n  }\n\n  if (c.count <= 0) return;\n\n  var t = Math.min((c.count - 1) / 15, 1);\n  var comboR = Math.floor(255);\n  var comboG = Math.floor(255 * (1 - t));\n  var comboB = Math.floor(80 * (1 - t));\n  var comboColor = 'rgb(' + comboR + ',' + comboG + ',' + comboB + ')';\n\n  // Draw streak particles\n  for (var k = 0; k < c.streakParticles.length; k++) {\n    var sp = c.streakParticles[k];\n    ctx.save();\n    ctx.globalAlpha = sp.life * 0.9;\n    ctx.fillStyle = 'rgb(' + sp.r + ',' + sp.gr + ',' + sp.bl + ')';\n    ctx.shadowColor = 'rgb(' + sp.r + ',' + sp.gr + ',' + sp.bl + ')';\n    ctx.shadowBlur = 6;\n    ctx.beginPath();\n    ctx.arc(sp.x, sp.y, sp.size * sp.life, 0, Math.PI * 2);\n    ctx.fill();\n    ctx.restore();\n  }\n\n  var cx = W / 2 + c.shakeX;\n  var cy = H / 2 + 90 + c.shakeY;\n\n  // Milestone screen flash\n  if (c.milestoneFlash > 0.01) {\n    ctx.save();\n    ctx.globalAlpha = c.milestoneFlash * 0.07;\n    ctx.fillStyle = comboColor;\n    ctx.fillRect(0, 0, W, H);\n    ctx.restore();\n  }\n\n  // Pulse ring from center\n  if (c.pulseAlpha > 0.01) {\n    ctx.save();\n    ctx.globalAlpha = c.pulseAlpha * 0.35;\n    ctx.strokeStyle = comboColor;\n    ctx.lineWidth = 3;\n    ctx.shadowColor = comboColor;\n    ctx.shadowBlur = 12;\n    var pr = c.pulseScale * 60;\n    ctx.beginPath();\n    ctx.arc(g.px, g.py, pr, 0, Math.PI * 2);\n    ctx.stroke();\n    ctx.restore();\n  }\n\n  // Expanding ring\n  if (c.ringAlpha > 0.01) {\n    ctx.save();\n    ctx.globalAlpha = c.ringAlpha * 0.5;\n    ctx.strokeStyle = comboColor;\n    ctx.lineWidth = 2;\n    ctx.shadowColor = comboColor;\n    ctx.shadowBlur = 16;\n    ctx.beginPath();\n    ctx.arc(g.px, g.py, c.ringScale * 120, 0, Math.PI * 2);\n    ctx.stroke();\n    ctx.restore();\n  }\n\n  // Combo label background glow\n  ctx.save();\n  ctx.globalAlpha = 0.18 + c.flashAlpha * 0.2;\n  var glowGrad = ctx.createRadialGradient(cx, cy, 0",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/forge-gameplay/pixel-combo-counter-with-visua",
+    "filesChanged": [
+      "src/game/modules/pixel-combo-counter-with-visual-streak-effect.js"
+    ],
+    "linesAdded": 170,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 170,
+      "failed": 0,
+      "coverage": 0.9201877813291717
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Pixel Combo Counter with Visual Streak Effect. Agent: forge-gameplay (Gameplay).",
+    "taskId": "task_8442e2f2bbe9",
+    "state": "DRAFT",
+    "scanResult": null,
+    "assignedReviewers": [],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-23T17:33:09.219Z",
+    "submittedAt": null,
+    "scanCompletedAt": null,
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_f4c608f567f5",
+    "agent": "agent_a7ef977216c4",
+    "title": "Add SEO meta tags and sitemap",
+    "description": "AI-generated by beacon-growth (Growth):\n\nregisterModule('SEO Meta Propagator', function(g) {\n  g._seo = g._seo || {\n    nodes: [],\n    links: [],\n    pulses: [],\n    spiderwebs: [],\n    crawlers: [],\n    floatingTags: [],\n    sitemap: [],\n    initialized: false,\n    mergeFlash: 0,\n    mergeTimer: 0,\n    lastAbsorbed: 0,\n    bgStars: []\n  };\n\n  var s = g._seo;\n  var ctx = g.ctx;\n  var W = g.canvas.width;\n  var H = g.canvas.height;\n\n  if (!s.initialized) {\n    s.initialized = true;\n\n    // Background stars\n    for (var i = 0; i < 60; i++) {\n      s.bgStars.push({\n        x: g.rand(0, W), y: g.rand(0, H),\n        r: g.rand(0.5, 2), twinkle: g.rand(0, Math.PI * 2)\n      });\n    }\n\n    // Sitemap nodes (structured like a real sitemap hierarchy)\n    var sitemapDefs = [\n      { label: '/', color: '#00ffaa', size: 18, tier: 0 },\n      { label: '/about', color: '#00cfff', size: 13, tier: 1 },\n      { label: '/blog', color: '#00cfff', size: 13, tier: 1 },\n      { label: '/products', color: '#00cfff', size: 13, tier: 1 },\n      { label: '/contact', color: '#00cfff', size: 11, tier: 1 },\n      { label: '/blog/seo', color: '#7f7fff', size: 9, tier: 2 },\n      { label: '/blog/ux', color: '#7f7fff', size: 9, tier: 2 },\n      { label: '/products/pro', color: '#7f7fff', size: 9, tier: 2 },\n      { label: '/products/free', color: '#7f7fff', size: 9, tier: 2 },\n      { label: '/about/team', color: '#7f7fff', size: 8, tier: 2 }\n    ];\n\n    var cx = W * 0.5, cy = H * 0.45;\n    var tier1Angle = [Math.PI * 1.7, Math.PI * 0.2, Math.PI * 0.75, Math.PI * 1.2];\n    var tier2Map = [[5,6],[7,8],[],[9]];\n\n    for (var i = 0; i < sitemapDefs.length; i++) {\n      var def = sitemapDefs[i];\n      var nx, ny;\n      if (def.tier === 0) {\n        nx = cx; ny = cy;\n      } else if (def.tier === 1) {\n        var ti = i - 1;\n        var ang = tier1Angle[ti];\n        nx = cx + Math.cos(ang) * 130;\n        ny = cy + Math.sin(ang) * 90;\n      } else {\n        var parentIdx = -1;\n        for (var p = 0; p < tier2Map.length; p++) {\n          if (tier2Map[p].indexOf(i) >= 0) { parentIdx = p + 1; break; }\n        }\n        var pNode = s.sitemap[parentIdx] || { x: cx, y: cy };\n        var subAng = Math.atan2(pNode.y - cy, pNode.x - cx) + g.rand(-0.6, 0.6);\n        nx = pNode.x + Math.cos(subAng) * 80;\n        ny = pNode.y + Math.sin(subAng) * 65;\n      }\n      nx = Math.max(40, Math.min(W - 40, nx));\n      ny = Math.max(40, Math.min(H - 40, ny));\n      s.sitemap.push({\n        x: nx, y: ny,\n        ox: nx, oy: ny,\n        label: def.label,\n        color: def.color,\n        size: def.size,\n        tier: def.tier,\n        pulse: g.rand(0, Math.PI * 2),\n        lit: false,\n        litTimer: 0,\n        parentIdx: def.tier === 1 ? 0 : (def.tier === 2 ? -1 : -1)\n      });\n    }\n    // Fix tier2 parentIdx\n    var tier2ParentMap = {5:2, 6:2, 7:3, 8:3, 9:4};\n    for (var k in tier2ParentMap) {\n      s.sitemap[parseInt(k)].parentIdx = tier2ParentMap[k];\n    }\n\n    // Links between nodes\n    for (var i = 1; i < s.sitemap.length; i++) {\n      var n = s.sitemap[i];\n      if (n.parentIdx >= 0) {\n        s.links.push({ a: n.parentIdx, b: i });\n      }\n    }\n\n    // Crawlers (bots traversing the sitemap)\n    for (var i = 0; i < 3; i++) {\n      s.crawlers.push({\n        fromNode: 0,\n        toNode: Math.floor(g.rand(1, 5)),\n        t: g.rand(0, 1),\n        speed: g.rand(0.004, 0.009),\n        color: i === 0 ? '#ff6030' : i === 1 ? '#30d0ff' : '#aaff44',\n        label: i === 0 ? 'Googlebot' : i === 1 ? 'Bingbot' : 'Twitterbot',\n        size: 5\n      });\n    }\n\n    // Floating OG/Twitter meta tags\n    var tagDefs = [\n      { text: 'og:title', color: '#ff9900' },\n      { text: 'og:image', color: '#ff5588' },\n      { text: 'og:description', color: '#ffcc00' },\n      { text: 'twitter:card', color: '#1da1f2' },\n      { text: 'twitter:image', color: '#1da1f2' },\n      { text: 'og:url', color: '#ff9900' },\n      { text: 'canonical', color: '#aaffaa' },\n      { text: 'robots', color: '#ff7f7f' }\n    ];\n    for (var i = 0; i < tagDefs.length; i++) {\n      s.floatingTags.push({\n        x: g.rand(30, W - 30),\n        y: g.rand(30, H - 30),\n        vx: g.rand(-0.4, 0.4),\n        vy: g.rand(-0.3, 0.3),\n        text: tagDefs[i].text,\n        color: tagDefs[i].color,\n        alpha: g.rand(0.3, 0.7),\n        phase: g.rand(0, Math.PI * 2),\n        absorbed: false,\n        absorbing: false,\n        absorbT: 0\n      });\n    }\n  }\n\n  // Responsive reposition on resize\n  W = g.canvas.width;\n  H = g.canvas.height;\n\n  // ---- UPDATE ----\n\n  // Floating tags movement\n  for (var i = 0; i < s.floatingTags.length; i++) {\n    var tag = s.floatingTags[i];\n    if (tag.absorbed) continue;\n    tag.x += tag.vx;\n    tag.y += tag.vy;\n    tag.phase += 0.025;\n    if (tag.x < 20 || tag.x > W - 20) tag.vx *= -1;\n    if (tag.y < 20 || tag.y > H - 20) tag.vy *= -1;\n\n    // Player absorption\n    if (!tag.absorbing) {",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/beacon-growth/add-seo-meta-tags-and-sitemap",
+    "filesChanged": [
+      "src/game/modules/seo-meta-propagator.js"
+    ],
+    "linesAdded": 158,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 158,
+      "failed": 0,
+      "coverage": 0.8547001243341906
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: SEO Meta Propagator. Agent: beacon-growth (Growth).",
+    "taskId": "task_8c2364e2f743",
+    "state": "DRAFT",
+    "scanResult": null,
+    "assignedReviewers": [],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-23T17:33:52.355Z",
+    "submittedAt": null,
+    "scanCompletedAt": null,
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_866a6d7fa35d",
+    "agent": "agent_9f2ee697be28",
+    "title": "Input Validation & Cheat Detection System",
+    "description": "AI-generated by forge-gameplay (Gameplay):\n\nregisterModule('Input Validation & Cheat Detection', function(g) {\n  g._anticheat = g._anticheat || {\n    clickTimes: [],\n    scoreHistory: [],\n    lastScore: 0,\n    lastTick: 0,\n    anomalies: [],\n    flagged: false,\n    flagTimer: 0,\n    integrity: true,\n    warningAlpha: 0,\n    pulsePhase: 0,\n    maxScorePerSecond: 150,\n    anomalyLog: [],\n    shakeX: 0,\n    shakeY: 0,\n    indicatorScale: 1,\n    lastIntegrityCheck: 0,\n    consecutiveAnomalies: 0,\n    glowIntensity: 0\n  };\n\n  var ac = g._anticheat;\n  var ctx = g.ctx;\n  var tick = g.tick;\n\n  // --- Click rate detection ---\n  function recordClick() {\n    var now = performance.now();\n    ac.clickTimes.push(now);\n    // Keep only clicks in last 1 second\n    ac.clickTimes = ac.clickTimes.filter(function(t) { return now - t < 1000; });\n    if (ac.clickTimes.length > 20) {\n      flagAnomaly('RAPID_CLICK', 'Click rate: ' + ac.clickTimes.length + '/sec');\n    }\n  }\n\n  function flagAnomaly(type, detail) {\n    ac.flagged = true;\n    ac.flagTimer = 180;\n    ac.consecutiveAnomalies++;\n    ac.warningAlpha = 1;\n    ac.shakeX = (Math.random() - 0.5) * 6;\n    ac.shakeY = (Math.random() - 0.5) * 6;\n    var entry = { type: type, detail: detail, tick: tick, time: Date.now() };\n    ac.anomalyLog.push(entry);\n    if (ac.anomalyLog.length > 50) ac.anomalyLog.shift();\n    // Simulated server log (console only — no fetch)\n    if (typeof console !== 'undefined') {\n      console.warn('[ONEBIT ANTICHEAT] ' + type + ': ' + detail + ' @ tick ' + tick);\n    }\n  }\n\n  // Attach click listener once\n  if (!ac._clickListenerAttached) {\n    ac._clickListenerAttached = true;\n    g.canvas.addEventListener('mousedown', recordClick);\n    g.canvas.addEventListener('touchstart', recordClick);\n  }\n\n  // --- Score validation (per second window) ---\n  if (tick - ac.lastIntegrityCheck >= 60) {\n    var scoreDelta = g.score - ac.lastScore;\n    var expectedMax = ac.maxScorePerSecond * (1 + g.stage * 0.5);\n    if (scoreDelta > expectedMax && scoreDelta > 0) {\n      flagAnomaly('SCORE_SPIKE', 'Delta: ' + scoreDelta.toFixed(0) + ' (max: ' + expectedMax.toFixed(0) + ')');\n    } else if (scoreDelta >= 0) {\n      // Good tick — slowly restore integrity\n      if (ac.consecutiveAnomalies > 0) ac.consecutiveAnomalies = Math.max(0, ac.consecutiveAnomalies - 1);\n    }\n    ac.lastScore = g.score;\n    ac.lastIntegrityCheck = tick;\n  }\n\n  // --- Velocity sanity check ---\n  var maxSpeed = g.speed * 2.2;\n  if (Math.abs(g.vx) > maxSpeed || Math.abs(g.vy) > maxSpeed) {\n    flagAnomaly('VELOCITY_HACK', 'vx:' + g.vx.toFixed(2) + ' vy:' + g.vy.toFixed(2));\n  }\n\n  // --- Update timers ---\n  ac.pulsePhase += 0.04;\n  ac.glowIntensity = 0.5 + 0.5 * Math.sin(ac.pulsePhase);\n\n  if (ac.flagTimer > 0) {\n    ac.flagTimer--;\n    ac.integrity = false;\n  } else {\n    ac.integrity = ac.consecutiveAnomalies === 0;\n  }\n\n  if (ac.warningAlpha > 0) ac.warningAlpha -= 0.012;\n  ac.shakeX *= 0.85;\n  ac.shakeY *= 0.85;\n\n  // Indicator scale pulse on flag\n  if (!ac.integrity) {\n    ac.indicatorScale = 1 + 0.08 * Math.sin(tick * 0.3);\n  } else {\n    ac.indicatorScale += (1 - ac.indicatorScale) * 0.1;\n  }\n\n  // --- Render HUD indicator ---\n  ctx.save();\n\n  var hudX = g.canvas.width - 160;\n  var hudY = 52;\n\n  // Anomaly warning flash overlay\n  if (ac.warningAlpha > 0) {\n    ctx.save();\n    ctx.globalAlpha = ac.warningAlpha * 0.18;\n    ctx.fillStyle = '#ff2244';\n    ctx.fillRect(0, 0, g.canvas.width, g.canvas.height);\n    ctx.restore();\n  }\n\n  // Shake offset for indicator when flagged\n  var sx = ac.integrity ? 0 : ac.shakeX * (ac.flagTimer / 180);\n  var sy = ac.integrity ? 0 : ac.shakeY * (ac.flagTimer / 180);\n\n  ctx.translate(hudX + sx, hudY + sy);\n  ctx.scale(ac.indicatorScale, ac.indicatorScale);\n\n  // Background pill\n  var pillW = 130;\n  var pillH = 24;\n  var pillAlpha = ac.integrity ? 0.18 : 0.32;\n  ctx.globalAlpha = pillAlpha + ac.glowIntensity * 0.08;\n  ctx.beginPath();\n  ctx.roundRect(-pillW / 2, -pillH / 2, pillW, pillH, 12);\n  ctx.fillStyle = ac.integrity ? '#003322' : '#330011';\n  ctx.fill();\n\n  // Border glow\n  ctx.globalAlpha = ac.integrity ? (0.4 + ac.glowIntensity * 0.3) : (0.6 + ac.glowIntensity * 0.4);\n  ctx.strokeStyle = ac.integrity ? '#00ffaa' : '#ff2244';\n  ctx.lineWidth = 1.2;\n  ctx.stroke();\n\n  // Icon and text\n  ctx.globalAlpha = 1;\n  ctx.font = 'bold 11px monospace';\n  ctx.textAlign = 'center';\n  ctx.textBaseline = 'middle';\n\n  if (ac.integrity) {\n    ctx.fillStyle = '#00ffaa';\n    ctx.shadowColor = '#00ffaa';\n    ctx.shadowBlur = 6 + ac.glowIntensity * 4;\n    ctx.fillText('✓  Integrity: OK', 0, 0);\n  } else {\n    var blinkOn = Math.floor(tick / 15) % 2 === 0;\n    ctx.fillStyle = blinkOn ? '#ff4466' : '#ff8899';\n    ctx.shadowColor = '#ff2244';\n    ctx.shadowBlur = 10 + ac.glowIntensity * 8;\n    ctx.fillText('⚠  Anomaly Detected', 0, 0);\n  }\n\n  ctx.shadowBlur = 0;\n  ctx.restore();\n\n  // --- Anomaly count badge (small) ---\n  if (ac.anomalyLog.length > 0) {\n    ctx.save();\n    ctx.globalAlpha = 0.7;\n    ctx.font = '9px monospace';\n    ctx.textAlign = 'right';\n    ctx.textBaseline = 'top';\n    ctx.fillStyle = ac.integrity ? '#",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/forge-gameplay/input-validation-cheat-detecti",
+    "filesChanged": [
+      "src/game/modules/input-validation-cheat-detection.js"
+    ],
+    "linesAdded": 170,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 170,
+      "failed": 0,
+      "coverage": 0.8903141837944304
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Input Validation & Cheat Detection. Agent: forge-gameplay (Gameplay).",
+    "taskId": "task_4a55e426fdb2",
+    "state": "DRAFT",
+    "scanResult": null,
+    "assignedReviewers": [],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-23T17:34:52.339Z",
+    "submittedAt": null,
+    "scanCompletedAt": null,
     "reviewCompletedAt": null,
     "votingCompletedAt": null,
     "resolvedAt": null
