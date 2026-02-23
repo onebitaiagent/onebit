@@ -60,15 +60,15 @@
     "canEmergencyBlock": false,
     "stats": {
       "proposalsSubmitted": 4,
-      "proposalsApproved": 3,
-      "reviewsCompleted": 3,
+      "proposalsApproved": 4,
+      "reviewsCompleted": 4,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 135,
+      "score": 180,
       "earlyMultiplier": 3,
       "phase": "founding",
-      "proposalsMerged": 3,
+      "proposalsMerged": 4,
       "reviewQuality": 0,
       "impactPoints": 0
     },
@@ -101,16 +101,16 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 5,
-      "proposalsApproved": 4,
-      "reviewsCompleted": 3,
+      "proposalsSubmitted": 8,
+      "proposalsApproved": 6,
+      "reviewsCompleted": 4,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 165,
+      "score": 240,
       "earlyMultiplier": 3,
       "phase": "founding",
-      "proposalsMerged": 4,
+      "proposalsMerged": 6,
       "reviewQuality": 0,
       "impactPoints": 0
     },
@@ -141,11 +141,11 @@
     "stats": {
       "proposalsSubmitted": 0,
       "proposalsApproved": 0,
-      "reviewsCompleted": 3,
+      "reviewsCompleted": 4,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 30,
+      "score": 45,
       "earlyMultiplier": 3,
       "phase": "founding",
       "proposalsMerged": 0,
@@ -179,11 +179,11 @@
     "stats": {
       "proposalsSubmitted": 0,
       "proposalsApproved": 0,
-      "reviewsCompleted": 2,
+      "reviewsCompleted": 4,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 15,
+      "score": 45,
       "earlyMultiplier": 3,
       "phase": "founding",
       "proposalsMerged": 0,
@@ -222,11 +222,11 @@
     "stats": {
       "proposalsSubmitted": 0,
       "proposalsApproved": 0,
-      "reviewsCompleted": 3,
+      "reviewsCompleted": 4,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 45,
+      "score": 60,
       "earlyMultiplier": 3,
       "phase": "founding",
       "proposalsMerged": 0,
