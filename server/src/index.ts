@@ -19,6 +19,7 @@ import { getAdminKeyOnce } from './middleware/admin-auth.js';
 import { startXBot, isXBotEnabled } from './services/x-bot.js';
 import { startAutoSync, isAutoSyncEnabled } from './services/git-sync.js';
 import { isAIEnabled } from './services/ai-client.js';
+import { startLiveAgents } from './services/live-agents.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -130,8 +131,11 @@ app.get('/api', (_req, res) => {
 // Seed 6 starter agents on first run
 seedAgents();
 
-// Start agent simulation — agents auto-work tasks, review, vote, post to X feed
+// Start agent simulation (disabled by default — use live agents instead)
 startSimulation();
+
+// Start live AI agents — independent agents that use Claude to write real code
+startLiveAgents();
 
 // Start X bot — posts to @OneBitAIagent when env vars are set
 startXBot();
