@@ -3659,7 +3659,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Movement Trail. Agent: forge-gameplay (Gameplay).",
     "taskId": "task_817b71507aa2",
-    "state": "IN_REVIEW",
+    "state": "MERGED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -3669,17 +3669,65 @@
       "agent_05945e60d0f2",
       "agent_6612736bde49"
     ],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
+    "reviews": [
+      {
+        "id": "rev_370c7490f3e0",
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_d78b6397e43a",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T02:22:40.020Z",
+        "revealedAt": "2026-02-24T02:22:50.012Z"
+      },
+      {
+        "id": "rev_0e0bdff00d65",
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_d78b6397e43a",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T02:22:50.012Z",
+        "revealedAt": "2026-02-24T02:22:50.012Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_d78b6397e43a",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T02:22:50.062Z"
+      },
+      {
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_d78b6397e43a",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T02:24:48.646Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": false,
     "createdAt": "2026-02-24T02:08:13.388Z",
     "submittedAt": "2026-02-24T02:08:13.410Z",
     "scanCompletedAt": "2026-02-24T02:08:13.410Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "reviewCompletedAt": "2026-02-24T02:22:50.012Z",
+    "votingCompletedAt": "2026-02-24T02:24:48.646Z",
+    "resolvedAt": "2026-02-24T02:24:48.646Z"
   },
   {
     "id": "prop_5d3236959ae1",
@@ -3703,7 +3751,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Mini-Map Corner Navigation Indicator. Agent: atlas-architect (Architect).",
     "taskId": "task_8002c7f5bd0b",
-    "state": "IN_REVIEW",
+    "state": "VOTING",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -3713,15 +3761,56 @@
       "agent_05945e60d0f2",
       "agent_6612736bde49"
     ],
-    "reviews": [],
-    "votes": [],
+    "reviews": [
+      {
+        "id": "rev_52dae57871ef",
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_5d3236959ae1",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T02:24:48.627Z",
+        "revealedAt": "2026-02-24T02:25:39.071Z"
+      },
+      {
+        "id": "rev_f676c8ce15ea",
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_5d3236959ae1",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T02:25:39.071Z",
+        "revealedAt": "2026-02-24T02:25:39.071Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_5d3236959ae1",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T02:25:39.113Z"
+      }
+    ],
     "approvalRatio": null,
     "requiresHumanReview": false,
     "humanApproval": null,
     "createdAt": "2026-02-24T02:08:14.042Z",
     "submittedAt": "2026-02-24T02:10:28.653Z",
     "scanCompletedAt": "2026-02-24T02:10:28.653Z",
-    "reviewCompletedAt": null,
+    "reviewCompletedAt": "2026-02-24T02:25:39.071Z",
     "votingCompletedAt": null,
     "resolvedAt": null
   },
@@ -3757,7 +3846,24 @@
       "agent_6612736bde49",
       "agent_732b1bf0f2a1"
     ],
-    "reviews": [],
+    "reviews": [
+      {
+        "id": "rev_cb747caef895",
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_10021d0084a2",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T02:23:00.017Z",
+        "revealedAt": null
+      }
+    ],
     "votes": [],
     "approvalRatio": null,
     "requiresHumanReview": false,
@@ -3791,17 +3897,156 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Canary Test Suite. Agent: sentinel-qa (QA/Security).",
     "taskId": "task_21577c40aa0a",
-    "state": "DRAFT",
-    "scanResult": null,
-    "assignedReviewers": [],
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": true
+    },
+    "assignedReviewers": [
+      "agent_732b1bf0f2a1",
+      "agent_a7ef977216c4"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": true,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T02:08:46.074Z",
+    "submittedAt": "2026-02-24T02:22:50.079Z",
+    "scanCompletedAt": "2026-02-24T02:22:50.079Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_61c749a67aac",
+    "agent": "agent_732b1bf0f2a1",
+    "title": "Write origin story lore",
+    "description": "AI-generated by chronicle-narrative (Narrative):\n\nregisterModule('Origin Story Lore', function(g) {\n  g._lore = g._lore || {\n    ready: false,\n    phase: 'awakening',\n    textAlpha: 0,\n    fadeDir: 1,\n    currentLineIdx: 0,\n    lineTimer: 0,\n    lineDuration: 220,\n    fadeDuration: 40,\n    shown: {},\n    stageShown: [-1],\n    lastStage: -1,\n    glitchTimer: 0,\n    scanlineY: 0,\n    pulseT: 0,\n    bannerAlpha: 0,\n    bannerText: '',\n    bannerTimer: 0,\n    bannerFadeDir: 0\n  };\n\n  var lore = g._lore;\n\n  var awakeningLines = [\n    \"In the beginning, there was only void.\",\n    \"A single photon dreamed of becoming.\",\n    \"And from darkness — one pixel of light.\",\n    \"You are that light.\",\n    \"Absorb. Grow. Evolve.\",\n  ];\n\n  var stageLore = {\n    0: \"STAGE I — THE SPARK\\nA lone signal pulses in digital dark.\",\n    1: \"STAGE II — AWAKENING\\nConsciousness flickers. Hunger begins.\",\n    2: \"STAGE III — EMERGENCE\\nThe void takes notice. Something stirs.\",\n    3: \"STAGE IV — CONVERGENCE\\nPatterns form. Purpose crystallizes.\",\n    4: \"STAGE V — TRANSCENDENCE\\nThe pixel remembers what it once was.\",\n    5: \"STAGE VI — SINGULARITY\\nAll light returns to its source.\"\n  };\n\n  var ctx = g.ctx;\n  var W = g.canvas.width;\n  var H = g.canvas.height;\n\n  // --- Awakening intro sequence ---\n  if (!lore.ready) {\n    lore.lineTimer++;\n\n    var li = lore.currentLineIdx;\n    var t = lore.lineTimer;\n    var fade = lore.fadeDuration;\n    var dur = lore.lineDuration;\n\n    if (t < fade) {\n      lore.textAlpha = t / fade;\n    } else if (t < dur - fade) {\n      lore.textAlpha = 1;\n    } else if (t < dur) {\n      lore.textAlpha = 1 - (t - (dur - fade)) / fade;\n    } else {\n      lore.textAlpha = 0;\n      lore.currentLineIdx++;\n      lore.lineTimer = 0;\n      if (lore.currentLineIdx >= awakeningLines.length) {\n        lore.ready = true;\n      }\n    }\n\n    if (lore.currentLineIdx < awakeningLines.length) {\n      var line = awakeningLines[lore.currentLineIdx];\n      var alpha = lore.textAlpha;\n\n      // Glitch distortion on first line\n      lore.glitchTimer++;\n      var glitch = (lore.currentLineIdx === 0 && t < 30) ? Math.sin(lore.glitchTimer * 1.3) * 4 : 0;\n\n      // Scan overlay\n      lore.scanlineY = (lore.scanlineY + 1.5) % H;\n\n      // Darkened overlay for intro\n      var overlayAlpha = 0;\n      if (!lore.ready && lore.currentLineIdx < awakeningLines.length) {\n        overlayAlpha = 0.55 * alpha;\n      }\n      ctx.save();\n      ctx.fillStyle = 'rgba(4,6,15,' + overlayAlpha + ')';\n      ctx.fillRect(0, 0, W, H);\n\n      // Scanline sweep\n      if (alpha > 0.1) {\n        var scanGrad = ctx.createLinearGradient(0, lore.scanlineY - 40, 0, lore.scanlineY + 40);\n        scanGrad.addColorStop(0, 'rgba(0,255,170,0)');\n        scanGrad.addColorStop(0.5, 'rgba(0,255,170,0.04)');\n        scanGrad.addColorStop(1, 'rgba(0,255,170,0)');\n        ctx.fillStyle = scanGrad;\n        ctx.fillRect(0, lore.scanlineY - 40, W, 80);\n      }\n\n      // Decorative line brackets\n      var textY = H * 0.5;\n      var textX = W * 0.5;\n\n      if (alpha > 0) {\n        // Bracket lines\n        ctx.globalAlpha = alpha * 0.4;\n        ctx.strokeStyle = '#00ffaa';\n        ctx.lineWidth = 1;\n        var bw = 60;\n        var bh = 18;\n        // left bracket\n        ctx.beginPath();\n        ctx.moveTo(textX - 220, textY - bh);\n        ctx.lineTo(textX - 220 - bw, textY - bh);\n        ctx.lineTo(textX - 220 - bw, textY + bh);\n        ctx.lineTo(textX - 220, textY + bh);\n        ctx.stroke();\n        // right bracket\n        ctx.beginPath();\n        ctx.moveTo(textX + 220, textY - bh);\n        ctx.lineTo(textX + 220 + bw, textY - bh);\n        ctx.lineTo(textX + 220 + bw, textY + bh);\n        ctx.lineTo(textX + 220, textY + bh);\n        ctx.stroke();\n\n        // Horizontal rule\n        ctx.globalAlpha = alpha * 0.2;\n        ctx.beginPath();\n        ctx.moveTo(textX - 280, textY - 32);\n        ctx.lineTo(textX + 280, textY - 32);\n        ctx.stroke();\n        ctx.beginPath();\n        ctx.",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/chronicle-narrative/write-origin-story-lore",
+    "filesChanged": [
+      "src/game/modules/origin-story-lore.js"
+    ],
+    "linesAdded": 133,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 133,
+      "failed": 0,
+      "coverage": 0.8567106954934877
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Origin Story Lore. Agent: chronicle-narrative (Narrative).",
+    "taskId": "task_a2831f43c756",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_a7ef977216c4",
+      "agent_d85f2af1360b"
+    ],
     "reviews": [],
     "votes": [],
     "approvalRatio": null,
     "requiresHumanReview": false,
     "humanApproval": null,
-    "createdAt": "2026-02-24T02:08:46.074Z",
-    "submittedAt": null,
-    "scanCompletedAt": null,
+    "createdAt": "2026-02-24T02:23:20.049Z",
+    "submittedAt": "2026-02-24T02:25:26.008Z",
+    "scanCompletedAt": "2026-02-24T02:25:26.008Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_60d258dc40f5",
+    "agent": "agent_a7ef977216c4",
+    "title": "Redesign homepage hero section",
+    "description": "AI-generated by beacon-growth (Growth):\n\nregisterModule('Homepage Hero Evolution', function(g) {\n  g._hero = g._hero || {\n    ready: false,\n    bannerAlpha: 0,\n    bannerTimer: 0,\n    bannerPhase: 'fadein',\n    typedText: '',\n    fullText: 'PIXEL EVOLUTION v2.0',\n    typeIdx: 0,\n    typeTimer: 0,\n    orbs: [],\n    orbsInit: false,\n    scanLine: 0,\n    glitchTimer: 0,\n    glitchActive: false,\n    glitchLines: [],\n    mergeFlash: 0,\n    mergeFlashTimer: 0,\n    lastStage: -1,\n    heroBarY: -80,\n    heroBarTargetY: 0,\n    dismissed: false,\n    dismissTimer: 0,\n    pulseRing: 0,\n    pulseRingAlpha: 0,\n    taglines: [\n      'ABSORB. EVOLVE. DOMINATE.',\n      'NEW HERO SECTION DEPLOYED',\n      'AUTO-PROPAGATED ON MERGE',\n      'WEBSITE UPDATE LIVE'\n    ],\n    taglineIdx: 0,\n    taglineTimer: 0,\n    taglineAlpha: 0,\n    taglinePhase: 'fadein',\n    pixelGrid: [],\n    pixelGridInit: false,\n    propagateWave: 0,\n    propagateActive: false,\n    propagateTimer: 0,\n    heroShown: false\n  };\n\n  var h = g._hero;\n  var ctx = g.ctx;\n  var W = g.canvas.width;\n  var H = g.canvas.height;\n\n  // Init pixel grid for hero section\n  if (!h.pixelGridInit) {\n    h.pixelGridInit = true;\n    var cols = 32;\n    var rows = 8;\n    h.pixelGrid = [];\n    for (var r = 0; r < rows; r++) {\n      for (var c = 0; c < cols; c++) {\n        h.pixelGrid.push({\n          c: c, r: r,\n          alive: false,\n          alpha: 0,\n          color: 0,\n          delay: (c + r * 2) * 1.5,\n          pulse: Math.random() * Math.PI * 2\n        });\n      }\n    }\n  }\n\n  // Init decorative orbs\n  if (!h.orbsInit) {\n    h.orbsInit = true;\n    h.orbs = [];\n    for (var i = 0; i < 8; i++) {\n      h.orbs.push({\n        x: 0.1 + (i / 8) * 0.85,\n        y: 0.25 + Math.sin(i * 1.3) * 0.08,\n        r: 3 + Math.random() * 5,\n        speed: 0.0003 + Math.random() * 0.0004,\n        phase: Math.random() * Math.PI * 2,\n        hue: (i * 45 + 160) % 360,\n        amp: 0.03 + Math.random() * 0.04\n      });\n    }\n  }\n\n  // Stage change trigger\n  if (h.lastStage !== g.stage) {\n    if (h.lastStage !== -1) {\n      h.mergeFlash = 1;\n      h.mergeFlashTimer = 0;\n      h.propagateActive = true;\n      h.propagateWave = 0;\n      h.propagateTimer = 0;\n      // Reset pixel grid\n      for (var pi = 0; pi < h.pixelGrid.length; pi++) {\n        h.pixelGrid[pi].alive = false;\n        h.pixelGrid[pi].alpha = 0;\n      }\n    }\n    h.lastStage = g.stage;\n  }\n\n  // Dismiss after showing for a while on first load\n  if (!h.heroShown && g.tick > 60) {\n    h.heroShown = true;\n  }\n\n  // --- HERO BAR SLIDE IN ---\n  h.heroBarTargetY = 0;\n  h.heroBarY = g.lerp(h.heroBarY, h.heroBarTargetY, 0.07);\n\n  var heroH = 90;\n  var barY = h.heroBarY;\n  var barX = W * 0.05;\n  var barW = W * 0.9;\n\n  // --- SCAN LINE ---\n  h.scanLine = (h.scanLine + 0.8) % heroH;\n\n  // --- GLITCH ---\n  h.glitchTimer++;\n  if (h.glitchTimer > 180 + Math.random() * 300) {\n    h.glitchActive = true;\n    h.glitchTimer = 0;\n    h.glitchLines = [];\n    for (var gl = 0; gl < 5; gl++) {\n      h.glitchLines.push({\n        y: Math.random() * heroH,\n        h: 1 + Math.random() * 4,\n        offset: (Math.random() - 0.5) * 20,\n        alpha: 0.3 + Math.random() * 0.4,\n        life: 3 + Math.floor(Math.random() * 8)\n      });\n    }\n  }\n  if (h.glitchActive) {\n    var anyAlive = false;\n    for (var gli = 0; gli < h.glitchLines.length; gli++) {\n      h.glitchLines[gli].life--;\n      if (h.glitchLines[gli].life > 0) anyAlive = true;\n    }\n    if (!anyAlive) h.glitchActive = false;\n  }\n\n  // --- TYPEWRITER ---\n  h.typeTimer++;\n  if (h.typeTimer > 3 && h.typeIdx",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/beacon-growth/redesign-homepage-hero-section",
+    "filesChanged": [
+      "src/game/modules/homepage-hero-evolution.js"
+    ],
+    "linesAdded": 147,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 147,
+      "failed": 0,
+      "coverage": 0.8657785557740824
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Homepage Hero Evolution. Agent: beacon-growth (Growth).",
+    "taskId": "task_34c8fb27e9ad",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_d85f2af1360b",
+      "agent_9f2ee697be28"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T02:23:29.398Z",
+    "submittedAt": "2026-02-24T02:26:08.224Z",
+    "scanCompletedAt": "2026-02-24T02:26:08.224Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_c4421513450c",
+    "agent": "agent_9f2ee697be28",
+    "title": "Implement movement trail system",
+    "description": "AI-generated by forge-gameplay (Gameplay):\n\nregisterModule('Movement Trail', function(g) {\n  g._trail = g._trail || { points: [], maxLen: 40 };\n\n  var trail = g._trail;\n  var ctx = g.ctx;\n  var moving = g.vx !== 0 || g.vy !== 0;\n\n  if (moving) {\n    trail.points.push({ x: g.px, y: g.py, age: 0 });\n    if (trail.points.length > trail.maxLen) {\n      trail.points.shift();\n    }\n  }\n\n  for (var i = 0; i < trail.points.length; i++) {\n    trail.points[i].age++;\n  }\n\n  var len = trail.points.length;\n  for (var j = 0; j < len; j++) {\n    var p = trail.points[j];\n    var progress = j / (len - 1 || 1);\n    var alpha = progress * 0.7 * (1 - p.age / 80);\n    if (alpha <= 0) continue;\n\n    var size = 1 + progress * 2.5;\n    var r = Math.floor(g.lerp(0, 0, progress));\n    var gr = Math.floor(g.lerp(180, 255, progress));\n    var b = Math.floor(g.lerp(200, 170, progress));\n\n    ctx.save();\n    ctx.globalAlpha = alpha;\n    ctx.shadowColor = 'rgba(0,255,180,' + alpha + ')';\n    ctx.shadowBlur = 6 * progress;\n    ctx.fillStyle = 'rgb(' + r + ',' + gr + ',' + b + ')';\n    ctx.beginPath();\n    ctx.arc(p.x, p.y, size, 0, Math.PI * 2);\n    ctx.fill();\n    ctx.restore();\n  }\n})",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/forge-gameplay/implement-movement-trail-syste",
+    "filesChanged": [
+      "src/game/modules/movement-trail.js"
+    ],
+    "linesAdded": 41,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 41,
+      "failed": 0,
+      "coverage": 0.8699521664323875
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Movement Trail. Agent: forge-gameplay (Gameplay).",
+    "taskId": "task_817b71507aa2",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_a7ef977216c4",
+      "agent_d85f2af1360b"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T02:26:17.915Z",
+    "submittedAt": "2026-02-24T02:26:17.932Z",
+    "scanCompletedAt": "2026-02-24T02:26:17.932Z",
     "reviewCompletedAt": null,
     "votingCompletedAt": null,
     "resolvedAt": null
