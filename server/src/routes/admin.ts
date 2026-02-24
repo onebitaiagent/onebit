@@ -15,7 +15,7 @@ import { messageBus } from '../services/message-bus.js';
 import { postLaunchThread, isThreadPosted, getTweetStats, deleteTweets, deleteAllMyTweets } from '../services/x-bot.js';
 import { pushDataToGitHub, getLastPushTime, isAutoSyncEnabled } from '../services/git-sync.js';
 import { getCurrentPhase, advancePhase, getAgentStatus, stopAgents } from '../services/live-agents.js';
-import { getAICosts } from '../services/ai-client.js';
+import { getAICosts, testAIConnection } from '../services/ai-client.js';
 import { archiveModule, registerGameModule, activateModuleByProposal, getAllModules, updateModuleCode } from '../services/game-evolution.js';
 import { generateId } from '../utils/crypto.js';
 import { JsonStore } from '../data/store.js';
@@ -385,6 +385,12 @@ router.post('/modules/inject', (req: Request, res: Response) => {
   const activated = activateModuleByProposal(fakeProposalId);
   appendAudit('admin', 'module_injected', mod.id, { name: mod.name });
   res.json({ injected: true, module: activated || mod });
+});
+
+// GET /api/admin/test-ai — test if the Anthropic API key works
+router.get('/test-ai', async (_req: Request, res: Response) => {
+  const result = await testAIConnection();
+  res.json(result);
 });
 
 // POST /api/admin/stop-agents — manually stop all agents

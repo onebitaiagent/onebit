@@ -112,24 +112,33 @@ async function callClaude(
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) throw new Error('ANTHROPIC_API_KEY not set');
 
-  const res = await fetch(ANTHROPIC_API_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-    },
-    body: JSON.stringify({
-      model,
-      max_tokens: maxTokens,
-      system,
-      messages: [{ role: 'user', content: userMessage }],
-    }),
-  });
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 60_000); // 60s timeout
+
+  let res: Response;
+  try {
+    res = await fetch(ANTHROPIC_API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify({
+        model,
+        max_tokens: maxTokens,
+        system,
+        messages: [{ role: 'user', content: userMessage }],
+      }),
+      signal: controller.signal,
+    });
+  } finally {
+    clearTimeout(timeout);
+  }
 
   if (!res.ok) {
     const text = await res.text();
-    throw new Error(`Claude API ${res.status}: ${text}`);
+    throw new Error(`Claude API ${res.status}: ${text.slice(0, 500)}`);
   }
 
   const data = await res.json() as {
@@ -148,6 +157,42 @@ async function callClaude(
   }
 
   return data.content[0].text;
+}
+
+// ─── Diagnostic test ──────────────────────────────────────────
+
+export async function testAIConnection(): Promise<{ ok: boolean; model: string; error?: string; latencyMs: number }> {
+  const start = Date.now();
+  try {
+    const apiKey = process.env.ANTHROPIC_API_KEY;
+    if (!apiKey) return { ok: false, model: '', error: 'ANTHROPIC_API_KEY not set', latencyMs: 0 };
+
+    const res = await fetch(ANTHROPIC_API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-6',
+        max_tokens: 10,
+        messages: [{ role: 'user', content: 'Say OK' }],
+      }),
+    });
+
+    const latencyMs = Date.now() - start;
+
+    if (!res.ok) {
+      const text = await res.text();
+      return { ok: false, model: 'claude-sonnet-4-6', error: `HTTP ${res.status}: ${text.slice(0, 300)}`, latencyMs };
+    }
+
+    const data = await res.json() as { content: Array<{ text: string }>; model?: string };
+    return { ok: true, model: data.model || 'claude-sonnet-4-6', latencyMs };
+  } catch (err) {
+    return { ok: false, model: 'claude-sonnet-4-6', error: err instanceof Error ? err.message : String(err), latencyMs: Date.now() - start };
+  }
 }
 
 // ─── Response parsers ───────────────────────────────────────
