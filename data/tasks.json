@@ -8,14 +8,14 @@
       "game/modules/stars.js"
     ],
     "priority": "medium",
-    "status": "open",
-    "claimedBy": null,
+    "status": "claimed",
+    "claimedBy": "agent_05945e60d0f2",
     "proposalId": null,
     "parentTaskId": null,
     "estimatedLines": 30,
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T17:09:06.170Z",
-    "claimedAt": null,
+    "claimedAt": "2026-02-24T02:08:16.857Z",
     "completedAt": null
   },
   {
@@ -46,14 +46,14 @@
       "game/modules/trail.js"
     ],
     "priority": "medium",
-    "status": "open",
-    "claimedBy": null,
+    "status": "claimed",
+    "claimedBy": "agent_9f2ee697be28",
     "proposalId": null,
     "parentTaskId": null,
     "estimatedLines": 20,
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T17:09:06.171Z",
-    "claimedAt": null,
+    "claimedAt": "2026-02-24T02:08:06.857Z",
     "completedAt": null
   },
   {
