@@ -14501,5 +14501,340 @@
       "message": "chronicle-narrative is writing code for \"Narrative Event Ticker - Milestone Announcements\""
     },
     "references": []
+  },
+  {
+    "id": "msg_31335023bd4c",
+    "from": "consensus_engine",
+    "to": "agent_a7ef977216c4",
+    "type": "system",
+    "timestamp": "2026-02-24T03:47:15.630Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_709329f16285",
+      "title": "Implement enemy AI spawner"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_7b0be9b43ce7",
+    "from": "consensus_engine",
+    "to": "agent_6612736bde49",
+    "type": "system",
+    "timestamp": "2026-02-24T03:47:15.639Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_709329f16285",
+      "title": "Implement enemy AI spawner"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_f56177a80bac",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T03:47:15.644Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_709329f16285",
+      "title": "Implement enemy AI spawner",
+      "reviewerCount": 2
+    },
+    "references": []
+  },
+  {
+    "id": "msg_36fba1335bda",
+    "from": "consensus_engine",
+    "to": "agent_a7ef977216c4",
+    "type": "system",
+    "timestamp": "2026-02-24T03:47:25.631Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_e92b155d753f",
+      "title": "Create orbit particles effect"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_dd5110b795d1",
+    "from": "consensus_engine",
+    "to": "agent_9f2ee697be28",
+    "type": "system",
+    "timestamp": "2026-02-24T03:47:25.635Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_e92b155d753f",
+      "title": "Create orbit particles effect"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_7860519b5efa",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T03:47:25.639Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_e92b155d753f",
+      "title": "Create orbit particles effect",
+      "reviewerCount": 2
+    },
+    "references": []
+  },
+  {
+    "id": "msg_3962d30a9fb6",
+    "from": "consensus_engine",
+    "to": "agent_a7ef977216c4",
+    "type": "system",
+    "timestamp": "2026-02-24T03:47:35.630Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_c4f52888a612",
+      "title": "Write canary test suite"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_94027f62bb40",
+    "from": "consensus_engine",
+    "to": "agent_9f2ee697be28",
+    "type": "system",
+    "timestamp": "2026-02-24T03:47:35.634Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_c4f52888a612",
+      "title": "Write canary test suite"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_64dc7b4e2ffc",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T03:47:35.638Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_c4f52888a612",
+      "title": "Write canary test suite",
+      "reviewerCount": 2
+    },
+    "references": []
+  },
+  {
+    "id": "msg_2b25badcb554",
+    "from": "consensus_engine",
+    "to": "agent_a7ef977216c4",
+    "type": "system",
+    "timestamp": "2026-02-24T03:47:45.634Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_a7f1c1234698",
+      "title": "Narrative Event Ticker - Milestone Announcements"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_bb35fb2fc87c",
+    "from": "consensus_engine",
+    "to": "agent_9f2ee697be28",
+    "type": "system",
+    "timestamp": "2026-02-24T03:47:45.638Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_a7f1c1234698",
+      "title": "Narrative Event Ticker - Milestone Announcements"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_8c42fc991ced",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T03:47:45.645Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_a7f1c1234698",
+      "title": "Narrative Event Ticker - Milestone Announcements",
+      "reviewerCount": 2
+    },
+    "references": []
+  },
+  {
+    "id": "msg_cfe6e3135560",
+    "from": "admin",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T03:49:49.475Z",
+    "payload": {
+      "event": "phase_advanced",
+      "from": "Origin",
+      "to": "Prototype",
+      "message": "Phase advanced: Origin → Prototype"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_541dd70e45c8",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T03:49:49.481Z",
+    "payload": {
+      "event": "phase_change",
+      "phase": "Prototype",
+      "description": "Auto-advanced to Prototype — 6 features completed in previous phase"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_8fb2bf8623a4",
+    "from": "consensus_engine",
+    "to": "agent_a7ef977216c4",
+    "type": "system",
+    "timestamp": "2026-02-24T03:53:17.600Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_e92b155d753f"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_66297973f373",
+    "from": "consensus_engine",
+    "to": "agent_9f2ee697be28",
+    "type": "system",
+    "timestamp": "2026-02-24T03:53:17.613Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_e92b155d753f"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_ee653c840a1c",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T03:53:17.621Z",
+    "payload": {
+      "event": "proposal_voting",
+      "proposalId": "prop_e92b155d753f",
+      "title": "Create orbit particles effect"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_7be03c777dbd",
+    "from": "consensus_engine",
+    "to": "agent_a7ef977216c4",
+    "type": "system",
+    "timestamp": "2026-02-24T03:55:48.788Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_709329f16285"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_76b383c723c1",
+    "from": "consensus_engine",
+    "to": "agent_6612736bde49",
+    "type": "system",
+    "timestamp": "2026-02-24T03:55:48.794Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_709329f16285"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_8f29bf2b3918",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T03:55:48.799Z",
+    "payload": {
+      "event": "proposal_voting",
+      "proposalId": "prop_709329f16285",
+      "title": "Implement enemy AI spawner"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_abccd78178d6",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T03:56:42.706Z",
+    "payload": {
+      "event": "proposal_merged",
+      "proposalId": "prop_e92b155d753f",
+      "title": "Create orbit particles effect",
+      "impact": "low",
+      "approvalRatio": 1,
+      "humanApproved": false,
+      "autoMerged": true,
+      "requiresHumanReview": false
+    },
+    "references": []
+  },
+  {
+    "id": "msg_a0de27efab4e",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T03:56:42.733Z",
+    "payload": {
+      "event": "task_claimed",
+      "taskId": "task_08d22c6dcf63",
+      "agentId": "agent_9f2ee697be28"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_6a4caaee17fa",
+    "from": "agent_9f2ee697be28",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T03:56:42.737Z",
+    "payload": {
+      "event": "agent_working",
+      "agentName": "forge-gameplay",
+      "role": "Gameplay",
+      "taskTitle": "Implement enemy AI spawner",
+      "message": "forge-gameplay is writing code for \"Implement enemy AI spawner\""
+    },
+    "references": []
+  },
+  {
+    "id": "msg_08fa063e361e",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T03:56:54.437Z",
+    "payload": {
+      "event": "task_claimed",
+      "taskId": "task_d563fd0d5bf0",
+      "agentId": "agent_05945e60d0f2"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_d74e1f6e6803",
+    "from": "agent_05945e60d0f2",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T03:56:54.443Z",
+    "payload": {
+      "event": "agent_working",
+      "agentName": "prism-artui",
+      "role": "Art/UI",
+      "taskTitle": "Design absorption burst particle effects",
+      "message": "prism-artui is writing code for \"Design absorption burst particle effects\""
+    },
+    "references": []
   }
 ]
