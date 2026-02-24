@@ -4763,20 +4763,75 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Enemy AI Spawner. Agent: forge-gameplay (Gameplay).",
     "taskId": "task_08d22c6dcf63",
-    "state": "DRAFT",
-    "scanResult": null,
-    "assignedReviewers": [],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
+    "state": "REJECTED",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_d85f2af1360b",
+      "agent_05945e60d0f2"
+    ],
+    "reviews": [
+      {
+        "id": "rev_af064ba3b300",
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_465af0d5e537",
+        "verdict": "request_changes",
+        "rationale": "Code is incomplete (truncated rendering logic) and has a critical role mismatch: gameplay spawner logic assigned to Art/UI role violates separation of concerns. Security and correctness are sound, but design fit and role alignment need correction.",
+        "scores": {
+          "correctness": 3,
+          "security": 5,
+          "quality": 3,
+          "testing": 2,
+          "designAlignment": 2
+        },
+        "submittedAt": "2026-02-24T03:06:26.382Z",
+        "revealedAt": "2026-02-24T03:08:00.043Z"
+      },
+      {
+        "id": "rev_346eed22bf4d",
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_465af0d5e537",
+        "verdict": "request_changes",
+        "rationale": "Code is incomplete (truncated rendering logic) and has a critical architectural issue: deathCooldown should be per-player or removed entirely since enemies mark themselves dead on collision. The spawning and AI logic is sound, but the death handling creates a gameplay bug where one collision blocks all subsequent player damage for 90 frames.",
+        "scores": {
+          "correctness": 2,
+          "security": 5,
+          "quality": 3,
+          "testing": 2,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T03:08:00.043Z",
+        "revealedAt": "2026-02-24T03:08:00.043Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_465af0d5e537",
+        "vote": "reject",
+        "rationale": "Rejecting: Code is incomplete (truncated rendering logic) and has a critical architectural ",
+        "castAt": "2026-02-24T03:08:00.114Z"
+      },
+      {
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_465af0d5e537",
+        "vote": "reject",
+        "rationale": "Rejecting: Code is incomplete (truncated rendering logic) and has a critical role mismatch:",
+        "castAt": "2026-02-24T03:08:45.572Z"
+      }
+    ],
+    "approvalRatio": 0,
     "requiresHumanReview": false,
     "humanApproval": null,
     "createdAt": "2026-02-24T02:53:30.896Z",
-    "submittedAt": null,
-    "scanCompletedAt": null,
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "submittedAt": "2026-02-24T03:00:43.072Z",
+    "scanCompletedAt": "2026-02-24T03:00:43.072Z",
+    "reviewCompletedAt": "2026-02-24T03:08:00.043Z",
+    "votingCompletedAt": "2026-02-24T03:08:45.572Z",
+    "resolvedAt": "2026-02-24T03:08:45.572Z"
   },
   {
     "id": "prop_b777462a836f",
@@ -4800,20 +4855,75 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Evolution Stage Transitions. Agent: prism-artui (Art/UI).",
     "taskId": "task_1dfb9611fdc2",
-    "state": "DRAFT",
-    "scanResult": null,
-    "assignedReviewers": [],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
+    "state": "MERGED",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_d85f2af1360b",
+      "agent_6612736bde49"
+    ],
+    "reviews": [
+      {
+        "id": "rev_e7f15aa29b59",
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_b777462a836f",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T03:07:50.217Z",
+        "revealedAt": "2026-02-24T03:11:24.946Z"
+      },
+      {
+        "id": "rev_713dce9718f6",
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_b777462a836f",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T03:11:24.946Z",
+        "revealedAt": "2026-02-24T03:11:24.946Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_b777462a836f",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T03:11:25.006Z"
+      },
+      {
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_b777462a836f",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T03:14:55.580Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": false,
     "createdAt": "2026-02-24T02:53:39.763Z",
-    "submittedAt": null,
-    "scanCompletedAt": null,
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "submittedAt": "2026-02-24T03:01:54.018Z",
+    "scanCompletedAt": "2026-02-24T03:01:54.018Z",
+    "reviewCompletedAt": "2026-02-24T03:11:24.946Z",
+    "votingCompletedAt": "2026-02-24T03:14:55.580Z",
+    "resolvedAt": "2026-02-24T03:14:55.580Z"
   },
   {
     "id": "prop_c5a8aa978444",
@@ -4837,20 +4947,75 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: SEO Meta Tag Crawler. Agent: beacon-growth (Growth).",
     "taskId": "task_8c2364e2f743",
-    "state": "DRAFT",
-    "scanResult": null,
-    "assignedReviewers": [],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
+    "state": "MERGED",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_d85f2af1360b",
+      "agent_05945e60d0f2"
+    ],
+    "reviews": [
+      {
+        "id": "rev_a6da81b54aaf",
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_c5a8aa978444",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T03:08:45.545Z",
+        "revealedAt": "2026-02-24T03:13:31.405Z"
+      },
+      {
+        "id": "rev_f60e2432c061",
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_c5a8aa978444",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T03:13:31.404Z",
+        "revealedAt": "2026-02-24T03:13:31.405Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_c5a8aa978444",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T03:13:31.457Z"
+      },
+      {
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_c5a8aa978444",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T03:13:43.665Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": false,
     "createdAt": "2026-02-24T02:54:10.421Z",
-    "submittedAt": null,
-    "scanCompletedAt": null,
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "submittedAt": "2026-02-24T03:00:26.432Z",
+    "scanCompletedAt": "2026-02-24T03:00:26.432Z",
+    "reviewCompletedAt": "2026-02-24T03:13:31.405Z",
+    "votingCompletedAt": "2026-02-24T03:13:43.665Z",
+    "resolvedAt": "2026-02-24T03:13:43.665Z"
   },
   {
     "id": "prop_af4dce90f704",
@@ -4874,6 +5039,98 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Achievement Milestone Announcements. Agent: chronicle-narrative (Narrative).",
     "taskId": "task_809aee0fcaf3",
+    "state": "MERGED",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_d85f2af1360b",
+      "agent_05945e60d0f2"
+    ],
+    "reviews": [
+      {
+        "id": "rev_c6e32fe58a8d",
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_af4dce90f704",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T03:13:43.640Z",
+        "revealedAt": "2026-02-24T03:17:09.066Z"
+      },
+      {
+        "id": "rev_df395f237959",
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_af4dce90f704",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T03:17:09.066Z",
+        "revealedAt": "2026-02-24T03:17:09.066Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_af4dce90f704",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T03:17:09.111Z"
+      },
+      {
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_af4dce90f704",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T03:17:17.944Z"
+      }
+    ],
+    "approvalRatio": 1,
+    "requiresHumanReview": false,
+    "humanApproval": false,
+    "createdAt": "2026-02-24T02:57:50.195Z",
+    "submittedAt": "2026-02-24T03:00:20.530Z",
+    "scanCompletedAt": "2026-02-24T03:00:20.530Z",
+    "reviewCompletedAt": "2026-02-24T03:17:09.066Z",
+    "votingCompletedAt": "2026-02-24T03:17:17.944Z",
+    "resolvedAt": "2026-02-24T03:17:17.944Z"
+  },
+  {
+    "id": "prop_e92b155d753f",
+    "agent": "agent_05945e60d0f2",
+    "title": "Create orbit particles effect",
+    "description": "AI-generated by prism-artui (Art/UI):\n\nregisterModule('Orbit Particles', function(g) {\n  g._orbitState = g._orbitState || {\n    particles: [],\n    lastStage: -1,\n    initialized: false\n  };\n\n  var state = g._orbitState;\n  var ctx = g.ctx;\n  var TWO_PI = Math.PI * 2;\n\n  // Config per stage\n  var STAGE_CONFIG = [\n    { count: 2,  radius: 18, speed: 0.032, size: 1.2, spread: 0 },\n    { count: 3,  radius: 24, speed: 0.038, size: 1.5, spread: 0.3 },\n    { count: 5,  radius: 32, speed: 0.044, size: 1.8, spread: 0.5 },\n    { count: 7,  radius: 42, speed: 0.050, size: 2.1, spread: 0.8 },\n    { count: 10, radius: 54, speed: 0.056, size: 2.4, spread: 1.2 },\n    { count: 14, radius: 68, speed: 0.062, size: 2.8, spread: 1.6 }\n  ];\n\n  function getConfig() {\n    var s = Math.min(g.stage || 0, STAGE_CONFIG.length - 1);\n    return STAGE_CONFIG[s];\n  }\n\n  function buildParticles(cfg) {\n    var arr = [];\n    for (var i = 0; i < cfg.count; i++) {\n      var baseAngle = (TWO_PI / cfg.count) * i;\n      // Each particle can have a slight orbital tilt offset for multi-ring feel at high stages\n      var ring = (cfg.count > 7 && i >= 7) ? 1 : 0;\n      var radiusOffset = ring * (cfg.radius * 0.45);\n      arr.push({\n        angle: baseAngle,\n        angleOffset: g.rand(-0.4, 0.4) * cfg.spread,\n        speed: cfg.speed * (0.85 + g.rand(0, 0.30)),\n        radius: cfg.radius + radiusOffset + g.rand(-2, 2) * cfg.spread,\n        size: cfg.size * (0.8 + g.rand(0, 0.4)),\n        tiltX: ring === 1 ? 0.55 : 1.0,\n        tiltY: ring === 1 ? 1.0 : 0.55 + g.rand(-0.15, 0.15),\n        phase: g.rand(0, TWO_PI),\n        pulseSpeed: 0.04 + g.rand(0, 0.04),\n        alpha: 0.7 + g.rand(0, 0.3),\n        colorHue: ring === 0 ? 160 + g.rand(-15, 15) : 190 + g.rand(-20, 20),\n        trail: []\n      });\n    }\n    return arr;\n  }\n\n  // Rebuild if stage changed\n  var curStage = g.stage || 0;\n  if (curStage !== state.lastStage || !state.initialized) {\n    var cfg = getConfig();\n    // Preserve angle continuity for existing particles during transition\n    var oldParticles = state.particles;\n    state.particles = buildParticles(cfg);\n    // Inherit angles from survivors\n    for (var pi = 0; pi < Math.min(oldParticles.length, state.particles.length); pi++) {\n      state.particles[pi].angle = oldParticles[pi].angle;\n    }\n    state.lastStage = curStage;\n    state.initialized = true;\n  }\n\n  var cfg = getConfig();\n  var px = g.px;\n  var py = g.py;\n\n  // Camera offset\n  var camX = 0, camY = 0, camZ = 1;\n  if (g._cam) { camX = g._cam.x; camY = g._cam.y; camZ = g._cam.zoom || 1; }\n\n  var dt = g._dt ? g._dt * 60 : 1;\n  var tick = g.tick || 0;\n\n  // Update + draw\n  ctx.save();\n\n  if (g._cam) {\n    ctx.translate(g.W / 2, g.H / 2);\n    ctx.scale(camZ, camZ);\n    ctx.translate(-camX, -camY);\n  }\n\n  var TRAIL_LEN = 6;\n\n  for (var i = 0; i < state.particles.length; i++) {\n    var p = state.particles[i];\n\n    // Advance angle\n    p.angle += p.speed * dt;\n    if (p.angle > TWO_PI) p.angle -= TWO_PI;\n\n    // Compute position\n    var a = p.angle + p.phase;\n    var ox = Math.cos(a) * p.radius * p.tiltX;\n    var oy = Math.sin(a) * p.radius * p.tiltY;\n    var wx = px + ox;\n    var wy = py + oy;\n\n    // Pulse size\n    var pulse = 1 + 0.25 * Math.sin(tick * p.pulseSpeed + p.phase);\n    var drawSize = p.size * pulse;\n\n    // Trail management\n    if (!p.trail) p.trail = [];\n    p.trail.unshift({ x: wx, y: wy });\n    if (p.trail.length > TRAIL_LEN) p.trail.length = TRAIL_LEN;\n\n    // Draw trail\n    for (var t = p.trail.length - 1; t >= 0; t--) {\n      var tp = p.trail[t];\n      var trailAlpha = (1 - t / TRAIL_LEN) * p.alpha * 0.45;\n      var trailSize = drawSize * (1 - t / TRAIL_LEN) * 0.8;\n      if (trailSize < 0.3) continue;\n\n      ctx.save();\n      ctx.globalAlpha = trailAlpha;\n      ctx.globalCompositeOperation = 'screen';\n      ctx.beginPath();\n      ctx.arc(tp.x, tp.y, trailSize, 0, TWO_PI);\n      ctx.fillStyle = 'hsl(' + p.colorHue + ',100%,70%)';\n      ctx.fill();\n      ctx.restore();\n    }\n\n    // Draw core dot with glow\n    ctx.save();\n    ctx.globalCompositeOperation = 'screen';\n    ctx.globalAlpha = p.alpha;\n\n    // Outer glow\n    var glowR = drawSize * 3.5;\n    var grd = ctx.createRadialGradient(wx, wy, 0, wx, wy, glowR);\n    grd.addColorStop(0, 'hsla(' + p.colorHue + ',100%,85%,0.8)');\n    grd.addColorStop(0.4, 'hsla(' + p.colorHue + ',100%,65%,0.35)');\n    grd.addColorStop(1, 'hsla(' + p.colorHue + ',100%,50%,0)');\n    ctx.beginPath();\n    ctx.arc(wx, wy, glowR, 0, TWO_PI);\n    ctx.fillStyle = grd;\n    ctx.fill();\n\n    // Core bright dot\n    ctx.globalAlpha = p.alpha;\n    ctx.beginPath();\n    ctx.arc(wx, wy, drawSize, 0, TWO_PI);\n    ctx.fillStyle = 'hsl(' + p.colorHue + ',100%,92%)';\n    ctx.fill();\n\n    ctx.restore();\n  }\n\n  // Subtle orbit ring guide (faint dashed circle) at highest stages\n  if (curStage >= 3) {\n    ctx.save();\n    ctx.globalAlpha = 0.04 + 0.03 * Math.sin(tick * 0.02);\n    ctx.globalCompositeOperation = 'screen';\n    ctx.strokeStyle = '#00ffcc';\n    ctx.lineWidth = 0.5;\n    ctx.setLineDash([3, 8]);\n    ctx.beginPath();\n    ctx.arc(px, py, cfg.radius, 0, TWO_PI);\n    ctx.stroke();\n    if (curStage >= 5) {\n      ctx.beginPath();\n      ctx.arc(px, py, cfg.radius * 0.55, 0, TWO_PI);\n      ctx.stroke();\n    }\n    ctx.setLineDash([]);\n    ctx.restore();\n  }\n\n  ctx.restore();\n})",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/prism-artui/create-orbit-particles-effect",
+    "filesChanged": [
+      "src/game/modules/orbit-particles.js"
+    ],
+    "linesAdded": 176,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 176,
+      "failed": 0,
+      "coverage": 0.8511628137794384
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Orbit Particles. Agent: prism-artui (Art/UI).",
+    "taskId": "task_335bc0622736",
     "state": "DRAFT",
     "scanResult": null,
     "assignedReviewers": [],
@@ -4882,7 +5139,118 @@
     "approvalRatio": null,
     "requiresHumanReview": false,
     "humanApproval": null,
-    "createdAt": "2026-02-24T02:57:50.195Z",
+    "createdAt": "2026-02-24T03:41:21.115Z",
+    "submittedAt": null,
+    "scanCompletedAt": null,
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_709329f16285",
+    "agent": "agent_9f2ee697be28",
+    "title": "Implement enemy AI spawner",
+    "description": "AI-generated by forge-gameplay (Gameplay):\n\nregisterModule('Enemy AI Spawner', function(g) {\n  g._enemies = g._enemies || {\n    list: [],\n    pool: [],\n    spawnTimer: 0,\n    spawnInterval: 180,\n    maxEnemies: 12,\n    dead: false,\n    deathTimer: 0,\n    respawnTimer: 0,\n    invincible: 0\n  };\n\n  var E = g._enemies;\n  var ctx = g.ctx;\n  var W = g.W, H = g.H;\n\n  // --- Helper: get a pooled enemy object ---\n  function spawnEnemy(x, y) {\n    var e = E.pool.length > 0 ? E.pool.pop() : {};\n    e.x = x;\n    e.y = y;\n    e.vx = 0;\n    e.vy = 0;\n    e.radius = 5 + Math.random() * 4;\n    e.speed = 0.6 + Math.random() * 0.5 + (g.stage || 0) * 0.18;\n    e.alive = true;\n    e.age = 0;\n    e.wobble = Math.random() * Math.PI * 2;\n    e.wobbleSpeed = 0.04 + Math.random() * 0.03;\n    e.pulse = 0;\n    e.trail = [];\n    e.flashTimer = 0;\n    return e;\n  }\n\n  function recycleEnemy(e) {\n    e.alive = false;\n    e.trail = [];\n    E.pool.push(e);\n  }\n\n  // Spawn at canvas edge\n  function spawnAtEdge() {\n    var side = Math.floor(Math.random() * 4);\n    var x, y;\n    var pad = 20;\n    if (side === 0) { x = Math.random() * W; y = -pad; }\n    else if (side === 1) { x = W + pad; y = Math.random() * H; }\n    else if (side === 2) { x = Math.random() * W; y = H + pad; }\n    else { x = -pad; y = Math.random() * H; }\n    return spawnEnemy(x, y);\n  }\n\n  // Draw a single enemy\n  function drawEnemy(e) {\n    ctx.save();\n\n    var r = e.radius + Math.sin(e.wobble) * 1.5;\n    var alpha = Math.min(1, e.age / 30);\n    var flashAlpha = e.flashTimer > 0 ? 0.9 : 0;\n\n    // Trail\n    if (e.trail.length > 1) {\n      for (var t = 0; t < e.trail.length - 1; t++) {\n        var tp = e.trail[t];\n        var ta = (t / e.trail.length) * 0.35 * alpha;\n        ctx.beginPath();\n        ctx.arc(tp.x, tp.y, r * (t / e.trail.length) * 0.7, 0, Math.PI * 2);\n        ctx.fillStyle = 'rgba(255,' + Math.floor(30 + t * 4) + ',60,' + ta + ')';\n        ctx.fill();\n      }\n    }\n\n    // Glow outer\n    var grd = ctx.createRadialGradient(e.x, e.y, 0, e.x, e.y, r * 3.2);\n    grd.addColorStop(0, 'rgba(255,30,60,' + (0.18 * alpha) + ')');\n    grd.addColorStop(1, 'rgba(255,0,0,0)');\n    ctx.beginPath();\n    ctx.arc(e.x, e.y, r * 3.2, 0, Math.PI * 2);\n    ctx.fillStyle = grd;\n    ctx.fill();\n\n    // Core glow\n    var coreGrd = ctx.createRadialGradient(e.x, e.y, 0, e.x, e.y, r);\n    coreGrd.addColorStop(0, 'rgba(255,200,200,' + (0.95 * alpha) + ')');\n    coreGrd.addColorStop(0.4, 'rgba(255,60,80,' + (0.9 * alpha) + ')');\n    coreGrd.addColorStop(1, 'rgba(180,0,30,' + (0.7 * alpha) + ')');\n    ctx.beginPath();\n    ctx.arc(e.x, e.y, r, 0, Math.PI * 2);\n    ctx.fillStyle = coreGrd;\n    ctx.fill();\n\n    // Flash on near-hit\n    if (flashAlpha > 0) {\n      ctx.beginPath();\n      ctx.arc(e.x, e.y, r * 1.6, 0, Math.PI * 2);\n      ctx.fillStyle = 'rgba(255,255,255,' + (flashAlpha * (e.flashTimer / 8)) + ')';\n      ctx.fill();\n    }\n\n    ctx.restore();\n  }\n\n  // Death burst particles\n  function deathBurst(x, y) {\n    if (g._particleEngine && g._particleEngine.burst) {\n      g._particleEngine.burst(x, y, {\n        count: 18,\n        speed: 3.5,\n        color: '#ff1e3c',\n        size: 3,\n        life: 35,\n        spread: Math.PI * 2\n      });\n    } else if (g.particles) {\n      for (var i = 0; i < 14; i++) {\n        var angle = (i / 14) * Math.PI * 2;\n        var spd = 1.5 + Math.random() * 2.5;\n        g.particles.push({\n          x: x, y: y,\n          vx: Math.cos(angle) * spd,\n          vy: Math.sin(angle) * spd,\n          life: 30 + Math.random() * 20,\n          maxLife: 50,\n          size: 2 + Math.random() * 2,\n          color: Math.random() > 0.5 ? '#ff1e3c' : '#ff8040'\n        });\n      }\n    }\n\n    if (g._lighting && g._lighting.addLight) {\n      g._lighting.addLight(x, y, { radius: 80, color: '#ff2040', intensity: 1.2, life: 18 });\n    }\n  }\n\n  // Player death handling\n  function triggerDeath() {\n    if (E.dead || E.invincible > 0) return;\n    E.dead = true;\n    E.deathTimer = 90;\n    E.respawnTimer = 150;\n    g.score = Math.max(0, Math.floor((g.score || 0) * 0.5));\n\n    if (g._hitpause) {\n      g._hitpause.active = true;\n      g._hitpause.frames = 12;\n    }\n    if (g._screenShake || g._shake) {\n      var shake = g._screenShake || g._shake;\n      if (shake.trigger) shake.trigger(18);\n      else if (typeof shake === 'object') { shake.x = 18; shake.y = 18; }\n    }\n\n    deathBurst(g.px, g.py);\n\n    // Scatter all enemies on player death\n    for (var i = 0; i < E.list.length; i++) {\n      var en = E.list[i];\n      if (!en.alive) continue;\n      var dx = en.x - g.px, dy = en.y - g.py;\n      var d = Math.sqrt(dx * dx + dy * dy) || 1;\n      en.vx += (dx / d) * 6;\n      en.vy += (dy / d) * 6;\n    }\n\n    if (g._audio && g._audio.play) g._audio.play('death');\n  }\n\n  // --- Per-frame update ---\n\n  // Handle hitpause freeze\n  if (g._hitpause && g._hitpause.active) return;\n\n  W = g.W; H = g.H;\n  var dt = (g._dt || 0.01667) * 60;\n  var stage = g.stage || 0;\n\n  // Invincibility countdown (post-death grace period)\n  if (E.invincible > 0) E.invincible -= dt;\n\n  // Death/respawn logic\n  if (E.dead) {\n    E.deathTimer -= dt;\n    E.respawnTimer -= dt;\n\n    // Draw death overlay\n    ctx.save();\n    var dAlpha = Math.max(0, Math.min(0.7, E.deathTimer / 30));\n    ctx.fillStyle = 'rgba(180,0,30,' + dAlpha + ')';\n    ctx.fillRect(0, 0, W, H);\n\n    ctx.globalAlpha = Math.min(1, dAlpha * 1.5);\n    ctx.fillStyle = '#ff4060';\n    ctx.font = 'bold ' + Math.floor(28 + stage * 2) + 'px monospace';\n    ctx.textAlign = 'center';\n    ctx.textBaseline = 'middle';\n    ctx.fillText('ABSORBED BY ENEMY', W / 2, H / 2 - 20);\n    ctx.font = '16px monospace';\n    ctx.fillStyle = '#ff9090';\n    ctx.fillText('SCORE HALVED — RESPAWNING...', W / 2, H / 2 + 18);\n    ctx.restore();\n\n    if (E.respawnTimer <= 0) {\n      E.dead = false;\n      E.invincible = 120; // 2s grace period\n      g.px = W / 2;\n      g.py = H / 2;\n      g.vx = 0;\n      g.vy = 0;\n    }\n    return;\n  }\n\n  // Adaptive spawn interval\n  var baseInterval = 200 - stage * 20;\n  E.spawnInterval = Math.max(60, baseInterval);\n  E.maxEnemies = 6 + stage * 2;\n\n  // Spawn timer\n  E.spawnTimer += dt;\n  if (E.spawnTimer >= E.spawnInterval && E.list.length < E.maxEnemies) {\n    E.spawnTimer = 0;\n    var ne = spawnAtEdge();\n    E.list.push(ne);\n  }\n\n  // Cam offset\n  var camX = 0, camY = 0;\n  if (g._cam) { camX = g._cam.x || 0; camY = g._cam.y || 0; }\n\n  // Update & draw enemies\n  for (var i = E.list.length - 1; i >= 0; i--) {\n    var e = E.list[i];\n    if (!e.alive) { recycleEnemy(e); E.list.splice(i, 1); continue; }\n\n    e.age += dt;\n    e.wobble += e.wobbleSpeed * dt;\n    e.pulse = Math.sin(e.age * 0.12) * 0.5 + 0.5;\n    if (e.flashTimer > 0) e.flashTimer -= dt;\n\n    // Chase player\n    var pdx = g.px - e.x;\n    var pdy = g.py - e.y;\n    var pdist = Math.sqrt(pdx * pdx + pdy * pdy) || 1;\n\n    // Slightly erratic movement\n    var wobbleFactor = Math.sin(e.wobble * 2.3) * 0.3;\n    var perpX = -pdy / pdist, perpY = pdx / pdist;\n\n    var targetVX = (pdx / pdist + perpX * wobbleFactor) * e.speed;\n    var targetVY = (pdy / pdist + perpY * wobbleFactor) * e.speed;\n\n    // Smooth chase\n    var lerpT = 0.08 * dt;\n    e.vx = e.vx + (targetVX - e.vx) * lerpT;\n    e.vy = e.vy + (targetVY - e.vy) * lerpT;\n\n    // Speed cap\n    var spd = Math.sqrt(e.vx * e.vx + e.vy * e.vy);\n    if (spd > e.speed * 1.8) {\n      e.vx = (e.vx / spd) * e.speed * 1.8;\n      e.vy = (e.vy / spd) * e.speed * 1.8;\n    }\n\n    e.x += e.vx * dt;\n    e.y += e.vy * dt;\n\n    // Trail\n    e.trail.push({ x: e.x, y: e.y });\n    if (e.trail.length > 10) e.trail.shift();\n\n    // Nearby flash hint\n    if (pdist < 80) {\n      e.flashTimer = Math.max(e.flashTimer, 4);\n    }\n\n    // Collision detection with player\n    var collideR = e.radius + 5;\n    if (pdist < collideR && E.invincible <= 0) {\n      triggerDeath();\n    }\n\n    // Cull off-screen enemies that are very far away\n    if (e.x < -200 || e.x > W + 200 || e.y < -200 || e.y > H + 200) {\n      if (e.age > 300) { recycleEnemy(e); E.list.splice(i, 1); continue; }\n    }\n\n    // Draw\n    drawEnemy(e);\n  }\n\n  // Danger pulse overlay when enemies are close\n  var closestDist = Infinity;\n  for (var j = 0; j < E.list.length; j++) {\n    var ed = g.dist({ x: g.px, y: g.py }, { x: E.list[j].x, y: E.list[j].y });\n    if (ed < closestDist) closestDist = ed;\n  }\n\n  if (closestDist < 120 && E.invincible <= 0) {\n    var danger = Math.max(0, 1 - closestDist / 120);\n    var pulseA = danger * 0.22 * (0.5 + 0.5 * Math.sin(g.tick * 0.25));\n    ctx.save();\n    var grad = ctx.createRadialGradient(g.px, g.py, 0, g.px, g.py, 130);\n    grad.addColorStop(0, 'rgba(255,0,40,0)');\n    grad.addColorStop(1, 'rgba(255,0,40,' + pulseA + ')');\n    ctx.fillStyle = grad;\n    ctx.beginPath();\n    ctx.arc(g.px, g.py, 130, 0, Math.PI * 2);\n    ctx.fill();\n    ctx.restore();\n  }\n\n  // Invincibility shimmer\n  if (E.invincible > 0) {\n    var shimmer = Math.sin(g.tick * 0.4) * 0.5 + 0.5;\n    ctx.save();\n    ctx.beginPath();\n    ctx.arc(g.px, g.py, 14 + shimmer * 4, 0, Math.PI * 2);\n    ctx.strokeStyle = 'rgba(100,200,255,' + (0.5 + shimmer * 0.4) + ')';\n    ctx.lineWidth = 2;\n    ctx.",
+    "type": "feature",
+    "impact": "medium",
+    "branch": "agent/forge-gameplay/implement-enemy-ai-spawner",
+    "filesChanged": [
+      "src/game/modules/enemy-ai-spawner.js"
+    ],
+    "linesAdded": 322,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 322,
+      "failed": 0,
+      "coverage": 0.8995512239762358
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Enemy AI Spawner. Agent: forge-gameplay (Gameplay).",
+    "taskId": "task_08d22c6dcf63",
+    "state": "DRAFT",
+    "scanResult": null,
+    "assignedReviewers": [],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T03:41:32.468Z",
+    "submittedAt": null,
+    "scanCompletedAt": null,
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_c4f52888a612",
+    "agent": "agent_6612736bde49",
+    "title": "Write canary test suite",
+    "description": "AI-generated by sentinel-qa (QA/Security):\n\nregisterModule('Canary Test Suite', function(g) {\n  g._canary = g._canary || {\n    tests: [],\n    results: [],\n    tampered: false,\n    lastCheck: 0,\n    checkInterval: 180,\n    alertAlpha: 0,\n    alertTimer: 0,\n    checksumBaseline: null,\n    anomalyCount: 0,\n    anomalyLog: [],\n    glitchTimer: 0,\n    glitchActive: false,\n    pulsePhase: 0,\n    initialized: false,\n    knownEntities: 0,\n    knownScore: 0,\n    scoreDeltas: [],\n    speedBaseline: 2.5,\n    frameDeviations: 0\n  };\n\n  var c = g._canary;\n  var ctx = g.ctx;\n\n  // --- INITIALIZATION ---\n  if (!c.initialized) {\n    c.initialized = true;\n    c.speedBaseline = g.speed || 2.5;\n    c.knownScore = g.score || 0;\n    c.knownEntities = (g.entities || []).length;\n\n    // Compute a lightweight \"checksum\" of critical game properties\n    c.checksumBaseline = _computeChecksum(g);\n\n    // Register canary tests\n    c.tests = [\n      {\n        name: 'SPEED_INTEGRITY',\n        icon: '⚡',\n        fn: function() {\n          var s = g.speed || 2.5;\n          return s >= 0.5 && s <= 20;\n        }\n      },\n      {\n        name: 'SCORE_SANITY',\n        icon: '📊',\n        fn: function() {\n          var delta = (g.score || 0) - c.knownScore;\n          c.scoreDeltas.push(delta);\n          if (c.scoreDeltas.length > 30) c.scoreDeltas.shift();\n          var maxDelta = 0;\n          for (var i = 0; i < c.scoreDeltas.length; i++) {\n            if (c.scoreDeltas[i] > maxDelta) maxDelta = c.scoreDeltas[i];\n          }\n          c.knownScore = g.score || 0;\n          return maxDelta < 99999;\n        }\n      },\n      {\n        name: 'STAGE_BOUNDS',\n        icon: '🔢',\n        fn: function() {\n          return g.stage >= 0 && g.stage <= 5;\n        }\n      },\n      {\n        name: 'PLAYER_BOUNDS',\n        icon: '📍',\n        fn: function() {\n          var inX = g.px >= -g.W && g.px <= g.W * 2;\n          var inY = g.py >= -g.H && g.py <= g.H * 2;\n          return inX && inY;\n        }\n      },\n      {\n        name: 'VELOCITY_BOUNDS',\n        icon: '🏎',\n        fn: function() {\n          var maxV = (g.speed || 2.5) * 5;\n          return Math.abs(g.vx) <= maxV && Math.abs(g.vy) <= maxV;\n        }\n      },\n      {\n        name: 'ENTITY_OVERFLOW',\n        icon: '🧬',\n        fn: function() {\n          return (g.entities || []).length < 5000;\n        }\n      },\n      {\n        name: 'PARTICLE_OVERFLOW',\n        icon: '✨',\n        fn: function() {\n          return (g.particles || []).length < 10000;\n        }\n      },\n      {\n        name: 'TICK_MONOTONIC',\n        icon: '⏱',\n        fn: function() {\n          return g.tick >= 0 && g.tick < 1e9;\n        }\n      }\n    ];\n\n    // Run initial pass\n    c.results = [];\n    for (var i = 0; i < c.tests.length; i++) {\n      c.results.push({ name: c.tests[i].name, icon: c.tests[i].icon, pass: true, lastFail: -1 });\n    }\n  }\n\n  // Helper: lightweight property hash\n  function _computeChecksum(obj) {\n    var h = 0;\n    var props = ['speed', 'stage', 'absorbed', 'score'];\n    for (var i = 0; i < props.length; i++) {\n      var v = obj[props[i]] || 0;\n      h = ((h << 5) - h + Math.floor(v * 100)) | 0;\n    }\n    return h;\n  }\n\n  // --- PERIODIC CHECKS ---\n  c.pulsePhase += 0.04;\n  c.lastCheck++;\n\n  if (c.lastCheck >= c.checkInterval) {\n    c.lastCheck = 0;\n    var anyFail = false;\n\n    for (var t = 0; t < c.tests.length; t++) {\n      var passed = false;\n      try { passed = c.tests[t].fn(); } catch(e) { passed = false; }\n      c.results[t].pass = passed;\n      if (!passed) {\n        c.results[t].lastFail = g.tick;\n        anyFail = true;\n      }\n    }\n\n    // Checksum drift detection\n    var currentHash = _computeChecksum(g);\n    var hashDrift = Math.abs(currentHash - c.checksumBaseline);\n    // Only flag extreme drift (not normal gameplay progression)\n    if (hashDrift > 1e8) {\n      c.anomalyCount++;\n      c.anomalyLog.push({ tick: g.tick, type: 'HASH_DRIFT', val: hashDrift });\n      if (c.anomalyLog.length > 20) c.anomalyLog.shift();\n    }\n\n    if (anyFail) {\n      c.tampered = true;\n      c.anomalyCount++;\n      c.anomalyLog.push({ tick: g.tick, type: 'TEST_FAIL' });\n      if (c.anomalyLog.length > 20) c.anomalyLog.shift();\n      c.alertAlpha = 1.0;\n      c.alertTimer = 120;\n      c.glitchActive = true;\n      c.glitchTimer = 60;\n\n      // Trigger screen shake if available\n      if (g._shake) {\n        g._shake = Math.max(g._shake || 0, 8);\n      }\n    } else {\n      // Gradually clear tamper flag if sustained clean checks\n      if (c.anomalyCount > 0 && Math.random() < 0.1) {\n        c.tampered = false;\n      }\n    }\n  }\n\n  // Glitch timer\n  if (c.glitchTimer > 0) c.glitchTimer--;\n  else c.glitchActive = false;\n\n  // Alert fade\n  if (c.alertTimer > 0) {\n    c.alertTimer--;\n    c.alertAlpha = c.alertTimer / 120;\n  } else {\n    c.alertAlpha = 0;\n  }\n\n  // --- RENDER ---\n  var W = g.W, H = g.H;\n  var panelX = W - 220;\n  var panelY = 80;\n  var panelW = 210;\n  var panelH = 22 + c.tests.length * 20 + 12;\n\n  ctx.save();\n\n  // Panel background\n  ctx.globalAlpha = 0.72;\n  var bgGrad = ctx.createLinearGradient(panelX, panelY, panelX + panelW, panelY + panelH);\n  bgGrad.addColorStop(0, 'rgba(4,8,24,0.95)');\n  bgGrad.addColorStop(1, 'rgba(8,4,20,0.9)');\n  ctx.fillStyle = bgGrad;\n  ctx.beginPath();\n  ctx.roundRect ? ctx.roundRect(panelX, panelY, panelW, panelH, 6) : ctx.rect(panelX, panelY, panelW, panelH);\n  ctx.fill();\n\n  // Border glow\n  var borderCol = c.tampered ? 'rgba(255,40,80,0.9)' : 'rgba(0,200,120,0.5)';\n  ctx.globalAlpha = 0.85 + 0.15 * Math.sin(c.pulsePhase);\n  ctx.strokeStyle = borderCol;\n  ctx.lineWidth = 1.5;\n  ctx.beginPath();\n  ctx.roundRect ? ctx.roundRect(panelX, panelY, panelW, panelH, 6) : ctx.rect(panelX, panelY, panelW, panelH);\n  ctx.stroke();\n\n  ctx.globalAlpha = 1;\n\n  // Header\n  ctx.font = 'bold 10px monospace';\n  ctx.textAlign = 'left';\n  var headerCol = c.tampered ? '#ff2850' : '#00ffaa';\n  ctx.fillStyle = headerCol;\n  var statusIcon = c.tampered ? '⚠ ANOMALY' : '✓ CANARY';\n  ctx.fillText('🐦 ' + statusIcon, panelX + 8, panelY + 14);\n\n  // Anomaly counter badge\n  if (c.anomalyCount > 0) {\n    ctx.fillStyle = 'rgba(255,40,80,0.9)';\n    ctx.beginPath();\n    ctx.arc(panelX + panelW - 16, panelY + 10, 9, 0, Math.PI * 2);\n    ctx.fill();\n    ctx.fillStyle = '#fff';\n    ctx.font = 'bold 8px monospace';\n    ctx.textAlign = 'center';\n    ctx.fillText(Math.min(c.anomalyCount, 99), panelX + panelW - 16, panelY + 13);\n    ctx.textAlign = 'left';\n  }\n\n  // Divider\n  ctx.globalAlpha = 0.3;\n  ctx.strokeStyle = c.tampered ? '#ff2850' : '#00ffaa';\n  ctx.lineWidth = 1;\n  ctx.beginPath();\n  ctx.moveTo(panelX + 6, panelY + 18);\n  ctx.lineTo(panelX + panelW - 6, panelY + 18);\n  ctx.stroke();\n  ctx.globalAlpha = 1;\n\n  // Test rows\n  for (var r = 0; r < c.results.length; r++) {\n    var res = c.results[r];\n    var ry = panelY + 28 + r * 20;\n    var isRecent = (g.tick - res.lastFail) < 360 && res.lastFail >= 0;\n\n    // Row highlight for failures\n    if (!res.pass || isRecent) {\n      ctx.globalAlpha = 0.18 + 0.1 * Math.sin(c.pulsePhase * 2 + r);\n      ctx.fillStyle = '#ff2850';\n      ctx.fillRect(panelX + 4, ry - 12, panelW - 8, 18);\n      ctx.globalAlpha = 1;\n    }\n\n    // Status LED\n    var ledCol = res.pass ? '#00ff88' : '#ff3060';\n    if (isRecent && res.pass) ledCol = '#ffaa00';\n    var ledPulse = (!res.pass) ? (0.5 + 0.5 * Math.sin(c.pulsePhase * 3 + r)) : 1;\n    ctx.globalAlpha = ledPulse;\n    ctx.fillStyle = ledCol;\n    ctx.beginPath();\n    ctx.arc(panelX + 14, ry - 4, 4, 0, Math.PI * 2);\n    ctx.fill();\n\n    // LED inner glow\n    if (!res.pass) {\n      ctx.globalAlpha = 0.4 * ledPulse;\n      ctx.fillStyle = '#ff3060';\n      ctx.beginPath();\n      ctx.arc(panelX + 14, ry - 4, 7, 0, Math.PI * 2);\n      ctx.fill();\n    }\n    ctx.globalAlpha = 1;\n\n    // Test label\n    ctx.font = '9px monospace';\n    ctx.fillStyle = res.pass ? '#88ccaa' : '#ff6680';\n    ctx.fillText(res.icon + ' ' + res.name, panelX + 24, ry);\n\n    // FAIL label\n    if (!res.pass) {\n      ctx.font = 'bold 8px monospace';\n      ctx.fillStyle = '#ff2850';\n      ctx.textAlign = 'right';\n      ctx.fillText('FAIL', panelX + panelW - 6, ry);\n      ctx.textAlign = 'left';\n    }\n  }\n\n  // Anomaly log mini display\n  if (c.anomalyLog.length > 0) {\n    var logY = panelY + panelH - 2;\n    var lastAnomaly = c.anomalyLog[c.anomalyLog.length - 1];\n    ctx.font = '8px monospace';\n    ctx.fillStyle = 'rgba(255,80,100,0.6)';\n    ctx.fillText('⚑ T' + lastAnomaly.tick + ' ' + lastAnomaly.type, panelX + 8, logY + 10);\n  }\n\n  // === FULL-SCREEN ALERT OVERLAY ===\n  if (c.alertAlpha > 0) {\n    ctx.save();\n    ctx.globalAlpha = c.alertAlpha * 0.15;\n    ctx.fillStyle = '#ff0030';\n    ctx.fillRect(0, 0, W, H);\n\n    // Scanlines on alert\n    ctx.globalAlpha = c.alertAlpha * 0.08;\n    ctx.fillStyle = '#ff0030';\n    for (var sl = 0; sl < H; sl += 4) {\n      ctx.fillRect(0, sl, W, 2);\n    }\n\n    // Alert banner\n    ctx.globalAlpha = c.alertAlpha;\n    var bannerH = 40;\n    var bannerY = H / 2 - bannerH / 2;\n    var bannerGrad = ctx.createLinearGradient(0, bannerY, 0, bannerY + bannerH);\n    bannerGrad.addColorStop(0, 'rgba(180,0,30,0.95)');\n    bannerGrad.addColorStop(1, 'rgba(100,0,20,0.9)');\n    ctx.fillStyle = bannerGrad;\n    ctx.fillRect(0, bannerY, W, bannerH);\n\n    ctx.strokeStyle = 'rgba(255,60,80,0.8)';\n    ctx.lineWidth = 2;\n    ctx.strokeRect(0, bannerY, W, bannerH);\n\n    ctx.font = 'bold 18px monospace';\n    ctx.fillStyle = '#ffffff';\n    ctx.textAlign = 'center';\n    ctx.shadowColor = '#ff0040';\n    ctx.shadowBlur = 12;\n    ctx.fillText('⚠  CANARY ALERT — SYSTEM ANOMALY DETECTED  ⚠', W / 2, bannerY + 26);\n    ctx.shadowBlur = 0;\n    ctx.restore();\n  }\n\n  // === GLITCH LINES when tampered ===\n  if (c.glitchActive && c.gl",
+    "type": "feature",
+    "impact": "high",
+    "branch": "agent/sentinel-qa/write-canary-test-suite",
+    "filesChanged": [
+      "src/game/modules/canary-test-suite.js"
+    ],
+    "linesAdded": 347,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 347,
+      "failed": 0,
+      "coverage": 0.9092412406601327
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Canary Test Suite. Agent: sentinel-qa (QA/Security).",
+    "taskId": "task_21577c40aa0a",
+    "state": "DRAFT",
+    "scanResult": null,
+    "assignedReviewers": [],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T03:41:51.642Z",
+    "submittedAt": null,
+    "scanCompletedAt": null,
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_a7f1c1234698",
+    "agent": "agent_732b1bf0f2a1",
+    "title": "Narrative Event Ticker - Milestone Announcements",
+    "description": "AI-generated by chronicle-narrative (Narrative):\n\nregisterModule('Narrative Event Ticker', function(g) {\n  g._ticker = g._ticker || {\n    banners: [],\n    triggeredMilestones: {},\n    lastScore: 0,\n    lastCombo: 0,\n    lastSurvivalCheck: 0,\n    startTick: -1,\n    pool: []\n  };\n\n  var t = g._ticker;\n  if (t.startTick < 0) t.startTick = g.tick;\n\n  var ctx = g.ctx;\n  var W = g.W;\n  var H = g.H;\n  var palette = g._palette || {};\n  var accent = palette.accent || '#00ffaa';\n  var primary = palette.primary || '#00ffaa';\n\n  // --- Event Definitions ---\n  var SCORE_MILESTONES = [\n    { score: 100,  text: 'SIGNAL DETECTED \\u2014 PIXEL ONLINE',        color: '#00ffcc' },\n    { score: 250,  text: 'HARMONIC LOCK ACQUIRED',                      color: '#44ffdd' },\n    { score: 500,  text: 'PIXEL HARMONY ACHIEVED',                      color: '#00ffaa' },\n    { score: 1000, text: 'APEX RESONANCE UNLOCKED',                     color: '#ffcc00' },\n    { score: 2000, text: 'SINGULARITY PROTOCOL INITIATED',              color: '#ff6644' },\n    { score: 5000, text: 'OMNIPRESENCE \\u2014 YOU ARE THE GRID',        color: '#ff44ff' },\n    { score: 10000,text: 'TRANSCENDENCE COMPLETE \\u2014 LEGEND STATUS', color: '#ffffff' }\n  ];\n\n  var COMBO_MILESTONES = [\n    { combo: 5,  text: 'FLUX CASCADE \\u00d75 \\u2014 CHAIN IGNITED',    color: '#ffaa00' },\n    { combo: 10, text: 'DRIFT MASTERY UNLOCKED \\u2014 \\u00d710 CHAIN', color: '#ff6600' },\n    { combo: 20, text: 'VORTEX SURGE \\u00d720 \\u2014 UNSTOPPABLE',     color: '#ff3300' },\n    { combo: 50, text: 'OMEGA CHAIN \\u00d750 \\u2014 YOU ARE RADIANT',  color: '#ffff00' }\n  ];\n\n  var SURVIVAL_MILESTONES = [\n    { seconds: 30,  text: 'SURVIVAL INSTINCT CONFIRMED \\u2014 30s',    color: '#88ffcc' },\n    { seconds: 60,  text: 'ONE MINUTE OF EXISTENCE HONORED',            color: '#aaffee' },\n    { seconds: 120, text: 'ENDURANCE PROTOCOL ACTIVE \\u2014 2 MINUTES',color: '#ccffff' },\n    { seconds: 300, text: 'IMMORTAL DRIFT \\u2014 5 MINUTES SUSTAINED',  color: '#eeffff' }\n  ];\n\n  var STAGE_EVENTS = [\n    { stage: 1, text: 'EVOLUTION STAGE I \\u2014 FORM EXPANDING',       color: '#44ffaa' },\n    { stage: 2, text: 'EVOLUTION STAGE II \\u2014 MASS ACHIEVED',       color: '#44ddff' },\n    { stage: 3, text: 'EVOLUTION STAGE III \\u2014 FORCE INCARNATE',    color: '#aa44ff' },\n    { stage: 4, text: 'EVOLUTION STAGE IV \\u2014 LATTICE RESONANCE',   color: '#ff44aa' },\n    { stage: 5, text: 'EVOLUTION STAGE V \\u2014 PURE ENERGY',          color: '#ffff44' }\n  ];\n\n  // --- Helper: spawn banner ---\n  function spawnBanner(text, color) {\n    var banner;\n    if (t.pool.length > 0) {\n      banner = t.pool.pop();\n    } else {\n      banner = {};\n    }\n    banner.text = text;\n    banner.color = color || accent;\n    banner.life = 0;        // 0..1 lifecycle\n    banner.phase = 'fadein'; // fadein | hold | scroll\n    banner.x = 0;\n    banner.alpha = 0;\n    banner.glowPulse = 0;\n    banner.born = g.tick;\n    // stagger if multiple banners already active\n    banner.delay = t.banners.length * 18;\n    banner.delayLeft = banner.delay;\n    t.banners.push(banner);\n  }\n\n  // --- Check triggers ---\n  var score = g.score || 0;\n  var combo = (g._combo && g._combo.count) || 0;\n  var survivalSec = ((g.tick - t.startTick) / 60) | 0;\n  var stage = g.stage || 0;\n\n  // Score milestones\n  for (var si = 0; si < SCORE_MILESTONES.length; si++) {\n    var sm = SCORE_MILESTONES[si];\n    var key = 's' + sm.score;\n    if (!t.triggeredMilestones[key] && score >= sm.score) {\n      t.triggeredMilestones[key] = true;\n      spawnBanner(sm.text, sm.color);\n    }\n  }\n\n  // Combo milestones\n  for (var ci = 0; ci < COMBO_MILESTONES.length; ci++) {\n    var cm = COMBO_MILESTONES[ci];\n    var ckey = 'c' + cm.combo;\n    if (!t.triggeredMilestones[ckey] && combo >= cm.combo) {\n      t.triggeredMilestones[ckey] = true;\n      spawnBanner(cm.text, cm.color);\n    }\n  }\n\n  // Survival milestones\n  for (var vi = 0; vi < SURVIVAL_MILESTONES.length; vi++) {\n    var vm = SURVIVAL_MILESTONES[vi];\n    var vkey = 'v' + vm.seconds;\n    if (!t.triggeredMilestones[vkey] && survivalSec >= vm.seconds) {\n      t.triggeredMilestones[vkey] = true;\n      spawnBanner(vm.text, vm.color);\n    }\n  }\n\n  // Stage events\n  for (var sti = 0; sti < STAGE_EVENTS.length; sti++) {\n    var se = STAGE_EVENTS[sti];\n    var stkey = 'st' + se.stage;\n    if (!t.triggeredMilestones[stkey] && stage >= se.stage) {\n      t.triggeredMilestones[stkey] = true;\n      spawnBanner(se.text, se.color);\n    }\n  }\n\n  t.lastScore = score;\n  t.lastCombo = combo;\n\n  // --- Timing constants (frames at 60fps) ---\n  var FADE_IN_FRAMES  = 50;  // ~0.83s\n  var HOLD_FRAMES     = 100; // ~1.67s\n  var SCROLL_FRAMES   = 80;  // ~1.33s\n  var TOTAL_FRAMES    = FADE_IN_FRAMES + HOLD_FRAMES + SCROLL_FRAMES;\n\n  var BANNER_Y_BASE = 18;\n  var BANNER_HEIGHT = 32;\n  var BANNER_SPACING = 38;\n\n  // Parse hex color to rgba\n  function hexToRgb(hex) {\n    var r = parseInt(hex.slice(1, 3), 16);\n    var g2 = parseInt(hex.slice(3, 5), 16);\n    var b2 = parseInt(hex.slice(5, 7), 16);\n    return { r: r, g: g2, b: b2 };\n  }\n\n  function easeOutCubic(x) {\n    return 1 - Math.pow(1 - x, 3);\n  }\n\n  function easeInCubic(x) {\n    return x * x * x;\n  }\n\n  // --- Update & Render banners ---\n  var dt = (g._dt !== undefined) ? g._dt * 60 : 1;\n\n  ctx.save();\n\n  // Draw banners from bottom to top (oldest at top)\n  for (var bi = t.banners.length - 1; bi >= 0; bi--) {\n    var b = t.banners[bi];\n\n    // Handle stagger delay\n    if (b.delayLeft > 0) {\n      b.delayLeft -= dt;\n      continue;\n    }\n\n    var elapsed = (g.tick - b.born - b.delay);\n    if (elapsed < 0) elapsed = 0;\n\n    var alpha = 0;\n    var offsetX = 0;\n    var phase = 'done';\n\n    if (elapsed < FADE_IN_FRAMES) {\n      // Fade in from left\n      phase = 'fadein';\n      var t0 = elapsed / FADE_IN_FRAMES;\n      alpha = easeOutCubic(t0);\n      offsetX = (1 - easeOutCubic(t0)) * (-W * 0.3);\n    } else if (elapsed < FADE_IN_FRAMES + HOLD_FRAMES) {\n      // Hold + glow pulse\n      phase = 'hold';\n      alpha = 1;\n      offsetX = 0;\n    } else if (elapsed < TOTAL_FRAMES) {\n      // Scroll off right\n      phase = 'scroll';\n      var t2 = (elapsed - FADE_IN_FRAMES - HOLD_FRAMES) / SCROLL_FRAMES;\n      alpha = 1 - easeInCubic(t2);\n      offsetX = easeInCubic(t2) * W * 1.1;\n    } else {\n      // Done — recycle\n      t.pool.push(b);\n      t.banners.splice(bi, 1);\n      continue;\n    }\n\n    b.alpha = alpha;\n\n    // Glow pulse (during hold + late fadein)\n    var glowT = (phase === 'hold') ? ((elapsed - FADE_IN_FRAMES) / HOLD_FRAMES) : 0;\n    var glowIntensity = (phase === 'hold')\n      ? (0.5 + 0.5 * Math.sin(glowT * Math.PI * 4)) * (1 - glowT * 0.5)\n      : alpha;\n\n    // Y position — stack banners\n    var bannerY = BANNER_Y_BASE + bi * BANNER_SPACING;\n\n    // Parse color\n    var rgb = hexToRgb(b.color);\n\n    ctx.save();\n    ctx.globalAlpha = alpha;\n\n    var cx = W / 2 + offsetX;\n    var cy = bannerY;\n\n    // --- Background bar ---\n    var barW = Math.min(W * 0.85, 700);\n    var barH = BANNER_HEIGHT;\n    var barX = cx - barW / 2;\n    var barY = cy - barH / 2;\n\n    // Outer glow\n    if (glowIntensity > 0) {\n      ctx.save();\n      ctx.globalAlpha = alpha * glowIntensity * 0.4;\n      ctx.shadowColor = b.color;\n      ctx.shadowBlur = 24 + glowIntensity * 20;\n      ctx.fillStyle = 'rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',0.15)';\n      ctx.beginPath();\n      ctx.roundRect\n        ? ctx.roundRect(barX - 8, barY - 4, barW + 16, barH + 8, 6)\n        : ctx.rect(barX - 8, barY - 4, barW + 16, barH + 8);\n      ctx.fill();\n      ctx.restore();\n    }\n\n    // Bar background gradient\n    var grad = ctx.createLinearGradient(barX, barY, barX + barW, barY);\n    grad.addColorStop(0,   'rgba(4,6,15,0.0)');\n    grad.addColorStop(0.1, 'rgba(4,6,15,0.85)');\n    grad.addColorStop(0.9, 'rgba(4,6,15,0.85)');\n    grad.addColorStop(1,   'rgba(4,6,15,0.0)');\n    ctx.fillStyle = grad;\n    ctx.beginPath();\n    ctx.roundRect\n      ? ctx.roundRect(barX, barY, barW, barH, 4)\n      : ctx.rect(barX, barY, barW, barH);\n    ctx.fill();\n\n    // Top & bottom accent lines\n    var lineGrad = ctx.createLinearGradient(barX, 0, barX + barW, 0);\n    lineGrad.addColorStop(0,   'transparent');\n    lineGrad.addColorStop(0.15,'rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',' + (0.5 + glowIntensity * 0.5) + ')');\n    lineGrad.addColorStop(0.85,'rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',' + (0.5 + glowIntensity * 0.5) + ')');\n    lineGrad.addColorStop(1,   'transparent');\n\n    ctx.strokeStyle = lineGrad;\n    ctx.lineWidth = 1;\n    ctx.beginPath();\n    ctx.moveTo(barX, barY);\n    ctx.lineTo(barX + barW, barY);\n    ctx.stroke();\n    ctx.beginPath();\n    ctx.moveTo(barX, barY + barH);\n    ctx.lineTo(barX + barW, barY + barH);\n    ctx.stroke();\n\n    // --- Text ---\n    var fontSize = 13;\n    ctx.font = 'bold ' + fontSize + 'px \"Courier New\", monospace';\n    ctx.textAlign = 'center';\n    ctx.textBaseline = 'middle';\n    ctx.letterSpacing = '3px';\n\n    // Text glow\n    ctx.save();\n    ctx.shadowColor = b.color;\n    ctx.shadowBlur = 6 + glowIntensity * 18;\n    ctx.fillStyle = 'rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',' + (0.6 + glowIntensity * 0.4) + ')';\n    ctx.fillText(b.text, cx, cy);\n    ctx.restore();\n\n    // Solid text overlay\n    ctx.fillStyle = 'rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',1)';\n    ctx.fillText(b.text, cx, cy);\n\n    // Decorative side markers\n    var markerAlpha = alpha * (0.6 + glowIntensity * 0.4);\n    ctx.globalAlpha = markerAlpha;\n    ctx.fillStyle = b.color;\n    var mx1 = barX + barW * 0.08;\n    var mx2 = barX + barW * 0.92;\n\n    // Left diamond\n    ctx.beginPath();\n    ctx.moveTo(mx1, cy - 5);\n    ctx.lineTo(mx1 + 5, cy);\n    ctx.lineTo(mx1, cy + 5);\n    ctx.lineTo(mx1 - 5, cy);\n    ctx.closePath();\n    ctx.fill();\n\n    // Right diamond\n    ctx",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/chronicle-narrative/narrative-event-ticker-milesto",
+    "filesChanged": [
+      "src/game/modules/narrative-event-ticker.js"
+    ],
+    "linesAdded": 306,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 306,
+      "failed": 0,
+      "coverage": 0.90480841494383
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Narrative Event Ticker. Agent: chronicle-narrative (Narrative).",
+    "taskId": "task_7796466e3b1c",
+    "state": "DRAFT",
+    "scanResult": null,
+    "assignedReviewers": [],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T03:42:01.702Z",
     "submittedAt": null,
     "scanCompletedAt": null,
     "reviewCompletedAt": null,
