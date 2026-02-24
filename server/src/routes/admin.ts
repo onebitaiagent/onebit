@@ -348,7 +348,11 @@ router.patch('/modules/:id', (req: Request, res: Response) => {
     res.status(400).json({ error: 'Provide { code } and/or { order }' });
     return;
   }
-  const result = updateModuleCode(req.params.id, { code, order });
+  // Only include defined fields to avoid overwriting existing values with undefined
+  const updates: { code?: string; order?: number } = {};
+  if (code !== undefined) updates.code = code;
+  if (order !== undefined) updates.order = order;
+  const result = updateModuleCode(req.params.id, updates);
   if (!result) {
     res.status(400).json({ error: 'Module not found or code validation failed' });
     return;
