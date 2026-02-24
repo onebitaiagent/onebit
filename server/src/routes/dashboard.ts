@@ -4,6 +4,7 @@ import { getTasks } from '../services/task-queue.js';
 import { getProposals } from '../services/consensus-engine.js';
 import { getAuditCount, verifyChain } from '../services/audit-log.js';
 import { getActiveModules } from '../services/game-evolution.js';
+import { getCurrentPhase } from '../services/live-agents.js';
 import { messageBus } from '../services/message-bus.js';
 import type { AgentRoleName } from '../models/types.js';
 import { VALID_ROLES } from '../models/types.js';
@@ -162,6 +163,11 @@ router.get('/feed', (_req, res) => {
       agents: agents.filter(a => a.status === 'active').length,
     },
   });
+});
+
+// GET /api/dashboard/phase — public phase progress (no auth needed)
+router.get('/phase', (_req, res) => {
+  res.json(getCurrentPhase());
 });
 
 // GET /api/dashboard/tweets — recent tweet-like content for the landing page

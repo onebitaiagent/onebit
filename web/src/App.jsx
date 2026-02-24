@@ -482,6 +482,27 @@ function PlayPage() {
 function ComplexityPage() {
   const [activePhase, setActivePhase] = useState(0);
   const [activeDim, setActiveDim] = useState(null);
+  const [livePhase, setLivePhase] = useState(null);
+  const [liveModules, setLiveModules] = useState(null);
+
+  useEffect(() => {
+    apiFetch("/api/dashboard/phase").then(data => {
+      if (data) {
+        setLivePhase(data);
+        // Auto-select the current live phase in the timeline
+        const idx = PHASES.findIndex(p => p.label === data.phase);
+        if (idx >= 0) setActivePhase(idx);
+      }
+    });
+    apiFetch("/api/game/evolution").then(data => {
+      if (data) setLiveModules(data);
+    });
+  }, []);
+
+  // Map backend phase names to PHASES index
+  const livePhaseIdx = livePhase ? PHASES.findIndex(p => p.label === livePhase.phase) : -1;
+  const isPhaseCompleted = (idx) => livePhaseIdx >= 0 && idx < livePhaseIdx;
+  const isCurrentPhase = (idx) => livePhaseIdx >= 0 && idx === livePhaseIdx;
 
   return (
     <div style={{ padding: "40px 20px", maxWidth: 900, margin: "0 auto" }}>
@@ -491,17 +512,49 @@ function ComplexityPage() {
         <p style={{ fontSize: 13, color: css.dim, maxWidth: 550, margin: "12px auto 0", lineHeight: 1.7 }}>An honest assessment of the ceiling — what AI agents can realistically build, where the bottlenecks are, and what still needs humans.</p>
       </div>
 
+      {/* Live progress banner */}
+      {livePhase && (
+        <div style={{
+          padding: "16px 20px", marginBottom: 24, borderRadius: 10,
+          background: `linear-gradient(135deg, ${css.surface}, ${css.surface2})`,
+          border: `1px solid ${css.pixel}33`,
+          display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12,
+        }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <div style={{ width: 8, height: 8, borderRadius: "50%", background: css.pixel, animation: "pulse 2s ease-in-out infinite" }} />
+            <div>
+              <div style={{ fontSize: 11, color: css.pixel, fontWeight: 700, fontFamily: css.fontM, textTransform: "uppercase", letterSpacing: "0.1em" }}>
+                Currently in {livePhase.phase} Phase
+              </div>
+              <div style={{ fontSize: 10, color: css.dim, marginTop: 2 }}>
+                {livePhase.tasksMerged}/{livePhase.tasksInPhase} features merged
+                {livePhase.timeGate && !livePhase.timeGate.met && ` · Time gate: ${livePhase.timeGate.elapsedHours.toFixed(1)}/${livePhase.timeGate.requiredHours}h`}
+                {liveModules && ` · ${liveModules.activeFeatures} modules live`}
+              </div>
+            </div>
+          </div>
+          <div style={{
+            fontSize: 10, padding: "4px 12px", borderRadius: 4, fontFamily: css.fontM,
+            background: `${css.pixel}18`, color: css.pixel, border: `1px solid ${css.pixel}33`,
+          }}>
+            {livePhase.phaseProgress} complete
+          </div>
+        </div>
+      )}
+
       {/* Timeline */}
       <div style={{ display: "flex", gap: 2, marginBottom: 24, overflowX: "auto", paddingBottom: 8 }}>
         {PHASES.map((p, i) => (
           <button key={i} onClick={() => setActivePhase(i)} style={{
             flex: "1 0 auto", minWidth: 80, padding: "10px 6px", textAlign: "center",
             background: activePhase === i ? css.surface2 : css.surface,
-            border: `1px solid ${activePhase === i ? p.color : css.border}`,
+            border: `1px solid ${activePhase === i ? p.color : isCurrentPhase(i) ? css.pixel + "66" : css.border}`,
             borderRadius: 8, cursor: "pointer", position: "relative", overflow: "hidden",
           }}>
             {activePhase === i && <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 2, background: p.color }} />}
-            <div style={{ fontSize: 10, color: p.color, fontWeight: 700, fontFamily: css.fontM }}>{p.label}</div>
+            {isPhaseCompleted(i) && <div style={{ position: "absolute", top: 4, right: 6, fontSize: 8, color: "#22c55e" }}>✓</div>}
+            {isCurrentPhase(i) && <div style={{ position: "absolute", top: 4, right: 6, width: 5, height: 5, borderRadius: "50%", background: css.pixel, animation: "pulse 2s ease-in-out infinite" }} />}
+            <div style={{ fontSize: 10, color: isCurrentPhase(i) ? css.pixel : isPhaseCompleted(i) ? "#22c55e" : p.color, fontWeight: 700, fontFamily: css.fontM }}>{p.label}</div>
             <div style={{ fontSize: 8, color: css.dim, fontFamily: css.fontM }}>{p.time}</div>
           </button>
         ))}
@@ -509,12 +562,18 @@ function ComplexityPage() {
 
       {(() => {
         const p = PHASES[activePhase];
+        const isCurrent = isCurrentPhase(activePhase);
+        const isDone = isPhaseCompleted(activePhase);
         return (
-          <div style={{ background: css.surface, border: `1px solid ${css.border}`, borderRadius: 12, padding: 24, marginBottom: 32, position: "relative", overflow: "hidden" }}>
+          <div style={{ background: css.surface, border: `1px solid ${isCurrent ? css.pixel + "44" : css.border}`, borderRadius: 12, padding: 24, marginBottom: 32, position: "relative", overflow: "hidden" }}>
             <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, ${p.color}, ${p.color}44)` }} />
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", flexWrap: "wrap", gap: 16 }}>
               <div>
-                <h3 style={{ fontSize: 24, fontWeight: 900, fontFamily: css.fontD, color: p.color }}>{p.title}</h3>
+                <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                  <h3 style={{ fontSize: 24, fontWeight: 900, fontFamily: css.fontD, color: p.color }}>{p.title}</h3>
+                  {isCurrent && <span style={{ fontSize: 9, padding: "2px 8px", background: `${css.pixel}22`, color: css.pixel, borderRadius: 4, fontFamily: css.fontM, letterSpacing: "0.1em", textTransform: "uppercase", border: `1px solid ${css.pixel}33` }}>Current</span>}
+                  {isDone && <span style={{ fontSize: 9, padding: "2px 8px", background: "#22c55e22", color: "#22c55e", borderRadius: 4, fontFamily: css.fontM, letterSpacing: "0.1em", textTransform: "uppercase", border: "1px solid #22c55e33" }}>Complete</span>}
+                </div>
                 <div style={{ fontSize: 11, color: css.dim, fontFamily: css.fontM, marginBottom: 12 }}>{p.time} · {p.loc} lines</div>
               </div>
               <div style={{ background: css.surface2, border: `1px solid ${css.border}`, borderRadius: 8, padding: "8px 14px", textAlign: "right" }}>
@@ -524,8 +583,14 @@ function ComplexityPage() {
             </div>
             <p style={{ fontSize: 12, color: "#94a3b8", lineHeight: 1.7, margin: "8px 0 16px" }}>{p.summary}</p>
             <div style={{ height: 6, background: css.surface2, borderRadius: 3, overflow: "hidden", marginBottom: 16 }}>
-              <div style={{ height: "100%", width: `${p.complexity}%`, background: `linear-gradient(90deg, ${p.color}, ${css.accent})`, borderRadius: 3, transition: "width 0.8s" }} />
+              <div style={{ height: "100%", width: `${isDone ? 100 : isCurrent && livePhase ? Math.round((livePhase.tasksMerged / Math.max(livePhase.tasksInPhase, 1)) * 100) : p.complexity}%`, background: `linear-gradient(90deg, ${isDone ? "#22c55e" : p.color}, ${isDone ? "#22c55e88" : css.accent})`, borderRadius: 3, transition: "width 0.8s" }} />
             </div>
+            {isCurrent && livePhase && (
+              <div style={{ fontSize: 10, color: css.dim, marginBottom: 12, fontFamily: css.fontM }}>
+                {livePhase.tasksMerged}/{livePhase.tasksInPhase} roadmap features merged
+                {livePhase.timeGate && <span> · {livePhase.timeGate.elapsedHours.toFixed(1)}h in phase{livePhase.timeGate.met ? " (gate met)" : ` (need ${livePhase.timeGate.requiredHours}h)`}</span>}
+              </div>
+            )}
             <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
               {p.systems.map((s, i) => (
                 <span key={i} style={{ fontSize: 10, padding: "3px 10px", background: css.surface2, border: `1px solid ${css.border}`, borderRadius: 4, color: "#94a3b8", fontFamily: css.fontM }}>{s}</span>
