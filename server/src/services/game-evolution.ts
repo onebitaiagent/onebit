@@ -215,9 +215,10 @@ export function assembleGameHTML(): string {
 body { background: #04060f; overflow: hidden; font-family: 'Courier New', monospace; }
 canvas { display: block; width: 100vw; height: 100vh; }
 #evolution-overlay {
-  position: fixed; top: 12px; right: 12px;
+  position: fixed; top: 90px; right: 12px;
   background: rgba(4,6,15,0.85); border: 1px solid #00ffaa33;
   border-radius: 6px; padding: 10px 14px; max-width: 280px;
+  max-height: calc(100vh - 120px); overflow-y: auto;
   font-size: 11px; color: #64748b; z-index: 100;
   backdrop-filter: blur(8px);
 }
