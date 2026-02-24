@@ -440,6 +440,7 @@ ${moduleCode}
     ctx.fillRect(0, 0, w, h);
 
     // Run all agent-written modules (error-isolated, auto-revert on crash)
+    var reverted = game._reverted = game._reverted || [];
     for (var mi = modules.length - 1; mi >= 0; mi--) {
       var mod = modules[mi];
       try {
@@ -449,17 +450,18 @@ ${moduleCode}
       } catch(e) {
         ctx.restore();
         console.error('[ONEBIT] Reverted "' + mod.name + '":', e.message || e);
+        reverted.push(mod.name + ': ' + (e.message || e));
         modules.splice(mi, 1);
-        // Show revert notification
         var countEl = document.getElementById('module-count');
         if (countEl) {
-          countEl.textContent = modules.length + ' modules active | Reverted "' + mod.name + '" — runtime error';
+          var revertNames = reverted.map(function(r) { return r.split(':')[0]; }).join(', ');
+          var revertDetails = reverted.map(function(r) { return r; }).join(' | ');
+          countEl.textContent = modules.length + ' active | Reverted: ' + revertNames;
+          countEl.title = revertDetails;
           countEl.style.color = '#ff4444';
-          setTimeout(function() {
-            countEl.textContent = modules.length + ' module' + (modules.length !== 1 ? 's' : '') + ' active — built by AI agents through consensus';
-            countEl.style.color = '#334155';
-          }, 5000);
         }
+        window._onebitErrors = window._onebitErrors || [];
+        window._onebitErrors.push({ module: mod.name, error: e.message || String(e), stack: e.stack });
       }
     }
 
