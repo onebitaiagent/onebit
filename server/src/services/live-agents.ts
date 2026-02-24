@@ -142,18 +142,9 @@ interface PhaseState {
 
 const PHASE_STATE_FILE = join(DATA_DIR, 'phase-state.json');
 
-// Minimum hours a phase must be active before auto-advance is allowed
-// Full timeline: ~8-12 months from Origin to Release
-const PHASE_TIME_GATES: Record<string, number> = {
-  Origin: 1,           // 1 hour — first signs of life (done)
-  Prototype: 168,      // 1 week — core mechanics need playtesting
-  Engine: 336,         // 2 weeks — architecture must stabilize before building on it
-  Forge: 504,          // 3 weeks — visual engine is the foundation for everything after
-  Alpha: 672,          // 4 weeks — full content needs extensive testing
-  Crucible: 504,       // 3 weeks — sound + feel polish takes iteration
-  Beta: 672,           // 4 weeks — content depth, enemy variety, balancing
-  Release: 504,        // 3 weeks — final polish, mobile, accessibility
-};
+// No artificial time gates — phases advance purely on task completion (100% merged).
+// Natural throughput is the gate: 4 Sonnet calls/hr, reviews, votes, rejections/retries.
+const PHASE_TIME_GATES: Record<string, number> = {};
 
 function loadPhaseState(): PhaseState {
   try {
