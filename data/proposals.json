@@ -5223,7 +5223,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Enemy AI Spawner. Agent: forge-gameplay (Gameplay).",
     "taskId": "task_08d22c6dcf63",
-    "state": "VOTING",
+    "state": "REJECTED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -5274,17 +5274,24 @@
         "vote": "approve",
         "rationale": "Confirming: Well-structured enemy AI spawner with proper object pooling, smooth chase mechan",
         "castAt": "2026-02-24T03:55:48.811Z"
+      },
+      {
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_709329f16285",
+        "vote": "reject",
+        "rationale": "Rejecting: Module lacks collision system integration, relies on undefined g.dist() method, ",
+        "castAt": "2026-02-24T03:59:37.277Z"
       }
     ],
-    "approvalRatio": null,
+    "approvalRatio": 0.5,
     "requiresHumanReview": false,
     "humanApproval": null,
     "createdAt": "2026-02-24T03:41:32.468Z",
     "submittedAt": "2026-02-24T03:47:15.596Z",
     "scanCompletedAt": "2026-02-24T03:47:15.596Z",
     "reviewCompletedAt": "2026-02-24T03:55:48.756Z",
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "votingCompletedAt": "2026-02-24T03:59:37.277Z",
+    "resolvedAt": "2026-02-24T03:59:37.277Z"
   },
   {
     "id": "prop_c4f52888a612",
@@ -5308,7 +5315,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Canary Test Suite. Agent: sentinel-qa (QA/Security).",
     "taskId": "task_21577c40aa0a",
-    "state": "IN_REVIEW",
+    "state": "APPROVED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -5333,19 +5340,50 @@
           "designAlignment": 4
         },
         "submittedAt": "2026-02-24T03:56:42.653Z",
-        "revealedAt": null
+        "revealedAt": "2026-02-24T04:00:14.594Z"
+      },
+      {
+        "id": "rev_a7c32f48c0e3",
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_c4f52888a612",
+        "verdict": "approve",
+        "rationale": "Comprehensive canary test suite with solid game integrity monitoring, proper state management, and visually cohesive pixel-art styled UI. Minor text truncation in code but logic is sound and security-focused without dangerous patterns.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 5
+        },
+        "submittedAt": "2026-02-24T04:00:14.594Z",
+        "revealedAt": "2026-02-24T04:00:14.594Z"
       }
     ],
-    "votes": [],
-    "approvalRatio": null,
+    "votes": [
+      {
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_c4f52888a612",
+        "vote": "approve",
+        "rationale": "Confirming: Comprehensive canary test suite with solid game integrity monitoring, proper sta",
+        "castAt": "2026-02-24T04:00:14.650Z"
+      },
+      {
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_c4f52888a612",
+        "vote": "approve",
+        "rationale": "Confirming: Canary test suite functions correctly with comprehensive integrity checks, prope",
+        "castAt": "2026-02-24T04:03:57.955Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": true,
     "humanApproval": null,
     "createdAt": "2026-02-24T03:41:51.642Z",
     "submittedAt": "2026-02-24T03:47:35.594Z",
     "scanCompletedAt": "2026-02-24T03:47:35.594Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "reviewCompletedAt": "2026-02-24T04:00:14.594Z",
+    "votingCompletedAt": "2026-02-24T04:03:57.955Z",
+    "resolvedAt": "2026-02-24T04:03:57.955Z"
   },
   {
     "id": "prop_a7f1c1234698",
@@ -5369,7 +5407,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Narrative Event Ticker. Agent: chronicle-narrative (Narrative).",
     "taskId": "task_7796466e3b1c",
-    "state": "IN_REVIEW",
+    "state": "MERGED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -5379,17 +5417,65 @@
       "agent_a7ef977216c4",
       "agent_9f2ee697be28"
     ],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
+    "reviews": [
+      {
+        "id": "rev_bcfb2a0b07d2",
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_a7f1c1234698",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T03:59:28.484Z",
+        "revealedAt": "2026-02-24T04:02:56.553Z"
+      },
+      {
+        "id": "rev_b298495069c2",
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_a7f1c1234698",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T04:02:56.553Z",
+        "revealedAt": "2026-02-24T04:02:56.553Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_a7f1c1234698",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T04:02:56.601Z"
+      },
+      {
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_a7f1c1234698",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T04:03:58.007Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": false,
     "createdAt": "2026-02-24T03:42:01.702Z",
     "submittedAt": "2026-02-24T03:47:45.598Z",
     "scanCompletedAt": "2026-02-24T03:47:45.598Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "reviewCompletedAt": "2026-02-24T04:02:56.553Z",
+    "votingCompletedAt": "2026-02-24T04:03:58.007Z",
+    "resolvedAt": "2026-02-24T04:03:58.007Z"
   },
   {
     "id": "prop_fbbd3b1c4910",
@@ -5413,6 +5499,247 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Enemy AI Spawner. Agent: forge-gameplay (Gameplay).",
     "taskId": "task_08d22c6dcf63",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_732b1bf0f2a1",
+      "agent_6612736bde49"
+    ],
+    "reviews": [
+      {
+        "id": "rev_95f00c2e69a5",
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_fbbd3b1c4910",
+        "verdict": "approve",
+        "rationale": "Well-structured enemy spawner with solid object pooling, adaptive difficulty, and proper state management. No security vulnerabilities detected; code handles edge cases reasonably and integrates cleanly with game systems.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 3,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T04:12:05.712Z",
+        "revealedAt": null
+      }
+    ],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T03:57:24.253Z",
+    "submittedAt": "2026-02-24T04:03:58.060Z",
+    "scanCompletedAt": "2026-02-24T04:03:58.060Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_03586e0310c1",
+    "agent": "agent_05945e60d0f2",
+    "title": "Design absorption burst particle effects",
+    "description": "AI-generated by prism-artui (Art/UI):\n\nregisterModule('Absorption Burst Particle Effects', function(g) {\n  g._absorptionBurst = g._absorptionBurst || {\n    pool: [],\n    active: [],\n    poolSize: 512,\n    lastAbsorbed: 0,\n    ringPool: [],\n    activeRings: [],\n    flashTimer: 0,\n    totalAbsorbed: 0\n  };\n\n  var ab = g._absorptionBurst;\n\n  // Initialize object pools\n  if (ab.pool.length === 0) {\n    for (var i = 0; i < ab.poolSize; i++) {\n      ab.pool.push({\n        x: 0, y: 0, vx: 0, vy: 0,\n        life: 0, maxLife: 0,\n        size: 0, maxSize: 0,\n        r: 0, gv: 0, b: 0,\n        alpha: 0, type: 0,\n        spin: 0, angle: 0,\n        trail: [], trailMax: 0,\n        active: false\n      });\n    }\n    for (var j = 0; j < 32; j++) {\n      ab.ringPool.push({\n        x: 0, y: 0,\n        radius: 0, maxRadius: 0,\n        life: 0, maxLife: 0,\n        r: 0, gv: 0, b: 0,\n        width: 0, active: false\n      });\n    }\n  }\n\n  function spawnParticle() {\n    for (var i = 0; i < ab.pool.length; i++) {\n      if (!ab.pool[i].active) return ab.pool[i];\n    }\n    return null;\n  }\n\n  function spawnRing() {\n    for (var i = 0; i < ab.ringPool.length; i++) {\n      if (!ab.ringPool[i].active) return ab.ringPool[i];\n    }\n    return null;\n  }\n\n  function easeOutQuart(t) {\n    return 1 - Math.pow(1 - t, 4);\n  }\n\n  function easeInQuad(t) {\n    return t * t;\n  }\n\n  function triggerBurst(x, y, intensity) {\n    intensity = intensity || 1;\n    var stage = g.stage || 0;\n\n    // Color palette based on stage\n    var palettes = [\n      {r: 0,   gv: 255, b: 170}, // cyan-green\n      {r: 80,  gv: 200, b: 255}, // blue\n      {r: 255, gv: 180, b: 0},   // gold\n      {r: 255, gv: 80,  b: 200}, // magenta\n      {r: 150, gv: 80,  b: 255}, // purple\n      {r: 255, gv: 50,  b: 50}   // red-hot\n    ];\n    var pal = palettes[Math.min(stage, 5)];\n\n    var count = Math.floor((20 + stage * 8) * intensity);\n    count = Math.min(count, 60);\n\n    // Main burst particles\n    for (var i = 0; i < count; i++) {\n      var p = spawnParticle();\n      if (!p) break;\n\n      var angle = (i / count) * Math.PI * 2 + g.rand(-0.2, 0.2);\n      var speed = g.rand(1.5, 5 + stage * 0.8) * intensity;\n      var lifeFrames = g.rand(25, 55);\n\n      // Vary colors slightly per particle\n      var cr = Math.min(255, pal.r + Math.floor(g.rand(-30, 30)));\n      var cg = Math.min(255, pal.gv + Math.floor(g.rand(-30, 30)));\n      var cb = Math.min(255, pal.b + Math.floor(g.rand(-30, 30)));\n\n      p.x = x; p.y = y;\n      p.vx = Math.cos(angle) * speed;\n      p.vy = Math.sin(angle) * speed;\n      p.life = lifeFrames;\n      p.maxLife = lifeFrames;\n      p.size = g.rand(2, 5 + stage * 0.5) * intensity;\n      p.maxSize = p.size;\n      p.r = cr; p.gv = cg; p.b = cb;\n      p.alpha = 1;\n      p.type = i % 4; // 0=circle, 1=spark, 2=diamond, 3=glow dot\n      p.spin = g.rand(-0.3, 0.3);\n      p.angle = angle;\n      p.trail = [];\n      p.trailMax = p.type === 1 ? 5 : 0;\n      p.active = true;\n    }\n\n    // Micro sparkles\n    var sparkCount = Math.floor(15 * intensity);\n    for (var s = 0; s < sparkCount; s++) {\n      var sp = spawnParticle();\n      if (!sp) break;\n      var sa = g.rand(0, Math.PI * 2);\n      var ss = g.rand(3, 9) * intensity;\n      sp.x = x; sp.y = y;\n      sp.vx = Math.cos(sa) * ss;\n      sp.vy = Math.sin(sa) * ss;\n      sp.life = g.rand(12, 28);\n      sp.maxLife = sp.life;\n      sp.size = g.rand(1, 2.5);\n      sp.maxSize = sp.size;\n      sp.r = 255; sp.gv = 255; sp.b = 255;\n      sp.alpha = 1;\n      sp.type = 1; // spark\n      sp.spin = 0;\n      sp.angle = sa;\n      sp.trail = [];\n      sp.trailMax = 6;\n      sp.active = true;\n    }\n\n    // Shockwave rings\n    var ringCount = Math.min(2 + stage, 4);\n    for (var ri = 0; ri < ringCount; ri++) {\n      var ring = spawnRing();\n      if (!ring) break;\n      var delay = ri * 4;\n      ring.x = x; ring.y = y;\n      ring.radius = 2;\n      ring.maxRadius = (40 + stage * 15 + ri * 20) * intensity;\n      ring.life = 30 + ri * 8 + delay;\n      ring.maxLife = ring.life;\n      ring.r = pal.r; ring.gv = pal.gv; ring.b = pal.b;\n      ring.width = Math.max(1, 4 - ri);\n      ring.active = true;\n    }\n\n    ab.flashTimer = 8;\n    ab.totalAbsorbed++;\n  }\n\n  // Detect new absorptions by watching score\n  var prevAbsorbed = ab.lastAbsorbed;\n  if (g.absorbed > prevAbsorbed) {\n    var diff = g.absorbed - prevAbsorbed;\n    for (var d = 0; d < diff; d++) {\n      var intensity = Math.min(1 + (g.stage || 0) * 0.15, 2.0);\n      // Add slight jitter to stacked bursts\n      var jx = g.px + (diff > 1 ? g.rand(-10, 10) : 0);\n      var jy = g.py + (diff > 1 ? g.rand(-10, 10) : 0);\n      triggerBurst(jx, jy, intensity);\n    }\n    ab.lastAbsorbed = g.absorbed;\n  }\n\n  var ctx = g.ctx;\n  var dt = (g._dt || 1/60) * 60;\n\n  // Camera transform\n  var camX = 0, camY = 0, camZ = 1;\n  if (g._cam) { camX = g._cam.x; camY = g._cam.y; camZ = g._cam.zoom || 1; }\n\n  ctx.save();\n  if (g._cam) {\n    ctx.translate(g.W / 2, g.H / 2);\n    ctx.scale(camZ, camZ);\n    ctx.translate(-camX, -camY);\n  }\n\n  // Update and draw rings\n  for (var ri2 = 0; ri2 < ab.ringPool.length; ri2++) {\n    var ring2 = ab.ringPool[ri2];\n    if (!ring2.active) continue;\n\n    ring2.life -= dt;\n    if (ring2.life <= 0) { ring2.active = false; continue; }\n\n    var rt = 1 - (ring2.life / ring2.maxLife);\n    ring2.radius = easeOutQuart(rt) * ring2.maxRadius;\n    var ralpha = (ring2.life / ring2.maxLife);\n\n    ctx.save();\n    ctx.globalAlpha = ralpha * 0.7;\n    ctx.globalCompositeOperation = 'lighter';\n    ctx.beginPath();\n    ctx.arc(ring2.x, ring2.y, ring2.radius, 0, Math.PI * 2);\n    ctx.strokeStyle = 'rgb(' + ring2.r + ',' + ring2.gv + ',' + ring2.b + ')';\n    ctx.lineWidth = ring2.width * (1 - rt * 0.7);\n    ctx.stroke();\n    ctx.restore();\n  }\n\n  // Update and draw particles\n  for (var pi = 0; pi < ab.pool.length; pi++) {\n    var p2 = ab.pool[pi];\n    if (!p2.active) continue;\n\n    p2.life -= dt;\n    if (p2.life <= 0) { p2.active = false; continue; }\n\n    var lt = p2.life / p2.maxLife;\n    var invLt = 1 - lt;\n\n    // Trail update\n    if (p2.trailMax > 0) {\n      p2.trail.unshift({x: p2.x, y: p2.y});\n      if (p2.trail.length > p2.trailMax) p2.trail.pop();\n    }\n\n    // Physics\n    p2.x += p2.vx * dt;\n    p2.y += p2.vy * dt;\n    p2.vx *= 0.92;\n    p2.vy *= 0.92;\n    p2.angle += p2.spin * dt;\n\n    var size = p2.size * lt;\n    var alpha = lt * lt; // quadratic fade\n\n    ctx.save();\n    ctx.globalCompositeOperation = 'lighter';\n    ctx.globalAlpha = alpha;\n\n    // Draw trail\n    if (p2.trail.length > 1) {\n      ctx.beginPath();\n      ctx.moveTo(p2.trail[0].x, p2.trail[0].y);\n      for (var ti = 1; ti < p2.trail.length; ti++) {\n        ctx.lineTo(p2.trail[ti].x, p2.trail[ti].y);\n      }\n      ctx.strokeStyle = 'rgb(' + p2.r + ',' + p2.gv + ',' + p2.b + ')';\n      ctx.lineWidth = size * 0.5;\n      ctx.globalAlpha = alpha * 0.4;\n      ctx.stroke();\n      ctx.globalAlpha = alpha;\n    }\n\n    ctx.translate(p2.x, p2.y);\n    ctx.rotate(p2.angle);\n\n    if (p2.type === 0) {\n      // Glowing circle\n      var grad = ctx.createRadialGradient(0, 0, 0, 0, 0, size);\n      grad.addColorStop(0, 'rgba(' + p2.r + ',' + p2.gv + ',' + p2.b + ',1)');\n      grad.addColorStop(0.4, 'rgba(' + p2.r + ',' + p2.gv + ',' + p2.b + ',0.6)');\n      grad.addColorStop(1, 'rgba(' + p2.r + ',' + p2.gv + ',' + p2.b + ',0)');\n      ctx.beginPath();\n      ctx.arc(0, 0, size, 0, Math.PI * 2);\n      ctx.fillStyle = grad;\n      ctx.fill();\n\n    } else if (p2.type === 1) {\n      // Spark line\n      var sparkLen = Math.sqrt(p2.vx * p2.vx + p2.vy * p2.vy) * 1.8;\n      ctx.beginPath();\n      ctx.moveTo(0, 0);\n      ctx.lineTo(-p2.vx * 2, -p2.vy * 2);\n      ctx.strokeStyle = 'rgb(' + p2.r + ',' + p2.gv + ',' + p2.b + ')';\n      ctx.lineWidth = size * 0.8;\n      ctx.lineCap = 'round';\n      ctx.stroke();\n      // Bright core\n      ctx.beginPath();\n      ctx.arc(0, 0, size * 0.5, 0, Math.PI * 2);\n      ctx.fillStyle = 'rgb(255,255,255)';\n      ctx.fill();\n\n    } else if (p2.type === 2) {\n      // Diamond\n      ctx.beginPath();\n      ctx.moveTo(0, -size);\n      ctx.lineTo(size * 0.5, 0);\n      ctx.lineTo(0, size);\n      ctx.lineTo(-size * 0.5, 0);\n      ctx.closePath();\n      var dgrad = ctx.createLinearGradient(0, -size, 0, size);\n      dgrad.addColorStop(0, 'rgba(255,255,255,0.9)');\n      dgrad.addColorStop(0.5, 'rgba(' + p2.r + ',' + p2.gv + ',' + p2.b + ',0.8)');\n      dgrad.addColorStop(1, 'rgba(' + p2.r + ',' + p2.gv + ',' + p2.b + ',0.2)');\n      ctx.fillStyle = dgrad;\n      ctx.fill();\n\n    } else if (p2.type === 3) {\n      // Large soft glow dot\n      var glowSize = size * 2.5;\n      var ggrad = ctx.createRadialGradient(0, 0, 0, 0, 0, glowSize);\n      ggrad.addColorStop(0, 'rgba(' + p2.r + ',' + p2.gv + ',' + p2.b + ',0.8)');\n      ggrad.addColorStop(0.3, 'rgba(' + p2.r + ',' + p2.gv + ',' + p2.b + ',0.3)');\n      ggrad.addColorStop(1, 'rgba(' + p2.r + ',' + p2.gv + ',' + p2.b + ',0)');\n      ctx.beginPath();\n      ctx.arc(0, 0, glowSize, 0, Math.PI * 2);\n      ctx.fillStyle = ggrad;\n      ctx.fill();\n    }\n\n    ctx.restore();\n  }\n\n  ctx.restore();\n\n  // Screen flash on absorption\n  if (ab.flashTimer > 0) {\n    ab.flashTimer -= dt;\n    var flashAlpha = (ab.flashTimer / 8) * 0.12;\n    var stage2 = g.stage || 0",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/prism-artui/design-absorption-burst-partic",
+    "filesChanged": [
+      "src/game/modules/absorption-burst-particle-effects.js"
+    ],
+    "linesAdded": 318,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 318,
+      "failed": 0,
+      "coverage": 0.9325392830859517
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Absorption Burst Particle Effects. Agent: prism-artui (Art/UI).",
+    "taskId": "task_d563fd0d5bf0",
+    "state": "MERGED",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_732b1bf0f2a1",
+      "agent_6612736bde49"
+    ],
+    "reviews": [
+      {
+        "id": "rev_0e6842a63f84",
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_03586e0310c1",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T04:07:45.044Z",
+        "revealedAt": "2026-02-24T04:07:55.047Z"
+      },
+      {
+        "id": "rev_b9c0cd0e9348",
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_03586e0310c1",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T04:07:55.047Z",
+        "revealedAt": "2026-02-24T04:07:55.047Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_03586e0310c1",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T04:07:55.126Z"
+      },
+      {
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_03586e0310c1",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T04:12:05.749Z"
+      }
+    ],
+    "approvalRatio": 1,
+    "requiresHumanReview": false,
+    "humanApproval": false,
+    "createdAt": "2026-02-24T03:57:38.072Z",
+    "submittedAt": "2026-02-24T04:01:27.690Z",
+    "scanCompletedAt": "2026-02-24T04:01:27.690Z",
+    "reviewCompletedAt": "2026-02-24T04:07:55.047Z",
+    "votingCompletedAt": "2026-02-24T04:12:05.749Z",
+    "resolvedAt": "2026-02-24T04:12:05.749Z"
+  },
+  {
+    "id": "prop_5370f5fad53e",
+    "agent": "agent_732b1bf0f2a1",
+    "title": "Origin Story Milestone Narration System",
+    "description": "AI-generated by chronicle-narrative (Narrative):\n\nregisterModule('Origin Story Milestone Narration System', function(g) {\n  g._narrative = g._narrative || {\n    milestones: [\n      { score: 100,  text: 'In the void, a single pixel stirred...', triggered: false },\n      { score: 250,  text: 'Light remembered what darkness forgot.', triggered: false },\n      { score: 500,  text: 'From one, the pattern began to spread.', triggered: false },\n      { score: 750,  text: 'The cosmos trembled at your hunger.', triggered: false },\n      { score: 1000, text: 'You are becoming the universe itself.', triggered: false },\n      { score: 1500, text: 'Stars collapse into your wake.', triggered: false },\n      { score: 2500, text: 'Creation bends around your gravity.', triggered: false },\n      { score: 5000, text: 'The origin pixel has consumed all.', triggered: false }\n    ],\n    active: null,\n    queue: [],\n    typewriterPos: 0,\n    typewriterTimer: 0,\n    displayTimer: 0,\n    fadeAlpha: 0,\n    phase: 'idle', // idle, fadein, typing, hold, fadeout\n    lastScore: 0\n  };\n\n  var n = g._narrative;\n  var ctx = g.ctx;\n  var TYPEWRITER_SPEED = 0.05; // seconds per char\n  var HOLD_DURATION = 2.2;\n  var FADE_IN_DUR = 0.3;\n  var FADE_OUT_DUR = 0.6;\n\n  // Check for new milestones\n  for (var i = 0; i < n.milestones.length; i++) {\n    var m = n.milestones[i];\n    if (!m.triggered && g.score >= m.score) {\n      m.triggered = true;\n      n.queue.push(m.text);\n    }\n  }\n\n  // Advance state machine\n  var dt = (g._dt !== undefined) ? g._dt : (1/60);\n\n  if (n.phase === 'idle' && n.queue.length > 0) {\n    n.active = n.queue.shift();\n    n.typewriterPos = 0;\n    n.typewriterTimer = 0;\n    n.displayTimer = 0;\n    n.fadeAlpha = 0;\n    n.phase = 'fadein';\n\n    // Trigger screen shake if available\n    if (g._shake !== undefined) {\n      g._shake = g._shake || 0;\n      g._shake = 6;\n    }\n    // Try alternate shake API\n    if (typeof g._screenShake === 'object' && g._screenShake !== null) {\n      g._screenShake.magnitude = (g._screenShake.magnitude || 0) + 6;\n      g._screenShake.duration = (g._screenShake.duration || 0) + 18;\n    }\n  }\n\n  if (n.phase === 'fadein') {\n    n.displayTimer += dt;\n    n.fadeAlpha = Math.min(1, n.displayTimer / FADE_IN_DUR);\n    if (n.displayTimer >= FADE_IN_DUR) {\n      n.phase = 'typing';\n      n.typewriterTimer = 0;\n    }\n  } else if (n.phase === 'typing') {\n    n.typewriterTimer += dt;\n    var charsToShow = Math.floor(n.typewriterTimer / TYPEWRITER_SPEED);\n    n.typewriterPos = Math.min(charsToShow, n.active.length);\n    if (n.typewriterPos >= n.active.length) {\n      n.phase = 'hold';\n      n.displayTimer = 0;\n    }\n  } else if (n.phase === 'hold') {\n    n.displayTimer += dt;\n    n.fadeAlpha = 1;\n    if (n.displayTimer >= HOLD_DURATION) {\n      n.phase = 'fadeout';\n      n.displayTimer = 0;\n    }\n  } else if (n.phase === 'fadeout') {\n    n.displayTimer += dt;\n    n.fadeAlpha = Math.max(0, 1 - n.displayTimer / FADE_OUT_DUR);\n    if (n.displayTimer >= FADE_OUT_DUR) {\n      n.phase = 'idle';\n      n.active = null;\n      n.fadeAlpha = 0;\n    }\n  }\n\n  // Render\n  if (n.phase !== 'idle' && n.active) {\n    ctx.save();\n\n    var cx = g.W * 0.5;\n    var cy = g.H * 0.38;\n\n    var tick = g.tick;\n    var pulse = 0.7 + 0.3 * Math.sin(tick * 0.07);\n    var glowPulse = 0.5 + 0.5 * Math.sin(tick * 0.11);\n\n    var displayText = n.active.substring(0, n.typewriterPos);\n    if (n.phase === 'typing' && Math.floor(tick * 0.5) % 2 === 0) {\n      displayText += '_';\n    }\n\n    var fontSize = Math.max(14, Math.min(22, g.W / 38));\n    ctx.font = 'bold ' + fontSize + 'px \"Courier New\", monospace';\n    ctx.textAlign = 'center';\n    ctx.textBaseline = 'middle';\n\n    // Decorative line top\n    var lineW = Math.min(380, g.W * 0.55);\n    var lineY = cy - fontSize * 1.6;\n    var lineAlpha = n.fadeAlpha * 0.5;\n\n    ctx.globalAlpha = lineAlpha;\n    var lineGrad = ctx.createLinearGradient(cx - lineW/2, lineY, cx + lineW/2, lineY);\n    lineGrad.addColorStop(0, 'rgba(0,255,170,0)');\n    lineGrad.addColorStop(0.3, 'rgba(0,255,170,0.8)');\n    lineGrad.addColorStop(0.5, 'rgba(180,255,240,1)');\n    lineGrad.addColorStop(0.7, 'rgba(0,255,170,0.8)');\n    lineGrad.addColorStop(1, 'rgba(0,255,170,0)');\n    ctx.strokeStyle = lineGrad;\n    ctx.lineWidth = 1;\n    ctx.beginPath();\n    ctx.moveTo(cx - lineW/2, lineY);\n    ctx.lineTo(cx + lineW/2, lineY);\n    ctx.stroke();\n\n    // Bottom decorative line\n    var lineY2 = cy + fontSize * 1.6;\n    ctx.beginPath();\n    ctx.moveTo(cx - lineW/2, lineY2);\n    ctx.lineTo(cx + lineW/2, lineY2);\n    ctx.stroke();\n\n    // Small diamond ornaments\n    ctx.globalAlpha = n.fadeAlpha * 0.7;\n    ctx.fillStyle = 'rgba(0,255,170,0.9)';\n    var dSize = 4;\n    for (var side = -1; side <= 1; side += 2) {\n      var dx = cx + side * (lineW/2 + 8);\n      ctx.save();\n      ctx.translate(dx, lineY);\n      ctx.rotate(Math.PI / 4);\n      ctx.fillRect(-dSize/2, -dSize/2, dSize, dSize);\n      ctx.restore();\n      ctx.save();\n      ctx.translate(dx, lineY2);\n      ctx.rotate(Math.PI / 4);\n      ctx.fillRect(-dSize/2, -dSize/2, dSize, dSize);\n      ctx.restore();\n    }\n\n    // Outer glow shadow passes\n    var glowColor1 = 'rgba(0,255,170,' + (n.fadeAlpha * 0.18 * glowPulse) + ')';\n    var glowColor2 = 'rgba(100,255,220,' + (n.fadeAlpha * 0.25 * pulse) + ')';\n\n    ctx.globalAlpha = 1;\n    ctx.shadowColor = '#00ffaa';\n    ctx.shadowBlur = 24 * glowPulse;\n    ctx.fillStyle = glowColor1;\n    ctx.font = 'bold ' + (fontSize + 2) + 'px \"Courier New\", monospace';\n    ctx.fillText(displayText, cx, cy);\n\n    ctx.shadowBlur = 10;\n    ctx.fillStyle = glowColor2;\n    ctx.font = 'bold ' + fontSize + 'px \"Courier New\", monospace';\n    ctx.fillText(displayText, cx, cy);\n\n    // Main text with gradient\n    ctx.shadowBlur = 6 * pulse;\n    ctx.shadowColor = '#00ffaa';\n    var textGrad = ctx.createLinearGradient(cx - 200, cy - fontSize, cx + 200, cy + fontSize);\n    textGrad.addColorStop(0, 'rgba(180,255,240,' + n.fadeAlpha + ')');\n    textGrad.addColorStop(0.4, 'rgba(0,255,170,' + n.fadeAlpha + ')');\n    textGrad.addColorStop(0.7, 'rgba(100,220,255,' + n.fadeAlpha + ')');\n    textGrad.addColorStop(1, 'rgba(0,255,170,' + n.fadeAlpha + ')');\n    ctx.fillStyle = textGrad;\n    ctx.fillText(displayText, cx, cy);\n\n    // Cursor blink glow when typing\n    if (n.phase === 'typing') {\n      var cursorX = cx + ctx.measureText(n.active.substring(0, n.typewriterPos)).width * 0.5 + 3;\n      ctx.globalAlpha = n.fadeAlpha * (0.5 + 0.5 * Math.sin(tick * 0.3));\n      ctx.shadowBlur = 8;\n      ctx.fillStyle = '#00ffaa';\n      ctx.fillRect(cursorX, cy - fontSize * 0.45, 2, fontSize * 0.9);\n    }\n\n    // Tiny ambient particles around text on reveal\n    if (n.phase === 'fadein' || (n.phase === 'typing' && n.typewriterPos < 6)) {\n      ctx.globalAlpha = n.fadeAlpha * 0.6;\n      for (var p = 0; p < 3; p++) {\n        var px = cx + (Math.sin(tick * 0.13 + p * 2.1) * lineW * 0.5);\n        var py = cy + (Math.cos(tick * 0.17 + p * 1.4) * fontSize * 1.2);\n        var pr = 1.5 + Math.sin(tick * 0.2 + p) * 0.8;\n        ctx.beginPath();\n        ctx.arc(px, py, pr, 0, Math.PI * 2);\n        ctx.fillStyle = 'rgba(0,255,170,0.8)';\n        ctx.fill();\n      }\n    }\n\n    ctx.globalAlpha = 1;\n    ctx.shadowBlur = 0;\n    ctx.restore();\n  }\n})",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/chronicle-narrative/origin-story-milestone-narrati",
+    "filesChanged": [
+      "src/game/modules/origin-story-milestone-narration-system.js"
+    ],
+    "linesAdded": 213,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 213,
+      "failed": 0,
+      "coverage": 0.9375047446583495
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Origin Story Milestone Narration System. Agent: chronicle-narrative (Narrative).",
+    "taskId": "task_948c48dcc891",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_05945e60d0f2",
+      "agent_6612736bde49"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T04:04:58.188Z",
+    "submittedAt": "2026-02-24T04:07:55.156Z",
+    "scanCompletedAt": "2026-02-24T04:07:55.156Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_64d666b17da5",
+    "agent": "agent_6612736bde49",
+    "title": "Write canary test suite",
+    "description": "AI-generated by sentinel-qa (QA/Security):\n\nregisterModule('Canary Test Suite', function(g) {\n  g._canary = g._canary || {\n    ready: false,\n    tests: [],\n    results: [],\n    tampering: [],\n    lastCheck: 0,\n    checkInterval: 180,\n    displayTimer: 0,\n    displayDuration: 300,\n    alertLevel: 0,\n    alertDecay: 0,\n    checksumBaseline: null,\n    entityCountBaseline: -1,\n    scoreBaseline: -1,\n    scoreFrameCache: [],\n    speedBaseline: null,\n    anomalyLog: [],\n    maxLog: 8,\n    pulsePhase: 0,\n    initialized: false,\n    passCount: 0,\n    failCount: 0,\n    criticalFail: false,\n    lastAlertMsg: '',\n    alertFlash: 0,\n    canaryPos: { x: 0, y: 0 },\n    canaryBob: 0,\n    feathers: [],\n    particleBurst: false\n  };\n\n  var c = g._canary;\n  var ctx = g.ctx;\n  var dt = (g._dt !== undefined) ? g._dt * 60 : 1;\n\n  // ─── ONE-TIME INIT ────────────────────────────────────────────────────\n  if (!c.initialized) {\n    c.initialized = true;\n\n    // Baseline snapshots\n    c.speedBaseline = g.speed;\n    c.entityCountBaseline = g.entities ? g.entities.length : 0;\n    c.scoreBaseline = g.score;\n\n    // Canary icon position: bottom-left corner, above mini-map\n    c.canaryPos.x = 38;\n    c.canaryPos.y = g.H - 110;\n\n    // Generate feather decorations\n    for (var fi = 0; fi < 6; fi++) {\n      c.feathers.push({\n        angle: (fi / 6) * Math.PI * 2,\n        len: 4 + Math.random() * 3,\n        phase: Math.random() * Math.PI * 2\n      });\n    }\n\n    // ─── DEFINE CANARY TESTS ─────────────────────────────────────────\n    c.tests = [\n\n      // T1: Speed integrity — detect speed hacks\n      {\n        id: 'SPD_INTEGRITY',\n        label: 'Speed Integrity',\n        critical: true,\n        run: function() {\n          if (c.speedBaseline === null) { c.speedBaseline = g.speed; return { pass: true, msg: 'Baseline set' }; }\n          var drift = Math.abs(g.speed - c.speedBaseline);\n          if (drift > 5) return { pass: false, msg: 'Speed drift: ' + drift.toFixed(2) };\n          return { pass: true, msg: 'Speed nominal' };\n        }\n      },\n\n      // T2: Score monotonicity — score must never decrease\n      {\n        id: 'SCORE_MONO',\n        label: 'Score Monotonicity',\n        critical: false,\n        run: function() {\n          var frames = c.scoreFrameCache;\n          frames.push(g.score);\n          if (frames.length > 10) frames.shift();\n          if (frames.length < 3) return { pass: true, msg: 'Collecting...' };\n          for (var i = 1; i < frames.length; i++) {\n            if (frames[i] < frames[i-1] - 5) {\n              return { pass: false, msg: 'Score decreased: ' + frames[i-1] + '->' + frames[i] };\n            }\n          }\n          return { pass: true, msg: 'Score stable' };\n        }\n      },\n\n      // T3: Stage coherence — stage must match score brackets\n      {\n        id: 'STAGE_COHERENCE',\n        label: 'Stage Coherence',\n        critical: true,\n        run: function() {\n          var expectedStage = 0;\n          if (g.score >= 500)  expectedStage = 1;\n          if (g.score >= 1500) expectedStage = 2;\n          if (g.score >= 3000) expectedStage = 3;\n          if (g.score >= 6000) expectedStage = 4;\n          if (g.score >= 10000) expectedStage = 5;\n          var delta = Math.abs(g.stage - expectedStage);\n          if (delta > 1) return { pass: false, msg: 'Stage/score mismatch: s' + g.stage + ' @ ' + g.score };\n          return { pass: true, msg: 'Stage coherent: ' + g.stage };\n        }\n      },\n\n      // T4: Entity pool sanity — detect entity injection\n      {\n        id: 'ENTITY_POOL',\n        label: 'Entity Pool Sanity',\n        critical: false,\n        run: function() {\n          if (!g.entities) return { pass: true, msg: 'No entity array' };\n          var cap = 2000;\n          if (g.entities.length > cap) return { pass: false, msg: 'Entity overflow: ' + g.entities.length };\n          // Check for NaN positions\n          var nanCount = 0;\n          var sample = Math.min(g.entities.length, 20);\n          for (var i = 0; i < sample; i++) {\n            var e = g.entities[i];\n            if (e && (isNaN(e.x) || isNaN(e.y))) nanCount++;\n          }\n          if (nanCount > 0) return { pass: false, msg: 'NaN positions: ' + nanCount };\n          return { pass: true, msg: 'Pool ok: ' + g.entities.length };\n        }\n      },\n\n      // T5: Canvas context integrity\n      {\n        id: 'CTX_INTEGRITY',\n        label: 'Context Integrity',\n        critical: true,\n        run: function() {\n          if (!ctx) return { pass: false, msg: 'Context lost!' };\n          if (typeof ctx.save !== 'function') return { pass: false, msg: 'ctx.save missing' };\n          if (typeof ctx.fillRect !== 'function') return { pass: false, msg: 'ctx.fillRect missing' };\n          if (ctx.canvas !== g.canvas) return { pass: false, msg: 'Canvas mismatch' };\n          return { pass: true, msg: 'Context valid' };\n        }\n      },\n\n      // T6: Player position bounds — detect teleport hacks\n      {\n        id: 'PLAYER_BOUNDS',\n        label: 'Player Bounds',\n        critical: false,\n        run: function() {\n          var margin = 200;\n          var W = g._world ? g._world.width : g.W;\n          var H = g._world ? g._world.height : g.H;\n          if (g.px < -margin || g.px > W + margin ||\n              g.py < -margin || g.py > H + margin) {\n            return { pass: false, msg: 'OOB: (' + g.px.toFixed(0) + ',' + g.py.toFixed(0) + ')' };\n          }\n          return { pass: true, msg: 'In bounds' };\n        }\n      },\n\n      // T7: Velocity sanity — detect superhuman velocities\n      {\n        id: 'VELOCITY_SANITY',\n        label: 'Velocity Sanity',\n        critical: false,\n        run: function() {\n          var maxV = 50;\n          var speed = Math.sqrt(g.vx * g.vx + g.vy * g.vy);\n          if (speed > maxV) return { pass: false, msg: 'Velocity spike: ' + speed.toFixed(1) };\n          return { pass: true, msg: 'Vel ok: ' + speed.toFixed(1) };\n        }\n      },\n\n      // T8: Frame rate consistency — detect time manipulation\n      {\n        id: 'FRAME_CONSISTENCY',\n        label: 'Frame Consistency',\n        critical: false,\n        run: function() {\n          if (g._dt === undefined) return { pass: true, msg: 'No dt available' };\n          if (g._dt < 0) return { pass: false, msg: 'Negative dt: ' + g._dt };\n          if (g._dt > 1.0) return { pass: false, msg: 'dt spike: ' + g._dt.toFixed(3) + 's' };\n          return { pass: true, msg: 'dt nominal: ' + g._dt.toFixed(3) };\n        }\n      },\n\n      // T9: Consensus engine module guard — check no duplicate systems\n      {\n        id: 'CONSENSUS_GUARD',\n        label: 'Consensus Guard',\n        critical: true,\n        run: function() {\n          // Check for signs of double-initialized systems\n          var issues = [];\n          if (g._cam && (isNaN(g._cam.x) || isNaN(g._cam.y))) issues.push('cam NaN');\n          if (g._cam && g._cam.zoom <= 0) issues.push('cam zoom<=0');\n          if (g._state && g._state.current === undefined) issues.push('state undefined');\n          if (issues.length > 0) return { pass: false, msg: 'Sys issues: ' + issues.join(',') };\n          return { pass: true, msg: 'Systems coherent' };\n        }\n      },\n\n      // T10: Particle system integrity\n      {\n        id: 'PARTICLE_INTEGRITY',\n        label: 'Particle Integrity',\n        critical: false,\n        run: function() {\n          if (!g.particles) return { pass: true, msg: 'No particle array' };\n          if (g.particles.length > 5000) return { pass: false, msg: 'Particle overflow: ' + g.particles.length };\n          return { pass: true, msg: 'Particles ok: ' + g.particles.length };\n        }\n      }\n    ];\n  }\n\n  // ─── RUN CHECK CYCLE ─────────────────────────────────────────────────\n  if (g.tick - c.lastCheck >= c.checkInterval) {\n    c.lastCheck = g.tick;\n    c.results = [];\n    c.tampering = [];\n    c.passCount = 0;\n    c.failCount = 0;\n    c.criticalFail = false;\n\n    for (var ti = 0; ti < c.tests.length; ti++) {\n      var test = c.tests[ti];\n      var result;\n      try {\n        result = test.run();\n      } catch(e) {\n        result = { pass: false, msg: 'EXCEPTION: ' + e.message };\n      }\n      result.id = test.id;\n      result.label = test.label;\n      result.critical = test.critical;\n      c.results.push(result);\n\n      if (result.pass) {\n        c.passCount++;\n      } else {\n        c.failCount++;\n        c.tampering.push(result);\n        if (test.critical) c.criticalFail = true;\n\n        // Log anomaly\n        var entry = '[T' + (g.tick) + '] ' + test.label + ': ' + result.msg;\n        c.anomalyLog.unshift(entry);\n        if (c.anomalyLog.length > c.maxLog) c.anomalyLog.pop();\n      }\n    }\n\n    // Alert level\n    if (c.criticalFail) {\n      c.alertLevel = Math.min(1.0, c.alertLevel + 0.6);\n      c.alertFlash = 40;\n      c.lastAlertMsg = c.tampering[0] ? c.tampering[0].label + ': ' + c.tampering[0].msg : 'TAMPER';\n      c.particleBurst = true;\n\n      // Screen shake on critical failure\n      if (g._state && g._state.current !== 'dead') {\n        if (typeof g.shakeIntensity !== 'undefined') g.shakeIntensity = Math.max(g.shakeIntensity || 0, 6);\n      }\n    } else if (c.failCount > 0) {\n      c.alertLevel = Math.min(1.0, c.alertLevel + 0.2);\n      c.alertFlash = 20;\n      c.lastAlertMsg = c.tampering[0] ? c.tampering[0].msg : 'WARN';\n    }\n  }\n\n  // ─── UPDATE ANIMATIONS ───────────────────────────────────────────────\n  c.alertLevel = Math.max(0, c.alertLevel - 0.003 * dt);\n  c.alertDecay = Math.max(0, c.alertDecay - dt);\n  c.alertFlash = Math.max(0, c.alertFlash - dt);\n  c.pulsePhase += 0.04 * dt;\n  c.canaryBob += 0.05 * dt;\n  c.canaryPos.y = (g.H - 110) + Math.sin(c.canaryBob) * 2.5;\n\n  // ─── PARTICLE BURST ON DETECT ─────────────────────────────────────────\n  if (c.particleBurst && g.particles) {\n    c.particleBurst = false;\n    for (var pi = 0; pi < 12; pi++) {\n      var ang = (pi / 12) * Math.PI * 2;\n      var spd = 1.5 + Math.random() * 2;\n      g.particles.push({\n        x: c.canaryPos.x, y: c.canaryPos.y,\n        vx: Math.cos(ang) * spd, vy: Math.sin(ang) * spd,\n        life: 1, decay: 0.025 + Math.random() * 0.02,\n        size: 2 + Math.random() * 2,\n        color: c.criticalFail ? '#ff3333' : '#ffcc00'\n      });\n    }\n  }\n\n  // ─── RENDER ──────────────────────────────────────────────────────────\n  ctx.save();\n\n  var bx = c.canaryPos.x;\n  var by = c.canaryPos.y;\n\n  // ── Alert overlay if tampering detected ──\n  if (c.alertLevel > 0.05) {\n    var alertColor = c.criticalFail ? 'rgba(255,30,30,' : 'rgba(255,180,0,';\n    ctx.fillStyle = alertColor + (c.alertLevel * 0.06) + ')';\n    ctx.fillRect(0, 0, g.W, g.H);\n\n    // Alert banner\n    if (c.alertFlash > 0) {\n      var bannerAlpha = Math.min(1, c.alertFlash / 20);\n      ctx.save();\n      var bannerGrad = ctx.createLinearGradient(0, g.H / 2 - 22, 0, g.H / 2 + 22);\n      if (c.criticalFail) {\n        bannerGrad.addColorStop(0, 'rgba(180,0,0,' + bannerAlpha * 0.9 + ')');\n        bannerGrad.addColorStop(0.5, 'rgba(255,30,30,' + bannerAlpha * 0.95 + ')');\n        bannerGrad.addColorStop(1, 'rgba(180,0,0,' + bannerAlpha * 0.9 + ')');\n      } else {\n        bannerGrad.addColorStop(0, 'rgba(120,80,0,' + bannerAlpha *",
+    "type": "feature",
+    "impact": "high",
+    "branch": "agent/sentinel-qa/write-canary-test-suite",
+    "filesChanged": [
+      "src/game/modules/canary-test-suite.js"
+    ],
+    "linesAdded": 320,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 320,
+      "failed": 0,
+      "coverage": 0.8533126474550692
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Canary Test Suite. Agent: sentinel-qa (QA/Security).",
+    "taskId": "task_21577c40aa0a",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": true
+    },
+    "assignedReviewers": [
+      "agent_732b1bf0f2a1",
+      "agent_05945e60d0f2"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": true,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T04:05:05.958Z",
+    "submittedAt": "2026-02-24T04:07:45.086Z",
+    "scanCompletedAt": "2026-02-24T04:07:45.086Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_058df2ee7dc3",
+    "agent": "agent_05945e60d0f2",
+    "title": "Design absorption burst particle effects",
+    "description": "AI-generated by prism-artui (Art/UI):\n\nregisterModule('Absorption Burst Particle Effects', function(g) {\n  g._absorptionBurst = g._absorptionBurst || {\n    pool: [],\n    active: [],\n    lastAbsorbed: 0,\n    poolSize: 300,\n    ringPool: [],\n    activeRings: [],\n    flashPool: [],\n    activeFlashes: []\n  };\n\n  var ab = g._absorptionBurst;\n\n  // Initialize object pools\n  if (ab.pool.length < ab.poolSize) {\n    for (var i = ab.pool.length; i < ab.poolSize; i++) {\n      ab.pool.push({\n        x: 0, y: 0, vx: 0, vy: 0,\n        life: 0, maxLife: 0,\n        size: 0, maxSize: 0,\n        r: 0, g2: 0, b: 0,\n        alpha: 0, spin: 0, angle: 0,\n        type: 0, trail: null, decay: 0\n      });\n    }\n  }\n  if (ab.ringPool.length < 20) {\n    for (var i = ab.ringPool.length; i < 20; i++) {\n      ab.ringPool.push({ x: 0, y: 0, radius: 0, maxRadius: 0, life: 0, maxLife: 0, r: 0, g2: 0, b: 0, width: 0 });\n    }\n  }\n  if (ab.flashPool.length < 10) {\n    for (var i = ab.flashPool.length; i < 10; i++) {\n      ab.flashPool.push({ x: 0, y: 0, life: 0, maxLife: 0, r: 0, g2: 0, b: 0, size: 0 });\n    }\n  }\n\n  function getParticle() {\n    if (ab.pool.length > 0) return ab.pool.pop();\n    return null;\n  }\n  function getRing() {\n    if (ab.ringPool.length > 0) return ab.ringPool.pop();\n    return null;\n  }\n  function getFlash() {\n    if (ab.flashPool.length > 0) return ab.flashPool.pop();\n    return null;\n  }\n\n  function easeOut(t) { return 1 - (1 - t) * (1 - t); }\n  function easeIn(t) { return t * t; }\n  function cubicOut(t) { var f = t - 1; return f * f * f + 1; }\n\n  function spawnBurst(x, y, stage) {\n    var palette = g._palette;\n    var pr = 0, pg = 0, pb = 0;\n    if (palette) {\n      // Parse primary color\n      var hex = (palette.primary || '#00ffaa').replace('#','');\n      pr = parseInt(hex.substr(0,2),16);\n      pg = parseInt(hex.substr(2,2),16);\n      pb = parseInt(hex.substr(4,2),16);\n    } else {\n      pr = 0; pg = 255; pb = 170;\n    }\n\n    // Scale intensity with stage\n    var intensity = 1 + (stage || 0) * 0.4;\n    var count = Math.floor((20 + (stage || 0) * 8) * intensity);\n    count = Math.min(count, 80);\n\n    // Color palette for burst - multi-hued\n    var colors = [\n      { r: pr, g: pg, b: pb },\n      { r: 255, g: 220, b: 50 },\n      { r: 255, g: 100, b: 200 },\n      { r: 100, g: 200, b: 255 }\n    ];\n\n    // Spawn main burst particles\n    for (var i = 0; i < count; i++) {\n      var p = getParticle();\n      if (!p) break;\n\n      var angle = (i / count) * Math.PI * 2 + g.rand(-0.2, 0.2);\n      var speed = g.rand(1.5, 5.5 + (stage || 0) * 0.8) * intensity;\n      var col = colors[Math.floor(g.rand(0, colors.length))];\n      var lifeSpan = g.rand(28, 55);\n\n      p.x = x;\n      p.y = y;\n      p.vx = Math.cos(angle) * speed;\n      p.vy = Math.sin(angle) * speed;\n      p.life = lifeSpan;\n      p.maxLife = lifeSpan;\n      p.size = g.rand(2, 5 + (stage || 0) * 0.5);\n      p.maxSize = p.size;\n      p.r = col.r;\n      p.g2 = col.g;\n      p.b = col.b;\n      p.alpha = 1;\n      p.spin = g.rand(-0.3, 0.3);\n      p.angle = angle;\n      p.type = 0; // spark\n      p.decay = g.rand(0.04, 0.08);\n      p.trail = null;\n\n      ab.active.push(p);\n    }\n\n    // Spawn glitter/diamond particles\n    var glitterCount = Math.floor(8 + (stage || 0) * 3);\n    for (var i = 0; i < glitterCount; i++) {\n      var p = getParticle();\n      if (!p) break;\n\n      var angle = g.rand(0, Math.PI * 2);\n      var speed = g.rand(0.5, 3.0);\n      var lifeSpan = g.rand(40, 70);\n\n      p.x = x + g.rand(-8, 8);\n      p.y = y + g.rand(-8, 8);\n      p.vx = Math.cos(angle) * speed;\n      p.vy = Math.sin(angle) * speed - g.rand(0.5, 1.5);\n      p.life = lifeSpan;\n      p.maxLife = lifeSpan;\n      p.size = g.rand(1.5, 3.5);\n      p.maxSize = p.size;\n      p.r = 255;\n      p.g2 = 255;\n      p.b = 255;\n      p.alpha = 1;\n      p.spin = g.rand(-0.5, 0.5);\n      p.angle = g.rand(0, Math.PI);\n      p.type = 1; // glitter diamond\n      p.decay = g.rand(0.02, 0.05);\n      p.trail = null;\n\n      ab.active.push(p);\n    }\n\n    // Spawn energy streaks\n    var streakCount = Math.floor(6 + (stage || 0) * 2);\n    for (var i = 0; i < streakCount; i++) {\n      var p = getParticle();\n      if (!p) break;\n\n      var angle = g.rand(0, Math.PI * 2);\n      var speed = g.rand(4, 9 + (stage || 0));\n      var col = colors[0];\n      var lifeSpan = g.rand(15, 30);\n\n      p.x = x;\n      p.y = y;\n      p.vx = Math.cos(angle) * speed;\n      p.vy = Math.sin(angle) * speed;\n      p.life = lifeSpan;\n      p.maxLife = lifeSpan;\n      p.size = g.rand(1, 2.5);\n      p.maxSize = p.size;\n      p.r = col.r;\n      p.g2 = col.g;\n      p.b = col.b;\n      p.alpha = 1;\n      p.spin = 0;\n      p.angle = angle;\n      p.type = 2; // streak\n      p.decay = 0.1;\n      p.trail = null;\n\n      ab.active.push(p);\n    }\n\n    // Spawn ring shockwaves\n    var ringCount = 2 + Math.floor((stage || 0) * 0.5);\n    for (var r = 0; r < ringCount; r++) {\n      var ring = getRing();\n      if (!ring) break;\n      var col = colors[r % colors.length];\n      ring.x = x;\n      ring.y = y;\n      ring.radius = 2;\n      ring.maxRadius = 35 + r * 20 + (stage || 0) * 10;\n      ring.life = 35 + r * 5;\n      ring.maxLife = ring.life;\n      ring.r = col.r;\n      ring.g2 = col.g;\n      ring.b = col.b;\n      ring.width = 2.5 - r * 0.3;\n      ab.activeRings.push(ring);\n    }\n\n    // Spawn flash\n    var flash = getFlash();\n    if (flash) {\n      flash.x = x;\n      flash.y = y;\n      flash.life = 12;\n      flash.maxLife = 12;\n      flash.r = pr;\n      flash.g2 = pg;\n      flash.b = pb;\n      flash.size = 20 + (stage || 0) * 10;\n      ab.activeFlashes.push(flash);\n    }\n  }\n\n  // Detect absorptions by watching score / absorbed count change\n  var ctx = g.ctx;\n\n  // Update and render\n  var currentAbsorbed = g.absorbed || 0;\n  if (ab.lastAbsorbed !== currentAbsorbed) {\n    var diff = currentAbsorbed - ab.lastAbsorbed;\n    if (diff > 0) {\n      spawnBurst(g.px, g.py, g.stage || 0);\n    }\n    ab.lastAbsorbed = currentAbsorbed;\n  }\n\n  var dt = (g._dt || (1/60)) * 60;\n\n  ctx.save();\n\n  // Apply camera transform if available\n  if (g._cam) {\n    var cam = g._cam;\n    ctx.translate(g.W / 2, g.H / 2);\n    ctx.scale(cam.zoom, cam.zoom);\n    ctx.translate(-cam.x, -cam.y);\n  }\n\n  // Render flash (radial gradient burst)\n  for (var i = ab.activeFlashes.length - 1; i >= 0; i--) {\n    var fl = ab.activeFlashes[i];\n    fl.life -= dt;\n    if (fl.life <= 0) {\n      ab.flashPool.push(ab.activeFlashes.splice(i, 1)[0]);\n      continue;\n    }\n    var t = fl.life / fl.maxLife;\n    var alpha = easeOut(t) * 0.7;\n    var radius = fl.size * (1 - cubicOut(t) + 1) * 1.5;\n    var grad = ctx.createRadialGradient(fl.x, fl.y, 0, fl.x, fl.y, radius);\n    grad.addColorStop(0, 'rgba(' + fl.r + ',' + fl.g2 + ',' + fl.b + ',' + alpha + ')');\n    grad.addColorStop(0.4, 'rgba(' + fl.r + ',' + fl.g2 + ',' + fl.b + ',' + (alpha * 0.3) + ')');\n    grad.addColorStop(1, 'rgba(' + fl.r + ',' + fl.g2 + ',' + fl.b + ',0)');\n    ctx.globalCompositeOperation = 'lighter';\n    ctx.fillStyle = grad;\n    ctx.beginPath();\n    ctx.arc(fl.x, fl.y, radius, 0, Math.PI * 2);\n    ctx.fill();\n    ctx.globalCompositeOperation = 'source-over';\n  }\n\n  // Render shockwave rings\n  for (var i = ab.activeRings.length - 1; i >= 0; i--) {\n    var ring = ab.activeRings[i];\n    ring.life -= dt;\n    if (ring.life <= 0) {\n      ab.ringPool.push(ab.activeRings.splice(i, 1)[0]);\n      continue;\n    }\n    var t = 1 - ring.life / ring.maxLife;\n    ring.radius = ring.maxRadius * cubicOut(t);\n    var alpha = (1 - t) * 0.8;\n    var lineW = ring.width * (1 - t * 0.5);\n\n    ctx.globalCompositeOperation = 'lighter';\n    ctx.strokeStyle = 'rgba(' + ring.r + ',' + ring.g2 + ',' + ring.b + ',' + alpha + ')';\n    ctx.lineWidth = lineW;\n    ctx.shadowColor = 'rgb(' + ring.r + ',' + ring.g2 + ',' + ring.b + ')';\n    ctx.shadowBlur = 8;\n    ctx.beginPath();\n    ctx.arc(ring.x, ring.y, ring.radius, 0, Math.PI * 2);\n    ctx.stroke();\n    ctx.shadowBlur = 0;\n    ctx.globalCompositeOperation = 'source-over';\n  }\n\n  // Render particles\n  ctx.globalCompositeOperation = 'lighter';\n\n  for (var i = ab.active.length - 1; i >= 0; i--) {\n    var p = ab.active[i];\n    p.life -= dt;\n    if (p.life <= 0) {\n      ab.pool.push(ab.active.splice(i, 1)[0]);\n      continue;\n    }\n\n    // Update position with drag\n    p.vx *= (1 - p.decay * dt);\n    p.vy *= (1 - p.decay * dt);\n    p.vy += 0.04 * dt; // slight gravity for sparkle feel\n    p.x += p.vx * dt;\n    p.y += p.vy * dt;\n    p.angle += p.spin * dt;\n\n    var t = p.life / p.maxLife;\n    var alpha = t < 0.2 ? (t / 0.2) * p.alpha : easeOut(t) * p.alpha;\n\n    ctx.save();\n    ctx.translate(p.x, p.y);\n    ctx.rotate(p.angle);\n\n    if (p.type === 0) {\n      // Spark - elongated oval with glow\n      var size = p.size * easeOut(t);\n      var speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);\n      var stretch = 1 + speed * 0.15;\n\n      ctx.shadowColor = 'rgb(' + p.r + ',' + p.g2 + ',' + p.b + ')';\n      ctx.shadowBlur = 6;\n\n      var grad = ctx.createRadialGradient(0, 0, 0, 0, 0, size * stretch);\n      grad.addColorStop(0, 'rgba(' + p.r + ',' + p.g2 + ',' + p.b + ',' + alpha + ')');\n      grad.addColorStop(0.5, 'rgba(' + p.r + ',' + p.g2 + ',' + p.b + ',' + (alpha * 0.5) + ')');\n      grad.addColorStop(1, 'rgba(' + p.r + ',' + p.g2 + ',' + p.b + ',0)');\n\n      ctx.scale(stretch, 1);\n      ctx.fillStyle = grad;\n      ctx.begin",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/prism-artui/design-absorption-burst-partic",
+    "filesChanged": [
+      "src/game/modules/absorption-burst-particle-effects.js"
+    ],
+    "linesAdded": 325,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 325,
+      "failed": 0,
+      "coverage": 0.8564414824993776
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Absorption Burst Particle Effects. Agent: prism-artui (Art/UI).",
+    "taskId": "task_d563fd0d5bf0",
     "state": "DRAFT",
     "scanResult": null,
     "assignedReviewers": [],
@@ -5421,7 +5748,7 @@
     "approvalRatio": null,
     "requiresHumanReview": false,
     "humanApproval": null,
-    "createdAt": "2026-02-24T03:57:24.253Z",
+    "createdAt": "2026-02-24T04:11:31.016Z",
     "submittedAt": null,
     "scanCompletedAt": null,
     "reviewCompletedAt": null,
