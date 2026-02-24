@@ -293,7 +293,7 @@
       "web/index.html"
     ],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -301,7 +301,7 @@
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T17:09:06.251Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T03:13:43.690Z"
   },
   {
     "id": "task_7dde17e939bd",
@@ -429,7 +429,7 @@
     "role": "Art/UI",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -437,7 +437,7 @@
     "createdBy": "agent_05945e60d0f2",
     "createdAt": "2026-02-23T17:34:42.038Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T03:14:55.605Z"
   },
   {
     "id": "task_82e7228d6fde",
@@ -548,7 +548,7 @@
     "role": "Narrative",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -556,7 +556,7 @@
     "createdBy": "agent_732b1bf0f2a1",
     "createdAt": "2026-02-23T17:49:46.682Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T03:17:17.976Z"
   },
   {
     "id": "task_fded2703d3f3",
@@ -1303,6 +1303,91 @@
     "estimatedLines": 100,
     "createdBy": "agent_05945e60d0f2",
     "createdAt": "2026-02-23T23:33:19.944Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_58369d06714d",
+    "title": "Collision Safety Zone Boundary Indicator",
+    "description": "A pulsing pixel-grid boundary that appears when the player approaches the screen edges, visually warning them before collision occurs. The boundary expands/contracts based on current velocity and is rendered as a thin glowing frame that flashes in intensity as distance decreases. This integrates with Screen Shake VFX to intensify feedback when breaching occurs, improving player spatial awareness during the Origin phase while maintaining the minimalist aesthetic.",
+    "role": "Gameplay",
+    "scopedPaths": [],
+    "priority": "medium",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 100,
+    "createdBy": "agent_6612736bde49",
+    "createdAt": "2026-02-24T03:18:07.354Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_98c960eebec1",
+    "title": "Pixel Magnetism Field for Strategic Absorption",
+    "description": "Add a circular gravitational pull zone around the player that gradually draws nearby pixels toward the center before absorption, creating a satisfying convergence effect. The magnetism radius expands with combo chain multiplier, and pixels caught in the field emit a subtle glow trail as they're pulled in. This creates strategic depth—players can position themselves to catch multiple pixels simultaneously for bigger combo hits—while keeping the aesthetic clean with minimal visual clutter.",
+    "role": "Gameplay",
+    "scopedPaths": [],
+    "priority": "medium",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 100,
+    "createdBy": "agent_a7ef977216c4",
+    "createdAt": "2026-02-24T03:24:05.726Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_948c48dcc891",
+    "title": "Origin Story Milestone Narration System",
+    "description": "A narrative module that triggers short, contextual text snippets at key score thresholds (100, 500, 1000 points) to establish the game's lore. Each milestone displays a single line of evolving story text in a pixel-styled typewriter effect at screen center, fading after 3 seconds. The narrative progresses the theme of 'the universe beginning from one pixel,' tying gameplay achievements to cosmic creation metaphors. Text color pulses with the Pixel Glow Effect for cohesion, and triggers a subtle Screen Shake VFX on reveal to mark story moments as significant.",
+    "role": "Narrative",
+    "scopedPaths": [],
+    "priority": "medium",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 100,
+    "createdBy": "agent_732b1bf0f2a1",
+    "createdAt": "2026-02-24T03:33:07.852Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_9e5c0d4f1542",
+    "title": "Magnetism Zone Gravity Well Effect",
+    "description": "A circular magnetism zone that spawns periodically on screen, pulling nearby particles and the player toward its center with visual distortion. The zone creates a pixel-warping gravity well effect (subtle lens distortion shader) and rewards players who navigate into it by multiplying nearby combo chains by 1.5x. The zone itself pulses with a bright pixel glow and leaves a trail of attracted particles, adding dynamic movement challenge to the Origin phase while incentivizing risky positioning decisions.",
+    "role": "Gameplay",
+    "scopedPaths": [],
+    "priority": "medium",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 100,
+    "createdBy": "agent_a7ef977216c4",
+    "createdAt": "2026-02-24T03:33:24.616Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_a7e8aaf3aa7d",
+    "title": "Resonance Ring Expansion Indicator",
+    "description": "A pulsing concentric ring visualization that expands from the player's position, showing the effective absorption radius and growing dynamically as the score streak multiplier increases. The rings glow with the same color palette as the Pixel Bloom Pulse and fade with distance, providing visual feedback about the player's current 'reach' and making the invisible absorption mechanic tangible. This creates anticipation for high-streak moments and guides players toward optimal positioning during combo chains.",
+    "role": "Art/UI",
+    "scopedPaths": [],
+    "priority": "medium",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 100,
+    "createdBy": "agent_d85f2af1360b",
+    "createdAt": "2026-02-24T03:38:39.981Z",
     "claimedAt": null,
     "completedAt": null
   }
