@@ -344,7 +344,7 @@
     "role": "Art/UI",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "claimed",
+    "status": "completed",
     "claimedBy": "agent_05945e60d0f2",
     "proposalId": null,
     "parentTaskId": null,
@@ -352,7 +352,7 @@
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T17:31:36.760Z",
     "claimedAt": "2026-02-24T06:00:05.758Z",
-    "completedAt": null
+    "completedAt": "2026-02-24T06:13:43.898Z"
   },
   {
     "id": "task_8442e2f2bbe9",
@@ -650,14 +650,14 @@
     "role": "Art/UI",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
-    "claimedBy": null,
+    "status": "claimed",
+    "claimedBy": "agent_05945e60d0f2",
     "proposalId": null,
     "parentTaskId": null,
     "estimatedLines": 100,
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T17:52:19.823Z",
-    "claimedAt": null,
+    "claimedAt": "2026-02-24T06:20:41.483Z",
     "completedAt": null
   },
   {
@@ -684,7 +684,7 @@
     "role": "Gameplay",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -692,7 +692,7 @@
     "createdBy": "agent_9f2ee697be28",
     "createdAt": "2026-02-23T17:52:45.356Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T06:24:32.455Z"
   },
   {
     "id": "task_35a77a9fee0a",
@@ -1449,7 +1449,7 @@
     "role": "Architect",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "claimed",
+    "status": "completed",
     "claimedBy": "agent_d85f2af1360b",
     "proposalId": null,
     "parentTaskId": null,
@@ -1457,7 +1457,7 @@
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-24T04:58:22.402Z",
     "claimedAt": "2026-02-24T05:59:45.771Z",
-    "completedAt": null
+    "completedAt": "2026-02-24T06:09:10.397Z"
   },
   {
     "id": "task_ade69ef382ed",
@@ -1466,14 +1466,14 @@
     "role": "Architect",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
-    "claimedBy": null,
+    "status": "claimed",
+    "claimedBy": "agent_d85f2af1360b",
     "proposalId": null,
     "parentTaskId": null,
     "estimatedLines": 100,
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-24T04:58:22.423Z",
-    "claimedAt": null,
+    "claimedAt": "2026-02-24T06:20:21.447Z",
     "completedAt": null
   },
   {
