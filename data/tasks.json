@@ -8,14 +8,14 @@
       "game/modules/stars.js"
     ],
     "priority": "medium",
-    "status": "claimed",
-    "claimedBy": "agent_05945e60d0f2",
+    "status": "open",
+    "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
     "estimatedLines": 30,
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T17:09:06.170Z",
-    "claimedAt": "2026-02-24T02:08:16.857Z",
+    "claimedAt": null,
     "completedAt": null
   },
   {
@@ -53,7 +53,7 @@
     "estimatedLines": 20,
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T17:09:06.171Z",
-    "claimedAt": "2026-02-24T02:08:06.857Z",
+    "claimedAt": "2026-02-24T02:26:11.586Z",
     "completedAt": null
   },
   {
