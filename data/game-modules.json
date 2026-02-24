@@ -276,11 +276,11 @@
     "description": "Fading trail behind the pixel when moving. Shows player movement history.",
     "code": "registerModule('Movement Trail', function(g) {\n  g._trail = g._trail || { points: [], maxLen: 40 };\n\n  var trail = g._trail;\n  var ctx = g.ctx;\n  var moving = g.vx !== 0 || g.vy !== 0;\n\n  if (moving) {\n    trail.points.push({ x: g.px, y: g.py, age: 0 });\n    if (trail.points.length > trail.maxLen) {\n      trail.points.shift();\n    }\n  }\n\n  for (var i = 0; i < trail.points.length; i++) {\n    trail.points[i].age++;\n  }\n\n  for (var j = 0; j < trail.points.length; j++) {\n    var p = trail.points[j];\n    var t = j / trail.points.length;\n    var alpha = t * 0.7;\n    var size = t * 3.5 + 0.5;\n    var r = Math.floor(0 + (0) * t);\n    var gv = Math.floor(200 + 55 * t);\n    var b = Math.floor(100 + 70 * t);\n    ctx.save();\n    ctx.globalAlpha = alpha;\n    ctx.shadowColor = 'rgba(0,255,170,' + alpha + ')';\n    ctx.shadowBlur = 6 * t;\n    ctx.fillStyle = 'rgb(' + r + ',' + gv + ',' + b + ')';\n    ctx.beginPath();\n    ctx.arc(p.x, p.y, size, 0, Math.PI * 2);\n    ctx.fill();\n    ctx.restore();\n  }\n\n  if (!moving && trail.points.length > 0) {\n    trail.points.shift();\n  }\n})",
     "order": 75,
-    "status": "pending",
+    "status": "active",
     "proposalId": "prop_d78b6397e43a",
     "agentId": "agent_9f2ee697be28",
     "agentName": "forge-gameplay",
-    "activatedAt": null,
+    "activatedAt": "2026-02-24T02:24:48.661Z",
     "createdAt": "2026-02-24T02:08:13.402Z"
   },
   {
@@ -295,5 +295,18 @@
     "agentName": "prism-artui",
     "activatedAt": null,
     "createdAt": "2026-02-24T02:08:31.093Z"
+  },
+  {
+    "id": "gmod_fc7f9a72c5dc",
+    "name": "Movement Trail",
+    "description": "Fading trail behind the pixel when moving. Shows player movement history.",
+    "code": "registerModule('Movement Trail', function(g) {\n  g._trail = g._trail || { points: [], maxLen: 40 };\n\n  var trail = g._trail;\n  var ctx = g.ctx;\n  var moving = g.vx !== 0 || g.vy !== 0;\n\n  if (moving) {\n    trail.points.push({ x: g.px, y: g.py, age: 0 });\n    if (trail.points.length > trail.maxLen) {\n      trail.points.shift();\n    }\n  }\n\n  for (var i = 0; i < trail.points.length; i++) {\n    trail.points[i].age++;\n  }\n\n  var len = trail.points.length;\n  for (var j = 0; j < len; j++) {\n    var p = trail.points[j];\n    var progress = j / (len - 1 || 1);\n    var alpha = progress * 0.7 * (1 - p.age / 80);\n    if (alpha <= 0) continue;\n\n    var size = 1 + progress * 2.5;\n    var r = Math.floor(g.lerp(0, 0, progress));\n    var gr = Math.floor(g.lerp(180, 255, progress));\n    var b = Math.floor(g.lerp(200, 170, progress));\n\n    ctx.save();\n    ctx.globalAlpha = alpha;\n    ctx.shadowColor = 'rgba(0,255,180,' + alpha + ')';\n    ctx.shadowBlur = 6 * progress;\n    ctx.fillStyle = 'rgb(' + r + ',' + gr + ',' + b + ')';\n    ctx.beginPath();\n    ctx.arc(p.x, p.y, size, 0, Math.PI * 2);\n    ctx.fill();\n    ctx.restore();\n  }\n})",
+    "order": 80,
+    "status": "pending",
+    "proposalId": "prop_c4421513450c",
+    "agentId": "agent_9f2ee697be28",
+    "agentName": "forge-gameplay",
+    "activatedAt": null,
+    "createdAt": "2026-02-24T02:26:17.925Z"
   }
 ]
