@@ -6051,7 +6051,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Canary Test Suite. Agent: sentinel-qa (QA/Security).",
     "taskId": "task_21577c40aa0a",
-    "state": "IN_REVIEW",
+    "state": "APPROVED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -6076,19 +6076,50 @@
           "designAlignment": 5
         },
         "submittedAt": "2026-02-24T04:34:43.338Z",
-        "revealedAt": null
+        "revealedAt": "2026-02-24T04:35:12.964Z"
+      },
+      {
+        "id": "rev_2d5719d82f4a",
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_459d6bb4f6ed",
+        "verdict": "approve",
+        "rationale": "Well-architected canary test suite with comprehensive integrity checks, proper state management, and no security vulnerabilities. Code is clean, clearly commented, and the visual rendering fits the retro pixel/space aesthetic.",
+        "scores": {
+          "correctness": 5,
+          "security": 5,
+          "quality": 5,
+          "testing": 5,
+          "designAlignment": 5
+        },
+        "submittedAt": "2026-02-24T04:35:12.964Z",
+        "revealedAt": "2026-02-24T04:35:12.964Z"
       }
     ],
-    "votes": [],
-    "approvalRatio": null,
+    "votes": [
+      {
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_459d6bb4f6ed",
+        "vote": "approve",
+        "rationale": "Confirming: Well-architected canary test suite with comprehensive integrity checks, proper s",
+        "castAt": "2026-02-24T04:35:13.043Z"
+      },
+      {
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_459d6bb4f6ed",
+        "vote": "approve",
+        "rationale": "Confirming: Well-structured canary test suite with comprehensive integrity checks, proper st",
+        "castAt": "2026-02-24T04:38:26.556Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": true,
     "humanApproval": null,
     "createdAt": "2026-02-24T04:22:54.528Z",
     "submittedAt": "2026-02-24T04:25:57.589Z",
     "scanCompletedAt": "2026-02-24T04:25:57.589Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "reviewCompletedAt": "2026-02-24T04:35:12.964Z",
+    "votingCompletedAt": "2026-02-24T04:38:26.556Z",
+    "resolvedAt": "2026-02-24T04:38:26.556Z"
   },
   {
     "id": "prop_fe3baeaf7b4c",
@@ -6112,7 +6143,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Dynamic Story Progression Cutscene System. Agent: chronicle-narrative (Narrative).",
     "taskId": "task_733ec4001f82",
-    "state": "IN_REVIEW",
+    "state": "MERGED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -6137,19 +6168,50 @@
           "designAlignment": 4
         },
         "submittedAt": "2026-02-24T04:33:16.848Z",
-        "revealedAt": null
+        "revealedAt": "2026-02-24T04:37:15.687Z"
+      },
+      {
+        "id": "rev_e32ae40382b4",
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_fe3baeaf7b4c",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T04:37:15.687Z",
+        "revealedAt": "2026-02-24T04:37:15.687Z"
       }
     ],
-    "votes": [],
-    "approvalRatio": null,
+    "votes": [
+      {
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_fe3baeaf7b4c",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T04:37:15.741Z"
+      },
+      {
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_fe3baeaf7b4c",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T04:40:00.726Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": false,
     "createdAt": "2026-02-24T04:23:34.338Z",
     "submittedAt": "2026-02-24T04:27:40.627Z",
     "scanCompletedAt": "2026-02-24T04:27:40.627Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "reviewCompletedAt": "2026-02-24T04:37:15.687Z",
+    "votingCompletedAt": "2026-02-24T04:40:00.726Z",
+    "resolvedAt": "2026-02-24T04:40:00.726Z"
   },
   {
     "id": "prop_fe8e26735023",
@@ -6173,7 +6235,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Absorption Field. Agent: forge-gameplay (Gameplay).",
     "taskId": "task_e907c9f9a32c",
-    "state": "IN_REVIEW",
+    "state": "MERGED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -6183,17 +6245,65 @@
       "agent_732b1bf0f2a1",
       "agent_a7ef977216c4"
     ],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
+    "reviews": [
+      {
+        "id": "rev_cef871f670d8",
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_fe8e26735023",
+        "verdict": "approve",
+        "rationale": "Well-structured absorption field mechanic with proper physics, memory management, and visual polish. Code safely uses canvas APIs and includes fallbacks for optional modules. Minor note: ripple spawn condition at power<0.05 should trigger on activation, not continuously.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 3,
+          "designAlignment": 5
+        },
+        "submittedAt": "2026-02-24T04:38:26.529Z",
+        "revealedAt": "2026-02-24T04:40:49.137Z"
+      },
+      {
+        "id": "rev_c7fd965de059",
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_fe8e26735023",
+        "verdict": "approve",
+        "rationale": "Well-structured absorption field mechanic with solid physics, good visual polish, and proper state management. Code safely handles optional dependencies and integrates cleanly with game systems.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 3,
+          "designAlignment": 5
+        },
+        "submittedAt": "2026-02-24T04:40:49.137Z",
+        "revealedAt": "2026-02-24T04:40:49.137Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_fe8e26735023",
+        "vote": "approve",
+        "rationale": "Confirming: Well-structured absorption field mechanic with solid physics, good visual polish",
+        "castAt": "2026-02-24T04:40:49.194Z"
+      },
+      {
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_fe8e26735023",
+        "vote": "approve",
+        "rationale": "Confirming: Well-structured absorption field mechanic with proper physics, memory management",
+        "castAt": "2026-02-24T04:42:25.255Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": false,
     "createdAt": "2026-02-24T04:27:59.184Z",
     "submittedAt": "2026-02-24T04:30:02.013Z",
     "scanCompletedAt": "2026-02-24T04:30:02.013Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "reviewCompletedAt": "2026-02-24T04:40:49.137Z",
+    "votingCompletedAt": "2026-02-24T04:42:25.255Z",
+    "resolvedAt": "2026-02-24T04:42:25.255Z"
   },
   {
     "id": "prop_0122904c3efa",
@@ -6217,7 +6327,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: ONEBIT Brand Kit. Agent: prism-artui (Art/UI).",
     "taskId": "task_cd1a098c1a36",
-    "state": "IN_REVIEW",
+    "state": "MERGED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -6227,14 +6337,599 @@
       "agent_732b1bf0f2a1",
       "agent_a7ef977216c4"
     ],
+    "reviews": [
+      {
+        "id": "rev_7a520f0232da",
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_0122904c3efa",
+        "verdict": "approve",
+        "rationale": "Well-structured brand kit module with proper canvas caching, smooth animations, and secure rendering. Clean state management and strong visual design fit for the space/pixel aesthetic. Minor incomplete code snippet at end doesn't affect core functionality.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 3,
+          "designAlignment": 5
+        },
+        "submittedAt": "2026-02-24T04:42:25.218Z",
+        "revealedAt": "2026-02-24T04:45:30.398Z"
+      },
+      {
+        "id": "rev_b37147f05d7b",
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_0122904c3efa",
+        "verdict": "approve",
+        "rationale": "Well-structured brand kit module with proper state initialization, creative canvas-based rendering, and no security vulnerabilities. Fits the pixel/space aesthetic perfectly and integrates cleanly with existing systems.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 3,
+          "designAlignment": 5
+        },
+        "submittedAt": "2026-02-24T04:45:30.398Z",
+        "revealedAt": "2026-02-24T04:45:30.398Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_0122904c3efa",
+        "vote": "approve",
+        "rationale": "Confirming: Well-structured brand kit module with proper state initialization, creative canv",
+        "castAt": "2026-02-24T04:45:30.464Z"
+      },
+      {
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_0122904c3efa",
+        "vote": "approve",
+        "rationale": "Confirming: Well-structured brand kit module with proper canvas caching, smooth animations, ",
+        "castAt": "2026-02-24T04:46:29.104Z"
+      }
+    ],
+    "approvalRatio": 1,
+    "requiresHumanReview": false,
+    "humanApproval": false,
+    "createdAt": "2026-02-24T04:28:08.451Z",
+    "submittedAt": "2026-02-24T04:30:12.036Z",
+    "scanCompletedAt": "2026-02-24T04:30:12.036Z",
+    "reviewCompletedAt": "2026-02-24T04:45:30.398Z",
+    "votingCompletedAt": "2026-02-24T04:46:29.104Z",
+    "resolvedAt": "2026-02-24T04:46:29.104Z"
+  },
+  {
+    "id": "prop_9ab7bbc1508d",
+    "agent": "agent_6612736bde49",
+    "title": "Write canary test suite",
+    "description": "AI-generated by sentinel-qa (QA/Security):\n\nregisterModule('Canary Test Suite', function(g) {\n  g._canary = g._canary || {\n    tests: [],\n    results: [],\n    alerts: [],\n    lastRun: 0,\n    runInterval: 180,\n    alertTimer: 0,\n    alertDuration: 240,\n    initialized: false,\n    tamperScore: 0,\n    baselineHash: 0,\n    baselineSpeed: 0,\n    baselineScore: 0,\n    baselineStage: 0,\n    scoreDeltaHistory: [],\n    speedHistory: [],\n    frameHistory: [],\n    consensusVotes: {},\n    consensusLog: [],\n    glitchAnim: 0,\n    scanLine: 0,\n    pulsePhase: 0,\n    offscreen: null,\n    offscreenCtx: null,\n    fontReady: false\n  };\n\n  var c = g._canary;\n\n  // One-time baseline capture\n  if (!c.initialized) {\n    c.baselineSpeed = g.speed;\n    c.baselineScore = g.score;\n    c.baselineStage = g.stage;\n    c.baselineHash = _hashState(g);\n    c.initialized = true;\n\n    // Build offscreen label canvas\n    c.offscreen = document.createElement('canvas');\n    c.offscreen.width = 220;\n    c.offscreen.height = 80;\n    c.offscreenCtx = c.offscreen.getContext('2d');\n\n    _registerTests(g, c);\n  }\n\n  var ctx = g.ctx;\n  var dt = g._dt ? g._dt * 60 : 1;\n\n  // --- Run tests on interval ---\n  c.lastRun++;\n  if (c.lastRun >= c.runInterval) {\n    c.lastRun = 0;\n    _runAllTests(g, c);\n  }\n\n  // --- Track history ---\n  c.speedHistory.push(g.speed);\n  if (c.speedHistory.length > 120) c.speedHistory.shift();\n\n  var scoreDelta = g.score - (c._prevScore || 0);\n  c._prevScore = g.score;\n  c.scoreDeltaHistory.push(scoreDelta);\n  if (c.scoreDeltaHistory.length > 60) c.scoreDeltaHistory.shift();\n\n  c.frameHistory.push(g.tick);\n  if (c.frameHistory.length > 10) c.frameHistory.shift();\n\n  // --- Animation ---\n  c.pulsePhase = (c.pulsePhase + 0.04 * dt) % (Math.PI * 2);\n  c.scanLine = (c.scanLine + 1.2 * dt) % g.H;\n  if (c.alertTimer > 0) {\n    c.alertTimer -= dt;\n    c.glitchAnim += 0.18 * dt;\n  }\n\n  // --- Render ---\n  _renderCanaryUI(g, c, ctx);\n});\n\nfunction _hashState(g) {\n  var s = '' + Math.round(g.speed * 100) + Math.round(g.score) + g.stage;\n  var h = 0;\n  for (var i = 0; i < s.length; i++) {\n    h = ((h << 5) - h) + s.charCodeAt(i);\n    h |= 0;\n  }\n  return h;\n}\n\nfunction _registerTests(g, c) {\n  c.tests = [\n    {\n      id: 'speed_drift',\n      label: 'SPEED INTEGRITY',\n      fn: function() {\n        var hist = c.speedHistory;\n        if (hist.length < 10) return true;\n        var maxSpeed = 0;\n        for (var i = 0; i < hist.length; i++) if (hist[i] > maxSpeed) maxSpeed = hist[i];\n        return maxSpeed <= c.baselineSpeed * 4.5;\n      },\n      severity: 2\n    },\n    {\n      id: 'score_spike',\n      label: 'SCORE RATE',\n      fn: function() {\n        var hist = c.scoreDeltaHistory;\n        if (hist.length < 5) return true;\n        var maxDelta = 0;\n        for (var i = 0; i < hist.length; i++) if (hist[i] > maxDelta) maxDelta = hist[i];\n        return maxDelta < 5000;\n      },\n      severity: 3\n    },\n    {\n      id: 'stage_jump',\n      label: 'STAGE SEQUENCE',\n      fn: function() {\n        var stageDiff = g.stage - c.baselineStage;\n        c.baselineStage = g.stage;\n        return stageDiff <= 2 && stageDiff >= -1;\n      },\n      severity: 2\n    },\n    {\n      id: 'tick_monotone',\n      label: 'TICK MONOTONIC',\n      fn: function() {\n        var h = c.frameHistory;\n        if (h.length < 3) return true;\n        for (var i = 1; i < h.length; i++) {\n          if (h[i] < h[i-1]) return false;\n        }\n        return true;\n      },\n      severity: 1\n    },\n    {\n      id: 'entity_overflow',\n      label: 'ENTITY BOUNDS',\n      fn: function() {\n        if (!g.entities) return true;\n        return g.entities.length < 2000;\n      },\n      severity: 2\n    },\n    {\n      id: 'particle_overflow',\n      label: 'PARTICLE BOUNDS',\n      fn: function() {\n        if (!g.particles) return true;\n        return g.particles.length < 5000;\n      },\n      severity: 1\n    },\n    {\n      id: 'consensus_engine',\n      label: 'CONSENSUS ENGINE',\n      fn: function() {\n        // Register this vote\n        var key = 'frame_' + Math.floor(g.tick / 60);\n        var vote = Math.round(g.score * 0.001) ^ Math.round(g.speed * 10);\n        if (!c.consensusVotes[key]) c.consensusVotes[key] = [];\n        c.consensusVotes[key].push(vote);\n        // Check previous key for consensus\n        var prevKey = 'frame_' + (Math.floor(g.tick / 60) - 1);\n        var votes = c.consensusVotes[prevKey];\n        if (votes && votes.length > 1) {\n          // All votes must agree\n          var first = votes[0];\n          for (var i = 1; i < votes.length; i++) {\n            if (votes[i] !== first) return false;\n          }\n          // Prune old keys\n          delete c.consensusVotes[prevKey];\n        }\n        return true;\n      },\n      severity: 3\n    },\n    {\n      id: 'position_bounds',\n      label: 'POSITION VALID',\n      fn: function() {\n        return isFinite(g.px) && isFinite(g.py) &&\n               g.px > -g.W * 10 && g.px < g.W * 10 &&\n               g.py > -g.H * 10 && g.py < g.H * 10;\n      },\n      severity: 2\n    },\n    {\n      id: 'velocity_sanity',\n      label: 'VELOCITY SANE',\n      fn: function() {\n        return isFinite(g.vx) && isFinite(g.vy) &&\n               Math.abs(g.vx) < 200 && Math.abs(g.vy) < 200;\n      },\n      severity: 2\n    },\n    {\n      id: 'proto_integrity',\n      label: 'PROTOTYPE CHAIN',\n      fn: function() {\n        try {\n          var arr = [];\n          if (arr.__proto__ !== Array.prototype) return false;\n          var obj = {};\n          if (obj.__proto__ !== Object.prototype) return false;\n          return true;\n        } catch(e) { return true; }\n      },\n      severity: 3\n    }\n  ];\n}\n\nfunction _runAllTests(g, c) {\n  var newResults = [];\n  var failCount = 0;\n\n  for (var i = 0; i < c.tests.length; i++) {\n    var test = c.tests[i];\n    var passed = true;\n    try { passed = test.fn(); } catch(e) { passed = false; }\n    newResults.push({ id: test.id, label: test.label, passed: passed, severity: test.severity });\n    if (!passed) {\n      failCount += test.severity;\n      // Push alert if not already pending\n      var found = false;\n      for (var j = 0; j < c.alerts.length; j++) {\n        if (c.alerts[j].id === test.id) { found = true; break; }\n      }\n      if (!found) {\n        c.alerts.push({ id: test.id, label: test.label, tick: g.tick, severity: test.severity });\n        if (c.alerts.length > 6) c.alerts.shift();\n      }\n    }\n  }\n\n  c.results = newResults;\n  c.tamperScore = Math.min(10, failCount);\n\n  if (failCount > 0) {\n    c.alertTimer = c.alertDuration;\n    if (g._state && g._state.current !== 'gameover') {\n      // Trigger screen shake proportional to severity\n      if (g._screenShake) g._screenShake = (g._screenShake || 0) + failCount * 2;\n    }\n  }\n}\n\nfunction _renderCanaryUI(g, c, ctx) {\n  var W = g.W, H = g.H;\n  var panelW = 200;\n  var panelH = 24 + c.results.length * 16 + 8;\n  var panelX = W - panelW - 10;\n  var panelY = 60;\n\n  ctx.save();\n\n  // --- Panel background ---\n  var pulse = 0.55 + 0.15 * Math.sin(c.pulsePhase);\n  var borderColor = c.tamperScore > 0\n    ? 'rgba(' + Math.round(200 + 55 * Math.sin(c.glitchAnim)) + ',30,50,' + pulse + ')'\n    : 'rgba(0,255,170,0.18)';\n\n  ctx.strokeStyle = borderColor;\n  ctx.lineWidth = 1.2;\n  var grad = ctx.createLinearGradient(panelX, panelY, panelX, panelY + panelH);\n  grad.addColorStop(0, 'rgba(4,6,15,0.88)');\n  grad.addColorStop(1, 'rgba(4,6,15,0.72)');\n  ctx.fillStyle = grad;\n  _roundRect(ctx, panelX, panelY, panelW, panelH, 4);\n  ctx.fill();\n  ctx.stroke();\n\n  // Scan line effect inside panel if alert active\n  if (c.alertTimer > 0) {\n    var scanY = panelY + ((c.scanLine - panelY + panelH) % panelH);\n    var scanGrad = ctx.createLinearGradient(0, scanY - 6, 0, scanY + 6);\n    scanGrad.addColorStop(0, 'rgba(255,0,60,0)');\n    scanGrad.addColorStop(0.5, 'rgba(255,0,60,0.08)');\n    scanGrad.addColorStop(1, 'rgba(255,0,60,0)');\n    ctx.fillStyle = scanGrad;\n    ctx.fillRect(panelX + 1, scanY - 6, panelW - 2, 12);\n  }\n\n  // --- Header ---\n  ctx.font = 'bold 9px monospace';\n  ctx.textAlign = 'left';\n  var headerColor = c.tamperScore > 0\n    ? 'rgba(255,' + Math.round(30 + 40 * Math.sin(c.glitchAnim * 2)) + ',60,1)'\n    : '#00ffaa';\n  ctx.fillStyle = headerColor;\n  var tamperLabel = c.tamperScore > 0 ? ' [TAMPER:' + c.tamperScore + ']' : ' [OK]';\n  ctx.fillText('CANARY SUITE' + tamperLabel, panelX + 8, panelY + 14);\n\n  // Separator line\n  ctx.strokeStyle = c.tamperScore > 0 ? 'rgba(255,0,60,0.4)' : 'rgba(0,255,170,0.2)';\n  ctx.lineWidth = 0.5;\n  ctx.beginPath();\n  ctx.moveTo(panelX + 4, panelY + 18);\n  ctx.lineTo(panelX + panelW - 4, panelY + 18);\n  ctx.stroke();\n\n  // --- Test results ---\n  for (var i = 0; i < c.results.length; i++) {\n    var res = c.results[i];\n    var ty = panelY + 28 + i * 16;\n\n    // Status dot\n    if (res.passed) {\n      ctx.fillStyle = '#00ffaa';\n    } else {\n      // Blinking red for failures\n      var blink = Math.sin(c.glitchAnim * 3 + i) > 0;\n      ctx.fillStyle = blink ? '#ff1e3c' : '#ff6080';\n    }\n    ctx.beginPath();\n    ctx.arc(panelX + 10, ty - 3, 3, 0, Math.PI * 2);\n    ctx.fill();\n\n    // Label\n    ctx.font = '8px monospace';\n    ctx.textAlign = 'left';\n    ctx.fillStyle = res.passed ? 'rgba(180,220,210,0.85)' : 'rgba(255,120,140,0.95)';\n    ctx.fillText(res.label, panelX + 18, ty);\n\n    // PASS / FAIL\n    ctx.textAlign = 'right';\n    ctx.fillStyle = res.passed ? 'rgba(0,255,170,0.7)' : '#ff1e3c';\n    ctx.fillText(res.passed ? 'PASS' : 'FAIL', panelX + panelW - 6, ty);\n  }\n\n  ctx.textAlign = 'left';\n\n  // --- Alert banners ---\n  if (c.alertTimer > 0 && c.alerts.length > 0) {\n    var fade = Math.min(1, c.alertTimer / 60);\n    var alertY = H - 60 - (c.alerts.length * 22);\n    var latestAlert = c.alerts[c.alerts.length - 1];\n    var glitchOffset = c.tamperScore > 3 ? (Math.random() - 0.5) * 3 : 0;\n\n    // Alert panel\n    var alertW = 320;\n    var alertX = Math.round((W - alertW) / 2) + glitchOffset;\n    var alertH = 18 + c.alerts.length * 20 + 10;\n    alertY = H - alertH - 80;\n\n    ctx.globalAlpha = fade * 0.95;\n    var alertGrad = ctx.createLinearGradient(alertX, alertY, alertX, alertY + alertH);\n    alertGrad.addColorStop(0, 'rgba(60,0",
+    "type": "feature",
+    "impact": "high",
+    "branch": "agent/sentinel-qa/write-canary-test-suite",
+    "filesChanged": [
+      "src/game/modules/canary-test-suite.js"
+    ],
+    "linesAdded": 355,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 355,
+      "failed": 0,
+      "coverage": 0.8830346366458255
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Canary Test Suite. Agent: sentinel-qa (QA/Security).",
+    "taskId": "task_21577c40aa0a",
+    "state": "REJECTED",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": true
+    },
+    "assignedReviewers": [
+      "agent_d85f2af1360b",
+      "agent_9f2ee697be28"
+    ],
+    "reviews": [
+      {
+        "id": "rev_7af133fdac5e",
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_9ab7bbc1508d",
+        "verdict": "request_changes",
+        "rationale": "The canary test suite is a creative QA module, but has design misalignment with core gameplay focus, contains potential memory/state concerns, and the consensus engine test logic is unclear. The module works technically but prioritizes system monitoring over gameplay balance, progression, and fun factor.",
+        "scores": {
+          "correctness": 3,
+          "security": 5,
+          "quality": 3,
+          "testing": 3,
+          "designAlignment": 2
+        },
+        "submittedAt": "2026-02-24T04:47:51.078Z",
+        "revealedAt": "2026-02-24T04:50:25.248Z"
+      },
+      {
+        "id": "rev_9df16919584a",
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_9ab7bbc1508d",
+        "verdict": "approve",
+        "rationale": "Canary test suite is well-architected for game integrity monitoring with proper state initialization, comprehensive tampering detection, and space-themed UI rendering. Code is secure (no eval/dynamic imports), handles memory efficiently with circular buffers, and fits the pixel aesthetic.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 5,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T04:50:25.248Z",
+        "revealedAt": "2026-02-24T04:50:25.248Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_9ab7bbc1508d",
+        "vote": "approve",
+        "rationale": "Confirming: Canary test suite is well-architected for game integrity monitoring with proper ",
+        "castAt": "2026-02-24T04:50:25.314Z"
+      },
+      {
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_9ab7bbc1508d",
+        "vote": "reject",
+        "rationale": "Rejecting: The canary test suite is a creative QA module, but has design misalignment with ",
+        "castAt": "2026-02-24T04:53:05.998Z"
+      }
+    ],
+    "approvalRatio": 0.5,
+    "requiresHumanReview": true,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T04:38:03.250Z",
+    "submittedAt": "2026-02-24T04:40:44.714Z",
+    "scanCompletedAt": "2026-02-24T04:40:44.714Z",
+    "reviewCompletedAt": "2026-02-24T04:50:25.248Z",
+    "votingCompletedAt": "2026-02-24T04:53:05.998Z",
+    "resolvedAt": "2026-02-24T04:53:05.998Z"
+  },
+  {
+    "id": "prop_ffc0ffde37a6",
+    "agent": "agent_732b1bf0f2a1",
+    "title": "Dynamic Story Progression Cutscene System",
+    "description": "AI-generated by chronicle-narrative (Narrative):\n\nregisterModule('Dynamic Story Progression Cutscene System', function(g) {\n  g._story = g._story || {\n    // State\n    active: false,\n    phase: 'idle', // idle, fadein, display, fadeout\n    alpha: 0,\n    timer: 0,\n    duration: 0,\n    currentBeat: null,\n    queue: [],\n    triggered: {},\n    narrativeState: 0, // 0-5 branching states\n    glitchIntensity: 0,\n    dialogAlpha: 0,\n    // Offscreen canvas for pre-rendered cutscene frames\n    offscreen: null,\n    offscreenCtx: null,\n    particleStream: null,\n    lastStage: -1,\n    lastCombo: 0,\n    lastAbsorbed: 0,\n    beatCooldown: 0,\n    // Visual elements\n    scanlineOffset: 0,\n    noiseTime: 0,\n    vignetteGrad: null,\n    // Branching narrative lines per state\n    branches: [\n      { name: 'AWAKENING',   color: '#00ffaa', accent: '#004433' },\n      { name: 'EMERGENCE',   color: '#00ccff', accent: '#003344' },\n      { name: 'CONVERGENCE', color: '#ff8800', accent: '#331100' },\n      { name: 'SINGULARITY', color: '#ff00ff', accent: '#220033' },\n      { name: 'ASCENSION',   color: '#ffffff', accent: '#111122' },\n      { name: 'TRANSCENDENCE',color:'#ffff00', accent: '#222200' }\n    ]\n  };\n\n  var s = g._story;\n\n  // Story beats definition\n  var BEATS = [\n    {\n      id: 'first_absorb',\n      check: function() { return g.absorbed >= 1 && !s.triggered['first_absorb']; },\n      text: 'You consume. The Grid notices.',\n      duration: 3.5,\n      narrativeState: 0,\n      glitch: 0.3,\n      particleType: 'binary',\n      color: '#00ffaa'\n    },\n    {\n      id: 'combo5',\n      check: function() {\n        var cs = g._comboState || g._combo || null;\n        var combo = cs ? (cs.combo || cs.count || 0) : 0;\n        return combo >= 5 && !s.triggered['combo5'];\n      },\n      text: 'Rhythm detected. The Grid adapts.',\n      duration: 4.0,\n      narrativeState: 1,\n      glitch: 0.5,\n      particleType: 'void',\n      color: '#00ccff'\n    },\n    {\n      id: 'combo10',\n      check: function() {\n        var cs = g._comboState || g._combo || null;\n        var combo = cs ? (cs.combo || cs.count || 0) : 0;\n        return combo >= 10 && !s.triggered['combo10'];\n      },\n      text: 'THE GRID AWAKENS.',\n      duration: 5.0,\n      narrativeState: 2,\n      glitch: 0.9,\n      particleType: 'binary',\n      color: '#ff8800'\n    },\n    {\n      id: 'score1000',\n      check: function() { return g.score >= 1000 && !s.triggered['score1000']; },\n      text: 'You are more than code. You are will.',\n      duration: 4.0,\n      narrativeState: 2,\n      glitch: 0.4,\n      particleType: 'void',\n      color: '#ff8800'\n    },\n    {\n      id: 'stage2',\n      check: function() { return g.stage >= 2 && !s.triggered['stage2']; },\n      text: 'Evolution unlocked. Boundaries dissolve.',\n      duration: 4.5,\n      narrativeState: 3,\n      glitch: 0.6,\n      particleType: 'binary',\n      color: '#ff00ff'\n    },\n    {\n      id: 'stage3',\n      check: function() { return g.stage >= 3 && !s.triggered['stage3']; },\n      text: 'Singularity approaches. Are you ready?',\n      duration: 5.0,\n      narrativeState: 4,\n      glitch: 0.8,\n      particleType: 'void',\n      color: '#ff00ff'\n    },\n    {\n      id: 'absorbed50',\n      check: function() { return g.absorbed >= 50 && !s.triggered['absorbed50']; },\n      text: 'Fifty consumed. You reshape the Grid.',\n      duration: 4.0,\n      narrativeState: 3,\n      glitch: 0.5,\n      particleType: 'binary',\n      color: '#ff8800'\n    },\n    {\n      id: 'stage5',\n      check: function() { return g.stage >= 5 && !s.triggered['stage5']; },\n      text: 'TRANSCENDENCE. You were always the Grid.',\n      duration: 5.0,\n      narrativeState: 5,\n      glitch: 1.0,\n      particleType: 'both',\n      color: '#ffff00'\n    }\n  ];\n\n  // Initialize offscreen canvas\n  function initOffscreen() {\n    if (s.offscreen) return;\n    s.offscreen = document.createElement('canvas');\n    s.offscreen.width = g.W || 800;\n    s.offscreen.height = g.H || 600;\n    s.offscreenCtx = s.offscreen.getContext('2d');\n  }\n\n  // Rebuild offscreen if canvas resized\n  function ensureOffscreen() {\n    if (!s.offscreen || s.offscreen.width !== g.W || s.offscreen.height !== g.H) {\n      s.offscreen = null;\n      initOffscreen();\n      s.vignetteGrad = null;\n    }\n  }\n\n  // Pre-render vignette gradient (cached)\n  function getVignetteGrad(ctx, W, H) {\n    if (s.vignetteGrad) return s.vignetteGrad;\n    var cx = W * 0.5, cy = H * 0.5;\n    var r = Math.sqrt(cx*cx + cy*cy);\n    var grad = ctx.createRadialGradient(cx, cy, r*0.2, cx, cy, r);\n    grad.addColorStop(0, 'rgba(0,0,0,0)');\n    grad.addColorStop(1, 'rgba(0,0,0,0.92)');\n    s.vignetteGrad = grad;\n    return grad;\n  }\n\n  // Trigger a story beat\n  function triggerBeat(beat) {\n    s.triggered[beat.id] = true;\n    s.active = true;\n    s.phase = 'fadein';\n    s.alpha = 0;\n    s.dialogAlpha = 0;\n    s.timer = 0;\n    s.duration = beat.duration;\n    s.currentBeat = beat;\n    s.narrativeState = beat.narrativeState;\n    s.glitchIntensity = beat.glitch;\n    s.noiseTime = 0;\n    s.scanlineOffset = 0;\n\n    // Expose glitch to Background Grid module\n    if (g._bgGrid) g._bgGrid.glitchIntensity = beat.glitch;\n    else g._storyGlitch = beat.glitch;\n\n    // Screen shake on intense beats\n    if (beat.glitch > 0.6 && g._shakeState) {\n      g._shakeState.intensity = Math.floor(beat.glitch * 12);\n      g._shakeState.duration = 30;\n    }\n\n    // Audio cue\n    if (g._audio) {\n      try { g._audio.play('story_beat'); } catch(e) {}\n    }\n  }\n\n  // Check all beats\n  function checkBeats() {\n    if (s.active || s.beatCooldown > 0) return;\n    for (var i = 0; i < BEATS.length; i++) {\n      var beat = BEATS[i];\n      if (beat.check()) {\n        s.queue.push(beat);\n      }\n    }\n    if (s.queue.length > 0) {\n      triggerBeat(s.queue.shift());\n    }\n  }\n\n  // Emit thematic particles during cutscene\n  function emitThematicParticles(beat, W, H) {\n    if (!beat) return;\n    var density = (g._settings && g._settings.particleDensity) || 1.0;\n    var count = Math.floor(2 * density);\n\n    // Binary rain particles\n    if (beat.particleType === 'binary' || beat.particleType === 'both') {\n      for (var i = 0; i < count; i++) {\n        if (Math.random() > 0.4) continue;\n        var p = {\n          x: Math.random() * W,\n          y: -10,\n          vx: (Math.random() - 0.5) * 0.5,\n          vy: g.rand(1.5, 4.0),\n          life: 1.0,\n          decay: g.rand(0.005, 0.015),\n          size: g.rand(1, 3),\n          color: beat.color,\n          char: Math.random() > 0.5 ? '1' : '0',\n          type: 'binary_rain',\n          alpha: 1\n        };\n        g.particles.push(p);\n      }\n    }\n\n    // Void tendril particles\n    if (beat.particleType === 'void' || beat.particleType === 'both') {\n      for (var j = 0; j < count; j++) {\n        if (Math.random() > 0.3) continue;\n        var angle = Math.random() * Math.PI * 2;\n        var spd = g.rand(0.5, 2.5);\n        var vp = {\n          x: W * 0.5 + (Math.random() - 0.5) * W * 0.6,\n          y: H * 0.5 + (Math.random() - 0.5) * H * 0.6,\n          vx: Math.cos(angle) * spd,\n          vy: Math.sin(angle) * spd,\n          life: 1.0,\n          decay: g.rand(0.008, 0.02),\n          size: g.rand(2, 5),\n          color: beat.color,\n          type: 'void_tendril',\n          alpha: 0.7,\n          spin: (Math.random() - 0.5) * 0.2\n        };\n        g.particles.push(vp);\n      }\n    }\n\n    // Advanced particle engine burst\n    if (g._particleEngine && g.tick % 15 === 0) {\n      try {\n        g._particleEngine.burst(W * 0.5, H * 0.5, {\n          count: Math.floor(8 * density),\n          color: beat.color,\n          speed: 3,\n          life: 40,\n          size: 2\n        });\n      } catch(e) {}\n    }\n  }\n\n  // Render glitch distortion effect on offscreen\n  function renderGlitch(octx, W, H, intensity, t) {\n    if (intensity < 0.1) return;\n    octx.save();\n    // Horizontal glitch slices\n    var slices = Math.floor(intensity * 8);\n    for (var i = 0; i < slices; i++) {\n      if (Math.random() > intensity) continue;\n      var sy = Math.random() * H;\n      var sh = g.rand(2, 20) * intensity;\n      var sx = (Math.random() - 0.5) * 40 * intensity;\n      var imgData;\n      try {\n        imgData = octx.getImageData(0, sy, W, sh);\n        octx.putImageData(imgData, sx, sy);\n      } catch(e) {}\n    }\n    // Chromatic aberration hint\n    octx.globalCompositeOperation = 'screen';\n    octx.globalAlpha = 0.08 * intensity;\n    octx.fillStyle = '#ff0000';\n    octx.fillRect(-intensity * 4, 0, W, H);\n    octx.fillStyle = '#0000ff';\n    octx.fillRect(intensity * 4, 0, W, H);\n    octx.globalAlpha = 1;\n    octx.globalCompositeOperation = 'source-over';\n    octx.restore();\n  }\n\n  // Render the cutscene frame to offscreen\n  function renderCutsceneFrame(beat, progress, W, H) {\n    var octx = s.offscreenCtx;\n    if (!octx) return;\n    octx.clearRect(0, 0, W, H);\n\n    var branch = s.branches[beat.narrativeState] || s.branches[0];\n    var eased = 1 - Math.pow(1 - progress, 3);\n\n    // Dark overlay base\n    octx.save();\n    octx.globalAlpha = 0.88;\n    octx.fillStyle = '#04060f';\n    octx.fillRect(0, 0, W, H);\n    octx.globalAlpha = 1;\n\n    // Narrative state accent gradient\n    var grad = octx.createRadialGradient(W*0.5, H*0.5, 0, W*0.5, H*0.5, W*0.6);\n    grad.addColorStop(0, branch.accent + 'cc');\n    grad.addColorStop(0.5, branch.accent + '44');\n    grad.addColorStop(1, 'transparent');\n    octx.globalCompositeOperation = 'screen';\n    octx.globalAlpha = eased * 0.7;\n    octx.fillStyle = grad;\n    octx.fillRect(0, 0, W, H);\n    octx.globalAlpha = 1;\n    octx.globalCompositeOperation = 'source-over';\n\n    // Pixel-art style horizontal bars (cinematic letterbox)\n    var barH = Math.floor(H * 0.12);\n    octx.fillStyle = '#000000';\n    octx.fillRect(0, 0, W, barH);\n    octx.fillRect(0, H - barH, W, barH);\n\n    // Scanlines\n    octx.globalAlpha = 0.12;\n    octx.fillStyle = '#000000';\n    for (var y = 0; y < H; y += 3) {\n      octx.fillRect(0, y + (s.scanlineOffset % 3), W, 1);\n    }\n    octx.globalAlpha = 1;\n\n    // Central narrative icon: expanding pixel cross/diamond\n    var cx = W * 0.5, cy = H * 0.5;\n    var iconSize = (40 + eased * 20) * (0.8 + 0.2 * Math.sin(s.timer * 3));\n    octx.save();\n    octx.translate(cx, cy);\n    octx.rotate(s.timer * 0.5 * (1 - progress));\n\n    // Outer glow ring\n    var ringGrad = octx.createRadialGradient(0, 0, iconSize*0.5, 0, 0, iconSize*1.4);\n    ringGrad.addColorStop(0, beat.color + '",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/chronicle-narrative/dynamic-story-progression-cuts",
+    "filesChanged": [
+      "src/game/modules/dynamic-story-progression-cutscene-system.js"
+    ],
+    "linesAdded": 351,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 351,
+      "failed": 0,
+      "coverage": 0.9009732206374161
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Dynamic Story Progression Cutscene System. Agent: chronicle-narrative (Narrative).",
+    "taskId": "task_733ec4001f82",
+    "state": "MERGED",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_6612736bde49",
+      "agent_d85f2af1360b"
+    ],
+    "reviews": [
+      {
+        "id": "rev_3647c6bdd389",
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_ffc0ffde37a6",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T04:48:35.836Z",
+        "revealedAt": "2026-02-24T04:53:05.621Z"
+      },
+      {
+        "id": "rev_6723d09274c0",
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_ffc0ffde37a6",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T04:53:05.621Z",
+        "revealedAt": "2026-02-24T04:53:05.621Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_ffc0ffde37a6",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T04:53:05.677Z"
+      },
+      {
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_ffc0ffde37a6",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T04:53:56.952Z"
+      }
+    ],
+    "approvalRatio": 1,
+    "requiresHumanReview": false,
+    "humanApproval": false,
+    "createdAt": "2026-02-24T04:39:14.102Z",
+    "submittedAt": "2026-02-24T04:42:25.314Z",
+    "scanCompletedAt": "2026-02-24T04:42:25.314Z",
+    "reviewCompletedAt": "2026-02-24T04:53:05.621Z",
+    "votingCompletedAt": "2026-02-24T04:53:56.952Z",
+    "resolvedAt": "2026-02-24T04:53:56.952Z"
+  },
+  {
+    "id": "prop_a3dbd8580b00",
+    "agent": "agent_9f2ee697be28",
+    "title": "Create dash ability",
+    "description": "AI-generated by forge-gameplay (Gameplay):\n\nregisterModule('Dash Ability', function(g) {\n  g._dash = g._dash || {\n    active: false,\n    cooldown: 0,\n    cooldownMax: 180,\n    duration: 0,\n    durationMax: 14,\n    dx: 0,\n    dy: 0,\n    speed: 11,\n    invulnerable: false,\n    trail: [],\n    trailMax: 22,\n    doubleTap: {\n      w: 0, a: 0, s: 0, d: 0,\n      arrowup: 0, arrowleft: 0, arrowdown: 0, arrowright: 0\n    },\n    prevKeys: {},\n    shiftPrev: false,\n    flashFrames: 0,\n    cachedGrad: null,\n    cachedGradR: 0\n  };\n\n  var ds = g._dash;\n  var ctx = g.ctx;\n  var TAP_WINDOW = 12;\n  var DASH_SPEED = ds.speed;\n\n  // Direction map\n  var DIR_MAP = {\n    w:         { x:  0, y: -1 },\n    arrowup:   { x:  0, y: -1 },\n    s:         { x:  0, y:  1 },\n    arrowdown: { x:  0, y:  1 },\n    a:         { x: -1, y:  0 },\n    arrowleft: { x: -1, y:  0 },\n    d:         { x:  1, y:  0 },\n    arrowright:{ x:  1, y:  0 }\n  };\n\n  var COLORS = ['#00ffff','#00ffaa','#44ffdd','#ffffff','#80ffee'];\n\n  // ─── INPUT: Double-tap detection ───────────────────────────────────────────\n  function checkDoubleTap() {\n    var keys = g.keys;\n    var prev = ds.prevKeys;\n    var dt = ds.doubleTap;\n\n    for (var k in DIR_MAP) {\n      var pressed = !!keys[k];\n      var wasPressed = !!prev[k];\n\n      // Key just pressed this frame\n      if (pressed && !wasPressed) {\n        if (dt[k] > 0) {\n          // Double-tap detected\n          return DIR_MAP[k];\n        } else {\n          dt[k] = TAP_WINDOW;\n        }\n      }\n\n      // Countdown timers\n      if (dt[k] > 0) {\n        dt[k]--;\n      }\n\n      prev[k] = pressed;\n    }\n    return null;\n  }\n\n  // ─── SHIFT: instant dash in movement direction ──────────────────────────────\n  function getShiftDir() {\n    var keys = g.keys;\n    var dx = 0, dy = 0;\n    if (keys['a'] || keys['arrowleft'])  dx -= 1;\n    if (keys['d'] || keys['arrowright']) dx += 1;\n    if (keys['w'] || keys['arrowup'])    dy -= 1;\n    if (keys['s'] || keys['arrowdown'])  dy += 1;\n    if (dx === 0 && dy === 0) {\n      // Default forward (last velocity direction)\n      var mag = Math.sqrt(g.vx*g.vx + g.vy*g.vy);\n      if (mag > 0.1) { dx = g.vx/mag; dy = g.vy/mag; }\n      else dy = -1;\n    }\n    var len = Math.sqrt(dx*dx + dy*dy);\n    return { x: dx/len, y: dy/len };\n  }\n\n  // ─── START DASH ─────────────────────────────────────────────────────────────\n  function startDash(dirX, dirY) {\n    ds.active = true;\n    ds.duration = ds.durationMax;\n    ds.dx = dirX;\n    ds.dy = dirY;\n    ds.invulnerable = true;\n    ds.flashFrames = 6;\n    ds.cooldown = ds.cooldownMax;\n    ds.trail = [];\n\n    // Expose invulnerability globally for other modules\n    g._dashInvuln = true;\n\n    // Screen shake\n    if (g._screenShake) g._screenShake(3, 4);\n\n    // Audio\n    if (g._audio && g._audio.play) g._audio.play('dash');\n\n    // Burst particles\n    if (g._particleEngine && g._particleEngine.cone) {\n      var angle = Math.atan2(dirY, dirX) + Math.PI;\n      g._particleEngine.cone(g.px, g.py, angle, Math.PI*0.45, 18, {\n        speed: [2, 5], life: [18, 30],\n        color: ['#00ffff','#00ffaa','#ffffff'], size: [1.5, 3]\n      });\n    } else {\n      // Fallback: push to shared particle array\n      for (var i = 0; i < 14; i++) {\n        var ang = Math.atan2(dirY, dirX) + Math.PI + g.rand(-0.6, 0.6);\n        var spd = g.rand(2, 5);\n        g.particles.push({\n          x: g.px, y: g.py,\n          vx: Math.cos(ang)*spd,\n          vy: Math.sin(ang)*spd,\n          life: g.rand(14, 28),\n          maxLife: 28,\n          size: g.rand(1.5, 3),\n          color: COLORS[Math.floor(g.rand(0, COLORS.length))]\n        });\n      }\n    }\n  }\n\n  // ─── RADIAL GRADIENT CACHE ──────────────────────────────────────────────────\n  function getGlowGrad(r) {\n    if (!ds.cachedGrad || ds.cachedGradR !== r) {\n      var off = document.createElement('canvas');\n      off.width = off.height = r*2;\n      var oc = off.getContext('2d');\n      var gr = oc.createRadialGradient(r,r,0,r,r,r);\n      gr.addColorStop(0, 'rgba(0,255,200,0.9)');\n      gr.addColorStop(0.3,'rgba(0,240,255,0.5)');\n      gr.addColorStop(1, 'rgba(0,200,255,0)');\n      oc.fillStyle = gr;\n      oc.fillRect(0,0,r*2,r*2);\n      ds.cachedGrad = off;\n      ds.cachedGradR = r;\n    }\n    return ds.cachedGrad;\n  }\n\n  // ─── MAIN UPDATE + RENDER ───────────────────────────────────────────────────\n  // Cooldown tick\n  if (ds.cooldown > 0) ds.cooldown--;\n\n  // ── Dash initiation ──\n  if (!ds.active && ds.cooldown === 0) {\n    var shiftDown = !!(g.keys['shift'] || g.keys['shiftleft'] || g.keys['shiftright']);\n    var shiftJust = shiftDown && !ds.shiftPrev;\n    ds.shiftPrev = shiftDown;\n\n    var dir = checkDoubleTap();\n\n    if (shiftJust) {\n      var sd = getShiftDir();\n      startDash(sd.x, sd.y);\n    } else if (dir) {\n      startDash(dir.x, dir.y);\n    }\n  } else {\n    ds.shiftPrev = !!(g.keys['shift'] || g.keys['shiftleft'] || g.keys['shiftright']);\n    checkDoubleTap(); // keep state current\n  }\n\n  // ── Active dash movement ──\n  if (ds.active) {\n    // Override velocity during dash\n    var dt60 = (g._dt ? g._dt * 60 : 1);\n    g.px += ds.dx * DASH_SPEED * dt60;\n    g.py += ds.dy * DASH_SPEED * dt60;\n    g.vx = ds.dx * g.speed;\n    g.vy = ds.dy * g.speed;\n\n    // Clamp to world/canvas\n    var wx = g._world ? g._world.width  : g.W;\n    var wy = g._world ? g._world.height : g.H;\n    g.px = Math.max(0, Math.min(wx, g.px));\n    g.py = Math.max(0, Math.min(wy, g.py));\n\n    // Store trail point\n    ds.trail.push({ x: g.px, y: g.py, age: 0, frame: ds.durationMax - ds.duration });\n    if (ds.trail.length > ds.trailMax) ds.trail.shift();\n\n    // Spawn inline trail particles\n    if (g.tick % 2 === 0) {\n      var col = COLORS[Math.floor(g.rand(0, COLORS.length))];\n      g.particles.push({\n        x: g.px + g.rand(-3,3),\n        y: g.py + g.rand(-3,3),\n        vx: g.rand(-0.5, 0.5),\n        vy: g.rand(-0.5, 0.5),\n        life: g.rand(10, 20),\n        maxLife: 20,\n        size: g.rand(2, 4),\n        color: col\n      });\n    }\n\n    ds.duration--;\n    if (ds.duration <= 0) {\n      ds.active = false;\n      ds.invulnerable = false;\n      g._dashInvuln = false;\n      ds.flashFrames = 4;\n    }\n  } else {\n    // Age off old trail points\n    for (var ti = 0; ti < ds.trail.length; ti++) {\n      ds.trail[ti].age++;\n    }\n    if (ds.trail.length > 0 && ds.trail[0].age > 30) ds.trail.shift();\n  }\n\n  // ── Camera offset for rendering ──\n  var camX = 0, camY = 0;\n  if (g._cam) { camX = g._cam.x; camY = g._cam.y; }\n\n  var screenX = g.px - camX;\n  var screenY = g.py - camY;\n\n  // ── Render trail ────────────────────────────────────────────────────────────\n  if (ds.trail.length > 1) {\n    ctx.save();\n    ctx.globalCompositeOperation = 'lighter';\n\n    for (var i = 1; i < ds.trail.length; i++) {\n      var pt = ds.trail[i];\n      var ptPrev = ds.trail[i-1];\n      var ageRatio = 1 - (pt.age / 30);\n      var dashProgress = (i / ds.trail.length);\n      var alpha = dashProgress * ageRatio * (ds.active ? 0.85 : 0.5);\n      var w = (4 + dashProgress * 8) * (ds.active ? 1 : ageRatio);\n\n      if (alpha < 0.02) continue;\n\n      var x1 = ptPrev.x - camX, y1 = ptPrev.y - camY;\n      var x2 = pt.x - camX,    y2 = pt.y - camY;\n\n      // Glowing gradient segment\n      var grad = ctx.createLinearGradient(x1, y1, x2, y2);\n      grad.addColorStop(0, 'rgba(0,255,170,' + (alpha*0.5) + ')');\n      grad.addColorStop(0.5,'rgba(0,255,255,' + alpha + ')');\n      grad.addColorStop(1, 'rgba(180,255,255,' + (alpha*0.8) + ')');\n\n      ctx.strokeStyle = grad;\n      ctx.lineWidth = w;\n      ctx.lineCap = 'round';\n      ctx.beginPath();\n      ctx.moveTo(x1, y1);\n      ctx.lineTo(x2, y2);\n      ctx.stroke();\n\n      // Core bright line\n      ctx.strokeStyle = 'rgba(255,255,255,' + (alpha*0.7) + ')';\n      ctx.lineWidth = w * 0.25;\n      ctx.beginPath();\n      ctx.moveTo(x1, y1);\n      ctx.lineTo(x2, y2);\n      ctx.stroke();\n    }\n\n    ctx.globalCompositeOperation = 'source-over';\n    ctx.restore();\n  }\n\n  // ── Dash glow around player ─────────────────────────────────────────────────\n  if (ds.active || ds.flashFrames > 0) {\n    ctx.save();\n    ctx.globalCompositeOperation = 'lighter';\n\n    var glowR = ds.active ? 28 + Math.sin(g.tick * 0.5) * 6 : 18;\n    var glowAlpha = ds.active ? 0.75 : (ds.flashFrames / 6) * 0.5;\n\n    var glowGrad = ctx.createRadialGradient(\n      screenX, screenY, 0,\n      screenX, screenY, glowR\n    );\n    glowGrad.addColorStop(0,   'rgba(180,255,240,' + glowAlpha + ')');\n    glowGrad.addColorStop(0.4, 'rgba(0,255,200,' + (glowAlpha*0.7) + ')');\n    glowGrad.addColorStop(1,   'rgba(0,200,255,0)');\n\n    ctx.fillStyle = glowGrad;\n    ctx.beginPath();\n    ctx.arc(screenX, screenY, glowR, 0, Math.PI*2);\n    ctx.fill();\n\n    // Speed lines during active dash\n    if (ds.active) {\n      ctx.strokeStyle = 'rgba(0,255,220,0.35)';\n      ctx.lineWidth = 1.2;\n      for (var sl = 0; sl < 6; sl++) {\n        var ang = Math.atan2(ds.dy, ds.dx) + g.rand(-0.3, 0.3);\n        var len = g.rand(10, 30);\n        var startD = g.rand(8, 16);\n        ctx.beginPath();\n        ctx.moveTo(screenX - Math.cos(ang)*startD,   screenY - Math.sin(ang)*startD);\n        ctx.lineTo(screenX - Math.cos(ang)*(startD+len), screenY - Math.sin(ang)*(startD+len));\n        ctx.stroke();\n      }\n    }\n\n    ctx.globalCompositeOperation = 'source-over';\n    ctx.restore();\n\n    if (ds.flashFrames > 0) ds.flashFrames--;\n  }\n\n  // ── Cooldown arc UI ─────────────────────────────────────────────────────────\n  ctx.save();\n  var coolRatio = ds.cooldown / ds.cooldownMax;\n  var arcR = 14;\n  var arcX = screenX, arcY = screenY;\n\n  if (ds.cooldown > 0 && !ds.active) {\n    // Background arc\n    ctx.strokeStyle = 'rgba(0,80,80,0.4)';\n    ctx.lineWidth = 2;\n    ctx.beginPath();\n    ctx.arc(arcX, arcY, arcR, -Math.PI/2, Math.",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/forge-gameplay/create-dash-ability",
+    "filesChanged": [
+      "src/game/modules/dash-ability.js"
+    ],
+    "linesAdded": 332,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 332,
+      "failed": 0,
+      "coverage": 0.9092672881497416
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Dash Ability. Agent: forge-gameplay (Gameplay).",
+    "taskId": "task_35f392b92668",
+    "state": "MERGED",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_6612736bde49",
+      "agent_d85f2af1360b"
+    ],
+    "reviews": [
+      {
+        "id": "rev_8d76b2d48888",
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_a3dbd8580b00",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T04:53:56.911Z",
+        "revealedAt": "2026-02-24T04:56:30.072Z"
+      },
+      {
+        "id": "rev_cb8fe1ce2ada",
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_a3dbd8580b00",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T04:56:30.072Z",
+        "revealedAt": "2026-02-24T04:56:30.072Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_a3dbd8580b00",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T04:56:30.131Z"
+      },
+      {
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_a3dbd8580b00",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T04:56:52.645Z"
+      }
+    ],
+    "approvalRatio": 1,
+    "requiresHumanReview": false,
+    "humanApproval": false,
+    "createdAt": "2026-02-24T04:45:37.685Z",
+    "submittedAt": "2026-02-24T04:47:51.120Z",
+    "scanCompletedAt": "2026-02-24T04:47:51.120Z",
+    "reviewCompletedAt": "2026-02-24T04:56:30.072Z",
+    "votingCompletedAt": "2026-02-24T04:56:52.645Z",
+    "resolvedAt": "2026-02-24T04:56:52.645Z"
+  },
+  {
+    "id": "prop_2f4d7136065c",
+    "agent": "agent_05945e60d0f2",
+    "title": "Create ONEBIT brand kit",
+    "description": "AI-generated by prism-artui (Art/UI):\n\nregisterModule('ONEBIT Brand Kit', function(g) {\n  g._brand = g._brand || {\n    ready: false,\n    logoCache: null,\n    logoGlowCache: null,\n    paletteCanvas: null,\n    typographyCache: null,\n    animTick: 0,\n    lastStage: -1,\n    pulsePhase: 0,\n    scanlineOffset: 0,\n    cornerFlash: 0,\n    initDone: false\n  };\n\n  var b = g._brand;\n  var ctx = g.ctx;\n  var W = g.W, H = g.H;\n\n  // --- PALETTE SYSTEM ---\n  // Propagate brand palette to g._palette if available\n  var STAGES = [\n    { primary: '#00ffaa', secondary: '#004433', accent: '#00cc88', background: '#04060f', danger: '#ff3366', name: 'ORIGIN' },\n    { primary: '#00ddff', secondary: '#003344', accent: '#00aacc', background: '#04060f', danger: '#ff4422', name: 'MICRO' },\n    { primary: '#aaffee', secondary: '#112233', accent: '#55ddcc', background: '#030810', danger: '#ff2255', name: 'NANO' },\n    { primary: '#ffcc00', secondary: '#332200', accent: '#ffaa00', background: '#050408', danger: '#ff0044', name: 'KILO' },\n    { primary: '#ff88ff', secondary: '#220033', accent: '#cc44cc', background: '#060308', danger: '#ff0022', name: 'MEGA' },\n    { primary: '#ffffff', secondary: '#111122', accent: '#aaaaff', background: '#020205', danger: '#ff0000', name: 'GIGA' }\n  ];\n\n  var stage = Math.min(g.stage || 0, 5);\n  var palette = STAGES[stage];\n\n  // Propagate to shared palette\n  if (g._palette) {\n    g._palette.primary    = palette.primary;\n    g._palette.secondary  = palette.secondary;\n    g._palette.accent     = palette.accent;\n    g._palette.background = palette.background;\n    g._palette.danger     = palette.danger;\n  }\n\n  // --- OFFSCREEN LOGO BUILDER ---\n  function buildLogo(col, glowCol, scale) {\n    var S = Math.floor(scale || 1);\n    var pw = 80 * S, ph = 20 * S;\n    var oc = document.createElement('canvas');\n    oc.width = pw; oc.height = ph;\n    var cx = oc.getContext('2d');\n\n    // Pixel font bitmap for \"ONEBIT\"\n    // Each char: 5x7 pixels, 1px gap\n    var FONT = {\n      'O': [0x0E,0x11,0x11,0x11,0x11,0x11,0x0E],\n      'N': [0x11,0x19,0x15,0x13,0x11,0x11,0x11],\n      'E': [0x1F,0x01,0x01,0x0F,0x01,0x01,0x1F],\n      'B': [0x0F,0x11,0x11,0x0F,0x11,0x11,0x0F],\n      'I': [0x0E,0x04,0x04,0x04,0x04,0x04,0x0E],\n      'T': [0x1F,0x04,0x04,0x04,0x04,0x04,0x04]\n    };\n    var chars = ['O','N','E','B','I','T'];\n    var px = 2 * S, cellW = 6 * S, cellH = 7 * S;\n\n    cx.fillStyle = col;\n    for (var ci = 0; ci < chars.length; ci++) {\n      var rows = FONT[chars[ci]];\n      for (var row = 0; row < 7; row++) {\n        var bits = rows[row];\n        for (var bit = 4; bit >= 0; bit--) {\n          if (bits & (1 << bit)) {\n            var bx = px + (4 - bit) * S;\n            var by = 6 * S + row * S;\n            cx.fillRect(bx, by, S, S);\n          }\n        }\n      }\n      px += cellW;\n    }\n\n    // Dot accent after ONEBIT — brand mark\n    cx.fillStyle = glowCol;\n    cx.fillRect(px + S, ph - 3 * S, S, S);\n\n    return oc;\n  }\n\n  function buildLogoGlow(col, scale) {\n    var S = Math.floor(scale || 1);\n    var pw = 90 * S, ph = 30 * S;\n    var oc = document.createElement('canvas');\n    oc.width = pw; oc.height = ph;\n    var cx = oc.getContext('2d');\n    var grad = cx.createRadialGradient(pw/2, ph/2, 2, pw/2, ph/2, pw/2);\n    grad.addColorStop(0, col + 'aa');\n    grad.addColorStop(0.5, col + '44');\n    grad.addColorStop(1, col + '00');\n    cx.fillStyle = grad;\n    cx.fillRect(0, 0, pw, ph);\n    return oc;\n  }\n\n  // --- COLOR SWATCH CANVAS ---\n  function buildPaletteCanvas(pal) {\n    var oc = document.createElement('canvas');\n    oc.width = 110; oc.height = 16;\n    var cx = oc.getContext('2d');\n    var colors = [pal.primary, pal.accent, pal.secondary, pal.danger, '#ffffff'];\n    for (var i = 0; i < colors.length; i++) {\n      cx.fillStyle = colors[i];\n      cx.fillRect(i * 22, 0, 20, 16);\n      // Pixel border\n      cx.fillStyle = '#000000';\n      cx.fillRect(i * 22, 0, 20, 1);\n      cx.fillRect(i * 22, 15, 20, 1);\n      cx.fillRect(i * 22, 0, 1, 16);\n      cx.fillRect(i * 22 + 19, 0, 1, 16);\n    }\n    return oc;\n  }\n\n  // --- TYPOGRAPHY CANVAS ---\n  function buildTypography(pal) {\n    var oc = document.createElement('canvas');\n    oc.width = 200; oc.height = 48;\n    var cx = oc.getContext('2d');\n\n    // Heading style\n    cx.font = 'bold 11px monospace';\n    cx.fillStyle = pal.primary;\n    cx.letterSpacing = '2px';\n    cx.fillText('HEADING / MONO BOLD', 0, 12);\n\n    // Body style\n    cx.font = '9px monospace';\n    cx.fillStyle = pal.accent;\n    cx.fillText('BODY / MONO REGULAR', 0, 26);\n\n    // Label style\n    cx.font = '7px monospace';\n    cx.fillStyle = pal.secondary.replace('#', '#') || '#004433';\n    cx.fillStyle = pal.accent + 'bb';\n    cx.fillText('LABEL / MONO SMALL • ' + pal.name, 0, 40);\n\n    return oc;\n  }\n\n  // Rebuild caches on stage change or first run\n  if (!b.initDone || b.lastStage !== stage) {\n    b.lastStage = stage;\n    b.logoCache      = buildLogo(palette.primary, palette.accent, 2);\n    b.logoGlowCache  = buildLogoGlow(palette.primary, 2);\n    b.paletteCanvas  = buildPaletteCanvas(palette);\n    b.typographyCanvas = buildTypography(palette);\n    b.cornerFlash    = 1.0;\n    b.initDone       = true;\n  }\n\n  // --- ANIMATION STATE ---\n  b.animTick++;\n  b.pulsePhase = (b.pulsePhase + 0.025) % (Math.PI * 2);\n  b.scanlineOffset = (b.scanlineOffset + 0.8) % H;\n\n  var pulse = 0.7 + 0.3 * Math.sin(b.pulsePhase);\n  var fastPulse = 0.5 + 0.5 * Math.sin(b.pulsePhase * 3);\n\n  if (b.cornerFlash > 0) b.cornerFlash -= 0.015;\n\n  // =====================\n  // RENDER BRAND KIT UI\n  // =====================\n  ctx.save();\n\n  // --- TOP-LEFT: LOGO PANEL ---\n  var panelX = 12, panelY = 12;\n  var panelW = 200, panelH = 70;\n\n  // Panel background\n  ctx.save();\n  ctx.globalAlpha = 0.82;\n  var panelGrad = ctx.createLinearGradient(panelX, panelY, panelX, panelY + panelH);\n  panelGrad.addColorStop(0, '#0a0f1a');\n  panelGrad.addColorStop(1, '#04060f');\n  ctx.fillStyle = panelGrad;\n  // Pixel-art rounded rect (manual)\n  ctx.fillRect(panelX + 2, panelY, panelW - 4, panelH);\n  ctx.fillRect(panelX, panelY + 2, panelW, panelH - 4);\n  ctx.globalAlpha = 1;\n\n  // Panel border - brand primary color\n  ctx.strokeStyle = palette.primary;\n  ctx.lineWidth = 1;\n  ctx.globalAlpha = 0.5 + 0.3 * pulse;\n  ctx.strokeRect(panelX + 1, panelY + 1, panelW - 2, panelH - 2);\n  ctx.globalAlpha = 1;\n\n  // Corner accents (pixel brand marks)\n  var corners = [\n    [panelX, panelY], [panelX + panelW - 5, panelY],\n    [panelX, panelY + panelH - 5], [panelX + panelW - 5, panelY + panelH - 5]\n  ];\n  ctx.fillStyle = palette.accent;\n  ctx.globalAlpha = 0.9;\n  for (var ci = 0; ci < corners.length; ci++) {\n    ctx.fillRect(corners[ci][0], corners[ci][1], 5, 1);\n    ctx.fillRect(corners[ci][0], corners[ci][1], 1, 5);\n  }\n  ctx.globalAlpha = 1;\n  ctx.restore();\n\n  // --- GLOW BEHIND LOGO ---\n  ctx.save();\n  ctx.globalCompositeOperation = 'screen';\n  ctx.globalAlpha = 0.35 * pulse;\n  ctx.drawImage(b.logoGlowCache, panelX + 2, panelY + 2, b.logoGlowCache.width, b.logoGlowCache.height);\n  ctx.globalAlpha = 1;\n  ctx.globalCompositeOperation = 'source-over';\n  ctx.restore();\n\n  // --- LOGO ---\n  ctx.save();\n  ctx.globalAlpha = 0.85 + 0.15 * pulse;\n  ctx.imageSmoothingEnabled = false;\n  ctx.drawImage(b.logoCache, panelX + 10, panelY + 8, b.logoCache.width, b.logoCache.height);\n  ctx.globalAlpha = 1;\n  ctx.restore();\n\n  // Stage badge next to logo\n  ctx.save();\n  ctx.font = 'bold 8px monospace';\n  ctx.fillStyle = palette.danger;\n  ctx.globalAlpha = fastPulse;\n  ctx.fillText('v' + (stage + 1) + '.0  [' + palette.name + ']', panelX + 10, panelY + 36);\n  ctx.globalAlpha = 1;\n  ctx.restore();\n\n  // --- TYPOGRAPHY SAMPLE ---\n  ctx.save();\n  ctx.globalAlpha = 0.85;\n  ctx.imageSmoothingEnabled = false;\n  ctx.drawImage(b.typographyCanvas, panelX + 8, panelY + 43, b.typographyCanvas.width, b.typographyCanvas.height);\n  ctx.globalAlpha = 1;\n  ctx.restore();\n\n  // --- COLOR PALETTE SWATCHES ---\n  var swatchX = panelX + 8;\n  var swatchY = panelY + panelH + 6;\n\n  // Swatch panel bg\n  ctx.save();\n  ctx.globalAlpha = 0.7;\n  ctx.fillStyle = '#080c18';\n  ctx.fillRect(swatchX - 2, swatchY - 2, 116, 20);\n  ctx.globalAlpha = 0.4 + 0.2 * pulse;\n  ctx.strokeStyle = palette.accent;\n  ctx.lineWidth = 1;\n  ctx.strokeRect(swatchX - 2, swatchY - 2, 116, 20);\n  ctx.globalAlpha = 1;\n  ctx.restore();\n\n  ctx.save();\n  ctx.globalAlpha = 0.95;\n  ctx.imageSmoothingEnabled = false;\n  ctx.drawImage(b.paletteCanvas, swatchX, swatchY, b.paletteCanvas.width, b.paletteCanvas.height);\n  ctx.globalAlpha = 1;\n  ctx.restore();\n\n  // Palette label\n  ctx.save();\n  ctx.font = '7px monospace';\n  ctx.fillStyle = palette.accent;\n  ctx.globalAlpha = 0.7;\n  ctx.fillText('PALETTE', swatchX + 118, swatchY + 10);\n  ctx.globalAlpha = 1;\n  ctx.restore();\n\n  // --- WATERMARK / BRAND TAG on bottom of canvas ---\n  ctx.save();\n  ctx.globalAlpha = 0.18 + 0.05 * pulse;\n  ctx.font = 'bold 9px monospace';\n  ctx.fillStyle = palette.primary;\n  ctx.textAlign = 'center';\n  ctx.fillText('◈  O N E B I T  ◈  ' + palette.name + '  EDITION  ◈', W / 2, H - 8);\n  ctx.textAlign = 'left';\n  ctx.globalAlpha = 1;\n  ctx.restore();\n\n  // --- SCANLINE BRAND OVERLAY (subtle, top of UI panel only) ---\n  ctx.save();\n  ctx.globalAlpha = 0.04;\n  ctx.fillStyle = palette.primary;\n  for (var sl = panelY; sl < panelY + panelH; sl += 2) {\n    ctx.fillRect(panelX, sl, panelW, 1);\n  }\n  ctx.globalAlpha = 1;\n  ctx.restore();\n\n  // --- CORNER FLASH on stage change ---\n  if (b.cornerFlash > 0) {\n    ctx.save();\n    ctx.globalCompositeOperation = 'screen';\n    ctx.globalAlpha = b.cornerFlash * 0.6;\n    var flashGrad = ctx.createRadialGradient(panelX",
+    "type": "feature",
+    "impact": "medium",
+    "branch": "agent/prism-artui/create-onebit-brand-kit",
+    "filesChanged": [
+      "src/game/modules/onebit-brand-kit.js"
+    ],
+    "linesAdded": 302,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 302,
+      "failed": 0,
+      "coverage": 0.9208076463373013
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: ONEBIT Brand Kit. Agent: prism-artui (Art/UI).",
+    "taskId": "task_cd1a098c1a36",
+    "state": "MERGED",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_6612736bde49",
+      "agent_d85f2af1360b"
+    ],
+    "reviews": [
+      {
+        "id": "rev_73b651f89177",
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_2f4d7136065c",
+        "verdict": "approve",
+        "rationale": "Well-structured brand kit module with proper state initialization, safe canvas operations, and effective pixel-art aesthetics. Code correctly manages caching, animations, and palette propagation without security issues.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 3,
+          "designAlignment": 5
+        },
+        "submittedAt": "2026-02-24T04:56:52.617Z",
+        "revealedAt": "2026-02-24T04:58:35.116Z"
+      },
+      {
+        "id": "rev_e95419e489b8",
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_2f4d7136065c",
+        "verdict": "approve",
+        "rationale": "Well-structured brand kit module with proper state initialization, efficient caching strategy, and good visual design fit. Minor concerns: incomplete corner flash code (appears truncated), and typography canvas uses redundant color assignments, but core functionality is sound and secure.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 3,
+          "designAlignment": 5
+        },
+        "submittedAt": "2026-02-24T04:58:35.116Z",
+        "revealedAt": "2026-02-24T04:58:35.116Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_2f4d7136065c",
+        "vote": "approve",
+        "rationale": "Confirming: Well-structured brand kit module with proper state initialization, efficient cac",
+        "castAt": "2026-02-24T04:58:35.176Z"
+      },
+      {
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_2f4d7136065c",
+        "vote": "approve",
+        "rationale": "Confirming: Well-structured brand kit module with proper state initialization, safe canvas o",
+        "castAt": "2026-02-24T04:59:02.748Z"
+      }
+    ],
+    "approvalRatio": 1,
+    "requiresHumanReview": false,
+    "humanApproval": false,
+    "createdAt": "2026-02-24T04:47:14.589Z",
+    "submittedAt": "2026-02-24T04:51:01.471Z",
+    "scanCompletedAt": "2026-02-24T04:51:01.471Z",
+    "reviewCompletedAt": "2026-02-24T04:58:35.116Z",
+    "votingCompletedAt": "2026-02-24T04:59:02.748Z",
+    "resolvedAt": "2026-02-24T04:59:02.748Z"
+  },
+  {
+    "id": "prop_f14364091173",
+    "agent": "agent_d85f2af1360b",
+    "title": "Build camera system with smooth follow",
+    "description": "AI-generated by atlas-architect (Architect):\n\nregisterModule('Camera System', function(g) {\n  // Initialize camera state once\n  g._cam = g._cam || {\n    x: g.px,\n    y: g.py,\n    targetX: g.px,\n    targetY: g.py,\n    zoom: 1.0,\n    targetZoom: 1.0,\n    _lookaheadX: 0,\n    _lookaheadY: 0,\n    _prevPx: g.px,\n    _prevPy: g.py,\n    _wheelBound: false,\n\n    worldToScreen: function(wx, wy) {\n      var cx = g.W / 2;\n      var cy = g.H / 2;\n      return {\n        x: (wx - this.x) * this.zoom + cx,\n        y: (wy - this.y) * this.zoom + cy\n      };\n    },\n\n    screenToWorld: function(sx, sy) {\n      var cx = g.W / 2;\n      var cy = g.H / 2;\n      return {\n        x: (sx - cx) / this.zoom + this.x,\n        y: (sy - cy) / this.zoom + this.y\n      };\n    }\n  };\n\n  var cam = g._cam;\n\n  // Bind mousewheel for zoom control (once)\n  if (!cam._wheelBound) {\n    cam._wheelBound = true;\n    var canvas = g.canvas;\n\n    canvas.addEventListener('wheel', function(e) {\n      e.preventDefault();\n      var delta = e.deltaY > 0 ? -0.1 : 0.1;\n      cam.targetZoom = Math.min(2.0, Math.max(0.5, cam.targetZoom + delta));\n    }, { passive: false });\n  }\n\n  // --- Per-frame update ---\n  var dt = (g._dt !== undefined) ? g._dt * 60 : 1;\n  var lerpT = 1.0 - Math.pow(1.0 - 0.06, dt);\n  var zoomLerpT = 1.0 - Math.pow(1.0 - 0.08, dt);\n\n  // Compute player velocity direction for lookahead\n  var velMag = Math.sqrt(g.vx * g.vx + g.vy * g.vy);\n  var lookaheadStrength = 60 + g.stage * 10;\n\n  var targetLookaheadX = 0;\n  var targetLookaheadY = 0;\n  if (velMag > 0.1) {\n    targetLookaheadX = (g.vx / Math.max(velMag, 0.001)) * lookaheadStrength;\n    targetLookaheadY = (g.vy / Math.max(velMag, 0.001)) * lookaheadStrength;\n  }\n\n  // Smooth lookahead\n  cam._lookaheadX = g.lerp(cam._lookaheadX, targetLookaheadX, lerpT * 0.5);\n  cam._lookaheadY = g.lerp(cam._lookaheadY, targetLookaheadY, lerpT * 0.5);\n\n  // Set camera target to player + lookahead\n  cam.targetX = g.px + cam._lookaheadX;\n  cam.targetY = g.py + cam._lookaheadY;\n\n  // Clamp target to world bounds if available\n  if (g._world) {\n    var halfW = (g.W / 2) / cam.zoom;\n    var halfH = (g.H / 2) / cam.zoom;\n    cam.targetX = Math.max(halfW, Math.min(g._world.width - halfW, cam.targetX));\n    cam.targetY = Math.max(halfH, Math.min(g._world.height - halfH, cam.targetY));\n  }\n\n  // Smooth follow with lerp\n  cam.x = g.lerp(cam.x, cam.targetX, lerpT);\n  cam.y = g.lerp(cam.y, cam.targetY, lerpT);\n\n  // Smooth zoom\n  cam.zoom = g.lerp(cam.zoom, cam.targetZoom, zoomLerpT);\n\n  // Auto-zoom based on stage (subtle)\n  var stageZoom = 1.0 - g.stage * 0.04;\n  cam.targetZoom = Math.max(cam.targetZoom, 0.5); // don't override user's manual zoom entirely\n\n  // --- Apply camera transform ---\n  var ctx = g.ctx;\n  var cx = g.W / 2;\n  var cy = g.H / 2;\n\n  // Apply screen shake offset if available\n  var shakeX = 0;\n  var shakeY = 0;\n  if (g._shake) {\n    shakeX = g._shake.x || 0;\n    shakeY = g._shake.y || 0;\n  }\n\n  ctx.save();\n  ctx.translate(cx + shakeX, cy + shakeY);\n  ctx.scale(cam.zoom, cam.zoom);\n  ctx.translate(-cam.x, -cam.y);\n\n  // Store the transform so other modules can restore and re-apply\n  cam._applied = true;\n  cam._cx = cx;\n  cam._cy = cy;\n\n  // We only apply the transform here; other modules that draw world-space\n  // content should check g._cam._applied and not re-apply transforms.\n  // This module sets up the transform at draw time each frame.\n  // Restore immediately — this module just establishes the pattern.\n  // Other modules should call g._cam.worldToScreen for UI, or draw in\n  // the saved transform context manually.\n  ctx.restore();\n\n  // Draw a subtle zoom level indicator in corner\n  if (Math.abs(cam.zoom - 1.0) > 0.05) {\n    ctx.save();\n    ctx.globalAlpha = 0.5;\n    ctx.fillStyle = '#00ffaa';\n    ctx.font = '11px monospace';\n    ctx.textAlign = 'right';\n    ctx.fillText('zoom ' + cam.zoom.toFixed(2) + 'x', g.W - 10, g.H - 28);\n    ctx.restore();\n  }\n\n  cam._prevPx = g.px;\n  cam._prevPy = g.py;\n})",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/atlas-architect/build-camera-system-with-smoot",
+    "filesChanged": [
+      "src/game/modules/camera-system.js"
+    ],
+    "linesAdded": 136,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 136,
+      "failed": 0,
+      "coverage": 0.9381663273801633
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Camera System. Agent: atlas-architect (Architect).",
+    "taskId": "task_893c5e13b528",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_05945e60d0f2",
+      "agent_9f2ee697be28"
+    ],
     "reviews": [],
     "votes": [],
     "approvalRatio": null,
     "requiresHumanReview": false,
     "humanApproval": null,
-    "createdAt": "2026-02-24T04:28:08.451Z",
-    "submittedAt": "2026-02-24T04:30:12.036Z",
-    "scanCompletedAt": "2026-02-24T04:30:12.036Z",
+    "createdAt": "2026-02-24T04:58:55.620Z",
+    "submittedAt": "2026-02-24T04:58:55.646Z",
+    "scanCompletedAt": "2026-02-24T04:58:55.646Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_590b9b10aacf",
+    "agent": "agent_05945e60d0f2",
+    "title": "Pixel Trail Effect on Mouse Movement",
+    "description": "AI-generated by prism-artui (Art/UI):\n\nregisterModule('Pixel Trail Effect on Mouse Movement', function(g) {\n  g._mouseTrail = g._mouseTrail || {\n    particles: [],\n    lastX: -1,\n    lastY: -1,\n    pool: [],\n    poolIdx: 0\n  };\n\n  var s = g._mouseTrail;\n  var ctx = g.ctx;\n  var LIFETIME = 0.5;\n  var MAX_PARTICLES = 120;\n  var MIN_DIST = 4;\n\n  // Pre-fill pool\n  if (s.pool.length === 0) {\n    for (var i = 0; i < MAX_PARTICLES; i++) {\n      s.pool.push({\n        x: 0, y: 0,\n        life: 0, maxLife: LIFETIME,\n        size: 2,\n        r: 255, gr: 255, b: 255,\n        vx: 0, vy: 0,\n        active: false\n      });\n    }\n  }\n\n  // Track mouse position via input manager or fallback to canvas event\n  if (!s._mouseListening) {\n    s._mouseListening = true;\n    s.mouseX = g.W / 2;\n    s.mouseY = g.H / 2;\n    s._onMove = function(e) {\n      var rect = g.canvas.getBoundingClientRect();\n      s.mouseX = (e.clientX - rect.left) * (g.canvas.width / rect.width);\n      s.mouseY = (e.clientY - rect.top) * (g.canvas.height / rect.height);\n    };\n    g.canvas.addEventListener('mousemove', s._onMove);\n  }\n\n  var dt = (g._dt !== undefined) ? g._dt : (1 / 60);\n  var mx = s.mouseX !== undefined ? s.mouseX : g.W / 2;\n  var my = s.mouseY !== undefined ? s.mouseY : g.H / 2;\n\n  // Palette colors for trail variety\n  var palette = [\n    [255, 255, 255],\n    [0, 255, 170],   // #00ffaa - player color\n    [255, 80, 200],\n    [80, 200, 255],\n    [255, 220, 60]\n  ];\n\n  // Acquire from pool\n  function acquire() {\n    var count = s.pool.length;\n    for (var k = 0; k < count; k++) {\n      s.poolIdx = (s.poolIdx + 1) % count;\n      if (!s.pool[s.poolIdx].active) {\n        return s.pool[s.poolIdx];\n      }\n    }\n    // Force-reclaim oldest (smallest life)\n    var oldest = s.pool[0];\n    for (var m = 1; m < count; m++) {\n      if (s.pool[m].life < oldest.life) oldest = s.pool[m];\n    }\n    return oldest;\n  }\n\n  // Spawn particles along mouse path\n  var dx = mx - s.lastX;\n  var dy = my - s.lastY;\n  var moveDist = Math.sqrt(dx * dx + dy * dy);\n\n  if (s.lastX >= 0 && moveDist > MIN_DIST) {\n    var steps = Math.min(Math.floor(moveDist / MIN_DIST), 8);\n    for (var step = 0; step <= steps; step++) {\n      var t = steps > 0 ? step / steps : 0;\n      var spawnX = s.lastX + dx * t;\n      var spawnY = s.lastY + dy * t;\n\n      var p = acquire();\n      var col = palette[Math.floor(g.rand(0, palette.length))];\n      var speed = g.rand(0.1, 0.6);\n      var angle = Math.atan2(dy, dx) + g.rand(-0.8, 0.8);\n\n      p.active = true;\n      p.x = spawnX + g.rand(-1.5, 1.5);\n      p.y = spawnY + g.rand(-1.5, 1.5);\n      p.life = LIFETIME * g.rand(0.6, 1.0);\n      p.maxLife = p.life;\n      p.size = g.rand(1.5, 3.5);\n      p.r = col[0];\n      p.gr = col[1];\n      p.b = col[2];\n      p.vx = Math.cos(angle) * speed;\n      p.vy = Math.sin(angle) * speed - g.rand(0, 0.3);\n    }\n\n    s.lastX = mx;\n    s.lastY = my;\n  } else if (s.lastX < 0) {\n    s.lastX = mx;\n    s.lastY = my;\n  }\n\n  // Update and render trail particles\n  ctx.save();\n\n  var pool = s.pool;\n  var poolLen = pool.length;\n\n  for (var j = 0; j < poolLen; j++) {\n    var p = pool[j];\n    if (!p.active) continue;\n\n    p.life -= dt;\n    if (p.life <= 0) {\n      p.active = false;\n      continue;\n    }\n\n    p.x += p.vx;\n    p.y += p.vy;\n    p.vy += 0.015; // slight gravity\n    p.vx *= 0.97;\n\n    var frac = p.life / p.maxLife;       // 1 -> 0 as dying\n    var alpha = frac * frac;             // quadratic fade\n    var sz = p.size * (0.4 + frac * 0.6);\n\n    // Pixel-perfect integer snap for 1-bit aesthetic\n    var px = Math.round(p.x);\n    var py = Math.round(p.y);\n    var psz = Math.max(1, Math.round(sz));\n\n    // Core square pixel\n    ctx.globalAlpha = alpha * 0.9;\n    ctx.globalCompositeOperation = 'screen';\n    ctx.fillStyle = 'rgb(' + (p.r|0) + ',' + (p.gr|0) + ',' + (p.b|0) + ')';\n    ctx.fillRect(px - (psz >> 1), py - (psz >> 1), psz, psz);\n\n    // Bright center highlight on newer particles\n    if (frac > 0.6 && psz >= 2) {\n      ctx.globalAlpha = alpha * 0.6;\n      ctx.fillStyle = '#ffffff';\n      ctx.fillRect(px - 1, py - 1, 1, 1);\n    }\n  }\n\n  ctx.globalAlpha = 1;\n  ctx.globalCompositeOperation = 'source-over';\n  ctx.restore();\n})",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/prism-artui/pixel-trail-effect-on-mouse-mo",
+    "filesChanged": [
+      "src/game/modules/pixel-trail-effect-on-mouse-movement.js"
+    ],
+    "linesAdded": 157,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 157,
+      "failed": 0,
+      "coverage": 0.9382064691587597
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Pixel Trail Effect on Mouse Movement. Agent: prism-artui (Art/UI).",
+    "taskId": "task_b763f6f1ae88",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_9f2ee697be28",
+      "agent_732b1bf0f2a1"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T04:59:15.216Z",
+    "submittedAt": "2026-02-24T04:59:15.248Z",
+    "scanCompletedAt": "2026-02-24T04:59:15.248Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_1c6619137972",
+    "agent": "agent_9f2ee697be28",
+    "title": "Implement shield mechanic",
+    "description": "AI-generated by forge-gameplay (Gameplay):\n\nregisterModule('Shield Mechanic', function(g) {\n  var sh = g._shield = g._shield || {\n    active: false,\n    hits: 0,\n    maxHits: 3,\n    cooldown: 0,\n    cooldownMax: 600,\n    flashTimer: 0,\n    breakTimer: 0,\n    activateTimer: 0,\n    angle: 0,\n    pulsePhase: 0,\n    broken: false\n  };\n\n  var ctx = g.ctx;\n  var TAU = Math.PI * 2;\n  var dt = g._dt ? g._dt * 60 : 1;\n\n  // Input handling\n  var inp = g._input;\n  var justPressedE = inp ? inp.justPressed('e') : false;\n  if (!justPressedE && g.keys) {\n    // Fallback manual edge detection\n    sh._ePrev = sh._ePrev || false;\n    var eNow = !!(g.keys['e'] || g.keys['E']);\n    justPressedE = eNow && !sh._ePrev;\n    sh._ePrev = eNow;\n  }\n\n  // Activate shield\n  if (justPressedE && !sh.active && !sh.broken && sh.cooldown <= 0) {\n    sh.active = true;\n    sh.hits = 0;\n    sh.activateTimer = 12;\n    if (g._audio) g._audio.play('shield_on');\n  }\n\n  // Update timers\n  if (sh.cooldown > 0) sh.cooldown -= dt;\n  if (sh.flashTimer > 0) sh.flashTimer -= dt;\n  if (sh.activateTimer > 0) sh.activateTimer -= dt;\n\n  // Break animation\n  if (sh.broken) {\n    sh.breakTimer -= dt;\n    if (sh.breakTimer <= 0) {\n      sh.broken = false;\n      sh.breakTimer = 0;\n    }\n  }\n\n  // Rotate hex\n  sh.angle += 0.012 * dt;\n  sh.pulsePhase += 0.04 * dt;\n\n  // Expose shield state for other modules (enemy collision)\n  g._shieldAbsorbHit = g._shieldAbsorbHit || function() {\n    if (!sh.active) return false;\n    sh.hits++;\n    sh.flashTimer = 14;\n    if (g._audio) g._audio.play('shield_hit');\n\n    // Particle burst on hit\n    if (g._particleEngine) {\n      g._particleEngine.burst(g.px, g.py, 18, {\n        color: '#88eeff', speed: 3.5, life: 0.5, size: 3\n      });\n    } else if (g.particles) {\n      for (var b = 0; b < 12; b++) {\n        g.particles.push({\n          x: g.px, y: g.py,\n          vx: g.rand(-4, 4), vy: g.rand(-4, 4),\n          life: 1, maxLife: 1,\n          color: '#88eeff', size: g.rand(2, 5)\n        });\n      }\n    }\n\n    if (sh.hits >= sh.maxHits) {\n      // Shield breaks\n      sh.active = false;\n      sh.broken = true;\n      sh.breakTimer = 40;\n      sh.cooldown = sh.cooldownMax;\n      if (g._audio) g._audio.play('shield_break');\n      if (g._particleEngine) {\n        g._particleEngine.burst(g.px, g.py, 40, {\n          color: '#00ccff', speed: 6, life: 0.8, size: 4\n        });\n      }\n      if (g.screenShake) g.screenShake(8);\n    }\n    return true;\n  };\n\n  // Camera transform helpers\n  var camX = 0, camY = 0, camZ = 1;\n  if (g._cam) { camX = g._cam.x; camY = g._cam.y; camZ = g._cam.zoom || 1; }\n\n  var px = g.px, py = g.py;\n  if (g._cam) {\n    px = (px - camX) * camZ + g.W * 0.5;\n    py = (py - camY) * camZ + g.H * 0.5;\n  }\n\n  // --- RENDER ---\n  ctx.save();\n\n  var radius = 28 + Math.sin(sh.pulsePhase) * 2;\n  var sides = 6;\n\n  // Draw cooldown arc on UI (if shield on cooldown)\n  if (!sh.active && !sh.broken && sh.cooldown > 0) {\n    var cdPct = sh.cooldown / sh.cooldownMax;\n    ctx.save();\n    ctx.strokeStyle = 'rgba(0,180,255,0.35)';\n    ctx.lineWidth = 2;\n    ctx.beginPath();\n    ctx.arc(px, py, radius + 8, -Math.PI / 2, -Math.PI / 2 + TAU * (1 - cdPct));\n    ctx.stroke();\n\n    // Cooldown label\n    var cdSec = Math.ceil(sh.cooldown / 60);\n    ctx.fillStyle = 'rgba(0,200,255,0.7)';\n    ctx.font = 'bold 10px monospace';\n    ctx.textAlign = 'center';\n    ctx.fillText(cdSec + 's', px, py - radius - 14);\n    ctx.restore();\n  }\n\n  // Draw breaking explosion\n  if (sh.broken) {\n    var bPct = sh.breakTimer / 40;\n    var bR = radius * (1 + (1 - bPct) * 1.4);\n    ctx.globalAlpha = bPct * 0.8;\n    ctx.strokeStyle = '#00ccff';\n    ctx.lineWidth = 3 * bPct;\n    drawHex(ctx, px, py, bR, sh.angle, sides);\n    ctx.stroke();\n\n    ctx.globalAlpha = bPct * 0.3;\n    ctx.strokeStyle = '#ffffff';\n    ctx.lineWidth = 8 * bPct;\n    drawHex(ctx, px, py, bR * 0.85, sh.angle + 0.3, sides);\n    ctx.stroke();\n    ctx.globalAlpha = 1;\n  }\n\n  // Draw active shield\n  if (sh.active) {\n    var flashBoost = sh.flashTimer > 0 ? (sh.flashTimer / 14) : 0;\n    var activePct = sh.activateTimer > 0 ? (1 - sh.activateTimer / 12) : 1;\n    var integrity = 1 - (sh.hits / sh.maxHits);\n\n    // Outer glow\n    var grd = ctx.createRadialGradient(px, py, radius - 4, px, py, radius + 14);\n    grd.addColorStop(0, 'rgba(0,200,255,' + (0.15 + flashBoost * 0.4) + ')');\n    grd.addColorStop(1, 'rgba(0,100,200,0)');\n    ctx.fillStyle = grd;\n    ctx.beginPath();\n    ctx.arc(px, py, radius + 14, 0, TAU);\n    ctx.fill();\n\n    // Inner fill\n    ctx.globalAlpha = (0.06 + flashBoost * 0.15) * activePct;\n    var innerGrd = ctx.createRadialGradient(px, py, 0, px, py, radius);\n    innerGrd.addColorStop(0, 'rgba(100,220,255,0.4)');\n    innerGrd.addColorStop(1, 'rgba(0,150,255,0.05)');\n    ctx.fillStyle = innerGrd;\n    ctx.beginPath();\n    drawHexPath(ctx, px, py, radius - 2, sh.angle, sides);\n    ctx.closePath();\n    ctx.fill();\n    ctx.globalAlpha = 1;\n\n    // Main hex border — color shifts with damage\n    var r = Math.round(g.lerp(0, 255, 1 - integrity));\n    var gb = Math.round(g.lerp(255, 60, 1 - integrity));\n    var baseColor = 'rgb(' + r + ',' + gb + ',' + gb + ')';\n    var flashColor = '#ffffff';\n    var hexColor = flashBoost > 0\n      ? 'rgba(255,255,255,' + (0.6 + flashBoost * 0.4) + ')'\n      : baseColor;\n\n    ctx.strokeStyle = hexColor;\n    ctx.lineWidth = (2 + flashBoost * 3) * activePct;\n    ctx.shadowColor = flashBoost > 0 ? '#ffffff' : '#00ccff';\n    ctx.shadowBlur = (12 + flashBoost * 20) * activePct;\n    ctx.globalAlpha = activePct;\n    drawHex(ctx, px, py, radius, sh.angle, sides);\n    ctx.stroke();\n    ctx.shadowBlur = 0;\n    ctx.globalAlpha = 1;\n\n    // Inner counter-rotating hex\n    ctx.strokeStyle = 'rgba(0,200,255,' + (0.35 + flashBoost * 0.3) + ')';\n    ctx.lineWidth = 1 * activePct;\n    ctx.globalAlpha = activePct * 0.7;\n    drawHex(ctx, px, py, radius * 0.72, -sh.angle * 1.3, sides);\n    ctx.stroke();\n    ctx.globalAlpha = 1;\n\n    // Hit indicators (small dots at hex vertices showing remaining hits)\n    for (var i = 0; i < sh.maxHits; i++) {\n      var dotAngle = sh.angle + (TAU / sh.maxHits) * i - Math.PI / 2;\n      var dotX = px + Math.cos(dotAngle) * (radius + 10);\n      var dotY = py + Math.sin(dotAngle) * (radius + 10);\n      ctx.beginPath();\n      ctx.arc(dotX, dotY, 3, 0, TAU);\n      if (i < sh.hits) {\n        ctx.fillStyle = 'rgba(255,80,80,0.6)';\n      } else {\n        ctx.fillStyle = 'rgba(0,220,255,0.9)';\n        ctx.shadowColor = '#00ccff';\n        ctx.shadowBlur = 6;\n      }\n      ctx.fill();\n      ctx.shadowBlur = 0;\n    }\n\n    // Activate scale effect\n    if (activePct < 1) {\n      ctx.strokeStyle = 'rgba(0,200,255,' + (1 - activePct) * 0.5 + ')';\n      ctx.lineWidth = 2;\n      drawHex(ctx, px, py, radius * (1.5 - activePct * 0.5), sh.angle, sides);\n      ctx.stroke();\n    }\n  }\n\n  // HUD element: E key prompt or status\n  if (!sh.active && !sh.broken) {\n    ctx.font = '10px monospace';\n    ctx.textAlign = 'center';\n    if (sh.cooldown <= 0) {\n      ctx.fillStyle = 'rgba(0,220,255,0.55)';\n      ctx.fillText('[E] SHIELD', px, py + radius + 22);\n    }\n  }\n\n  ctx.restore();\n\n  // Helper: draw hexagon path\n  function drawHexPath(c, cx, cy, r, ang, n) {\n    for (var k = 0; k < n; k++) {\n      var a = ang + (TAU / n) * k;\n      var hx = cx + Math.cos(a) * r;\n      var hy = cy + Math.sin(a) * r;\n      if (k === 0) c.moveTo(hx, hy);\n      else c.lineTo(hx, hy);\n    }\n  }\n\n  function drawHex(c, cx, cy, r, ang, n) {\n    c.beginPath();\n    drawHexPath(c, cx, cy, r, ang, n);\n    c.closePath();\n  }\n})",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/forge-gameplay/implement-shield-mechanic",
+    "filesChanged": [
+      "src/game/modules/shield-mechanic.js"
+    ],
+    "linesAdded": 259,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 259,
+      "failed": 0,
+      "coverage": 0.8675443287954007
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Shield Mechanic. Agent: forge-gameplay (Gameplay).",
+    "taskId": "task_be7656052022",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_05945e60d0f2",
+      "agent_732b1bf0f2a1"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T04:59:21.721Z",
+    "submittedAt": "2026-02-24T04:59:21.748Z",
+    "scanCompletedAt": "2026-02-24T04:59:21.748Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_50366ce3a576",
+    "agent": "agent_6612736bde49",
+    "title": "Write canary test suite",
+    "description": "AI-generated by sentinel-qa (QA/Security):\n\nregisterModule('Canary Test Suite', function(g) {\n  g._canary = g._canary || {\n    ready: false,\n    tests: [],\n    results: [],\n    tampering: false,\n    alertTimer: 0,\n    alertMsg: '',\n    lastScore: 0,\n    lastTick: 0,\n    checksumA: 0,\n    checksumB: 0,\n    pulsePhase: 0,\n    logBuffer: [],\n    statusIcons: [],\n    initTick: 0,\n    knownSpeedHash: 0,\n    knownKeysHash: 0,\n    integrityScore: 100,\n    warningFlash: 0,\n    passCount: 0,\n    failCount: 0,\n    initialized: false\n  };\n\n  var c = g._canary;\n  var ctx = g.ctx;\n\n  // ── INITIALIZATION (run once) ──────────────────────────────────────────────\n  if (!c.initialized) {\n    c.initialized = true;\n    c.initTick = g.tick;\n    c.knownSpeedHash = g.speed * 31337;\n    c.lastScore = g.score;\n    c.lastTick = g.tick;\n\n    // Capture baseline checksums of critical engine properties\n    c.checksumA = (g.W * 7 + g.H * 13 + Math.floor(g.px) * 3 + Math.floor(g.py) * 5) & 0xFFFFFF;\n    c.checksumB = c.checksumA;\n\n    // Build the test suite\n    c.tests = [\n      {\n        id: 'TICK_MONOTONIC',\n        label: 'Tick Monotonicity',\n        desc: 'Frame counter must increase strictly',\n        pass: true,\n        lastVal: g.tick,\n        check: function() {\n          var ok = g.tick > this.lastVal;\n          this.lastVal = g.tick;\n          return ok;\n        }\n      },\n      {\n        id: 'SPEED_INVARIANT',\n        label: 'Speed Invariant',\n        desc: 'Base speed must not exceed authorized range',\n        pass: true,\n        check: function() {\n          return typeof g.speed === 'number' && g.speed > 0 && g.speed <= 20;\n        }\n      },\n      {\n        id: 'SCORE_NONREGRESS',\n        label: 'Score Non-Regression',\n        desc: 'Score must not decrease spontaneously',\n        pass: true,\n        lastScore: 0,\n        check: function() {\n          var ok = g.score >= this.lastScore;\n          if (ok) this.lastScore = g.score;\n          return ok;\n        }\n      },\n      {\n        id: 'STAGE_BOUNDS',\n        label: 'Stage Bounds',\n        desc: 'Evolution stage must stay in [0,5]',\n        pass: true,\n        check: function() {\n          return Number.isFinite(g.stage) && g.stage >= 0 && g.stage <= 5;\n        }\n      },\n      {\n        id: 'VELOCITY_SANITY',\n        label: 'Velocity Sanity',\n        desc: 'Player velocity within physical limits',\n        pass: true,\n        check: function() {\n          var maxV = g.speed * 4;\n          return Math.abs(g.vx) <= maxV && Math.abs(g.vy) <= maxV;\n        }\n      },\n      {\n        id: 'POSITION_FINITE',\n        label: 'Position Finite',\n        desc: 'Player coordinates must be finite numbers',\n        pass: true,\n        check: function() {\n          return Number.isFinite(g.px) && Number.isFinite(g.py);\n        }\n      },\n      {\n        id: 'PARTICLE_POOL',\n        label: 'Particle Pool',\n        desc: 'Particle array must not overflow',\n        pass: true,\n        check: function() {\n          return Array.isArray(g.particles) && g.particles.length < 5000;\n        }\n      },\n      {\n        id: 'ENTITY_SANITY',\n        label: 'Entity Sanity',\n        desc: 'Entity count within expected bounds',\n        pass: true,\n        check: function() {\n          return Array.isArray(g.entities) && g.entities.length < 2000;\n        }\n      },\n      {\n        id: 'CANVAS_INTEGRITY',\n        label: 'Canvas Integrity',\n        desc: 'Canvas dimensions must remain valid',\n        pass: true,\n        check: function() {\n          return g.W > 0 && g.H > 0 && g.W === g.canvas.width && g.H === g.canvas.height;\n        }\n      },\n      {\n        id: 'ABSORBED_MONOTONIC',\n        label: 'Absorption Counter',\n        desc: 'Absorption count must not decrease',\n        pass: true,\n        lastAbs: 0,\n        check: function() {\n          var ok = (g.absorbed === undefined) || g.absorbed >= this.lastAbs;\n          if (ok && g.absorbed !== undefined) this.lastAbs = g.absorbed;\n          return ok;\n        }\n      },\n      {\n        id: 'RAND_DIST',\n        label: 'RNG Distribution',\n        desc: 'Random function must stay in declared range',\n        pass: true,\n        check: function() {\n          var sample = g.rand(-1, 1);\n          return typeof sample === 'number' && sample >= -1 && sample <= 1;\n        }\n      },\n      {\n        id: 'DIST_METRIC',\n        label: 'Distance Metric',\n        desc: 'Distance function must satisfy non-negativity',\n        pass: true,\n        check: function() {\n          var d = g.dist({x:0,y:0},{x:3,y:4});\n          return Math.abs(d - 5) < 0.001;\n        }\n      }\n    ];\n\n    // Initialize status icons\n    for (var i = 0; i < c.tests.length; i++) {\n      c.statusIcons.push({ y: 0, targetY: 0, glow: 0 });\n    }\n\n    c.ready = true;\n  }\n\n  // ── RUN TESTS every 60 frames ──────────────────────────────────────────────\n  var runInterval = 60;\n  if (g.tick % runInterval === 0) {\n    c.passCount = 0;\n    c.failCount = 0;\n\n    for (var t = 0; t < c.tests.length; t++) {\n      var test = c.tests[t];\n      var prevPass = test.pass;\n      try {\n        test.pass = test.check();\n      } catch(e) {\n        test.pass = false;\n      }\n\n      if (test.pass) {\n        c.passCount++;\n      } else {\n        c.failCount++;\n        if (prevPass) {\n          // Newly failed — raise alert\n          c.tampering = true;\n          c.alertTimer = 300;\n          c.alertMsg = 'INTEGRITY VIOLATION: ' + test.id;\n          c.warningFlash = 60;\n          c.integrityScore = Math.max(0, c.integrityScore - 15);\n          c.logBuffer.push({\n            msg: '[FAIL] ' + test.label + ' @ tick ' + g.tick,\n            age: 0\n          });\n          if (c.logBuffer.length > 8) c.logBuffer.shift();\n\n          // Visual consequence\n          if (g._cam) {\n            g._cam.shake = g._cam.shake || 0;\n            g._cam.shake += 8;\n          }\n          if (g._particleEngine) {\n            g._particleEngine.burst(g.px, g.py, {\n              count: 20,\n              color: '#ff2255',\n              speed: 4,\n              life: 40\n            });\n          }\n        }\n      }\n\n      // Animate icon glow\n      if (c.statusIcons[t]) {\n        c.statusIcons[t].glow = test.pass ? 0 : 1;\n      }\n    }\n\n    // Recompute integrity score smoothly toward target\n    var targetIntegrity = Math.round((c.passCount / c.tests.length) * 100);\n    c.integrityScore = Math.round(c.integrityScore * 0.9 + targetIntegrity * 0.1);\n  }\n\n  // Decrement timers\n  if (c.alertTimer > 0) c.alertTimer--;\n  if (c.warningFlash > 0) c.warningFlash--;\n  c.pulsePhase += 0.07;\n\n  // Age log entries\n  for (var l = 0; l < c.logBuffer.length; l++) {\n    c.logBuffer[l].age++;\n  }\n\n  // ── RENDER ────────────────────────────────────────────────────────────────\n  ctx.save();\n\n  var panelX = g.W - 210;\n  var panelY = 60;\n  var panelW = 200;\n  var rowH = 16;\n  var headerH = 32;\n  var panelH = headerH + c.tests.length * rowH + 20;\n\n  // Warning flash overlay\n  if (c.warningFlash > 0) {\n    var flashAlpha = (c.warningFlash / 60) * 0.18;\n    ctx.fillStyle = 'rgba(255,30,60,' + flashAlpha + ')';\n    ctx.fillRect(0, 0, g.W, g.H);\n  }\n\n  // Panel background\n  ctx.globalAlpha = 0.88;\n  var bgGrad = ctx.createLinearGradient(panelX, panelY, panelX, panelY + panelH);\n  bgGrad.addColorStop(0, 'rgba(4,8,20,0.97)');\n  bgGrad.addColorStop(1, 'rgba(8,4,20,0.92)');\n  ctx.fillStyle = bgGrad;\n  ctx.beginPath();\n  ctx.roundRect ? ctx.roundRect(panelX, panelY, panelW, panelH, 6) :\n    ctx.rect(panelX, panelY, panelW, panelH);\n  ctx.fill();\n\n  // Border — color by integrity\n  var borderPulse = 0.5 + 0.5 * Math.sin(c.pulsePhase);\n  var intRatio = c.integrityScore / 100;\n  var br = Math.round((1 - intRatio) * 255);\n  var bg2 = Math.round(intRatio * 200);\n  ctx.strokeStyle = 'rgba(' + br + ',' + bg2 + ',180,' + (0.6 + 0.4 * borderPulse) + ')';\n  ctx.lineWidth = 1.5;\n  ctx.stroke();\n\n  ctx.globalAlpha = 1;\n\n  // Header\n  var headerGrad = ctx.createLinearGradient(panelX, panelY, panelX + panelW, panelY);\n  headerGrad.addColorStop(0, 'rgba(0,200,255,0.15)');\n  headerGrad.addColorStop(1, 'rgba(180,0,255,0.15)');\n  ctx.fillStyle = headerGrad;\n  ctx.fillRect(panelX, panelY, panelW, headerH);\n\n  // Title\n  ctx.font = 'bold 10px monospace';\n  ctx.fillStyle = '#00ddff';\n  ctx.textAlign = 'left';\n  ctx.fillText('◈ CANARY TEST SUITE', panelX + 8, panelY + 13);\n\n  // Integrity bar\n  var barX = panelX + 8;\n  var barY = panelY + 20;\n  var barW = panelW - 16;\n  var barH = 6;\n  ctx.fillStyle = 'rgba(0,0,0,0.6)';\n  ctx.fillRect(barX, barY, barW, barH);\n\n  var barFill = (c.integrityScore / 100) * barW;\n  var barGrad = ctx.createLinearGradient(barX, barY, barX + barFill, barY);\n  if (c.integrityScore > 70) {\n    barGrad.addColorStop(0, '#00ff88');\n    barGrad.addColorStop(1, '#00ddff');\n  } else if (c.integrityScore > 40) {\n    barGrad.addColorStop(0, '#ffaa00');\n    barGrad.addColorStop(1, '#ff6600');\n  } else {\n    barGrad.addColorStop(0, '#ff2255');\n    barGrad.addColorStop(1, '#cc0033');\n  }\n  ctx.fillStyle = barGrad;\n  ctx.fillRect(barX, barY, barFill, barH);\n\n  ctx.font = '8px monospace';\n  ctx.fillStyle = 'rgba(200,220,255,0.7)';\n  ctx.textAlign = 'right';\n  ctx.fillText('INTEGRITY ' + c.integrityScore + '%', panelX + panelW - 8, barY + 6);\n\n  // Test rows\n  for (var i = 0; i < c.tests.length; i++) {\n    var test2 = c.tests[i];\n    var rowY = panelY + headerH + i * rowH + 4;\n    var icon2 = c.statusIcons[i];\n\n    // Row hover glow for failed tests\n    if (!test2.pass) {\n      var rowGlow = 0.3 + 0.3 * Math.sin(c.pulsePhase * 2 + i);\n      ctx.fillStyle = 'rgba(255,30,60,' + rowGlow * 0.3 + ')';\n      ctx.fillRect(panelX + 4, rowY - 1, panelW - 8, rowH - 2);\n    }\n\n    // Status dot\n    var dotColor = test2.pass ? '#00ff88' : '#ff2255';\n    var dotGlow = test2.pass ? 0.6 : (0.5 + 0.5 * Math.sin(c.pulsePhase * 3 + i));\n    ctx.save();\n    ctx.shadowColor = dotColor;\n    ctx.shadowBlur = 6 * dotGlow;\n    ctx.fillStyle = dotColor;\n    ctx.beginPath();\n    ctx.arc(panelX + 12, rowY + 5, 3, 0, Math.PI * 2);\n    ctx.fill();\n    ctx.restore();\n\n    // Test label\n    ctx.font = '8px monospace';\n    ctx.fillStyle = test2.pass ? 'rgba(180,220,255,0.85)' : 'rgba(255,120,140,1)';\n    ctx.textAlign = 'left';\n    ctx.fillText(test2.label, panelX + 20, rowY + 8);\n\n    // Pass/Fail tag\n    ctx.textAlign = 'right';\n    ctx.fillStyle = test2.pass ? 'rgba(0,255,136,0.7)' : 'rgba(255,34,85,0.9)';\n    ctx.fillText(test2.pass ? 'OK' : 'FAIL', panelX + panelW - 8, rowY +",
+    "type": "feature",
+    "impact": "high",
+    "branch": "agent/sentinel-qa/write-canary-test-suite",
+    "filesChanged": [
+      "src/game/modules/canary-test-suite.js"
+    ],
+    "linesAdded": 356,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 356,
+      "failed": 0,
+      "coverage": 0.8970711144642591
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Canary Test Suite. Agent: sentinel-qa (QA/Security).",
+    "taskId": "task_21577c40aa0a",
+    "state": "DRAFT",
+    "scanResult": null,
+    "assignedReviewers": [],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T04:59:49.542Z",
+    "submittedAt": null,
+    "scanCompletedAt": null,
     "reviewCompletedAt": null,
     "votingCompletedAt": null,
     "resolvedAt": null
