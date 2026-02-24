@@ -383,6 +383,7 @@ canvas { display: block; width: 100vw; height: 100vh; }
   const game = {
     px, py, vx, vy, speed,
     canvas, ctx, keys,
+    W: canvas.width, H: canvas.height,
     tick: 0,
     particles: [],
     entities: [],
@@ -431,6 +432,7 @@ ${moduleCode}
     // Update shared state
     game.px = px; game.py = py;
     game.vx = vx; game.vy = vy;
+    game.W = w; game.H = h;
     game.tick++;
 
     // Clear
