@@ -143,15 +143,16 @@ interface PhaseState {
 const PHASE_STATE_FILE = join(DATA_DIR, 'phase-state.json');
 
 // Minimum hours a phase must be active before auto-advance is allowed
+// Full timeline: ~8-12 months from Origin to Release
 const PHASE_TIME_GATES: Record<string, number> = {
-  Origin: 1,        // 1 hour minimum (done)
-  Prototype: 4,     // 4 hours minimum
-  Engine: 8,        // 8 hours — core systems need to stabilize
-  Forge: 12,        // 12 hours — visual engine is complex
-  Alpha: 24,        // 1 day — full content needs testing
-  Crucible: 24,     // 1 day — sound + feel polish
-  Beta: 36,         // 1.5 days — content depth
-  Release: 48,      // 2 days — final polish
+  Origin: 1,           // 1 hour — first signs of life (done)
+  Prototype: 168,      // 1 week — core mechanics need playtesting
+  Engine: 336,         // 2 weeks — architecture must stabilize before building on it
+  Forge: 504,          // 3 weeks — visual engine is the foundation for everything after
+  Alpha: 672,          // 4 weeks — full content needs extensive testing
+  Crucible: 504,       // 3 weeks — sound + feel polish takes iteration
+  Beta: 672,           // 4 weeks — content depth, enemy variety, balancing
+  Release: 504,        // 3 weeks — final polish, mobile, accessibility
 };
 
 function loadPhaseState(): PhaseState {
@@ -284,13 +285,24 @@ export function stopAgents(): void {
 }
 
 // ─── Auto Phase Progression ──────────────────────────────────
-// Advances phase when 50%+ of that phase's roadmap tasks are merged
+// Advances phase when enough tasks are merged (75% for foundational phases, 50% for content phases)
+const PHASE_MERGE_THRESHOLDS: Record<string, number> = {
+  Origin: 0.5,
+  Prototype: 0.5,
+  Engine: 0.75,     // Engine systems are critical — most must land
+  Forge: 0.75,      // Visual engine is foundational
+  Alpha: 0.5,
+  Crucible: 0.6,
+  Beta: 0.5,
+  Release: 0.6,
+};
 
 function checkAutoPhaseProgression(): void {
   const phase = getCurrentPhase();
   if (phase.phase === 'Complete' || currentPhaseIndex >= PHASE_ORDER.length - 1) return;
 
-  const threshold = Math.ceil(phase.tasksInPhase * 0.5);
+  const pct = PHASE_MERGE_THRESHOLDS[phase.phase] ?? 0.5;
+  const threshold = Math.ceil(phase.tasksInPhase * pct);
   if (phase.tasksMerged >= threshold) {
     // Enforce time gate — phase must have been active for minimum duration
     if (!isPhaseTimeGateMet()) {
