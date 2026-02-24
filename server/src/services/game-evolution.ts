@@ -143,6 +143,20 @@ export function archiveModule(moduleId: string): GameModule | null {
 }
 
 /**
+ * Update a module's code or order (admin hotfix).
+ */
+export function updateModuleCode(moduleId: string, updates: { code?: string; order?: number }): GameModule | null {
+  if (updates.code) {
+    const check = validateModuleCode(updates.code);
+    if (!check.valid) {
+      console.log(`  [game] Update REJECTED for "${moduleId}" — ${check.error}`);
+      return null;
+    }
+  }
+  return store.update(moduleId, updates as Partial<GameModule>);
+}
+
+/**
  * Get all active modules sorted by execution order.
  * Filters out modules with JS syntax errors to prevent game crashes.
  */

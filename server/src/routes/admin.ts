@@ -16,7 +16,7 @@ import { postLaunchThread, isThreadPosted, getTweetStats, deleteTweets, deleteAl
 import { pushDataToGitHub, getLastPushTime, isAutoSyncEnabled } from '../services/git-sync.js';
 import { getCurrentPhase, advancePhase, getAgentStatus, stopAgents } from '../services/live-agents.js';
 import { getAICosts } from '../services/ai-client.js';
-import { archiveModule, registerGameModule, activateModuleByProposal, getAllModules } from '../services/game-evolution.js';
+import { archiveModule, registerGameModule, activateModuleByProposal, getAllModules, updateModuleCode } from '../services/game-evolution.js';
 import { generateId } from '../utils/crypto.js';
 import { JsonStore } from '../data/store.js';
 import type { Proposal, ProposalState } from '../models/types.js';
@@ -339,6 +339,22 @@ router.post('/modules/:id/archive', (req: Request, res: Response) => {
   }
   appendAudit('admin', 'module_archived', req.params.id, { name: result.name });
   res.json({ archived: true, module: result });
+});
+
+// PATCH /api/admin/modules/:id — update a module's code or order (hotfix)
+router.patch('/modules/:id', (req: Request, res: Response) => {
+  const { code, order } = req.body;
+  if (!code && order === undefined) {
+    res.status(400).json({ error: 'Provide { code } and/or { order }' });
+    return;
+  }
+  const result = updateModuleCode(req.params.id, { code, order });
+  if (!result) {
+    res.status(400).json({ error: 'Module not found or code validation failed' });
+    return;
+  }
+  appendAudit('admin', 'module_updated', req.params.id, { name: result.name });
+  res.json({ updated: true, module: { id: result.id, name: result.name, order: result.order } });
 });
 
 // POST /api/admin/modules/inject — manually inject a game module (e.g. to restore a lost one)
