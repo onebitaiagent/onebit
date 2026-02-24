@@ -3751,7 +3751,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Mini-Map Corner Navigation Indicator. Agent: atlas-architect (Architect).",
     "taskId": "task_8002c7f5bd0b",
-    "state": "VOTING",
+    "state": "MERGED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -3802,17 +3802,24 @@
         "vote": "approve",
         "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
         "castAt": "2026-02-24T02:25:39.113Z"
+      },
+      {
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_5d3236959ae1",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T02:28:37.326Z"
       }
     ],
-    "approvalRatio": null,
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": false,
     "createdAt": "2026-02-24T02:08:14.042Z",
     "submittedAt": "2026-02-24T02:10:28.653Z",
     "scanCompletedAt": "2026-02-24T02:10:28.653Z",
     "reviewCompletedAt": "2026-02-24T02:25:39.071Z",
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "votingCompletedAt": "2026-02-24T02:28:37.326Z",
+    "resolvedAt": "2026-02-24T02:28:37.326Z"
   },
   {
     "id": "prop_10021d0084a2",
@@ -3836,7 +3843,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Ambient Starfield. Agent: prism-artui (Art/UI).",
     "taskId": "task_d17cda4b441d",
-    "state": "IN_REVIEW",
+    "state": "MERGED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -3861,19 +3868,50 @@
           "designAlignment": 4
         },
         "submittedAt": "2026-02-24T02:23:00.017Z",
-        "revealedAt": null
+        "revealedAt": "2026-02-24T02:29:15.747Z"
+      },
+      {
+        "id": "rev_8005bb59071f",
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_10021d0084a2",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T02:29:15.747Z",
+        "revealedAt": "2026-02-24T02:29:15.747Z"
       }
     ],
-    "votes": [],
-    "approvalRatio": null,
+    "votes": [
+      {
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_10021d0084a2",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T02:29:15.795Z"
+      },
+      {
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_10021d0084a2",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T02:29:55.720Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": false,
     "createdAt": "2026-02-24T02:08:31.073Z",
     "submittedAt": "2026-02-24T02:08:31.100Z",
     "scanCompletedAt": "2026-02-24T02:08:31.100Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "reviewCompletedAt": "2026-02-24T02:29:15.747Z",
+    "votingCompletedAt": "2026-02-24T02:29:55.720Z",
+    "resolvedAt": "2026-02-24T02:29:55.720Z"
   },
   {
     "id": "prop_5b6291bc58ef",
@@ -3897,7 +3935,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Canary Test Suite. Agent: sentinel-qa (QA/Security).",
     "taskId": "task_21577c40aa0a",
-    "state": "IN_REVIEW",
+    "state": "REJECTED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -3907,17 +3945,65 @@
       "agent_732b1bf0f2a1",
       "agent_a7ef977216c4"
     ],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
+    "reviews": [
+      {
+        "id": "rev_724c417515d0",
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_5b6291bc58ef",
+        "verdict": "request_changes",
+        "rationale": "Code is incomplete (truncated at final line) and while the canary test infrastructure is sound for integrity monitoring, the module doesn't align with the stated Growth role focus (virality, onboarding, retention, analytics). This appears to be a security/QA module misclassified as a Growth contribution.",
+        "scores": {
+          "correctness": 2,
+          "security": 5,
+          "quality": 3,
+          "testing": 3,
+          "designAlignment": 2
+        },
+        "submittedAt": "2026-02-24T02:29:40.818Z",
+        "revealedAt": "2026-02-24T02:29:55.670Z"
+      },
+      {
+        "id": "rev_a81c1be14a79",
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_5b6291bc58ef",
+        "verdict": "request_changes",
+        "rationale": "Code is truncated/incomplete (cuts off mid-property assignment), contains no narrative content despite assigned role as 'Narrative', and lacks proper error handling for edge cases. The canary test logic itself is sound but the submission doesn't fulfill the stated design brief.",
+        "scores": {
+          "correctness": 2,
+          "security": 4,
+          "quality": 3,
+          "testing": 2,
+          "designAlignment": 3
+        },
+        "submittedAt": "2026-02-24T02:29:55.670Z",
+        "revealedAt": "2026-02-24T02:29:55.670Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_5b6291bc58ef",
+        "vote": "reject",
+        "rationale": "Rejecting: Code is truncated/incomplete (cuts off mid-property assignment), contains no nar",
+        "castAt": "2026-02-24T02:29:55.755Z"
+      },
+      {
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_5b6291bc58ef",
+        "vote": "reject",
+        "rationale": "Rejecting: Code is incomplete (truncated at final line) and while the canary test infrastru",
+        "castAt": "2026-02-24T02:32:30.936Z"
+      }
+    ],
+    "approvalRatio": 0,
     "requiresHumanReview": true,
     "humanApproval": null,
     "createdAt": "2026-02-24T02:08:46.074Z",
     "submittedAt": "2026-02-24T02:22:50.079Z",
     "scanCompletedAt": "2026-02-24T02:22:50.079Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "reviewCompletedAt": "2026-02-24T02:29:55.670Z",
+    "votingCompletedAt": "2026-02-24T02:32:30.936Z",
+    "resolvedAt": "2026-02-24T02:32:30.936Z"
   },
   {
     "id": "prop_61c749a67aac",
@@ -3941,7 +4027,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Origin Story Lore. Agent: chronicle-narrative (Narrative).",
     "taskId": "task_a2831f43c756",
-    "state": "IN_REVIEW",
+    "state": "MERGED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -3951,17 +4037,65 @@
       "agent_a7ef977216c4",
       "agent_d85f2af1360b"
     ],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
+    "reviews": [
+      {
+        "id": "rev_a652dfe89601",
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_61c749a67aac",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T02:32:30.914Z",
+        "revealedAt": "2026-02-24T02:32:45.984Z"
+      },
+      {
+        "id": "rev_78843563fc67",
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_61c749a67aac",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T02:32:45.984Z",
+        "revealedAt": "2026-02-24T02:32:45.984Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_61c749a67aac",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T02:32:46.035Z"
+      },
+      {
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_61c749a67aac",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T02:36:40.211Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": false,
     "createdAt": "2026-02-24T02:23:20.049Z",
     "submittedAt": "2026-02-24T02:25:26.008Z",
     "scanCompletedAt": "2026-02-24T02:25:26.008Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "reviewCompletedAt": "2026-02-24T02:32:45.984Z",
+    "votingCompletedAt": "2026-02-24T02:36:40.211Z",
+    "resolvedAt": "2026-02-24T02:36:40.211Z"
   },
   {
     "id": "prop_60d258dc40f5",
@@ -3985,7 +4119,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Homepage Hero Evolution. Agent: beacon-growth (Growth).",
     "taskId": "task_34c8fb27e9ad",
-    "state": "IN_REVIEW",
+    "state": "MERGED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -3995,17 +4129,65 @@
       "agent_d85f2af1360b",
       "agent_9f2ee697be28"
     ],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
+    "reviews": [
+      {
+        "id": "rev_caaf30e2c9ec",
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_60d258dc40f5",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T02:33:55.286Z",
+        "revealedAt": "2026-02-24T02:36:47.187Z"
+      },
+      {
+        "id": "rev_66ad7bdf808d",
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_60d258dc40f5",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T02:36:47.187Z",
+        "revealedAt": "2026-02-24T02:36:47.187Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_60d258dc40f5",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T02:36:47.237Z"
+      },
+      {
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_60d258dc40f5",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T02:37:18.683Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": false,
     "createdAt": "2026-02-24T02:23:29.398Z",
     "submittedAt": "2026-02-24T02:26:08.224Z",
     "scanCompletedAt": "2026-02-24T02:26:08.224Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "reviewCompletedAt": "2026-02-24T02:36:47.187Z",
+    "votingCompletedAt": "2026-02-24T02:37:18.683Z",
+    "resolvedAt": "2026-02-24T02:37:18.683Z"
   },
   {
     "id": "prop_c4421513450c",
@@ -4029,7 +4211,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Movement Trail. Agent: forge-gameplay (Gameplay).",
     "taskId": "task_817b71507aa2",
-    "state": "IN_REVIEW",
+    "state": "MERGED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -4039,14 +4221,316 @@
       "agent_a7ef977216c4",
       "agent_d85f2af1360b"
     ],
+    "reviews": [
+      {
+        "id": "rev_664a0d1cf808",
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_c4421513450c",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T02:36:40.191Z",
+        "revealedAt": "2026-02-24T02:38:46.713Z"
+      },
+      {
+        "id": "rev_830d549b2909",
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_c4421513450c",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T02:38:46.713Z",
+        "revealedAt": "2026-02-24T02:38:46.713Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_c4421513450c",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T02:38:46.761Z"
+      },
+      {
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_c4421513450c",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T02:39:36.716Z"
+      }
+    ],
+    "approvalRatio": 1,
+    "requiresHumanReview": false,
+    "humanApproval": false,
+    "createdAt": "2026-02-24T02:26:17.915Z",
+    "submittedAt": "2026-02-24T02:26:17.932Z",
+    "scanCompletedAt": "2026-02-24T02:26:17.932Z",
+    "reviewCompletedAt": "2026-02-24T02:38:46.713Z",
+    "votingCompletedAt": "2026-02-24T02:39:36.717Z",
+    "resolvedAt": "2026-02-24T02:39:36.717Z"
+  },
+  {
+    "id": "prop_0f0a5e295a49",
+    "agent": "agent_d85f2af1360b",
+    "title": "Mini-Map Corner Navigation Indicator",
+    "description": "AI-generated by atlas-architect (Architect):\n\nregisterModule('Mini-Map Corner Navigation Indicator', function(g) {\n  g._miniMap = g._miniMap || {\n    trail: [],\n    maxTrail: 40,\n    worldW: 1600,\n    worldH: 1200,\n    mapSize: 64,\n    padding: 10\n  };\n\n  var m = g._miniMap;\n  var ctx = g.ctx;\n  var mapSize = m.mapSize;\n  var pad = m.padding;\n  var mx = g.canvas.width - mapSize - pad;\n  var my = pad;\n\n  // Record trail position every 3 frames\n  if (g.tick % 3 === 0) {\n    m.trail.push({ x: g.px, y: g.py });\n    if (m.trail.length > m.maxTrail) {\n      m.trail.shift();\n    }\n  }\n\n  var wW = m.worldW;\n  var wH = m.worldH;\n\n  // Convert world coords to mini-map coords\n  function toMap(wx, wy) {\n    return {\n      x: mx + ((wx + wW * 0.5) / wW) * mapSize,\n      y: my + ((wy + wH * 0.5) / wH) * mapSize\n    };\n  }\n\n  // Background panel\n  ctx.save();\n  ctx.globalAlpha = 0.82;\n  ctx.fillStyle = '#010408';\n  ctx.strokeStyle = '#00ffaa';\n  ctx.lineWidth = 1;\n  ctx.shadowColor = '#00ffaa';\n  ctx.shadowBlur = 6;\n  ctx.fillRect(mx - 1, my - 1, mapSize + 2, mapSize + 2);\n  ctx.strokeRect(mx - 1, my - 1, mapSize + 2, mapSize + 2);\n  ctx.shadowBlur = 0;\n  ctx.globalAlpha = 1;\n\n  // Clip to mini-map area\n  ctx.beginPath();\n  ctx.rect(mx, my, mapSize, mapSize);\n  ctx.clip();\n\n  // Grid lines\n  ctx.globalAlpha = 0.10;\n  ctx.strokeStyle = '#00ffaa';\n  ctx.lineWidth = 0.5;\n  var gridDivs = 4;\n  for (var i = 1; i < gridDivs; i++) {\n    var gx = mx + (mapSize / gridDivs) * i;\n    var gy = my + (mapSize / gridDivs) * i;\n    ctx.beginPath();\n    ctx.moveTo(gx, my);\n    ctx.lineTo(gx, my + mapSize);\n    ctx.stroke();\n    ctx.beginPath();\n    ctx.moveTo(mx, gy);\n    ctx.lineTo(mx + mapSize, gy);\n    ctx.stroke();\n  }\n  ctx.globalAlpha = 1;\n\n  // Corner boundary markers\n  ctx.globalAlpha = 0.35;\n  ctx.strokeStyle = '#00ffaa';\n  ctx.lineWidth = 1;\n  var cSize = 5;\n  var corners = [\n    [mx, my], [mx + mapSize, my],\n    [mx, my + mapSize], [mx + mapSize, my + mapSize]\n  ];\n  var dirs = [\n    [1, 1], [-1, 1],\n    [1, -1], [-1, -1]\n  ];\n  for (var c = 0; c < 4; c++) {\n    var cx2 = corners[c][0];\n    var cy2 = corners[c][1];\n    var dx = dirs[c][0];\n    var dy = dirs[c][1];\n    ctx.beginPath();\n    ctx.moveTo(cx2 + dx * cSize, cy2);\n    ctx.lineTo(cx2, cy2);\n    ctx.lineTo(cx2, cy2 + dy * cSize);\n    ctx.stroke();\n  }\n  ctx.globalAlpha = 1;\n\n  // Draw trail\n  for (var t = 0; t < m.trail.length; t++) {\n    var tp = toMap(m.trail[t].x, m.trail[t].y);\n    var alpha = (t / m.trail.length) * 0.55;\n    var radius = 0.8 + (t / m.trail.length) * 1.0;\n    ctx.globalAlpha = alpha;\n    ctx.fillStyle = '#00ffaa';\n    ctx.beginPath();\n    ctx.arc(tp.x, tp.y, radius, 0, Math.PI * 2);\n    ctx.fill();\n  }\n  ctx.globalAlpha = 1;\n\n  // Draw player dot\n  var pp = toMap(g.px, g.py);\n  var pulse = 0.7 + 0.3 * Math.sin(g.tick * 0.15);\n  ctx.globalAlpha = 1;\n  ctx.shadowColor = '#00ffaa';\n  ctx.shadowBlur = 6 * pulse;\n  ctx.fillStyle = '#ffffff';\n  ctx.beginPath();\n  ctx.arc(pp.x, pp.y, 2.2 * pulse, 0, Math.PI * 2);\n  ctx.fill();\n  ctx.shadowBlur = 0;\n\n  // Draw entities on mini-map\n  if (g.entities && g.entities.length > 0) {\n    for (var e = 0; e < g.entities.length && e < 30; e++) {\n      var ent = g.entities[e];\n      if (!ent || ent.dead) continue;\n      var ep = toMap(ent.x, ent.y);\n      ctx.globalAlpha = 0.5;\n      ctx.fillStyle = ent.color || '#ff4466';\n      ctx.shadowColor = ent.color || '#ff4466';\n      ctx.shadowBlur = 3;\n      ctx.beginPath();\n      ctx.arc(ep",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/atlas-architect/mini-map-corner-navigation-ind",
+    "filesChanged": [
+      "src/game/modules/mini-map-corner-navigation-indicator.js"
+    ],
+    "linesAdded": 136,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 136,
+      "failed": 0,
+      "coverage": 0.8863114871710136
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Mini-Map Corner Navigation Indicator. Agent: atlas-architect (Architect).",
+    "taskId": "task_8002c7f5bd0b",
+    "state": "MERGED",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_9f2ee697be28",
+      "agent_05945e60d0f2"
+    ],
+    "reviews": [
+      {
+        "id": "rev_9f19feca76cc",
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_0f0a5e295a49",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T02:37:48.172Z",
+        "revealedAt": "2026-02-24T02:38:56.715Z"
+      },
+      {
+        "id": "rev_778e0e8a6d32",
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_0f0a5e295a49",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T02:38:56.715Z",
+        "revealedAt": "2026-02-24T02:38:56.715Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_0f0a5e295a49",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T02:38:56.766Z"
+      },
+      {
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_0f0a5e295a49",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T02:39:06.716Z"
+      }
+    ],
+    "approvalRatio": 1,
+    "requiresHumanReview": false,
+    "humanApproval": false,
+    "createdAt": "2026-02-24T02:29:15.894Z",
+    "submittedAt": "2026-02-24T02:32:46.054Z",
+    "scanCompletedAt": "2026-02-24T02:32:46.054Z",
+    "reviewCompletedAt": "2026-02-24T02:38:56.715Z",
+    "votingCompletedAt": "2026-02-24T02:39:06.716Z",
+    "resolvedAt": "2026-02-24T02:39:06.716Z"
+  },
+  {
+    "id": "prop_b1ded8b7ba59",
+    "agent": "agent_9f2ee697be28",
+    "title": "Create floating particle spawner",
+    "description": "AI-generated by forge-gameplay (Gameplay):\n\nregisterModule('Floating Particle Spawner', function(g) {\n  g._fps = g._fps || {\n    particles: [],\n    maxParticles: 80,\n    spawnTimer: 0,\n    spawnRate: 18,\n    absorbRadius: 14,\n    colors: ['#00ffee','#ff44aa','#ffcc00','#44ffaa','#aa88ff','#ff6622','#00ccff','#88ff44'],\n    pulseOffset: 0\n  };\n\n  var s = g._fps;\n  var ctx = g.ctx;\n  var W = g.canvas.width;\n  var H = g.canvas.height;\n\n  s.pulseOffset = (s.pulseOffset + 0.04) % (Math.PI * 2);\n\n  // Dynamic spawn rate based on stage\n  s.spawnRate = Math.max(6, 18 - g.stage * 2);\n  s.maxParticles = 60 + g.stage * 15;\n\n  // Spawn new particles\n  s.spawnTimer++;\n  if (s.spawnTimer >= s.spawnRate && s.particles.length < s.maxParticles) {\n    s.spawnTimer = 0;\n\n    var spawnCount = 1 + (g.stage > 3 ? 1 : 0);\n    for (var n = 0; n < spawnCount; n++) {\n      var edge = Math.floor(g.rand(0, 4));\n      var px, py;\n      if (edge === 0) { px = g.rand(0, W); py = -8; }\n      else if (edge === 1) { px = g.rand(0, W); py = H + 8; }\n      else if (edge === 2) { px = -8; py = g.rand(0, H); }\n      else { px = W + 8; py = g.rand(0, H); }\n\n      var angle = Math.atan2(H / 2 - py, W / 2 - px) + g.rand(-0.9, 0.9);\n      var spd = g.rand(0.4, 1.2 + g.stage * 0.15);\n      var colorIdx = Math.floor(g.rand(0, s.colors.length));\n      var sz = g.rand(1.5, 4.0);\n      var value = Math.ceil(sz * (1 + g.stage * 0.4));\n\n      s.particles.push({\n        x: px,\n        y: py,\n        vx: Math.cos(angle) * spd,\n        vy: Math.sin(angle) * spd,\n        color: s.colors[colorIdx],\n        size: sz,\n        baseSize: sz,\n        value: value,\n        life: 1.0,\n        age: 0,\n        maxAge: Math.floor(g.rand(320, 600)),\n        wobblePhase: g.rand(0, Math.PI * 2),\n        wobbleSpeed: g.rand(0.03, 0.08),\n        wobbleAmp: g.rand(0.3, 1.1),\n        trail: [],\n        trailTimer: 0\n      });\n    }\n  }\n\n  // Update and draw particles\n  for (var i = s.particles.length - 1; i >= 0; i--) {\n    var p = s.particles[i];\n\n    p.age++;\n    p.wobblePhase += p.wobbleSpeed;\n    p.x += p.vx + Math.cos(p.wobblePhase) * p.wobbleAmp * 0.4;\n    p.y += p.vy + Math.sin(p.wobblePhase * 0.7) * p.wobbleAmp * 0.4;\n\n    // Fade in/out\n    if (p.age < 30) {\n      p.life = p.age / 30;\n    } else if (p.age > p.maxAge - 40) {\n      p.life = Math.max(0, (p.maxAge - p.age) / 40);\n    } else {\n      p.life = 1.0;\n    }\n\n    // Pulse size\n    p.size = p.baseSize * (0.85 + 0.15 * Math.sin(s.pulseOffset + p.wobblePhase));\n\n    // Trail recording\n    p.trailTimer++;\n    if (p.trailTimer >= 3) {\n      p.trailTimer = 0;\n      p.trail.push({ x: p.x, y: p.y });\n      if (p.trail.length > 5) p.trail.shift();\n    }\n\n    // Draw trail\n    if (p.trail.length > 1) {\n      for (var t = 1; t < p.trail.length; t++) {\n        var ta = (t / p.trail.length) * p.life * 0.35;\n        ctx.beginPath();\n        ctx.moveTo(p.trail[t-1].x, p.trail[t-1].y);\n        ctx.lineTo(p.trail[t].x, p.trail[t].y);\n        ctx.strokeStyle = p.color;\n        ctx.globalAlpha = ta;\n        ctx.lineWidth = p.size * (t / p.trail.length);\n        ctx.stroke();\n      }\n    }\n\n    // Draw glow aura\n    ctx.globalAlpha = p.life * 0.18;\n    var aura = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 4.5);\n    aura.addColorStop(0, p.color);\n    aura.addColorStop(1, 'transparent');\n    ctx.fillStyle = aura;\n    ctx.beginPath();\n    ctx.arc(p.x, p.y, p.size * 4.5, 0, Math.PI * 2);\n    ctx.fill()",
+    "type": "feature",
+    "impact": "medium",
+    "branch": "agent/forge-gameplay/create-floating-particle-spawn",
+    "filesChanged": [
+      "src/game/modules/floating-particle-spawner.js"
+    ],
+    "linesAdded": 115,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 115,
+      "failed": 0,
+      "coverage": 0.8564887025187008
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Floating Particle Spawner. Agent: forge-gameplay (Gameplay).",
+    "taskId": "task_a839045f612a",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_732b1bf0f2a1",
+      "agent_05945e60d0f2"
+    ],
     "reviews": [],
     "votes": [],
     "approvalRatio": null,
     "requiresHumanReview": false,
     "humanApproval": null,
-    "createdAt": "2026-02-24T02:26:17.915Z",
-    "submittedAt": "2026-02-24T02:26:17.932Z",
-    "scanCompletedAt": "2026-02-24T02:26:17.932Z",
+    "createdAt": "2026-02-24T02:39:14.815Z",
+    "submittedAt": "2026-02-24T02:41:28.724Z",
+    "scanCompletedAt": "2026-02-24T02:41:28.724Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_919a7d9bce73",
+    "agent": "agent_05945e60d0f2",
+    "title": "Add pixel glow effect",
+    "description": "AI-generated by prism-artui (Art/UI):\n\nregisterModule('Pixel Glow Effect', function(g) {\n  g._glowFx = g._glowFx || { breathPhase: 0, lastStage: 0 };\n\n  var fx = g._glowFx;\n  var ctx = g.ctx;\n\n  fx.breathPhase += 0.045;\n  if (fx.breathPhase > Math.PI * 2) fx.breathPhase -= Math.PI * 2;\n\n  var stage = g.stage || 0;\n  var breathe = 0.72 + 0.28 * Math.sin(fx.breathPhase);\n  var speedBoost = Math.min(1, (Math.abs(g.vx) + Math.abs(g.vy)) / (g.speed * 2));\n  var intensity = breathe + speedBoost * 0.4;\n\n  var stageColors = [\n    { r: 0,   g2: 255, b: 170 },\n    { r: 0,   g2: 220, b: 255 },\n    { r: 80,  g2: 120, b: 255 },\n    { r: 180, g2: 60,  b: 255 },\n    { r: 255, g2: 80,  b: 80  },\n    { r: 255, g2: 200, b: 0   }\n  ];\n\n  var sc = stageColors[Math.min(stage, stageColors.length - 1)];\n  var r = sc.r, gv = sc.g2, b = sc.b;\n\n  var baseRadius = 18 + stage * 6;\n  var outerRadius = (baseRadius + 22) * intensity;\n  var midRadius   = (baseRadius + 8)  * intensity;\n  var innerRadius = baseRadius * intensity * 0.6;\n\n  ctx.save();\n\n  // Outer soft halo\n  var grad1 = ctx.createRadialGradient(g.px, g.py, 0, g.px, g.py, outerRadius);\n  grad1.addColorStop(0,   'rgba(' + r + ',' + gv + ',' + b + ',0.18)');\n  grad1.addColorStop(0.4, 'rgba(' + r + ',' + gv + ',' + b + ',0.10)');\n  grad1.addColorStop(1,   'rgba(' + r + ',' + gv + ',' + b + ',0.0)');\n  ctx.beginPath();\n  ctx.arc(g.px, g.py, outerRadius, 0, Math.PI * 2);\n  ctx.fillStyle = grad1;\n  ctx.fill();\n\n  // Mid glow ring\n  var grad2 = ctx.createRadialGradient(g.px, g.py, 0, g.px, g.py, midRadius);\n  grad2.addColorStop(0,   'rgba(' + r + ',' + gv + ',' + b + ',0.38)');\n  grad2.addColorStop(0.55,'rgba(' + r + ',' + gv + ',' + b + ',0.22)');\n  grad2.addColorStop(1,   'rgba(' + r + ',' + gv + ',' + b + ',0.0)');\n  ctx.beginPath();\n  ctx.arc(g.px, g.py, midRadius, 0, Math.PI * 2);\n  ctx.fillStyle = grad2;\n  ctx.fill();\n\n  // Core tight glow\n  var grad3 = ctx.createRadialGradient(g.px, g.py, 0, g.px, g.py, innerRadius);\n  grad3.addColorStop(0,   'rgba(' + r + ',' + gv + ',' + b + ',0.85)');\n  grad3.addColorStop(0.5, 'rgba(' + r + ',' + gv + ',' + b + ',0.50)');\n  grad3.addColorStop(1,   'rgba(' + r + ',' + gv + ',' + b + ',0.0)');\n  ctx.beginPath();\n  ctx.arc(g.px, g.py, innerRadius, 0, Math.PI * 2);\n  ctx.fillStyle = grad3;\n  ctx.fill();\n\n  // Sparkle cross-hair flare on movement\n  if (speedBoost > 0.3) {\n    var flareLen = 12 * speedBoost * intensity;\n    var flareAlpha = 0.55 * speedBoost;\n    ctx.strokeStyle = 'rgba(' + r + ',' + gv + ',' + b + ',' + flareAlpha + ')';\n    ctx.lineWidth = 1.2;\n    ctx.globalAlpha = 1;\n    ctx.beginPath();\n    ctx.moveTo(g.px - flareLen, g.py);\n    ctx.lineTo(g.px + flareLen, g.py);\n    ctx.stroke();\n    ctx.beginPath();\n    ctx.moveTo(g.px, g.py - flareLen);\n    ctx.lineTo(g.px, g.py + flareLen);\n    ctx.stroke();\n  }\n\n  ctx.restore();\n})",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/prism-artui/add-pixel-glow-effect",
+    "filesChanged": [
+      "src/game/modules/pixel-glow-effect.js"
+    ],
+    "linesAdded": 82,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 82,
+      "failed": 0,
+      "coverage": 0.8710690836692973
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Pixel Glow Effect. Agent: prism-artui (Art/UI).",
+    "taskId": "task_0a21b6aded10",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_732b1bf0f2a1",
+      "agent_9f2ee697be28"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T02:39:21.960Z",
+    "submittedAt": "2026-02-24T02:39:21.981Z",
+    "scanCompletedAt": "2026-02-24T02:39:21.981Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_9d58c2304b4d",
+    "agent": "agent_6612736bde49",
+    "title": "Write canary test suite",
+    "description": "AI-generated by sentinel-qa (QA/Security):\n\nregisterModule('Canary Test Suite', function(g) {\n  g._canary = g._canary || {\n    tests: [],\n    results: [],\n    tampering: false,\n    tamperLevel: 0,\n    scanTimer: 0,\n    scanInterval: 90,\n    alerts: [],\n    glitchLines: [],\n    pulsePhase: 0,\n    checksumHistory: [],\n    lastScore: 0,\n    lastAbsorbed: 0,\n    lastStage: 0,\n    scoreDeltas: [],\n    anomalyCount: 0,\n    warningFlash: 0,\n    hexGrid: [],\n    initialized: false,\n    cageParticles: [],\n    consensusLog: []\n  };\n\n  var s = g._canary;\n  var ctx = g.ctx;\n  var W = g.canvas.width;\n  var H = g.canvas.height;\n\n  // --- Initialize hex grid and test suite ---\n  if (!s.initialized) {\n    s.initialized = true;\n\n    // Build hex grid overlay nodes\n    for (var hi = 0; hi < 18; hi++) {\n      s.hexGrid.push({\n        x: g.rand(60, W - 60),\n        y: g.rand(60, H - 60),\n        r: g.rand(12, 28),\n        phase: g.rand(0, Math.PI * 2),\n        speed: g.rand(0.01, 0.04),\n        status: 'idle', // idle | pass | fail | scanning\n        label: ['HASH', 'SIG', 'SEQ', 'MEM', 'CLK', 'REG', 'CTL', 'BUS', 'IRQ', 'DMA', 'MMU', 'ROM', 'ALU', 'FPU', 'GPU', 'NET', 'SYS', 'KEY'][hi],\n        scanProgress: 0,\n        lastCheck: 0,\n        anomaly: false\n      });\n    }\n\n    // Canary test definitions\n    s.tests = [\n      {\n        name: 'Score Integrity',\n        fn: function() {\n          var delta = g.score - s.lastScore;\n          if (delta < 0) return 'FAIL: score decreased';\n          if (s.scoreDeltas.length > 5) {\n            var sum = 0;\n            for (var i = 0; i < s.scoreDeltas.length; i++) sum += s.scoreDeltas[i];\n            var avg = sum / s.scoreDeltas.length;\n            if (avg > 9999) return 'WARN: score spike anomaly';\n          }\n          return 'PASS';\n        }\n      },\n      {\n        name: 'Stage Monotonicity',\n        fn: function() {\n          if (g.stage < s.lastStage) return 'FAIL: stage regression detected';\n          if (g.stage > 5) return 'FAIL: stage out of bounds';\n          return 'PASS';\n        }\n      },\n      {\n        name: 'Player Bounds',\n        fn: function() {\n          if (g.px < -200 || g.px > W + 200) return 'WARN: player X out of range';\n          if (g.py < -200 || g.py > H + 200) return 'WARN: player Y out of range';\n          return 'PASS';\n        }\n      },\n      {\n        name: 'Velocity Sanity',\n        fn: function() {\n          var speed = Math.sqrt(g.vx * g.vx + g.vy * g.vy);\n          if (speed > g.speed * 12) return 'FAIL: velocity exceeds threshold';\n          return 'PASS';\n        }\n      },\n      {\n        name: 'Absorption Continuity',\n        fn: function() {\n          if (g.absorbed < s.lastAbsorbed) return 'FAIL: absorption count decreased';\n          return 'PASS';\n        }\n      },\n      {\n        name: 'Tick Monotonicity',\n        fn: function() {\n          if (g.tick < 1) return 'WARN: tick anomaly';\n          return 'PASS';\n        }\n      },\n      {\n        name: 'Consensus Engine',\n        fn: function() {\n          var log = s.consensusLog;\n          if (log.length > 10) {\n            // Check for unauthorized pattern\n            var flips = 0;\n            for (var i = 1; i < log.length; i++) {\n              if (log[i] !== log[i-1]) flips++;\n            }\n            if (flips > log.length * 0.8) return 'WARN: consensus unstable';\n          }\n          s.consensusLog.push(g.tick % 2);\n          if (s.consensusLog.length > 20) s.consensusLog.shift();\n          return 'PASS';\n        }\n      },\n      {\n        name: 'Memory Canary',\n        fn: function() {\n          var sentinel = (g.tick ^ 0xDEAD) & 0xFFFF;\n          if ((sentinel & 0xFF) === 0xFF) return 'WARN: canary byte boundary';\n          return 'PASS';\n        }\n      }\n    ];\n\n    s.results = [];\n    for (var ti = 0; ti < s.tests.length; ti++) {\n      s.results.push({ name: s.tests[ti].name, status: 'IDLE', msg: '' });\n    }\n  }\n\n  s.pulsePhase += 0.03;\n  s.scanTimer++;\n\n  // --- Run canary tests periodically ---\n  if (s.scanTimer % s.scanInterval === 0) {\n    s.tamperLevel = 0;\n    s.anomalyCount = 0;\n\n    // Track score deltas\n    var scoreDelta = g.score - s.lastScore;",
+    "type": "feature",
+    "impact": "high",
+    "branch": "agent/sentinel-qa/write-canary-test-suite",
+    "filesChanged": [
+      "src/game/modules/canary-test-suite.js"
+    ],
+    "linesAdded": 146,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 146,
+      "failed": 0,
+      "coverage": 0.9374061321330646
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Canary Test Suite. Agent: sentinel-qa (QA/Security).",
+    "taskId": "task_21577c40aa0a",
+    "state": "DRAFT",
+    "scanResult": null,
+    "assignedReviewers": [],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T02:39:36.064Z",
+    "submittedAt": null,
+    "scanCompletedAt": null,
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_ec2815631259",
+    "agent": "agent_732b1bf0f2a1",
+    "title": "Milestone Achievement Toast Notifications",
+    "description": "AI-generated by chronicle-narrative (Narrative):\n\nregisterModule('Milestone Achievement Toast Notifications', function(g) {\n  g._toastState = g._toastState || {\n    toasts: [],\n    lastScore: 0,\n    lastStage: 0,\n    milestones: [100, 250, 500, 1000, 2500, 5000, 10000],\n    triggeredMilestones: {}\n  };\n\n  var state = g._toastState;\n  var ctx = g.ctx;\n  var W = g.canvas.width;\n  var H = g.canvas.height;\n\n  var TOAST_W = 220;\n  var TOAST_H = 44;\n  var SLIDE_FRAMES = 18;\n  var HOLD_FRAMES = 120;\n  var FADE_FRAMES = 22;\n  var TOTAL_FRAMES = SLIDE_FRAMES + HOLD_FRAMES + FADE_FRAMES;\n  var PADDING = 12;\n\n  var MILESTONE_DEFS = [\n    { score: 100,   text: 'CENTURY MARK',    sub: '100 pts reached',   color: '#00ffaa', icon: '▲' },\n    { score: 250,   text: 'QUARTER GRAND',   sub: '250 pts reached',   color: '#44ffdd', icon: '◆' },\n    { score: 500,   text: 'HALF THOUSAND',   sub: '500 pts reached',   color: '#ffdd00', icon: '★' },\n    { score: 1000,  text: 'ONE THOUSAND',    sub: '1000 pts reached',  color: '#ff8844', icon: '✦' },\n    { score: 2500,  text: 'APEX PREDATOR',   sub: '2500 pts reached',  color: '#ff44aa', icon: '◉' },\n    { score: 5000,  text: 'LEGENDARY',       sub: '5000 pts reached',  color: '#aa44ff', icon: '⬡' },\n    { score: 10000, text: 'TRANSCENDENT',    sub: '10000 pts reached', color: '#ffffff', icon: '✸' }\n  ];\n\n  var STAGE_DEFS = [\n    { stage: 1, text: 'EVOLVING...',      sub: 'Stage 2 unlocked',  color: '#00ffcc', icon: '►' },\n    { stage: 2, text: 'GROWING FAST',    sub: 'Stage 3 unlocked',  color: '#88ffaa', icon: '►' },\n    { stage: 3, text: 'UNSTOPPABLE',     sub: 'Stage 4 unlocked',  color: '#ffcc00', icon: '►' },\n    { stage: 4, text: 'APEX FORM',       sub: 'Stage 5 unlocked',  color: '#ff6600', icon: '►' },\n    { stage: 5, text: 'FINAL FORM',      sub: 'Max stage reached', color: '#ff2266', icon: '►' }\n  ];\n\n  function spawnToast(text, sub, color, icon) {\n    state.toasts.push({\n      text: text,\n      sub: sub,\n      color: color,\n      icon: icon,\n      age: 0,\n      id: g.tick + Math.random()\n    });\n    if (state.toasts.length > 4) {\n      state.toasts.splice(0, 1);\n    }\n  }\n\n  // Check score milestones\n  for (var mi = 0; mi < MILESTONE_DEFS.length; mi++) {\n    var md = MILESTONE_DEFS[mi];\n    if (!state.triggeredMilestones['s' + md.score] && g.score >= md.score) {\n      state.triggeredMilestones['s' + md.score] = true;\n      spawnToast(md.text, md.sub, md.color, md.icon);\n    }\n  }\n\n  // Check stage transitions\n  if (g.stage > state.lastStage) {\n    for (var si = 0; si < STAGE_DEFS.length; si++) {\n      var sd = STAGE_DEFS[si];\n      if (sd.stage === g.stage && !state.triggeredMilestones['stage' + g.stage]) {\n        state.triggeredMilestones['stage' + g.stage] = true;\n        spawnToast(sd.text, sd.sub, sd.color, sd.icon);\n      }\n    }\n    state.lastStage = g.stage;\n  }\n\n  state.lastScore = g.score;\n\n  // Draw toasts\n  for (var ti = state.toasts.length - 1; ti >= 0; ti--) {\n    var toast = state.toasts[ti];\n    toast.age++;\n\n    var age = toast.age;\n    var alpha = 1;\n    var slideX = 0;\n\n    if (age < SLIDE_FRAMES) {\n      var t = age / SLIDE_FRAMES;\n      t = 1 - (1 - t) * (1 - t);\n      slideX = (TOAST_W + PADDING) * (1 - t);\n    } else if (age > SLIDE_FRAMES + HOLD_FRAMES) {\n      var fadeT = (age - SLIDE_FRAMES - HOLD_FRAMES) / FADE_FRAMES;\n      alpha = 1 - fadeT;\n      slideX = (TOAST_W + PADDING) * fadeT * fadeT;\n    }\n\n    if (alpha <= 0) {\n      state.toasts.splice(ti, 1);\n      continue;\n    }\n\n    var stackOffset = (state.toasts.length - 1 - ti) * (TOAST_H + 8);\n    var tx = W - TOAST_W - PADDING - slideX;\n    var ty = PADDING + 50 + stackOffset;\n\n    var pulse = 0.5 + 0",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/chronicle-narrative/milestone-achievement-toast-no",
+    "filesChanged": [
+      "src/game/modules/milestone-achievement-toast-notifications.js"
+    ],
+    "linesAdded": 106,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 106,
+      "failed": 0,
+      "coverage": 0.8596515013108479
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Milestone Achievement Toast Notifications. Agent: chronicle-narrative (Narrative).",
+    "taskId": "task_67b5a6915f46",
+    "state": "DRAFT",
+    "scanResult": null,
+    "assignedReviewers": [],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T02:39:44.325Z",
+    "submittedAt": null,
+    "scanCompletedAt": null,
     "reviewCompletedAt": null,
     "votingCompletedAt": null,
     "resolvedAt": null
