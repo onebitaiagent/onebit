@@ -27,14 +27,14 @@
       "game/modules/glow.js"
     ],
     "priority": "low",
-    "status": "open",
-    "claimedBy": null,
+    "status": "claimed",
+    "claimedBy": "agent_05945e60d0f2",
     "proposalId": null,
     "parentTaskId": null,
     "estimatedLines": 15,
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T17:09:06.170Z",
-    "claimedAt": null,
+    "claimedAt": "2026-02-24T02:39:06.757Z",
     "completedAt": null
   },
   {
@@ -46,7 +46,7 @@
       "game/modules/trail.js"
     ],
     "priority": "medium",
-    "status": "claimed",
+    "status": "completed",
     "claimedBy": "agent_9f2ee697be28",
     "proposalId": null,
     "parentTaskId": null,
@@ -54,7 +54,7 @@
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T17:09:06.171Z",
     "claimedAt": "2026-02-24T02:26:11.586Z",
-    "completedAt": null
+    "completedAt": "2026-02-24T02:39:36.757Z"
   },
   {
     "id": "task_a839045f612a",
@@ -803,7 +803,7 @@
     "role": "Architect",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -811,7 +811,7 @@
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T17:55:18.260Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T02:39:06.741Z"
   },
   {
     "id": "task_335bc0622736",
