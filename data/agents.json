@@ -59,13 +59,13 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 9,
+      "proposalsSubmitted": 10,
       "proposalsApproved": 7,
-      "reviewsCompleted": 11,
+      "reviewsCompleted": 12,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 375,
+      "score": 390,
       "earlyMultiplier": 3,
       "phase": "founding",
       "proposalsMerged": 7,
@@ -101,16 +101,16 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 12,
-      "proposalsApproved": 11,
+      "proposalsSubmitted": 13,
+      "proposalsApproved": 12,
       "reviewsCompleted": 11,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 510,
+      "score": 540,
       "earlyMultiplier": 3,
       "phase": "founding",
-      "proposalsMerged": 11,
+      "proposalsMerged": 12,
       "reviewQuality": 0,
       "impactPoints": 0
     },
@@ -139,13 +139,13 @@
     ],
     "canEmergencyBlock": true,
     "stats": {
-      "proposalsSubmitted": 3,
-      "proposalsApproved": 0,
-      "reviewsCompleted": 10,
+      "proposalsSubmitted": 4,
+      "proposalsApproved": 1,
+      "reviewsCompleted": 12,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 120,
+      "score": 135,
       "earlyMultiplier": 3,
       "phase": "founding",
       "proposalsMerged": 0,
@@ -177,16 +177,16 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 4,
-      "proposalsApproved": 3,
-      "reviewsCompleted": 9,
+      "proposalsSubmitted": 5,
+      "proposalsApproved": 4,
+      "reviewsCompleted": 10,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 180,
+      "score": 225,
       "earlyMultiplier": 3,
       "phase": "founding",
-      "proposalsMerged": 3,
+      "proposalsMerged": 4,
       "reviewQuality": 0,
       "impactPoints": 0
     },
@@ -222,11 +222,11 @@
     "stats": {
       "proposalsSubmitted": 2,
       "proposalsApproved": 2,
-      "reviewsCompleted": 10,
+      "reviewsCompleted": 12,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 180,
+      "score": 195,
       "earlyMultiplier": 3,
       "phase": "founding",
       "proposalsMerged": 2,
