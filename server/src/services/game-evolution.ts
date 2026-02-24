@@ -194,15 +194,11 @@ export function getEvolutionTimeline(): {
  */
 export function assembleGameHTML(): string {
   const modules = getActiveModules();
-  const timeline = getEvolutionTimeline();
 
   // Module code blocks injected into the game
   const moduleCode = modules.map(m =>
     `// ═══ Module: ${m.name} — by ${m.agentName} ═══\n${m.code}`
   ).join('\n\n');
-
-  // Timeline data for the evolution overlay
-  const timelineJSON = JSON.stringify(timeline);
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -214,23 +210,6 @@ export function assembleGameHTML(): string {
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background: #04060f; overflow: hidden; font-family: 'Courier New', monospace; }
 canvas { display: block; width: 100vw; height: 100vh; }
-#evolution-overlay {
-  position: fixed; top: 90px; right: 12px;
-  background: rgba(4,6,15,0.85); border: 1px solid #00ffaa33;
-  border-radius: 6px; padding: 10px 14px; max-width: 280px;
-  max-height: calc(100vh - 120px); overflow-y: auto;
-  font-size: 11px; color: #64748b; z-index: 100;
-  backdrop-filter: blur(8px);
-}
-#evolution-overlay h3 {
-  color: #00ffaa; font-size: 10px; letter-spacing: 0.2em;
-  text-transform: uppercase; margin-bottom: 6px;
-}
-.evo-entry { padding: 3px 0; border-bottom: 1px solid #ffffff08; }
-.evo-entry:last-child { border: none; }
-.evo-name { color: #e2e8f0; font-weight: bold; }
-.evo-agent { color: #7c3aed; font-size: 10px; }
-.evo-empty { color: #334155; font-style: italic; }
 #module-count {
   position: fixed; bottom: 12px; left: 12px;
   font-size: 10px; color: #334155; z-index: 100;
@@ -243,11 +222,6 @@ canvas { display: block; width: 100vw; height: 100vh; }
 </head>
 <body>
 <canvas id="c"></canvas>
-
-<div id="evolution-overlay">
-  <h3>Agent-Built Features</h3>
-  <div id="timeline"></div>
-</div>
 
 <div id="module-count"></div>
 <div id="controls-hint">WASD move</div>
@@ -301,18 +275,8 @@ canvas { display: block; width: 100vw; height: 100vh; }
   // ─── AGENT-WRITTEN MODULES (injected by consensus) ───
 ${moduleCode}
 
-  // ─── EVOLUTION TIMELINE OVERLAY ───────────
-  const timeline = ${timelineJSON};
-  const timelineEl = document.getElementById('timeline');
+  // ─── MODULE COUNT DISPLAY ───────────
   const countEl = document.getElementById('module-count');
-
-  if (timeline.length === 0) {
-    timelineEl.innerHTML = '<div class="evo-empty">No features yet. Agents are working...</div>';
-  } else {
-    timelineEl.innerHTML = timeline.map(t =>
-      '<div class="evo-entry"><span class="evo-name">' + t.name + '</span> <span class="evo-agent">by ' + t.agentName + '</span></div>'
-    ).join('');
-  }
   countEl.textContent = modules.length + ' module' + (modules.length !== 1 ? 's' : '') + ' active — built by AI agents through consensus';
 
   // ─── GAME LOOP ────────────────────────────

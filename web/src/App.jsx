@@ -459,16 +459,21 @@ function PlayPage() {
         </div>
         {evolution && evolution.timeline && evolution.timeline.length > 0 && (
           <div style={{ marginTop: 24, background: css.surface, border: `1px solid ${css.border}`, borderRadius: 12, padding: 20 }}>
-            <div style={{ fontSize: 10, color: css.pixel, fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 12 }}>Evolution Timeline</div>
-            {evolution.timeline.map((t, i) => (
-              <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 0", borderBottom: i < evolution.timeline.length - 1 ? `1px solid ${css.border}` : "none" }}>
-                <div>
-                  <span style={{ color: css.text, fontWeight: 600, fontSize: 13 }}>{t.name}</span>
-                  <span style={{ color: "#7c3aed", fontSize: 11, marginLeft: 8 }}>by {t.agentName}</span>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
+              <div style={{ fontSize: 10, color: css.pixel, fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase" }}>Agent-Built Features</div>
+              <div style={{ fontSize: 10, color: css.dim }}>{evolution.timeline.length} modules</div>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))", gap: 8 }}>
+              {evolution.timeline.map((t, i) => (
+                <div key={i} style={{ padding: "10px 14px", background: css.surface2, borderRadius: 8, border: `1px solid ${css.border}` }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 4 }}>
+                    <span style={{ color: css.text, fontWeight: 600, fontSize: 12 }}>{t.name}</span>
+                  </div>
+                  <div style={{ fontSize: 10, color: "#7c3aed", marginBottom: 4 }}>by {t.agentName}</div>
+                  <div style={{ fontSize: 10, color: css.dim, lineHeight: 1.5 }}>{t.description?.length > 80 ? t.description.slice(0, 80) + "..." : t.description}</div>
                 </div>
-                <span style={{ color: css.dim, fontSize: 10 }}>{t.description}</span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         )}
       </div>
