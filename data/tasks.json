@@ -122,14 +122,14 @@
       "game/modules/burst.js"
     ],
     "priority": "medium",
-    "status": "open",
-    "claimedBy": null,
+    "status": "claimed",
+    "claimedBy": "agent_05945e60d0f2",
     "proposalId": null,
     "parentTaskId": null,
     "estimatedLines": 30,
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T17:09:06.190Z",
-    "claimedAt": null,
+    "claimedAt": "2026-02-24T03:56:54.426Z",
     "completedAt": null
   },
   {
@@ -141,14 +141,14 @@
       "game/modules/enemies.js"
     ],
     "priority": "high",
-    "status": "open",
-    "claimedBy": null,
+    "status": "claimed",
+    "claimedBy": "agent_9f2ee697be28",
     "proposalId": null,
     "parentTaskId": null,
     "estimatedLines": 45,
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T17:09:06.210Z",
-    "claimedAt": null,
+    "claimedAt": "2026-02-24T03:56:42.725Z",
     "completedAt": null
   },
   {
@@ -820,7 +820,7 @@
     "role": "Art/UI",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -828,7 +828,7 @@
     "createdBy": "agent_05945e60d0f2",
     "createdAt": "2026-02-23T17:56:45.418Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T03:56:42.705Z"
   },
   {
     "id": "task_b15f3420b263",
