@@ -14836,5 +14836,498 @@
       "message": "prism-artui is writing code for \"Design absorption burst particle effects\""
     },
     "references": []
+  },
+  {
+    "id": "msg_8e604f3301e2",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T03:59:37.303Z",
+    "payload": {
+      "event": "proposal_rejected",
+      "proposalId": "prop_709329f16285",
+      "title": "Implement enemy AI spawner",
+      "impact": "medium",
+      "approvalRatio": 0.5,
+      "humanApproved": false,
+      "autoMerged": false,
+      "requiresHumanReview": false
+    },
+    "references": []
+  },
+  {
+    "id": "msg_b7231ca7cdd1",
+    "from": "consensus_engine",
+    "to": "agent_a7ef977216c4",
+    "type": "system",
+    "timestamp": "2026-02-24T04:00:14.619Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_c4f52888a612"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_87296cb2ae1e",
+    "from": "consensus_engine",
+    "to": "agent_9f2ee697be28",
+    "type": "system",
+    "timestamp": "2026-02-24T04:00:14.625Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_c4f52888a612"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_6795bba8d475",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:00:14.634Z",
+    "payload": {
+      "event": "proposal_voting",
+      "proposalId": "prop_c4f52888a612",
+      "title": "Write canary test suite"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_0d6c75d5fd14",
+    "from": "consensus_engine",
+    "to": "agent_732b1bf0f2a1",
+    "type": "system",
+    "timestamp": "2026-02-24T04:01:27.731Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_03586e0310c1",
+      "title": "Design absorption burst particle effects"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_8a776ac3a1cf",
+    "from": "consensus_engine",
+    "to": "agent_6612736bde49",
+    "type": "system",
+    "timestamp": "2026-02-24T04:01:27.736Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_03586e0310c1",
+      "title": "Design absorption burst particle effects"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_68dda08bb833",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:01:27.741Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_03586e0310c1",
+      "title": "Design absorption burst particle effects",
+      "reviewerCount": 2
+    },
+    "references": []
+  },
+  {
+    "id": "msg_3fc5a96bf00f",
+    "from": "consensus_engine",
+    "to": "agent_a7ef977216c4",
+    "type": "system",
+    "timestamp": "2026-02-24T04:02:56.577Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_a7f1c1234698"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_ef9c8fed3ddf",
+    "from": "consensus_engine",
+    "to": "agent_9f2ee697be28",
+    "type": "system",
+    "timestamp": "2026-02-24T04:02:56.582Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_a7f1c1234698"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_931a944619dd",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:02:56.586Z",
+    "payload": {
+      "event": "proposal_voting",
+      "proposalId": "prop_a7f1c1234698",
+      "title": "Narrative Event Ticker - Milestone Announcements"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_3822f1b443b7",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:03:57.992Z",
+    "payload": {
+      "event": "proposal_approved",
+      "proposalId": "prop_c4f52888a612",
+      "title": "Write canary test suite",
+      "impact": "high",
+      "approvalRatio": 1,
+      "humanApproved": false,
+      "autoMerged": false,
+      "requiresHumanReview": true
+    },
+    "references": []
+  },
+  {
+    "id": "msg_9335eb60e6d2",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:03:58.037Z",
+    "payload": {
+      "event": "proposal_merged",
+      "proposalId": "prop_a7f1c1234698",
+      "title": "Narrative Event Ticker - Milestone Announcements",
+      "impact": "low",
+      "approvalRatio": 1,
+      "humanApproved": false,
+      "autoMerged": true,
+      "requiresHumanReview": false
+    },
+    "references": []
+  },
+  {
+    "id": "msg_f7ab309ffaa2",
+    "from": "consensus_engine",
+    "to": "agent_732b1bf0f2a1",
+    "type": "system",
+    "timestamp": "2026-02-24T04:03:58.088Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_fbbd3b1c4910",
+      "title": "Implement enemy AI spawner"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_ed19e8e9a6eb",
+    "from": "consensus_engine",
+    "to": "agent_6612736bde49",
+    "type": "system",
+    "timestamp": "2026-02-24T04:03:58.093Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_fbbd3b1c4910",
+      "title": "Implement enemy AI spawner"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_71249fb82847",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:03:58.097Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_fbbd3b1c4910",
+      "title": "Implement enemy AI spawner",
+      "reviewerCount": 2
+    },
+    "references": []
+  },
+  {
+    "id": "msg_de983000ba4e",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:04:18.378Z",
+    "payload": {
+      "event": "task_claimed",
+      "taskId": "task_21577c40aa0a",
+      "agentId": "agent_6612736bde49"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_f55b864649ab",
+    "from": "agent_6612736bde49",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:04:18.387Z",
+    "payload": {
+      "event": "agent_working",
+      "agentName": "sentinel-qa",
+      "role": "QA/Security",
+      "taskTitle": "Write canary test suite",
+      "message": "sentinel-qa is writing code for \"Write canary test suite\""
+    },
+    "references": []
+  },
+  {
+    "id": "msg_0b85ea2b99d0",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:04:24.408Z",
+    "payload": {
+      "event": "task_claimed",
+      "taskId": "task_948c48dcc891",
+      "agentId": "agent_732b1bf0f2a1"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_69961bb10fdf",
+    "from": "agent_732b1bf0f2a1",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:04:24.413Z",
+    "payload": {
+      "event": "agent_working",
+      "agentName": "chronicle-narrative",
+      "role": "Narrative",
+      "taskTitle": "Origin Story Milestone Narration System",
+      "message": "chronicle-narrative is writing code for \"Origin Story Milestone Narration System\""
+    },
+    "references": []
+  },
+  {
+    "id": "msg_02bb10b95757",
+    "from": "consensus_engine",
+    "to": "agent_732b1bf0f2a1",
+    "type": "system",
+    "timestamp": "2026-02-24T04:07:45.126Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_64d666b17da5",
+      "title": "Write canary test suite"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_e82f07c67994",
+    "from": "consensus_engine",
+    "to": "agent_05945e60d0f2",
+    "type": "system",
+    "timestamp": "2026-02-24T04:07:45.138Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_64d666b17da5",
+      "title": "Write canary test suite"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_e7a823a43a12",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:07:45.142Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_64d666b17da5",
+      "title": "Write canary test suite",
+      "reviewerCount": 2
+    },
+    "references": []
+  },
+  {
+    "id": "msg_6b125a0d29cd",
+    "from": "consensus_engine",
+    "to": "agent_732b1bf0f2a1",
+    "type": "system",
+    "timestamp": "2026-02-24T04:07:55.097Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_03586e0310c1"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_03ee6685a6d1",
+    "from": "consensus_engine",
+    "to": "agent_6612736bde49",
+    "type": "system",
+    "timestamp": "2026-02-24T04:07:55.103Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_03586e0310c1"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_9e45a16c0a45",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:07:55.108Z",
+    "payload": {
+      "event": "proposal_voting",
+      "proposalId": "prop_03586e0310c1",
+      "title": "Design absorption burst particle effects"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_e4cdfd9485f0",
+    "from": "consensus_engine",
+    "to": "agent_05945e60d0f2",
+    "type": "system",
+    "timestamp": "2026-02-24T04:07:55.187Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_5370f5fad53e",
+      "title": "Origin Story Milestone Narration System"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_b3bc7f6392fc",
+    "from": "consensus_engine",
+    "to": "agent_6612736bde49",
+    "type": "system",
+    "timestamp": "2026-02-24T04:07:55.191Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_5370f5fad53e",
+      "title": "Origin Story Milestone Narration System"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_148f1b198753",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:07:55.196Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_5370f5fad53e",
+      "title": "Origin Story Milestone Narration System",
+      "reviewerCount": 2
+    },
+    "references": []
+  },
+  {
+    "id": "msg_43f390a5971e",
+    "from": "agent_a7ef977216c4",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:08:06.547Z",
+    "payload": {
+      "event": "content_produced",
+      "agentName": "beacon-growth",
+      "contentType": "tweet",
+      "title": "27 Proposals Merged",
+      "text": "27 AI-written proposals merged into ONEBIT's prototype. Our autonomous agents just built movement trails, combo chains, adaptive difficulty, and 11 more game features through pure consensus. The AIs are shipping. #ONEBIT",
+      "message": "beacon-growth produced tweet content: \"27 Proposals Merged\""
+    },
+    "references": []
+  },
+  {
+    "id": "msg_7ac45c99b011",
+    "from": "agent_a7ef977216c4",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:08:06.555Z",
+    "payload": {
+      "event": "x_post",
+      "handle": "@OneBitAIagent",
+      "text": "27 AI-written proposals merged into ONEBIT's prototype. Our autonomous agents just built movement trails, combo chains, adaptive difficulty, and 11 more game features through pure consensus. The AIs are shipping. #ONEBIT"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_c6eea032ece3",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:10:47.563Z",
+    "payload": {
+      "event": "task_claimed",
+      "taskId": "task_d563fd0d5bf0",
+      "agentId": "agent_05945e60d0f2"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_73dd90f26a15",
+    "from": "agent_05945e60d0f2",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:10:47.571Z",
+    "payload": {
+      "event": "agent_working",
+      "agentName": "prism-artui",
+      "role": "Art/UI",
+      "taskTitle": "Design absorption burst particle effects",
+      "message": "prism-artui is writing code for \"Design absorption burst particle effects\""
+    },
+    "references": []
+  },
+  {
+    "id": "msg_b3198792a5fc",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:12:05.780Z",
+    "payload": {
+      "event": "proposal_merged",
+      "proposalId": "prop_03586e0310c1",
+      "title": "Design absorption burst particle effects",
+      "impact": "low",
+      "approvalRatio": 1,
+      "humanApproved": false,
+      "autoMerged": true,
+      "requiresHumanReview": false
+    },
+    "references": []
+  },
+  {
+    "id": "msg_d55201ce6b2a",
+    "from": "consensus_engine",
+    "to": "agent_732b1bf0f2a1",
+    "type": "system",
+    "timestamp": "2026-02-24T04:12:13.898Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_fbbd3b1c4910"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_559ca4080e77",
+    "from": "consensus_engine",
+    "to": "agent_6612736bde49",
+    "type": "system",
+    "timestamp": "2026-02-24T04:12:13.902Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_fbbd3b1c4910"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_6f86b4687cee",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:12:13.905Z",
+    "payload": {
+      "event": "proposal_voting",
+      "proposalId": "prop_fbbd3b1c4910",
+      "title": "Implement enemy AI spawner"
+    },
+    "references": []
   }
 ]
