@@ -22,7 +22,7 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 1,
+      "proposalsSubmitted": 2,
       "proposalsApproved": 1,
       "reviewsCompleted": 5,
       "tasksCompleted": 0
@@ -59,7 +59,7 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 4,
+      "proposalsSubmitted": 5,
       "proposalsApproved": 4,
       "reviewsCompleted": 5,
       "tasksCompleted": 0
@@ -101,7 +101,7 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 8,
+      "proposalsSubmitted": 9,
       "proposalsApproved": 7,
       "reviewsCompleted": 4,
       "tasksCompleted": 0
