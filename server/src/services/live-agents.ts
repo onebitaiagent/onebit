@@ -285,24 +285,13 @@ export function stopAgents(): void {
 }
 
 // ─── Auto Phase Progression ──────────────────────────────────
-// Advances phase when enough tasks are merged (75% for foundational phases, 50% for content phases)
-const PHASE_MERGE_THRESHOLDS: Record<string, number> = {
-  Origin: 0.5,
-  Prototype: 0.5,
-  Engine: 0.75,     // Engine systems are critical — most must land
-  Forge: 0.75,      // Visual engine is foundational
-  Alpha: 0.5,
-  Crucible: 0.6,
-  Beta: 0.5,
-  Release: 0.6,
-};
+// Advances phase when 100% of that phase's roadmap tasks are merged — no rushing
 
 function checkAutoPhaseProgression(): void {
   const phase = getCurrentPhase();
   if (phase.phase === 'Complete' || currentPhaseIndex >= PHASE_ORDER.length - 1) return;
 
-  const pct = PHASE_MERGE_THRESHOLDS[phase.phase] ?? 0.5;
-  const threshold = Math.ceil(phase.tasksInPhase * pct);
+  const threshold = phase.tasksInPhase; // 100% — every task must be merged
   if (phase.tasksMerged >= threshold) {
     // Enforce time gate — phase must have been active for minimum duration
     if (!isPhaseTimeGateMet()) {
