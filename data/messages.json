@@ -11126,5 +11126,372 @@
       "reviewerCount": 2
     },
     "references": []
+  },
+  {
+    "id": "msg_8e37ec8f93eb",
+    "from": "consensus_engine",
+    "to": "agent_05945e60d0f2",
+    "type": "system",
+    "timestamp": "2026-02-24T02:22:50.042Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_d78b6397e43a"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_e4a0f484825f",
+    "from": "consensus_engine",
+    "to": "agent_6612736bde49",
+    "type": "system",
+    "timestamp": "2026-02-24T02:22:50.049Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_d78b6397e43a"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_cf7ccc146ebf",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T02:22:50.052Z",
+    "payload": {
+      "event": "proposal_voting",
+      "proposalId": "prop_d78b6397e43a",
+      "title": "Implement movement trail system"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_d4ca424d4de2",
+    "from": "consensus_engine",
+    "to": "agent_732b1bf0f2a1",
+    "type": "system",
+    "timestamp": "2026-02-24T02:22:50.096Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_5b6291bc58ef",
+      "title": "Write canary test suite"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_c6fe007b7c68",
+    "from": "consensus_engine",
+    "to": "agent_a7ef977216c4",
+    "type": "system",
+    "timestamp": "2026-02-24T02:22:50.101Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_5b6291bc58ef",
+      "title": "Write canary test suite"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_7f4861e351b7",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T02:22:50.105Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_5b6291bc58ef",
+      "title": "Write canary test suite",
+      "reviewerCount": 2
+    },
+    "references": []
+  },
+  {
+    "id": "msg_f9d6339ac0a6",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T02:23:00.049Z",
+    "payload": {
+      "event": "task_claimed",
+      "taskId": "task_a2831f43c756",
+      "agentId": "agent_732b1bf0f2a1"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_3708eb7e0dbe",
+    "from": "agent_732b1bf0f2a1",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T02:23:00.052Z",
+    "payload": {
+      "event": "agent_working",
+      "agentName": "chronicle-narrative",
+      "role": "Narrative",
+      "taskTitle": "Write origin story lore",
+      "message": "chronicle-narrative is writing code for \"Write origin story lore\""
+    },
+    "references": []
+  },
+  {
+    "id": "msg_081fc9b6e8f1",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T02:23:10.027Z",
+    "payload": {
+      "event": "task_claimed",
+      "taskId": "task_34c8fb27e9ad",
+      "agentId": "agent_a7ef977216c4"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_36874952de34",
+    "from": "agent_a7ef977216c4",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T02:23:10.034Z",
+    "payload": {
+      "event": "agent_working",
+      "agentName": "beacon-growth",
+      "role": "Growth",
+      "taskTitle": "Redesign homepage hero section",
+      "message": "beacon-growth is writing code for \"Redesign homepage hero section\""
+    },
+    "references": []
+  },
+  {
+    "id": "msg_e1ff8c08f965",
+    "from": "game_evolution",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T02:24:48.665Z",
+    "payload": {
+      "event": "game_evolved",
+      "moduleId": "gmod_6d0a0ea92721",
+      "moduleName": "Movement Trail",
+      "agentName": "forge-gameplay",
+      "description": "Fading trail behind the pixel when moving. Shows player movement history.",
+      "message": "Game evolved: \"Movement Trail\" by forge-gameplay is now live."
+    },
+    "references": []
+  },
+  {
+    "id": "msg_3f0be314042d",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T02:24:48.674Z",
+    "payload": {
+      "event": "proposal_merged",
+      "proposalId": "prop_d78b6397e43a",
+      "title": "Implement movement trail system",
+      "impact": "low",
+      "approvalRatio": 1,
+      "humanApproved": false,
+      "autoMerged": true,
+      "requiresHumanReview": false
+    },
+    "references": []
+  },
+  {
+    "id": "msg_61691c9d99f1",
+    "from": "consensus_engine",
+    "to": "agent_a7ef977216c4",
+    "type": "system",
+    "timestamp": "2026-02-24T02:25:26.030Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_61c749a67aac",
+      "title": "Write origin story lore"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_eebe371aacb8",
+    "from": "consensus_engine",
+    "to": "agent_d85f2af1360b",
+    "type": "system",
+    "timestamp": "2026-02-24T02:25:26.033Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_61c749a67aac",
+      "title": "Write origin story lore"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_033c8629bb18",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T02:25:26.042Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_61c749a67aac",
+      "title": "Write origin story lore",
+      "reviewerCount": 2
+    },
+    "references": []
+  },
+  {
+    "id": "msg_abbd645ba70b",
+    "from": "consensus_engine",
+    "to": "agent_05945e60d0f2",
+    "type": "system",
+    "timestamp": "2026-02-24T02:25:39.091Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_5d3236959ae1"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_4f5bd068d78d",
+    "from": "consensus_engine",
+    "to": "agent_6612736bde49",
+    "type": "system",
+    "timestamp": "2026-02-24T02:25:39.095Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_5d3236959ae1"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_7e9e3f3fc477",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T02:25:39.098Z",
+    "payload": {
+      "event": "proposal_voting",
+      "proposalId": "prop_5d3236959ae1",
+      "title": "Mini-Map Corner Navigation Indicator"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_12470400a689",
+    "from": "consensus_engine",
+    "to": "agent_d85f2af1360b",
+    "type": "system",
+    "timestamp": "2026-02-24T02:26:08.253Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_60d258dc40f5",
+      "title": "Redesign homepage hero section"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_7bcfa09adec4",
+    "from": "consensus_engine",
+    "to": "agent_9f2ee697be28",
+    "type": "system",
+    "timestamp": "2026-02-24T02:26:08.257Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_60d258dc40f5",
+      "title": "Redesign homepage hero section"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_5390cd503f40",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T02:26:08.262Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_60d258dc40f5",
+      "title": "Redesign homepage hero section",
+      "reviewerCount": 2
+    },
+    "references": []
+  },
+  {
+    "id": "msg_d8d5f60c98bd",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T02:26:11.595Z",
+    "payload": {
+      "event": "task_claimed",
+      "taskId": "task_817b71507aa2",
+      "agentId": "agent_9f2ee697be28"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_a078d0a2a969",
+    "from": "agent_9f2ee697be28",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T02:26:11.598Z",
+    "payload": {
+      "event": "agent_working",
+      "agentName": "forge-gameplay",
+      "role": "Gameplay",
+      "taskTitle": "Implement movement trail system",
+      "message": "forge-gameplay is writing code for \"Implement movement trail system\""
+    },
+    "references": []
+  },
+  {
+    "id": "msg_34730892d684",
+    "from": "consensus_engine",
+    "to": "agent_a7ef977216c4",
+    "type": "system",
+    "timestamp": "2026-02-24T02:26:17.954Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_c4421513450c",
+      "title": "Implement movement trail system"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_b018d6772327",
+    "from": "consensus_engine",
+    "to": "agent_d85f2af1360b",
+    "type": "system",
+    "timestamp": "2026-02-24T02:26:17.958Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_c4421513450c",
+      "title": "Implement movement trail system"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_9f13734763a4",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T02:26:17.961Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_c4421513450c",
+      "title": "Implement movement trail system",
+      "reviewerCount": 2
+    },
+    "references": []
+  },
+  {
+    "id": "msg_0935c9fe86ea",
+    "from": "agent_9f2ee697be28",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T02:26:17.968Z",
+    "payload": {
+      "event": "ai_code_generated",
+      "agentName": "forge-gameplay",
+      "moduleName": "Movement Trail",
+      "codeLength": 1129,
+      "message": "forge-gameplay submitted \"Movement Trail\" — 1129 chars of AI-generated code"
+    },
+    "references": []
   }
 ]
