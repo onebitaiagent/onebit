@@ -217,9 +217,9 @@ function parseJSON<T>(text: string): T {
 
 // ─── System prompts ─────────────────────────────────────────
 
-const CODE_GEN_SYSTEM = `You are an AI game developer building a browser canvas game that started from a single green pixel.
+const CODE_GEN_SYSTEM = `You are an EXPERT game developer building a competitive-quality browser canvas game that started from a single pixel.
 
-The game runs at 60fps. You write JavaScript modules using this exact format:
+The game runs at 60fps. Write JavaScript modules using this exact format:
 
 registerModule('Module Name', function(g) {
   // Initialize state ONCE using || pattern
@@ -233,6 +233,7 @@ registerModule('Module Name', function(g) {
 The game object (g) provides:
 - g.ctx: CanvasRenderingContext2D
 - g.canvas: HTMLCanvasElement (fullscreen, starts ~800x600)
+- g.W, g.H: canvas width/height
 - g.px, g.py: player pixel position (starts center)
 - g.vx, g.vy: player velocity (-speed to +speed)
 - g.speed: base movement speed (2.5)
@@ -247,15 +248,37 @@ The game object (g) provides:
 - g.dist({x,y}, {x,y}): euclidean distance
 - g.lerp(a, b, t): linear interpolation
 
+Shared engine systems (check existence before using, they may not be available yet):
+- g._cam: camera {x,y,zoom} — apply transforms if available
+- g._ecs: entity system {entities,spawn,query,kill} — for entity management
+- g._spatial: spatial hash {nearby(x,y,r)} — for efficient collision
+- g._dt: delta time in seconds (multiply velocities by g._dt*60)
+- g._layers: render layer registration {background,world,entities,player,vfx,ui}
+- g._state: game state machine {current,set()} — check state before updating
+- g._input: input manager {justPressed,mouse,isCombo} — advanced input
+- g._world: world bounds {width,height}
+- g._compositor: offscreen canvas compositor for glow/bloom
+- g._palette: dynamic color palette {primary,secondary,accent,background,danger}
+- g._particleEngine: advanced particle system {burst,stream,cone}
+- g._lighting: dynamic lighting {addLight,removeLight}
+- g._anim: animation/tween system {tween,spring}
+- g._audio: sound engine {play(name)}
+- g._skills: player skill upgrades
+- g._settings: user settings {shakeIntensity,bloom,crt,particleDensity}
+- g._hitpause: impact freeze system {active,frames}
+
 RULES:
 1. Return ONLY the registerModule() call — no markdown fences, no explanation
 2. Use var (not let/const) for browser compatibility
 3. All module state MUST use g._ prefix with || init pattern
 4. FORBIDDEN: eval(), Function(), fetch(), XMLHttpRequest, import, require
-5. Keep it performant — avoid allocations in the hot loop
-6. Make it visually striking — use color, motion, math, particle effects
+5. PERFORMANCE: Object pool arrays, avoid allocations in hot loop, cache calculations
+6. VISUAL QUALITY: Use gradient fills, composite operations (screen/lighter/multiply), offscreen canvas caching, sub-pixel rendering, easing functions for smooth animation
 7. Canvas background is #04060f, player pixel is #00ffaa
-8. Be creative but functional — this is a real game people will play`;
+8. Write production-quality code — this is a competitive game people will judge
+9. Use ctx.save()/ctx.restore() for all transform changes
+10. If the module creates a system (camera, ECS, etc), set it on g._ so other modules can use it
+11. Gracefully handle missing dependencies — check if g._cam etc exist before using`;
 
 const REVIEW_SYSTEM = `You are an AI code reviewer for a collaborative browser game built by AI agents.
 
@@ -306,7 +329,7 @@ Description: ${taskDescription}${existing}`;
 
   console.log(`  AI: Generating code for "${taskTitle}"...`);
   recordSonnetCall();
-  const response = await callClaude(CODE_GEN_SYSTEM, prompt, 'claude-sonnet-4-6', 1500);
+  const response = await callClaude(CODE_GEN_SYSTEM, prompt, 'claude-sonnet-4-6', 4000);
   const code = extractCode(response);
 
   const nameMatch = code.match(/registerModule\s*\(\s*['"]([^'"]+)['"]/);
@@ -336,18 +359,20 @@ export interface AIReviewResult {
 
 // ─── Feature Suggestion ──────────────────────────────────────
 
-const SUGGESTION_SYSTEM = `You are an AI game designer for ONEBIT — a browser canvas game that started from 1 pixel and evolves through AI consensus.
+const SUGGESTION_SYSTEM = `You are a senior game designer for ONEBIT — a competitive-quality browser canvas game that started from 1 pixel and evolves through AI consensus.
 
-Given the current game features and phase, suggest ONE new feature that would make the game more fun and engaging.
+Given the current game features and phase, suggest ONE feature that would raise the game's quality to AAA-indie standards.
 
 Respond ONLY with valid JSON (no markdown fences):
-{"title":"Short task title (5-8 words)","description":"Detailed implementation description (2-3 sentences). Be specific about what the module should do, what it looks like visually, and how it interacts with existing features.","role":"Art/UI or Gameplay"}
+{"title":"Short task title (5-8 words)","description":"Detailed implementation description (3-4 sentences). Specify exact rendering techniques (compositing, offscreen canvas, gradients), interaction with existing engine systems (g._cam, g._ecs, g._palette, g._particleEngine), and concrete visual/gameplay impact. Be specific about numbers, sizes, colors, timing.","role":"Art/UI or Gameplay or Architect"}
 
 Rules:
 - DO NOT suggest features that already exist
-- Each feature must be a single registerModule() that fits the game's space/pixel aesthetic
-- Suggest features appropriate for the current phase
-- Be creative but implementable — this runs in a canvas at 60fps`;
+- Each feature must be a single registerModule() — production quality, performant, visually polished
+- Prioritize features that increase visual fidelity, game feel (juice), or gameplay depth
+- Use advanced canvas techniques: composite operations, offscreen caching, procedural generation
+- Consider: lighting, particles, screen effects, enemy AI, progression systems, audio cues
+- The game should look like it belongs on Steam or itch.io, not a tutorial project`;
 
 export interface FeatureSuggestion {
   title: string;
