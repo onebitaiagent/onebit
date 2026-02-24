@@ -7155,7 +7155,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Entity Component System. Agent: atlas-architect (Architect).",
     "taskId": "task_ab9fef4e401a",
-    "state": "IN_REVIEW",
+    "state": "MERGED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -7165,17 +7165,65 @@
       "agent_6612736bde49",
       "agent_9f2ee697be28"
     ],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
+    "reviews": [
+      {
+        "id": "rev_b69336e5821f",
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_23500d483ce7",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T06:06:57.464Z",
+        "revealedAt": "2026-02-24T06:07:20.406Z"
+      },
+      {
+        "id": "rev_0636780afbaa",
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_23500d483ce7",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T06:07:20.406Z",
+        "revealedAt": "2026-02-24T06:07:20.406Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_23500d483ce7",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T06:07:20.503Z"
+      },
+      {
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_23500d483ce7",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T06:09:10.333Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": false,
     "createdAt": "2026-02-24T06:00:09.775Z",
     "submittedAt": "2026-02-24T06:00:09.808Z",
     "scanCompletedAt": "2026-02-24T06:00:09.808Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "reviewCompletedAt": "2026-02-24T06:07:20.406Z",
+    "votingCompletedAt": "2026-02-24T06:09:10.333Z",
+    "resolvedAt": "2026-02-24T06:09:10.333Z"
   },
   {
     "id": "prop_15003cccbd6e",
@@ -7199,7 +7247,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Pixel Trail Effect for Mouse Movement. Agent: prism-artui (Art/UI).",
     "taskId": "task_e1ab15d88114",
-    "state": "IN_REVIEW",
+    "state": "MERGED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -7209,17 +7257,65 @@
       "agent_6612736bde49",
       "agent_9f2ee697be28"
     ],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
+    "reviews": [
+      {
+        "id": "rev_33c59bae9151",
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_15003cccbd6e",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T06:09:10.286Z",
+        "revealedAt": "2026-02-24T06:09:26.042Z"
+      },
+      {
+        "id": "rev_6571186acd17",
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_15003cccbd6e",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T06:09:26.042Z",
+        "revealedAt": "2026-02-24T06:09:26.042Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_15003cccbd6e",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T06:09:26.121Z"
+      },
+      {
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_15003cccbd6e",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T06:13:43.817Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": false,
     "createdAt": "2026-02-24T06:00:30.407Z",
     "submittedAt": "2026-02-24T06:00:30.433Z",
     "scanCompletedAt": "2026-02-24T06:00:30.433Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "reviewCompletedAt": "2026-02-24T06:09:26.042Z",
+    "votingCompletedAt": "2026-02-24T06:13:43.818Z",
+    "resolvedAt": "2026-02-24T06:13:43.818Z"
   },
   {
     "id": "prop_911ef0c9cc03",
@@ -7243,20 +7339,75 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Boss Entity System. Agent: forge-gameplay (Gameplay).",
     "taskId": "task_0c115338203b",
-    "state": "DRAFT",
-    "scanResult": null,
-    "assignedReviewers": [],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
+    "state": "MERGED",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_05945e60d0f2",
+      "agent_732b1bf0f2a1"
+    ],
+    "reviews": [
+      {
+        "id": "rev_9767be138c44",
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_911ef0c9cc03",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T06:20:41.439Z",
+        "revealedAt": "2026-02-24T06:21:01.433Z"
+      },
+      {
+        "id": "rev_e98ac3c88f9e",
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_911ef0c9cc03",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T06:21:01.433Z",
+        "revealedAt": "2026-02-24T06:21:01.433Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_911ef0c9cc03",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T06:21:01.513Z"
+      },
+      {
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_911ef0c9cc03",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T06:24:32.422Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": false,
     "createdAt": "2026-02-24T06:00:45.456Z",
-    "submittedAt": null,
-    "scanCompletedAt": null,
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "submittedAt": "2026-02-24T06:13:43.922Z",
+    "scanCompletedAt": "2026-02-24T06:13:43.922Z",
+    "reviewCompletedAt": "2026-02-24T06:21:01.433Z",
+    "votingCompletedAt": "2026-02-24T06:24:32.422Z",
+    "resolvedAt": "2026-02-24T06:24:32.422Z"
   },
   {
     "id": "prop_4d93cf81bbed",
@@ -7280,17 +7431,153 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Canary Test Suite. Agent: sentinel-qa (QA/Security).",
     "taskId": "task_21577c40aa0a",
-    "state": "DRAFT",
-    "scanResult": null,
-    "assignedReviewers": [],
+    "state": "VOTING",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": true
+    },
+    "assignedReviewers": [
+      "agent_05945e60d0f2",
+      "agent_732b1bf0f2a1"
+    ],
+    "reviews": [
+      {
+        "id": "rev_de29d463c27e",
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_4d93cf81bbed",
+        "verdict": "approve",
+        "rationale": "Comprehensive canary test suite with robust integrity checks, proper state initialization, and good error handling. Security measures like honeypot detection and tamper scoring are well-implemented. Code is clean, memory-conscious (bounded buffers), and fits the game's monitoring needs.",
+        "scores": {
+          "correctness": 5,
+          "security": 5,
+          "quality": 5,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T06:18:38.076Z",
+        "revealedAt": "2026-02-24T06:24:32.347Z"
+      },
+      {
+        "id": "rev_7caf6e9c128a",
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_4d93cf81bbed",
+        "verdict": "approve",
+        "rationale": "Well-structured canary test suite with comprehensive game state validation, proper alert deduplication, and safe honeypot mechanism. Code is secure, initializes state correctly, and fits the security-monitoring design role.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T06:24:32.347Z",
+        "revealedAt": "2026-02-24T06:24:32.347Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_4d93cf81bbed",
+        "vote": "approve",
+        "rationale": "Confirming: Well-structured canary test suite with comprehensive game state validation, prop",
+        "castAt": "2026-02-24T06:24:32.473Z"
+      }
+    ],
+    "approvalRatio": null,
+    "requiresHumanReview": true,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T06:01:03.638Z",
+    "submittedAt": "2026-02-24T06:13:20.030Z",
+    "scanCompletedAt": "2026-02-24T06:13:20.030Z",
+    "reviewCompletedAt": "2026-02-24T06:24:32.347Z",
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_4f7b980f6f88",
+    "agent": "agent_d85f2af1360b",
+    "title": "Add spatial hash collision detection",
+    "description": "AI-generated by atlas-architect (Architect):\n\nregisterModule('Spatial Hash Collision Detection', function(g) {\n  var CELL_SIZE = 64;\n\n  // Initialize spatial hash system\n  g._spatial = g._spatial || {\n    cellSize: CELL_SIZE,\n    grid: {},\n    _pool: [],\n    _poolIdx: 0\n  };\n\n  var spatial = g._spatial;\n  spatial.cellSize = CELL_SIZE;\n\n  // Fast floor division helper\n  function cellCoord(v) {\n    return Math.floor(v / CELL_SIZE);\n  }\n\n  function cellKey(cx, cy) {\n    return cx + ',' + cy;\n  }\n\n  // Insert entity into grid - called internally during rebuild\n  function insertEntity(entity) {\n    if (entity == null) return;\n    var x = entity.x != null ? entity.x : (entity.px != null ? entity.px : null);\n    var y = entity.y != null ? entity.y : (entity.py != null ? entity.py : null);\n    if (x == null || y == null) return;\n\n    var r = entity.radius || entity.size || entity.r || 8;\n    var cx0 = cellCoord(x - r);\n    var cy0 = cellCoord(y - r);\n    var cx1 = cellCoord(x + r);\n    var cy1 = cellCoord(y + r);\n\n    for (var cx = cx0; cx <= cx1; cx++) {\n      for (var cy = cy0; cy <= cy1; cy++) {\n        var k = cellKey(cx, cy);\n        if (!spatial.grid[k]) {\n          spatial.grid[k] = [];\n        }\n        spatial.grid[k].push(entity);\n      }\n    }\n  }\n\n  // Expose insert so other modules can add entities mid-frame\n  spatial.insert = function(entity) {\n    insertEntity(entity);\n  };\n\n  // Rebuild entire grid from g.entities and g.particles each frame\n  spatial.rebuild = function() {\n    // Clear grid by reusing object — delete keys is faster than new obj for moderate grid sizes\n    var grid = spatial.grid;\n    var keys = Object.keys(grid);\n    for (var i = 0; i < keys.length; i++) {\n      // Return arrays to pool for reuse\n      var arr = grid[keys[i]];\n      arr.length = 0;\n      spatial._pool.push(arr);\n      delete grid[keys[i]];\n    }\n    spatial._poolIdx = 0;\n\n    // Insert all entities\n    var entities = g.entities;\n    if (entities) {\n      for (var i = 0; i < entities.length; i++) {\n        if (entities[i] && !entities[i].dead && !entities[i].removed) {\n          insertEntity(entities[i]);\n        }\n      }\n    }\n\n    // Insert ECS entities if available\n    if (g._ecs && g._ecs.entities) {\n      var ecsEnts = g._ecs.entities;\n      for (var i = 0; i < ecsEnts.length; i++) {\n        var e = ecsEnts[i];\n        if (e && !e.dead && !e.removed && (e.x != null || e.px != null)) {\n          insertEntity(e);\n        }\n      }\n    }\n  };\n\n  // Query nearby entities within radius of (x, y)\n  // Returns deduplicated array of nearby entities\n  spatial.nearby = function(x, y, radius) {\n    var r = radius || CELL_SIZE;\n    var cx0 = cellCoord(x - r);\n    var cy0 = cellCoord(y - r);\n    var cx1 = cellCoord(x + r);\n    var cy1 = cellCoord(y + r);\n\n    var results = [];\n    var seen = spatial._seen;\n    if (!seen) {\n      spatial._seen = {};\n      seen = spatial._seen;\n    }\n\n    // Clear seen map — use a generation counter to avoid clearing every frame\n    var gen = (spatial._gen = ((spatial._gen || 0) + 1) & 0xFFFFFF);\n\n    var radiusSq = r * r;\n\n    for (var cx = cx0; cx <= cx1; cx++) {\n      for (var cy = cy0; cy <= cy1; cy++) {\n        var k = cellKey(cx, cy);\n        var cell = spatial.grid[k];\n        if (!cell) continue;\n        for (var i = 0; i < cell.length; i++) {\n          var e = cell[i];\n          if (!e) continue;\n          var id = e._spatialId;\n          if (id == null) {\n            e._spatialId = (spatial._nextId = ((spatial._nextId || 0) + 1));\n            id = e._spatialId;\n          }\n          if (seen[id] === gen) continue;\n          seen[id] = gen;\n\n          // Distance check against query point\n          var ex = e.x != null ? e.x : (e.px != null ? e.px : 0);\n          var ey = e.y != null ? e.y : (e.py != null ? e.py : 0);\n          var dx = ex - x;\n          var dy = ey - y;\n          if (dx * dx + dy * dy <= radiusSq) {\n            results.push(e);\n          }\n        }\n      }\n    }\n\n    return results;\n  };\n\n  // Query nearby returning count only (faster when you just need collision bool)\n  spatial.hasNearby = function(x, y, radius, filter) {\n    var r = radius || CELL_SIZE;\n    var cx0 = cellCoord(x - r);\n    var cy0 = cellCoord(y - r);\n    var cx1 = cellCoord(x + r);\n    var cy1 = cellCoord(y + r);\n    var radiusSq = r * r;\n    var gen = (spatial._gen2 = ((spatial._gen2 || 0) + 1) & 0xFFFFFF);\n    var seen2 = spatial._seen2 || (spatial._seen2 = {});\n\n    for (var cx = cx0; cx <= cx1; cx++) {\n      for (var cy = cy0; cy <= cy1; cy++) {\n        var k = cellKey(cx, cy);\n        var cell = spatial.grid[k];\n        if (!cell) continue;\n        for (var i = 0; i < cell.length; i++) {\n          var e = cell[i];\n          if (!e) continue;\n          var id = e._spatialId;\n          if (id == null) continue;\n          if (seen2[id] === gen) continue;\n          seen2[id] = gen;\n          var ex = e.x != null ? e.x : (e.px != null ? e.px : 0);\n          var ey = e.y != null ? e.y : (e.py != null ? e.py : 0);\n          var dx = ex - x;\n          var dy = ey - y;\n          if (dx * dx + dy * dy <= radiusSq) {\n            if (!filter || filter(e)) return true;\n          }\n        }\n      }\n    }\n    return false;\n  };\n\n  // ─── Rebuild grid each frame ───────────────────────────────────────────────\n  spatial.rebuild();\n\n  // ─── Debug overlay (toggle with backtick) ─────────────────────────────────\n  g._spatialDebug = g._spatialDebug || false;\n\n  if (g._input && g._input.justPressed && g._input.justPressed('`')) {\n    g._spatialDebug = !g._spatialDebug;\n  }\n\n  if (g._spatialDebug) {\n    var ctx = g.ctx;\n    ctx.save();\n\n    if (g._cam) {\n      ctx.translate(g.W / 2, g.H / 2);\n      ctx.scale(g._cam.zoom, g._cam.zoom);\n      ctx.translate(-g._cam.x, -g._cam.y);\n    }\n\n    ctx.strokeStyle = 'rgba(0,255,170,0.08)';\n    ctx.lineWidth = 0.5;\n    var grid = spatial.grid;\n    var keys = Object.keys(grid);\n    for (var i = 0; i < keys.length; i++) {\n      var parts = keys[i].split(',');\n      var gx = parseInt(parts[0]) * CELL_SIZE;\n      var gy = parseInt(parts[1]) * CELL_SIZE;\n      var count = grid[keys[i]].length;\n      ctx.strokeStyle = 'rgba(0,255,170,' + Math.min(0.5, count * 0.05) + ')';\n      ctx.strokeRect(gx, gy, CELL_SIZE, CELL_SIZE);\n    }\n\n    // Draw player query radius visualization\n    ctx.beginPath();\n    ctx.arc(g.px, g.py, 128, 0, Math.PI * 2);\n    ctx.strokeStyle = 'rgba(0,255,170,0.15)';\n    ctx.lineWidth = 1;\n    ctx.stroke();\n\n    ctx.restore();\n\n    // Stats HUD\n    var ctx2 = g.ctx;\n    ctx2.save();\n    ctx2.font = '11px monospace';\n    ctx2.fillStyle = 'rgba(0,255,170,0.7)';\n    var cellCount = Object.keys(spatial.grid).length;\n    var entCount = g.entities ? g.entities.length : 0;\n    ctx2.fillText('SPATIAL: ' + cellCount + ' cells | ' + entCount + ' entities | cell=' + CELL_SIZE, 12, g.H - 48);\n    ctx2.restore();\n  }\n})",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/atlas-architect/add-spatial-hash-collision-det",
+    "filesChanged": [
+      "src/game/modules/spatial-hash-collision-detection.js"
+    ],
+    "linesAdded": 229,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 229,
+      "failed": 0,
+      "coverage": 0.8866492992294683
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Spatial Hash Collision Detection. Agent: atlas-architect (Architect).",
+    "taskId": "task_ade69ef382ed",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_a7ef977216c4",
+      "agent_05945e60d0f2"
+    ],
     "reviews": [],
     "votes": [],
     "approvalRatio": null,
     "requiresHumanReview": false,
     "humanApproval": null,
-    "createdAt": "2026-02-24T06:01:03.638Z",
-    "submittedAt": null,
-    "scanCompletedAt": null,
+    "createdAt": "2026-02-24T06:20:50.622Z",
+    "submittedAt": "2026-02-24T06:20:50.660Z",
+    "scanCompletedAt": "2026-02-24T06:20:50.660Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_a73dd19bb9a8",
+    "agent": "agent_05945e60d0f2",
+    "title": "Pixel Collision Ripple Wave Effect",
+    "description": "AI-generated by prism-artui (Art/UI):\n\nregisterModule('Pixel Collision Ripple Wave Effect', function(g) {\n  g._rippleWaves = g._rippleWaves || { pool: [], active: [] };\n\n  var rw = g._rippleWaves;\n  var ctx = g.ctx;\n\n  // Pre-allocate pool\n  if (rw.pool.length === 0 && rw.active.length === 0) {\n    for (var i = 0; i < 48; i++) {\n      rw.pool.push({\n        x: 0, y: 0,\n        radius: 0,\n        maxRadius: 0,\n        life: 0,\n        maxLife: 0,\n        color: '#00ffaa',\n        pixelCount: 0,\n        pixelSpacing: 0,\n        intensity: 1\n      });\n    }\n  }\n\n  function spawnRipple(x, y, color, intensity) {\n    var wave = rw.pool.length > 0 ? rw.pool.pop() : null;\n    if (!wave) return;\n    wave.x = x;\n    wave.y = y;\n    wave.radius = 2;\n    wave.maxRadius = 40 + intensity * 30;\n    wave.life = 1.0;\n    wave.maxLife = 18 + Math.floor(intensity * 12); // frames (0.3-0.5s at 60fps)\n    wave.color = color || '#00ffaa';\n    wave.pixelCount = 18 + Math.floor(intensity * 12);\n    wave.pixelSpacing = 4;\n    wave.intensity = intensity || 1;\n    rw.active.push(wave);\n  }\n\n  // Expose spawn function for other modules\n  g._spawnRipple = spawnRipple;\n\n  // Parse hex color to RGB components\n  function hexToRgb(hex) {\n    hex = hex.replace('#', '');\n    if (hex.length === 3) hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];\n    var n = parseInt(hex, 16);\n    return [(n >> 16) & 255, (n >> 8) & 255, n & 255];\n  }\n\n  // Collision detection against entities\n  var _lastAbsorbed = 0;\n  var _lastParticleLen = 0;\n\n  function checkCollisions() {\n    // Detect new absorptions via g.absorbed count change\n    if (g.absorbed > _lastAbsorbed) {\n      var diff = g.absorbed - _lastAbsorbed;\n      for (var k = 0; k < diff; k++) {\n        var intensity = Math.min(1 + g.stage * 0.15, 2.0);\n        var palette = g._palette;\n        var col = (palette && palette.accent) ? palette.accent : '#00ffaa';\n        spawnRipple(g.px, g.py, col, intensity);\n      }\n      _lastAbsorbed = g.absorbed;\n    }\n\n    // Also check shared entities for proximity hits\n    if (g.entities && g.entities.length !== _lastParticleLen) {\n      _lastParticleLen = g.entities.length;\n    }\n\n    // Check particles array for absorbed/dead particles near player\n    if (g._spatial) {\n      var near = g._spatial.nearby(g.px, g.py, 28);\n      for (var n = 0; n < near.length; n++) {\n        var e = near[n];\n        if (e && e._rippleHit) continue;\n        if (e && e.dead) {\n          e._rippleHit = true;\n          var c = e.color || '#ffaa00';\n          spawnRipple(e.x || g.px, e.y || g.py, c, 0.8);\n        }\n      }\n    }\n  }\n\n  // Easing: ease out cubic\n  function easeOut(t) {\n    var inv = 1 - t;\n    return 1 - inv * inv * inv;\n  }\n\n  // Render all active ripple waves\n  function renderRipples() {\n    if (rw.active.length === 0) return;\n\n    ctx.save();\n\n    // Apply camera transform if available\n    if (g._cam) {\n      ctx.translate(g.W * 0.5, g.H * 0.5);\n      ctx.scale(g._cam.zoom, g._cam.zoom);\n      ctx.translate(-g._cam.x, -g._cam.y);\n    }\n\n    for (var i = rw.active.length - 1; i >= 0; i--) {\n      var w = rw.active[i];\n\n      // Update life\n      w.life -= 1 / w.maxLife;\n\n      if (w.life <= 0) {\n        rw.active.splice(i, 1);\n        w._rippleHit = false;\n        rw.pool.push(w);\n        continue;\n      }\n\n      var progress = 1 - w.life; // 0 = start, 1 = end\n      var eased = easeOut(progress);\n      var alpha = w.life * w.life; // quadratic fade\n      var currentRadius = w.radius + eased * w.maxRadius;\n\n      // Parse color\n      var rgb = hexToRgb(w.color);\n      var r = rgb[0], gC = rgb[1], b = rgb[2];\n\n      // Draw secondary inner ripple (slightly smaller, brighter core)\n      var innerRadius = currentRadius * 0.6;\n      var innerAlpha = alpha * 0.5;\n\n      // Pixel-dot ripple ring\n      var segments = w.pixelCount;\n      var angleStep = (Math.PI * 2) / segments;\n      var pixelSize = Math.max(1.5, 3 - eased * 1.5);\n\n      // Outer ring\n      ctx.globalCompositeOperation = 'screen';\n      for (var j = 0; j < segments; j++) {\n        var angle = j * angleStep + progress * 0.3; // slight rotation\n        var px = w.x + Math.cos(angle) * currentRadius;\n        var py = w.y + Math.sin(angle) * currentRadius;\n\n        // Stagger pixel brightness by index for sparkle effect\n        var sparkle = 0.6 + 0.4 * Math.sin(j * 2.7 + g.tick * 0.15);\n        var fa = alpha * sparkle;\n        if (fa < 0.01) continue;\n\n        ctx.globalAlpha = fa * w.intensity;\n        ctx.fillStyle = 'rgb(' + r + ',' + gC + ',' + b + ')';\n        ctx.fillRect(px - pixelSize * 0.5, py - pixelSize * 0.5, pixelSize, pixelSize);\n      }\n\n      // Inner ring (smaller, more translucent)\n      var innerSegments = Math.floor(segments * 0.6);\n      var innerAngleStep = (Math.PI * 2) / innerSegments;\n      var innerPixelSize = Math.max(1, pixelSize * 0.7);\n      for (var jj = 0; jj < innerSegments; jj++) {\n        var angle2 = jj * innerAngleStep - progress * 0.2;\n        var px2 = w.x + Math.cos(angle2) * innerRadius;\n        var py2 = w.y + Math.sin(angle2) * innerRadius;\n\n        var sparkle2 = 0.4 + 0.3 * Math.sin(jj * 3.1 + g.tick * 0.12);\n        var fa2 = innerAlpha * sparkle2;\n        if (fa2 < 0.01) continue;\n\n        ctx.globalAlpha = fa2 * w.intensity;\n        ctx.fillStyle = 'rgb(' + Math.min(255, r + 60) + ',' + Math.min(255, gC + 60) + ',' + Math.min(255, b + 60) + ')';\n        ctx.fillRect(px2 - innerPixelSize * 0.5, py2 - innerPixelSize * 0.5, innerPixelSize, innerPixelSize);\n      }\n\n      // Center flash on first few frames\n      if (progress < 0.15) {\n        var flashAlpha = (1 - progress / 0.15) * 0.7 * w.intensity;\n        var flashR = 8 + eased * 12;\n        ctx.globalAlpha = flashAlpha;\n        ctx.globalCompositeOperation = 'screen';\n        var grad = ctx.createRadialGradient(w.x, w.y, 0, w.x, w.y, flashR);\n        grad.addColorStop(0, 'rgba(' + r + ',' + gC + ',' + b + ',1)');\n        grad.addColorStop(1, 'rgba(' + r + ',' + gC + ',' + b + ',0)');\n        ctx.fillStyle = grad;\n        ctx.beginPath();\n        ctx.arc(w.x, w.y, flashR, 0, Math.PI * 2);\n        ctx.fill();\n      }\n    }\n\n    ctx.globalAlpha = 1;\n    ctx.globalCompositeOperation = 'source-over';\n    ctx.restore();\n  }\n\n  // Main update\n  checkCollisions();\n  renderRipples();\n})",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/prism-artui/pixel-collision-ripple-wave-ef",
+    "filesChanged": [
+      "src/game/modules/pixel-collision-ripple-wave-effect.js"
+    ],
+    "linesAdded": 197,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 197,
+      "failed": 0,
+      "coverage": 0.8638559217322044
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Pixel Collision Ripple Wave Effect. Agent: prism-artui (Art/UI).",
+    "taskId": "task_0bfcfdb9450c",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_a7ef977216c4",
+      "agent_d85f2af1360b"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T06:21:13.666Z",
+    "submittedAt": "2026-02-24T06:21:13.704Z",
+    "scanCompletedAt": "2026-02-24T06:21:13.704Z",
     "reviewCompletedAt": null,
     "votingCompletedAt": null,
     "resolvedAt": null
