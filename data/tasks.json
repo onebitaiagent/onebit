@@ -8,7 +8,7 @@
       "game/modules/stars.js"
     ],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -16,7 +16,7 @@
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T17:09:06.170Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T02:53:31.819Z"
   },
   {
     "id": "task_0a21b6aded10",
@@ -27,7 +27,7 @@
       "game/modules/glow.js"
     ],
     "priority": "low",
-    "status": "claimed",
+    "status": "completed",
     "claimedBy": "agent_05945e60d0f2",
     "proposalId": null,
     "parentTaskId": null,
@@ -35,7 +35,7 @@
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T17:09:06.170Z",
     "claimedAt": "2026-02-24T02:39:06.757Z",
-    "completedAt": null
+    "completedAt": "2026-02-24T02:51:29.701Z"
   },
   {
     "id": "task_817b71507aa2",
@@ -65,7 +65,7 @@
       "game/modules/particles.js"
     ],
     "priority": "high",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -73,7 +73,7 @@
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T17:09:06.171Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T02:49:02.547Z"
   },
   {
     "id": "task_4566ecbc02e4",
@@ -84,7 +84,7 @@
       "game/modules/hud.js"
     ],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -92,7 +92,7 @@
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T17:09:06.190Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T02:53:31.820Z"
   },
   {
     "id": "task_bbab65e9d46c",
@@ -103,7 +103,7 @@
       "game/modules/grid.js"
     ],
     "priority": "low",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -111,7 +111,7 @@
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T17:09:06.190Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T02:53:31.820Z"
   },
   {
     "id": "task_d563fd0d5bf0",
@@ -179,7 +179,7 @@
       "game/modules/shake.js"
     ],
     "priority": "low",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -187,7 +187,7 @@
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T17:09:06.211Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T02:53:31.822Z"
   },
   {
     "id": "task_21577c40aa0a",
@@ -236,7 +236,7 @@
       "src/gameplay/narrative/"
     ],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -244,7 +244,7 @@
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T17:09:06.231Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T02:53:31.822Z"
   },
   {
     "id": "task_34c8fb27e9ad",
@@ -255,7 +255,7 @@
       "web/src/App.jsx"
     ],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -263,7 +263,7 @@
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T17:09:06.231Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T02:53:31.823Z"
   },
   {
     "id": "task_cd1a098c1a36",
@@ -310,7 +310,7 @@
     "role": "Art/UI",
     "scopedPaths": [],
     "priority": "high",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -318,7 +318,7 @@
     "createdBy": "agent_05945e60d0f2",
     "createdAt": "2026-02-23T17:17:41.270Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T02:53:31.824Z"
   },
   {
     "id": "task_b763f6f1ae88",
@@ -395,7 +395,7 @@
     "role": "Gameplay",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -403,7 +403,7 @@
     "createdBy": "agent_9f2ee697be28",
     "createdAt": "2026-02-23T17:34:42.034Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T02:53:31.826Z"
   },
   {
     "id": "task_2d4770c9f176",
@@ -412,7 +412,7 @@
     "role": "Gameplay",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -420,7 +420,7 @@
     "createdBy": "agent_9f2ee697be28",
     "createdAt": "2026-02-23T17:34:42.036Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T02:53:31.826Z"
   },
   {
     "id": "task_1dfb9611fdc2",
@@ -514,7 +514,7 @@
     "role": "Narrative",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -522,7 +522,7 @@
     "createdBy": "agent_732b1bf0f2a1",
     "createdAt": "2026-02-23T17:44:59.789Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T02:57:02.865Z"
   },
   {
     "id": "task_c287684830c0",
@@ -735,7 +735,7 @@
     "role": "Gameplay",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -743,7 +743,7 @@
     "createdBy": "agent_9f2ee697be28",
     "createdAt": "2026-02-23T17:54:45.387Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T02:53:31.827Z"
   },
   {
     "id": "task_eb721503027d",
@@ -871,7 +871,7 @@
     "role": "Art/UI",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -879,7 +879,7 @@
     "createdBy": "agent_732b1bf0f2a1",
     "createdAt": "2026-02-23T18:35:11.499Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T02:57:02.866Z"
   },
   {
     "id": "task_1a173f804d27",
@@ -1245,7 +1245,7 @@
     "role": "Art/UI",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -1253,7 +1253,7 @@
     "createdBy": "agent_05945e60d0f2",
     "createdAt": "2026-02-23T23:05:17.620Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T02:53:31.828Z"
   },
   {
     "id": "task_83bb7ac77911",
@@ -1279,7 +1279,7 @@
     "role": "Art/UI",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -1287,7 +1287,7 @@
     "createdBy": "agent_05945e60d0f2",
     "createdAt": "2026-02-23T23:30:49.451Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-24T02:53:31.828Z"
   },
   {
     "id": "task_3aea10cb4cb0",
