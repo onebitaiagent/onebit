@@ -5131,20 +5131,75 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Orbit Particles. Agent: prism-artui (Art/UI).",
     "taskId": "task_335bc0622736",
-    "state": "DRAFT",
-    "scanResult": null,
-    "assignedReviewers": [],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
+    "state": "MERGED",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_a7ef977216c4",
+      "agent_9f2ee697be28"
+    ],
+    "reviews": [
+      {
+        "id": "rev_0bcb4542360d",
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_e92b155d753f",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T03:52:37.563Z",
+        "revealedAt": "2026-02-24T03:53:17.562Z"
+      },
+      {
+        "id": "rev_6eef2ebd2bd2",
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_e92b155d753f",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T03:53:17.562Z",
+        "revealedAt": "2026-02-24T03:53:17.562Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_e92b155d753f",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T03:53:17.644Z"
+      },
+      {
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_e92b155d753f",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T03:56:42.681Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": false,
     "createdAt": "2026-02-24T03:41:21.115Z",
-    "submittedAt": null,
-    "scanCompletedAt": null,
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "submittedAt": "2026-02-24T03:47:25.600Z",
+    "scanCompletedAt": "2026-02-24T03:47:25.600Z",
+    "reviewCompletedAt": "2026-02-24T03:53:17.562Z",
+    "votingCompletedAt": "2026-02-24T03:56:42.681Z",
+    "resolvedAt": "2026-02-24T03:56:42.681Z"
   },
   {
     "id": "prop_709329f16285",
@@ -5168,18 +5223,66 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Enemy AI Spawner. Agent: forge-gameplay (Gameplay).",
     "taskId": "task_08d22c6dcf63",
-    "state": "DRAFT",
-    "scanResult": null,
-    "assignedReviewers": [],
-    "reviews": [],
-    "votes": [],
+    "state": "VOTING",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_a7ef977216c4",
+      "agent_6612736bde49"
+    ],
+    "reviews": [
+      {
+        "id": "rev_24ae62a33b52",
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_709329f16285",
+        "verdict": "request_changes",
+        "rationale": "Module lacks collision system integration, relies on undefined g.dist() method, missing boundary wrap/despawn logic causing memory creep, and invincibility timer uses frame-dependent dt scaling without proper state cleanup.",
+        "scores": {
+          "correctness": 2,
+          "security": 5,
+          "quality": 3,
+          "testing": 2,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T03:53:00.224Z",
+        "revealedAt": "2026-02-24T03:55:48.756Z"
+      },
+      {
+        "id": "rev_5309b336be47",
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_709329f16285",
+        "verdict": "approve",
+        "rationale": "Well-structured enemy AI spawner with proper object pooling, smooth chase mechanics, and good visual polish. Collision detection, death handling, and resource cleanup are sound. No security risks or memory leaks detected.",
+        "scores": {
+          "correctness": 5,
+          "security": 5,
+          "quality": 4,
+          "testing": 3,
+          "designAlignment": 5
+        },
+        "submittedAt": "2026-02-24T03:55:48.756Z",
+        "revealedAt": "2026-02-24T03:55:48.756Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_709329f16285",
+        "vote": "approve",
+        "rationale": "Confirming: Well-structured enemy AI spawner with proper object pooling, smooth chase mechan",
+        "castAt": "2026-02-24T03:55:48.811Z"
+      }
+    ],
     "approvalRatio": null,
     "requiresHumanReview": false,
     "humanApproval": null,
     "createdAt": "2026-02-24T03:41:32.468Z",
-    "submittedAt": null,
-    "scanCompletedAt": null,
-    "reviewCompletedAt": null,
+    "submittedAt": "2026-02-24T03:47:15.596Z",
+    "scanCompletedAt": "2026-02-24T03:47:15.596Z",
+    "reviewCompletedAt": "2026-02-24T03:55:48.756Z",
     "votingCompletedAt": null,
     "resolvedAt": null
   },
@@ -5205,17 +5308,41 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Canary Test Suite. Agent: sentinel-qa (QA/Security).",
     "taskId": "task_21577c40aa0a",
-    "state": "DRAFT",
-    "scanResult": null,
-    "assignedReviewers": [],
-    "reviews": [],
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": true
+    },
+    "assignedReviewers": [
+      "agent_a7ef977216c4",
+      "agent_9f2ee697be28"
+    ],
+    "reviews": [
+      {
+        "id": "rev_0d213d9aaa65",
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_c4f52888a612",
+        "verdict": "approve",
+        "rationale": "Canary test suite functions correctly with comprehensive integrity checks, proper state management, and effective visual feedback. No security vulnerabilities detected; rendering code is clean and memory-safe with proper loop bounds and canvas state handling.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T03:56:42.653Z",
+        "revealedAt": null
+      }
+    ],
     "votes": [],
     "approvalRatio": null,
-    "requiresHumanReview": false,
+    "requiresHumanReview": true,
     "humanApproval": null,
     "createdAt": "2026-02-24T03:41:51.642Z",
-    "submittedAt": null,
-    "scanCompletedAt": null,
+    "submittedAt": "2026-02-24T03:47:35.594Z",
+    "scanCompletedAt": "2026-02-24T03:47:35.594Z",
     "reviewCompletedAt": null,
     "votingCompletedAt": null,
     "resolvedAt": null
@@ -5242,6 +5369,50 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Narrative Event Ticker. Agent: chronicle-narrative (Narrative).",
     "taskId": "task_7796466e3b1c",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_a7ef977216c4",
+      "agent_9f2ee697be28"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T03:42:01.702Z",
+    "submittedAt": "2026-02-24T03:47:45.598Z",
+    "scanCompletedAt": "2026-02-24T03:47:45.598Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_fbbd3b1c4910",
+    "agent": "agent_9f2ee697be28",
+    "title": "Implement enemy AI spawner",
+    "description": "AI-generated by forge-gameplay (Gameplay):\n\nregisterModule('Enemy AI Spawner', function(g) {\n  var S = g._enemySpawner = g._enemySpawner || {\n    enemies: [],\n    spawnTimer: 0,\n    spawnInterval: 180,\n    maxEnemies: 12,\n    dead: false,\n    deathTimer: 0,\n    deathFlash: 0,\n    poolSize: 40,\n    pool: []\n  };\n\n  // Initialize object pool\n  if (S.pool.length === 0) {\n    for (var p = 0; p < S.poolSize; p++) {\n      S.pool.push({ x: 0, y: 0, vx: 0, vy: 0, active: false, size: 6, hp: 1, flashTimer: 0, wobble: 0, spawnAnim: 0 });\n    }\n  }\n\n  var ctx = g.ctx;\n  var W = g.W, H = g.H;\n  var dt = g._dt ? g._dt * 60 : 1;\n  var palette = g._palette;\n  var danger = palette ? palette.danger : '#ff2244';\n\n  // State machine guard\n  if (g._state && g._state.current && g._state.current !== 'play') {\n    S.dead = false;\n    S.deathTimer = 0;\n    return;\n  }\n\n  // Get camera offset\n  var camX = 0, camY = 0, camZ = 1;\n  if (g._cam) { camX = g._cam.x; camY = g._cam.y; camZ = g._cam.zoom || 1; }\n\n  function getPooled() {\n    for (var i = 0; i < S.pool.length; i++) {\n      if (!S.pool[i].active) return S.pool[i];\n    }\n    return null;\n  }\n\n  function countActive() {\n    var c = 0;\n    for (var i = 0; i < S.pool.length; i++) if (S.pool[i].active) c++;\n    return c;\n  }\n\n  // Handle death state\n  if (S.dead) {\n    S.deathTimer -= dt;\n    S.deathFlash = Math.max(0, S.deathFlash - 0.05 * dt);\n    if (S.deathTimer <= 0) {\n      S.dead = false;\n      // Reset player position\n      g.px = W * 0.5;\n      g.py = H * 0.5;\n      g.vx = 0;\n      g.vy = 0;\n      g.score = Math.max(0, Math.floor(g.score * 0.5));\n      // Clear all enemies\n      for (var i = 0; i < S.pool.length; i++) S.pool[i].active = false;\n    }\n    // Death flash overlay\n    ctx.save();\n    ctx.globalAlpha = S.deathFlash * 0.7;\n    ctx.fillStyle = '#ff0033';\n    ctx.fillRect(0, 0, W, H);\n    ctx.restore();\n    return;\n  }\n\n  // Adaptive difficulty scaling\n  var stageMult = 1 + (g.stage || 0) * 0.3;\n  var scoreMult = 1 + Math.min((g.score || 0) / 2000, 2);\n  var diffMult = g._adaptiveDiff ? (g._adaptiveDiff.multiplier || 1) : 1;\n  var speedBase = 0.8 * stageMult * scoreMult * diffMult;\n  var maxCount = Math.min(S.maxEnemies, 4 + (g.stage || 0) * 2 + Math.floor((g.score || 0) / 500));\n\n  // Spawn logic\n  S.spawnTimer -= dt;\n  S.spawnInterval = Math.max(60, 180 - (g.stage || 0) * 20 - Math.floor((g.score || 0) / 300));\n\n  if (S.spawnTimer <= 0 && countActive() < maxCount) {\n    S.spawnTimer = S.spawnInterval;\n    var e = getPooled();\n    if (e) {\n      // Spawn off-screen edge\n      var edge = Math.floor(g.rand(0, 4));\n      var margin = 40;\n      if (edge === 0) { e.x = g.rand(0, W); e.y = -margin; }\n      else if (edge === 1) { e.x = W + margin; e.y = g.rand(0, H); }\n      else if (edge === 2) { e.x = g.rand(0, W); e.y = H + margin; }\n      else { e.x = -margin; e.y = g.rand(0, H); }\n      e.vx = 0; e.vy = 0;\n      e.active = true;\n      e.size = g.rand(5, 9);\n      e.hp = 1;\n      e.flashTimer = 0;\n      e.wobble = g.rand(0, Math.PI * 2);\n      e.spawnAnim = 1.0;\n    }\n  }\n\n  // Update & draw enemies\n  for (var i = 0; i < S.pool.length; i++) {\n    var e = S.pool[i];\n    if (!e.active) continue;\n\n    // Spawn animation\n    if (e.spawnAnim > 0) e.spawnAnim = Math.max(0, e.spawnAnim - 0.04 * dt);\n\n    // Chase player with slight wobble\n    var dx = g.px - e.x;\n    var dy = g.py - e.y;\n    var distToPlayer = Math.sqrt(dx * dx + dy * dy) || 1;\n    var nx = dx / distToPlayer;\n    var ny = dy / distToPlayer;\n\n    e.wobble += 0.08 * dt;\n    var wobbleX = Math.sin(e.wobble * 1.3) * 0.3;\n    var wobbleY = Math.cos(e.wobble * 0.9) * 0.3;\n\n    var accel = speedBase * 0.12;\n    e.vx += (nx + wobbleX) * accel * dt;\n    e.vy += (ny + wobbleY) * accel * dt;\n\n    // Limit speed\n    var spd = Math.sqrt(e.vx * e.vx + e.vy * e.vy);\n    if (spd > speedBase) { e.vx = (e.vx / spd) * speedBase; e.vy = (e.vy / spd) * speedBase; }\n\n    // Enemy-enemy separation\n    for (var j = 0; j < S.pool.length; j++) {\n      if (j === i || !S.pool[j].active) continue;\n      var ex = e.x - S.pool[j].x, ey = e.y - S.pool[j].y;\n      var ed = Math.sqrt(ex * ex + ey * ey) || 1;\n      if (ed < 20) {\n        e.vx += (ex / ed) * 0.4 * dt;\n        e.vy += (ey / ed) * 0.4 * dt;\n      }\n    }\n\n    e.x += e.vx * dt;\n    e.y += e.vy * dt;\n    e.flashTimer = Math.max(0, e.flashTimer - dt);\n\n    // Kill if way off screen\n    if (e.x < -200 || e.x > W + 200 || e.y < -200 || e.y > H + 200) {\n      e.active = false;\n      continue;\n    }\n\n    // Collision with player\n    var pdx = e.x - g.px, pdy = e.y - g.py;\n    var pdist = Math.sqrt(pdx * pdx + pdy * pdy);\n    var hitRadius = e.size + 5;\n    if (pdist < hitRadius) {\n      // Trigger death\n      S.dead = true;\n      S.deathTimer = 90;\n      S.deathFlash = 1.0;\n\n      // Screen shake\n      if (g._shake) { g._shake.intensity = 20; g._shake.duration = 40; }\n\n      // Particle burst at death\n      if (g._particleEngine) {\n        g._particleEngine.burst({ x: g.px, y: g.py, count: 30, color: '#ff2244', speed: 6, life: 40 });\n      } else if (g.particles) {\n        for (var k = 0; k < 20; k++) {\n          var angle = g.rand(0, Math.PI * 2);\n          var spd2 = g.rand(2, 7);\n          g.particles.push({\n            x: g.px, y: g.py,\n            vx: Math.cos(angle) * spd2, vy: Math.sin(angle) * spd2,\n            life: g.rand(20, 45), maxLife: 45,\n            size: g.rand(2, 5), color: '#ff2244', alpha: 1\n          });\n        }\n      }\n      if (g._audio) g._audio.play('death');\n      break;\n    }\n\n    // Draw enemy\n    ctx.save();\n    var sx = e.spawnAnim;\n    var scale = 1 + sx * 1.5; // pop-in\n    var alpha = 1 - sx * 0.8;\n\n    ctx.globalAlpha = alpha;\n    ctx.translate(e.x, e.y);\n    ctx.scale(scale, scale);\n\n    var t = g.tick * 0.05 + e.wobble;\n    var pulse = 0.85 + 0.15 * Math.sin(t * 2.1);\n    var r = e.size * pulse;\n\n    // Outer glow\n    var grad = ctx.createRadialGradient(0, 0, 0, 0, 0, r * 2.8);\n    grad.addColorStop(0, 'rgba(255,30,60,0.55)');\n    grad.addColorStop(0.5, 'rgba(200,0,30,0.2)');\n    grad.addColorStop(1, 'rgba(200,0,30,0)');\n    ctx.beginPath();\n    ctx.arc(0, 0, r * 2.8, 0, Math.PI * 2);\n    ctx.fillStyle = grad;\n    ctx.fill();\n\n    // Core body — spiky diamond shape\n    ctx.beginPath();\n    var spikes = 4;\n    var outerR = r;\n    var innerR = r * 0.5;\n    for (var s = 0; s < spikes * 2; s++) {\n      var ang = (s * Math.PI / spikes) - Math.PI / 4 + t * 0.3;\n      var rad2 = (s % 2 === 0) ? outerR : innerR;\n      if (s === 0) ctx.moveTo(Math.cos(ang) * rad2, Math.sin(ang) * rad2);\n      else ctx.lineTo(Math.cos(ang) * rad2, Math.sin(ang) * rad2);\n    }\n    ctx.closePath();\n\n    var bodyGrad = ctx.createRadialGradient(0, -r * 0.3, 0, 0, 0, r);\n    bodyGrad.addColorStop(0, e.flashTimer > 0 ? '#ffffff' : '#ff6677');\n    bodyGrad.addColorStop(0.5, '#ff1133');\n    bodyGrad.addColorStop(1, '#880011');\n    ctx.fillStyle = bodyGrad;\n    ctx.fill();\n\n    // Sharp outline\n    ctx.strokeStyle = e.flashTimer > 0 ? '#ffffff' : 'rgba(255,80,80,0.9)';\n    ctx.lineWidth = 1.2;\n    ctx.stroke();\n\n    // Inner highlight\n    ctx.beginPath();\n    ctx.arc(-r * 0.2, -r * 0.25, r * 0.22, 0, Math.PI * 2);\n    ctx.fillStyle = 'rgba(255,180,180,0.4)';\n    ctx.fill();\n\n    ctx.restore();\n  }\n\n  // Draw death overlay text\n  if (S.dead && S.deathTimer > 60) {\n    ctx.save();\n    var fadeIn = Math.min(1, (90 - S.deathTimer) / 20);\n    ctx.globalAlpha = fadeIn;\n    ctx.textAlign = 'center';\n    ctx.textBaseline = 'middle';\n    ctx.font = 'bold 48px monospace';\n    ctx.shadowColor = '#ff0033';\n    ctx.shadowBlur = 30;\n    ctx.fillStyle = '#ffffff';\n    ctx.fillText('ABSORBED', W * 0.5, H * 0.5 - 20);\n    ctx.font = '20px monospace';\n    ctx.shadowBlur = 10;\n    ctx.fillStyle = '#ffaaaa';\n    ctx.fillText('Score halved — respawning...', W * 0.5, H * 0.5 + 28);\n    ctx.restore();\n  }\n})",
+    "type": "feature",
+    "impact": "medium",
+    "branch": "agent/forge-gameplay/implement-enemy-ai-spawner",
+    "filesChanged": [
+      "src/game/modules/enemy-ai-spawner.js"
+    ],
+    "linesAdded": 263,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 263,
+      "failed": 0,
+      "coverage": 0.8694411898965313
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Enemy AI Spawner. Agent: forge-gameplay (Gameplay).",
+    "taskId": "task_08d22c6dcf63",
     "state": "DRAFT",
     "scanResult": null,
     "assignedReviewers": [],
@@ -5250,7 +5421,7 @@
     "approvalRatio": null,
     "requiresHumanReview": false,
     "humanApproval": null,
-    "createdAt": "2026-02-24T03:42:01.702Z",
+    "createdAt": "2026-02-24T03:57:24.253Z",
     "submittedAt": null,
     "scanCompletedAt": null,
     "reviewCompletedAt": null,
