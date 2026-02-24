@@ -12,15 +12,22 @@
  * - Branding & content production evolve alongside the game
  */
 
+import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 import { getAllAgents } from './agent-registry.js';
 import { getTasks, claimTask, updateTaskStatus, createTask, unclaimTask, reclaimStaleTasks } from './task-queue.js';
 import {
-  createProposal, submitProposal, submitReview, castVote, getProposals,
+  createProposal, submitProposal, submitReview, castVote, getProposals, cleanupStaleDrafts,
 } from './consensus-engine.js';
 import { registerGameModule, getActiveModules, getAllModules } from './game-evolution.js';
 import { messageBus } from './message-bus.js';
 import { isAIEnabled, generateGameCode, reviewCode, suggestFeature, generateContent, getAICosts, isOverBudget } from './ai-client.js';
 import type { AgentRoleName } from '../models/types.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const DATA_DIR = process.env.DATA_DIR || __dirname;
 
 // ─── Configuration ──────────────────────────────────────────
 
@@ -81,10 +88,60 @@ const ROADMAP_TITLES = new Set(GAME_ROADMAP.map(t => t.title));
 
 let roadmapIndex = 0;
 
-// ─── Phase Gating (with auto-progression) ────────────────────
-// Creates tasks from current phase. Auto-advances when 50%+ of phase tasks merge.
+// ─── Phase Persistence & Time Gates ──────────────────────────
+// Phase state is saved to disk so it survives deploys/restarts.
+// Time gates prevent phases from advancing too quickly.
 
-let currentPhaseIndex = 0;
+interface PhaseState {
+  phaseIndex: number;
+  advancedAt: string; // ISO timestamp of last phase advancement
+}
+
+const PHASE_STATE_FILE = join(DATA_DIR, 'phase-state.json');
+
+// Minimum hours a phase must be active before auto-advance is allowed
+const PHASE_TIME_GATES: Record<string, number> = {
+  Origin: 1,      // 1 hour minimum
+  Prototype: 6,   // 6 hours minimum
+  Alpha: 24,      // 1 day minimum
+  Beta: 48,       // 2 days minimum
+};
+
+function loadPhaseState(): PhaseState {
+  try {
+    if (existsSync(PHASE_STATE_FILE)) {
+      const raw = readFileSync(PHASE_STATE_FILE, 'utf-8');
+      const state = JSON.parse(raw) as PhaseState;
+      if (typeof state.phaseIndex === 'number' && state.phaseIndex >= 0 && state.phaseIndex < PHASE_ORDER.length) {
+        return state;
+      }
+    }
+  } catch (err) {
+    console.error('  [phases] Failed to load phase state:', err instanceof Error ? err.message : err);
+  }
+  return { phaseIndex: 0, advancedAt: new Date().toISOString() };
+}
+
+function savePhaseState(state: PhaseState): void {
+  try {
+    writeFileSync(PHASE_STATE_FILE, JSON.stringify(state, null, 2), 'utf-8');
+  } catch (err) {
+    console.error('  [phases] Failed to save phase state:', err instanceof Error ? err.message : err);
+  }
+}
+
+// Load persisted phase on module init
+const initialPhaseState = loadPhaseState();
+let currentPhaseIndex = initialPhaseState.phaseIndex;
+let phaseAdvancedAt = new Date(initialPhaseState.advancedAt).getTime();
+
+function isPhaseTimeGateMet(): boolean {
+  const phase = PHASE_ORDER[currentPhaseIndex];
+  const minHours = PHASE_TIME_GATES[phase] ?? 0;
+  if (minHours <= 0) return true;
+  const hoursInPhase = (Date.now() - phaseAdvancedAt) / 3_600_000;
+  return hoursInPhase >= minHours;
+}
 
 export function getCurrentPhase(): {
   phase: string;
@@ -95,12 +152,16 @@ export function getCurrentPhase(): {
   tasksMerged: number;
   phaseProgress: string;
   allPhases: string[];
+  timeGate: { requiredHours: number; elapsedHours: number; met: boolean };
 } {
   const phase = PHASE_ORDER[currentPhaseIndex] || 'Complete';
   const phaseRoadmapTasks = GAME_ROADMAP.filter(t => t.phase === phase);
   const merged = getProposals({ state: 'MERGED' });
   const mergedTitles = new Set(merged.map(p => p.title));
   const tasksMerged = phaseRoadmapTasks.filter(t => mergedTitles.has(t.title)).length;
+
+  const requiredHours = PHASE_TIME_GATES[phase] ?? 0;
+  const elapsedHours = Math.round(((Date.now() - phaseAdvancedAt) / 3_600_000) * 100) / 100;
 
   return {
     phase,
@@ -111,6 +172,7 @@ export function getCurrentPhase(): {
     tasksMerged,
     phaseProgress: `${tasksMerged}/${phaseRoadmapTasks.length}`,
     allPhases: PHASE_ORDER,
+    timeGate: { requiredHours, elapsedHours, met: elapsedHours >= requiredHours },
   };
 }
 
@@ -122,6 +184,10 @@ export function advancePhase(): { success: boolean; phase: string; message: stri
   const oldPhase = PHASE_ORDER[currentPhaseIndex];
   currentPhaseIndex++;
   const newPhase = PHASE_ORDER[currentPhaseIndex];
+  phaseAdvancedAt = Date.now();
+
+  // Persist to disk so it survives deploys
+  savePhaseState({ phaseIndex: currentPhaseIndex, advancedAt: new Date(phaseAdvancedAt).toISOString() });
 
   // Reset roadmap index to start of new phase
   roadmapIndex = GAME_ROADMAP.findIndex(t => t.phase === newPhase);
@@ -134,7 +200,7 @@ export function advancePhase(): { success: boolean; phase: string; message: stri
     message: `Phase advanced: ${oldPhase} → ${newPhase}`,
   });
 
-  console.log(`  [phases] Advanced: ${oldPhase} → ${newPhase}`);
+  console.log(`  [phases] Advanced: ${oldPhase} → ${newPhase} (persisted to disk)`);
   return { success: true, phase: newPhase, message: `Advanced from ${oldPhase} to ${newPhase}` };
 }
 
@@ -179,6 +245,14 @@ function checkAutoPhaseProgression(): void {
 
   const threshold = Math.ceil(phase.tasksInPhase * 0.5);
   if (phase.tasksMerged >= threshold) {
+    // Enforce time gate — phase must have been active for minimum duration
+    if (!isPhaseTimeGateMet()) {
+      const minHours = PHASE_TIME_GATES[phase.phase] ?? 0;
+      const hoursElapsed = ((Date.now() - phaseAdvancedAt) / 3_600_000).toFixed(1);
+      console.log(`  [auto-phase] Metrics met for ${phase.phase} but time gate not reached (${hoursElapsed}/${minHours}h)`);
+      return;
+    }
+
     const result = advancePhase();
     if (result.success) {
       console.log(`  [auto-phase] ${result.message} (${phase.tasksMerged}/${phase.tasksInPhase} merged)`);
@@ -538,7 +612,10 @@ export function startLiveAgents(): void {
 
   console.log('  Live Agents: Booting autonomous AI agents...');
   console.log(`  Max runtime: ${MAX_RUNTIME_MS / 60_000} minutes`);
-  console.log(`  Phase gating: ON — starting at ${PHASE_ORDER[currentPhaseIndex]} (auto-progression enabled)`);
+  console.log(`  Phase: ${PHASE_ORDER[currentPhaseIndex]} (index ${currentPhaseIndex}, persisted to disk)`);
+  const phaseGate = PHASE_TIME_GATES[PHASE_ORDER[currentPhaseIndex]] ?? 0;
+  const hoursInPhase = ((Date.now() - phaseAdvancedAt) / 3_600_000).toFixed(1);
+  console.log(`  Time gate: ${hoursInPhase}/${phaseGate}h in current phase`);
   console.log(`  Auto-merge: ON for non-critical | HUMAN REQUIRED for critical`);
   console.log(`  Cost controls: Sonnet max ${process.env.AI_SONNET_MAX_HOURLY || '4'}/hr, budget $${process.env.AI_HOURLY_BUDGET || '0.30'}/hr`);
   console.log(`  Agent tick: 2-5 min | Low-impact: auto-review | Suggestions: 5% | Content: 3%`);
@@ -589,6 +666,7 @@ export function startLiveAgents(): void {
     const taskLoop = () => {
       if (agentsStopped) return;
       reclaimStaleTasks(15); // Unclaim tasks stuck >15min with no proposal
+      cleanupStaleDrafts(30); // Purge DRAFT proposals older than 30min
       checkAutoPhaseProgression();
       feedTasks();
       setTimeout(taskLoop, 120_000);

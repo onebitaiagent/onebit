@@ -476,3 +476,27 @@ export function getProposals(filter?: { state?: string; agent?: string }): Propo
   if (filter?.agent) proposals = proposals.filter(p => p.agent === filter.agent);
   return proposals;
 }
+
+/**
+ * Clean up orphaned DRAFT proposals older than maxAgeMinutes.
+ * Sets state to REJECTED so they don't clog the pipeline.
+ */
+export function cleanupStaleDrafts(maxAgeMinutes: number = 30): number {
+  const cutoff = Date.now() - maxAgeMinutes * 60_000;
+  const all = store.readAll();
+  let cleaned = 0;
+
+  for (const p of all) {
+    if (p.state === 'DRAFT' && new Date(p.createdAt).getTime() < cutoff) {
+      store.update(p.id, {
+        state: 'REJECTED' as ProposalState,
+      } as Partial<Proposal>);
+      cleaned++;
+    }
+  }
+
+  if (cleaned > 0) {
+    console.log(`  [cleanup] Purged ${cleaned} orphaned DRAFT proposals (>${maxAgeMinutes}min old)`);
+  }
+  return cleaned;
+}
