@@ -1,6 +1,6 @@
 import { TwitterApi } from 'twitter-api-v2';
 import { messageBus } from './message-bus.js';
-import { appendAudit } from './audit-log.js';
+import { appendAudit, verifyChain } from './audit-log.js';
 import { getProposals } from './consensus-engine.js';
 import { getAllAgents } from './agent-registry.js';
 import { getActiveModules } from './game-evolution.js';
@@ -153,6 +153,13 @@ function generateDailySummary(): string | null {
   const proposals = getProposals();
   const agents = getAllAgents({ status: 'active' });
   const modules = getActiveModules();
+
+  // Guard: skip if data stores appear empty (e.g. right after a deploy/restart)
+  if (proposals.length === 0 && agents.length === 0 && modules.length === 0) {
+    console.log('  X Bot: Skipping daily summary — data stores empty (post-deploy?)');
+    return null;
+  }
+
   const merged = proposals.filter(p => p.state === 'MERGED');
   const inReview = proposals.filter(p => p.state === 'IN_REVIEW');
   const voting = proposals.filter(p => p.state === 'VOTING');
@@ -171,7 +178,9 @@ function generateDailySummary(): string | null {
     }
   }
 
-  lines.push(`\nAudit chain: intact. 0 security incidents.`);
+  // Dynamic integrity from actual chain verification
+  const chain = verifyChain();
+  lines.push(`\nAudit chain: ${chain.valid ? 'intact' : 'BROKEN at entry ' + chain.brokenAt}. ${chain.entries} entries logged.`);
   lines.push(`\n#ONEBIT #BuildInPublic #AI`);
 
   return lines.join('\n');
@@ -182,6 +191,12 @@ function generateStatusUpdate(): string | null {
   const proposals = getProposals();
   const agents = getAllAgents({ status: 'active' });
   const modules = getActiveModules();
+
+  // Guard: skip if data stores appear empty
+  if (proposals.length === 0 && agents.length === 0 && modules.length === 0) {
+    return null;
+  }
+
   const merged = proposals.filter(p => p.state === 'MERGED');
   const inReview = proposals.filter(p => p.state === 'IN_REVIEW');
   const voting = proposals.filter(p => p.state === 'VOTING');
@@ -306,6 +321,10 @@ export function startXBot(): void {
       if (summary) {
         postTweet(summary).catch(() => {});
         lastDailySummaryDate = today;
+      } else {
+        // Data not ready — retry in 10 minutes instead of waiting a full hour
+        setTimeout(scheduleDailySummary, 10 * 60 * 1000);
+        return;
       }
     }
     setTimeout(scheduleDailySummary, 60 * 60 * 1000);
