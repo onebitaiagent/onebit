@@ -16,7 +16,7 @@ import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { getAllAgents } from './agent-registry.js';
-import { getTasks, claimTask, updateTaskStatus, createTask, unclaimTask, reclaimStaleTasks } from './task-queue.js';
+import { getTasks, claimTask, updateTaskStatus, createTask, unclaimTask, reclaimStaleTasks, completeDuplicateTasks } from './task-queue.js';
 import {
   createProposal, submitProposal, submitReview, castVote, getProposals, cleanupStaleDrafts,
 } from './consensus-engine.js';
@@ -268,7 +268,10 @@ function checkAutoPhaseProgression(): void {
 // ─── Agent-Suggested Features ────────────────────────────────
 // Agents can propose new tasks beyond the fixed roadmap
 
-const SUGGESTED_TASKS = new Set<string>(); // Track what's been suggested to avoid duplicates
+// Track what's been suggested — pre-populate from merged proposals to avoid re-suggesting
+const SUGGESTED_TASKS = new Set<string>(
+  getProposals({ state: 'MERGED' }).map(p => p.title)
+);
 
 async function handleFeatureSuggestion(agent: LiveAgent): Promise<void> {
   if (agentsStopped) return;
@@ -608,11 +611,13 @@ function feedTasks(): void {
   const phaseTasks = GAME_ROADMAP.filter(t => t.phase === currentPhase);
   const allTasks = getTasks({});
   const existingTitles = new Set(allTasks.map(t => t.title));
+  const mergedTitles = new Set(getProposals({ state: 'MERGED' }).map(p => p.title));
 
   let created = 0;
   for (const item of phaseTasks) {
     if (created >= 3) break;
     if (existingTitles.has(item.title)) continue;
+    if (mergedTitles.has(item.title)) continue; // Already merged, don't re-create
 
     const creator = agents.find(a => a.role === item.role) || agents[0];
     createTask({
@@ -687,6 +692,7 @@ export function startLiveAgents(): void {
       if (agentsStopped) return;
       reclaimStaleTasks(15); // Unclaim tasks stuck >15min with no proposal
       cleanupStaleDrafts(30); // Purge DRAFT proposals older than 30min
+      completeDuplicateTasks(); // Bulk-complete tasks that match merged proposals
       checkAutoPhaseProgression();
       feedTasks();
       setTimeout(taskLoop, 120_000);

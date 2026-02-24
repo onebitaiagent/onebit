@@ -23,6 +23,10 @@ router.post('/', (req: AuthenticatedRequest, res) => {
     { title, description, role: role as AgentRoleName, scopedPaths, priority, estimatedLines, parentTaskId },
     req.agent!.id
   );
+  if (!task) {
+    res.status(409).json({ error: 'A proposal with this title has already been merged' });
+    return;
+  }
   res.status(201).json(task);
 });
 

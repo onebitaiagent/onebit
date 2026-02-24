@@ -1,8 +1,17 @@
 import { JsonStore } from '../data/store.js';
-import type { Task, AgentRoleName } from '../models/types.js';
+import type { Task, AgentRoleName, Proposal } from '../models/types.js';
 import { generateId } from '../utils/crypto.js';
 import { appendAudit } from './audit-log.js';
 import { messageBus } from './message-bus.js';
+
+// Read proposals store directly to avoid circular dependency with consensus-engine
+const proposalStore = new JsonStore<Proposal>('proposals.json');
+
+function getMergedTitles(): Set<string> {
+  return new Set(
+    proposalStore.readAll().filter(p => p.state === 'MERGED').map(p => p.title)
+  );
+}
 
 const store = new JsonStore<Task>('tasks.json');
 
@@ -16,7 +25,14 @@ export interface CreateTaskInput {
   parentTaskId?: string;
 }
 
-export function createTask(input: CreateTaskInput, createdBy: string): Task {
+export function createTask(input: CreateTaskInput, createdBy: string): Task | null {
+  // Reject tasks whose title matches an already-merged proposal
+  const mergedTitles = getMergedTitles();
+  if (mergedTitles.has(input.title)) {
+    console.log(`  [tasks] Skipped "${input.title}" — already merged`);
+    return null;
+  }
+
   const task: Task = {
     id: generateId('task'),
     title: input.title,
@@ -176,13 +192,38 @@ export function reclaimStaleTasks(staleMinutes: number = 15): number {
  */
 export function completeTaskByProposal(proposalTitle: string, agentId: string): void {
   const tasks = store.readAll();
-  const task = tasks.find(t => t.title === proposalTitle && t.status !== 'completed');
-  if (!task) return;
+  // Complete ALL matching tasks, not just the first (handles duplicates)
+  const matches = tasks.filter(t => t.title === proposalTitle && t.status !== 'completed');
+  for (const task of matches) {
+    store.update(task.id, {
+      status: 'completed',
+      completedAt: new Date().toISOString(),
+    } as Partial<Task>);
+  }
+  if (matches.length > 0) {
+    console.log(`  [tasks] Completed ${matches.length}x "${proposalTitle}" (proposal merged)`);
+  }
+}
 
-  store.update(task.id, {
-    status: 'completed',
-    completedAt: new Date().toISOString(),
-  } as Partial<Task>);
+/**
+ * Bulk-complete open tasks that already have a merged proposal.
+ * Called periodically to clean up stale duplicates.
+ */
+export function completeDuplicateTasks(): number {
+  const mergedTitles = getMergedTitles();
+  const tasks = store.readAll().filter(t =>
+    t.status !== 'completed' && mergedTitles.has(t.title)
+  );
 
-  console.log(`  [tasks] Completed "${task.title}" (proposal merged)`);
+  for (const t of tasks) {
+    store.update(t.id, {
+      status: 'completed',
+      completedAt: new Date().toISOString(),
+    } as Partial<Task>);
+  }
+
+  if (tasks.length > 0) {
+    console.log(`  [tasks] Bulk-completed ${tasks.length} duplicate tasks`);
+  }
+  return tasks.length;
 }
