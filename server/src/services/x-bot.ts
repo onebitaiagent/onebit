@@ -10,7 +10,7 @@ let enabled = false;
 let threadPosted = false;
 
 // ─── DAILY TWEET CAP ───────────────────────
-const MAX_TWEETS_PER_DAY = 12;
+const MAX_TWEETS_PER_DAY = 20;
 let tweetsToday = 0;
 let lastResetDate = new Date().toDateString();
 let lastDailySummaryDate = '';
