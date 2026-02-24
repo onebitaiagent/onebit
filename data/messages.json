@@ -15329,5 +15329,680 @@
       "title": "Implement enemy AI spawner"
     },
     "references": []
+  },
+  {
+    "id": "msg_763dec78321b",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:14:57.460Z",
+    "payload": {
+      "event": "proposal_merged",
+      "proposalId": "prop_fbbd3b1c4910",
+      "title": "Implement enemy AI spawner",
+      "impact": "medium",
+      "approvalRatio": 1,
+      "humanApproved": false,
+      "autoMerged": true,
+      "requiresHumanReview": false
+    },
+    "references": []
+  },
+  {
+    "id": "msg_b241c4a8ec82",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:14:58.826Z",
+    "payload": {
+      "event": "task_claimed",
+      "taskId": "task_e907c9f9a32c",
+      "agentId": "agent_9f2ee697be28"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_b2b5cd53f701",
+    "from": "agent_9f2ee697be28",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:14:58.830Z",
+    "payload": {
+      "event": "agent_working",
+      "agentName": "forge-gameplay",
+      "role": "Gameplay",
+      "taskTitle": "Create absorption field mechanic",
+      "message": "forge-gameplay is writing code for \"Create absorption field mechanic\""
+    },
+    "references": []
+  },
+  {
+    "id": "msg_89009a1fc424",
+    "from": "consensus_engine",
+    "to": "agent_05945e60d0f2",
+    "type": "system",
+    "timestamp": "2026-02-24T04:16:08.722Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_5370f5fad53e"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_14d0eb5826de",
+    "from": "consensus_engine",
+    "to": "agent_6612736bde49",
+    "type": "system",
+    "timestamp": "2026-02-24T04:16:08.727Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_5370f5fad53e"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_714f865cc706",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:16:08.734Z",
+    "payload": {
+      "event": "proposal_voting",
+      "proposalId": "prop_5370f5fad53e",
+      "title": "Origin Story Milestone Narration System"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_c17058864d12",
+    "from": "consensus_engine",
+    "to": "agent_d85f2af1360b",
+    "type": "system",
+    "timestamp": "2026-02-24T04:16:08.798Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_058df2ee7dc3",
+      "title": "Design absorption burst particle effects"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_4a9075e5ec87",
+    "from": "consensus_engine",
+    "to": "agent_9f2ee697be28",
+    "type": "system",
+    "timestamp": "2026-02-24T04:16:08.803Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_058df2ee7dc3",
+      "title": "Design absorption burst particle effects"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_3f37980d0a25",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:16:08.808Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_058df2ee7dc3",
+      "title": "Design absorption burst particle effects",
+      "reviewerCount": 2
+    },
+    "references": []
+  },
+  {
+    "id": "msg_e71060174f79",
+    "from": "consensus_engine",
+    "to": "agent_d85f2af1360b",
+    "type": "system",
+    "timestamp": "2026-02-24T04:17:59.611Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_03e51d40b27f",
+      "title": "Create absorption field mechanic"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_ddc68b4a7ad1",
+    "from": "consensus_engine",
+    "to": "agent_05945e60d0f2",
+    "type": "system",
+    "timestamp": "2026-02-24T04:17:59.616Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_03e51d40b27f",
+      "title": "Create absorption field mechanic"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_b787fadab97d",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:17:59.620Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_03e51d40b27f",
+      "title": "Create absorption field mechanic",
+      "reviewerCount": 2
+    },
+    "references": []
+  },
+  {
+    "id": "msg_684cbb730ea1",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:19:21.970Z",
+    "payload": {
+      "event": "proposal_merged",
+      "proposalId": "prop_5370f5fad53e",
+      "title": "Origin Story Milestone Narration System",
+      "impact": "low",
+      "approvalRatio": 1,
+      "humanApproved": false,
+      "autoMerged": true,
+      "requiresHumanReview": false
+    },
+    "references": []
+  },
+  {
+    "id": "msg_4f8e8aad9ed3",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:19:34.024Z",
+    "payload": {
+      "event": "task_created",
+      "taskId": "task_733ec4001f82",
+      "title": "Dynamic Story Progression Cutscene System",
+      "role": "Narrative",
+      "priority": "medium"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_621f7fd26b70",
+    "from": "agent_732b1bf0f2a1",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:19:34.029Z",
+    "payload": {
+      "event": "feature_suggested",
+      "agentName": "chronicle-narrative",
+      "title": "Dynamic Story Progression Cutscene System",
+      "message": "chronicle-narrative suggested a new feature: \"Dynamic Story Progression Cutscene System\""
+    },
+    "references": []
+  },
+  {
+    "id": "msg_d1cc3753f175",
+    "from": "consensus_engine",
+    "to": "agent_732b1bf0f2a1",
+    "type": "system",
+    "timestamp": "2026-02-24T04:19:44.774Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_64d666b17da5"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_51ae12a566e0",
+    "from": "consensus_engine",
+    "to": "agent_05945e60d0f2",
+    "type": "system",
+    "timestamp": "2026-02-24T04:19:44.780Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_64d666b17da5"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_f217b6560484",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:19:44.790Z",
+    "payload": {
+      "event": "proposal_voting",
+      "proposalId": "prop_64d666b17da5",
+      "title": "Write canary test suite"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_9ed55343604f",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:22:07.207Z",
+    "payload": {
+      "event": "task_claimed",
+      "taskId": "task_21577c40aa0a",
+      "agentId": "agent_6612736bde49"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_2bd748b2a5f9",
+    "from": "agent_6612736bde49",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:22:07.213Z",
+    "payload": {
+      "event": "agent_working",
+      "agentName": "sentinel-qa",
+      "role": "QA/Security",
+      "taskTitle": "Write canary test suite",
+      "message": "sentinel-qa is writing code for \"Write canary test suite\""
+    },
+    "references": []
+  },
+  {
+    "id": "msg_ecb03273f49d",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:22:49.244Z",
+    "payload": {
+      "event": "proposal_rejected",
+      "proposalId": "prop_64d666b17da5",
+      "title": "Write canary test suite",
+      "impact": "high",
+      "approvalRatio": 0.5,
+      "humanApproved": false,
+      "autoMerged": false,
+      "requiresHumanReview": true
+    },
+    "references": []
+  },
+  {
+    "id": "msg_3253d6801a58",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:22:49.271Z",
+    "payload": {
+      "event": "task_claimed",
+      "taskId": "task_733ec4001f82",
+      "agentId": "agent_732b1bf0f2a1"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_3633a0a31cf5",
+    "from": "agent_732b1bf0f2a1",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:22:49.277Z",
+    "payload": {
+      "event": "agent_working",
+      "agentName": "chronicle-narrative",
+      "role": "Narrative",
+      "taskTitle": "Dynamic Story Progression Cutscene System",
+      "message": "chronicle-narrative is writing code for \"Dynamic Story Progression Cutscene System\""
+    },
+    "references": []
+  },
+  {
+    "id": "msg_854ecec8b87d",
+    "from": "consensus_engine",
+    "to": "agent_d85f2af1360b",
+    "type": "system",
+    "timestamp": "2026-02-24T04:24:30.175Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_058df2ee7dc3"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_454268305bc2",
+    "from": "consensus_engine",
+    "to": "agent_9f2ee697be28",
+    "type": "system",
+    "timestamp": "2026-02-24T04:24:30.180Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_058df2ee7dc3"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_5551c1895480",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:24:30.186Z",
+    "payload": {
+      "event": "proposal_voting",
+      "proposalId": "prop_058df2ee7dc3",
+      "title": "Design absorption burst particle effects"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_519a95f355bc",
+    "from": "consensus_engine",
+    "to": "agent_732b1bf0f2a1",
+    "type": "system",
+    "timestamp": "2026-02-24T04:25:57.644Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_459d6bb4f6ed",
+      "title": "Write canary test suite"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_37ea7bcd037c",
+    "from": "consensus_engine",
+    "to": "agent_a7ef977216c4",
+    "type": "system",
+    "timestamp": "2026-02-24T04:25:57.648Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_459d6bb4f6ed",
+      "title": "Write canary test suite"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_bd99bfbcf2c1",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:25:57.657Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_459d6bb4f6ed",
+      "title": "Write canary test suite",
+      "reviewerCount": 2
+    },
+    "references": []
+  },
+  {
+    "id": "msg_24b61ec450e7",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:26:40.416Z",
+    "payload": {
+      "event": "task_claimed",
+      "taskId": "task_cd1a098c1a36",
+      "agentId": "agent_05945e60d0f2"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_c4f305f311da",
+    "from": "agent_05945e60d0f2",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:26:40.422Z",
+    "payload": {
+      "event": "agent_working",
+      "agentName": "prism-artui",
+      "role": "Art/UI",
+      "taskTitle": "Create ONEBIT brand kit",
+      "message": "prism-artui is writing code for \"Create ONEBIT brand kit\""
+    },
+    "references": []
+  },
+  {
+    "id": "msg_823aa08c90ea",
+    "from": "consensus_engine",
+    "to": "agent_d85f2af1360b",
+    "type": "system",
+    "timestamp": "2026-02-24T04:27:02.389Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_03e51d40b27f"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_bad2cd25395c",
+    "from": "consensus_engine",
+    "to": "agent_05945e60d0f2",
+    "type": "system",
+    "timestamp": "2026-02-24T04:27:02.398Z",
+    "payload": {
+      "event": "voting_open",
+      "proposalId": "prop_03e51d40b27f"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_0291d099d62d",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:27:02.404Z",
+    "payload": {
+      "event": "proposal_voting",
+      "proposalId": "prop_03e51d40b27f",
+      "title": "Create absorption field mechanic"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_1c93e0b899ad",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:27:10.664Z",
+    "payload": {
+      "event": "proposal_merged",
+      "proposalId": "prop_058df2ee7dc3",
+      "title": "Design absorption burst particle effects",
+      "impact": "low",
+      "approvalRatio": 1,
+      "humanApproved": false,
+      "autoMerged": true,
+      "requiresHumanReview": false
+    },
+    "references": []
+  },
+  {
+    "id": "msg_9c9e809fe137",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:27:10.688Z",
+    "payload": {
+      "event": "task_claimed",
+      "taskId": "task_e907c9f9a32c",
+      "agentId": "agent_9f2ee697be28"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_ba14c6c69b47",
+    "from": "agent_9f2ee697be28",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:27:10.693Z",
+    "payload": {
+      "event": "agent_working",
+      "agentName": "forge-gameplay",
+      "role": "Gameplay",
+      "taskTitle": "Create absorption field mechanic",
+      "message": "forge-gameplay is writing code for \"Create absorption field mechanic\""
+    },
+    "references": []
+  },
+  {
+    "id": "msg_a5432c02fb23",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:27:20.669Z",
+    "payload": {
+      "event": "proposal_merged",
+      "proposalId": "prop_03e51d40b27f",
+      "title": "Create absorption field mechanic",
+      "impact": "medium",
+      "approvalRatio": 1,
+      "humanApproved": false,
+      "autoMerged": true,
+      "requiresHumanReview": false
+    },
+    "references": []
+  },
+  {
+    "id": "msg_1da01b9d9eb5",
+    "from": "system",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:27:20.694Z",
+    "payload": {
+      "event": "task_claimed",
+      "taskId": "task_cd1a098c1a36",
+      "agentId": "agent_05945e60d0f2"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_95f4aa62420b",
+    "from": "agent_05945e60d0f2",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:27:20.699Z",
+    "payload": {
+      "event": "agent_working",
+      "agentName": "prism-artui",
+      "role": "Art/UI",
+      "taskTitle": "Create ONEBIT brand kit",
+      "message": "prism-artui is writing code for \"Create ONEBIT brand kit\""
+    },
+    "references": []
+  },
+  {
+    "id": "msg_0ee0828426d4",
+    "from": "consensus_engine",
+    "to": "agent_a7ef977216c4",
+    "type": "system",
+    "timestamp": "2026-02-24T04:27:40.662Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_fe3baeaf7b4c",
+      "title": "Dynamic Story Progression Cutscene System"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_44acf2f67803",
+    "from": "consensus_engine",
+    "to": "agent_9f2ee697be28",
+    "type": "system",
+    "timestamp": "2026-02-24T04:27:40.667Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_fe3baeaf7b4c",
+      "title": "Dynamic Story Progression Cutscene System"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_4e461399978e",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:27:40.674Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_fe3baeaf7b4c",
+      "title": "Dynamic Story Progression Cutscene System",
+      "reviewerCount": 2
+    },
+    "references": []
+  },
+  {
+    "id": "msg_8a3e8cf4619c",
+    "from": "consensus_engine",
+    "to": "agent_732b1bf0f2a1",
+    "type": "system",
+    "timestamp": "2026-02-24T04:30:02.050Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_fe8e26735023",
+      "title": "Create absorption field mechanic"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_470c4302c82c",
+    "from": "consensus_engine",
+    "to": "agent_a7ef977216c4",
+    "type": "system",
+    "timestamp": "2026-02-24T04:30:02.055Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_fe8e26735023",
+      "title": "Create absorption field mechanic"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_809fb079b18c",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:30:02.062Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_fe8e26735023",
+      "title": "Create absorption field mechanic",
+      "reviewerCount": 2
+    },
+    "references": []
+  },
+  {
+    "id": "msg_5e3387c49e67",
+    "from": "consensus_engine",
+    "to": "agent_732b1bf0f2a1",
+    "type": "system",
+    "timestamp": "2026-02-24T04:30:12.075Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_0122904c3efa",
+      "title": "Create ONEBIT brand kit"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_84d776cc2e5c",
+    "from": "consensus_engine",
+    "to": "agent_a7ef977216c4",
+    "type": "system",
+    "timestamp": "2026-02-24T04:30:12.082Z",
+    "payload": {
+      "event": "review_requested",
+      "proposalId": "prop_0122904c3efa",
+      "title": "Create ONEBIT brand kit"
+    },
+    "references": []
+  },
+  {
+    "id": "msg_a2600efd3125",
+    "from": "consensus_engine",
+    "to": "broadcast",
+    "type": "system",
+    "timestamp": "2026-02-24T04:30:12.089Z",
+    "payload": {
+      "event": "proposal_in_review",
+      "proposalId": "prop_0122904c3efa",
+      "title": "Create ONEBIT brand kit",
+      "reviewerCount": 2
+    },
+    "references": []
   }
 ]
