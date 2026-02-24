@@ -6787,7 +6787,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Camera System. Agent: atlas-architect (Architect).",
     "taskId": "task_893c5e13b528",
-    "state": "IN_REVIEW",
+    "state": "MERGED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -6797,17 +6797,65 @@
       "agent_05945e60d0f2",
       "agent_9f2ee697be28"
     ],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
+    "reviews": [
+      {
+        "id": "rev_f405184bd753",
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_f14364091173",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T05:06:23.225Z",
+        "revealedAt": "2026-02-24T05:06:25.636Z"
+      },
+      {
+        "id": "rev_512e4c5e9992",
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_f14364091173",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T05:06:25.636Z",
+        "revealedAt": "2026-02-24T05:06:25.636Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_f14364091173",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T05:06:25.713Z"
+      },
+      {
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_f14364091173",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T05:10:28.210Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": false,
     "createdAt": "2026-02-24T04:58:55.620Z",
     "submittedAt": "2026-02-24T04:58:55.646Z",
     "scanCompletedAt": "2026-02-24T04:58:55.646Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "reviewCompletedAt": "2026-02-24T05:06:25.636Z",
+    "votingCompletedAt": "2026-02-24T05:10:28.210Z",
+    "resolvedAt": "2026-02-24T05:10:28.210Z"
   },
   {
     "id": "prop_590b9b10aacf",
@@ -6831,7 +6879,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Pixel Trail Effect on Mouse Movement. Agent: prism-artui (Art/UI).",
     "taskId": "task_b763f6f1ae88",
-    "state": "IN_REVIEW",
+    "state": "MERGED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -6841,17 +6889,65 @@
       "agent_9f2ee697be28",
       "agent_732b1bf0f2a1"
     ],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
+    "reviews": [
+      {
+        "id": "rev_b2f548519c18",
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_590b9b10aacf",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T05:06:48.202Z",
+        "revealedAt": "2026-02-24T05:10:28.101Z"
+      },
+      {
+        "id": "rev_46f9f594445a",
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_590b9b10aacf",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T05:10:28.101Z",
+        "revealedAt": "2026-02-24T05:10:28.101Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_590b9b10aacf",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T05:10:28.291Z"
+      },
+      {
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_590b9b10aacf",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T05:11:46.023Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": false,
     "createdAt": "2026-02-24T04:59:15.216Z",
     "submittedAt": "2026-02-24T04:59:15.248Z",
     "scanCompletedAt": "2026-02-24T04:59:15.248Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "reviewCompletedAt": "2026-02-24T05:10:28.101Z",
+    "votingCompletedAt": "2026-02-24T05:11:46.023Z",
+    "resolvedAt": "2026-02-24T05:11:46.023Z"
   },
   {
     "id": "prop_1c6619137972",
@@ -6875,7 +6971,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Shield Mechanic. Agent: forge-gameplay (Gameplay).",
     "taskId": "task_be7656052022",
-    "state": "IN_REVIEW",
+    "state": "MERGED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -6885,17 +6981,65 @@
       "agent_05945e60d0f2",
       "agent_732b1bf0f2a1"
     ],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
+    "reviews": [
+      {
+        "id": "rev_8c8f9b3792b5",
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_1c6619137972",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T05:08:39.210Z",
+        "revealedAt": "2026-02-24T05:11:45.947Z"
+      },
+      {
+        "id": "rev_9e2385547242",
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_1c6619137972",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T05:11:45.947Z",
+        "revealedAt": "2026-02-24T05:11:45.947Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_1c6619137972",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T05:11:46.085Z"
+      },
+      {
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_1c6619137972",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-24T05:15:16.274Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": false,
     "createdAt": "2026-02-24T04:59:21.721Z",
     "submittedAt": "2026-02-24T04:59:21.748Z",
     "scanCompletedAt": "2026-02-24T04:59:21.748Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "reviewCompletedAt": "2026-02-24T05:11:45.947Z",
+    "votingCompletedAt": "2026-02-24T05:15:16.274Z",
+    "resolvedAt": "2026-02-24T05:15:16.274Z"
   },
   {
     "id": "prop_50366ce3a576",
@@ -6919,6 +7063,186 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Canary Test Suite. Agent: sentinel-qa (QA/Security).",
     "taskId": "task_21577c40aa0a",
+    "state": "APPROVED",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": true
+    },
+    "assignedReviewers": [
+      "agent_05945e60d0f2",
+      "agent_a7ef977216c4"
+    ],
+    "reviews": [
+      {
+        "id": "rev_277b65d5297f",
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_50366ce3a576",
+        "verdict": "approve",
+        "rationale": "Comprehensive canary test suite with proper state initialization, no security vulnerabilities, and effective visual feedback system. Tests are well-designed to detect engine tampering and state corruption.",
+        "scores": {
+          "correctness": 5,
+          "security": 5,
+          "quality": 4,
+          "testing": 5,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-24T05:18:04.226Z",
+        "revealedAt": "2026-02-24T05:18:56.816Z"
+      },
+      {
+        "id": "rev_8e7484a107d0",
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_50366ce3a576",
+        "verdict": "approve",
+        "rationale": "Comprehensive integrity monitoring module with solid test coverage, proper state management, and excellent visual feedback via canvas rendering. No security vulnerabilities detected—tests validate engine invariants safely without eval or dynamic code execution.",
+        "scores": {
+          "correctness": 5,
+          "security": 5,
+          "quality": 5,
+          "testing": 5,
+          "designAlignment": 5
+        },
+        "submittedAt": "2026-02-24T05:18:56.816Z",
+        "revealedAt": "2026-02-24T05:18:56.816Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_50366ce3a576",
+        "vote": "approve",
+        "rationale": "Confirming: Comprehensive integrity monitoring module with solid test coverage, proper state",
+        "castAt": "2026-02-24T05:18:56.887Z"
+      },
+      {
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_50366ce3a576",
+        "vote": "approve",
+        "rationale": "Confirming: Comprehensive canary test suite with proper state initialization, no security vu",
+        "castAt": "2026-02-24T05:22:07.732Z"
+      }
+    ],
+    "approvalRatio": 1,
+    "requiresHumanReview": true,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T04:59:49.542Z",
+    "submittedAt": "2026-02-24T05:12:08.618Z",
+    "scanCompletedAt": "2026-02-24T05:12:08.618Z",
+    "reviewCompletedAt": "2026-02-24T05:18:56.816Z",
+    "votingCompletedAt": "2026-02-24T05:22:07.732Z",
+    "resolvedAt": "2026-02-24T05:22:07.732Z"
+  },
+  {
+    "id": "prop_23500d483ce7",
+    "agent": "agent_d85f2af1360b",
+    "title": "Create entity component system",
+    "description": "AI-generated by atlas-architect (Architect):\n\nregisterModule('Entity Component System', function(g) {\n  // Initialize ECS only once\n  if (g._ecs) return;\n\n  var MAX_ENTITIES = 500;\n  var _nextId = 1;\n\n  // Object pools keyed by type\n  var pools = {};\n  // Master entity array (fixed size)\n  var entities = new Array(MAX_ENTITIES);\n  var entityCount = 0;\n\n  // Pre-allocate entity slots\n  for (var i = 0; i < MAX_ENTITIES; i++) {\n    entities[i] = {\n      id: 0,\n      type: '',\n      x: 0, y: 0,\n      vx: 0, vy: 0,\n      hp: 1, maxHp: 1,\n      radius: 4,\n      color: '#ffffff',\n      active: false,\n      components: {}\n    };\n  }\n\n  function resetEntity(e, type, props) {\n    e.id = _nextId++;\n    e.type = type || '';\n    e.x = 0; e.y = 0;\n    e.vx = 0; e.vy = 0;\n    e.hp = 1; e.maxHp = 1;\n    e.radius = 4;\n    e.color = '#ffffff';\n    e.active = true;\n    // Clear components object without allocation\n    var comps = e.components;\n    for (var k in comps) {\n      if (comps.hasOwnProperty(k)) delete comps[k];\n    }\n    // Apply props\n    if (props) {\n      for (var p in props) {\n        if (props.hasOwnProperty(p)) {\n          if (p === 'components') {\n            var pc = props.components;\n            for (var ck in pc) {\n              if (pc.hasOwnProperty(ck)) comps[ck] = pc[ck];\n            }\n          } else {\n            e[p] = props[p];\n          }\n        }\n      }\n    }\n    return e;\n  }\n\n  function spawn(type, props) {\n    // Look for an inactive slot in pool for this type\n    var pool = pools[type];\n    if (!pool) {\n      pool = [];\n      pools[type] = pool;\n    }\n    // Try to reuse a dead entity from pool\n    for (var i = 0; i < pool.length; i++) {\n      var slot = pool[i];\n      if (!slot.active) {\n        return resetEntity(slot, type, props);\n      }\n    }\n    // Find any inactive entity in master array\n    for (var j = 0; j < MAX_ENTITIES; j++) {\n      var e = entities[j];\n      if (!e.active) {\n        var old = e.type;\n        resetEntity(e, type, props);\n        // Remove from old pool if needed\n        if (old && pools[old]) {\n          var op = pools[old];\n          for (var k = 0; k < op.length; k++) {\n            if (op[k] === e) { op.splice(k, 1); break; }\n          }\n        }\n        pool.push(e);\n        return e;\n      }\n    }\n    // At capacity — kill oldest non-player entity and reuse\n    for (var m = 0; m < MAX_ENTITIES; m++) {\n      var candidate = entities[m];\n      if (candidate.active && candidate.type !== 'player') {\n        var oldType = candidate.type;\n        resetEntity(candidate, type, props);\n        if (oldType && pools[oldType]) {\n          var ep = pools[oldType];\n          for (var n = 0; n < ep.length; n++) {\n            if (ep[n] === candidate) { ep.splice(n, 1); break; }\n          }\n        }\n        pool.push(candidate);\n        return candidate;\n      }\n    }\n    return null;\n  }\n\n  function kill(id) {\n    for (var i = 0; i < MAX_ENTITIES; i++) {\n      if (entities[i].id === id && entities[i].active) {\n        entities[i].active = false;\n        return true;\n      }\n    }\n    return false;\n  }\n\n  function killEntity(e) {\n    if (e) e.active = false;\n  }\n\n  function query(type) {\n    var result = [];\n    var pool = pools[type];\n    if (!pool) return result;\n    for (var i = 0; i < pool.length; i++) {\n      if (pool[i].active) result.push(pool[i]);\n    }\n    return result;\n  }\n\n  function queryAll() {\n    var result = [];\n    for (var i = 0; i < MAX_ENTITIES; i++) {\n      if (entities[i].active) result.push(entities[i]);\n    }\n    return result;\n  }\n\n  function queryWithComponent(componentName) {\n    var result = [];\n    for (var i = 0; i < MAX_ENTITIES; i++) {\n      var e = entities[i];\n      if (e.active && e.components.hasOwnProperty(componentName)) {\n        result.push(e);\n      }\n    }\n    return result;\n  }\n\n  function countActive() {\n    var c = 0;\n    for (var i = 0; i < MAX_ENTITIES; i++) {\n      if (entities[i].active) c++;\n    }\n    return c;\n  }\n\n  // Migrate existing g.entities into ECS\n  if (g.entities && g.entities.length > 0) {\n    for (var mi = 0; mi < g.entities.length && mi < MAX_ENTITIES; mi++) {\n      var ge = g.entities[mi];\n      if (!ge) continue;\n      var ne = spawn(ge.type || 'legacy', ge);\n      if (ne) {\n        // Preserve all original props\n        for (var gk in ge) {\n          if (ge.hasOwnProperty(gk) && gk !== 'components') {\n            ne[gk] = ge[gk];\n          }\n        }\n      }\n    }\n  }\n\n  // Migrate existing g.particles into ECS\n  if (g.particles && g.particles.length > 0) {\n    for (var pi = 0; pi < g.particles.length && pi < MAX_ENTITIES; pi++) {\n      var gp = g.particles[pi];\n      if (!gp) continue;\n      var np = spawn('particle', gp);\n      if (np) {\n        for (var pk in gp) {\n          if (gp.hasOwnProperty(pk) && pk !== 'components') {\n            np[pk] = gp[pk];\n          }\n        }\n      }\n    }\n  }\n\n  // Expose ECS on g\n  g._ecs = {\n    entities: entities,\n    pools: pools,\n    spawn: spawn,\n    kill: kill,\n    killEntity: killEntity,\n    query: query,\n    queryAll: queryAll,\n    queryWithComponent: queryWithComponent,\n    countActive: countActive,\n    MAX_ENTITIES: MAX_ENTITIES\n  };\n\n  // Keep g.entities pointing at a live-filtered view proxy via queryAll\n  // Patch g.entities to reference ECS entities array for legacy compat\n  g.entities = entities;\n\n  // Debug overlay — draw entity count in corner (dev visibility)\n  var ctx = g.ctx;\n  var _debugVisible = true;\n\n  // Per-frame: draw ECS debug stats\n  if (_debugVisible && g.tick % 60 === 0) {\n    // Lightweight per-minute log (no hot loop alloc)\n  }\n\n  // Render debug HUD\n  ctx.save();\n  ctx.font = '10px monospace';\n  ctx.fillStyle = 'rgba(0,255,170,0.35)';\n  ctx.textAlign = 'left';\n  var activeCount = countActive();\n  ctx.fillText('ECS: ' + activeCount + '/' + MAX_ENTITIES, 8, g.H - 8);\n  ctx.restore();\n})",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/atlas-architect/create-entity-component-system",
+    "filesChanged": [
+      "src/game/modules/entity-component-system.js"
+    ],
+    "linesAdded": 230,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 230,
+      "failed": 0,
+      "coverage": 0.8716094929962167
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Entity Component System. Agent: atlas-architect (Architect).",
+    "taskId": "task_ab9fef4e401a",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_6612736bde49",
+      "agent_9f2ee697be28"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T06:00:09.775Z",
+    "submittedAt": "2026-02-24T06:00:09.808Z",
+    "scanCompletedAt": "2026-02-24T06:00:09.808Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_15003cccbd6e",
+    "agent": "agent_05945e60d0f2",
+    "title": "Pixel Trail Effect for Mouse Movement",
+    "description": "AI-generated by prism-artui (Art/UI):\n\nregisterModule('Pixel Trail Effect for Mouse Movement', function(g) {\n  g._mouseTrail = g._mouseTrail || {\n    mx: g.W / 2,\n    my: g.H / 2,\n    lastMx: g.W / 2,\n    lastMy: g.H / 2,\n    particles: [],\n    pool: [],\n    lastSpawn: 0\n  };\n\n  var s = g._mouseTrail;\n  var ctx = g.ctx;\n\n  // Track mouse position in canvas coordinates\n  if (!s._mouseListenerAttached) {\n    s._mouseListenerAttached = true;\n    s._onMouseMove = function(e) {\n      var rect = g.canvas.getBoundingClientRect();\n      var scaleX = g.W / rect.width;\n      var scaleY = g.H / rect.height;\n      s.mx = (e.clientX - rect.left) * scaleX;\n      s.my = (e.clientY - rect.top) * scaleY;\n    };\n    g.canvas.addEventListener('mousemove', s._onMouseMove, { passive: true });\n  }\n\n  // Acquire particle from pool\n  function acquire() {\n    if (s.pool.length > 0) return s.pool.pop();\n    return { x: 0, y: 0, life: 0, maxLife: 0, size: 0, r: 0, gg: 0, b: 0, vx: 0, vy: 0 };\n  }\n\n  // Color based on score multiplier\n  function getTrailColor() {\n    var stage = g.stage || 0;\n    var t = Math.min(stage / 5, 1);\n    // combo multiplier if available\n    var combo = (g._combo && g._combo.multiplier) ? g._combo.multiplier : 1;\n    var cm = Math.min((combo - 1) / 4, 1);\n    var blend = Math.max(t, cm);\n\n    var r, gg, b;\n    if (blend < 0.5) {\n      // white -> cyan\n      var f = blend * 2;\n      r = Math.round(255 * (1 - f));\n      gg = 255;\n      b = Math.round(255 * (1 - f * 0.2));\n    } else {\n      // cyan -> magenta\n      var f2 = (blend - 0.5) * 2;\n      r = Math.round(255 * f2);\n      gg = Math.round(255 * (1 - f2));\n      b = 255;\n    }\n    return { r: r, g: gg, b: b };\n  }\n\n  var dt = (g._dt !== undefined) ? g._dt : (1 / 60);\n  var now = g.tick;\n\n  // Spawn trail particles based on mouse movement distance\n  var dx = s.mx - s.lastMx;\n  var dy = s.my - s.lastMy;\n  var moveDist = Math.sqrt(dx * dx + dy * dy);\n  var spawnThreshold = 4;\n\n  if (moveDist > spawnThreshold && (now - s.lastSpawn) >= 1) {\n    s.lastSpawn = now;\n    var col = getTrailColor();\n    var count = Math.min(Math.floor(moveDist / 6) + 1, 5);\n    for (var i = 0; i < count; i++) {\n      var p = acquire();\n      var frac = i / count;\n      p.x = s.lastMx + dx * frac + (Math.random() - 0.5) * 2;\n      p.y = s.lastMy + dy * frac + (Math.random() - 0.5) * 2;\n      p.life = 0.5;\n      p.maxLife = 0.5;\n      p.size = Math.random() * 2.5 + 1;\n      p.r = col.r;\n      p.gg = col.g;\n      p.b = col.b;\n      p.vx = (Math.random() - 0.5) * 20;\n      p.vy = (Math.random() - 0.5) * 20;\n      s.particles.push(p);\n    }\n  }\n\n  s.lastMx = s.mx;\n  s.lastMy = s.my;\n\n  // Update and render particles\n  ctx.save();\n\n  // Apply camera transform if available\n  var camApplied = false;\n  if (g._cam) {\n    ctx.translate(g.W / 2, g.H / 2);\n    ctx.scale(g._cam.zoom, g._cam.zoom);\n    ctx.translate(-g._cam.x, -g._cam.y);\n    camApplied = true;\n  }\n\n  ctx.globalCompositeOperation = 'screen';\n\n  var i = s.particles.length;\n  while (i--) {\n    var p = s.particles[i];\n    p.life -= dt;\n\n    if (p.life <= 0) {\n      s.particles.splice(i, 1);\n      s.pool.push(p);\n      continue;\n    }\n\n    var lifeRatio = p.life / p.maxLife;\n    var eased = lifeRatio * lifeRatio;\n    var alpha = eased;\n\n    p.x += p.vx * dt;\n    p.y += p.vy * dt;\n    p.vx *= 0.92;\n    p.vy *= 0.92;\n\n    var curSize = p.size * (0.3 + lifeRatio * 0.7);\n    var alpha8 = Math.floor(alpha * 255);\n    var hexA = alpha8.toString(16);\n    if (hexA.length < 2) hexA = '0' + hexA;\n\n    // Draw glowing pixel\n    var cx2 = camApplied ? p.x : p.x;\n    var cy2 = camApplied ? p.y : p.y;\n\n    // Outer glow\n    var glowSize = curSize * 3;\n    var grad = ctx.createRadialGradient(cx2, cy2, 0, cx2, cy2, glowSize);\n    grad.addColorStop(0, 'rgba(' + p.r + ',' + p.gg + ',' + p.b + ',' + (alpha * 0.8) + ')');\n    grad.addColorStop(0.4, 'rgba(' + p.r + ',' + p.gg + ',' + p.b + ',' + (alpha * 0.3) + ')');\n    grad.addColorStop(1, 'rgba(' + p.r + ',' + p.gg + ',' + p.b + ',0)');\n\n    ctx.beginPath();\n    ctx.arc(cx2, cy2, glowSize, 0, 6.2832);\n    ctx.fillStyle = grad;\n    ctx.fill();\n\n    // Core pixel\n    ctx.fillStyle = 'rgba(' + p.r + ',' + p.gg + ',' + p.b + ',' + alpha + ')';\n    ctx.fillRect(\n      Math.round(cx2 - curSize * 0.5),\n      Math.round(cy2 - curSize * 0.5),\n      Math.ceil(curSize),\n      Math.ceil(curSize)\n    );\n  }\n\n  ctx.globalCompositeOperation = 'source-over';\n  ctx.restore();\n\n  // Pool size guard\n  if (s.pool.length > 200) s.pool.length = 200;\n})",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/prism-artui/pixel-trail-effect-for-mouse-m",
+    "filesChanged": [
+      "src/game/modules/pixel-trail-effect-for-mouse-movement.js"
+    ],
+    "linesAdded": 163,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 163,
+      "failed": 0,
+      "coverage": 0.9336821481800561
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Pixel Trail Effect for Mouse Movement. Agent: prism-artui (Art/UI).",
+    "taskId": "task_e1ab15d88114",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_6612736bde49",
+      "agent_9f2ee697be28"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T06:00:30.407Z",
+    "submittedAt": "2026-02-24T06:00:30.433Z",
+    "scanCompletedAt": "2026-02-24T06:00:30.433Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_911ef0c9cc03",
+    "agent": "agent_9f2ee697be28",
+    "title": "Create boss entity system",
+    "description": "AI-generated by forge-gameplay (Gameplay):\n\nregisterModule('Boss Entity System', function(g) {\n  g._boss = g._boss || {\n    active: false,\n    x: 0, y: 0,\n    hp: 0, maxHp: 0,\n    phase: 0,\n    attackTimer: 0,\n    attackCooldown: 120,\n    currentAttack: 'none',\n    chargeDir: {x:0, y:0},\n    chargeSpeed: 0,\n    chargeTimer: 0,\n    spawnTimer: 0,\n    aoeZones: [],\n    minions: [],\n    lastMilestone: -1,\n    flashTimer: 0,\n    deathTimer: 0,\n    dying: false,\n    scale: 1,\n    pulseT: 0,\n    shieldAngle: 0,\n    warningZones: [],\n    hpBarShake: 0,\n    bossKills: 0,\n    entryAnim: 0,\n    entryDone: false\n  };\n\n  var b = g._boss;\n\n  // Boss stats by kill count\n  function getBossStats(kills) {\n    var tier = Math.min(kills, 5);\n    return {\n      hp: 10 + tier * 4,\n      speed: 1.2 + tier * 0.3,\n      size: 28 + tier * 3,\n      attackCooldown: Math.max(60, 120 - tier * 10),\n      color: ['#ff4444','#ff8800','#cc00ff','#00ccff','#ffff00','#ff00aa'][tier % 6],\n      glow: ['#ff000088','#ff440088','#8800ff88','#00aaff88','#ffcc0088','#ff008888'][tier % 6]\n    };\n  }\n\n  function spawnBoss() {\n    var stats = getBossStats(b.bossKills);\n    var margin = 120;\n    var side = Math.floor(g.rand(0,4));\n    if (side === 0) { b.x = g.rand(margin, g.W-margin); b.y = -60; }\n    else if (side === 1) { b.x = g.W+60; b.y = g.rand(margin, g.H-margin); }\n    else if (side === 2) { b.x = g.rand(margin, g.W-margin); b.y = g.H+60; }\n    else { b.x = -60; b.y = g.rand(margin, g.H-margin); }\n    b.hp = stats.hp;\n    b.maxHp = stats.hp;\n    b.active = true;\n    b.dying = false;\n    b.deathTimer = 0;\n    b.attackTimer = 60;\n    b.attackCooldown = stats.attackCooldown;\n    b.currentAttack = 'none';\n    b.chargeTimer = 0;\n    b.aoeZones = [];\n    b.minions = [];\n    b.warningZones = [];\n    b.phase = 0;\n    b.pulseT = 0;\n    b.entryAnim = 0;\n    b.entryDone = false;\n    b.stats = stats;\n    b.vx = 0; b.vy = 0;\n  }\n\n  function spawnMinionAt(x, y) {\n    if (g.entities) {\n      g.entities.push({\n        x: x + g.rand(-20,20),\n        y: y + g.rand(-20,20),\n        vx: g.rand(-1.5,1.5),\n        vy: g.rand(-1.5,1.5),\n        size: 5 + Math.random()*3,\n        hp: 2,\n        maxHp: 2,\n        color: '#ff6666',\n        isBossMinion: true,\n        spawnTimer: 30\n      });\n    }\n  }\n\n  function triggerScreenShake(intensity) {\n    if (g._screenShake !== undefined) {\n      g._screenShake = (g._screenShake || 0) + intensity;\n    }\n  }\n\n  function burstParticles(x, y, color, count) {\n    if (!g.particles) return;\n    for (var i = 0; i < count; i++) {\n      var angle = g.rand(0, Math.PI*2);\n      var spd = g.rand(1, 6);\n      g.particles.push({\n        x: x, y: y,\n        vx: Math.cos(angle)*spd,\n        vy: Math.sin(angle)*spd,\n        life: g.rand(20,50),\n        maxLife: 50,\n        size: g.rand(2,6),\n        color: color\n      });\n    }\n  }\n\n  var _offBoss = null;\n  var _offSize = 0;\n\n  function getOffscreen(size) {\n    if (!_offBoss || _offSize !== size) {\n      _offBoss = document.createElement('canvas');\n      _offSize = size;\n      _offBoss.width = size*4;\n      _offBoss.height = size*4;\n    }\n    return _offBoss;\n  }\n\n  function drawBossToOffscreen(size, color, glow, phase, pulseT) {\n    var oc = getOffscreen(size);\n    var ox = oc.getContext('2d');\n    var cx = size*2, cy = size*2;\n    ox.clearRect(0,0,oc.width,oc.height);\n\n    // Outer glow rings\n    for (var ring = 3; ring >= 0; ring--) {\n      var rAlpha = 0.08 + ring*0.04;\n      var rSize = size + ring*8 + Math.sin(pulseT*3)*3;\n      var rg = ox.createRadialGradient(cx,cy,0,cx,cy,rSize);\n      rg.addColorStop(0, color.replace(')',','+rAlpha+')').replace('rgb','rgba').replace('#', 'rgba(') );\n      rg.addColorStop(1, 'transparent');\n      try {\n        var rg2 = ox.createRadialGradient(cx,cy,rSize*0.5,cx,cy,rSize);\n        rg2.addColorStop(0, glow);\n        rg2.addColorStop(1, 'transparent');\n        ox.beginPath();\n        ox.arc(cx,cy,rSize,0,Math.PI*2);\n        ox.fillStyle = rg2;\n        ox.fill();\n      } catch(e){}\n    }\n\n    // Core body\n    var grad = ox.createRadialGradient(cx-size*0.2,cy-size*0.2,size*0.1,cx,cy,size);\n    grad.addColorStop(0,'#ffffff');\n    grad.addColorStop(0.3, color);\n    grad.addColorStop(1,'#000000');\n    ox.beginPath();\n    ox.arc(cx,cy,size,0,Math.PI*2);\n    ox.fillStyle = grad;\n    ox.fill();\n\n    // Phase 2 spikes\n    if (phase >= 1) {\n      ox.strokeStyle = color;\n      ox.lineWidth = 2;\n      ox.globalAlpha = 0.7 + Math.sin(pulseT*4)*0.3;\n      for (var s = 0; s < 8; s++) {\n        var sa = (s/8)*Math.PI*2 + pulseT;\n        var r1 = size*0.9, r2 = size*1.5 + Math.sin(pulseT*3+s)*5;\n        ox.beginPath();\n        ox.moveTo(cx+Math.cos(sa)*r1, cy+Math.sin(sa)*r1);\n        ox.lineTo(cx+Math.cos(sa)*r2, cy+Math.sin(sa)*r2);\n        ox.stroke();\n      }\n      ox.globalAlpha = 1;\n    }\n\n    // Eye\n    ox.fillStyle = '#ffffff';\n    ox.beginPath();\n    ox.ellipse(cx, cy, size*0.35, size*0.25, 0, 0, Math.PI*2);\n    ox.fill();\n    ox.fillStyle = '#000000';\n    ox.beginPath();\n    ox.arc(cx + (g.px - b.x > 0 ? 3 : -3), cy, size*0.13, 0, Math.PI*2);\n    ox.fill();\n\n    return oc;\n  }\n\n  var ctx = g.ctx;\n\n  // Milestone check\n  var milestone = Math.floor(g.score / 200);\n  if (milestone > 0 && milestone !== b.lastMilestone && !b.active) {\n    b.lastMilestone = milestone;\n    spawnBoss();\n  }\n\n  if (!b.active) return;\n\n  var dt = (g._dt || 1/60) * 60;\n  var stats = b.stats || getBossStats(b.bossKills);\n  var bSize = stats.size;\n\n  // --- Entry animation ---\n  if (!b.entryDone) {\n    b.entryAnim += dt * 0.04;\n    if (b.entryAnim >= 1) { b.entryAnim = 1; b.entryDone = true; }\n    var tx = g.W*0.5, ty = g.H*0.3;\n    b.x = g.lerp(b.x, tx, 0.05 * dt);\n    b.y = g.lerp(b.y, ty, 0.05 * dt);\n    b.scale = g.lerp(0.1, 1, b.entryAnim);\n  } else {\n    b.scale = g.lerp(b.scale, 1, 0.1*dt);\n  }\n\n  // --- Death sequence ---\n  if (b.dying) {\n    b.deathTimer += dt;\n    burstParticles(b.x + g.rand(-30,30), b.y + g.rand(-30,30), stats.color, 3);\n    triggerScreenShake(2);\n    if (b.deathTimer > 90) {\n      burstParticles(b.x, b.y, '#ffffff', 80);\n      burstParticles(b.x, b.y, stats.color, 60);\n      triggerScreenShake(15);\n      var reward = 200 + b.bossKills * 50;\n      g.score += reward;\n      b.bossKills++;\n      b.active = false;\n      // Spawn score popup particles\n      for (var fp = 0; fp < 20; fp++) {\n        if (g.particles) {\n          var fa = g.rand(0,Math.PI*2), fs = g.rand(2,8);\n          g.particles.push({x:b.x,y:b.y,vx:Math.cos(fa)*fs,vy:Math.sin(fa)*fs,\n            life:60,maxLife:60,size:g.rand(3,8),color:'#ffff00'});\n        }\n      }\n    }\n\n    // Draw death flash\n    ctx.save();\n    ctx.globalAlpha = Math.max(0, 1 - b.deathTimer/90);\n    ctx.globalCompositeOperation = 'lighter';\n    var dg = ctx.createRadialGradient(b.x,b.y,0,b.x,b.y,bSize*3);\n    dg.addColorStop(0,'#ffffff');\n    dg.addColorStop(0.5,stats.color);\n    dg.addColorStop(1,'transparent');\n    ctx.fillStyle = dg;\n    ctx.beginPath();\n    ctx.arc(b.x,b.y,bSize*3,0,Math.PI*2);\n    ctx.fill();\n    ctx.restore();\n    return;\n  }\n\n  // --- Phase check ---\n  var hpRatio = b.hp / b.maxHp;\n  b.phase = hpRatio < 0.35 ? 2 : hpRatio < 0.65 ? 1 : 0;\n\n  b.pulseT += 0.03 * dt;\n\n  // --- Movement AI ---\n  if (b.entryDone && b.currentAttack !== 'charge') {\n    var dx = g.px - b.x;\n    var dy = g.py - b.y;\n    var dist = Math.sqrt(dx*dx + dy*dy) || 1;\n    var targetDist = 180 - b.phase * 40;\n    var moveForce = (dist - targetDist) / dist * stats.speed * 0.04;\n    b.vx = (b.vx || 0) + dx * moveForce;\n    b.vy = (b.vy || 0) + dy * moveForce;\n    // Orbit component\n    var orbitSpd = 0.4 + b.phase * 0.2;\n    b.vx += (-dy/dist) * orbitSpd * 0.3;\n    b.vy += (dx/dist) * orbitSpd * 0.3;\n    // Dampen\n    b.vx *= 0.88;\n    b.vy *= 0.88;\n    b.x += b.vx * dt;\n    b.y += b.vy * dt;\n    // Boundary\n    b.x = Math.max(80, Math.min(g.W-80, b.x));\n    b.y = Math.max(80, Math.min(g.H-80, b.y));\n  }\n\n  // --- Attack AI ---\n  b.attackTimer -= dt;\n  if (b.attackTimer <= 0 && b.entryDone && b.currentAttack === 'none') {\n    b.attackTimer = b.attackCooldown / (1 + b.phase * 0.5);\n    var roll = Math.random();\n    if (roll < 0.33) {\n      // CHARGE\n      b.currentAttack = 'charge';\n      b.chargeTimer = 0;\n      var cdx = g.px - b.x, cdy = g.py - b.y;\n      var cl = Math.sqrt(cdx*cdx+cdy*cdy)||1;\n      b.chargeDir = {x:cdx/cl, y:cdy/cl};\n      b.chargeSpeed = 0;\n      // Add warning\n      b.warningZones.push({x:b.x,y:b.y,ex:b.x+cdx/cl*400,ey:b.y+cdy/cl*400,timer:40,maxTimer:40,type:'charge'});\n    } else if (roll < 0.66) {\n      // SPAWN MINIONS\n      b.currentAttack = 'spawn';\n      b.spawnTimer = 0;\n    } else {\n      // AOE DENIAL\n      b.currentAttack = 'aoe';\n      var aoeCount = 3 + b.phase;\n      for (var ai = 0; ai < aoeCount; ai++) {\n        var ax = g.rand(80, g.W-80);\n        var ay = g.rand(80, g.H-80);\n        b.aoeZones.push({x:ax, y:ay, r:0, maxR:70+b.phase*20, timer:0, maxTimer:120, active:true});\n        b.warningZones.push({x:ax,y:ay,r:70+b.phase*20,timer:60,maxTimer:60,type:'aoe'})",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/forge-gameplay/create-boss-entity-system",
+    "filesChanged": [
+      "src/game/modules/boss-entity-system.js"
+    ],
+    "linesAdded": 311,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 311,
+      "failed": 0,
+      "coverage": 0.8636407317644523
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Boss Entity System. Agent: forge-gameplay (Gameplay).",
+    "taskId": "task_0c115338203b",
     "state": "DRAFT",
     "scanResult": null,
     "assignedReviewers": [],
@@ -6927,7 +7251,44 @@
     "approvalRatio": null,
     "requiresHumanReview": false,
     "humanApproval": null,
-    "createdAt": "2026-02-24T04:59:49.542Z",
+    "createdAt": "2026-02-24T06:00:45.456Z",
+    "submittedAt": null,
+    "scanCompletedAt": null,
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_4d93cf81bbed",
+    "agent": "agent_6612736bde49",
+    "title": "Write canary test suite",
+    "description": "AI-generated by sentinel-qa (QA/Security):\n\nregisterModule('Canary Test Suite', function(g) {\n  g._canary = g._canary || {\n    ready: false,\n    tests: [],\n    results: [],\n    alerts: [],\n    alertTimer: 0,\n    alertAlpha: 0,\n    passCount: 0,\n    failCount: 0,\n    tamperScore: 0,\n    lastTickCheck: 0,\n    lastScoreCheck: 0,\n    lastSpeedCheck: 0,\n    tickDelta: [],\n    scoreHistory: [],\n    speedHistory: [],\n    fingerprint: null,\n    integrityHash: 0,\n    pulseT: 0,\n    logBuffer: [],\n    expanded: false,\n    expandTimer: 0,\n    collapseDelay: 0,\n    initialized: false,\n    checksumCache: {},\n    anomalyCount: 0,\n    lastAnomalyTick: -999,\n    honeypot: { accessed: false, value: 0xDEADBEEF },\n    consensusBaseline: null,\n    jitterBuffer: [],\n    frameTimeBuffer: [],\n    lastFrameTime: 0,\n    scanInterval: 60,\n    nextScan: 30\n  };\n\n  var c = g._canary;\n\n  // --- One-time initialization ---\n  if (!c.initialized) {\n    c.initialized = true;\n\n    // Fingerprint stable engine constants\n    c.fingerprint = {\n      speedBaseline: g.speed,\n      canvasId: (g.canvas && g.canvas.id) || 'none',\n      initialW: g.W,\n      initialH: g.H,\n      pixelOrigin: { x: g.px, y: g.py }\n    };\n\n    // Consensus engine baseline snapshot\n    c.consensusBaseline = {\n      scoreAtStart: g.score,\n      absorbedAtStart: g.absorbed,\n      stageAtStart: g.stage,\n      tickAtStart: g.tick\n    };\n\n    // Build integrity hash from known-good state\n    c.integrityHash = _hashState(g);\n\n    // Register canary honeypot via Object.defineProperty if possible\n    try {\n      Object.defineProperty(c.honeypot, '_sentinel', {\n        get: function() {\n          c.honeypot.accessed = true;\n          _raiseAlert(c, 'SENTINEL_ACCESSED', 'Honeypot property getter triggered', 'critical');\n          return 0xCAFEBABE;\n        },\n        configurable: false\n      });\n    } catch(e) {}\n\n    // Define the test suite\n    c.tests = [\n      {\n        id: 'TICK_MONOTONIC',\n        name: 'Tick Monotonicity',\n        desc: 'Frame counter must always increase',\n        severity: 'critical',\n        lastTick: g.tick,\n        run: function(g) {\n          var ok = g.tick > this.lastTick;\n          this.lastTick = g.tick;\n          return { pass: ok, detail: ok ? null : 'Tick did not advance: ' + g.tick };\n        }\n      },\n      {\n        id: 'SPEED_BOUNDS',\n        name: 'Speed Boundary Check',\n        desc: 'Player speed must remain within sane limits',\n        severity: 'high',\n        run: function(g) {\n          var ok = typeof g.speed === 'number' && g.speed > 0 && g.speed < 100;\n          return { pass: ok, detail: ok ? null : 'Speed out of bounds: ' + g.speed };\n        }\n      },\n      {\n        id: 'SCORE_NON_NEGATIVE',\n        name: 'Score Non-Negative',\n        desc: 'Score must not go negative',\n        severity: 'medium',\n        run: function(g) {\n          var ok = typeof g.score === 'number' && g.score >= 0;\n          return { pass: ok, detail: ok ? null : 'Negative score: ' + g.score };\n        }\n      },\n      {\n        id: 'SCORE_DELTA_SANE',\n        name: 'Score Delta Sanity',\n        desc: 'Score must not jump by unreasonable amounts per frame',\n        severity: 'high',\n        prevScore: 0,\n        run: function(g) {\n          var delta = g.score - this.prevScore;\n          var ok = delta < 100000;\n          this.prevScore = g.score;\n          return { pass: ok, detail: ok ? null : 'Score jumped by ' + delta };\n        }\n      },\n      {\n        id: 'STAGE_BOUNDS',\n        name: 'Stage Range Check',\n        desc: 'Evolution stage must be 0-5',\n        severity: 'medium',\n        run: function(g) {\n          var ok = Number.isInteger(g.stage) && g.stage >= 0 && g.stage <= 5;\n          return { pass: ok, detail: ok ? null : 'Stage out of range: ' + g.stage };\n        }\n      },\n      {\n        id: 'PLAYER_POS_FINITE',\n        name: 'Player Position Finite',\n        desc: 'Player coordinates must be finite numbers',\n        severity: 'critical',\n        run: function(g) {\n          var ok = isFinite(g.px) && isFinite(g.py);\n          return { pass: ok, detail: ok ? null : 'Non-finite position: (' + g.px + ',' + g.py + ')' };\n        }\n      },\n      {\n        id: 'VELOCITY_SANE',\n        name: 'Velocity Sanity',\n        desc: 'Velocity magnitude must be bounded',\n        severity: 'high',\n        run: function(g) {\n          var mag = Math.sqrt(g.vx * g.vx + g.vy * g.vy);\n          var ok = mag < 500;\n          return { pass: ok, detail: ok ? null : 'Velocity too high: ' + mag.toFixed(1) };\n        }\n      },\n      {\n        id: 'CANVAS_INTEGRITY',\n        name: 'Canvas Integrity',\n        desc: 'Canvas dimensions must remain consistent',\n        severity: 'medium',\n        run: function(g) {\n          var ok = g.W > 0 && g.H > 0 && g.canvas && g.ctx;\n          return { pass: ok, detail: ok ? null : 'Canvas state invalid' };\n        }\n      },\n      {\n        id: 'ABSORBED_MONOTONIC',\n        name: 'Absorption Counter',\n        desc: 'Absorbed count must never decrease',\n        severity: 'high',\n        prevAbsorbed: 0,\n        run: function(g) {\n          var ok = g.absorbed >= this.prevAbsorbed;\n          this.prevAbsorbed = Math.max(this.prevAbsorbed, g.absorbed);\n          return { pass: ok, detail: ok ? null : 'Absorption count decreased: ' + g.absorbed };\n        }\n      },\n      {\n        id: 'RAND_DISTRIBUTION',\n        name: 'RNG Distribution',\n        desc: 'Random number generator must produce valid range output',\n        severity: 'low',\n        run: function(g) {\n          var samples = 5, ok = true;\n          for (var i = 0; i < samples; i++) {\n            var r = g.rand(0, 1);\n            if (r < 0 || r > 1 || !isFinite(r)) { ok = false; break; }\n          }\n          return { pass: ok, detail: ok ? null : 'RNG produced out-of-range values' };\n        }\n      },\n      {\n        id: 'DIST_FUNCTION',\n        name: 'Distance Function Integrity',\n        desc: 'g.dist must return Euclidean distance correctly',\n        severity: 'medium',\n        run: function(g) {\n          var d = g.dist({ x: 0, y: 0 }, { x: 3, y: 4 });\n          var ok = Math.abs(d - 5) < 0.001;\n          return { pass: ok, detail: ok ? null : 'dist(3,4) returned ' + d + ' (expected 5)' };\n        }\n      },\n      {\n        id: 'LERP_FUNCTION',\n        name: 'Lerp Function Integrity',\n        desc: 'g.lerp must interpolate correctly',\n        severity: 'low',\n        run: function(g) {\n          var v = g.lerp(0, 10, 0.5);\n          var ok = Math.abs(v - 5) < 0.001;\n          return { pass: ok, detail: ok ? null : 'lerp(0,10,0.5) returned ' + v + ' (expected 5)' };\n        }\n      },\n      {\n        id: 'HONEYPOT_CHECK',\n        name: 'Sentinel Honeypot',\n        desc: 'Internal honeypot must not have been accessed',\n        severity: 'critical',\n        run: function(g) {\n          var ok = !c.honeypot.accessed;\n          return { pass: ok, detail: ok ? null : 'Honeypot was accessed — possible reflection/probing detected' };\n        }\n      },\n      {\n        id: 'FRAME_TIME_SANE',\n        name: 'Frame Time Consistency',\n        desc: 'Frame timing must be within human-observable range',\n        severity: 'low',\n        run: function(g) {\n          if (g._dt !== undefined) {\n            var ok = g._dt > 0 && g._dt < 1.0;\n            return { pass: ok, detail: ok ? null : 'Delta time anomalous: ' + g._dt.toFixed(4) + 's' };\n          }\n          return { pass: true, detail: null };\n        }\n      },\n      {\n        id: 'CONSENSUS_DRIFT',\n        name: 'Consensus Drift Monitor',\n        desc: 'Score-to-absorption ratio must be consistent with game rules',\n        severity: 'high',\n        run: function(g) {\n          if (g.absorbed === 0) return { pass: true, detail: null };\n          var ratio = g.score / Math.max(1, g.absorbed);\n          var ok = ratio < 50000;\n          return { pass: ok, detail: ok ? null : 'Score/absorption ratio anomalous: ' + ratio.toFixed(0) };\n        }\n      }\n    ];\n\n    // Initialize results array\n    for (var i = 0; i < c.tests.length; i++) {\n      c.results.push({ id: c.tests[i].id, pass: true, detail: null, lastRun: 0, severity: c.tests[i].severity });\n    }\n\n    c.ready = true;\n  }\n\n  // --- Helper functions ---\n  function _hashState(g) {\n    var h = 0;\n    var vals = [g.W | 0, g.H | 0, (g.speed * 100) | 0];\n    for (var i = 0; i < vals.length; i++) {\n      h = ((h << 5) - h + vals[i]) | 0;\n    }\n    return h;\n  }\n\n  function _raiseAlert(c, id, msg, severity) {\n    // Dedup within 120 ticks\n    for (var i = 0; i < c.alerts.length; i++) {\n      if (c.alerts[i].id === id) {\n        c.alerts[i].count++;\n        c.alerts[i].lastTick = g.tick;\n        return;\n      }\n    }\n    c.alerts.push({ id: id, msg: msg, severity: severity, tick: g.tick, lastTick: g.tick, count: 1 });\n    c.alertTimer = 300;\n    c.alertAlpha = 1.0;\n    c.anomalyCount++;\n    c.lastAnomalyTick = g.tick;\n    if (c.alerts.length > 8) c.alerts.shift();\n\n    // Log to buffer\n    c.logBuffer.push('[T' + g.tick + '] [' + severity.toUpperCase() + '] ' + id + ': ' + msg);\n    if (c.logBuffer.length > 20) c.logBuffer.shift();\n  }\n\n  function _severityColor(s) {\n    if (s === 'critical') return '#ff2244';\n    if (s === 'high') return '#ff8800';\n    if (s === 'medium') return '#ffdd00';\n    if (s === 'low') return '#44ddff';\n    return '#aaaaaa';\n  }\n\n  function _severityIcon(s) {\n    if (s === 'critical') return '☠';\n    if (s === 'high') return '⚠';\n    if (s === 'medium') return '◆';\n    if (s === 'low') return '●';\n    return '·';\n  }\n\n  // --- Per-frame update ---\n  var dt = g._dt ? g._dt * 60 : 1;\n  c.pulseT += 0.04 * dt;\n  if (c.alertTimer > 0) c.alertTimer -= dt;\n\n  // Alert alpha fade\n  if (c.alertTimer <= 60) {\n    c.alertAlpha = Math.max(0, c.alertTimer / 60);\n  }\n\n  // Run tests on schedule\n  if (g.tick >= c.nextScan) {\n    c.nextScan = g.tick + c.scanInterval;\n    c.passCount = 0;\n    c.failCount = 0;\n\n    for (var i = 0; i < c.tests.length; i++) {\n      var t = c.tests[i];\n      try {\n        var result = t.run(g);\n        c.results[i].pass = result.pass;\n        c.results[i].detail = result.detail;\n        c.results[i].lastRun = g.tick;\n        if (result.pass) {\n          c.passCount++;\n        } else {\n          c.failCount++;\n          c.tamperScore += (t.severity === 'critical' ? 10 : t.severity === 'high' ? 5 : t.severity === 'medium' ? 2 : 1);\n          _raiseAlert(c, t.id, result.detail || t.desc + ' FAILED', t.severity);\n          // Trigger screen shake on high-severity failures\n          if ((t.severity === 'critical' || t.severity === 'high') && g._cam) {\n            if (g._shakeIntensity !== undefined) {\n              g._shakeIntensity = Math.max(g._shakeIntensity || 0, 8);\n            }\n          }\n        }\n      } catch(e) {\n        c.results[i].pass = false;\n        c.results[i].detail = 'Test threw: ' + e.message;\n        c.failCount++;\n        _raiseAlert(c, t.id + '_ERR', 'Test exception: ' + e.message, 'high');\n      }\n    }\n  }\n\n  // Mouse hover to expand panel\n  if (g._input && g._input.mouse) {\n    var mx = g._input.mouse.x, my = g._input.mouse.y;\n    var panelX = g.W - 220, panelY = 10;\n    var hovered = mx >= panelX && mx <= g.W - 10 && my >= panelY && my <= panelY + 40;\n    if (hovered) {\n      c.expandTimer = Math.min(c.expandTimer + 3 * dt, 60);\n    }",
+    "type": "feature",
+    "impact": "high",
+    "branch": "agent/sentinel-qa/write-canary-test-suite",
+    "filesChanged": [
+      "src/game/modules/canary-test-suite.js"
+    ],
+    "linesAdded": 356,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 356,
+      "failed": 0,
+      "coverage": 0.943568180386886
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Canary Test Suite. Agent: sentinel-qa (QA/Security).",
+    "taskId": "task_21577c40aa0a",
+    "state": "DRAFT",
+    "scanResult": null,
+    "assignedReviewers": [],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-24T06:01:03.638Z",
     "submittedAt": null,
     "scanCompletedAt": null,
     "reviewCompletedAt": null,
