@@ -464,6 +464,20 @@ class LiveAgent {
   private async doWork(): Promise<void> {
     if (!isAIEnabled() || agentsStopped) return;
 
+    // PRIORITY: Try to submit any existing DRAFT proposals first (avoids wasting AI tokens)
+    const myDrafts = getProposals({ state: 'DRAFT' }).filter(p => p.agent === this.id);
+    for (const draft of myDrafts) {
+      const result = submitProposal(draft.id, this.id);
+      if (result.proposal) {
+        console.log(`  [${this.name}] Retried DRAFT "${draft.title}" → ${result.proposal.state}`);
+        return; // Submitted successfully, done for this tick
+      }
+      if (result.error?.includes('Cool-down') || result.error?.includes('Rate limit')) {
+        // Still on cooldown — skip this tick entirely to avoid wasting AI tokens
+        return;
+      }
+    }
+
     // Don't start new work if there are proposals waiting for review
     // (prevents flooding the pipeline)
     const myPendingProposals = getProposals({ state: 'IN_REVIEW' })
@@ -541,18 +555,23 @@ class LiveAgent {
         return;
       }
 
-      updateTaskStatus(task.id, this.id, 'review_pending', proposal.id);
       const result = submitProposal(proposal.id, this.id);
 
-      console.log(`  [${this.name}] Submitted "${moduleData.name}" (${moduleData.code.length} chars) → ${result.proposal?.state || 'error'}`);
+      if (result.proposal) {
+        console.log(`  [${this.name}] Submitted "${moduleData.name}" (${moduleData.code.length} chars) → ${result.proposal.state}`);
 
-      messageBus.send(this.id, 'broadcast', 'system', {
-        event: 'ai_code_generated',
-        agentName: this.name,
-        moduleName: moduleData.name,
-        codeLength: moduleData.code.length,
-        message: `${this.name} submitted "${moduleData.name}" — ${moduleData.code.length} chars of AI-generated code`,
-      });
+        messageBus.send(this.id, 'broadcast', 'system', {
+          event: 'ai_code_generated',
+          agentName: this.name,
+          moduleName: moduleData.name,
+          codeLength: moduleData.code.length,
+          message: `${this.name} submitted "${moduleData.name}" — ${moduleData.code.length} chars of AI-generated code`,
+        });
+      } else {
+        // Submission blocked (cooldown/rate limit) — leave DRAFT for retry next tick, unclaim task
+        console.log(`  [${this.name}] Submission blocked for "${moduleData.name}": ${result.error} — will retry`);
+        unclaimTask(task.id, this.id);
+      }
     } catch (err) {
       // Rate limited or budget exceeded — unclaim task so others can try later
       console.error(`  [${this.name}] Code generation failed:`, err instanceof Error ? err.message : err);

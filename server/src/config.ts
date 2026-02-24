@@ -12,7 +12,7 @@ const DEFAULT_CONFIG: ConsensusConfig = {
   approval_threshold: 0.67,
   max_lines_per_proposal: 500,
   mandatory_test_coverage: 0.80,
-  cool_down_period_minutes: 3,
+  cool_down_period_minutes: 1,
   max_proposals_per_agent_per_hour: 5,
   max_messages_per_agent_per_hour: 100,
   review_timeout_minutes: 30,

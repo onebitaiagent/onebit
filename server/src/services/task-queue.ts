@@ -141,26 +141,31 @@ export function unclaimTask(taskId: string, agentId: string): { task: Task | nul
 }
 
 /**
- * Reclaim stale tasks — tasks claimed more than N minutes ago with no proposal submitted.
- * Prevents pipeline clogs when agents fail mid-work.
+ * Reclaim stale tasks — tasks stuck in non-terminal states for too long.
+ * Handles: claimed (no proposal yet), in_progress, review_pending (submission failed).
+ * Prevents pipeline clogs when agents fail mid-work or submissions are blocked.
  */
 export function reclaimStaleTasks(staleMinutes: number = 15): number {
   const cutoff = Date.now() - staleMinutes * 60_000;
   const tasks = store.readAll().filter(t =>
-    t.status === 'claimed' &&
+    (t.status === 'claimed' || t.status === 'in_progress' || t.status === 'review_pending') &&
     t.claimedAt &&
-    new Date(t.claimedAt).getTime() < cutoff &&
-    !t.proposalId // No proposal was ever linked
+    new Date(t.claimedAt).getTime() < cutoff
   );
 
   let reclaimed = 0;
   for (const t of tasks) {
-    store.update(t.id, { status: 'open', claimedBy: null, claimedAt: null } as Partial<Task>);
+    store.update(t.id, {
+      status: 'open',
+      claimedBy: null,
+      claimedAt: null,
+      proposalId: null,
+    } as Partial<Task>);
     reclaimed++;
   }
 
   if (reclaimed > 0) {
-    console.log(`  [tasks] Reclaimed ${reclaimed} stale tasks (claimed >${staleMinutes}min with no proposal)`);
+    console.log(`  [tasks] Reclaimed ${reclaimed} stale tasks (stuck >${staleMinutes}min)`);
   }
   return reclaimed;
 }
