@@ -6,6 +6,7 @@ import { messageBus } from './message-bus.js';
 import { scanProposal } from './security-scanner.js';
 import { getAllAgents, updateAgentStats, addContribution } from './agent-registry.js';
 import { activateModuleByProposal } from './game-evolution.js';
+import { completeTaskByProposal } from './task-queue.js';
 import { config } from '../config.js';
 
 const store = new JsonStore<Proposal>('proposals.json');
@@ -371,6 +372,7 @@ export function castVote(
         addContribution(review.agentId, 'review_completed');
       }
       const activated = activateModuleByProposal(proposalId);
+      completeTaskByProposal(proposal.title, proposal.agent);
       console.log(`  [consensus] Auto-merged "${proposal.title}" (${proposal.impact} impact)${activated ? ' — module activated' : ''}`);
     }
 
@@ -418,6 +420,7 @@ export function mergeProposal(proposalId: string): { proposal: Proposal | null; 
 
   // Activate any game module linked to this proposal
   activateModuleByProposal(proposalId);
+  completeTaskByProposal(proposal.title, proposal.agent);
 
   messageBus.send('consensus_engine', 'broadcast', 'system', {
     event: 'proposal_merged',

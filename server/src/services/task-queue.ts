@@ -169,3 +169,20 @@ export function reclaimStaleTasks(staleMinutes: number = 15): number {
   }
   return reclaimed;
 }
+
+/**
+ * Mark a task as completed when its linked proposal merges.
+ * Looks up by title since proposals store taskId but tasks don't always have proposalId.
+ */
+export function completeTaskByProposal(proposalTitle: string, agentId: string): void {
+  const tasks = store.readAll();
+  const task = tasks.find(t => t.title === proposalTitle && t.status !== 'completed');
+  if (!task) return;
+
+  store.update(task.id, {
+    status: 'completed',
+    completedAt: new Date().toISOString(),
+  } as Partial<Task>);
+
+  console.log(`  [tasks] Completed "${task.title}" (proposal merged)`);
+}

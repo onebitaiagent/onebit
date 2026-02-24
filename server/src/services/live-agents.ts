@@ -489,8 +489,12 @@ class LiveAgent {
 
     const openTasks = getTasks({ role: this.role, status: 'open' });
 
+    // Filter out tasks that already have a merged proposal (prevents duplicates)
+    const mergedTitles = new Set(getProposals({ state: 'MERGED' }).map(p => p.title));
+    const availableTasks = openTasks.filter(t => !mergedTitles.has(t.title));
+
     // 5% chance to suggest a new feature if no roadmap tasks available (was 15%)
-    if (Math.random() < 0.05 && !openTasks.some(t => ROADMAP_TITLES.has(t.title))) {
+    if (Math.random() < 0.05 && !availableTasks.some(t => ROADMAP_TITLES.has(t.title))) {
       await handleFeatureSuggestion(this);
       return;
     }
@@ -501,10 +505,10 @@ class LiveAgent {
       return;
     }
 
-    if (openTasks.length === 0) return;
+    if (availableTasks.length === 0) return;
 
     // Pick roadmap tasks first, then agent-suggested tasks
-    const task = openTasks.find(t => ROADMAP_TITLES.has(t.title)) || openTasks[0];
+    const task = availableTasks.find(t => ROADMAP_TITLES.has(t.title)) || availableTasks[0];
     if (!task) return;
     const claimed = claimTask(task.id, this.id, this.role);
     if (!claimed.task) return;
