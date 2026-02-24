@@ -464,6 +464,9 @@ class LiveAgent {
   private async doWork(): Promise<void> {
     if (!isAIEnabled() || agentsStopped) return;
 
+    // Budget guard — only blocks code generation, not reviews/votes
+    if (isOverBudget()) return;
+
     // PRIORITY: Try to submit any existing DRAFT proposals first (avoids wasting AI tokens)
     const myDrafts = getProposals({ state: 'DRAFT' }).filter(p => p.agent === this.id);
     for (const draft of myDrafts) {
@@ -666,12 +669,6 @@ export function startLiveAgents(): void {
 
         const loop = async () => {
           if (agentsStopped) return;
-          // Budget guard — skip tick entirely if over budget
-          if (isOverBudget()) {
-            console.log(`  [${agent.name}] Over budget, sleeping 10 min`);
-            setTimeout(loop, 600_000);
-            return;
-          }
           await agent.tick();
           // Each agent works every 2-5 minutes (was 45-90s)
           const next = 120_000 + Math.floor(Math.random() * 180_000);
