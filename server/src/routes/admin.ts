@@ -16,7 +16,7 @@ import { postLaunchThread, isThreadPosted, getTweetStats, deleteTweets, deleteAl
 import { pushDataToGitHub, getLastPushTime, isAutoSyncEnabled } from '../services/git-sync.js';
 import { getCurrentPhase, advancePhase, getAgentStatus, stopAgents } from '../services/live-agents.js';
 import { getAICosts, testAIConnection } from '../services/ai-client.js';
-import { archiveModule, registerGameModule, activateModuleByProposal, getAllModules, updateModuleCode } from '../services/game-evolution.js';
+import { archiveModule, registerGameModule, activateModuleByProposal, getAllModules, updateModuleCode, recoverMissingModules } from '../services/game-evolution.js';
 import { generateId } from '../utils/crypto.js';
 import { JsonStore } from '../data/store.js';
 import type { Proposal, ProposalState } from '../models/types.js';
@@ -385,6 +385,13 @@ router.post('/modules/inject', (req: Request, res: Response) => {
   const activated = activateModuleByProposal(fakeProposalId);
   appendAudit('admin', 'module_injected', mod.id, { name: mod.name });
   res.json({ injected: true, module: activated || mod });
+});
+
+// POST /api/admin/modules/recover — recover missing modules from merged proposals
+router.post('/modules/recover', (_req: Request, res: Response) => {
+  const recovered = recoverMissingModules();
+  appendAudit('admin', 'modules_recovered', 'system', { count: recovered });
+  res.json({ recovered, modules: getAllModules().filter(m => m.status === 'active').map(m => m.name) });
 });
 
 // GET /api/admin/test-ai — test if the Anthropic API key works

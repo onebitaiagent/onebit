@@ -1,7 +1,11 @@
 import { JsonStore } from '../data/store.js';
+import type { Proposal } from '../models/types.js';
 import { generateId } from '../utils/crypto.js';
 import { appendAudit } from './audit-log.js';
 import { messageBus } from './message-bus.js';
+
+// Read proposals store directly to avoid circular dependency with consensus-engine
+const proposalStore = new JsonStore<Proposal>('proposals.json');
 
 // Each game module is a self-contained JavaScript code block
 // proposed by an agent, reviewed by peers, merged through consensus
@@ -49,9 +53,9 @@ export function validateModuleCode(code: string): { valid: boolean; error?: stri
     }
   }
 
-  // Size check — modules over 5KB are suspicious
-  if (code.length > 5000) {
-    return { valid: false, error: `Module too large (${code.length} chars, max 5000)` };
+  // Size check — modules over 12KB are suspicious (code gen uses up to 4000 tokens)
+  if (code.length > 12000) {
+    return { valid: false, error: `Module too large (${code.length} chars, max 12000)` };
   }
 
   // Must contain registerModule call
@@ -101,12 +105,67 @@ export function registerGameModule(input: {
 }
 
 /**
- * Activate a module (called when its linked proposal merges)
+ * Extract registerModule() code from a proposal description.
+ * Returns the code block starting from registerModule( to the end.
+ */
+function extractModuleCode(description: string): string | null {
+  const idx = description.indexOf('registerModule(');
+  if (idx === -1) return null;
+  return description.substring(idx);
+}
+
+/**
+ * Extract module name from registerModule('Name', ...) call
+ */
+function extractModuleName(code: string): string | null {
+  const match = code.match(/registerModule\s*\(\s*['"]([^'"]+)['"]/);
+  return match ? match[1] : null;
+}
+
+/**
+ * Activate a module (called when its linked proposal merges).
+ * If no pending module exists, attempts to extract code from the proposal
+ * description and register+activate it as a fallback.
  */
 export function activateModuleByProposal(proposalId: string): GameModule | null {
   const all = store.readAll();
-  const mod = all.find(m => m.proposalId === proposalId && m.status === 'pending');
-  if (!mod) return null;
+  let mod = all.find(m => m.proposalId === proposalId && m.status === 'pending');
+
+  // Fallback: if no pending module, try to extract code from the proposal description
+  if (!mod) {
+    const proposal = proposalStore.findById(proposalId);
+    if (!proposal) return null;
+
+    const code = extractModuleCode(proposal.description);
+    if (!code) return null;
+
+    const name = extractModuleName(code) || proposal.title;
+
+    // Check if a module with this name already exists (active or pending)
+    const existing = all.find(m => m.name === name && m.status === 'active');
+    if (existing) {
+      console.log(`  [game] Module "${name}" already active — skipping duplicate`);
+      return existing;
+    }
+
+    console.log(`  [game] Recovering module "${name}" from proposal description (no pending module found)`);
+    const registered = registerGameModule({
+      name,
+      description: `Recovered from proposal: ${proposal.title}`,
+      code,
+      order: all.filter(m => m.status === 'active').length + 1,
+      proposalId,
+      agentId: proposal.agent,
+      agentName: proposal.agent,
+    });
+
+    if (!registered) {
+      console.log(`  [game] Recovery failed for "${name}" — code has syntax errors`);
+      return null;
+    }
+
+    mod = registered;
+  }
 
   const updated = store.update(mod.id, {
     status: 'active' as const,
@@ -131,6 +190,64 @@ export function activateModuleByProposal(proposalId: string): GameModule | null 
   }
 
   return updated;
+}
+
+/**
+ * Recover all missing modules from merged proposals.
+ * Scans merged proposals for registerModule() code and registers any
+ * that don't have a corresponding game module.
+ */
+export function recoverMissingModules(): number {
+  const proposals = proposalStore.readAll().filter(p => p.state === 'MERGED');
+  const modules = store.readAll();
+  const existingProposalIds = new Set(modules.map(m => m.proposalId));
+  const existingNames = new Set(modules.filter(m => m.status === 'active').map(m => m.name));
+
+  let recovered = 0;
+
+  for (const p of proposals) {
+    // Skip if already has a module
+    if (existingProposalIds.has(p.id)) continue;
+
+    const code = extractModuleCode(p.description);
+    if (!code) continue;
+
+    const name = extractModuleName(code) || p.title;
+
+    // Skip if an active module with this name exists
+    if (existingNames.has(name)) continue;
+
+    const registered = registerGameModule({
+      name,
+      description: `Recovered from merged proposal: ${p.title}`,
+      code,
+      order: modules.filter(m => m.status === 'active').length + recovered + 1,
+      proposalId: p.id,
+      agentId: p.agent,
+      agentName: p.agent,
+    });
+
+    if (!registered) {
+      console.log(`  [game] Recovery skipped "${name}" — syntax errors`);
+      continue;
+    }
+
+    // Immediately activate
+    store.update(registered.id, {
+      status: 'active' as const,
+      activatedAt: new Date().toISOString(),
+    });
+
+    existingNames.add(name);
+    recovered++;
+    console.log(`  [game] Recovered "${name}" from proposal ${p.id}`);
+  }
+
+  if (recovered > 0) {
+    console.log(`  [game] Total recovered: ${recovered} modules from merged proposals`);
+  }
+
+  return recovered;
 }
 
 /**

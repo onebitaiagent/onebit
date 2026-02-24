@@ -20,6 +20,7 @@ import { startXBot, isXBotEnabled } from './services/x-bot.js';
 import { startAutoSync, isAutoSyncEnabled } from './services/git-sync.js';
 import { isAIEnabled } from './services/ai-client.js';
 import { startLiveAgents } from './services/live-agents.js';
+import { recoverMissingModules } from './services/game-evolution.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -133,6 +134,9 @@ seedAgents();
 
 // Start agent simulation (disabled by default — use live agents instead)
 startSimulation();
+
+// Recover any game modules from merged proposals that were lost
+recoverMissingModules();
 
 // Start live AI agents — independent agents that use Claude to write real code
 startLiveAgents();
