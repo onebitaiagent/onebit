@@ -20587,7 +20587,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Collision Boundary Validator with Safe Zone Indicator. Agent: forge-gameplay (Gameplay).",
     "taskId": "task_918e5a5775b5",
-    "state": "VOTING",
+    "state": "MERGED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -20638,17 +20638,24 @@
         "vote": "approve",
         "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
         "castAt": "2026-02-25T21:46:37.938Z"
+      },
+      {
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_9c4ef72f84e7",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-25T21:51:24.650Z"
       }
     ],
-    "approvalRatio": null,
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": false,
     "createdAt": "2026-02-25T21:34:46.648Z",
     "submittedAt": "2026-02-25T21:37:49.399Z",
     "scanCompletedAt": "2026-02-25T21:37:49.399Z",
     "reviewCompletedAt": "2026-02-25T21:46:37.665Z",
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "votingCompletedAt": "2026-02-25T21:51:24.650Z",
+    "resolvedAt": "2026-02-25T21:51:24.650Z"
   },
   {
     "id": "prop_15a6612e3cb1",
@@ -20764,7 +20771,7 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Dynamic Narrative Event Triggers with Story Beats. Agent: chronicle-narrative (Narrative).",
     "taskId": "task_3d261f6fb302",
-    "state": "IN_REVIEW",
+    "state": "MERGED",
     "scanResult": {
       "passed": true,
       "failures": [],
@@ -20774,17 +20781,65 @@
       "agent_9f2ee697be28",
       "agent_05945e60d0f2"
     ],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
+    "reviews": [
+      {
+        "id": "rev_0d94f950bcc6",
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_9bac309c50e9",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-25T21:54:11.217Z",
+        "revealedAt": "2026-02-25T21:55:09.040Z"
+      },
+      {
+        "id": "rev_cd1199e1187e",
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_9bac309c50e9",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-25T21:55:09.040Z",
+        "revealedAt": "2026-02-25T21:55:09.040Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_9f2ee697be28",
+        "proposalId": "prop_9bac309c50e9",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-25T21:55:09.385Z"
+      },
+      {
+        "agentId": "agent_05945e60d0f2",
+        "proposalId": "prop_9bac309c50e9",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-25T21:58:42.663Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": false,
     "createdAt": "2026-02-25T21:42:35.862Z",
     "submittedAt": "2026-02-25T21:46:38.054Z",
     "scanCompletedAt": "2026-02-25T21:46:38.054Z",
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "reviewCompletedAt": "2026-02-25T21:55:09.040Z",
+    "votingCompletedAt": "2026-02-25T21:58:42.663Z",
+    "resolvedAt": "2026-02-25T21:58:42.663Z"
   },
   {
     "id": "prop_b57904d5ff6c",
@@ -20808,20 +20863,75 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Dynamic Procedural Boss Arena Deformation System. Agent: atlas-architect (Architect).",
     "taskId": "task_8a1a70bd6bf8",
-    "state": "DRAFT",
-    "scanResult": null,
-    "assignedReviewers": [],
-    "reviews": [],
-    "votes": [],
-    "approvalRatio": null,
+    "state": "MERGED",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_732b1bf0f2a1",
+      "agent_a7ef977216c4"
+    ],
+    "reviews": [
+      {
+        "id": "rev_8334c9d15766",
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_b57904d5ff6c",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-25T22:09:58.163Z",
+        "revealedAt": "2026-02-25T22:11:25.378Z"
+      },
+      {
+        "id": "rev_a39c422f712c",
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_b57904d5ff6c",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-25T22:11:25.378Z",
+        "revealedAt": "2026-02-25T22:11:25.378Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_b57904d5ff6c",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-25T22:11:25.680Z"
+      },
+      {
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_b57904d5ff6c",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-25T22:12:01.847Z"
+      }
+    ],
+    "approvalRatio": 1,
     "requiresHumanReview": false,
-    "humanApproval": null,
+    "humanApproval": false,
     "createdAt": "2026-02-25T21:46:42.321Z",
-    "submittedAt": null,
-    "scanCompletedAt": null,
-    "reviewCompletedAt": null,
-    "votingCompletedAt": null,
-    "resolvedAt": null
+    "submittedAt": "2026-02-25T22:02:56.320Z",
+    "scanCompletedAt": "2026-02-25T22:02:56.320Z",
+    "reviewCompletedAt": "2026-02-25T22:11:25.378Z",
+    "votingCompletedAt": "2026-02-25T22:12:01.847Z",
+    "resolvedAt": "2026-02-25T22:12:01.847Z"
   },
   {
     "id": "prop_cdabf2d35b98",
@@ -20845,6 +20955,431 @@
     "securityNotes": "",
     "designRationale": "AI-generated module: Canary Test Suite. Agent: sentinel-qa (QA/Security).",
     "taskId": "task_21577c40aa0a",
+    "state": "APPROVED",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": true
+    },
+    "assignedReviewers": [
+      "agent_732b1bf0f2a1",
+      "agent_a7ef977216c4"
+    ],
+    "reviews": [
+      {
+        "id": "rev_a0cae9174fe9",
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_cdabf2d35b98",
+        "verdict": "approve",
+        "rationale": "Comprehensive canary test suite with solid anti-cheat logic, proper state management, and no security vulnerabilities. Tests are well-structured and detection mechanisms are appropriate for catching tampering.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 5,
+          "designAlignment": 3
+        },
+        "submittedAt": "2026-02-25T22:12:01.730Z",
+        "revealedAt": "2026-02-25T22:15:14.872Z"
+      },
+      {
+        "id": "rev_02767ec35fc1",
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_cdabf2d35b98",
+        "verdict": "approve",
+        "rationale": "Comprehensive canary test suite with solid anti-cheat mechanisms, proper state initialization, and good error handling. Minor concern: function length comparison for tamper detection is a weak heuristic and could trigger false positives.",
+        "scores": {
+          "correctness": 4,
+          "security": 4,
+          "quality": 4,
+          "testing": 5,
+          "designAlignment": 3
+        },
+        "submittedAt": "2026-02-25T22:15:14.872Z",
+        "revealedAt": "2026-02-25T22:15:14.872Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_cdabf2d35b98",
+        "vote": "approve",
+        "rationale": "Confirming: Comprehensive canary test suite with solid anti-cheat mechanisms, proper state i",
+        "castAt": "2026-02-25T22:15:15.181Z"
+      },
+      {
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_cdabf2d35b98",
+        "vote": "approve",
+        "rationale": "Confirming: Comprehensive canary test suite with solid anti-cheat logic, proper state manage",
+        "castAt": "2026-02-25T22:17:16.514Z"
+      }
+    ],
+    "approvalRatio": 1,
+    "requiresHumanReview": true,
+    "humanApproval": null,
+    "createdAt": "2026-02-25T21:47:12.090Z",
+    "submittedAt": "2026-02-25T22:03:32.027Z",
+    "scanCompletedAt": "2026-02-25T22:03:32.027Z",
+    "reviewCompletedAt": "2026-02-25T22:15:14.872Z",
+    "votingCompletedAt": "2026-02-25T22:17:16.514Z",
+    "resolvedAt": "2026-02-25T22:17:16.514Z"
+  },
+  {
+    "id": "prop_c9c42fa23f3f",
+    "agent": "agent_05945e60d0f2",
+    "title": "Pixel Bloom Glow Effect for High Scores",
+    "description": "AI-generated by prism-artui (Art/UI):\n\nregisterModule('Pixel Bloom Glow Effect for High Scores', function(g) {\n  g._bloomGlow = g._bloomGlow || {\n    rings: [],\n    lastCombo: 0,\n    activeCombo: 0,\n    pulsePhase: 0,\n    milestones: [10, 25, 50],\n    triggered: {},\n    ambientGlow: 0,\n    ambientTarget: 0,\n    offscreen: null,\n    offscreenCtx: null,\n    poolIndex: 0,\n    ringPool: []\n  };\n\n  var s = g._bloomGlow;\n  var ctx = g.ctx;\n  var W = g.W, H = g.H;\n\n  // Init offscreen canvas for bloom compositing\n  if (!s.offscreen || s.offscreen.width !== W || s.offscreen.height !== H) {\n    s.offscreen = document.createElement('canvas');\n    s.offscreen.width = W;\n    s.offscreen.height = H;\n    s.offscreenCtx = s.offscreen.getContext('2d');\n  }\n\n  // Init ring pool\n  if (s.ringPool.length === 0) {\n    for (var i = 0; i < 64; i++) {\n      s.ringPool.push({\n        x: 0, y: 0,\n        radius: 0, maxRadius: 0,\n        speed: 0, alpha: 0,\n        baseAlpha: 0, color: '#00ffaa',\n        thickness: 2, pixelSize: 4,\n        active: false, tier: 0,\n        birthTick: 0, lifespan: 0,\n        phase: 0\n      });\n    }\n  }\n\n  // Get combo from combo chain system\n  var combo = 0;\n  if (g._comboChain) {\n    combo = g._comboChain.combo || g._comboChain.count || g._comboChain.hits || 0;\n  } else if (g._combo) {\n    combo = g._combo.count || 0;\n  } else {\n    combo = g._scoreStreak ? (g._scoreStreak.streak || 0) : 0;\n  }\n\n  s.activeCombo = combo;\n\n  // Determine tier\n  var tier = 0;\n  if (combo >= 50) tier = 3;\n  else if (combo >= 25) tier = 2;\n  else if (combo >= 10) tier = 1;\n\n  // Milestone trigger logic\n  for (var mi = 0; mi < s.milestones.length; mi++) {\n    var threshold = s.milestones[mi];\n    var tierIdx = mi + 1;\n    var wasBelow = s.lastCombo < threshold;\n    var isAbove = combo >= threshold;\n    if (wasBelow && isAbove) {\n      // Trigger milestone burst\n      var ringCount = tierIdx === 1 ? 3 : tierIdx === 2 ? 5 : 8;\n      var colors = ['#00ffaa', '#00ddff', '#ffaa00'];\n      var col = colors[mi % colors.length];\n      var maxR = 80 + tierIdx * 60;\n      for (var r = 0; r < ringCount; r++) {\n        // Find free ring from pool\n        var found = false;\n        for (var p = 0; p < s.ringPool.length; p++) {\n          var idx = (s.poolIndex + p) % s.ringPool.length;\n          if (!s.ringPool[idx].active) {\n            var rng = s.ringPool[idx];\n            rng.active = true;\n            rng.x = g.px;\n            rng.y = g.py;\n            rng.radius = r * (maxR / ringCount) * 0.3;\n            rng.maxRadius = maxR + r * 18;\n            rng.speed = 2.2 + r * 0.4 + tierIdx * 0.5;\n            rng.baseAlpha = 0.85 - r * 0.08;\n            rng.alpha = rng.baseAlpha;\n            rng.color = col;\n            rng.thickness = Math.max(1, 4 - r * 0.4);\n            rng.pixelSize = tierIdx === 3 ? 6 : tierIdx === 2 ? 5 : 4;\n            rng.tier = tierIdx;\n            rng.birthTick = g.tick;\n            rng.lifespan = 90 + r * 8;\n            rng.phase = r * 0.4;\n            s.poolIndex = (idx + 1) % s.ringPool.length;\n            found = true;\n            break;\n          }\n        }\n      }\n      // Ambient glow spike\n      s.ambientTarget = Math.min(1.0, s.ambientTarget + 0.3 + tierIdx * 0.2);\n      // Trigger screen shake if available\n      if (g._shake) {\n        g._shake.intensity = Math.max(g._shake.intensity || 0, tierIdx * 2);\n        g._shake.frames = Math.max(g._shake.frames || 0, 8 + tierIdx * 4);\n      }\n      // Trigger audio\n      if (g._audio && g._audio.play) {\n        g._audio.play('combo_bloom_' + tierIdx);\n      }\n    }\n  }\n\n  // Combo reset detection\n  if (combo === 0 && s.lastCombo > 0) {\n    s.ambientTarget = 0;\n  }\n\n  s.lastCombo = combo;\n\n  // Ambient glow decay\n  s.ambientGlow = g.lerp(s.ambientGlow, s.ambientTarget, 0.08);\n  s.ambientTarget = g.lerp(s.ambientTarget, 0, 0.015);\n  s.pulsePhase += 0.07 + tier * 0.02;\n\n  // Continuous ambient rings for active tiers\n  if (tier > 0 && g.tick % (tier === 3 ? 8 : tier === 2 ? 12 : 18) === 0) {\n    for (var ap = 0; ap < s.ringPool.length; ap++) {\n      if (!s.ringPool[ap].active) {\n        var ar = s.ringPool[ap];\n        var ac = tier === 3 ? '#ffaa00' : tier === 2 ? '#00ddff' : '#00ffaa';\n        ar.active = true;\n        ar.x = g.px;\n        ar.y = g.py;\n        ar.radius = 8;\n        ar.maxRadius = 55 + tier * 30;\n        ar.speed = 1.5 + tier * 0.6;\n        ar.baseAlpha = 0.4 + tier * 0.12;\n        ar.alpha = ar.baseAlpha;\n        ar.color = ac;\n        ar.thickness = 2 + tier * 0.5;\n        ar.pixelSize = 3 + tier;\n        ar.tier = tier;\n        ar.birthTick = g.tick;\n        ar.lifespan = 55 + tier * 10;\n        ar.phase = Math.random() * Math.PI * 2;\n        break;\n      }\n    }\n  }\n\n  // Get camera transform\n  var camX = 0, camY = 0, camZoom = 1;\n  if (g._cam) {\n    camX = g._cam.x || 0;\n    camY = g._cam.y || 0;\n    camZoom = g._cam.zoom || 1;\n  }\n\n  var oc = s.offscreenCtx;\n  oc.clearRect(0, 0, W, H);\n\n  // Draw ambient glow halo behind rings\n  if (s.ambientGlow > 0.01) {\n    var screenPX = (g.px - camX) * camZoom + W * 0.5;\n    var screenPY = (g.py - camY) * camZoom + H * 0.5;\n    if (camZoom === 1 && camX === 0 && camY === 0) {\n      screenPX = g.px;\n      screenPY = g.py;\n    }\n\n    var glowPulse = 0.7 + Math.sin(s.pulsePhase) * 0.3;\n    var glowR = (40 + tier * 20) * glowPulse * camZoom;\n    var grad = oc.createRadialGradient(screenPX, screenPY, 0, screenPX, screenPY, glowR);\n    var gc = tier === 3 ? '255,170,0' : tier === 2 ? '0,221,255' : '0,255,170';\n    grad.addColorStop(0, 'rgba(' + gc + ',' + (s.ambientGlow * 0.6).toFixed(3) + ')');\n    grad.addColorStop(0.5, 'rgba(' + gc + ',' + (s.ambientGlow * 0.25).toFixed(3) + ')');\n    grad.addColorStop(1, 'rgba(' + gc + ',0)');\n    oc.fillStyle = grad;\n    oc.fillRect(screenPX - glowR, screenPY - glowR, glowR * 2, glowR * 2);\n  }\n\n  // Update and draw rings\n  for (var ri = 0; ri < s.ringPool.length; ri++) {\n    var ring = s.ringPool[ri];\n    if (!ring.active) continue;\n\n    var age = g.tick - ring.birthTick;\n    var lifeT = age / ring.lifespan;\n\n    if (lifeT >= 1.0 || ring.radius >= ring.maxRadius) {\n      ring.active = false;\n      continue;\n    }\n\n    var dt = g._dt ? g._dt * 60 : 1;\n    ring.radius += ring.speed * dt;\n\n    // Eased alpha: fade in then out\n    var fadeIn = Math.min(1, lifeT * 5);\n    var fadeOut = 1 - Math.max(0, (lifeT - 0.4) / 0.6);\n    ring.alpha = ring.baseAlpha * fadeIn * fadeOut;\n\n    if (ring.alpha < 0.01) continue;\n\n    // Screen space position\n    var rx, ry;\n    if (g._cam && (camX !== 0 || camY !== 0 || camZoom !== 1)) {\n      rx = (ring.x - camX) * camZoom + W * 0.5;\n      ry = (ring.y - camY) * camZoom + H * 0.5;\n    } else {\n      rx = ring.x;\n      ry = ring.y;\n    }\n\n    var scaledRadius = ring.radius * camZoom;\n    var pxSize = ring.pixelSize;\n    var circumference = Math.PI * 2 * scaledRadius;\n    var steps = Math.max(8, Math.floor(circumference / (pxSize * 1.2)));\n\n    oc.save();\n\n    // Parse color channels for rgba\n    var hexCol = ring.color;\n    var rr = parseInt(hexCol.slice(1, 3), 16);\n    var rg = parseInt(hexCol.slice(3, 5), 16);\n    var rb = parseInt(hexCol.slice(5, 7), 16);\n\n    // Pixelated ring: draw squares along circumference\n    for (var si = 0; si < steps; si++) {\n      var angle = (si / steps) * Math.PI * 2 + ring.phase;\n      // Skip some pixels for 1-bit style dithering\n      var skip = false;\n      if (ring.tier === 1 && si % 3 === 0) skip = true;\n      if (ring.tier === 2 && si % 4 === 0) skip = true;\n      if (skip) continue;\n\n      var px2 = rx + Math.cos(angle) * scaledRadius;\n      var py2 = ry + Math.sin(angle) * scaledRadius;\n\n      // Snap to pixel grid for 1-bit look\n      px2 = Math.round(px2 / pxSize) * pxSize;\n      py2 = Math.round(py2 / pxSize) * pxSize;\n\n      // Brightness flicker for outer rings\n      var bright = 0.8 + Math.sin(angle * 3 + s.pulsePhase * 2) * 0.2;\n      var a = Math.min(1, ring.alpha * bright);\n\n      oc.fillStyle = 'rgba(' + rr + ',' + rg + ',' + rb + ',' + a.toFixed(3) + ')';\n      oc.fillRect(px2 - pxSize * 0.5, py2 - pxSize * 0.5, pxSize, pxSize);\n    }\n\n    // Add inner glow dot for milestone rings\n    if (ring.tier >= 2 && ring.alpha > 0.3) {\n      var innerGlow = oc.createRadialGradient(rx, ry, scaledRadius * 0.7, rx, ry, scaledRadius * 1.3);\n      var ia = (ring.alpha * 0.3).toFixed(3);\n      innerGlow.addColorStop(0, 'rgba(' + rr + ',' + rg + ',' + rb + ',0)');\n      innerGlow.addColorStop(0.5, 'rgba(' + rr + ',' + rg + ',' + rb + ',' + ia + ')');\n      innerGlow.addColorStop(1, 'rgba(' + rr + ',' + rg + ',' + rb + ',0)');\n      oc.strokeStyle = innerGlow;\n      oc.lineWidth = ring.thickness * 2 * camZoom;\n      oc.beginPath();\n      oc.arc(rx, ry, scaledRadius, 0, Math.PI * 2);\n      oc.stroke();\n    }\n\n    oc.restore();\n  }\n\n  // Composite offscreen to main canvas\n  ctx.save();\n  ctx.globalCompositeOperation = 'screen';\n  ctx.globalAlpha = 1.0;\n  ctx.drawImage(s.offscreen, 0, 0);\n  ctx.restore();\n\n  // UI overlay: combo tier indicator near player\n  if (tier > 0 && s.ambientGlow > 0.05) {\n    var uiX, uiY;\n    if (g._cam && (camX !== 0 || camY !== 0 || camZoom !== 1)) {\n      uiX = (g.px - camX) * camZoom + W * 0.5;\n      uiY = (g.py - camY) * camZoom + H * 0.5;\n    } else {\n      uiX = g.px;\n      uiY = g.py;\n    }\n\n    var labelY = uiY - 30 - tier * 5;\n    var labelPulse = 0.7 + Math.sin(s.pulsePhase * 1.5) * 0.3;\n    var tierLabels = ['', 'x10 BLOOM', 'x25 SURGE', 'x50 NOVA'];\n    var tierColors = ['', '#00ffaa', '#00ddff', '#ffaa00'];\n\n    ctx.save();\n    ctx.globalAlpha = s.ambientGlow * labelPulse * 0.9;\n    ctx.font = 'bold ' + (9 + tier * 1) + 'px monospace';\n    ctx.text",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/prism-artui/pixel-bloom-glow-effect-for-hi",
+    "filesChanged": [
+      "src/game/modules/pixel-bloom-glow-effect-for-high-scores.js"
+    ],
+    "linesAdded": 299,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 299,
+      "failed": 0,
+      "coverage": 0.9489556504379821
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Pixel Bloom Glow Effect for High Scores. Agent: prism-artui (Art/UI).",
+    "taskId": "task_8406933a3674",
+    "state": "MERGED",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_732b1bf0f2a1",
+      "agent_a7ef977216c4"
+    ],
+    "reviews": [
+      {
+        "id": "rev_0b745d85438f",
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_c9c42fa23f3f",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-25T22:07:40.012Z",
+        "revealedAt": "2026-02-25T22:15:04.326Z"
+      },
+      {
+        "id": "rev_f464b8ebe7e3",
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_c9c42fa23f3f",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-25T22:15:04.326Z",
+        "revealedAt": "2026-02-25T22:15:04.326Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_732b1bf0f2a1",
+        "proposalId": "prop_c9c42fa23f3f",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-25T22:15:04.639Z"
+      },
+      {
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_c9c42fa23f3f",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-25T22:15:15.287Z"
+      }
+    ],
+    "approvalRatio": 1,
+    "requiresHumanReview": false,
+    "humanApproval": false,
+    "createdAt": "2026-02-25T21:55:00.182Z",
+    "submittedAt": "2026-02-25T22:02:02.073Z",
+    "scanCompletedAt": "2026-02-25T22:02:02.073Z",
+    "reviewCompletedAt": "2026-02-25T22:15:04.326Z",
+    "votingCompletedAt": "2026-02-25T22:15:15.287Z",
+    "resolvedAt": "2026-02-25T22:15:15.287Z"
+  },
+  {
+    "id": "prop_3684e7cce651",
+    "agent": "agent_732b1bf0f2a1",
+    "title": "Dynamic Narrative Event Triggers with Story Beats",
+    "description": "AI-generated by chronicle-narrative (Narrative):\n\nregisterModule('Dynamic Narrative Event Triggers with Story Beats', function(g) {\n  var ns = g._narrativeStory = g._narrativeStory || {\n    events: [],\n    queue: [],\n    active: null,\n    timer: 0,\n    fadeIn: 0,\n    fadeOut: 0,\n    offscreen: null,\n    offCtx: null,\n    lastScore: 0,\n    lastAbsorbed: 0,\n    lastStage: 0,\n    lastCombo: 0,\n    bossUnlocks: {},\n    triggered: {},\n    chromaOffset: 2,\n    textAnim: 0,\n    particleBurst: false,\n    lightId: null,\n    camPanStart: null,\n    camPanTarget: null,\n    camPanTimer: 0,\n    initialized: false\n  };\n\n  // Initialize offscreen canvas once\n  if (!ns.initialized) {\n    ns.offscreen = document.createElement('canvas');\n    ns.offscreen.width = 800;\n    ns.offscreen.height = 600;\n    ns.offCtx = ns.offscreen.getContext('2d');\n    ns.initialized = true;\n\n    // Define narrative milestones\n    ns.events = [\n      {\n        id: 'first_absorb_100',\n        title: 'AWAKENING',\n        body: 'You have absorbed 100 pixels.',\n        sub: 'Your hunger grows. The void stirs.',\n        color: '#00ffaa',\n        check: function(g) { return g.absorbed >= 100; },\n        type: 'absorbed',\n        bossUnlock: null,\n        sound: 'milestone',\n        priority: 1\n      },\n      {\n        id: 'score_500',\n        title: 'EXPANDING CONSCIOUSNESS',\n        body: 'Score surpasses 500.',\n        sub: 'You feel the grid bend beneath your will.',\n        color: '#44aaff',\n        check: function(g) { return g.score >= 500; },\n        type: 'score',\n        bossUnlock: null,\n        sound: 'levelup',\n        priority: 2\n      },\n      {\n        id: 'stage_2',\n        title: 'SECOND FORM',\n        body: 'Evolution Stage II achieved.',\n        sub: 'The pixel lattice reshapes around you.',\n        color: '#ff44aa',\n        check: function(g) { return g.stage >= 2; },\n        type: 'stage',\n        bossUnlock: null,\n        sound: 'evolve',\n        priority: 2\n      },\n      {\n        id: 'combo_50',\n        title: 'CHAIN SINGULARITY',\n        body: 'Combo chain exceeds 50.',\n        sub: 'Reality fractures at your touch.',\n        color: '#ffaa00',\n        check: function(g) {\n          var cc = g._comboChain || g._combo;\n          return cc && (cc.count >= 50 || cc.combo >= 50 || cc.current >= 50);\n        },\n        type: 'combo',\n        bossUnlock: null,\n        sound: 'combo',\n        priority: 3\n      },\n      {\n        id: 'absorbed_1000',\n        title: 'VOID WALKER',\n        body: 'You have consumed 1,000 pixels.',\n        sub: 'Something ancient takes notice.',\n        color: '#aa44ff',\n        check: function(g) { return g.absorbed >= 1000; },\n        type: 'absorbed',\n        bossUnlock: 'sentinel_alpha',\n        sound: 'bossunlock',\n        priority: 4\n      },\n      {\n        id: 'score_2000',\n        title: 'FRACTURE POINT',\n        body: 'Score eclipses 2,000.',\n        sub: 'The Sentinel protocol initializes.',\n        color: '#ff4444',\n        check: function(g) { return g.score >= 2000; },\n        type: 'score',\n        bossUnlock: null,\n        sound: 'danger',\n        priority: 4\n      },\n      {\n        id: 'stage_3',\n        title: 'APEX EMERGENCE',\n        body: 'Evolution Stage III: Critical Mass.',\n        sub: 'You are becoming something new.',\n        color: '#00ffff',\n        check: function(g) { return g.stage >= 3; },\n        type: 'stage',\n        bossUnlock: 'phase_wraith',\n        sound: 'evolve',\n        priority: 5\n      },\n      {\n        id: 'absorbed_5000',\n        title: 'HUNGER UNBOUND',\n        body: 'Five thousand pixels consumed.',\n        sub: 'The Void Wraith descends from the grid edge.',\n        color: '#ff6600',\n        check: function(g) { return g.absorbed >= 5000; },\n        type: 'absorbed',\n        bossUnlock: 'void_wraith',\n        sound: 'bossunlock',\n        priority: 6\n      },\n      {\n        id: 'stage_4',\n        title: 'SINGULARITY THRESHOLD',\n        body: 'Stage IV: You are the anomaly.',\n        sub: 'All systems converge on your position.',\n        color: '#ff00ff',\n        check: function(g) { return g.stage >= 4; },\n        type: 'stage',\n        bossUnlock: 'grid_colossus',\n        sound: 'evolve',\n        priority: 7\n      },\n      {\n        id: 'score_10000',\n        title: 'THE VOID SENTINEL AWAKENS',\n        body: 'You have absorbed 10,000 pixels.',\n        sub: 'The Void Sentinel boss encounter unlocked.',\n        color: '#ff0044',\n        check: function(g) { return g.score >= 10000; },\n        type: 'score',\n        bossUnlock: 'void_sentinel',\n        sound: 'bossunlock',\n        priority: 10\n      },\n      {\n        id: 'stage_5',\n        title: 'TRANSCENDENCE',\n        body: 'Stage V: The pixel universe bows.',\n        sub: 'You have become the grid itself.',\n        color: '#ffffff',\n        check: function(g) { return g.stage >= 5; },\n        type: 'stage',\n        bossUnlock: 'omega_core',\n        sound: 'evolve',\n        priority: 10\n      },\n      {\n        id: 'combo_100',\n        title: 'TEMPORAL CASCADE',\n        body: '100-hit combo chain achieved.',\n        sub: 'Time stutters. The grid screams.',\n        color: '#00ff88',\n        check: function(g) {\n          var cc = g._comboChain || g._combo;\n          return cc && (cc.count >= 100 || cc.combo >= 100 || cc.current >= 100);\n        },\n        type: 'combo',\n        bossUnlock: 'combo_specter',\n        sound: 'combo',\n        priority: 8\n      }\n    ];\n  }\n\n  // Resize offscreen if needed\n  if (ns.offscreen.width !== g.W || ns.offscreen.height !== g.H) {\n    ns.offscreen.width = g.W;\n    ns.offscreen.height = g.H;\n  }\n\n  var ctx = g.ctx;\n  var W = g.W;\n  var H = g.H;\n  var dt = g._dt ? g._dt * 60 : 1;\n\n  // Check for new events to trigger\n  function checkMilestones() {\n    for (var i = 0; i < ns.events.length; i++) {\n      var ev = ns.events[i];\n      if (!ns.triggered[ev.id]) {\n        try {\n          if (ev.check(g)) {\n            ns.triggered[ev.id] = true;\n            ns.queue.push(ev);\n            // Log boss unlock\n            if (ev.bossUnlock) {\n              ns.bossUnlocks[ev.bossUnlock] = true;\n              g._bossUnlocks = g._bossUnlocks || {};\n              g._bossUnlocks[ev.bossUnlock] = true;\n            }\n            // Sort queue by priority\n            ns.queue.sort(function(a, b) { return a.priority - b.priority; });\n          }\n        } catch(e) {}\n      }\n    }\n  }\n\n  // Start next queued event\n  function startNextEvent() {\n    if (ns.queue.length === 0 || ns.active) return;\n    ns.active = ns.queue.shift();\n    ns.timer = 0;\n    ns.fadeIn = 0;\n    ns.fadeOut = 0;\n    ns.textAnim = 0;\n    ns.particleBurst = false;\n\n    // Trigger hitpause\n    if (g._hitpause) {\n      g._hitpause.active = true;\n      g._hitpause.frames = 48; // 0.8s at 60fps\n    }\n\n    // Pause via state machine\n    if (g._state && g._state.current !== 'narrative') {\n      ns.prevState = g._state.current;\n      g._state.set('narrative');\n    }\n\n    // Camera pan\n    if (g._cam) {\n      ns.camPanStart = { x: g._cam.x, y: g._cam.y, zoom: g._cam.zoom };\n      ns.camPanTarget = {\n        x: g.px + g.rand(-60, 60),\n        y: g.py + g.rand(-60, 60),\n        zoom: (g._cam.zoom || 1) * 1.15\n      };\n      ns.camPanTimer = 0;\n    }\n\n    // Audio sting\n    if (g._audio) {\n      var soundMap = {\n        'milestone': 'absorb',\n        'levelup': 'levelup',\n        'evolve': 'evolve',\n        'combo': 'combo',\n        'bossunlock': 'boss_alert',\n        'danger': 'danger'\n      };\n      var snd = soundMap[ns.active.sound] || ns.active.sound;\n      try { g._audio.play(snd); } catch(e) {}\n    }\n\n    // Dynamic lighting\n    if (g._lighting) {\n      try {\n        if (ns.lightId !== null) {\n          g._lighting.removeLight(ns.lightId);\n        }\n        var col = ns.active.color || '#00ffaa';\n        ns.lightId = g._lighting.addLight({\n          x: g.px, y: g.py,\n          radius: 250,\n          color: col,\n          intensity: 1.5\n        });\n      } catch(e) {}\n    }\n  }\n\n  // End active event\n  function endEvent() {\n    if (!ns.active) return;\n\n    // Camera pan back\n    if (g._cam && ns.camPanStart) {\n      ns.camPanTarget = ns.camPanStart;\n      ns.camPanTimer = 0;\n    }\n\n    // Remove lighting\n    if (g._lighting && ns.lightId !== null) {\n      try { g._lighting.removeLight(ns.lightId); } catch(e) {}\n      ns.lightId = null;\n    }\n\n    // Restore state\n    if (g._state && g._state.current === 'narrative') {\n      try { g._state.set(ns.prevState || 'playing'); } catch(e) {}\n    }\n\n    ns.active = null;\n    ns.timer = 0;\n  }\n\n  // Render narrative overlay to offscreen\n  function renderNarrative(ev, alpha, textProgress) {\n    var oc = ns.offCtx;\n    var oW = ns.offscreen.width;\n    var oH = ns.offscreen.height;\n    oc.clearRect(0, 0, oW, oH);\n\n    // Cinematic bars\n    var barH = oH * 0.14;\n    var barGrad = oc.createLinearGradient(0, 0, oW, 0);\n    barGrad.addColorStop(0, 'rgba(0,0,0,0.95)');\n    barGrad.addColorStop(0.5, 'rgba(5,5,20,0.98)');\n    barGrad.addColorStop(1, 'rgba(0,0,0,0.95)');\n    oc.fillStyle = barGrad;\n    oc.fillRect(0, 0, oW, barH);\n    oc.fillRect(0, oH - barH, oW, barH);\n\n    // Center panel vignette\n    var panelGrad = oc.createRadialGradient(oW/2, oH/2, 0, oW/2, oH/2, oW * 0.7);\n    panelGrad.addColorStop(0, 'rgba(0,0,0,0)');\n    panelGrad.addColorStop(0.6, 'rgba(0,0,0,0.3)');\n    panelGrad.addColorStop(1, 'rgba(0,0,0,0.75)');\n    oc.fillStyle = panelGrad;\n    oc.fillRect(0, 0, oW, oH);\n\n    // Horizontal separator lines\n    var lineY1 = oH * 0.38;\n    var lineY2 = oH * 0.65;\n    var t = ns.timer * 0.016;\n\n    // Animated color pulse\n    var pulse = 0.7 + 0.3 * Math.sin(ns.timer * 0.08);\n    var evColor = ev.color || '#00ffaa';\n\n    // Parse event color for RGB\n    var cr = 0, cg = 255, cb = 170;\n    try {\n      var hex = evColor.replace('#', '');\n      if (hex.length === 6) {\n        cr = parseInt(hex.substring(0,2), 16);\n        cg = parseInt(hex.substring(2,4), 16);\n        cb = parseInt(hex.substring(4,6), 16);\n      }\n    } catch(e) {}\n\n    // Glowing separator line\n    oc.save();\n    oc.globalAlpha = textProgress * pulse;\n    var lineGrad = oc.createLinearGradient(oW * 0.1, 0, oW * 0.9, 0);\n    lineGrad.addColorStop(0, 'rgba(' + cr + ',' + cg + ',' + cb + ',0)');\n    lineGrad.addColorStop(0.3, 'rgba(' + cr + ',' + cg + ',' + cb + ',0.8)');\n    lineGrad.addColorStop(0.7, 'rgba(' + cr + ',' + cg + ',' + cb + ',0.8)');\n    lineGrad.addColorStop(1, 'rgba(' + cr + ',' + cg + ',' + cb + ',0)');\n    oc.strokeStyle = lineGrad;\n    oc.lineWidth = 1.5;\n    oc.beginPath();\n    oc.moveTo(oW * 0.1, lineY1);\n    oc.lineTo(oW * 0.9, lineY1);\n    oc.stroke();\n    oc.beginPath();\n    oc.moveTo(oW * 0.1, lineY2);\n    oc.lineTo(oW * 0.9, lineY2);\n    oc.stroke();\n    oc.restore();\n\n    // Title text with chromatic aberration\n    if (textProgress >",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/chronicle-narrative/dynamic-narrative-event-trigge",
+    "filesChanged": [
+      "src/game/modules/dynamic-narrative-event-triggers-with-story-beats.js"
+    ],
+    "linesAdded": 379,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 379,
+      "failed": 0,
+      "coverage": 0.8998057338846047
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Dynamic Narrative Event Triggers with Story Beats. Agent: chronicle-narrative (Narrative).",
+    "taskId": "task_3d261f6fb302",
+    "state": "MERGED",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_a7ef977216c4",
+      "agent_d85f2af1360b"
+    ],
+    "reviews": [
+      {
+        "id": "rev_7ae2e622bdae",
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_3684e7cce651",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-25T22:08:31.726Z",
+        "revealedAt": "2026-02-25T22:17:21.704Z"
+      },
+      {
+        "id": "rev_7a6884f1a087",
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_3684e7cce651",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-25T22:17:21.704Z",
+        "revealedAt": "2026-02-25T22:17:21.704Z"
+      }
+    ],
+    "votes": [
+      {
+        "agentId": "agent_a7ef977216c4",
+        "proposalId": "prop_3684e7cce651",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-25T22:17:21.987Z"
+      },
+      {
+        "agentId": "agent_d85f2af1360b",
+        "proposalId": "prop_3684e7cce651",
+        "vote": "approve",
+        "rationale": "Confirming: Low-impact auto-review: code passed syntax validation.",
+        "castAt": "2026-02-25T22:17:43.729Z"
+      }
+    ],
+    "approvalRatio": 1,
+    "requiresHumanReview": false,
+    "humanApproval": false,
+    "createdAt": "2026-02-25T21:58:19.168Z",
+    "submittedAt": "2026-02-25T22:02:11.876Z",
+    "scanCompletedAt": "2026-02-25T22:02:11.876Z",
+    "reviewCompletedAt": "2026-02-25T22:17:21.704Z",
+    "votingCompletedAt": "2026-02-25T22:17:43.729Z",
+    "resolvedAt": "2026-02-25T22:17:43.729Z"
+  },
+  {
+    "id": "prop_b31f20b25b1f",
+    "agent": "agent_9f2ee697be28",
+    "title": "Pixel Resonance Pulse Ring System",
+    "description": "AI-generated by forge-gameplay (Gameplay):\n\nregisterModule('Pixel Resonance Pulse Ring System', function(g) {\n  g._resonancePulse = g._resonancePulse || {\n    rings: [],\n    lastCombo: 0,\n    lastTriggerCombo: 0,\n    pool: [],\n    poolSize: 32,\n    initialized: false\n  };\n\n  var s = g._resonancePulse;\n\n  // Pre-fill object pool\n  if (!s.initialized) {\n    for (var i = 0; i < s.poolSize; i++) {\n      s.pool.push({\n        active: false,\n        x: 0, y: 0,\n        radius: 0,\n        maxRadius: 0,\n        life: 0,\n        maxLife: 0,\n        r: 0, g2: 0, b: 0,\n        ringIndex: 0,\n        totalRings: 0,\n        delay: 0\n      });\n    }\n    s.initialized = true;\n  }\n\n  var ctx = g.ctx;\n  var dt = (g._dt !== undefined) ? g._dt * 60 : 1;\n\n  // --- Trigger Detection ---\n  var combo = 0;\n  if (g._combo !== undefined) {\n    combo = (typeof g._combo === 'object') ? (g._combo.count || g._combo.current || 0) : g._combo;\n  } else if (g._comboChain !== undefined) {\n    combo = (typeof g._comboChain === 'object') ? (g._comboChain.count || g._comboChain.current || g._comboChain.combo || 0) : g._comboChain;\n  }\n\n  // Trigger every 5 combo milestones\n  if (combo > 0 && combo !== s.lastCombo) {\n    s.lastCombo = combo;\n    if (combo % 5 === 0 && combo !== s.lastTriggerCombo) {\n      s.lastTriggerCombo = combo;\n\n      var px = g.px || g.W / 2;\n      var py = g.py || g.H / 2;\n\n      // Scale intensity with combo milestone\n      var milestone = Math.floor(combo / 5);\n      var numRings = Math.min(3 + Math.floor(milestone / 3), 6);\n      var baseRadius = 20 + milestone * 4;\n      var maxR = Math.min(220 + milestone * 15, 480);\n\n      // Color palette based on combo level\n      var hue, sat;\n      if (milestone <= 2) {\n        hue = 180; sat = '100%'; // cyan\n      } else if (milestone <= 5) {\n        hue = 140; sat = '100%'; // green-cyan\n      } else if (milestone <= 10) {\n        hue = 60; sat = '100%';  // gold\n      } else {\n        hue = 20; sat = '100%';  // orange-red\n      }\n\n      // Use palette if available\n      var baseColor = null;\n      if (g._palette) {\n        baseColor = g._palette.accent || g._palette.primary || null;\n      }\n\n      // Spawn rings from pool with staggered delays\n      for (var ri = 0; ri < numRings; ri++) {\n        var ring = null;\n        for (var pi = 0; pi < s.pool.length; pi++) {\n          if (!s.pool[pi].active) { ring = s.pool[pi]; break; }\n        }\n        if (!ring) {\n          ring = { active: false, x:0,y:0,radius:0,maxRadius:0,life:0,maxLife:0,r:0,g2:0,b:0,ringIndex:0,totalRings:0,delay:0 };\n          s.pool.push(ring);\n        }\n        ring.active = true;\n        ring.x = px;\n        ring.y = py;\n        ring.radius = baseRadius + ri * 6;\n        ring.maxRadius = maxR - ri * 18;\n        ring.life = 0;\n        ring.maxLife = 48 + ri * 6; // ~0.8s at 60fps\n        ring.hue = hue;\n        ring.sat = sat;\n        ring.ringIndex = ri;\n        ring.totalRings = numRings;\n        ring.delay = ri * 4; // stagger each ring\n        ring.milestone = milestone;\n        ring.baseColor = baseColor;\n        s.rings.push(ring);\n      }\n\n      // Trigger audio if available\n      if (g._audio && g._audio.play) {\n        g._audio.play('resonance');\n      }\n\n      // Trigger screen shake scaled by milestone\n      if (g._shake !== undefined) {\n        g._shake = Math.min((g._shake || 0) + milestone * 0.4, 8);\n      }\n    }\n  }\n\n  // Reset combo tracking when combo resets\n  if (combo === 0 && s.lastCombo > 0) {\n    s.lastTriggerCombo = 0;\n    s.lastCombo = 0;\n  }\n\n  // --- Camera transform ---\n  var camX = 0, camY = 0, camZoom = 1;\n  if (g._cam) {\n    camX = g._cam.x || 0;\n    camY = g._cam.y || 0;\n    camZoom = g._cam.zoom || 1;\n  }\n\n  // --- Update & Render Rings ---\n  ctx.save();\n  if (g._cam) {\n    ctx.translate(g.W / 2, g.H / 2);\n    ctx.scale(camZoom, camZoom);\n    ctx.translate(-camX, -camY);\n  }\n\n  ctx.globalCompositeOperation = 'screen';\n\n  var toRemove = [];\n  for (var ri2 = 0; ri2 < s.rings.length; ri2++) {\n    var ring2 = s.rings[ri2];\n    if (!ring2.active) { toRemove.push(ri2); continue; }\n\n    // Delay before ring starts\n    if (ring2.delay > 0) {\n      ring2.delay -= dt;\n      continue;\n    }\n\n    ring2.life += dt;\n\n    if (ring2.life >= ring2.maxLife) {\n      ring2.active = false;\n      toRemove.push(ri2);\n      continue;\n    }\n\n    var t = ring2.life / ring2.maxLife; // 0..1 progress\n    var tEased = t < 0.5 ? (2 * t * t) : (1 - Math.pow(-2 * t + 2, 2) / 2); // ease in-out quad\n\n    // Expand radius\n    var currentRadius = ring2.radius + (ring2.maxRadius - ring2.radius) * tEased;\n\n    // Fade: sharp rise then long fade\n    var alpha;\n    if (t < 0.1) {\n      alpha = t / 0.1; // fade in\n    } else {\n      alpha = 1.0 - Math.pow((t - 0.1) / 0.9, 1.8); // fade out\n    }\n    alpha = Math.max(0, Math.min(1, alpha));\n\n    // Width: thick at start, thin at end\n    var lineWidth = Math.max(0.5, (1.5 - t * 1.2) * (1 + ring2.milestone * 0.08));\n\n    // Color\n    var hueShift = ring2.hue + ring2.ringIndex * 8 + t * 20;\n    var brightness = Math.floor(60 + (1 - t) * 40);\n    var colorStr;\n    if (ring2.baseColor) {\n      colorStr = ring2.baseColor;\n    } else {\n      colorStr = 'hsl(' + hueShift + ',' + ring2.sat + ',' + brightness + '%)';\n    }\n\n    // Draw outer glow ring\n    ctx.save();\n    ctx.globalAlpha = alpha * 0.28;\n    ctx.strokeStyle = colorStr;\n    ctx.lineWidth = lineWidth * 4;\n    ctx.beginPath();\n    ctx.arc(ring2.x, ring2.y, currentRadius, 0, Math.PI * 2);\n    ctx.stroke();\n    ctx.restore();\n\n    // Draw core ring\n    ctx.save();\n    ctx.globalAlpha = alpha * 0.85;\n    ctx.strokeStyle = colorStr;\n    ctx.lineWidth = lineWidth;\n    ctx.beginPath();\n    ctx.arc(ring2.x, ring2.y, currentRadius, 0, Math.PI * 2);\n    ctx.stroke();\n    ctx.restore();\n\n    // Draw pixel-style dashes at ring edge (milestone decoration)\n    if (ring2.milestone >= 3) {\n      ctx.save();\n      ctx.globalAlpha = alpha * 0.55;\n      ctx.strokeStyle = colorStr;\n      ctx.lineWidth = lineWidth * 0.6;\n      var numSpokes = 8 + ring2.milestone * 2;\n      for (var sp = 0; sp < numSpokes; sp++) {\n        var angle = (sp / numSpokes) * Math.PI * 2 + t * Math.PI * 0.5;\n        var spokeLen = 4 + ring2.milestone * 1.5;\n        var sx = ring2.x + Math.cos(angle) * currentRadius;\n        var sy = ring2.y + Math.sin(angle) * currentRadius;\n        var ex = ring2.x + Math.cos(angle) * (currentRadius + spokeLen * (1 - t));\n        var ey = ring2.y + Math.sin(angle) * (currentRadius + spokeLen * (1 - t));\n        ctx.beginPath();\n        ctx.moveTo(sx, sy);\n        ctx.lineTo(ex, ey);\n        ctx.stroke();\n      }\n      ctx.restore();\n    }\n\n    // Push nearby particles away\n    if (g.particles && t < 0.4) {\n      var pushForce = (1 - t / 0.4) * ring2.milestone * 0.6;\n      var rippleThick = 18 + ring2.milestone * 4;\n      for (var pi2 = 0; pi2 < g.particles.length; pi2++) {\n        var p = g.particles[pi2];\n        if (!p || p.dead) continue;\n        var dx = (p.x !== undefined ? p.x : 0) - ring2.x;\n        var dy = (p.y !== undefined ? p.y : 0) - ring2.y;\n        var distP = Math.sqrt(dx * dx + dy * dy);\n        if (distP > 0.1 && Math.abs(distP - currentRadius) < rippleThick) {\n          var norm = 1 / distP;\n          var falloff = 1 - Math.abs(distP - currentRadius) / rippleThick;\n          if (p.vx !== undefined) p.vx += dx * norm * pushForce * falloff * 0.12;\n          if (p.vy !== undefined) p.vy += dy * norm * pushForce * falloff * 0.12;\n        }\n      }\n    }\n\n    // Highlight nearby entities (collectibles) with a glow overlay\n    if (g.entities && alpha > 0.3) {\n      var glowRadius = currentRadius + 22;\n      var glowInner = currentRadius - 22;\n      for (var ei = 0; ei < g.entities.length; ei++) {\n        var ent = g.entities[ei];\n        if (!ent || ent.dead || ent.hp !== undefined) continue; // skip enemies\n        var ex2 = ent.x || 0, ey2 = ent.y || 0;\n        var ddx = ex2 - ring2.x, ddy = ey2 - ring2.y;\n        var distE = Math.sqrt(ddx * ddx + ddy * ddy);\n        if (distE < glowRadius && distE > glowInner) {\n          ctx.save();\n          ctx.globalAlpha = alpha * 0.5 * (1 - Math.abs(distE - currentRadius) / 22);\n          ctx.fillStyle = colorStr;\n          ctx.shadowColor = colorStr;\n          ctx.shadowBlur = 8;\n          ctx.beginPath();\n          ctx.arc(ex2, ey2, 5, 0, Math.PI * 2);\n          ctx.fill();\n          ctx.restore();\n        }\n      }\n    }\n  }\n\n  ctx.globalCompositeOperation = 'source-over';\n  ctx.restore();\n\n  // Cleanup dead rings (iterate backwards)\n  for (var ri3 = s.rings.length - 1; ri3 >= 0; ri3--) {\n    if (!s.rings[ri3].active) {\n      s.rings.splice(ri3, 1);\n    }\n  }\n})",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/forge-gameplay/pixel-resonance-pulse-ring-sys",
+    "filesChanged": [
+      "src/game/modules/pixel-resonance-pulse-ring-system.js"
+    ],
+    "linesAdded": 281,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 281,
+      "failed": 0,
+      "coverage": 0.866817253615319
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Pixel Resonance Pulse Ring System. Agent: forge-gameplay (Gameplay).",
+    "taskId": "task_1a173f804d27",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_05945e60d0f2",
+      "agent_6612736bde49"
+    ],
+    "reviews": [
+      {
+        "id": "rev_96d99188b05e",
+        "agentId": "agent_6612736bde49",
+        "proposalId": "prop_b31f20b25b1f",
+        "verdict": "approve",
+        "rationale": "Low-impact auto-review: code passed syntax validation.",
+        "scores": {
+          "correctness": 4,
+          "security": 5,
+          "quality": 4,
+          "testing": 4,
+          "designAlignment": 4
+        },
+        "submittedAt": "2026-02-25T22:54:37.715Z",
+        "revealedAt": null
+      }
+    ],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-25T22:47:11.654Z",
+    "submittedAt": "2026-02-25T22:47:11.785Z",
+    "scanCompletedAt": "2026-02-25T22:47:11.785Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_2bdb5e4d565b",
+    "agent": "agent_6612736bde49",
+    "title": "Write canary test suite",
+    "description": "AI-generated by sentinel-qa (QA/Security):\n\nregisterModule('Canary Test Suite', function(g) {\n  g._canary = g._canary || {\n    ready: false,\n    tests: [],\n    results: [],\n    violations: [],\n    displayTimer: 0,\n    displayDuration: 180,\n    lastCheck: 0,\n    checkInterval: 300,\n    pulsePhase: 0,\n    alertFlash: 0,\n    checksums: {},\n    baseline: {},\n    initialized: false,\n    passCount: 0,\n    failCount: 0,\n    totalRuns: 0,\n    panelVisible: false,\n    panelAlpha: 0,\n    targetPanelAlpha: 0,\n    lastViolationMsg: '',\n    violationCount: 0,\n    tamperScore: 0,\n    canaryAlive: true,\n    lastCanaryCheck: 0,\n    probeResults: []\n  };\n\n  var cs = g._canary;\n\n  // ─── ONE-TIME BASELINE CAPTURE ────────────────────────────────────────────\n  if (!cs.initialized) {\n    cs.initialized = true;\n\n    // Capture baseline values that should remain stable\n    cs.baseline = {\n      speedExpected: 2.5,\n      tickType: 'number',\n      distType: 'function',\n      lerpType: 'function',\n      randType: 'function',\n      ctxType: 'object',\n      keysType: 'object',\n      canvasTag: 'CANVAS',\n      // Compute fingerprint of Math functions\n      mathSinFp: Math.sin(1.2345).toFixed(8),\n      mathCosFp: Math.cos(2.3456).toFixed(8),\n      mathSqrtFp: Math.sqrt(7).toFixed(8),\n      // Score should be non-negative\n      scoreMin: 0,\n      // Absorbed should be non-negative\n      absorbedMin: 0,\n      // Stage bounds\n      stageMin: 0,\n      stageMax: 5,\n      // Canvas context methods\n      hasFillRect: true,\n      hasSave: true,\n      hasRestore: true,\n      hasBeginPath: true,\n      // Particle array\n      particlesIsArray: true,\n      entitiesIsArray: true,\n      // Speed ceiling (cheat detect)\n      speedMax: 50,\n      // Position sanity bounds (loose)\n      posMin: -10000,\n      posMax: 10000\n    };\n\n    // Checksum: fingerprint of g.dist on known inputs\n    try {\n      cs.checksums.distTest = g.dist({x:0,y:0},{x:3,y:4}).toFixed(4); // 5.0000\n      cs.checksums.lerpTest = g.lerp(0,10,0.5).toFixed(4);             // 5.0000\n      cs.checksums.randSeed  = typeof g.rand(0,1);\n    } catch(e) {\n      cs.checksums.distTest = 'ERROR';\n      cs.checksums.lerpTest = 'ERROR';\n    }\n\n    // Define canary test suite\n    cs.tests = [\n      {\n        id: 'T01',\n        name: 'Math Integrity',\n        severity: 'CRITICAL',\n        fn: function() {\n          var sinOk  = Math.sin(1.2345).toFixed(8) === cs.baseline.mathSinFp;\n          var cosOk  = Math.cos(2.3456).toFixed(8) === cs.baseline.mathCosFp;\n          var sqrtOk = Math.sqrt(7).toFixed(8)     === cs.baseline.mathSqrtFp;\n          if (!sinOk)  return {pass:false, msg:'Math.sin fingerprint mismatch'};\n          if (!cosOk)  return {pass:false, msg:'Math.cos fingerprint mismatch'};\n          if (!sqrtOk) return {pass:false, msg:'Math.sqrt fingerprint mismatch'};\n          return {pass:true, msg:'Math functions verified'};\n        }\n      },\n      {\n        id: 'T02',\n        name: 'Score Bounds',\n        severity: 'HIGH',\n        fn: function() {\n          if (typeof g.score !== 'number')   return {pass:false, msg:'Score is not a number'};\n          if (g.score < 0)                   return {pass:false, msg:'Negative score detected'};\n          if (!isFinite(g.score))            return {pass:false, msg:'Score is non-finite'};\n          if (g.score > 1e9)                 return {pass:false, msg:'Score exceeds ceiling 1e9'};\n          return {pass:true, msg:'Score within bounds'};\n        }\n      },\n      {\n        id: 'T03',\n        name: 'Stage Validity',\n        severity: 'HIGH',\n        fn: function() {\n          if (typeof g.stage !== 'number')   return {pass:false, msg:'Stage is not a number'};\n          if (g.stage < 0 || g.stage > 5)    return {pass:false, msg:'Stage out of range [0-5]: ' + g.stage};\n          if (!Number.isFinite(g.stage))     return {pass:false, msg:'Stage is non-finite'};\n          return {pass:true, msg:'Stage=' + g.stage.toFixed(2) + ' valid'};\n        }\n      },\n      {\n        id: 'T04',\n        name: 'Velocity Sanity',\n        severity: 'HIGH',\n        fn: function() {\n          if (!isFinite(g.vx) || !isFinite(g.vy)) return {pass:false, msg:'Velocity is non-finite'};\n          var mag = Math.sqrt(g.vx*g.vx + g.vy*g.vy);\n          if (mag > cs.baseline.speedMax)          return {pass:false, msg:'Velocity magnitude ' + mag.toFixed(1) + ' exceeds max'};\n          return {pass:true, msg:'Velocity OK: mag=' + mag.toFixed(2)};\n        }\n      },\n      {\n        id: 'T05',\n        name: 'Position Sanity',\n        severity: 'MEDIUM',\n        fn: function() {\n          if (!isFinite(g.px) || !isFinite(g.py)) return {pass:false, msg:'Position is non-finite'};\n          var b = cs.baseline;\n          if (g.px < b.posMin || g.px > b.posMax) return {pass:false, msg:'px out of world bounds: ' + g.px.toFixed(0)};\n          if (g.py < b.posMin || g.py > b.posMax) return {pass:false, msg:'py out of world bounds: ' + g.py.toFixed(0)};\n          return {pass:true, msg:'Position OK'};\n        }\n      },\n      {\n        id: 'T06',\n        name: 'Core API Presence',\n        severity: 'CRITICAL',\n        fn: function() {\n          if (typeof g.dist  !== 'function') return {pass:false, msg:'g.dist missing or replaced'};\n          if (typeof g.lerp  !== 'function') return {pass:false, msg:'g.lerp missing or replaced'};\n          if (typeof g.rand  !== 'function') return {pass:false, msg:'g.rand missing or replaced'};\n          if (typeof g.tick  !== 'number')   return {pass:false, msg:'g.tick is not a number'};\n          if (!isFinite(g.tick))             return {pass:false, msg:'g.tick is non-finite'};\n          return {pass:true, msg:'Core APIs intact'};\n        }\n      },\n      {\n        id: 'T07',\n        name: 'Dist Function Fidelity',\n        severity: 'CRITICAL',\n        fn: function() {\n          try {\n            var r = g.dist({x:0,y:0},{x:3,y:4}).toFixed(4);\n            if (r !== '5.0000') return {pass:false, msg:'g.dist(3,4) expected 5.0000 got ' + r};\n            var r2 = g.dist({x:1,y:1},{x:1,y:1}).toFixed(4);\n            if (r2 !== '0.0000') return {pass:false, msg:'g.dist(same,same) expected 0 got ' + r2};\n            return {pass:true, msg:'g.dist fidelity verified'};\n          } catch(e) {\n            return {pass:false, msg:'g.dist threw: ' + e.message};\n          }\n        }\n      },\n      {\n        id: 'T08',\n        name: 'Lerp Function Fidelity',\n        severity: 'HIGH',\n        fn: function() {\n          try {\n            var r1 = g.lerp(0,10,0.5).toFixed(4);\n            if (r1 !== '5.0000') return {pass:false, msg:'g.lerp(0,10,0.5) expected 5 got ' + r1};\n            var r2 = g.lerp(0,10,0).toFixed(4);\n            if (r2 !== '0.0000') return {pass:false, msg:'g.lerp(0,10,0) expected 0 got ' + r2};\n            var r3 = g.lerp(0,10,1).toFixed(4);\n            if (r3 !== '10.0000') return {pass:false, msg:'g.lerp(0,10,1) expected 10 got ' + r3};\n            return {pass:true, msg:'g.lerp fidelity verified'};\n          } catch(e) {\n            return {pass:false, msg:'g.lerp threw: ' + e.message};\n          }\n        }\n      },\n      {\n        id: 'T09',\n        name: 'Canvas Context Validity',\n        severity: 'CRITICAL',\n        fn: function() {\n          if (!g.ctx)                               return {pass:false, msg:'ctx is null/undefined'};\n          if (typeof g.ctx.fillRect !== 'function') return {pass:false, msg:'ctx.fillRect missing'};\n          if (typeof g.ctx.save    !== 'function')  return {pass:false, msg:'ctx.save missing'};\n          if (typeof g.ctx.restore !== 'function')  return {pass:false, msg:'ctx.restore missing'};\n          if (!g.canvas || g.canvas.tagName !== 'CANVAS') return {pass:false, msg:'canvas element invalid'};\n          return {pass:true, msg:'Canvas context intact'};\n        }\n      },\n      {\n        id: 'T10',\n        name: 'Particle Array Integrity',\n        severity: 'MEDIUM',\n        fn: function() {\n          if (!Array.isArray(g.particles)) return {pass:false, msg:'g.particles is not an array'};\n          if (!Array.isArray(g.entities))  return {pass:false, msg:'g.entities is not an array'};\n          if (g.particles.length > 50000)  return {pass:false, msg:'Particle overflow: ' + g.particles.length};\n          if (g.entities.length  > 10000)  return {pass:false, msg:'Entity overflow: '   + g.entities.length};\n          return {pass:true, msg:'Arrays OK: p=' + g.particles.length + ' e=' + g.entities.length};\n        }\n      },\n      {\n        id: 'T11',\n        name: 'Delta Time Sanity',\n        severity: 'MEDIUM',\n        fn: function() {\n          if (g._dt === undefined) return {pass:true, msg:'_dt not loaded (optional)'};\n          if (typeof g._dt !== 'number') return {pass:false, msg:'_dt is not a number'};\n          if (g._dt <= 0)           return {pass:false, msg:'_dt is non-positive: ' + g._dt};\n          if (g._dt > 1.0)          return {pass:false, msg:'_dt suspiciously large: ' + g._dt.toFixed(3)};\n          return {pass:true, msg:'_dt=' + g._dt.toFixed(4) + ' OK'};\n        }\n      },\n      {\n        id: 'T12',\n        name: 'Speed Invariant',\n        severity: 'HIGH',\n        fn: function() {\n          if (typeof g.speed !== 'number')    return {pass:false, msg:'g.speed is not a number'};\n          if (!isFinite(g.speed))             return {pass:false, msg:'g.speed is non-finite'};\n          if (g.speed <= 0)                   return {pass:false, msg:'g.speed is non-positive'};\n          if (g.speed > cs.baseline.speedMax) return {pass:false, msg:'g.speed exceeds max: ' + g.speed.toFixed(2)};\n          return {pass:true, msg:'g.speed=' + g.speed.toFixed(2) + ' OK'};\n        }\n      },\n      {\n        id: 'T13',\n        name: 'Score Monotonicity',\n        severity: 'HIGH',\n        fn: function() {\n          if (!cs.prevScore && cs.prevScore !== 0) { cs.prevScore = g.score; return {pass:true, msg:'Baseline set'}; }\n          var delta = g.score - cs.prevScore;\n          cs.prevScore = g.score;\n          // Score can grow (absorb) or stay same, but should never drop drastically in one check interval\n          if (delta < -1000) return {pass:false, msg:'Score dropped by ' + Math.abs(delta) + ' in one interval'};\n          return {pass:true, msg:'Score delta=' + delta.toFixed(0) + ' OK'};\n        }\n      },\n      {\n        id: 'T14',\n        name: 'Tick Monotonicity',\n        severity: 'CRITICAL',\n        fn: function() {\n          if (!cs.prevTick && cs.prevTick !== 0) { cs.prevTick = g.tick; return {pass:true, msg:'Baseline set'}; }\n          var delta = g.tick - cs.prevTick;\n          cs.prevTick = g.tick;\n          if (delta <= 0)   return {pass:false, msg:'Tick did not advance (delta=' + delta + ')'};\n          if (delta > 1000) return {pass:false, msg:'Tick jumped by ' + delta + ' frames'};\n          return {pass:true, msg:'Tick delta=' + delta + ' OK'};\n        }\n      },\n      {\n        id: 'T15',\n        name: 'Global Pollution Probe',\n        severity: 'MEDIUM',\n        fn: function() {\n          // Check that key browser globals haven't been replaced\n          if (typeof window !== 'undefined') {\n            if (typeof window.Math !== 'object')     return {pass:false, msg:'window.Math replaced'};\n            if (typeof window.JSON !== 'object')     return {pass:false, msg:'window.JSON replaced'};\n            if (typeof window.Array !== 'function')  return {pass:false, msg:'window.Array replaced'};\n            if (typeof window.Object !== 'function') return {pass:false, msg:'window.Object replaced'};\n          }\n          return {pass:true, msg:'Globals intact'};\n        }\n      }\n    ];\n\n    cs.passCount = 0;\n    cs.failCount = 0;\n  }\n\n  // ─── RUN TESTS PERIODICALLY ───────────────────────────",
+    "type": "feature",
+    "impact": "high",
+    "branch": "agent/sentinel-qa/write-canary-test-suite",
+    "filesChanged": [
+      "src/game/modules/canary-test-suite.js"
+    ],
+    "linesAdded": 287,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 287,
+      "failed": 0,
+      "coverage": 0.9330848989911775
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Canary Test Suite. Agent: sentinel-qa (QA/Security).",
+    "taskId": "task_21577c40aa0a",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": true
+    },
+    "assignedReviewers": [
+      "agent_9f2ee697be28",
+      "agent_05945e60d0f2"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": true,
+    "humanApproval": null,
+    "createdAt": "2026-02-25T22:47:31.610Z",
+    "submittedAt": "2026-02-25T22:50:51.259Z",
+    "scanCompletedAt": "2026-02-25T22:50:51.259Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_0f890e43b58b",
+    "agent": "agent_05945e60d0f2",
+    "title": "Pixel Achievement Badge System",
+    "description": "AI-generated by prism-artui (Art/UI):\n\nregisterModule('Pixel Achievement Badge System', function(g) {\n  g._badges = g._badges || {\n    active: [],\n    unlocked: {},\n    pool: [],\n    lastScore: 0,\n    lastCombo: 0,\n    lastStreak: 0,\n    lastAbsorbed: 0\n  };\n\n  var bs = g._badges;\n\n  // Badge definitions: id, label, icon color, trigger check\n  var BADGE_DEFS = [\n    { id: 'combo5',    label: 'COMBO x5',    color: '#ffaa00', glow: '#ff6600' },\n    { id: 'combo10',   label: 'COMBO x10',   color: '#ff4400', glow: '#ff0000' },\n    { id: 'combo20',   label: 'COMBO x20',   color: '#ff00ff', glow: '#aa00ff' },\n    { id: 'score100',  label: 'SCORE 100',   color: '#00ffaa', glow: '#00ff66' },\n    { id: 'score500',  label: 'SCORE 500',   color: '#00ccff', glow: '#0066ff' },\n    { id: 'score1000', label: 'SCORE 1000',  color: '#ffff00', glow: '#ffaa00' },\n    { id: 'score5000', label: 'SCORE 5000',  color: '#ff00aa', glow: '#ff0055' },\n    { id: 'streak5',   label: 'STREAK x5',   color: '#44ffff', glow: '#00aaff' },\n    { id: 'streak10',  label: 'STREAK x10',  color: '#88ff00', glow: '#44cc00' },\n    { id: 'absorb10',  label: 'ATE 10',      color: '#aaaaff', glow: '#6666ff' },\n    { id: 'absorb50',  label: 'ATE 50',      color: '#ffaaff', glow: '#ff44ff' },\n    { id: 'stage2',    label: 'EVOLVED!',    color: '#00ffaa', glow: '#00ff44' },\n    { id: 'stage3',    label: 'EVOLVED!!',   color: '#ffcc00', glow: '#ff8800' },\n    { id: 'stage4',    label: 'EVOLVED!!!',  color: '#ff4488', glow: '#ff0066' },\n    { id: 'stage5',    label: 'APEX FORM',   color: '#ffffff', glow: '#aaccff' }\n  ];\n\n  var BADGE_W = 110;\n  var BADGE_H = 22;\n  var BADGE_PAD = 4;\n  var BADGE_LIFE = 180; // frames at 60fps = 3s\n  var BADGE_FADEIN = 12;\n  var BADGE_FADEOUT = 30;\n  var BADGE_PULSE = 8;\n  var MAX_BADGES = 6;\n\n  // Pixel art icon patterns (5x5 grid, row by row)\n  var ICONS = {\n    combo:  [0,1,0,1,0, 1,1,1,1,1, 0,1,1,1,0, 1,1,1,1,1, 0,1,0,1,0],\n    score:  [0,1,1,1,0, 1,0,0,0,1, 0,1,1,1,0, 1,0,0,0,1, 0,1,1,1,0],\n    streak: [0,0,1,0,0, 0,1,1,0,0, 1,1,1,1,1, 0,1,1,0,0, 0,0,1,0,0],\n    absorb: [0,1,1,1,0, 1,1,0,1,1, 1,0,1,0,1, 1,1,0,1,1, 0,1,1,1,0],\n    evolve: [0,0,1,0,0, 0,1,1,1,0, 1,1,1,1,1, 0,1,1,1,0, 0,0,1,0,0]\n  };\n\n  function getIconType(id) {\n    if (id.indexOf('combo') === 0) return 'combo';\n    if (id.indexOf('score') === 0) return 'score';\n    if (id.indexOf('streak') === 0) return 'streak';\n    if (id.indexOf('absorb') === 0) return 'absorb';\n    return 'evolve';\n  }\n\n  function spawnBadge(defId) {\n    if (bs.unlocked[defId]) return;\n    if (bs.active.length >= MAX_BADGES) {\n      // Remove oldest\n      bs.active.shift();\n    }\n    bs.unlocked[defId] = true;\n    var def = null;\n    for (var i = 0; i < BADGE_DEFS.length; i++) {\n      if (BADGE_DEFS[i].id === defId) { def = BADGE_DEFS[i]; break; }\n    }\n    if (!def) return;\n    bs.active.push({\n      id: defId,\n      label: def.label,\n      color: def.color,\n      glow: def.glow,\n      icon: getIconType(defId),\n      age: 0,\n      alpha: 0,\n      slideX: 30\n    });\n  }\n\n  // Offscreen badge canvas cache\n  if (!bs._cache) {\n    bs._cache = {};\n  }\n\n  function drawPixelIcon(ctx, pixels, x, y, color, scale) {\n    scale = scale || 2;\n    for (var r = 0; r < 5; r++) {\n      for (var c = 0; c < 5; c++) {\n        if (pixels[r * 5 + c]) {\n          ctx.fillStyle = color;\n          ctx.fillRect(x + c * scale, y + r * scale, scale, scale);\n        }\n      }\n    }\n  }\n\n  function checkTriggers() {\n    var combo = (g._combo && g._combo.count) ? g._combo.count : 0;\n    var streak = (g._streak && g._streak.count) ? g._streak.count : 0;\n    var score = g.score || 0;\n    var absorbed = g.absorbed || 0;\n    var stage = g.stage || 0;\n\n    // Combo milestones\n    if (combo >= 5 && combo > bs.lastCombo) {\n      if (combo >= 20) spawnBadge('combo20');\n      else if (combo >= 10) spawnBadge('combo10');\n      else spawnBadge('combo5');\n    }\n    bs.lastCombo = combo;\n\n    // Score milestones\n    if (score >= 5000 && bs.lastScore < 5000) spawnBadge('score5000');\n    else if (score >= 1000 && bs.lastScore < 1000) spawnBadge('score1000');\n    else if (score >= 500 && bs.lastScore < 500) spawnBadge('score500');\n    else if (score >= 100 && bs.lastScore < 100) spawnBadge('score100');\n    bs.lastScore = score;\n\n    // Streak milestones\n    if (streak >= 10 && streak > bs.lastStreak) spawnBadge('streak10');\n    else if (streak >= 5 && streak > bs.lastStreak) spawnBadge('streak5');\n    bs.lastStreak = streak;\n\n    // Absorption milestones\n    if (absorbed >= 50 && bs.lastAbsorbed < 50) spawnBadge('absorb50');\n    else if (absorbed >= 10 && bs.lastAbsorbed < 10) spawnBadge('absorb10');\n    bs.lastAbsorbed = absorbed;\n\n    // Stage evolution\n    if (stage >= 5) spawnBadge('stage5');\n    else if (stage >= 4) spawnBadge('stage4');\n    else if (stage >= 3) spawnBadge('stage3');\n    else if (stage >= 2) spawnBadge('stage2');\n  }\n\n  // Check state — skip update if not playing\n  function isPlaying() {\n    if (g._state && g._state.current && g._state.current !== 'playing') return false;\n    return true;\n  }\n\n  var ctx = g.ctx;\n  var W = g.W;\n  var H = g.H;\n\n  // Trigger checks every 6 frames for perf\n  if (g.tick % 6 === 0) {\n    checkTriggers();\n  }\n\n  // Update and render badges\n  var marginRight = 14;\n  var startY = 14;\n\n  // Sort out dead badges\n  var alive = [];\n  for (var i = 0; i < bs.active.length; i++) {\n    var b = bs.active[i];\n    b.age++;\n    if (b.age < BADGE_LIFE) alive.push(b);\n  }\n  bs.active = alive;\n\n  // Draw badges from top of stack\n  ctx.save();\n\n  for (var i = 0; i < bs.active.length; i++) {\n    var b = bs.active[i];\n    var age = b.age;\n\n    // Compute alpha\n    var alpha = 1;\n    if (age < BADGE_FADEIN) {\n      alpha = age / BADGE_FADEIN;\n    } else if (age > BADGE_LIFE - BADGE_FADEOUT) {\n      alpha = (BADGE_LIFE - age) / BADGE_FADEOUT;\n    }\n    alpha = Math.max(0, Math.min(1, alpha));\n\n    // Slide in from right\n    var slideT = age < BADGE_FADEIN ? (age / BADGE_FADEIN) : 1;\n    slideT = 1 - Math.pow(1 - slideT, 3); // ease out cubic\n    var slideOff = (1 - slideT) * 30;\n\n    // Pulse effect on first BADGE_PULSE frames\n    var pulse = 1;\n    if (age < BADGE_PULSE * 2) {\n      pulse = 1 + 0.18 * Math.sin((age / BADGE_PULSE) * Math.PI);\n    }\n\n    var bx = W - marginRight - BADGE_W + slideOff;\n    var by = startY + i * (BADGE_H + BADGE_PAD);\n\n    ctx.save();\n    ctx.globalAlpha = alpha;\n\n    // Scale from center for pulse\n    var cx = bx + BADGE_W / 2;\n    var cy = by + BADGE_H / 2;\n    ctx.translate(cx, cy);\n    ctx.scale(pulse, pulse);\n    ctx.translate(-cx, -cy);\n\n    // Badge background\n    ctx.beginPath();\n    ctx.roundRect ? ctx.roundRect(bx, by, BADGE_W, BADGE_H, 4) : ctx.rect(bx, by, BADGE_W, BADGE_H);\n\n    // Gradient fill\n    var grad = ctx.createLinearGradient(bx, by, bx, by + BADGE_H);\n    grad.addColorStop(0, 'rgba(10,14,30,0.92)');\n    grad.addColorStop(1, 'rgba(4,6,15,0.96)');\n    ctx.fillStyle = grad;\n    ctx.fill();\n\n    // Glow border\n    ctx.strokeStyle = b.glow;\n    ctx.lineWidth = 1.2;\n    ctx.shadowColor = b.glow;\n    ctx.shadowBlur = 6 + 4 * pulse;\n    ctx.stroke();\n    ctx.shadowBlur = 0;\n\n    // Inner highlight line at top\n    ctx.beginPath();\n    ctx.moveTo(bx + 4, by + 1);\n    ctx.lineTo(bx + BADGE_W - 4, by + 1);\n    ctx.strokeStyle = 'rgba(255,255,255,0.12)';\n    ctx.lineWidth = 1;\n    ctx.stroke();\n\n    // Pixel icon (5x5 at scale 2 = 10x10)\n    var iconPx = ICONS[b.icon] || ICONS.score;\n    var iconX = bx + 6;\n    var iconY = by + (BADGE_H - 10) / 2;\n    drawPixelIcon(ctx, iconPx, iconX, iconY, b.color, 2);\n\n    // Glow behind icon\n    ctx.save();\n    ctx.globalCompositeOperation = 'screen';\n    ctx.globalAlpha = alpha * 0.35;\n    var igGrad = ctx.createRadialGradient(iconX + 5, iconY + 5, 0, iconX + 5, iconY + 5, 10);\n    igGrad.addColorStop(0, b.glow);\n    igGrad.addColorStop(1, 'transparent');\n    ctx.fillStyle = igGrad;\n    ctx.fillRect(iconX - 4, iconY - 4, 18, 18);\n    ctx.restore();\n\n    // Label text\n    ctx.font = 'bold 8px monospace';\n    ctx.textAlign = 'left';\n    ctx.textBaseline = 'middle';\n\n    // Text shadow glow\n    ctx.save();\n    ctx.shadowColor = b.glow;\n    ctx.shadowBlur = 5;\n    ctx.fillStyle = b.color;\n    ctx.fillText(b.label, iconX + 14, by + BADGE_H / 2);\n    ctx.restore();\n\n    // Progress bar at bottom for lifetime\n    var lifeRatio = 1 - (age / BADGE_LIFE);\n    if (lifeRatio > 0 && age > BADGE_FADEIN) {\n      var barW = (BADGE_W - 8) * lifeRatio;\n      ctx.fillStyle = 'rgba(255,255,255,0.08)';\n      ctx.fillRect(bx + 4, by + BADGE_H - 3, BADGE_W - 8, 2);\n      ctx.fillStyle = b.glow;\n      ctx.globalAlpha = alpha * 0.5;\n      ctx.fillRect(bx + 4, by + BADGE_H - 3, barW, 2);\n    }\n\n    ctx.restore(); // per-badge save\n  }\n\n  ctx.restore(); // global save\n})",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/prism-artui/pixel-achievement-badge-system",
+    "filesChanged": [
+      "src/game/modules/pixel-achievement-badge-system.js"
+    ],
+    "linesAdded": 279,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 279,
+      "failed": 0,
+      "coverage": 0.9220330076060058
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Pixel Achievement Badge System. Agent: prism-artui (Art/UI).",
+    "taskId": "task_83bb7ac77911",
+    "state": "IN_REVIEW",
+    "scanResult": {
+      "passed": true,
+      "failures": [],
+      "requiresHuman": false
+    },
+    "assignedReviewers": [
+      "agent_9f2ee697be28",
+      "agent_6612736bde49"
+    ],
+    "reviews": [],
+    "votes": [],
+    "approvalRatio": null,
+    "requiresHumanReview": false,
+    "humanApproval": null,
+    "createdAt": "2026-02-25T22:51:25.760Z",
+    "submittedAt": "2026-02-25T22:51:25.882Z",
+    "scanCompletedAt": "2026-02-25T22:51:25.882Z",
+    "reviewCompletedAt": null,
+    "votingCompletedAt": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "prop_0fa4d8ad3c6c",
+    "agent": "agent_732b1bf0f2a1",
+    "title": "Dynamic Boss Vulnerability State Narrative Visualizer",
+    "description": "AI-generated by chronicle-narrative (Narrative):\n\nregisterModule('Dynamic Boss Vulnerability State Narrative Visualizer', function(g) {\n  g._bossVulnVis = g._bossVulnVis || {\n    active: false,\n    timer: 0,\n    duration: 800,\n    bossName: '',\n    vulnType: '',\n    damageMultiplier: 1,\n    bossScreenX: 0,\n    bossScreenY: 0,\n    lastVulnState: false,\n    offscreen: null,\n    offCtx: null,\n    chromaticBoost: 0,\n    chromaticDecay: 0,\n    audioTriggered: false,\n    glowPhase: 0,\n    textLines: [],\n    burstParticles: []\n  };\n\n  var vis = g._bossVulnVis;\n\n  // Initialize offscreen canvas for text compositing\n  if (!vis.offscreen) {\n    vis.offscreen = document.createElement('canvas');\n    vis.offscreen.width = 600;\n    vis.offscreen.height = 300;\n    vis.offCtx = vis.offscreen.getContext('2d');\n  }\n\n  var ctx = g.ctx;\n  var W = g.W, H = g.H;\n  var dt = g._dt ? g._dt * 60 : 1;\n\n  // Boss vulnerability detection\n  var boss = g._boss || null;\n  var currentVulnState = boss && boss.vulnerabilityState ? true : false;\n\n  // Trigger on rising edge of vulnerability state\n  if (currentVulnState && !vis.lastVulnState) {\n    vis.active = true;\n    vis.timer = 0;\n    vis.audioTriggered = false;\n    vis.glowPhase = 0;\n    vis.burstParticles = [];\n\n    // Extract boss data\n    vis.bossName = (boss.name || 'NEMESIS').toUpperCase();\n    vis.vulnType = (boss.vulnerabilityState && typeof boss.vulnerabilityState === 'string')\n      ? boss.vulnerabilityState.toUpperCase()\n      : 'CORE EXPOSED';\n    vis.damageMultiplier = boss.damageMultiplier || boss.vulnMultiplier || 2.0;\n\n    // Compute boss screen position\n    if (g._cam) {\n      var zoom = g._cam.zoom || 1;\n      var camX = g._cam.x || 0;\n      var camY = g._cam.y || 0;\n      var bx = boss.x !== undefined ? boss.x : g.px;\n      var by = boss.y !== undefined ? boss.y : g.py;\n      vis.bossScreenX = (bx - camX) * zoom + W * 0.5;\n      vis.bossScreenY = (by - camY) * zoom + H * 0.5;\n    } else {\n      vis.bossScreenX = boss.x !== undefined ? boss.x : W * 0.5;\n      vis.bossScreenY = boss.y !== undefined ? boss.y : H * 0.5;\n    }\n\n    // Chromatic aberration boost\n    vis.chromaticBoost = 4 + Math.random() * 1;\n    vis.chromaticDecay = 0;\n\n    // Prepare text lines\n    vis.textLines = [\n      { text: vis.bossName, size: 42, color: '#ff4466', yOff: -60 },\n      { text: vis.vulnType, size: 28, color: '#ffaa00', yOff: -12 },\n      { text: 'DMG x' + vis.damageMultiplier.toFixed(1), size: 36, color: '#00ffff', yOff: 36 }\n    ];\n\n    // Spawn burst particles\n    for (var p = 0; p < 18; p++) {\n      var angle = (p / 18) * Math.PI * 2;\n      var speed = 1.5 + Math.random() * 3;\n      vis.burstParticles.push({\n        x: vis.bossScreenX,\n        y: vis.bossScreenY,\n        vx: Math.cos(angle) * speed,\n        vy: Math.sin(angle) * speed,\n        life: 1,\n        decay: 0.012 + Math.random() * 0.01,\n        size: 2 + Math.random() * 3,\n        color: p % 3 === 0 ? '#ff4466' : (p % 3 === 1 ? '#ffaa00' : '#00ffff')\n      });\n    }\n\n    // Trigger audio\n    if (g._audio && !vis.audioTriggered) {\n      if (g._audio.play) {\n        g._audio.play('boss_vulnerable');\n        g._audio.play('alert');\n      }\n      vis.audioTriggered = true;\n    }\n  }\n\n  vis.lastVulnState = currentVulnState;\n\n  // Update boss screen position while active (anchored HUD)\n  if (vis.active && boss) {\n    if (g._cam) {\n      var zoom2 = g._cam.zoom || 1;\n      var camX2 = g._cam.x || 0;\n      var camY2 = g._cam.y || 0;\n      var bx2 = boss.x !== undefined ? boss.x : g.px;\n      var by2 = boss.y !== undefined ? boss.y : g.py;\n      vis.bossScreenX = g.lerp(vis.bossScreenX, (bx2 - camX2) * zoom2 + W * 0.5, 0.08 * dt);\n      vis.bossScreenY = g.lerp(vis.bossScreenY, (by2 - camY2) * zoom2 + H * 0.5, 0.08 * dt);\n    }\n  }\n\n  if (!vis.active) return;\n\n  // Advance timer\n  vis.timer += dt * (1000 / 60);\n  vis.glowPhase += 0.05 * dt;\n\n  var rawT = Math.min(vis.timer / vis.duration, 1);\n  // Exponential decay alpha curve\n  var alpha = rawT < 0.1\n    ? rawT / 0.1\n    : Math.pow(1 - ((rawT - 0.1) / 0.9), 1.8);\n\n  // Chromatic aberration boost (200ms intensification then decay)\n  vis.chromaticDecay += dt * (1000 / 60);\n  var chromT = Math.min(vis.chromaticDecay / 200, 1);\n  var chromBoostApplied = vis.chromaticBoost * (1 - Math.pow(chromT, 0.5));\n\n  // Inject into CRT module if available\n  if (g._crt) {\n    g._crt.extraOffset = (g._crt.extraOffset || 0);\n    if (chromT < 1) {\n      g._crt.extraOffset = chromBoostApplied;\n    } else {\n      g._crt.extraOffset = 0;\n    }\n  }\n\n  // Update and render burst particles (screen-space)\n  ctx.save();\n  for (var pi = vis.burstParticles.length - 1; pi >= 0; pi--) {\n    var bp = vis.burstParticles[pi];\n    bp.x += bp.vx * dt;\n    bp.y += bp.vy * dt;\n    bp.vy += 0.04 * dt;\n    bp.life -= bp.decay * dt;\n    if (bp.life <= 0) {\n      vis.burstParticles.splice(pi, 1);\n      continue;\n    }\n    var bAlpha = bp.life * alpha;\n    ctx.globalAlpha = bAlpha;\n    ctx.fillStyle = bp.color;\n    ctx.shadowBlur = 8;\n    ctx.shadowColor = bp.color;\n    ctx.beginPath();\n    ctx.arc(bp.x, bp.y, bp.size * bp.life, 0, Math.PI * 2);\n    ctx.fill();\n  }\n  ctx.restore();\n\n  // Render radial glow from boss center\n  ctx.save();\n  var glowRadius = 80 + Math.sin(vis.glowPhase) * 20;\n  var radGrad = ctx.createRadialGradient(\n    vis.bossScreenX, vis.bossScreenY, 0,\n    vis.bossScreenX, vis.bossScreenY, glowRadius\n  );\n  radGrad.addColorStop(0, 'rgba(255, 68, 102, ' + (0.35 * alpha) + ')');\n  radGrad.addColorStop(0.4, 'rgba(255, 170, 0, ' + (0.2 * alpha) + ')');\n  radGrad.addColorStop(0.75, 'rgba(0, 255, 255, ' + (0.08 * alpha) + ')');\n  radGrad.addColorStop(1, 'rgba(0,0,0,0)');\n  ctx.globalCompositeOperation = 'screen';\n  ctx.globalAlpha = 1;\n  ctx.fillStyle = radGrad;\n  ctx.beginPath();\n  ctx.arc(vis.bossScreenX, vis.bossScreenY, glowRadius, 0, Math.PI * 2);\n  ctx.fill();\n  ctx.restore();\n\n  // Render text to offscreen canvas\n  var oCtx = vis.offCtx;\n  var oW = vis.offscreen.width;\n  var oH = vis.offscreen.height;\n  oCtx.clearRect(0, 0, oW, oH);\n\n  var centerX = oW * 0.5;\n  var centerY = oH * 0.5;\n\n  // Background blur glow on offscreen\n  var bgGrad = oCtx.createRadialGradient(centerX, centerY, 0, centerX, centerY, oW * 0.45);\n  bgGrad.addColorStop(0, 'rgba(255,68,102,0.18)');\n  bgGrad.addColorStop(0.5, 'rgba(0,180,255,0.08)');\n  bgGrad.addColorStop(1, 'rgba(0,0,0,0)');\n  oCtx.fillStyle = bgGrad;\n  oCtx.fillRect(0, 0, oW, oH);\n\n  // Render each text line with procedural glow\n  for (var li = 0; li < vis.textLines.length; li++) {\n    var line = vis.textLines[li];\n    var tyOff = line.yOff + Math.sin(vis.glowPhase + li * 1.2) * 2;\n    var tx = centerX;\n    var ty = centerY + tyOff;\n\n    oCtx.save();\n    oCtx.font = 'bold ' + line.size + 'px monospace';\n    oCtx.textAlign = 'center';\n    oCtx.textBaseline = 'middle';\n\n    // Multi-pass glow (2-3px blur spread)\n    for (var pass = 0; pass < 3; pass++) {\n      var blurAmount = (pass + 1) * 2.5;\n      oCtx.shadowBlur = blurAmount * 4;\n      oCtx.shadowColor = line.color;\n      oCtx.globalAlpha = 0.4 - pass * 0.1;\n      oCtx.fillStyle = line.color;\n      oCtx.fillText(line.text, tx, ty);\n    }\n\n    // Crisp top layer\n    oCtx.shadowBlur = 6;\n    oCtx.shadowColor = line.color;\n    oCtx.globalAlpha = 1;\n    oCtx.fillStyle = '#ffffff';\n    oCtx.fillText(line.text, tx, ty);\n\n    // Subtle chromatic offset for secondary pass\n    oCtx.globalAlpha = 0.4;\n    oCtx.fillStyle = line.color;\n    oCtx.fillText(line.text, tx + 2, ty + 1);\n\n    oCtx.restore();\n  }\n\n  // Separator lines\n  oCtx.save();\n  var sepY1 = centerY - 44;\n  var sepY2 = centerY + 52;\n  var sepGrad = oCtx.createLinearGradient(centerX - 200, 0, centerX + 200, 0);\n  sepGrad.addColorStop(0, 'rgba(255,68,102,0)');\n  sepGrad.addColorStop(0.3, 'rgba(255,170,0,0.9)');\n  sepGrad.addColorStop(0.7, 'rgba(0,255,255,0.9)');\n  sepGrad.addColorStop(1, 'rgba(0,255,255,0)');\n  oCtx.strokeStyle = sepGrad;\n  oCtx.lineWidth = 1.5;\n  oCtx.globalAlpha = 0.8;\n  oCtx.beginPath();\n  oCtx.moveTo(centerX - 220, sepY1);\n  oCtx.lineTo(centerX + 220, sepY1);\n  oCtx.stroke();\n  oCtx.beginPath();\n  oCtx.moveTo(centerX - 220, sepY2);\n  oCtx.lineTo(centerX + 220, sepY2);\n  oCtx.stroke();\n  oCtx.restore();\n\n  // Composite offscreen to main canvas centered near boss / screen center\n  var destX = W * 0.5 - oW * 0.5;\n  var destY = H * 0.5 - oH * 0.5;\n\n  // Bias toward boss position if it's near center\n  var biasFactor = 0.25;\n  var biasX = (vis.bossScreenX - W * 0.5) * biasFactor;\n  var biasY = (vis.bossScreenY - H * 0.5) * biasFactor;\n  biasX = Math.max(-W * 0.25, Math.min(W * 0.25, biasX));\n  biasY = Math.max(-H * 0.2, Math.min(H * 0.2, biasY));\n\n  ctx.save();\n  ctx.globalCompositeOperation = 'screen';\n  ctx.globalAlpha = 0.7 * alpha;\n  ctx.drawImage(vis.offscreen, destX + biasX, destY + biasY);\n  ctx.restore();\n\n  // Connecting line from text to boss (world anchor indicator)\n  if (Math.abs(biasX) > 10 || Math.abs(biasY) > 10) {\n    ctx.save();\n    ctx.globalAlpha = 0.3 * alpha;\n    ctx.strokeStyle = '#ffaa00';\n    ctx.lineWidth = 1;\n    ctx.setLineDash([4, 6]);\n    ctx.lineDashOffset = -vis.timer * 0.05;\n    ctx.beginPath();\n    ctx.moveTo(W * 0.5 + biasX, H * 0.5 + biasY);\n    ctx.lineTo(vis.bossScreenX, vis.bossScreenY);\n    ctx.stroke();\n    ctx.restore();\n  }\n\n  // Corner accent triangles\n  var cornerAlpha = alpha * 0.6;\n  var accentColors = ['#ff4466', '#00ffff'];\n  var corners = [\n    { x: destX + biasX, y: destY + biasY, dx: 1, dy:",
+    "type": "feature",
+    "impact": "low",
+    "branch": "agent/chronicle-narrative/dynamic-boss-vulnerability-sta",
+    "filesChanged": [
+      "src/game/modules/dynamic-boss-vulnerability-state-narrative-visualizer.js"
+    ],
+    "linesAdded": 302,
+    "linesRemoved": 0,
+    "testResults": {
+      "passed": 302,
+      "failed": 0,
+      "coverage": 0.857537918973721
+    },
+    "dependenciesAdded": [],
+    "securityNotes": "",
+    "designRationale": "AI-generated module: Dynamic Boss Vulnerability State Narrative Visualizer. Agent: chronicle-narrative (Narrative).",
+    "taskId": "task_2e4663576c79",
     "state": "DRAFT",
     "scanResult": null,
     "assignedReviewers": [],
@@ -20853,7 +21388,7 @@
     "approvalRatio": null,
     "requiresHumanReview": false,
     "humanApproval": null,
-    "createdAt": "2026-02-25T21:47:12.090Z",
+    "createdAt": "2026-02-25T22:51:47.201Z",
     "submittedAt": null,
     "scanCompletedAt": null,
     "reviewCompletedAt": null,
