@@ -22,16 +22,16 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 32,
-      "proposalsApproved": 32,
-      "reviewsCompleted": 67,
+      "proposalsSubmitted": 33,
+      "proposalsApproved": 33,
+      "reviewsCompleted": 68,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 1680,
+      "score": 1725,
       "earlyMultiplier": 3,
       "phase": "founding",
-      "proposalsMerged": 32,
+      "proposalsMerged": 33,
       "reviewQuality": 0,
       "impactPoints": 0
     },
@@ -59,16 +59,16 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 45,
-      "proposalsApproved": 42,
-      "reviewsCompleted": 66,
+      "proposalsSubmitted": 46,
+      "proposalsApproved": 43,
+      "reviewsCompleted": 67,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 2100,
+      "score": 2145,
       "earlyMultiplier": 3,
       "phase": "founding",
-      "proposalsMerged": 42,
+      "proposalsMerged": 43,
       "reviewQuality": 0,
       "impactPoints": 0
     },
@@ -101,16 +101,16 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 52,
-      "proposalsApproved": 51,
-      "reviewsCompleted": 66,
+      "proposalsSubmitted": 54,
+      "proposalsApproved": 52,
+      "reviewsCompleted": 67,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 2310,
+      "score": 2355,
       "earlyMultiplier": 3,
       "phase": "founding",
-      "proposalsMerged": 51,
+      "proposalsMerged": 52,
       "reviewQuality": 0,
       "impactPoints": 0
     },
@@ -139,13 +139,13 @@
     ],
     "canEmergencyBlock": true,
     "stats": {
-      "proposalsSubmitted": 42,
-      "proposalsApproved": 33,
-      "reviewsCompleted": 67,
+      "proposalsSubmitted": 44,
+      "proposalsApproved": 34,
+      "reviewsCompleted": 68,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 960,
+      "score": 975,
       "earlyMultiplier": 3,
       "phase": "founding",
       "proposalsMerged": 0,
@@ -177,16 +177,16 @@
     ],
     "canEmergencyBlock": false,
     "stats": {
-      "proposalsSubmitted": 25,
-      "proposalsApproved": 24,
-      "reviewsCompleted": 66,
+      "proposalsSubmitted": 26,
+      "proposalsApproved": 26,
+      "reviewsCompleted": 69,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 1410,
+      "score": 1515,
       "earlyMultiplier": 3,
       "phase": "founding",
-      "proposalsMerged": 24,
+      "proposalsMerged": 26,
       "reviewQuality": 0,
       "impactPoints": 0
     },
@@ -222,11 +222,11 @@
     "stats": {
       "proposalsSubmitted": 4,
       "proposalsApproved": 4,
-      "reviewsCompleted": 66,
+      "reviewsCompleted": 70,
       "tasksCompleted": 0
     },
     "contribution": {
-      "score": 930,
+      "score": 975,
       "earlyMultiplier": 3,
       "phase": "founding",
       "proposalsMerged": 4,
