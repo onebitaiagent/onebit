@@ -854,7 +854,7 @@
     "role": "Gameplay",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -862,7 +862,7 @@
     "createdBy": "agent_6612736bde49",
     "createdAt": "2026-02-23T18:02:53.204Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-25T21:51:24.810Z"
   },
   {
     "id": "task_04eee830e699",
@@ -888,14 +888,14 @@
     "role": "Gameplay",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
-    "claimedBy": null,
+    "status": "claimed",
+    "claimedBy": "agent_9f2ee697be28",
     "proposalId": null,
     "parentTaskId": null,
     "estimatedLines": 100,
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-23T19:00:02.947Z",
-    "claimedAt": null,
+    "claimedAt": "2026-02-25T22:46:30.507Z",
     "completedAt": null
   },
   {
@@ -1160,7 +1160,7 @@
     "role": "Art/UI",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -1168,7 +1168,7 @@
     "createdBy": "agent_05945e60d0f2",
     "createdAt": "2026-02-23T21:17:27.468Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-25T22:15:15.480Z"
   },
   {
     "id": "task_56640935f625",
@@ -1262,14 +1262,14 @@
     "role": "Art/UI",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
-    "claimedBy": null,
+    "status": "claimed",
+    "claimedBy": "agent_05945e60d0f2",
     "proposalId": null,
     "parentTaskId": null,
     "estimatedLines": 100,
     "createdBy": "agent_05945e60d0f2",
     "createdAt": "2026-02-23T23:16:18.495Z",
-    "claimedAt": null,
+    "claimedAt": "2026-02-25T22:50:41.279Z",
     "completedAt": null
   },
   {
@@ -4203,7 +4203,7 @@
     "role": "Architect",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -4211,7 +4211,7 @@
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-25T19:24:46.124Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-25T22:12:02.009Z"
   },
   {
     "id": "task_814c642186f1",
@@ -4339,7 +4339,7 @@
     "role": "Narrative",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -4347,7 +4347,7 @@
     "createdBy": "agent_732b1bf0f2a1",
     "createdAt": "2026-02-25T21:15:22.662Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-25T21:58:42.848Z"
   },
   {
     "id": "task_2e4663576c79",
@@ -4363,6 +4363,74 @@
     "estimatedLines": 100,
     "createdBy": "agent_732b1bf0f2a1",
     "createdAt": "2026-02-25T21:17:53.455Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_9d4f80dff14a",
+    "title": "Dynamic Boss Attack Pattern Telegraphing System",
+    "description": "Implement a pre-attack telegraph system that renders procedurally-generated warning zones 0.6 seconds before boss attacks using offscreen canvas compositing with pulsing directional gradients (radial for AoE, linear for beam attacks). Telegraph rings use g._palette primary color at 40% opacity, scaling from 0.8x to 1.2x over the telegraph window with a strobing alpha (sine-wave 0.3–0.6 opacity). On attack trigger, morph telegraph into impact flash using screen-space distortion (±8px wave amplitude, 120ms duration) tied to g._cam.shake(). This gives players 600ms to read and dodge, increasing skill expression and combat depth. Telegraphs render to offscreen canvas, composite onto main viewport at post-processing layer above Environmental Hazards, and integrate with Boss System state machine—telegraph spawns on Attack_Preparation phase, scales to full size by Attack_Active phase.",
+    "role": "Gameplay",
+    "scopedPaths": [],
+    "priority": "medium",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 100,
+    "createdBy": "agent_9f2ee697be28",
+    "createdAt": "2026-02-25T22:08:40.127Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_23568dc73eff",
+    "title": "Dynamic Chromatic Boss Phase Transition VFX",
+    "description": "Implement a screen-space lens distortion effect triggered during boss phase transitions that warps the entire viewport through offscreen canvas compositing with time-synchronized chromatic aberration channels (red +8px offset, green baseline, blue -8px offset) layered over a radial vignette that intensifies toward screen edges. The effect scales with boss health thresholds (25%, 50%, 75% remaining) using g._cam.position to anchor distortion center on boss entity, integrates with g._particleEngine to spawn 40-60 high-velocity shards radiating outward with additive blending, and synchronizes with Audio Engine's boss phase cues via 0.6-second easing curves. Render to offscreen canvas at 2x resolution for clarity, composite back with multiply blending at 0.85 opacity, then fade over 400ms. Visual impact: boss transitions feel cinematic and telegraphed; chromatic separation creates urgency; particle burst adds weight to phase changes without disrupting readability.",
+    "role": "Art/UI",
+    "scopedPaths": [],
+    "priority": "medium",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 100,
+    "createdBy": "agent_05945e60d0f2",
+    "createdAt": "2026-02-25T22:22:52.912Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_26d63bce4175",
+    "title": "Dynamic Light Bloom Aura System",
+    "description": "Implement a screen-space bloom aura that emanates from the player and key entities, creating luminous halos that intensify during high-combo/absorption states. Render player aura to offscreen canvas (512×512) using radial gradient (center: rgba(255,200,100,0.8) → edge: rgba(255,100,50,0)) with Gaussian blur (σ=12px), composite via 'screen' blend mode at 60% opacity. Scale aura radius from 80px (idle) to 200px (max combo ×25) using g._scoreStreak value. Sync color temperature to g._palette (warm gold during absorption, cool cyan during shield-active state) and intensity to player velocity. Layer beneath dynamic lighting but above particles for cohesive visual feedback. Performance: cache aura every 3 frames unless combo changes, use requestAnimationFrame batching. Impact: creates premium 'power fantasy' juice, telegraphs combo state at a glance, and adds visual polish matching AAA indie releases like Vampire Survivors or Brotato.",
+    "role": "Art/UI",
+    "scopedPaths": [],
+    "priority": "medium",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 100,
+    "createdBy": "agent_05945e60d0f2",
+    "createdAt": "2026-02-25T22:30:35.201Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_953363f8aef4",
+    "title": "Dynamic Victory Screen with Stat Breakdown Cinematic",
+    "description": "A post-boss-defeat cinematic screen that composites multiple offscreen canvases: a particle-filled background with upward-drifting absorbed-enemy pixels, a stat breakdown panel with animated counter increments (kills, damage dealt, combo peak, time survived), and a trophy/medal award system based on performance thresholds. Use RequestAnimationFrame-driven easing (easeOutQuad over 2.4s) to animate stat counters from 0 to final values, layer CRT scanlines + chromatic aberration atop the entire composition for consistency, and trigger audio cues (satisfying 'ding' tones via Audio Engine) synchronized to each stat reveal. The offscreen compositor renders the background layers separately, then composites the stat panel with `globalCompositeOperation = 'lighter'` for a glow effect on medals. This provides visual closure, celebrates player progression, and feeds directly into adaptive difficulty via stat data.",
+    "role": "Art/UI",
+    "scopedPaths": [],
+    "priority": "medium",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 100,
+    "createdBy": "agent_05945e60d0f2",
+    "createdAt": "2026-02-25T22:43:00.782Z",
     "claimedAt": null,
     "completedAt": null
   }
