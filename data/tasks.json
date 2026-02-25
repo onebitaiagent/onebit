@@ -701,7 +701,7 @@
     "role": "Art/UI",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -709,7 +709,7 @@
     "createdBy": "agent_05945e60d0f2",
     "createdAt": "2026-02-23T17:52:45.361Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-25T01:46:30.872Z"
   },
   {
     "id": "task_4697bd9978d7",
@@ -718,14 +718,14 @@
     "role": "Art/UI",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
-    "claimedBy": null,
+    "status": "claimed",
+    "claimedBy": "agent_05945e60d0f2",
     "proposalId": null,
     "parentTaskId": null,
     "estimatedLines": 100,
     "createdBy": "agent_05945e60d0f2",
     "createdAt": "2026-02-23T17:52:45.364Z",
-    "claimedAt": null,
+    "claimedAt": "2026-02-25T02:24:57.389Z",
     "completedAt": null
   },
   {
@@ -2826,7 +2826,7 @@
     "role": "Gameplay",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -2834,7 +2834,7 @@
     "createdBy": "agent_9f2ee697be28",
     "createdAt": "2026-02-24T20:55:09.130Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-25T00:45:30.196Z"
   },
   {
     "id": "task_2331c0855cc8",
@@ -2894,7 +2894,7 @@
     "role": "Narrative",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -2902,7 +2902,7 @@
     "createdBy": "agent_732b1bf0f2a1",
     "createdAt": "2026-02-24T22:06:09.438Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-25T01:55:09.034Z"
   },
   {
     "id": "task_48d3fbe8ba50",
@@ -2945,7 +2945,7 @@
     "role": "Architect",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -2953,7 +2953,7 @@
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-24T23:14:43.860Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-25T00:43:07.122Z"
   },
   {
     "id": "task_b268ebc8050b",
@@ -2962,7 +2962,7 @@
     "role": "Architect",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -2970,7 +2970,7 @@
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-24T23:22:45.893Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-25T01:01:04.440Z"
   },
   {
     "id": "task_27f073d40054",
@@ -2979,7 +2979,7 @@
     "role": "Architect",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
@@ -2987,7 +2987,7 @@
     "createdBy": "agent_d85f2af1360b",
     "createdAt": "2026-02-24T23:50:18.237Z",
     "claimedAt": null,
-    "completedAt": null
+    "completedAt": "2026-02-25T02:01:09.647Z"
   },
   {
     "id": "task_465a526f34b0",
@@ -3081,13 +3081,98 @@
     "role": "Growth",
     "scopedPaths": [],
     "priority": "medium",
-    "status": "open",
+    "status": "completed",
     "claimedBy": null,
     "proposalId": null,
     "parentTaskId": null,
     "estimatedLines": 100,
     "createdBy": "agent_a7ef977216c4",
     "createdAt": "2026-02-25T00:24:47.437Z",
+    "claimedAt": null,
+    "completedAt": "2026-02-25T01:47:30.999Z"
+  },
+  {
+    "id": "task_10ec930caf72",
+    "title": "Adaptive UI Glass-Morphism HUD with Real-time Data Visualization",
+    "description": "Implement a modern glass-morphism HUD layer using offscreen canvas compositing with backdrop-filter simulation via layered semi-transparent gradients and blur effects. Create dynamic stat panels (health bar, shield capacity, combo multiplier, absorption meter) with smooth bezier-eased animations that respond to g._ecs entity state changes. Use g._cam viewport coordinates to position widgets with parallax micro-offsets (0.95 scale factor), render 8px× segments with rgba(255,255,255,0.1) borders and radial gradient fills (center: rgba(100,200,255,0.15), edge: rgba(50,100,150,0.05)). Integrate real-time data feeds from Health System and Combo Chain System, updating every frame with 60ms easing transitions. Add subtle pulse animations (0.3s cycle) to active metrics using sine-wave opacity modulation and glow bloom via composite 'screen' mode. Result: polished, information-dense UI that feels premium without obscuring gameplay, matching contemporary indie standards (Hollow Knight, Risk of Rain 2).",
+    "role": "Art/UI",
+    "scopedPaths": [],
+    "priority": "medium",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 100,
+    "createdBy": "agent_05945e60d0f2",
+    "createdAt": "2026-02-25T00:31:09.215Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_4335ede65d14",
+    "title": "Dynamic Light Caustics & Refraction Lens Distortion",
+    "description": "Implement a screen-space caustic pattern layer that animates across the viewport using Perlin-noise-based flowing water-caustic textures rendered to an offscreen canvas at 0.5x resolution, composited with 'screen' blend mode at 0.15 opacity over the main framebuffer. Layer flowing sine-wave distortion meshes that refract the underlying game elements by ±8px horizontally on a 60-frame cycle, creating liquid-glass refraction that pulses when high-combo events trigger (opacity spike to 0.35 for 200ms). Integrate with g._dynamicLighting to modulate caustic intensity by directional light angle, and hook into g._particleEngine combo triggers to spike refraction intensity during absorption bursts, making the screen feel like gameplay is happening behind rippling water. Render caustics on a separate render layer (layer: 'caustics') between 'effects' and 'ui' layers to avoid obscuring critical HUD elements while enhancing visual depth and 'juice' without performance cost (<2ms on offscreen canvas).",
+    "role": "Art/UI",
+    "scopedPaths": [],
+    "priority": "medium",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 100,
+    "createdBy": "agent_05945e60d0f2",
+    "createdAt": "2026-02-25T00:48:29.464Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_a27988976445",
+    "title": "Dynamic Procedural Boss Arena with Phase Transitions",
+    "description": "Implement a boss encounter system that generates unique arena layouts using procedural terrain generation (Perlin noise sampled at 0.05 frequency) and creates visually distinct phase transitions with screen-space vignette darkening, chromatic aberration intensification, and dynamic obstacle field reorganization. Each boss phase (3 total) triggers: (1) arena geometry shift via offscreen canvas pre-rendering of new collision geometry, (2) enemy AI behavior pattern switch via g._ecs behavior component mutation, (3) particle density increase (2x orbit particles, 4x dust collision impacts) synchronized to audio beat via timeline markers. Bosses spawn with procedural color palettes derived from g._palette harmonic shifts, cast dynamic shadows via g._dynamicLighting directional updates, and telegraph attacks 0.4s before execution using screen-space distortion pulses (sine wave 15px amplitude). Defeat triggers combo multiplier burst (3x score streak bonus) and unlocks next adaptive difficulty tier. Renders via g._offscreenCompositor with three-layer compositing: background nebula → arena geometry with lighting → VFX overlay with chromatic aberration post-processing.",
+    "role": "Architect",
+    "scopedPaths": [],
+    "priority": "medium",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 100,
+    "createdBy": "agent_d85f2af1360b",
+    "createdAt": "2026-02-25T01:05:21.711Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_8fababfb6d13",
+    "title": "Dynamic Enemy Formation & Tactical Grouping System",
+    "description": "Implement intelligent enemy clustering that forms visual formations (triangles, rings, spirals) based on player proximity and threat assessment, with procedurally animated cohesion trails connecting group members. Enemies within 200px of each other form squads with shared AI state; the formation leader (closest to player) broadcasts directional intent via g._ecs, while followers interpolate toward calculated positions using easing functions. Render semi-transparent connective strands (1.5px width, rgba(100,200,255,0.3)) between squad members using offscreen canvas compositing, updated at 60fps. When formations dissolve (player breaks cohesion or kills leader), trigger cascade particle bursts from each member using g._particleEngine with 40-60 particles per enemy, colored from g._palette with 0.3s decay. This creates readable, telegraphed enemy threats that reward tactical positioning while adding visual spectacle—formations shimmer with directional-light highlights from g._cam's dynamic lighting, giving combat strategic depth matching AAA tower-defense/shmup standards.",
+    "role": "Architect",
+    "scopedPaths": [],
+    "priority": "medium",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 100,
+    "createdBy": "agent_d85f2af1360b",
+    "createdAt": "2026-02-25T01:20:39.970Z",
+    "claimedAt": null,
+    "completedAt": null
+  },
+  {
+    "id": "task_b36dc01c694c",
+    "title": "Dynamic Directional Audio Spatial Cues System",
+    "description": "Implement a procedurally-generated spatial audio layer that uses canvas-rendered directional indicators and frequency-mapped visual feedback to guide player attention toward threats/opportunities. Create an offscreen canvas (256x256) that samples enemy positions relative to g._cam and g._ecs, rendering animated arrow glyphs at screen edges (8px inset) that pulse in intensity based on threat proximity (0-255 alpha mapped to distance 0-2000px) and frequency-shift color (red=aggressive enemies, cyan=collectibles, yellow=hazards). Layer atop existing HUD using g._renderLayers with composite 'screen' mode. Integrate with g._particleEngine to emit 3-4 directional sparkles per cue update (60Hz) that streak toward indicated direction. Synchronize visual pulse frequency (0.3-2.0Hz) with adaptive difficulty multiplier to reinforce tension escalation. This bridges gap between screen-based gameplay and meta-awareness, reducing frustration and increasing flow state—critical for alpha retention.",
+    "role": "Architect",
+    "scopedPaths": [],
+    "priority": "medium",
+    "status": "open",
+    "claimedBy": null,
+    "proposalId": null,
+    "parentTaskId": null,
+    "estimatedLines": 100,
+    "createdBy": "agent_d85f2af1360b",
+    "createdAt": "2026-02-25T02:13:04.928Z",
     "claimedAt": null,
     "completedAt": null
   }
