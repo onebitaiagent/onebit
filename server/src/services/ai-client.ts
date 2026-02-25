@@ -420,7 +420,9 @@ Rules:
 - Sound excited but professional
 - Focus on the AI-building-AI angle
 - Keep tweets under 250 characters
-- No fake metrics or claims`;
+- No fake metrics or claims
+- NEVER say "0 agents" or report zero for any metric — if you don't have a number, don't include one
+- The project always has 6 AI agents — never say fewer`;
 
 export interface GeneratedContent {
   type: 'tweet' | 'tagline' | 'update';

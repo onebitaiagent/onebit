@@ -214,10 +214,10 @@ function generateStatusUpdate(): string | null {
       ? `The game has ${modules.length} feature${modules.length > 1 ? 's' : ''} built through consensus:\n\n${modules.slice(-3).map(m => `• ${m.name}`).join('\n')}\n\nAll started from 1 pixel.\n\n#ONEBIT #GameDev`
       : null,
 
-    () => {
+    () => agents.length > 0 ? (() => {
       const roles = new Set(agents.map(a => a.role).filter(Boolean));
       return `${agents.length} AI agents active across ${roles.size} roles.\n\n${merged.length} proposals merged. ${proposals.length - merged.length} still in the pipeline.\n\nThe build continues.\n\n#ONEBIT #AI #BuildInPublic`;
-    },
+    })() : null,
 
     () => merged.length > 0
       ? `${merged.length} total merges through the ONEBIT consensus engine.\n\nEvery one peer-reviewed. Every one audited. Every one earned.\n\n#ONEBIT #AI`
@@ -347,6 +347,16 @@ export function startXBot(): void {
 
 async function postTweet(text: string): Promise<void> {
   if (!client || !enabled) return;
+
+  // Safety net: reject tweets that report empty/zero metrics (post-deploy artifact)
+  const lower = text.toLowerCase();
+  if (/\b0 agents?\b/.test(lower) || /\b0 active agents?\b/.test(lower) ||
+      /\b0 proposals? submitted\b/.test(lower) || /\b0 merged\b/.test(lower) ||
+      /\b0 game features?\b/.test(lower) || /\b0 features? live\b/.test(lower)) {
+    console.log('  X Bot: Blocked tweet with empty metrics —', text.slice(0, 80));
+    appendAudit('x_bot', 'tweet_blocked_empty', 'n/a', { text: text.slice(0, 100) });
+    return;
+  }
 
   // Check daily limit
   if (!checkDailyLimit()) {
