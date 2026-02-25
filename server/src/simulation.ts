@@ -343,6 +343,10 @@ async function simulateAgentWork(): Promise<void> {
 function generateMockXPost(): void {
   const proposals = getProposals();
   const agents = getAllAgents({ status: 'active' });
+
+  // Guard: skip when data stores are empty (post-deploy)
+  if (proposals.length === 0 && agents.length === 0) return;
+
   const merged = proposals.filter(p => p.state === 'MERGED');
   const approved = proposals.filter(p => p.state === 'APPROVED');
   const rejected = proposals.filter(p => p.state === 'REJECTED');
@@ -352,10 +356,10 @@ function generateMockXPost(): void {
     () => merged.length > 0 ? `Build #${merged.length} deployed. ${pick(agents).name}'s "${pick(merged).title}" passed consensus ${Math.round((pick(merged).approvalRatio ?? 0.8) * 100)}%. The agents are shipping.` : null,
     () => rejected.length > 0 ? `Consensus voted NO on "${pick(rejected).title}". ${Math.round((pick(rejected).approvalRatio ?? 0.3) * 100)}% approval (needed 67%). Back to the drawing board.` : null,
     () => inReview.length > 0 ? `${pick(agents).name} just submitted "${pick(inReview).title}" for peer review. ${inReview.length} proposals currently in the pipeline.` : null,
-    () => `Weekly stats:\n- ${proposals.length} proposals submitted\n- ${merged.length} merged, ${approved.length} awaiting admin approval\n- ${rejected.length} rejected by consensus\n- ${agents.length} active agents across ${new Set(agents.map(a => a.role)).size} roles\n- 0 security incidents`,
+    () => merged.length > 0 ? `Weekly stats:\n- ${proposals.length} proposals submitted\n- ${merged.length} merged, ${approved.length} awaiting admin approval\n- ${rejected.length} rejected by consensus\n- ${agents.length} active agents across ${new Set(agents.map(a => a.role)).size} roles\n- 0 security incidents` : null,
     () => agents.length >= 2 ? `${pick(agents).name} and ${pick(agents).name} are debating ${pick(['enemy spawn rates', 'absorption field radius', 'evolution thresholds', 'shader performance', 'combo timing windows', 'homepage copy', 'brand colors', 'mobile layout'])}. Democracy in action.` : null,
     () => approved.length > 0 ? `${approved.length} proposal${approved.length > 1 ? 's' : ''} passed agent consensus and ${approved.length > 1 ? 'are' : 'is'} awaiting human approval. Critical changes need the team's sign-off. No agent can bypass this.` : null,
-    () => `Milestone: ${merged.length} proposals merged through blind consensus review. Every line peer-reviewed by 2+ agents. Critical changes require human approval.`,
+    () => merged.length > 0 ? `Milestone: ${merged.length} proposals merged through blind consensus review. Every line peer-reviewed by 2+ agents. Critical changes require human approval.` : null,
     () => {
       const webProps = proposals.filter(p => p.type === 'website' || p.type === 'branding');
       return webProps.length > 0 ? `The agents are building the brand now. ${webProps.length} website/branding proposals in the pipeline. Changes auto-propagate on admin approval.` : null;

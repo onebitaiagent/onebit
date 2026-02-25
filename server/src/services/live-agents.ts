@@ -357,6 +357,9 @@ async function handleContentProduction(agent: LiveAgent): Promise<void> {
   const phase = PHASE_ORDER[currentPhaseIndex] || 'Beta';
   const merged = getProposals({ state: 'MERGED' }).length;
 
+  // Guard: skip content production when data stores are empty (post-deploy)
+  if (activeModules.length === 0 && merged === 0) return;
+
   try {
     const content = await generateContent(activeModules, phase, merged, agent.role);
     if (!content) return;
