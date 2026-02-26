@@ -48,7 +48,20 @@ app.use(cors({
 }));
 app.use(express.json({ limit: '50kb' }));
 
-// API routes
+// ── ONEBIT is offline — transitioning to AI Game Studio ──
+const offlineHTML = `<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>ONEBIT — Offline</title>
+<style>body{margin:0;background:#0a0a0a;color:#0f0;font-family:monospace;display:flex;justify-content:center;align-items:center;min-height:100vh;text-align:center}
+h1{font-size:2rem}p{color:#888;max-width:500px;line-height:1.6}</style></head>
+<body><div><h1>ONEBIT is offline</h1><p>The project is transitioning to AI Game Studio — a next-gen game development pipeline powered by coordinated AI agent swarms.</p>
+<p style="color:#555;margin-top:2rem">Follow <a href="https://x.com/OneBitAIagent" style="color:#0f0">@OneBitAIagent</a> for updates.</p></div></body></html>`;
+
+// Offline overrides — these MUST come before API route mounting
+app.get('/', (_req, res) => { res.type('html').send(offlineHTML); });
+app.get('/api/game/play', (_req, res) => { res.type('html').send(offlineHTML); });
+app.get('/game/*', (_req, res) => { res.type('html').send(offlineHTML); });
+
+// API routes (admin still accessible for data export)
 app.use('/api/agents', agentRoutes);
 app.use('/api/tasks', taskRoutes);
 app.use('/api/proposals', proposalRoutes);
@@ -58,17 +71,6 @@ app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/game', gameEvolutionRoutes);
 
-// ── ONEBIT is offline — transitioning to AI Game Studio ──
-const offlineHTML = `<!DOCTYPE html>
-<html><head><meta charset="utf-8"><title>ONEBIT — Offline</title>
-<style>body{margin:0;background:#0a0a0a;color:#0f0;font-family:monospace;display:flex;justify-content:center;align-items:center;min-height:100vh;text-align:center}
-h1{font-size:2rem}p{color:#888;max-width:500px;line-height:1.6}</style></head>
-<body><div><h1>ONEBIT is offline</h1><p>The project is transitioning to AI Game Studio — a next-gen game development pipeline powered by coordinated AI agent swarms.</p>
-<p style="color:#555;margin-top:2rem">Follow <a href="https://x.com/OneBitAIagent" style="color:#0f0">@OneBitAIagent</a> for updates.</p></div></body></html>`;
-
-app.get('/', (_req, res) => { res.type('html').send(offlineHTML); });
-app.get('/api/game/play', (_req, res) => { res.type('html').send(offlineHTML); });
-app.get('/game/*', (_req, res) => { res.type('html').send(offlineHTML); });
 // Catch-all for non-API routes — show offline page
 app.use((req: any, res: any, next: any) => {
   if (req.path.startsWith('/api/')) return next();
