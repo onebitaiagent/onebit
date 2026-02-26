@@ -61,15 +61,15 @@ app.get('/', (_req, res) => { res.type('html').send(offlineHTML); });
 app.get('/api/game/play', (_req, res) => { res.type('html').send(offlineHTML); });
 app.get('/game/*', (_req, res) => { res.type('html').send(offlineHTML); });
 
-// API routes (admin still accessible for data export)
-app.use('/api/agents', agentRoutes);
-app.use('/api/tasks', taskRoutes);
-app.use('/api/proposals', proposalRoutes);
-app.use('/api/messages', messageRoutes);
-app.use('/api/audit-log', auditRoutes);
-app.use('/api/dashboard', dashboardRoutes);
+// API routes — only admin kept for data export, everything else disabled
 app.use('/api/admin', adminRoutes);
-app.use('/api/game', gameEvolutionRoutes);
+// app.use('/api/agents', agentRoutes);
+// app.use('/api/tasks', taskRoutes);
+// app.use('/api/proposals', proposalRoutes);
+// app.use('/api/messages', messageRoutes);
+// app.use('/api/audit-log', auditRoutes);
+// app.use('/api/dashboard', dashboardRoutes);
+// app.use('/api/game', gameEvolutionRoutes);
 
 // Catch-all for non-API routes — show offline page
 app.use((req: any, res: any, next: any) => {
