@@ -48,34 +48,29 @@ app.use(cors({
 }));
 app.use(express.json({ limit: '50kb' }));
 
-// ── ONEBIT is offline — transitioning to AI Game Studio ──
-const offlineHTML = `<!DOCTYPE html>
-<html><head><meta charset="utf-8"><title>ONEBIT — Offline</title>
-<style>body{margin:0;background:#0a0a0a;color:#0f0;font-family:monospace;display:flex;justify-content:center;align-items:center;min-height:100vh;text-align:center}
-h1{font-size:2rem}p{color:#888;max-width:500px;line-height:1.6}</style></head>
-<body><div><h1>ONEBIT is offline</h1><p>The project is transitioning to AI Game Studio — a next-gen game development pipeline powered by coordinated AI agent swarms.</p>
-<p style="color:#555;margin-top:2rem">Follow <a href="https://x.com/OneBitAIagent" style="color:#0f0">@OneBitAIagent</a> for updates.</p></div></body></html>`;
-
-// Offline overrides — these MUST come before API route mounting
-app.get('/', (_req, res) => { res.type('html').send(offlineHTML); });
-app.get('/api/game/play', (_req, res) => { res.type('html').send(offlineHTML); });
-app.get('/game/*', (_req, res) => { res.type('html').send(offlineHTML); });
-
-// API routes — only admin kept for data export, everything else disabled
+// API routes
+app.use('/api/agents', agentRoutes);
+app.use('/api/tasks', taskRoutes);
+app.use('/api/proposals', proposalRoutes);
+app.use('/api/messages', messageRoutes);
+app.use('/api/audit-log', auditRoutes);
+app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/admin', adminRoutes);
-// app.use('/api/agents', agentRoutes);
-// app.use('/api/tasks', taskRoutes);
-// app.use('/api/proposals', proposalRoutes);
-// app.use('/api/messages', messageRoutes);
-// app.use('/api/audit-log', auditRoutes);
-// app.use('/api/dashboard', dashboardRoutes);
-// app.use('/api/game', gameEvolutionRoutes);
+app.use('/api/game', gameEvolutionRoutes);
 
-// Catch-all for non-API routes — show offline page
-app.use((req: any, res: any, next: any) => {
-  if (req.path.startsWith('/api/')) return next();
-  res.type('html').send(offlineHTML);
-});
+// Serve static files — game (legacy)
+app.use('/game', express.static(join(BUNDLE_ROOT, 'game')));
+
+// Serve built frontend (if web/dist exists — for single-service Railway deploy)
+const webDist = join(BUNDLE_ROOT, 'web', 'dist');
+if (existsSync(webDist)) {
+  app.use(express.static(webDist));
+  // SPA fallback — serve index.html for non-API routes
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api/') || req.path.startsWith('/game/')) return next();
+    res.sendFile(join(webDist, 'index.html'));
+  });
+}
 
 // Health check
 app.get('/api/health', (_req, res) => {
@@ -134,13 +129,23 @@ app.get('/api', (_req, res) => {
   });
 });
 
-// ── ALL SERVICES DISABLED — ONEBIT is offline ──
-// seedAgents();
-// startSimulation();
-// recoverMissingModules();
-// startLiveAgents();
-// startXBot();
-// startAutoSync();
+// Seed 6 starter agents on first run
+seedAgents();
+
+// Start agent simulation (disabled by default — use live agents instead)
+startSimulation();
+
+// Recover any game modules from merged proposals that were lost
+recoverMissingModules();
+
+// Start live AI agents — independent agents that use Claude to write real code
+startLiveAgents();
+
+// Start X bot — posts to @OneBitAIagent when env vars are set
+startXBot();
+
+// Start auto-sync — pushes data snapshots to GitHub every 6 hours
+startAutoSync();
 
 app.listen(PORT, () => {
   console.log(`\n  ONEBIT CONSENSUS ENGINE v0.1`);
@@ -148,7 +153,7 @@ app.listen(PORT, () => {
   console.log(`  Admin:     http://localhost:${PORT}/api/admin/overview`);
   console.log(`  Dashboard: http://localhost:${PORT}/api/dashboard`);
   console.log(`  Game:      http://localhost:${PORT}/api/game/play (agent-built, dynamic)`);
-  console.log(`  Frontend:  OFFLINE — transitioning to AI Game Studio`);
+  console.log(`  Frontend:  ${existsSync(webDist) ? `http://localhost:${PORT}` : 'not built (run: cd ../web && npm run build)'}`);
   console.log(`  Consensus: ${config.min_reviewers} reviewers, ${Math.round(config.approval_threshold * 100)}% threshold, blind=${config.blind_review}`);
   console.log(`  Approval:  Auto-merge non-critical | Human required for critical`);
   console.log(`  X Bot:     ${isXBotEnabled() ? 'LIVE — posting to @OneBitAIagent' : 'disabled (set X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, X_ACCESS_SECRET)'}`);
